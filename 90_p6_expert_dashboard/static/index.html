@@ -189,18 +189,20 @@
                 </div>
                 <div class="map-head-tools">
                   <form id="mapSearchForm" class="map-search">
-                    <input id="mapSearchInput" type="search" placeholder="输入公园/地址，刷新高德底图" />
-                    <button type="submit">定位</button>
+                    <input id="mapSearchInput" type="search" autocomplete="off" placeholder="搜索地点、拼音或地址" />
+                    <button type="submit" aria-label="定位">定位</button>
+                    <div id="mapSuggest" class="map-suggest"></div>
                   </form>
                   <div class="segmented" role="group" aria-label="地图图层">
-                    <button class="active" data-map-mode="risk">风险</button>
-                    <button data-map-mode="poi">POI</button>
-                    <button data-map-mode="simple">简洁</button>
+                    <button class="active" data-map-mode="all">全部</button>
+                    <button data-map-mode="poi">商业POI</button>
+                    <button data-map-mode="nodes">候选节点</button>
                   </div>
                 </div>
               </div>
               <div id="mapCanvas" class="map-canvas mode-risk">
                 <img id="amapBaseMap" alt="高德静态地图或本地示意底图" />
+                <div id="mapRangeLayer"></div>
                 <div id="amapPoiLayer"></div>
                 <div id="mapNodes"></div>
                 <div class="map-loading">正在加载高德底图……</div>
@@ -208,6 +210,9 @@
                   <button id="mapZoomIn" type="button" aria-label="放大">+</button>
                   <button id="mapZoomOut" type="button" aria-label="缩小">-</button>
                   <button id="mapReset" type="button">复位</button>
+                  <button id="mapUndo" type="button">撤回</button>
+                  <button id="mapSelectedOnly" type="button">只看选中</button>
+                  <button id="mapAddNode" type="button">设点</button>
                 </div>
                 <div class="map-note">地图用于讨论位置关系，不代表 DWG 坐标、面积、图层或真实动线。</div>
               </div>
@@ -295,6 +300,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260601c"></script>
+    <script src="/static/app.js?v=20260601d"></script>
   </body>
 </html>

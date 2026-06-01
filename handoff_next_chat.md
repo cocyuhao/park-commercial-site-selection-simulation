@@ -1027,3 +1027,37 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - AI 解析候选仍是 `needs_review / not_final`，不能作为 checked 证据。
 - 地图是高德静态底图 + 自定义交互层，不是完整高德 JS API。
 - DWG 仍为 `pending_conversion`，不得根据 PDF/CAD 文本生成可信几何结论。
+# 最新交接：P6 地图轮廓通用化
+
+当前服务：`http://127.0.0.1:8765/`。
+
+本轮针对用户指出的地图边界问题完成修正：
+
+- 地图搜索不是只支持东坝/奥森样例；`POST /api/amap/context` 仍按任意关键词走高德关键字查询并刷新当前地图上下文。
+- 新增边界缓存 `90_p6_expert_dashboard/cache/map_boundary.json`。
+- 边界生成链路为：既有 OSM polygon -> Nominatim 实时 polygon -> 高德周边 POI convex hull 讨论外包线 -> 可见范围估算。
+- 前端地图不再把范围画成圆或固定六边形；公开 polygon 显示为实线轮廓，估算外包线显示为待复核讨论范围。
+- 初始底图 zoom 根据边界范围自动计算，避免大公园首次加载包不全。
+- 节点位置随当前地图上下文重算；已实测切换到东坝公园、朝阳公园、三里屯、颐和园时节点名和坐标都变化。
+
+验证结果：
+
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py` 通过。
+- 搜索实测：东坝公园 32 点公开 polygon；朝阳公园 177 点公开 polygon；颐和园 109 点公开 polygon；三里屯无 polygon 时 12 点 POI 外包线。
+- 截图：`90_p6_expert_dashboard/qa/map_boundary_general_final.png`。
+- Key 扫描：`.env` 以外未发现用户提供的高德 Key 明文。
+
+继续边界：
+
+- 这不是官方红线，也不是 DWG 几何；页面必须继续标注“待复核/非最终”。
+- 当前仍不是完整高德 JS API 交互地图，只是高德静态底图 + 自定义交互层。若用户继续要求 1:1 高德体验，下一步应申请/配置浏览器端受限 JS Key 和安全密钥代理，不能把 Web Service Key 下发到前端。
+
+# 最新补充：GitHub 同步后继续地图/评分
+
+- 已合并远端 `origin/main` 中伙伴新增的后端工作：`60_model/db`、`60_model/simulation`、`/api/simulation/jobs` 以及前端仿真 dry-run 面板。
+- 本轮继续保留并整合地图修正：高德静态图按 zoom/center 后端重取，搜索边输入边提示，支持地图撤回、只看选中、设点。
+- 固定 CSV 分数不再作为唯一展示分；前端新增“实时草案分”，在奥森上下文下结合 P3 gate 阻塞、仿真 dry-run 结果、POI 数量和边界状态扣分。外部地点只显示“外部预览”。
+- 修复 `30_extraction/scripts/build_p2_real_site_input_index.py`：忽略 Office 临时 `~$*.docx`，避免本地 Word 临时文件造成总门禁失败。
+- 最新验证：`checks=725 failures=0`；截图 `90_p6_expert_dashboard/qa/map_sync_verified.png`。
+- 提交前不要加入 `90_p6_expert_dashboard/cache/`、`90_p6_expert_dashboard/qa/*.png` 或真实 `.env`。

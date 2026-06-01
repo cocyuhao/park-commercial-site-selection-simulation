@@ -3,10 +3,10 @@ IMPL-001,files,error,pass,"00_control/llm_routing.md exists=True, bytes=3065",00
 IMPL-002,files,error,pass,"00_control/credential_handoff.md exists=True, bytes=1300",00_control/credential_handoff.md
 IMPL-003,files,error,pass,"00_control/model_orchestration.md exists=True, bytes=5652",00_control/model_orchestration.md
 IMPL-004,files,error,pass,"00_control/plugin_routing.md exists=True, bytes=5359",00_control/plugin_routing.md
-IMPL-005,files,error,pass,"00_control/decisions.md exists=True, bytes=32986",00_control/decisions.md
+IMPL-005,files,error,pass,"00_control/decisions.md exists=True, bytes=35052",00_control/decisions.md
 IMPL-006,files,error,pass,"10_research/deepseek_api_notes.md exists=True, bytes=1670",10_research/deepseek_api_notes.md
 IMPL-007,files,error,pass,"60_model/configs/llm_task_routing.csv exists=True, bytes=9183",60_model/configs/llm_task_routing.csv
-IMPL-008,files,error,pass,"60_model/src/llm_router.py exists=True, bytes=5457",60_model/src/llm_router.py
+IMPL-008,files,error,pass,"60_model/src/llm_router.py exists=True, bytes=6112",60_model/src/llm_router.py
 IMPL-009,files,error,pass,"60_model/src/auto_gate.py exists=True, bytes=15039",60_model/src/auto_gate.py
 IMPL-010,files,error,pass,"60_model/src/deepseek_review.py exists=True, bytes=9124",60_model/src/deepseek_review.py
 IMPL-011,files,error,pass,"60_model/scripts/run_deepseek_smoke_test.py exists=True, bytes=2390",60_model/scripts/run_deepseek_smoke_test.py
@@ -45,10 +45,10 @@ IMPL-043,files,error,pass,"60_model/scripts/run_deepseek_p4_feedback_draft.py ex
 IMPL-044,files,error,pass,"60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730",60_model/scripts/review_deepseek_p4_feedback_draft.py
 IMPL-045,files,error,pass,"60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628",60_model/scripts/build_p2_method_prototype.py
 IMPL-046,files,error,pass,"60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838",60_model/scripts/review_p2_method_prototype.py
-IMPL-047,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=49214",90_p6_expert_dashboard/app.py
-IMPL-048,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=13569",90_p6_expert_dashboard/static/index.html
-IMPL-049,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=21680",90_p6_expert_dashboard/static/styles.css
-IMPL-050,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=31636",90_p6_expert_dashboard/static/app.js
+IMPL-047,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=80268",90_p6_expert_dashboard/app.py
+IMPL-048,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=14774",90_p6_expert_dashboard/static/index.html
+IMPL-049,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=26162",90_p6_expert_dashboard/static/styles.css
+IMPL-050,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=49226",90_p6_expert_dashboard/static/app.js
 IMPL-051,files,error,pass,"60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104",60_model/llm_runs/deepseek_table_classification_raw.jsonl
 IMPL-052,files,error,pass,"60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172",60_model/llm_runs/deepseek_table_classification_progress.json
 IMPL-053,files,error,pass,"60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288",60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
@@ -127,7 +127,7 @@ IMPL-125,files,error,pass,"40_quality_evidence/p1_quality_report_draft_deepseek.
 IMPL-126,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_generation_report.md exists=True, bytes=528",40_quality_evidence/deepseek_p1_quality_report_generation_report.md
 IMPL-127,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_review.csv exists=True, bytes=1292",40_quality_evidence/deepseek_p1_quality_report_review.csv
 IMPL-128,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_review.md exists=True, bytes=436",40_quality_evidence/deepseek_p1_quality_report_review.md
-IMPL-129,files,error,pass,"30_extraction/scripts/build_p2_real_site_input_index.py exists=True, bytes=23943",30_extraction/scripts/build_p2_real_site_input_index.py
+IMPL-129,files,error,pass,"30_extraction/scripts/build_p2_real_site_input_index.py exists=True, bytes=24110",30_extraction/scripts/build_p2_real_site_input_index.py
 IMPL-130,files,error,pass,"30_extraction/p2_real_site/osen_project_plan_text.txt exists=True, bytes=11090",30_extraction/p2_real_site/osen_project_plan_text.txt
 IMPL-131,files,error,pass,"30_extraction/p2_real_site/osen_project_plan_profile.json exists=True, bytes=1032",30_extraction/p2_real_site/osen_project_plan_profile.json
 IMPL-132,files,error,pass,"30_extraction/p2_real_site/osen_north_cad_pdf_text.txt exists=True, bytes=4204",30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
@@ -221,7 +221,7 @@ IMPL-219,files,error,pass,"50_external_gis/scripts/build_in_park_candidate_revie
 IMPL-220,files,error,pass,"50_external_gis/scripts/build_p0_in_park_followup_worklist.py exists=True, bytes=11952",50_external_gis/scripts/build_p0_in_park_followup_worklist.py
 IMPL-221,files,error,pass,"50_external_gis/scripts/fetch_amap_p0_routes.py exists=True, bytes=12786",50_external_gis/scripts/fetch_amap_p0_routes.py
 IMPL-222,files,error,pass,"50_external_gis/scripts/fetch_amap_p0_entrance_routes.py exists=True, bytes=22422",50_external_gis/scripts/fetch_amap_p0_entrance_routes.py
-IMPL-223,files,error,pass,"50_external_gis/scripts/run_amap_smoke_test.py exists=True, bytes=3464",50_external_gis/scripts/run_amap_smoke_test.py
+IMPL-223,files,error,pass,"50_external_gis/scripts/run_amap_smoke_test.py exists=True, bytes=3721",50_external_gis/scripts/run_amap_smoke_test.py
 IMPL-224,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap.csv exists=True, bytes=120187",70_outputs/processed_tables/poi_supply_candidates_amap.csv
 IMPL-225,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv exists=True, bytes=186806",70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
 IMPL-226,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv exists=True, bytes=247111",70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv

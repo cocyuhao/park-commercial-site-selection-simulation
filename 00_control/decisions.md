@@ -123,3 +123,19 @@
 - 原因：用户希望上传方案和位置资料后生成点位/数据，但项目真实性规则要求 AI 不得直接形成 checked 证据或最终结论。
 - 当前实现：新增 `/api/uploads/{upload_id}/parse` 与 `/api/upload-candidates/{candidate_id}/confirm`；确认后写入 P3 gate input，状态仍为 `needs_review / not_final`。
 - 边界：PDF/CAD 文本解析不能替代 DWG 可信转换，不能生成坐标、面积、图层或动线结论。
+# DEC-061 P6 地图轮廓采用通用公开 polygon / POI 外包线策略
+
+- 日期：2026-06-01
+- 决策：P6 地图搜索不针对单一公园写死。任意地点搜索后，后端先用高德 Web Service 更新中心点与周边 POI，再按“既有 OSM polygon -> Nominatim 实时 polygon -> 高德周边 POI convex hull -> 可见范围估算”的顺序生成地图范围层。
+- 原因：用户明确指出圆形范围和样例化搜索不符合地图产品使用习惯；未来项目地点会变化，系统必须随任意搜索词动态响应。
+- 实现：新增 `map_boundary.json` 缓存；公开 OSM polygon 做 WGS84 -> GCJ-02 近似转换后叠加到高德静态底图；无 polygon 的非公园/片区搜索使用 POI 点云外包线作为讨论范围。
+- 风险：OSM/Nominatim polygon 不是官方规划红线；POI hull 只是讨论外包线，不是边界；GCJ-02 转换存在近似误差。
+- 边界：页面必须标注“公开轮廓/讨论范围外包线 · 待复核”；不得据此输出 DWG 坐标、面积、图层、动线、最终推荐或 checked 证据。
+
+# DEC-062 P6 GitHub 同步与评分口径
+
+- 日期：2026-06-01
+- 决策：团队协作时先从 GitHub 同步伙伴更新，合并后再完成本轮地图/评分修正，验证通过后再推回仓库；不得上传半成品运行缓存或截图。
+- 原因：伙伴已新增数据库层和 simulation dry-run API，P6 不能继续只展示固定 CSV 分数；同时用户要求团队内部通过 GitHub 协作。
+- 实现：保留伙伴 `60_model/db`、`60_model/simulation` 和 `/api/simulation/jobs` 能力；P6 前端显示“实时草案分”，结合 P3 gate、dry-run 缺口、POI 数量和边界状态扣分。
+- 边界：实时草案分只在奥森项目上下文显示；外部地点搜索只作为地图预览，不套用奥森评分。dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测或最终排序。

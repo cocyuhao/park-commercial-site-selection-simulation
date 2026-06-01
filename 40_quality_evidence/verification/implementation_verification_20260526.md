@@ -36,10 +36,10 @@
 - `IMPL-002` `pass` `files` 00_control/credential_handoff.md exists=True, bytes=1300
 - `IMPL-003` `pass` `files` 00_control/model_orchestration.md exists=True, bytes=5652
 - `IMPL-004` `pass` `files` 00_control/plugin_routing.md exists=True, bytes=5359
-- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=32986
+- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=35052
 - `IMPL-006` `pass` `files` 10_research/deepseek_api_notes.md exists=True, bytes=1670
 - `IMPL-007` `pass` `files` 60_model/configs/llm_task_routing.csv exists=True, bytes=9183
-- `IMPL-008` `pass` `files` 60_model/src/llm_router.py exists=True, bytes=5457
+- `IMPL-008` `pass` `files` 60_model/src/llm_router.py exists=True, bytes=6112
 - `IMPL-009` `pass` `files` 60_model/src/auto_gate.py exists=True, bytes=15039
 - `IMPL-010` `pass` `files` 60_model/src/deepseek_review.py exists=True, bytes=9124
 - `IMPL-011` `pass` `files` 60_model/scripts/run_deepseek_smoke_test.py exists=True, bytes=2390
@@ -78,10 +78,10 @@
 - `IMPL-044` `pass` `files` 60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730
 - `IMPL-045` `pass` `files` 60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628
 - `IMPL-046` `pass` `files` 60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838
-- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=49214
-- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=13569
-- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=21680
-- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=31636
+- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=80268
+- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=14774
+- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=26162
+- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=49226
 - `IMPL-051` `pass` `files` 60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104
 - `IMPL-052` `pass` `files` 60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172
 - `IMPL-053` `pass` `files` 60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288
@@ -160,7 +160,7 @@
 - `IMPL-126` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_generation_report.md exists=True, bytes=528
 - `IMPL-127` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_review.csv exists=True, bytes=1292
 - `IMPL-128` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_review.md exists=True, bytes=436
-- `IMPL-129` `pass` `files` 30_extraction/scripts/build_p2_real_site_input_index.py exists=True, bytes=23943
+- `IMPL-129` `pass` `files` 30_extraction/scripts/build_p2_real_site_input_index.py exists=True, bytes=24110
 - `IMPL-130` `pass` `files` 30_extraction/p2_real_site/osen_project_plan_text.txt exists=True, bytes=11090
 - `IMPL-131` `pass` `files` 30_extraction/p2_real_site/osen_project_plan_profile.json exists=True, bytes=1032
 - `IMPL-132` `pass` `files` 30_extraction/p2_real_site/osen_north_cad_pdf_text.txt exists=True, bytes=4204
@@ -254,7 +254,7 @@
 - `IMPL-220` `pass` `files` 50_external_gis/scripts/build_p0_in_park_followup_worklist.py exists=True, bytes=11952
 - `IMPL-221` `pass` `files` 50_external_gis/scripts/fetch_amap_p0_routes.py exists=True, bytes=12786
 - `IMPL-222` `pass` `files` 50_external_gis/scripts/fetch_amap_p0_entrance_routes.py exists=True, bytes=22422
-- `IMPL-223` `pass` `files` 50_external_gis/scripts/run_amap_smoke_test.py exists=True, bytes=3464
+- `IMPL-223` `pass` `files` 50_external_gis/scripts/run_amap_smoke_test.py exists=True, bytes=3721
 - `IMPL-224` `pass` `files` 70_outputs/processed_tables/poi_supply_candidates_amap.csv exists=True, bytes=120187
 - `IMPL-225` `pass` `files` 70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv exists=True, bytes=186806
 - `IMPL-226` `pass` `files` 70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv exists=True, bytes=247111

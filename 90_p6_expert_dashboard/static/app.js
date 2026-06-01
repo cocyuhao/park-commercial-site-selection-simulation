@@ -7,8 +7,17 @@ const state = {
   currentView: "overview",
   mapMode: "risk",
   mapZoom: 1,
+  mapNativeZoom: 15,
+  mapCenter: null,
   mapPan: { x: 0, y: 0 },
   mapDragging: null,
+  mapSuggestTimer: null,
+  mapAutoLocateTimer: null,
+  mapTipsSeq: 0,
+  mapContextHistory: [],
+  mapSelectedOnly: false,
+  mapAddMode: false,
+  manualNodes: [],
   lastAction: "",
   pendingAttachments: [],
 };
@@ -49,8 +58,36 @@ function gateTitle(domain) {
 }
 
 function scoreOf(node) {
-  const num = Number(node?.discussion_score || 0);
-  return Number.isFinite(num) ? num : 0;
+  const base = Number(node?.discussion_score || 0);
+  const raw = Number.isFinite(base) ? base : 50;
+  const context = state.data?.amap?.map_context || {};
+  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
+  const isOsen = contextText.includes("奥森") || contextText.includes("奥林匹克森林");
+  if (!isOsen) return 0;
+  const gates = state.data?.p3_gates || [];
+  const blockedGateCount = gates.filter((gate) => {
+    const status = String(gate.current_gate_status || "");
+    return status.includes("blocked") || status.includes("pending") || status.includes("not_ready");
+  }).length;
+  const simRows = state.latestSimulationResults?.items || [];
+  const simMissing = simRows.reduce((sum, row) => sum + Number(row.missing_business_field_count || 0), 0);
+  const simBlocked = Number(simRows[0]?.blocked_gate_count || blockedGateCount || 0);
+  const poiCount = Number(state.data?.amap?.status?.point_count || 0);
+  const boundaryStatus = String(state.data?.amap?.boundary_status || "");
+  let penalty = 0;
+  penalty += Math.min(30, simBlocked * 5);
+  penalty += Math.min(18, Math.ceil(simMissing / 8));
+  if (!simRows.length) penalty += 8;
+  if (poiCount < 20) penalty += 6;
+  if (boundaryStatus.includes("estimated")) penalty += 8;
+  return Math.max(0, Math.min(100, Math.round(raw - penalty)));
+}
+
+function scoreText(node) {
+  const context = state.data?.amap?.map_context || {};
+  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
+  if (!(contextText.includes("奥森") || contextText.includes("奥林匹克森林"))) return "外部预览";
+  return `${scoreOf(node)} 分`;
 }
 
 function currentNode() {
@@ -128,8 +165,11 @@ function setView(view) {
 
 function priorityLabel(node) {
   const score = scoreOf(node);
-  if (score >= 75) return ["优先讨论", "good"];
-  if (score >= 65) return ["需要补证", "warn"];
+  const context = state.data?.amap?.map_context || {};
+  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
+  if (!(contextText.includes("奥森") || contextText.includes("奥林匹克森林"))) return ["仅地图预览", "fail"];
+  if (score >= 70) return ["优先讨论", "good"];
+  if (score >= 55) return ["需补证再议", "warn"];
   return ["暂缓讨论", "fail"];
 }
 
@@ -140,7 +180,7 @@ function renderOverview() {
     return `
       <button class="overview-node ${node.node_id === state.selectedNodeId ? "active" : ""}" data-node-id="${esc(node.node_id)}" data-view="nodes">
         <b>${esc(shortId(node.node_id))} ${esc(node.node_name)}</b>
-        <span class="${cls}">${label} · ${esc(node.discussion_score || "-")} 分</span>
+        <span class="${cls}">${label} · ${esc(scoreText(node))}</span>
       </button>
     `;
   }).join("");
@@ -236,7 +276,7 @@ function renderNodes() {
           <b>${esc(node.node_name)}</b>
           <em>${esc(node.primary_positioning || "待补场景描述")}</em>
         </span>
-        <span class="node-score ${cls}">${esc(node.discussion_score || "-")}</span>
+        <span class="node-score ${cls}">${esc(scoreText(node))}</span>
         <span class="node-status ${cls}">${label}</span>
       </button>
     `;
@@ -256,7 +296,7 @@ function renderDetail() {
   $("#detailBody").innerHTML = `
     <div class="detail-top">
       <div class="metric"><span>面积</span><b>${esc(node.area_sqm)} m²</b></div>
-      <div class="metric"><span>讨论分</span><b>${esc(node.discussion_score || "-")}</b></div>
+      <div class="metric"><span>实时草案分</span><b>${esc(scoreText(node))}</b></div>
       <div class="metric"><span>边界</span><b>反馈草案</b></div>
     </div>
     <section class="detail-section">
@@ -301,58 +341,162 @@ function renderMap() {
   const amap = state.data.amap || {};
   const status = amap.status || {};
   const context = amap.map_context || {};
+  const contextName = `${context.keyword || ""}${context.matched_name || ""}`;
+  const isOsenContext = contextName.includes("奥森") || contextName.includes("奥林匹克森林");
   $("#amapStatusText").textContent = status.web_service_key_available
-    ? `高德只在后端读取；目标：${context.matched_name || context.keyword || "默认项目"}；已加载 ${status.point_count || 0} 条 POI`
+    ? `高德后端读取；目标：${context.matched_name || context.keyword || "默认项目"}；${isOsenContext ? "奥森项目上下文" : "外部地点仅作地图预览，不套用奥森评分"}；已加载 ${status.point_count || 0} 条 POI`
     : "未检测到高德 Key；显示本地示意层；前端不会暴露 Key";
   if ($("#mapSearchInput") && !$("#mapSearchInput").value) {
-    $("#mapSearchInput").placeholder = context.keyword ? `当前：${context.keyword}` : "输入公园/地址，刷新高德底图";
+    $("#mapSearchInput").placeholder = context.keyword ? `搜索地点、拼音或地址 · 当前：${context.keyword}` : "搜索地点、拼音或地址";
   }
 
   const img = $("#amapBaseMap");
   $("#mapCanvas").classList.add("loading");
   img.onload = () => $("#mapCanvas").classList.remove("loading");
-  img.src = `${amap.static_map_url}?t=${Date.now()}`;
+  state.mapCenter = {
+    lon: Number(context.longitude || 116.392159),
+    lat: Number(context.latitude || 40.018635),
+  };
+  state.mapNativeZoom = nativeZoomFromBounds(amap.map_bounds || {});
+  img.src = mapImageUrl();
   img.onerror = () => {
     $("#amapStatusText").textContent = "地图底图加载失败，仅保留节点示意层";
   };
 
   renderPoiLayer(amap.supply_points || []);
+  renderRangeLayer();
 
-  const fixedPositions = [
-    [55, 45], [72, 55], [35, 36], [27, 64], [50, 70], [20, 76],
-  ];
-  $("#mapNodes").innerHTML = (state.data.nodes || []).map((node, index) => {
+  const contextNodes = state.mapSelectedOnly
+    ? (amap.context_nodes || []).filter((item) => item.node_id === state.selectedNodeId)
+    : (amap.context_nodes || []);
+  $("#mapNodes").innerHTML = contextNodes.map((mapNode, index) => {
+    const node = (state.data.nodes || []).find((item) => item.node_id === mapNode.node_id) || mapNode;
     const [, cls] = priorityLabel(node);
-    const pos = fixedPositions[index] || [node.schematic_position?.x || 50, node.schematic_position?.y || 50];
+    const pos = projectLonLat(mapNode.longitude, mapNode.latitude);
     return `
       <button class="map-pin ${cls} ${node.node_id === active?.node_id ? "active" : ""}" data-node-id="${esc(node.node_id)}" style="left:${pos[0]}%;top:${pos[1]}%">
         ${esc(shortId(node.node_id))}
       </button>
     `;
-  }).join("");
+  }).join("") + state.manualNodes.map((node, index) => `
+    <button class="map-pin manual" style="left:${node.x}%;top:${node.y}%" title="人工新增待复核节点">M-${index + 1}</button>
+  `).join("");
 
   $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
+  if (state.mapAddMode) $("#mapCanvas").classList.add("add-mode");
   applyMapTransform();
 }
 
 function applyMapTransform() {
   const transform = `translate(${state.mapPan.x}px, ${state.mapPan.y}px) scale(${state.mapZoom})`;
-  ["#amapBaseMap", "#amapPoiLayer", "#mapNodes"].forEach((selector) => {
+  ["#amapBaseMap", "#mapRangeLayer", "#amapPoiLayer", "#mapNodes"].forEach((selector) => {
     const el = $(selector);
     if (el) el.style.transform = transform;
   });
 }
 
+function nativeZoomFromBounds(bounds = {}) {
+  const lonSpan = Math.max(Number(bounds.max_lon) - Number(bounds.min_lon), 0.001);
+  const latSpan = Math.max(Number(bounds.max_lat) - Number(bounds.min_lat), 0.001);
+  const span = Math.max(lonSpan, latSpan);
+  if (!Number.isFinite(span)) return 15;
+  if (span > 0.09) return 12;
+  if (span > 0.045) return 13;
+  if (span > 0.022) return 14;
+  if (span > 0.011) return 15;
+  return 16;
+}
+
+function mapImageUrl() {
+  const center = state.mapCenter || {};
+  const params = new URLSearchParams({
+    t: String(Date.now()),
+    zoom: String(Math.max(3, Math.min(20, Math.round(state.mapNativeZoom || 15)))),
+  });
+  if (Number.isFinite(center.lon) && Number.isFinite(center.lat)) {
+    params.set("lon", String(center.lon));
+    params.set("lat", String(center.lat));
+  }
+  return `/api/amap/static-map?${params.toString()}`;
+}
+
+function refreshMapImage() {
+  const img = $("#amapBaseMap");
+  if (!img) return;
+  $("#mapCanvas").classList.add("loading");
+  img.src = mapImageUrl();
+}
+
 function changeMapZoom(delta) {
-  state.mapZoom = Math.max(1, Math.min(3.5, Number((state.mapZoom + delta).toFixed(2))));
-  if (state.mapZoom === 1) state.mapPan = { x: 0, y: 0 };
+  state.mapNativeZoom = Math.max(3, Math.min(20, Number((state.mapNativeZoom + delta).toFixed(2))));
+  state.mapZoom = 1;
+  state.mapPan = { x: 0, y: 0 };
   applyMapTransform();
+  refreshMapImage();
 }
 
 function resetMapView() {
   state.mapZoom = 1;
   state.mapPan = { x: 0, y: 0 };
+  state.mapNativeZoom = nativeZoomFromBounds(state.data?.amap?.map_bounds || {});
   applyMapTransform();
+  refreshMapImage();
+}
+
+function shouldAutoLocateMap(q, item) {
+  const text = q.trim().toLowerCase();
+  if (!item?.longitude || !item?.latitude) return false;
+  if (["aosen", "osen", "as", "dongba", "db"].includes(text)) return true;
+  const name = String(item.name || "").toLowerCase();
+  return text.length >= 3 && (name.includes(text) || text.includes(name));
+}
+
+function panMapNative(dx, dy) {
+  const center = state.mapCenter;
+  if (!center) return;
+  const factor = 360 / (256 * Math.pow(2, state.mapNativeZoom || 15));
+  const latFactor = factor * Math.max(0.3, Math.cos((center.lat * Math.PI) / 180));
+  state.mapCenter = {
+    lon: center.lon - dx * latFactor,
+    lat: center.lat + dy * factor,
+  };
+  state.mapZoom = 1;
+  state.mapPan = { x: 0, y: 0 };
+  applyMapTransform();
+  refreshMapImage();
+}
+
+function projectLonLat(lonValue, latValue) {
+  const bounds = state.data?.amap?.map_bounds || {};
+  const lon = Number(lonValue);
+  const lat = Number(latValue);
+  const minLon = Number(bounds.min_lon);
+  const maxLon = Number(bounds.max_lon);
+  const minLat = Number(bounds.min_lat);
+  const maxLat = Number(bounds.max_lat);
+  if (![lon, lat, minLon, maxLon, minLat, maxLat].every(Number.isFinite) || maxLon === minLon || maxLat === minLat) {
+    return [50, 50];
+  }
+  const x = ((lon - minLon) / (maxLon - minLon)) * 100;
+  const y = (1 - ((lat - minLat) / (maxLat - minLat))) * 100;
+  return [Math.max(-20, Math.min(120, x)), Math.max(-20, Math.min(120, y))];
+}
+
+function renderRangeLayer() {
+  const context = state.data?.amap?.map_context || {};
+  const polygon = state.data?.amap?.boundary_polygon || [];
+  const points = polygon.map((point) => projectLonLat(point.longitude, point.latitude));
+  const polygonPoints = points.map(([x, y]) => `${x},${y}`).join(" ");
+  const status = state.data?.amap?.boundary_status || "estimated_range_needs_review";
+  const source = state.data?.amap?.boundary_source || "computed_from_visible_points";
+  const isEstimated = status.includes("estimated") || source.includes("computed") || source.includes("convex hull");
+  const label = isEstimated ? "讨论范围外包线 · 待复核" : "公开轮廓 · 待复核";
+  $("#mapRangeLayer").innerHTML = `
+    <svg class="range-shape ${isEstimated ? "estimated" : "public-polygon"}" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <polygon points="${esc(polygonPoints)}"></polygon>
+    </svg>
+    <div class="range-label">${esc(context.matched_name || context.keyword || "当前范围")} · ${esc(label)}</div>
+  `;
 }
 
 async function renderIntegrationStatus() {
@@ -384,37 +528,33 @@ async function renderIntegrationStatus() {
 }
 
 function renderPoiLayer(points) {
-  if (!points.length) {
+  const visiblePoints = state.mapSelectedOnly
+    ? []
+    : points;
+  if (!visiblePoints.length) {
     $("#amapPoiLayer").innerHTML = "";
     return;
   }
-  const lons = points.map((p) => Number(p.longitude)).filter(Number.isFinite);
-  const lats = points.map((p) => Number(p.latitude)).filter(Number.isFinite);
-  const minLon = Math.min(...lons), maxLon = Math.max(...lons);
-  const minLat = Math.min(...lats), maxLat = Math.max(...lats);
-  const lonPad = Math.max((maxLon - minLon) * 0.18, 0.01);
-  const latPad = Math.max((maxLat - minLat) * 0.18, 0.01);
-  $("#amapPoiLayer").innerHTML = points.slice(0, 60).map((p) => {
-    const lon = Number(p.longitude);
-    const lat = Number(p.latitude);
-    const x = ((lon - minLon + lonPad) / (maxLon - minLon + lonPad * 2)) * 100;
-    const y = (1 - ((lat - minLat + latPad) / (maxLat - minLat + latPad * 2))) * 100;
+  $("#amapPoiLayer").innerHTML = visiblePoints.slice(0, 60).map((p) => {
+    const [x, y] = projectLonLat(p.longitude, p.latitude);
     const inside = p.boundary_filter_status === "inside_osm_polygon";
     return `<span class="poi-dot ${inside ? "inside" : ""}" style="left:${x}%;top:${y}%" title="${esc(p.poi_name)} · ${esc(p.output_status)}"></span>`;
   }).join("");
 }
 
 function renderMapSide() {
-  const node = currentNode();
+  const contextNode = (state.data?.amap?.context_nodes || []).find((item) => item.node_id === state.selectedNodeId);
+  const node = contextNode || currentNode();
   if (!node) return;
   const [label, cls] = priorityLabel(node);
   $("#mapSideDetail").innerHTML = `
     <h3>${esc(shortId(node.node_id))} ${esc(node.node_name)}</h3>
-    <div class="map-score ${cls}">${label} · ${esc(node.discussion_score || "-")} 分</div>
+    <div class="map-score ${cls}">${label} · ${esc(scoreText(node))}</div>
     <p>${esc(node.primary_positioning || node.scene_assumptions || "待补场景")}</p>
-    <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm)} m²</b></div>
+    <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm === "待测" ? "待测" : `${node.area_sqm} m²`)}</b></div>
     <div class="mini-kv"><span>状态</span><b>待复核 / 非最终</b></div>
     <div class="mini-kv"><span>地图边界</span><b>示意层，非 DWG</b></div>
+    ${node.source_node_name ? `<div class="mini-kv"><span>来源草案</span><b>${esc(node.source_node_name)}</b></div>` : ""}
   `;
 }
 
@@ -615,11 +755,13 @@ async function confirmCandidate(candidateId) {
 }
 
 async function updateMapContext(event) {
-  event.preventDefault();
+  if (event) event.preventDefault();
   const input = $("#mapSearchInput");
   const keyword = input.value.trim();
   if (!keyword) return;
   state.lastAction = `正在定位：${keyword}`;
+  $("#mapCanvas").classList.add("loading");
+  $("#mapSuggest").innerHTML = "";
   renderMeta();
   const response = await fetch("/api/amap/context", {
     method: "POST",
@@ -631,11 +773,111 @@ async function updateMapContext(event) {
     throw new Error(`地图定位失败：${text}`);
   }
   const data = await response.json();
+  pushMapHistory(state.data?.amap?.map_context);
   state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
   input.value = "";
   resetMapView();
   await loadDashboard();
   setView("map");
+}
+
+async function updateMapContextFromSuggestion(tip) {
+  $("#mapSearchInput").value = tip.name;
+  $("#mapSuggest").innerHTML = "";
+  state.lastAction = `正在定位：${tip.name}`;
+  $("#mapCanvas").classList.add("loading");
+  renderMeta();
+  const response = await fetch("/api/amap/context", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      keyword: tip.name,
+      matched_name: tip.name,
+      address: tip.address || tip.district || "",
+      longitude: tip.longitude || "",
+      latitude: tip.latitude || "",
+    }),
+  });
+  if (!response.ok) throw new Error(`地图定位失败：${await response.text()}`);
+  const data = await response.json();
+  pushMapHistory(state.data?.amap?.map_context);
+  state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
+  $("#mapSearchInput").value = "";
+  resetMapView();
+  await loadDashboard();
+  setView("map");
+}
+
+async function fetchMapTips() {
+  const q = $("#mapSearchInput").value.trim();
+  if (!q) {
+    $("#mapSuggest").innerHTML = "";
+    return;
+  }
+  const seq = ++state.mapTipsSeq;
+  $("#mapSuggest").innerHTML = `<div class="map-suggest-empty">正在搜索“${esc(q)}”……</div>`;
+  let items = [];
+  try {
+    const response = await fetch(`/api/amap/tips?q=${encodeURIComponent(q)}`, { cache: "no-store" });
+    const data = await response.json();
+    items = Array.isArray(data.items) ? data.items : [];
+  } catch (error) {
+    state.lastAction = `地图提示暂未返回：${error.message}`;
+    renderMeta();
+  }
+  if (seq !== state.mapTipsSeq) return;
+  if (!items.length) {
+    items = [{
+      name: q,
+      district: "按当前输入定位",
+      address: "点击后由高德地点检索继续解析",
+      longitude: "",
+      latitude: "",
+      output_status: "needs_review",
+    }];
+  }
+  $("#mapSuggest").innerHTML = items.length ? items.map((item) => `
+    <button type="button" class="map-suggest-item"
+      data-tip='${esc(JSON.stringify(item))}'>
+      <b>${esc(item.name)}</b>
+      <span>${esc(item.district || "")} ${esc(item.address || "")}</span>
+    </button>
+  `).join("") : `<div class="map-suggest-empty">没有直接结果，换个关键词、拼音或更完整地址。</div>`;
+  clearTimeout(state.mapAutoLocateTimer);
+  if (shouldAutoLocateMap(q, items[0])) {
+    state.mapAutoLocateTimer = setTimeout(() => {
+      if ($("#mapSearchInput").value.trim() === q) {
+        updateMapContextFromSuggestion(items[0]).catch((error) => {
+          state.lastAction = error.message;
+          renderMeta();
+        });
+      }
+    }, 850);
+  }
+}
+
+function pushMapHistory(context) {
+  if (!context?.keyword) return;
+  const last = state.mapContextHistory[state.mapContextHistory.length - 1];
+  if (last && last.keyword === context.keyword && last.longitude === context.longitude && last.latitude === context.latitude) return;
+  state.mapContextHistory.push({ ...context });
+  state.mapContextHistory = state.mapContextHistory.slice(-8);
+}
+
+async function undoMapContext() {
+  const previous = state.mapContextHistory.pop();
+  if (!previous) {
+    state.lastAction = "暂无可撤回的地图搜索";
+    renderMeta();
+    return;
+  }
+  $("#mapSearchInput").value = previous.keyword || previous.matched_name || "";
+  await updateMapContextFromSuggestion({
+    name: previous.keyword || previous.matched_name,
+    address: previous.address,
+    longitude: previous.longitude,
+    latitude: previous.latitude,
+  });
 }
 
 async function saveGateNote(domain) {
@@ -818,13 +1060,20 @@ function bindEvents() {
     });
     const refreshSimulationBtn = event.target.closest("#refreshSimulationBtn");
     if (refreshSimulationBtn) loadSimulationJobs().then(() => {
-      state.lastAction = "仿真任务状态已刷新";
+      state.lastAction = "?????????";
       renderSimulationPanel();
       renderMeta();
     }).catch((error) => {
       state.lastAction = error.message;
       renderMeta();
     });
+    const suggestBtn = event.target.closest(".map-suggest-item");
+    if (suggestBtn) {
+      updateMapContextFromSuggestion(JSON.parse(suggestBtn.dataset.tip)).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+    }
     const removeAttachmentBtn = event.target.closest("[data-remove-attachment]");
     if (removeAttachmentBtn) {
       state.pendingAttachments.splice(Number(removeAttachmentBtn.dataset.removeAttachment), 1);
@@ -867,27 +1116,65 @@ function bindEvents() {
       renderMeta();
     });
   });
+  $("#mapSearchInput").addEventListener("input", () => {
+    clearTimeout(state.mapSuggestTimer);
+    state.mapSuggestTimer = setTimeout(() => fetchMapTips().catch(() => {}), 250);
+  });
   $("#mapZoomIn").addEventListener("click", () => changeMapZoom(0.25));
   $("#mapZoomOut").addEventListener("click", () => changeMapZoom(-0.25));
   $("#mapReset").addEventListener("click", resetMapView);
+  $("#mapUndo").addEventListener("click", () => undoMapContext().catch((error) => {
+    state.lastAction = error.message;
+    renderMeta();
+  }));
+  $("#mapSelectedOnly").addEventListener("click", () => {
+    state.mapSelectedOnly = !state.mapSelectedOnly;
+    $("#mapSelectedOnly").classList.toggle("active", state.mapSelectedOnly);
+    state.lastAction = state.mapSelectedOnly ? "已切换为只看所选节点" : "已恢复显示全部节点和 POI";
+    renderMeta();
+    renderMap();
+  });
+  $("#mapAddNode").addEventListener("click", () => {
+    state.mapAddMode = !state.mapAddMode;
+    state.lastAction = state.mapAddMode ? "设点模式：在地图上点击新增待复核节点" : "已退出设点模式";
+    renderMeta();
+    renderMap();
+  });
   $("#mapCanvas").addEventListener("wheel", (event) => {
     event.preventDefault();
     changeMapZoom(event.deltaY < 0 ? 0.15 : -0.15);
   }, { passive: false });
   $("#mapCanvas").addEventListener("pointerdown", (event) => {
     if (event.target.closest("button")) return;
+    if (state.mapAddMode) {
+      const rect = $("#mapCanvas").getBoundingClientRect();
+      state.manualNodes.push({
+        x: Number((((event.clientX - rect.left) / rect.width) * 100).toFixed(2)),
+        y: Number((((event.clientY - rect.top) / rect.height) * 100).toFixed(2)),
+      });
+      state.mapAddMode = false;
+      state.lastAction = "已新增 1 个待复核人工节点";
+      renderMeta();
+      renderMap();
+      return;
+    }
     $("#mapCanvas").setPointerCapture(event.pointerId);
     state.mapDragging = { id: event.pointerId, x: event.clientX, y: event.clientY, pan: { ...state.mapPan } };
   });
   $("#mapCanvas").addEventListener("pointermove", (event) => {
-    if (!state.mapDragging || state.mapDragging.id !== event.pointerId || state.mapZoom <= 1) return;
+    if (!state.mapDragging || state.mapDragging.id !== event.pointerId) return;
     state.mapPan = {
       x: state.mapDragging.pan.x + event.clientX - state.mapDragging.x,
       y: state.mapDragging.pan.y + event.clientY - state.mapDragging.y,
     };
     applyMapTransform();
   });
-  $("#mapCanvas").addEventListener("pointerup", () => { state.mapDragging = null; });
+  $("#mapCanvas").addEventListener("pointerup", () => {
+    if (state.mapDragging && (Math.abs(state.mapPan.x) > 6 || Math.abs(state.mapPan.y) > 6)) {
+      panMapNative(state.mapPan.x, state.mapPan.y);
+    }
+    state.mapDragging = null;
+  });
   $("#mapCanvas").addEventListener("pointercancel", () => { state.mapDragging = null; });
 }
 

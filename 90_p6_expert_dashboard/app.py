@@ -4,6 +4,7 @@ import ast
 import csv
 import html
 import json
+import math
 import os
 import re
 import zipfile
@@ -32,8 +33,22 @@ UPLOAD_CANDIDATES_FILE = CACHE_DIR / "upload_parse_candidates.json"
 GATE_INPUT_FILE = CACHE_DIR / "gate_inputs.json"
 MAP_CONTEXT_FILE = CACHE_DIR / "map_context.json"
 MAP_CONTEXT_POI_FILE = CACHE_DIR / "map_context_pois.json"
+MAP_BOUNDARY_FILE = CACHE_DIR / "map_boundary.json"
 AMAP_STATIC_CACHE = CACHE_DIR / "amap_static_map.png"
+AMAP_TILE_CACHE_DIR = CACHE_DIR / "amap_static_tiles"
 AMAP_STATIC_STATUS_FILE = CACHE_DIR / "amap_static_map_status.json"
+KNOWN_OSM_BOUNDARY_FILE = ROOT / "50_external_gis" / "boundaries" / "osm_park_boundaries.geojson"
+MAP_KEYWORD_ALIASES = {
+    "aosen": "北京奥森",
+    "as": "北京奥森",
+    "osen": "北京奥森",
+    "db": "东坝公园",
+    "dongba": "东坝公园",
+    "cygy": "北京朝阳公园",
+    "chaoyang": "北京朝阳公园",
+    "yhy": "颐和园",
+    "yiheyuan": "颐和园",
+}
 PROCESSED = ROOT / "70_outputs" / "processed_tables"
 SRC_DIR = ROOT / "60_model" / "src"
 DB_DIR = ROOT / "60_model" / "db"
@@ -99,6 +114,11 @@ class ConfirmCandidateRequest(BaseModel):
 
 class MapContextRequest(BaseModel):
     keyword: str
+    longitude: str | None = None
+    latitude: str | None = None
+    matched_name: str | None = None
+    address: str | None = None
+    radius_m: int = 1200
 
 
 class SimulationJobRequest(BaseModel):
@@ -150,6 +170,15 @@ def load_dashboard() -> dict[str, Any]:
     assumptions = read_csv_rows(PROCESSED / "p2_business_scene_assumption_pool.csv")
     gaps = read_csv_rows(PROCESSED / "p2_input_gap_register.csv")
     amap_supply = load_amap_supply()
+    map_context = load_map_context()
+    map_boundary = load_map_boundary_for_context(map_context) or load_known_osm_boundary(map_context)
+    if map_boundary and not load_map_boundary_for_context(map_context):
+        save_map_boundary(map_boundary)
+    estimated_boundary = estimated_boundary_from_points(amap_supply, map_context) if not map_boundary else None
+    map_bounds = boundary_bounds(map_boundary or estimated_boundary) if (map_boundary or estimated_boundary) else poi_bounds(amap_supply, map_context)
+    boundary_polygon = boundary_points(map_boundary) if map_boundary else boundary_polygon_from_bounds(map_bounds)
+    if estimated_boundary and not map_boundary:
+        boundary_polygon = boundary_points(estimated_boundary)
 
     priority_by_id = {row.get("node_id", ""): row for row in priorities}
     request_by_node: dict[str, list[dict[str, Any]]] = {}
@@ -217,7 +246,12 @@ def load_dashboard() -> dict[str, Any]:
             "status": amap_status(amap_supply),
             "supply_points": amap_supply,
             "static_map_url": "/api/amap/static-map",
-            "map_context": load_map_context(),
+            "map_context": map_context,
+            "map_bounds": map_bounds,
+            "boundary_polygon": boundary_polygon,
+            "boundary_status": (map_boundary or estimated_boundary or {}).get("boundary_status", "estimated_range_needs_review"),
+            "boundary_source": (map_boundary or estimated_boundary or {}).get("source", "computed_from_visible_points"),
+            "context_nodes": build_context_nodes(merged_nodes, map_context),
         },
         "uploads": load_upload_index(),
         "upload_candidates": load_upload_candidates(),
@@ -322,6 +356,41 @@ def fetch_amap_around_pois(lon: str, lat: str, key: str, limit: int = 50) -> lis
     return collected
 
 
+def build_context_nodes(base_nodes: list[dict[str, Any]], context: dict[str, Any]) -> list[dict[str, Any]]:
+    context_text = f"{context.get('keyword', '')}{context.get('matched_name', '')}"
+    if "奥森" not in context_text and "奥林匹克森林" not in context_text:
+        return []
+    boundary = load_map_boundary_for_context(context) or load_known_osm_boundary(context) or estimated_boundary_from_points(load_map_context_pois(), context)
+    bounds = boundary_bounds(boundary) if boundary else map_bounds_from_context(context)
+    lon_span = bounds["max_lon"] - bounds["min_lon"]
+    lat_span = bounds["max_lat"] - bounds["min_lat"]
+    layout = [
+        (-0.30, -0.18), (0.18, -0.28), (-0.02, 0.02),
+        (-0.26, 0.26), (0.24, 0.20), (0.00, 0.34),
+    ]
+    nodes: list[dict[str, Any]] = []
+    for index, node in enumerate(base_nodes):
+        dx, dy = layout[index % len(layout)]
+        lon = float(context.get("longitude") or 116.391365) + dx * lon_span
+        lat = float(context.get("latitude") or 40.016194) + dy * lat_span
+        nodes.append(
+            {
+                "node_id": node.get("node_id"),
+                "node_name": f"{context.get('matched_name') or context.get('keyword') or '当前地点'}候选点 {index + 1}",
+                "source_node_name": node.get("node_name"),
+                "longitude": f"{lon:.6f}",
+                "latitude": f"{lat:.6f}",
+                "discussion_score": str(node.get("discussion_score") or ""),
+                "area_sqm": "待测",
+                "primary_positioning": "基于当前地图上下文生成的待复核候选点，需上传图纸/现场资料后确认。",
+                "review_status": "待人工确认",
+                "source": "context_layout_not_dwg",
+                "output_status": "needs_review",
+            }
+        )
+    return nodes
+
+
 def amap_status(points: list[dict[str, Any]]) -> dict[str, Any]:
     load_local_env()
     has_key = bool(os.environ.get("AMAP_WEB_SERVICE_KEY"))
@@ -368,6 +437,13 @@ def amap_center() -> tuple[str, str]:
     return "116.392159", "40.018635"
 
 
+def normalize_zoom(value: Any, fallback: str = "15") -> str:
+    zoom = safe_float(value)
+    if zoom is None:
+        zoom = safe_float(fallback) or 15
+    return str(int(max(3, min(20, round(zoom)))))
+
+
 def load_map_context() -> dict[str, Any]:
     if MAP_CONTEXT_FILE.exists():
         try:
@@ -380,6 +456,7 @@ def load_map_context() -> dict[str, Any]:
         "keyword": "北京奥林匹克森林公园",
         "longitude": "",
         "latitude": "",
+        "radius_m": 1200,
         "source": "default_project_context",
         "output_status": "needs_review",
         "not_final": True,
@@ -389,6 +466,407 @@ def load_map_context() -> dict[str, Any]:
 def save_map_context(row: dict[str, Any]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     MAP_CONTEXT_FILE.write_text(json.dumps(row, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def safe_float(value: Any) -> float | None:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def context_boundary_key(context: dict[str, Any]) -> str:
+    keyword = str(context.get("keyword") or "").strip()
+    matched = str(context.get("matched_name") or "").strip()
+    lon = str(context.get("longitude") or "").strip()
+    lat = str(context.get("latitude") or "").strip()
+    return "|".join([keyword, matched, lon, lat])
+
+
+def load_map_boundary_for_context(context: dict[str, Any]) -> dict[str, Any] | None:
+    if not MAP_BOUNDARY_FILE.exists():
+        return None
+    try:
+        data = json.loads(MAP_BOUNDARY_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    if not isinstance(data, dict) or data.get("context_key") != context_boundary_key(context):
+        return None
+    if not boundary_points(data):
+        return None
+    return data
+
+
+def save_map_boundary(row: dict[str, Any] | None) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    if row is None:
+        MAP_BOUNDARY_FILE.write_text(json.dumps({}, ensure_ascii=False, indent=2), encoding="utf-8")
+        return
+    MAP_BOUNDARY_FILE.write_text(json.dumps(row, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def boundary_points(boundary: dict[str, Any] | None) -> list[dict[str, str]]:
+    if not boundary:
+        return []
+    points = boundary.get("points_gcj02") or boundary.get("points") or []
+    clean: list[dict[str, str]] = []
+    for point in points:
+        lon = safe_float(point.get("longitude") if isinstance(point, dict) else None)
+        lat = safe_float(point.get("latitude") if isinstance(point, dict) else None)
+        if lon is not None and lat is not None:
+            clean.append({"longitude": f"{lon:.6f}", "latitude": f"{lat:.6f}"})
+    return clean
+
+
+def boundary_bounds(boundary: dict[str, Any]) -> dict[str, float]:
+    points = boundary_points(boundary)
+    lons = [float(point["longitude"]) for point in points]
+    lats = [float(point["latitude"]) for point in points]
+    min_lon, max_lon = min(lons), max(lons)
+    min_lat, max_lat = min(lats), max(lats)
+    lon_pad = max((max_lon - min_lon) * 0.08, 0.0015)
+    lat_pad = max((max_lat - min_lat) * 0.08, 0.0015)
+    return {
+        "min_lon": min_lon - lon_pad,
+        "max_lon": max_lon + lon_pad,
+        "min_lat": min_lat - lat_pad,
+        "max_lat": max_lat + lat_pad,
+    }
+
+
+def static_zoom_for_bounds(bounds: dict[str, float]) -> str:
+    lon_span = max(bounds["max_lon"] - bounds["min_lon"], 0.001)
+    lat_span = max(bounds["max_lat"] - bounds["min_lat"], 0.001)
+    span = max(lon_span, lat_span)
+    if span > 0.09:
+        return "12"
+    if span > 0.045:
+        return "13"
+    if span > 0.022:
+        return "14"
+    if span > 0.011:
+        return "15"
+    return "16"
+
+
+def convex_hull(points: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    unique = sorted(set(points))
+    if len(unique) <= 1:
+        return unique
+
+    def cross(origin: tuple[float, float], a: tuple[float, float], b: tuple[float, float]) -> float:
+        return (a[0] - origin[0]) * (b[1] - origin[1]) - (a[1] - origin[1]) * (b[0] - origin[0])
+
+    lower: list[tuple[float, float]] = []
+    for point in unique:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], point) <= 0:
+            lower.pop()
+        lower.append(point)
+    upper: list[tuple[float, float]] = []
+    for point in reversed(unique):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], point) <= 0:
+            upper.pop()
+        upper.append(point)
+    return lower[:-1] + upper[:-1]
+
+
+def estimated_boundary_from_points(points: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, Any] | None:
+    coords: list[tuple[float, float]] = []
+    center_lon = safe_float(context.get("longitude"))
+    center_lat = safe_float(context.get("latitude"))
+    if center_lon is not None and center_lat is not None:
+        coords.append((center_lon, center_lat))
+    for point in points:
+        lon = safe_float(point.get("longitude"))
+        lat = safe_float(point.get("latitude"))
+        if lon is not None and lat is not None:
+            coords.append((lon, lat))
+    if len(coords) < 3:
+        return None
+    hull = convex_hull(coords)
+    if len(hull) < 3:
+        return None
+    centroid_lon = sum(lon for lon, _ in hull) / len(hull)
+    centroid_lat = sum(lat for _, lat in hull) / len(hull)
+    expanded = []
+    for lon, lat in hull:
+        expanded.append((centroid_lon + (lon - centroid_lon) * 1.06, centroid_lat + (lat - centroid_lat) * 1.06))
+    if expanded[0] != expanded[-1]:
+        expanded.append(expanded[0])
+    return {
+        "context_key": context_boundary_key(context),
+        "keyword": context.get("keyword", ""),
+        "matched_name": context.get("matched_name", ""),
+        "source": "AMap around POI convex hull",
+        "source_detail": "Used only when no public polygon is available; this is a discussion envelope, not a park redline.",
+        "boundary_status": "estimated_context_hull_needs_review",
+        "coordinate_note": "GCJ-02 POI hull; not official boundary and not DWG geometry.",
+        "output_status": "needs_review",
+        "not_final": True,
+        "updated_at": datetime.now().isoformat(timespec="seconds"),
+        "points_gcj02": [{"longitude": f"{lon:.6f}", "latitude": f"{lat:.6f}"} for lon, lat in expanded],
+    }
+
+
+def polygon_area_rough(ring: list[list[float]]) -> float:
+    if len(ring) < 3:
+        return 0.0
+    area = 0.0
+    for index, current in enumerate(ring):
+        nxt = ring[(index + 1) % len(ring)]
+        area += current[0] * nxt[1] - nxt[0] * current[1]
+    return abs(area) / 2
+
+
+def extract_largest_ring(geometry: dict[str, Any]) -> list[list[float]]:
+    geom_type = geometry.get("type")
+    coordinates = geometry.get("coordinates") or []
+    rings: list[list[list[float]]] = []
+    if geom_type == "Polygon":
+        rings = [coordinates[0]] if coordinates else []
+    elif geom_type == "MultiPolygon":
+        rings = [polygon[0] for polygon in coordinates if polygon]
+    candidates: list[list[list[float]]] = []
+    for ring in rings:
+        clean = []
+        for point in ring:
+            if isinstance(point, list) and len(point) >= 2:
+                lon = safe_float(point[0])
+                lat = safe_float(point[1])
+                if lon is not None and lat is not None:
+                    clean.append([lon, lat])
+        if len(clean) >= 4:
+            candidates.append(clean)
+    if not candidates:
+        return []
+    return max(candidates, key=polygon_area_rough)
+
+
+def downsample_ring(ring: list[list[float]], max_points: int = 180) -> list[list[float]]:
+    if len(ring) <= max_points:
+        return ring
+    step = math.ceil(len(ring) / max_points)
+    sampled = ring[::step]
+    if sampled and sampled[0] != sampled[-1]:
+        sampled.append(sampled[0])
+    return sampled
+
+
+def out_of_china(lon: float, lat: float) -> bool:
+    return lon < 72.004 or lon > 137.8347 or lat < 0.8293 or lat > 55.8271
+
+
+def transform_lat(x: float, y: float) -> float:
+    ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * math.sqrt(abs(x))
+    ret += (20.0 * math.sin(6.0 * x * math.pi) + 20.0 * math.sin(2.0 * x * math.pi)) * 2.0 / 3.0
+    ret += (20.0 * math.sin(y * math.pi) + 40.0 * math.sin(y / 3.0 * math.pi)) * 2.0 / 3.0
+    ret += (160.0 * math.sin(y / 12.0 * math.pi) + 320 * math.sin(y * math.pi / 30.0)) * 2.0 / 3.0
+    return ret
+
+
+def transform_lon(x: float, y: float) -> float:
+    ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * math.sqrt(abs(x))
+    ret += (20.0 * math.sin(6.0 * x * math.pi) + 20.0 * math.sin(2.0 * x * math.pi)) * 2.0 / 3.0
+    ret += (20.0 * math.sin(x * math.pi) + 40.0 * math.sin(x / 3.0 * math.pi)) * 2.0 / 3.0
+    ret += (150.0 * math.sin(x / 12.0 * math.pi) + 300.0 * math.sin(x / 30.0 * math.pi)) * 2.0 / 3.0
+    return ret
+
+
+def wgs84_to_gcj02(lon: float, lat: float) -> tuple[float, float]:
+    if out_of_china(lon, lat):
+        return lon, lat
+    a = 6378245.0
+    ee = 0.00669342162296594323
+    dlat = transform_lat(lon - 105.0, lat - 35.0)
+    dlon = transform_lon(lon - 105.0, lat - 35.0)
+    radlat = lat / 180.0 * math.pi
+    magic = math.sin(radlat)
+    magic = 1 - ee * magic * magic
+    sqrt_magic = math.sqrt(magic)
+    dlat = (dlat * 180.0) / ((a * (1 - ee)) / (magic * sqrt_magic) * math.pi)
+    dlon = (dlon * 180.0) / (a / sqrt_magic * math.cos(radlat) * math.pi)
+    return lon + dlon, lat + dlat
+
+
+def boundary_from_ring(
+    *,
+    ring: list[list[float]],
+    context: dict[str, Any],
+    source: str,
+    source_detail: str = "",
+    boundary_status: str = "public_polygon_needs_review",
+) -> dict[str, Any]:
+    sampled = downsample_ring(ring)
+    points_gcj02 = []
+    for lon, lat in sampled:
+        gcj_lon, gcj_lat = wgs84_to_gcj02(float(lon), float(lat))
+        points_gcj02.append({"longitude": f"{gcj_lon:.6f}", "latitude": f"{gcj_lat:.6f}"})
+    return {
+        "context_key": context_boundary_key(context),
+        "keyword": context.get("keyword", ""),
+        "matched_name": context.get("matched_name", ""),
+        "source": source,
+        "source_detail": source_detail,
+        "boundary_status": boundary_status,
+        "coordinate_note": "OSM WGS84 polygon converted to GCJ-02 for AMap visual alignment; not an official redline.",
+        "output_status": "needs_review",
+        "not_final": True,
+        "updated_at": datetime.now().isoformat(timespec="seconds"),
+        "points_gcj02": points_gcj02,
+    }
+
+
+def load_known_osm_boundary(context: dict[str, Any]) -> dict[str, Any] | None:
+    if not KNOWN_OSM_BOUNDARY_FILE.exists():
+        return None
+    try:
+        data = json.loads(KNOWN_OSM_BOUNDARY_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    keyword = str(context.get("keyword") or "")
+    matched = str(context.get("matched_name") or "")
+    wanted = keyword + matched
+    best: dict[str, Any] | None = None
+    best_score = 0
+    for feature in data.get("features") or []:
+        props = feature.get("properties") or {}
+        park_name = str(props.get("park_name") or "")
+        park_id = str(props.get("park_id") or "")
+        score = 0
+        if park_name and (park_name in wanted or keyword in park_name or matched in park_name):
+            score += 10
+        if "奥森" in wanted and park_id == "sample_olympic_forest":
+            score += 9
+        if "奥林匹克森林" in wanted and park_id == "sample_olympic_forest":
+            score += 9
+        if "城市绿心" in wanted and park_id == "sample_city_green_heart":
+            score += 9
+        if score > best_score:
+            best = feature
+            best_score = score
+    if not best:
+        return None
+    ring = extract_largest_ring(best.get("geometry") or {})
+    if not ring:
+        return None
+    props = best.get("properties") or {}
+    return boundary_from_ring(
+        ring=ring,
+        context=context,
+        source="OpenStreetMap cached polygon",
+        source_detail=str(props.get("source_url") or props.get("osm_id") or ""),
+        boundary_status="cached_public_polygon_needs_review",
+    )
+
+
+def fetch_osm_boundary_for_context(context: dict[str, Any]) -> dict[str, Any] | None:
+    base_name = str(context.get("matched_name") or context.get("keyword") or "").strip()
+    keyword = str(context.get("keyword") or "").strip()
+    address = str(context.get("address") or "").strip()
+    queries = []
+    for query in [
+        f"{base_name} 北京",
+        f"{keyword} 北京",
+        base_name,
+        keyword,
+        f"{base_name} {address}",
+    ]:
+        query = query.strip()
+        if query and query not in queries:
+            queries.append(query)
+    if not queries:
+        return None
+    headers = {"User-Agent": "p6-expert-dashboard/0.1 needs_review boundary lookup"}
+    best_ring: list[list[float]] = []
+    best_detail = ""
+    best_area = 0.0
+    try:
+        with httpx.Client(timeout=12.0, headers=headers) as client:
+            for query in queries:
+                params = {
+                    "format": "json",
+                    "polygon_geojson": "1",
+                    "limit": "5",
+                    "q": query,
+                }
+                response = client.get("https://nominatim.openstreetmap.org/search", params=params)
+                response.raise_for_status()
+                results = response.json()
+                for item in results if isinstance(results, list) else []:
+                    geometry = item.get("geojson") or {}
+                    ring = extract_largest_ring(geometry)
+                    area = polygon_area_rough(ring)
+                    if ring and area > best_area:
+                        best_ring = ring
+                        best_area = area
+                        best_detail = str(item.get("display_name") or item.get("osm_id") or "")
+                if best_ring:
+                    break
+    except Exception:
+        return None
+    if not best_ring:
+        return None
+    return boundary_from_ring(
+        ring=best_ring,
+        context=context,
+        source="OpenStreetMap Nominatim live polygon",
+        source_detail=best_detail,
+        boundary_status="live_public_polygon_needs_review",
+    )
+
+
+def refresh_map_boundary(context: dict[str, Any]) -> dict[str, Any] | None:
+    boundary = load_known_osm_boundary(context) or fetch_osm_boundary_for_context(context)
+    save_map_boundary(boundary)
+    return boundary
+
+
+def map_bounds_from_context(context: dict[str, Any]) -> dict[str, float]:
+    lon = float(context.get("longitude") or 116.391365)
+    lat = float(context.get("latitude") or 40.016194)
+    radius_m = float(context.get("radius_m") or 1200)
+    lat_delta = max(radius_m / 111_000, 0.006)
+    lon_delta = max(radius_m / (111_000 * max(0.2, abs(__import__("math").cos(__import__("math").radians(lat))))), 0.006)
+    return {
+        "min_lon": lon - lon_delta,
+        "max_lon": lon + lon_delta,
+        "min_lat": lat - lat_delta,
+        "max_lat": lat + lat_delta,
+    }
+
+
+def poi_bounds(points: list[dict[str, Any]], context: dict[str, Any]) -> dict[str, float]:
+    lons = [lon for p in points if (lon := safe_float(p.get("longitude"))) is not None]
+    lats = [lat for p in points if (lat := safe_float(p.get("latitude"))) is not None]
+    if len(lons) >= 3 and len(lats) >= 3:
+        min_lon, max_lon = min(lons), max(lons)
+        min_lat, max_lat = min(lats), max(lats)
+        lon_pad = max((max_lon - min_lon) * 0.15, 0.002)
+        lat_pad = max((max_lat - min_lat) * 0.15, 0.002)
+        return {
+            "min_lon": min_lon - lon_pad,
+            "max_lon": max_lon + lon_pad,
+            "min_lat": min_lat - lat_pad,
+            "max_lat": max_lat + lat_pad,
+        }
+    return map_bounds_from_context(context)
+
+
+def boundary_polygon_from_bounds(bounds: dict[str, float]) -> list[dict[str, str]]:
+    min_lon = bounds["min_lon"]
+    max_lon = bounds["max_lon"]
+    min_lat = bounds["min_lat"]
+    max_lat = bounds["max_lat"]
+    mid_lon = (min_lon + max_lon) / 2
+    mid_lat = (min_lat + max_lat) / 2
+    return [
+        {"longitude": f"{min_lon:.6f}", "latitude": f"{mid_lat + (max_lat-min_lat)*0.34:.6f}"},
+        {"longitude": f"{mid_lon - (max_lon-min_lon)*0.12:.6f}", "latitude": f"{max_lat:.6f}"},
+        {"longitude": f"{max_lon:.6f}", "latitude": f"{mid_lat + (max_lat-min_lat)*0.22:.6f}"},
+        {"longitude": f"{max_lon - (max_lon-min_lon)*0.08:.6f}", "latitude": f"{min_lat:.6f}"},
+        {"longitude": f"{mid_lon - (max_lon-min_lon)*0.34:.6f}", "latitude": f"{min_lat + (max_lat-min_lat)*0.08:.6f}"},
+        {"longitude": f"{min_lon:.6f}", "latitude": f"{mid_lat + (max_lat-min_lat)*0.34:.6f}"},
+    ]
 
 
 def load_cache() -> dict[str, Any]:
@@ -842,32 +1320,41 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
     keyword = payload.keyword.strip()
     if not keyword:
         raise HTTPException(status_code=400, detail="keyword is required")
+    normalized_keyword = MAP_KEYWORD_ALIASES.get(keyword.lower(), keyword)
     load_local_env()
     key = os.environ.get("AMAP_WEB_SERVICE_KEY")
     if not key:
         raise HTTPException(status_code=400, detail="AMAP_WEB_SERVICE_KEY missing")
-    params = {"key": key, "keywords": keyword, "city": "全国", "offset": "1", "page": "1", "extensions": "base"}
-    try:
-        with httpx.Client(timeout=10.0) as client:
-            response = client.get("https://restapi.amap.com/v3/place/text", params=params)
-            response.raise_for_status()
-            data = response.json()
-    except Exception as exc:
-        raise HTTPException(status_code=502, detail=f"amap place search failed: {type(exc).__name__}") from exc
-    pois = data.get("pois") or []
-    if not pois:
-        raise HTTPException(status_code=404, detail="amap returned no poi")
-    poi = pois[0]
-    location = poi.get("location", "")
-    if "," not in location:
-        raise HTTPException(status_code=502, detail="amap poi has no location")
-    lon, lat = location.split(",", 1)
+    if payload.longitude and payload.latitude:
+        lon, lat = payload.longitude, payload.latitude
+        poi = {"name": payload.matched_name or normalized_keyword, "address": payload.address or ""}
+    else:
+        params = {"key": key, "keywords": normalized_keyword, "city": "全国", "offset": "1", "page": "1", "extensions": "base"}
+        try:
+            with httpx.Client(timeout=10.0) as client:
+                response = client.get("https://restapi.amap.com/v3/place/text", params=params)
+                response.raise_for_status()
+                data = response.json()
+        except Exception as exc:
+            raise HTTPException(status_code=502, detail=f"amap place search failed: {type(exc).__name__}") from exc
+        pois = data.get("pois") or []
+        if not pois:
+            suggestions = amap_input_tips(keyword, key)
+            if suggestions:
+                raise HTTPException(status_code=404, detail={"message": "amap returned no poi", "suggestions": suggestions})
+            raise HTTPException(status_code=404, detail="amap returned no poi")
+        poi = pois[0]
+        location = poi.get("location", "")
+        if "," not in location:
+            raise HTTPException(status_code=502, detail="amap poi has no location")
+        lon, lat = location.split(",", 1)
     context = {
         "keyword": keyword,
         "matched_name": poi.get("name", ""),
         "address": poi.get("address", ""),
         "longitude": lon,
         "latitude": lat,
+        "radius_m": max(300, min(8000, int(payload.radius_m or 1200))),
         "source": "amap_web_service_place_text",
         "output_status": "needs_review",
         "not_final": True,
@@ -878,6 +1365,7 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
         save_map_context_pois(fetch_amap_around_pois(lon, lat, key))
     except Exception:
         save_map_context_pois([])
+    refresh_map_boundary(context)
     if AMAP_STATIC_CACHE.exists():
         AMAP_STATIC_CACHE.unlink()
     save_amap_static_status(
@@ -890,6 +1378,115 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
         }
     )
     return context
+
+
+def amap_input_tips(keyword: str, key: str) -> list[dict[str, Any]]:
+    if not keyword.strip():
+        return []
+    raw_keyword = keyword.strip()
+    normalized_keyword = MAP_KEYWORD_ALIASES.get(raw_keyword.lower(), raw_keyword)
+    preferred_name = {
+        "aosen": "奥林匹克森林公园",
+        "as": "奥林匹克森林公园",
+        "osen": "奥林匹克森林公园",
+        "cygy": "朝阳公园",
+        "chaoyang": "朝阳公园",
+    }.get(raw_keyword.lower(), normalized_keyword)
+    data: dict[str, Any] = {}
+    exact_pois: list[dict[str, Any]] = []
+    try:
+        with httpx.Client(timeout=8.0) as client:
+            response = client.get(
+                "https://restapi.amap.com/v3/assistant/inputtips",
+                params={"key": key, "keywords": normalized_keyword, "city": "全国", "datatype": "all"},
+            )
+            response.raise_for_status()
+            data = response.json()
+            place_keywords = [normalized_keyword]
+            if preferred_name and preferred_name != normalized_keyword:
+                place_keywords.append(preferred_name)
+            for place_keyword in place_keywords:
+                place_response = client.get(
+                    "https://restapi.amap.com/v3/place/text",
+                    params={
+                        "key": key,
+                        "keywords": place_keyword,
+                        "city": "全国",
+                        "offset": "3",
+                        "page": "1",
+                        "extensions": "base",
+                    },
+                )
+                place_response.raise_for_status()
+                exact_pois.extend(place_response.json().get("pois") or [])
+    except Exception:
+        if not data:
+            return []
+    tips = []
+    def append_tip(name: str, district: str, address: str, location: str) -> None:
+        lon, lat = ("", "")
+        if isinstance(location, str) and "," in location:
+            lon, lat = location.split(",", 1)
+        tips.append(
+            {
+                "name": name,
+                "district": district,
+                "address": address,
+                "longitude": lon,
+                "latitude": lat,
+                "output_status": "needs_review",
+            }
+        )
+
+    for poi in exact_pois:
+        append_tip(
+            str(poi.get("name") or ""),
+            str(poi.get("adname") or poi.get("pname") or ""),
+            str(poi.get("address") or ""),
+            str(poi.get("location") or ""),
+        )
+    for tip in data.get("tips") or []:
+        append_tip(
+            str(tip.get("name") or ""),
+            str(tip.get("district") or ""),
+            str(tip.get("address") or ""),
+            str(tip.get("location") or ""),
+        )
+    def tip_rank(tip: dict[str, Any]) -> tuple[int, str]:
+        name = str(tip.get("name") or "")
+        district = str(tip.get("district") or "")
+        score = 0
+        if preferred_name and preferred_name in name:
+            score -= 10
+        if "北京市" in district:
+            score -= 3
+        if name == preferred_name:
+            score -= 4
+        if any(token in name for token in ("酒店", "停车场", "地铁站", "店", "安保队", "水电")):
+            score += 5
+        score += min(len(name), 40) // 10
+        return score, name
+
+    deduped: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str]] = set()
+    for tip in sorted([tip for tip in tips if tip.get("name")], key=tip_rank):
+        key_tuple = (str(tip.get("name") or ""), str(tip.get("district") or ""), str(tip.get("address") or ""))
+        if key_tuple in seen:
+            continue
+        seen.add(key_tuple)
+        deduped.append(tip)
+        if len(deduped) >= 8:
+            break
+    return deduped
+
+
+@app.get("/api/amap/tips")
+def amap_tips(q: str = "") -> dict[str, Any]:
+    load_local_env()
+    key = os.environ.get("AMAP_WEB_SERVICE_KEY")
+    if not key:
+        return {"output_status": "needs_review", "items": []}
+    return {"output_status": "needs_review", "items": amap_input_tips(q, key)}
 
 
 @app.get("/api/integration/status")
@@ -1055,7 +1652,7 @@ def api_export_simulation_results(job_id: str, format: str = "json") -> Response
 
 
 @app.get("/api/amap/static-map")
-def amap_static_map() -> Response:
+def amap_static_map(lon: str | None = None, lat: str | None = None, zoom: str | None = None) -> Response:
     load_local_env()
     key = os.environ.get("AMAP_WEB_SERVICE_KEY")
     points = load_amap_supply()
@@ -1074,10 +1671,20 @@ def amap_static_map() -> Response:
             media_type="image/svg+xml",
             headers={"Cache-Control": "no-store"},
         )
-    lon, lat = amap_center()
+    context = load_map_context()
+    default_lon, default_lat = amap_center()
+    lon = lon or default_lon
+    lat = lat or default_lat
+    boundary = load_map_boundary_for_context(context) or load_known_osm_boundary(context)
+    bounds = boundary_bounds(boundary) if boundary else poi_bounds(points, context)
+    zoom_value = normalize_zoom(zoom, static_zoom_for_bounds(bounds))
+    cache_key = re.sub(r"[^0-9A-Za-z_.-]", "_", f"{lon}_{lat}_{zoom_value}")
+    tile_cache = AMAP_TILE_CACHE_DIR / f"{cache_key}.png"
+    if tile_cache.exists():
+        return Response(content=tile_cache.read_bytes(), media_type="image/png", headers={"Cache-Control": "no-store"})
     params = {
         "location": f"{lon},{lat}",
-        "zoom": "14",
+        "zoom": zoom_value,
         "size": "760*470",
         "scale": "2",
         "traffic": "0",
@@ -1135,7 +1742,9 @@ def amap_static_map() -> Response:
             headers={"Cache-Control": "no-store"},
         )
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    AMAP_TILE_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     AMAP_STATIC_CACHE.write_bytes(response.content)
+    tile_cache.write_bytes(response.content)
     save_amap_static_status(
         {
             "status": "connected_image",

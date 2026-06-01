@@ -196,7 +196,8 @@ def build_catalog(source_dir: Path, docx_profile: dict[str, object], pdf_rows: l
     available_converters = [name for name in converter_candidates if shutil.which(name)]
     rows: list[dict[str, object]] = []
 
-    for index, path in enumerate(sorted(source_dir.iterdir(), key=lambda p: p.name), start=1):
+    source_files = [path for path in source_dir.iterdir() if not path.name.startswith("~$")]
+    for index, path in enumerate(sorted(source_files, key=lambda p: p.name), start=1):
         if not path.is_file() or path.suffix.lower() not in {".docx", ".pdf", ".dwg"}:
             continue
         source_id = f"P2SRC-{index:03d}"
@@ -494,8 +495,8 @@ def main() -> None:
     OUTPUT_TABLE_DIR.mkdir(parents=True, exist_ok=True)
 
     source_dir = find_source_dir()
-    files = list(source_dir.iterdir())
-    docx_files = [path for path in files if path.suffix.lower() == ".docx"]
+    files = [path for path in source_dir.iterdir() if not path.name.startswith("~$")]
+    docx_files = [path for path in files if path.suffix.lower() == ".docx" and not path.name.startswith("~$")]
     pdf_files = [path for path in files if path.suffix.lower() == ".pdf"]
     if len(docx_files) != 1:
         raise RuntimeError(f"Expected exactly 1 DOCX, found {len(docx_files)}.")

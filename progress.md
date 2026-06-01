@@ -910,3 +910,42 @@
 - AI 解析候选只是待复核草案；不能作为 checked 证据或最终结论。
 - 地图已能动态换目标和 POI，但仍是高德静态底图 + 自定义交互层，不是完整高德 JS API 地图。
 - DWG 仍为 `pending_conversion`；PDF/CAD 文本解析不能生成可信坐标、面积、图层或动线。
+# 2026-06-01 P6 地图轮廓通用化修正
+
+### 已完成
+- 修正地图“范围圈”逻辑：不再使用圆形或固定六边形表达项目边界。
+- 后端新增 `map_boundary.json` 缓存与通用边界策略：优先读取既有 OSM polygon，其次用 Nominatim 按任意搜索词实时获取公开 polygon；若仍无公开轮廓，则用当前高德周边 POI 点云生成“讨论范围外包线”。
+- 轮廓坐标已做 WGS84 -> GCJ-02 近似转换，用于叠加到高德静态底图；页面明确标注为“公开轮廓/讨论范围外包线 · 待复核”，不作为官方红线或 DWG 几何。
+- 地图初始缩放不再固定为 `zoom=15`，改为根据轮廓或 POI 范围自动选择，尽量首次展示完整范围。
+- 节点位置随当前搜索地点与边界/范围重算，不再固定在奥森上下文。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py` 通过。
+- 实测任意搜索：`东坝公园` 返回 32 点公开 polygon；`朝阳公园` 返回 177 点公开 polygon；`颐和园` 返回 109 点公开 polygon；`三里屯` 无公园 polygon 时回退为 12 点高德 POI 外包线。
+- 新旧高德 Key 泄露扫描：`.env` 以外未发现明文 Key。
+- 浏览器截图：`90_p6_expert_dashboard/qa/map_boundary_general_final.png`。
+
+### 边界
+- OSM/Nominatim polygon 不是官方规划红线；POI 外包线更不是边界，只能辅助专家讨论范围。
+- 当前仍是“高德静态底图 + 自定义拖拽缩放/点位层”，不是完整高德 JS API。
+- DWG 继续保持 `pending_conversion`；页面不得据此生成真实坐标、面积、图层或动线结论。
+
+# 2026-06-01 P6 GitHub 同步与地图优先收束
+
+### 已完成
+- 已从 `cocyuhao/park-commercial-site-selection-simulation` 拉取并合并伙伴更新：新增 SQLite 数据库层、结构化仿真 dry-run engine、仿真任务 API、前端仿真任务面板。
+- 合并后保留本轮地图修正：高德后端静态图按中心点和 zoom 重新加载，搜索输入支持拼音别名联想，增加地图撤回、只看选中、设点和实时提示。
+- 评分展示已从固定 `discussion_score` 改为前端“实时草案分”：仅在奥森上下文下展示；结合 P3 gate 阻塞、仿真 dry-run 结果、POI 数量和边界状态做扣分；外部地点只显示“外部预览”，不乱套奥森评分。
+- 修复 P2 真实资料索引脚本对 Office 临时 `~$*.docx` 的误计数，避免本地打开 Word 后导致总门禁失败。
+
+### 验证
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\simulation\engine.py 60_model\simulation\validators.py 60_model\db\store.py` 通过。
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `/api/dashboard`、`/api/simulation/jobs`、`/api/amap/tips?q=dongba`、`/api/amap/tips?q=aosen` 均可用。
+- 项目级门禁恢复为 `checks=725 failures=0`。
+- 浏览器截图：`90_p6_expert_dashboard/qa/map_sync_verified.png`。
+
+### 待继续
+- 当前仍不是真正高德 JS API 地图；若要完全 1:1 的高德自由拖拽/缩放体验，需要浏览器端受限 JS Key + 安全密钥代理，而不能暴露 Web Service Key。
+- 伙伴 dry-run 目前仍是结构化严格检查，不输出 ROI/收益/最终排序；后续可把更多真实输入闭合后再提升模型严谨度。
