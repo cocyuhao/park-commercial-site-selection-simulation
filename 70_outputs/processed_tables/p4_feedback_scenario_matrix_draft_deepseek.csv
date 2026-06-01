@@ -1,0 +1,13 @@
+﻿scenario_id,node_id,scenario_name,target_persona,draft_conversion_band,draft_spending_band_yuan,draft_opex_risk,feedback_question,use_boundary,output_status,executor,llm_task_id
+,P2-NODE-001,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-001,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-001,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-002,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-002,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-002,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-003,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-003,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-004,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-004,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-005,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025
+,P2-NODE-006,,,,,,,scenario_feedback_only,needs_review,deepseek,LLM-025

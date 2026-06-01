@@ -1,0 +1,11 @@
+{
+  "audit_summary": "基于PDF文本代理的P2分区审计，无DWG几何解析，所有分区仅依据文本标签聚类；DWG转换工作单已生成，阻塞于无可用转换器；几何代理限制严格禁止任何坐标、面积、长度或图层声索。",
+  "zone_rows": 10,
+  "dwg_conversion_rows": 8,
+  "limitation_rows": 8,
+  "output_status": "needs_review",
+  "executor": "deepseek",
+  "llm_task_id": "LLM-021",
+  "model": "deepseek-v4-pro",
+  "run_id": "20260529T024406Z"
+}

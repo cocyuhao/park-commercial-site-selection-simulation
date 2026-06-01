@@ -1,0 +1,13 @@
+﻿assumption_id,source_project_name,assumption_type,assumption_text,source_semantic_ids,model_input_domain,calibration_need,quality_gate,output_status,executor,llm_task_id
+P2-ASSUMP-001,项目一：桃花源（白房子155㎡）,活动场景,小型婚礼、婚纱摄影、生日聚会、团建、艺术沙龙等活动可在白房子及周边举办，作为多功能活动据点。,['P2-DOCX-SEM-002'],customer_flow_and_event_booking,需参考同类场地案例及季节波动数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-002,项目一：桃花源（白房子155㎡）,日常经营,咖啡、茶饮、简餐（三明治、甜点、冰淇淋）及季节限定产品可作为日常收入基础。,['P2-DOCX-SEM-003'],revenue_per_capita,需公园客流及餐饮客单价数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-003,项目一：桃花源（白房子155㎡）,合作模式,整体租赁给一家运营公司，租期5-8年，纯租金（含物业费）。,['P2-DOCX-SEM-006'],lease_income,需市场可比租金水平,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-004,项目二：奥运廉洁主题展馆（575.72㎡）,功能分区,检测区、疗愈室、功法/瑜伽室、营养咨询+茶吧等模块提供健康管理服务。,['P2-DOCX-SEM-008'],space_planning_and_service_throughput,需设备容量和服务流程设计,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-005,项目二：奥运廉洁主题展馆（575.72㎡）,定价参考,对标瑞士青草地疗养院模式，以精密检测和个性化干预为核心，高溢价疗程包。,['P2-DOCX-SEM-009'],pricing_strategy,需高端健康管理市场价格数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-006,项目二：奥运廉洁主题展馆（575.72㎡）,合作结构,三方合作：公园收租金，华蓝瑞兆工程分成，运营公司负责客户转化。,['P2-DOCX-SEM-010'],revenue_sharing_model,需各合作方投入与分成比例,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-007,项目三：12#西分区管理中心（1059.39㎡）,全天候场景（方案一）,白天西式简餐与咖啡，夜晚Live House（小型乐队、脱口秀），实现全时段消费。,['P2-DOCX-SEM-012'],time_based_customer_flow,需不同时段客流转换率数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-008,项目三：12#西分区管理中心（1059.39㎡）,怀旧零售场景（方案二）,北冰洋饮品、义利糕点、文创零售、复古打卡区，主打国潮消费。,['P2-DOCX-SEM-014'],retail_sales_per_sqm,需参考国潮文创零售坪效数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-009,项目四：南门地下预埋（5417㎡）,折扣零售场景,运动户外品牌折扣集合店，品牌快闪与换季特卖，服务家庭客群。,['P2-DOCX-SEM-016'],outlet_sales_forecast,需奥莱业态坪效与转化率,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-010,项目四：南门地下预埋（5417㎡）,地面配套,地上联排房设品牌专卖店/咖啡店或IP文创店，作为地上引流入口。,['P2-DOCX-SEM-017'],footfall_from_above_ground,需地上入口客流计数,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-011,项目五：南门露天剧场,湖畔生活场景,湖畔阳光烘焙工坊+草坪市集、音乐演出、亲子工坊，构建户外复合消费。,['P2-DOCX-SEM-018'],outdoor_event_attendance,需草坪活动容量和天气影响数据,needs_review,needs_review,deepseek,LLM-018
+P2-ASSUMP-012,项目六：10#2A03分区管理中心（1804.5㎡）,文化康养场景,中医诊疗、国学讲堂、康复理疗、文化体验，打造身心修养院落。,['P2-DOCX-SEM-020'],wellness_service_demand,需中医康养服务客单价与频次,needs_review,needs_review,deepseek,LLM-018

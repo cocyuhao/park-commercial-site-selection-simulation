@@ -1,0 +1,17 @@
+﻿req_id,domain,field_name,description,acceptable_source,required_before_p4_conclusion,current_value_policy,output_status,executor,llm_task_id
+P3-CALIB-001,visitor_flow,hourly_entrance_flow,各入口逐小时客流统计,官方闸机数据、第三方监测报告,yes,留空，标记为缺失，禁止回填假设,needs_review,deepseek,LLM-022
+P3-CALIB-002,visitor_flow,node_path_flow,关键空间节点间路径的客流观测,现场计数、WiFi探针数据,yes,留空，等待现场或运营商数据,needs_review,deepseek,LLM-022
+P3-CALIB-003,visitor_flow,weekday_weekend_split,工作日与周末的客流比例与模式,历史监测数据、报告,yes,暂用样例参考，但标记为待核验,needs_review,deepseek,LLM-022
+P3-CALIB-004,conversion,format_conversion_rate,各业态（咖啡、轻餐、零售等）人流到消费的转化率,同类型公园经营数据、行业基准,yes,建立假设池并标注needs_review，禁止用于结论,needs_review,deepseek,LLM-022
+P3-CALIB-005,revenue_cost,average_spending,各业态客单价与消费频次,实际POS数据、调研,yes,留空或使用行业范围，注明缺失,needs_review,deepseek,LLM-022
+P3-CALIB-006,revenue_cost,rental_lease_terms,铺位租金、分成比例、租期,管理层提供或已签署合同,yes,列为高优待确认项，禁止用PPT回填,needs_review,deepseek,LLM-022
+P3-CALIB-007,operation,operation_authorization,经营授权、业态许可、管理边界,公园管理处书面确认,yes,逐点登记待核验，作为方案落地门禁,needs_review,deepseek,LLM-022
+P3-CALIB-008,regulatory,renovation_permit,改造施工许可、消防、玻璃顶审批,规自委、消防部门批复,yes,列入风险评估，未确认前不视为可行,needs_review,deepseek,LLM-022
+P3-CALIB-009,supply,target_park_poi_supply,目标公园实际业态供给清单,高德API清洗+现场核验,yes,已有样例种子，需对目标公园重抓,needs_review,deepseek,LLM-022
+P3-CALIB-010,competition,nearby_competitor_supply,周边1km竞品商业设施列表,高德POI搜索或地图,yes,待补抓，当前无目标公园周边基表,needs_review,deepseek,LLM-022
+P3-CALIB-011,geometry,parsed_dwg_layers,DWG解析后的图层、坐标、建筑/道路边界,成功转换的DXF/GeoJSON,yes,pending_conversion，无可用转换器,needs_review,deepseek,LLM-022
+P3-CALIB-012,visitor_profile,real_visitor_mix,真实游客画像比例（亲子/运动/白领等）,问卷调查、运营商数据,yes,原型权重临时占位，P3用真实数据替换,needs_review,deepseek,LLM-022
+P3-CALIB-013,behavior,time_scene_behavior,不同场景下消费行为观测（运动后消费、夜间消费等）,定时观察、摄像头分析,yes,暂时依赖P2触发乘数假设，需校准,needs_review,deepseek,LLM-022
+P3-CALIB-014,property,building_area_boundary,各改造建筑的准确面积和物业边界,CAD图纸或实测报告,yes,必须从DWG/现场获得，禁止用PDF估算,needs_review,deepseek,LLM-022
+P3-CALIB-015,seasonality,seasonal_festival_factor,季节及节假日对客流的调整系数,历史年客流数据,yes,可暂用月度指数占位，但需记录为假设,needs_review,deepseek,LLM-022
+P3-CALIB-016,model_gate,p4_release_gate,P4完整仿真放行门禁,local verification script,yes,blocked_until_core_fields_closed,needs_review,deepseek,LLM-022

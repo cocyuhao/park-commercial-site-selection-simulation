@@ -1,0 +1,14 @@
+{
+  "decision": "rollback",
+  "reasons": [
+    "P3 calibration gates are not closed: all required gates are pending_conversion or blocked_until_source_received.",
+    "Project boundary explicitly states that P4 must not output full simulation conclusions, ranking, revenue forecast, coordinate/area inference, or final recommendation until P3 is closed.",
+    "No P4 artifacts (script, summary, ranking, detail) were provided for audit, making content verification impossible."
+  ],
+  "boundary_violations": [],
+  "data_quality_issues": [
+    "No P4 artifacts were submitted for audit."
+  ],
+  "recommended_action": "Halt all P4 artifact generation until P3 gates are fully cleared. Only skeleton, API, tests, and configuration may be prepared. Re-submit P4 artifacts for audit after P3 closure.",
+  "output_status": "needs_review"
+}

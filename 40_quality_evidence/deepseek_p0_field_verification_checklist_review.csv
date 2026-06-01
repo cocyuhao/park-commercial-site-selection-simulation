@@ -1,0 +1,12 @@
+﻿check_id,status,severity,finding,evidence
+FIELD-CHECK-REVIEW-001,pass,error,"checklist rows=34, expected=34",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p0_field_verification_checklist_deepseek.csv
+FIELD-CHECK-REVIEW-002,pass,error,source ids match expected=True,source_id
+FIELD-CHECK-REVIEW-003,pass,error,output_status distribution={'needs_review': 34},output_status
+FIELD-CHECK-REVIEW-004,pass,error,p2 gate distribution={'do_not_enter_p2_until_field_or_official_confirmation': 34},p2_gate_draft
+FIELD-CHECK-REVIEW-005,pass,error,executor distribution={'deepseek': 34},executor
+FIELD-CHECK-REVIEW-006,pass,error,task id distribution={'LLM-015': 34},llm_task_id
+FIELD-CHECK-REVIEW-007,pass,error,excluded low-confidence nodes present=[],source_id
+FIELD-CHECK-REVIEW-008,pass,error,missing core checklist text rows=[],verification fields
+FIELD-CHECK-REVIEW-009,pass,error,explicit checked/P2 claims=[],checklist text
+FIELD-CHECK-REVIEW-010,pass,info,"checklist type distribution={'p0_poi_business_and_authorization': 7, 'primary_access_node_field_check': 20, 'secondary_parking_or_visit_node_field_check': 7}",checklist_type
+FIELD-CHECK-REVIEW-011,pass,info,"priority distribution={'P0_business_fields_and_authorization': 2, 'P1_remaining_business_fields': 5, 'P0_manual_check_gate_or_entrance': 20, 'P1_manual_check_parking_access': 7}",priority

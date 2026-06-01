@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-05-22T13:51:30",
+  "results": [
+    {
+      "file": "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+      "type": "pdf",
+      "status": "ok",
+      "page_count": 93,
+      "output": "30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json"
+    },
+    {
+      "file": "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+      "type": "pdf",
+      "status": "ok",
+      "page_count": 250,
+      "output": "30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json"
+    },
+    {
+      "file": "AI (1)(1).pptx",
+      "type": "pptx",
+      "status": "ok",
+      "slide_count": 15,
+      "output": "30_extraction/ppt_text/AI (1)(1).json"
+    },
+    {
+      "file": "奥森修改稿0306.pptx",
+      "type": "pptx",
+      "status": "ok",
+      "slide_count": 15,
+      "output": "30_extraction/ppt_text/奥森修改稿0306.json"
+    }
+  ],
+  "finished_at": "2026-05-22T13:51:31"
+}

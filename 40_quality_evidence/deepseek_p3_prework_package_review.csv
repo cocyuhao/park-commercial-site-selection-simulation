@@ -1,0 +1,40 @@
+﻿check_id,status,severity,finding,evidence
+P3-PREWORK-REVIEW-001,pass,error,route decision rows=3,70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-002,pass,error,DWG work rows=8,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-003,pass,error,calibration rows=16,70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-004,pass,error,mapping rows=16,70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-005,pass,error,P4 skeleton rows=12,70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-006,pass,error,route output statuses={'needs_review': 3},70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-007,pass,error,route executors={'deepseek': 3},70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-008,pass,error,route task ids={'LLM-022': 3},70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-009,pass,error,dwg output statuses={'needs_review': 8},70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-010,pass,error,dwg executors={'deepseek': 8},70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-011,pass,error,dwg task ids={'LLM-022': 8},70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-012,pass,error,calibration output statuses={'needs_review': 16},70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-013,pass,error,calibration executors={'deepseek': 16},70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-014,pass,error,calibration task ids={'LLM-022': 16},70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-015,pass,error,mapping output statuses={'needs_review': 16},70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-016,pass,error,mapping executors={'deepseek': 16},70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-017,pass,error,mapping task ids={'LLM-022': 16},70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-018,pass,error,p4 output statuses={'needs_review': 12},70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-019,pass,error,p4 executors={'deepseek': 12},70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-020,pass,error,p4 task ids={'LLM-022': 12},70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-021,pass,error,route explicitly recommends P3 hard gate with P4 parallel preparation,70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-022,pass,error,route names forbidden simulation/conclusion before P3 closure,70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv
+P3-PREWORK-REVIEW-023,pass,error,all DWG work items remain pending_conversion,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-024,pass,error,DWG work order has no false precision token: coordinates_extracted,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-025,pass,error,DWG work order has no false precision token: area_calculated,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-026,pass,error,DWG work order has no false precision token: layer_parsed,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-027,pass,error,DWG work order has no false precision token: geometry_checked,70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv
+P3-PREWORK-REVIEW-028,pass,error,"calibration domains cover core gates missing=[]; raw=['behavior', 'competition', 'conversion', 'geometry', 'model_gate', 'operation', 'property', 'regulatory', 'revenue_cost', 'seasonality', 'supply', 'visitor_flow', 'visitor_profile']",70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-029,pass,error,calibration required-before-P4 counts={'yes': 16},70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv
+P3-PREWORK-REVIEW-030,pass,error,mapping references project nodes,70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-031,pass,error,mapping references personas,70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-032,pass,error,mapping references formula,70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-033,pass,error,mapping references gap register,70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv
+P3-PREWORK-REVIEW-034,pass,error,P4 backlog only contains parallel preparation tasks,70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-035,pass,error,P4 backlog has explicit must-not boundary for every item,70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-036,pass,error,P4 backlog boundary vocabulary hits=7,70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv
+P3-PREWORK-REVIEW-037,pass,error,summary output_status=needs_review,40_quality_evidence/deepseek_p3_prework_package.json
+P3-PREWORK-REVIEW-038,pass,error,summary executor=deepseek,40_quality_evidence/deepseek_p3_prework_package.json
+P3-PREWORK-REVIEW-039,pass,error,summary task=LLM-022,40_quality_evidence/deepseek_p3_prework_package.json

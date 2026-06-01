@@ -1,0 +1,396 @@
+{
+  "run_at": "2026-05-25T03:35:27Z",
+  "tables_jsonl": "C:\\Users\\Yy199\\Desktop\\仿真设计\\30_extraction\\tables\\pdf_native_tables.jsonl",
+  "tables_csv": "C:\\Users\\Yy199\\Desktop\\仿真设计\\30_extraction\\tables\\pdf_native_tables_summary.csv",
+  "overall_verdict": "PASS",
+  "summary": {
+    "PASS": 4,
+    "WARN": 0,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "methods": [
+    {
+      "method": "M5_dual_engine",
+      "description": "pdfplumber vs PyMuPDF 在文本型PDF上表格提取一致性",
+      "pdf": "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+      "pdfplumber_table_count": 6,
+      "pymupdf_table_count": 6,
+      "pdfplumber_tables": [
+        {
+          "page": 4,
+          "table_index": 1,
+          "rows": 7,
+          "cols": 8,
+          "first_row": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "page": 6,
+          "table_index": 1,
+          "rows": 9,
+          "cols": 4,
+          "first_row": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "page": 7,
+          "table_index": 1,
+          "rows": 11,
+          "cols": 6,
+          "first_row": [
+            "排名",
+            "工作地名称",
+            "占比",
+            "排名",
+            "居住地名称",
+            "占比"
+          ]
+        },
+        {
+          "page": 8,
+          "table_index": 1,
+          "rows": 11,
+          "cols": 6,
+          "first_row": [
+            "排名",
+            "工作地名称",
+            "占比",
+            "排名",
+            "居住地名称",
+            "占比"
+          ]
+        },
+        {
+          "page": 9,
+          "table_index": 1,
+          "rows": 5,
+          "cols": 4,
+          "first_row": [
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息"
+          ]
+        },
+        {
+          "page": 10,
+          "table_index": 1,
+          "rows": 19,
+          "cols": 8,
+          "first_row": [
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息",
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息"
+          ]
+        }
+      ],
+      "pymupdf_tables": [
+        {
+          "page": 4,
+          "table_index": 1,
+          "rows": 7,
+          "cols": 8,
+          "first_row": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "page": 6,
+          "table_index": 1,
+          "rows": 9,
+          "cols": 4,
+          "first_row": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "page": 7,
+          "table_index": 1,
+          "rows": 11,
+          "cols": 6,
+          "first_row": [
+            "排名",
+            "工作地名称",
+            "占比",
+            "排名",
+            "居住地名称",
+            "占比"
+          ]
+        },
+        {
+          "page": 8,
+          "table_index": 1,
+          "rows": 11,
+          "cols": 6,
+          "first_row": [
+            "排名",
+            "工作地名称",
+            "占比",
+            "排名",
+            "居住地名称",
+            "占比"
+          ]
+        },
+        {
+          "page": 9,
+          "table_index": 1,
+          "rows": 5,
+          "cols": 4,
+          "first_row": [
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息"
+          ]
+        },
+        {
+          "page": 10,
+          "table_index": 1,
+          "rows": 19,
+          "cols": 8,
+          "first_row": [
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息",
+            "排序",
+            "POI名称",
+            "指数",
+            "扩展信息"
+          ]
+        }
+      ],
+      "cross_comparisons": [
+        {
+          "page": 4,
+          "table_index": 1,
+          "plumber_rows": 7,
+          "pymupdf_rows": 7,
+          "plumber_cols": 8,
+          "pymupdf_cols": 8,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        },
+        {
+          "page": 6,
+          "table_index": 1,
+          "plumber_rows": 9,
+          "pymupdf_rows": 9,
+          "plumber_cols": 4,
+          "pymupdf_cols": 4,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        },
+        {
+          "page": 7,
+          "table_index": 1,
+          "plumber_rows": 11,
+          "pymupdf_rows": 11,
+          "plumber_cols": 6,
+          "pymupdf_cols": 6,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        },
+        {
+          "page": 8,
+          "table_index": 1,
+          "plumber_rows": 11,
+          "pymupdf_rows": 11,
+          "plumber_cols": 6,
+          "pymupdf_cols": 6,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        },
+        {
+          "page": 9,
+          "table_index": 1,
+          "plumber_rows": 5,
+          "pymupdf_rows": 5,
+          "plumber_cols": 4,
+          "pymupdf_cols": 4,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        },
+        {
+          "page": 10,
+          "table_index": 1,
+          "plumber_rows": 19,
+          "pymupdf_rows": 19,
+          "plumber_cols": 8,
+          "pymupdf_cols": 8,
+          "row_diff": 0,
+          "col_diff": 0,
+          "structure_match": true
+        }
+      ],
+      "structure_match_rate": 1.0,
+      "verdict": "PASS",
+      "verdict_detail": "双引擎找到 pdfplumber=6, PyMuPDF=6; 共有表格结构吻合率=100.0% (6条对比)"
+    },
+    {
+      "method": "M6_quality_stats",
+      "description": "329张PDF原生表格的空行率/有效数据率/中文率/数字率统计",
+      "total_tables": 329,
+      "empty_noise_tables": 1,
+      "partial_valid_tables": 7,
+      "fully_valid_tables": 321,
+      "empty_rate": 0.003,
+      "partial_rate": 0.021,
+      "full_rate": 0.976,
+      "avg_effective_row_rate": 0.984,
+      "avg_chinese_cell_rate": 0.391,
+      "avg_number_cell_rate": 0.606,
+      "median_row_count": 8.0,
+      "median_col_count": 4.0,
+      "verdict": "PASS",
+      "verdict_detail": "全空表=0.3%, 平均有效行=98.4%, 中文率=39.1%, 数字率=60.6%"
+    },
+    {
+      "method": "M7_structure_integrity",
+      "description": "CSV声明的row_count/col_count vs JSONL实际行列数对比",
+      "total_compared": 329,
+      "structure_match": 329,
+      "structure_mismatch": 0,
+      "match_rate": 1.0,
+      "mismatches_sample": [],
+      "verdict": "PASS",
+      "verdict_detail": "CSV vs JSONL结构一致率=100.0% (329/329)"
+    },
+    {
+      "method": "M8_semantic_content",
+      "description": "关键词命中率、数值格式验证、图像PDF文本层质量",
+      "keyword_analysis": {
+        "non_empty_tables": 328,
+        "keyword_hit_tables": 319,
+        "keyword_hit_rate": 0.973,
+        "percentage_format_rate": 0.753,
+        "absolute_number_rate": 0.808,
+        "keywords_checked": [
+          "客流",
+          "到访",
+          "人数",
+          "游客",
+          "TGI",
+          "偏好",
+          "画像",
+          "年龄",
+          "消费",
+          "人均",
+          "收入",
+          "金额",
+          "排名",
+          "占比",
+          "比例",
+          "百分",
+          "工作地",
+          "居住",
+          "来源",
+          "POI",
+          "景点",
+          "商圈",
+          "品牌"
+        ]
+      },
+      "image_pdf_text_layer": {
+        "pdf_name": "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+        "sampled_pages": 7,
+        "pages_with_text_layer": 7,
+        "text_coverage": 1.0,
+        "page_stats": [
+          {
+            "page": 1,
+            "image_count": 1,
+            "text_length": 36,
+            "word_count": 3,
+            "chinese_word_count": 2,
+            "has_text_layer": true
+          },
+          {
+            "page": 2,
+            "image_count": 1,
+            "text_length": 599,
+            "word_count": 63,
+            "chinese_word_count": 3,
+            "has_text_layer": true
+          },
+          {
+            "page": 3,
+            "image_count": 1,
+            "text_length": 127,
+            "word_count": 15,
+            "chinese_word_count": 3,
+            "has_text_layer": true
+          },
+          {
+            "page": 6,
+            "image_count": 1,
+            "text_length": 599,
+            "word_count": 63,
+            "chinese_word_count": 3,
+            "has_text_layer": true
+          },
+          {
+            "page": 11,
+            "image_count": 1,
+            "text_length": 127,
+            "word_count": 15,
+            "chinese_word_count": 3,
+            "has_text_layer": true
+          },
+          {
+            "page": 21,
+            "image_count": 1,
+            "text_length": 327,
+            "word_count": 46,
+            "chinese_word_count": 21,
+            "has_text_layer": true
+          },
+          {
+            "page": 51,
+            "image_count": 1,
+            "text_length": 131,
+            "word_count": 11,
+            "chinese_word_count": 9,
+            "has_text_layer": true
+          }
+        ],
+        "note": "图像型PDF: 有文本层说明含OCR叠加，但不代表表格可被直接提取"
+      },
+      "verdict": "PASS",
+      "verdict_detail": "业务关键词命中率=97.3% (≥30%), 百分比格式=75.3%"
+    }
+  ]
+}

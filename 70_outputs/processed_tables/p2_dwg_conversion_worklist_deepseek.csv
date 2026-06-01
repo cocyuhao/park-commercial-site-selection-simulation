@@ -1,0 +1,9 @@
+﻿task_id,source_id,dwg_file,conversion_goal,acceptable_outputs,must_record,blocking_status,output_status,executor,llm_task_id
+P2-DWG-CONVERT-001,P2SRC-002,奥森北园(字体放大)-改造建筑示意_t5.dwg,转换为 DXF 格式（AutoCAD 2007 ASCII）,"['dxf', 'dwg (upgraded)']","layer_names, text_labels, coordinate_system, geometry_types, conversion_errors",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-002,P2SRC-002,奥森北园(字体放大)-改造建筑示意_t5.dwg,转换为 DXF 格式（AutoCAD 2004 二进制）,"['dxf', 'dwg (downgraded)']","layer_names, text_labels, block_definitions, errors",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-003,P2SRC-002,奥森北园(字体放大)-改造建筑示意_t5.dwg,转换为矢量 PDF 以保留图层和文本,"['pdf', 'eps']","export_settings, layer_visibility_state, text_fidelity, missing_fonts",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-004,P2SRC-002,奥森北园(字体放大)-改造建筑示意_t5.dwg,转换为 SVG 以用于 Web 统计展示,"['svg', 'png (rasterized)']","scale_factor, text_as_paths, geometry_simplification_level",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-005,P2SRC-003,奥森南园（字体放大）-改造建筑示意_t5.dwg,转换为 DXF 格式（AutoCAD 2007 ASCII）,"['dxf', 'dwg (upgraded)']","layer_names, text_labels, coordinate_system, geometry_types, conversion_errors",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-006,P2SRC-003,奥森南园（字体放大）-改造建筑示意_t5.dwg,转换为 GeoJSON 以便空间分析,"['geojson', 'shp']","projection_info, unit_conversion, attribute_table_mapping",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-007,P2SRC-003,奥森南园（字体放大）-改造建筑示意_t5.dwg,转换为矢量 PDF 保留全图清晰度,"['pdf', 'eps']","lineweight_preservation, hatch_fidelity, text_encoding",pending_conversion,needs_review,deepseek,LLM-021
+P2-DWG-CONVERT-008,P2SRC-003,奥森南园（字体放大）-改造建筑示意_t5.dwg,转换为高分辨率光栅图像（用于快速查看和AI分析）,"['png', 'tiff']","resolution_dpi, color_depth, georeference_if_applicable",pending_conversion,needs_review,deepseek,LLM-021

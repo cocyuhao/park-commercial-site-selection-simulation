@@ -1,0 +1,31 @@
+﻿label_id,source_id,source_file,page,label_text,label_type,p2_spatial_use,geometry_status,source_excerpt,quality_status,output_status,executor,llm_task_id
+P2-PDF-LABEL-001,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,林萃路,road,标示北园西侧边界道路，辅助划定范围,pdf_text_label_only_pending_dwg_conversion,"林
+萃
+路",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-002,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,北五环辅路,road,标示北园南侧主要道路，用于边界核对,pdf_text_label_only_pending_dwg_conversion,北  五  环  辅  路,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-003,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,仰山沟,water_green,识别公园内部水系/沟渠，作为自然边界或景观元素,pdf_text_label_only_pending_dwg_conversion,"仰
+山
+沟",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-004,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,奥林西桥,bridge_or_gate,标示主要桥梁节点，用于交通连接分析,pdf_text_label_only_pending_dwg_conversion,奥林西桥,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-005,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,停车场,parking,标识多个停车区域，用于评估车流和停车容量,pdf_text_label_only_pending_dwg_conversion,停车场,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-006,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,运动场,sports,标识户外运动场地，用于运动设施分布核对,pdf_text_label_only_pending_dwg_conversion,运动场,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-007,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,足球场,sports,识别足球场地位置，辅助体育业态分析,pdf_text_label_only_pending_dwg_conversion,足球场,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-008,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,篮球场,sports,识别篮球场地，用于运动设施分布,pdf_text_label_only_pending_dwg_conversion,篮球场,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-009,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,羽毛球气膜馆,sports,标识室内羽毛球馆，可作为室内运动节点,pdf_text_label_only_pending_dwg_conversion,"羽毛球气膜
+馆",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-010,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,游乐场,recreation,标识儿童游乐区域，用于家庭客流热点分析,pdf_text_label_only_pending_dwg_conversion,游乐场,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-011,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,花海,recreation,识别景观打卡点，评估对附近商业的引流作用,pdf_text_label_only_pending_dwg_conversion,花海,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-012,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,丛林穿越,recreation,标识探险类活动场地，丰富户外体验业态,pdf_text_label_only_pending_dwg_conversion,丛林穿越,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-013,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,儿童卡丁车,recreation,识别儿童卡丁车区域，用于亲子娱乐布局,pdf_text_label_only_pending_dwg_conversion,儿童卡丁车,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-014,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,厕所,facility,识别公共服务设施，用于基础设施完备性检查,pdf_text_label_only_pending_dwg_conversion,"5w06
+ 厕所",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-015,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,管理用房,facility,标识管理用房位置，可用于运营支持空间分配,pdf_text_label_only_pending_dwg_conversion,"4A01
+管理用房",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-016,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,车行桥,bridge_or_gate,标示内部桥梁，用于内部交通与分区连接,pdf_text_label_only_pending_dwg_conversion,"5A-4
+车行桥",needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-017,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,变电站,facility,识别电力设施，评估对周边开发的影响,pdf_text_label_only_pending_dwg_conversion,北京电力公司奥运村220KV变电站,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-018,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,消防队,service,标示应急服务设施，用于安全合规评估,pdf_text_label_only_pending_dwg_conversion,消防队,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-019,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,水务站,facility,识别水务管理节点，辅助基础设施认知,pdf_text_label_only_pending_dwg_conversion,仰山沟水务站,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-020,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,乐仕堡,recreation,乐仕堡为儿童探险乐园区，可用于亲子活动节点标注,pdf_text_label_only_pending_dwg_conversion,乐仕堡,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-021,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,保安公司,service,识别安保服务用房，用于运营保障配置,pdf_text_label_only_pending_dwg_conversion,保安公司,needs_review,needs_review,deepseek,LLM-017
+P2-PDF-LABEL-022,P2SRC-001,CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf,1,世奥森林公园开发经营有限公司,building,标示管理主体办公地点，可能作为地标或服务中心,pdf_text_label_only_pending_dwg_conversion,北京世奥森林公园开发经营有限公司,needs_review,needs_review,deepseek,LLM-017

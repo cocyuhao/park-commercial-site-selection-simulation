@@ -1,0 +1,11 @@
+﻿zone_id,zone_name,proxy_basis_labels,spatial_role,candidate_uses,geometry_status,quality_status,output_status,executor,llm_task_id
+P2-PDF-PROXY-ZONE-001,西部道路边界区,"['林萃路', '清林路']",boundary_road_west,"['入口景观门户', '人行道连续性提升']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-002,南部道路边界区,"['北五环辅路', '北五环路']",boundary_road_south,"['隔音与视觉屏障', '桥下灰空间利用']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-003,内部水域系统,"['仰山沟', '清河', '河闸管理站', '水务站']",water_management_and_landscape,"['滨水生态修复', '亲水平台与观景节点']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-004,奥林西桥交通节点,"['奥林西桥', '车行桥']",bridge_nodes,"['桥梁景观化处理', '人行观景设施增设']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-005,停车场集群,"['停车场', '临时停车场']",parking_areas,"['透水铺装改造', '充电桩布置', '弹性活动场地转换']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-006,综合运动区,"['运动场', '足球场', '篮球场', '羽毛球气膜馆', '5人制足球场', '训练狮橄榄球基地']",sports_venues,"['场地材质升级', '服务设施补充', '夜间照明优化']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-007,儿童游憩区,"['游乐场', '丛林穿越', '儿童卡丁车', '乐仕堡', '星球世界']",children_recreation_zone,"['安全防护升级', '自然主题IP引入']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-008,管理服务核心区,"['世奥森林公园开发经营有限公司', '管理用房', '奥运村派出所', '保安公司', '世奥绿化公司', '保洁公司', '民兵连']",management_and_service_compound,"['集约化办公重组', '游客服务中心设置']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-009,公共设施网络,"['厕所', '变电站', '消防队']",public_utilities,"['厕所升级为综合服务站点', '设施外立面艺术化']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021
+P2-PDF-PROXY-ZONE-010,特色项目点,"['花海', '桃花源白房子（155㎡）', '新港卡丁车俱乐部', 'CS营地', '11号冰上集合地']",special_attraction_points,"['体验式商业植入', '小型文化活动场地']",pdf_proxy_label_only_pending_dwg_conversion,needs_review,needs_review,deepseek,LLM-021

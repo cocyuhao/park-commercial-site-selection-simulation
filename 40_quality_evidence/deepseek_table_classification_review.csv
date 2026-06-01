@@ -1,0 +1,9 @@
+﻿check_id,status,severity,finding,evidence
+DSTBL-001,pass,error,source summary rows=329,30_extraction/tables/pdf_native_tables_summary.csv
+DSTBL-002,pass,error,DeepSeek draft rows=329,30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+DSTBL-003,pass,error,missing table ids=[],table_id coverage
+DSTBL-004,pass,error,extra table ids=[],table_id coverage
+DSTBL-005,pass,error,invalid topics=[],topic_draft
+DSTBL-006,pass,error,output_status counts={'draft': 329},output_status
+DSTBL-007,pass,info,"topic distribution={'commercial_supply': 9, 'consumption_spending': 12, 'demographic_profile': 42, 'empty_or_visual_noise': 35, 'origin_residence_work': 24, 'other': 4, 'poi_hot_visit': 38, 'tgi_preference': 161, 'time_peak': 1, 'visitor_flow': 3}",topic_draft
+DSTBL-008,pass,info,P0 second evidence candidate tables=63,pdf_table_review_queue.csv

@@ -1,0 +1,8 @@
+parameter_id,parameter_name,default_value,unit,source,confidence,notes
+PAR-001,walk_speed,80,meter_per_minute,planning_default,assumption,用于把步行距离换算成分钟
+PAR-002,near_walk_threshold,3,minute,planning_default,assumption,近距离消费圈
+PAR-003,mid_walk_threshold,5,minute,planning_default,assumption,常规可接受消费圈
+PAR-004,far_walk_threshold,10,minute,planning_default,assumption,较远可达消费圈
+PAR-005,huff_distance_decay,1.5,index,method_default,assumption,Huff 距离衰减初始参数
+PAR-006,park_revenue_share,0.12,ratio,planning_default,assumption,公园端营业额分成基准值
+PAR-007,base_conversion_rate,0.10,ratio,planning_default,assumption,无真实转化数据时的占位参数

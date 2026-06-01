@@ -1,0 +1,132 @@
+# staging/requirements_best.txt
+# Best Comprehensive Dependencies
+# Updated: 2026-05-28
+# Python 3.12+
+
+# Core
+pandas
+numpy
+scipy
+scikit-learn
+statsmodels
+
+# GIS & Geo
+shapely
+folium
+geopandas
+branca
+pyproj
+haversine
+geopy
+
+# Visualization
+matplotlib
+seaborn
+plotly
+kaleido
+prettytable
+tabulate
+
+# Network & Optimization
+networkx
+deap
+pulp
+ortools
+sympy
+
+# CAD
+ezdxf
+
+# API & Web
+requests
+httpx
+aiohttp
+fastapi
+uvicorn
+python-multipart
+quart
+h11
+
+# Database
+sqlalchemy
+sqlite-utils
+
+# Data Validation
+pydantic
+pydantic-settings
+
+# Text & NLP
+regex
+ftfy
+chardet
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
+
+# Logging
+loguru
+colorama
+rich
+
+# Templating
+jinja2
+mako
+
+# Files
+python-dotenv
+pathlib2
+
+# Time
+python-dateutil
+arrow
+
+# Excel
+xlrd
+xlsxwriter
+openpyxl
+formulas
+
+# JSON/YAML
+pyyaml
+orjson
+
+# Async
+asyncio-throttle
+aiocache
+
+# Caching
+diskcache
+joblib
+
+# Progress
+tqdm
+
+# Web Scraping
+beautifulsoup4
+lxml
+selectolax
+
+# Markdown
+mistune
+markdown-it-py
+
+# CLI
+click
+typer
+questionary
+
+# HTTP Server
+gunicorn
+
+# Docker
+docker
+
+# GitHub
+github3.py
+
+# Notebook
+jupyter
+ipykernel
+ipywidgets

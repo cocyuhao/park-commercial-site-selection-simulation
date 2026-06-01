@@ -1,0 +1,25 @@
+﻿request_id,calibration_domain,target_field,requested_evidence,acceptable_source,validation_rule,p4_dependency,current_status,output_status,executor,llm_task_id
+ER-001,geometry,parsed_dwg_layers,DWG转换为DXF/GeoJSON后的图层数据，包含建筑轮廓、道路、改造建筑示意,成功转换的DXF文件,图层必须包含至少'建筑'、'道路'、'改造建筑'；坐标对齐；无缺失几何,yes,pending_conversion,needs_review,deepseek,LLM-023
+ER-002,geometry,building_area_boundary,各改造建筑的准确面积和物业边界,CAD图纸测量或实测报告,面积与DWG计算一致，并与方案说明书无矛盾,yes,pending_conversion,needs_review,deepseek,LLM-023
+ER-003,visitor_flow,hourly_entrance_flow,各入口逐小时客流统计,官方闸机数据、第三方监测报告,数据时间分辨率至少1小时；至少覆盖一个完整周；无异常跳跃,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-004,visitor_flow,node_path_flow,关键空间节点间路径的客流观测,现场计数或WiFi探针数据,节点间路径流量守恒误差<15%,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-005,visitor_flow,weekday_weekend_split,工作日与周末的客流比例与模式,历史监测数据、报告,比例应与已知公园特征一致，区分早午晚时段,yes,needs_review,needs_review,deepseek,LLM-023
+ER-006,visitor_flow,seasonal_festival_factor,季节及节假日对客流的调整系数,历史年客流数据,月度系数应平滑，节假日系数应有明显峰值,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-007,visitor_flow,real_visitor_mix,真实游客画像比例（亲子/运动/白领等）,问卷调查或运营商数据,比例总和100%，样本量>200,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-008,visitor_flow,time_scene_behavior,不同场景下消费行为观测（运动后消费等）,定时观察或摄像头分析,观测记录应包含时间、场景标签和消费事件,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-009,conversion_rate,format_conversion_rate,各业态人流到消费的转化率,同类型公园经营数据或行业基准,转化率在0.01-0.25之间，业态间差异合理,yes,needs_review,needs_review,deepseek,LLM-023
+ER-010,conversion_rate,business_mix_conversion_profile,各业态特定场景下的转化率细分,实地观测或POS关联,特定场景应有差异化转化率,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-011,revenue_cost,average_spending,各业态客单价与消费频次,实际POS数据或调研,客单价应在行业范围，频次合理,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-012,revenue_cost,rental_lease_terms,铺位租金、分成比例、租期,管理层提供或已签署合同,租金范围符合市场，不违反政策,yes,blocked_until_source_received,needs_review,deepseek,LLM-023
+ER-013,revenue_cost,financial_parameter_set,完整的财务参数集（运营成本、税费等）,财务报表或经营计划,参数完整，无遗漏,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-014,operation_authorization,operation_authorization,经营授权书面确认，包括业态许可、管理边界,公园管理处书面确认,应覆盖所有候选业态，无限制性条款,yes,blocked_until_source_received,needs_review,deepseek,LLM-023
+ER-015,operation_authorization,renovation_permit,改造施工许可、消防、玻璃顶等批复,规自委、消防部门批复,所有拟改造建筑均有许可,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-016,operation_authorization,night_operation_approval,夜间经营特别许可或安全审批,管理部门或公安,针对夜间业态有明确许可,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-017,supply,target_park_poi_supply,目标公园内实际业态供给清单,高德API清洗+现场核验,清单覆盖全部商业点，坐标准确,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-018,competition,nearby_competitor_supply,周边1km竞品商业设施列表,高德POI搜索或地图,列表包含名称、距离、业态,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-019,visitor_profile,verified_demand_catalog,经核验的需求目录（与游客画像匹配）,需求调研、调查问卷,需求项与游客群体匹配，证据充分,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-020,behavior,event_scenario_calendar,赛事、活动等事件日历及其客流影响观测,公园活动安排及历史数据,事件日期与客流峰值对应,yes,pending_collection,needs_review,deepseek,LLM-023
+ER-021,property,south_park_dwg_geometry,南园改造建筑CAD几何数据（DWG或DXF）,南园DWG文件,图层应与北园一致，包含改造建筑示意,yes,pending_conversion,needs_review,deepseek,LLM-023
+ER-022,model_gate,all_core_fields_checked,所有P3核心校准字段状态变为checked,P3质量门禁脚本,无pending、blocked或needs_review状态,yes,needs_review,needs_review,deepseek,LLM-023
+ER-023,model_gate,p4_release_gate,本地验证脚本确认无阻塞,verification script,所有检查通过,yes,needs_review,needs_review,deepseek,LLM-023
+ER-024,geometry,south_park_dwg_parsed,南园DWG解析后的图层和坐标,转换的DXF/GeoJSON,成功转换，层无误,yes,pending_conversion,needs_review,deepseek,LLM-023

@@ -1,0 +1,13 @@
+﻿blocker_id,calibration_domain,blocker,impact_on_p4,next_action,owner_hint,current_status,output_status,executor,llm_task_id
+BL-001,geometry,DWG文件无法转换为DXF/GeoJSON，缺少转换工具,无法进行空间分析、面积计算和动线模拟,寻找或开发DWG转DXF工具，或人工标注关键坐标,数据工程团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-002,visitor_flow,南园DWG未提供或未解析，缺少南园空间数据,南园仿真无法启动,获取南园DWG文件并转换,甲方/测绘团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-003,conversion_rate,未提供任何真实入口客流数据,仿真无法校准，人流生成模型无依据,联系公园管理处获取闸机数据或启动现场计数,运营/数据采集团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-004,revenue_cost,缺少路径客流和节点OD数据,无法校准空间交互强度,部署临时WiFi探针或安排观察,技术团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-005,operation_authorization,没有各业态实际转化率，只有行业假设,收益测算不可靠,收集同类型公园转化率基准或安排快闪测试,商业分析团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-006,model_gate,租金和财务条款未确认,财务模型无法测算真实回报,与管理层开会明确租赁框架,甲方/财务,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-007,operation_authorization,经营授权未获得书面确认,方案可能无法落地，仿真结果无意义,提交正式申请并获取批复,甲方/法务,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-008,operation_authorization,改造许可（消防、结构）未批复,改造范围不确定，投资估算不准,启动报批流程,甲方/设计院,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-009,supply,目标公园内实际供给清单未核实,供给缺口测算有误,现场踏勘并抓取高德数据,数据团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-010,competition,周边竞品供给数据缺失,竞争压力评估不完整,抓取高德POI并现场确认,数据团队,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-011,model_gate,P3校准整体未完成，无法推进P4仿真,所有P4工作仅限骨架，不能运行真实仿真,按优先级收集核心数据，关闭缺口,项目经理,blocked_until_source_received,needs_review,deepseek,LLM-023
+BL-012,model_gate,DWG状态为pending_conversion，导致geometry域完全阻塞,面积、空间指标等关键计算缺失,优先解决转换工具,技术团队,blocked_until_source_received,needs_review,deepseek,LLM-023

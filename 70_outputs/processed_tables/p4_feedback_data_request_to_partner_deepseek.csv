@@ -1,0 +1,13 @@
+﻿request_id,node_id,missing_input,why_needed,acceptable_response,priority,output_status,executor,llm_task_id
+DR-001,P2-NODE-001,真实客流,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-002,P2-NODE-002,转化率,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-003,P2-NODE-003,客单价,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,中,needs_review,deepseek,LLM-025
+DR-004,P2-NODE-004,租金/分成,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-005,P2-NODE-005,装修/人工/运营成本,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-006,P2-NODE-006,运营授权,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-007,P2-NODE-001,真实客流,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-008,P2-NODE-002,转化率,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-009,P2-NODE-003,客单价,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-010,P2-NODE-004,租金/分成,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,中,needs_review,deepseek,LLM-025
+DR-011,P2-NODE-005,装修/人工/运营成本,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,高,needs_review,deepseek,LLM-025
+DR-012,P2-NODE-006,运营授权,用于把反馈草案升级为可校准P4模型。,表格、合同口径、运营方确认或现场统计均可，缺失则保留为空。,中,needs_review,deepseek,LLM-025

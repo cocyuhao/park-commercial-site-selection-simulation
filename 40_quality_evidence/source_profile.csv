@@ -1,0 +1,5 @@
+﻿source_file,source_kind,unit_count,nonempty_units,total_text_length,min_text_length,max_text_length,table_count,picture_count,chart_count,quality_note
+20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,pdf,93,93,31881,20,685,,,,text_extractable
+20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,pdf,250,250,79960,9,694,,,,text_extractable
+20_raw_data/ppt/AI (1)(1).pptx,pptx,15,15,2967,95,312,0,28,0,presentation_assumptions;contains_pictures
+20_raw_data/ppt/奥森修改稿0306.pptx,pptx,15,15,4268,55,589,0,17,0,presentation_assumptions;contains_pictures

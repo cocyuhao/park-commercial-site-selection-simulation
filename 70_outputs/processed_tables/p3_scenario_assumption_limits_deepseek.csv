@@ -1,0 +1,13 @@
+﻿assumption_id,calibration_domain,placeholder_policy,allowed_use_before_real_data,forbidden_use,review_status,output_status,executor,llm_task_id
+SA-001,geometry,暂用PDF标注占位，但禁止计算面积,可用于场景模板布局预览,用于精确面积测算、动线模拟；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-002,visitor_flow,可暂用样例日客流和时段分布，但标记为待核验,用于仿真算法开发和框架测试,用于最终客流预测、收入测算或方案比较；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-003,conversion_rate,建立假设池并标注needs_review，禁止用于结论,用于模型参数化前期探索,作为正式转化率输入收益模型；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-004,revenue_cost,留空或使用行业范围，注明缺失,用于财务模型的压力测试框架,声称反映实际收益或用作投资决策；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-005,operation_authorization,列为高优待确认项，禁止用PPT回填,用于识别需要确认的节点,假设已获得授权并据此规划方案；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-006,model_gate,列入风险评估，未确认前不视为可行,用于风险登记和早期影响评估,认定改造合法可行并推进详细设计；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-007,supply,已有样例种子，需对目标公园重抓,用于搭建供给分析原型,作为目标区域真实供给缺口结论；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-008,competition,待补抓，当前无目标公园周边基表,用于竞争分析模型框架设计,输出竞争威胁评分；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-009,visitor_profile,原型权重临时占位，P3用真实数据替换,用于persona驱动的需求模拟预演,作为实际客群分布并决定业态配比；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-010,behavior,暂时依赖P2触发乘数假设，需校准,用于场景模拟算法开发,断言实际消费乘数效应；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-011,seasonality,可暂用月度指数占位，但需记录为假设,用于季节性场景配置设计,作为真实季节调整因子；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023
+SA-012,model_gate,无占位假设；所有字段必须已验证,无,任何未验证字段进入仿真；不得用于完整仿真结论、最终排序、收益预测、坐标面积,needs_review,needs_review,deepseek,LLM-023

@@ -1,0 +1,19 @@
+﻿criterion_id,calibration_domain,pass_condition,fail_condition,verification_method,blocks_p4_conclusion,output_status,executor,llm_task_id
+AC-001,geometry,DWG转换后的DXF/GeoJSON包含所有关键图层且无几何错误,缺失主要建筑或道路图层,脚本检查图层列表和几何有效性,yes,needs_review,deepseek,LLM-023
+AC-002,visitor_flow,建筑边界面积与CAD实测一致（误差<5%）,差异超过5%,属性与实测报告对比,yes,needs_review,deepseek,LLM-023
+AC-003,conversion_rate,入口逐小时客流数据完整覆盖至少7天且通过异常检测,数据大量缺失或存在异常模式,完整性校验和统计异常检测,yes,needs_review,deepseek,LLM-023
+AC-004,revenue_cost,路径客流观测值与基于入口的OD模型推演误差<20%,误差过大,比较观测值与模型推演值,yes,needs_review,deepseek,LLM-023
+AC-005,operation_authorization,工作日/周末客流分割模式与历史数据一致，且各时段比例稳定,模式矛盾,统计检验,yes,needs_review,deepseek,LLM-023
+AC-006,model_gate,季节系数和节假日因子拟合曲线R^2 > 0.7,拟合差,回归分析,yes,needs_review,deepseek,LLM-023
+AC-007,conversion_rate,各业态转化率在行业基准范围内且与现场观测一致,转化率超出范围或无依据,基准比对和观察验证,yes,needs_review,deepseek,LLM-023
+AC-008,revenue_cost,客单价和消费频次有POS数据或调研支持，且与财务模型相符,缺乏真实数据或模型不一致,交叉验证,yes,needs_review,deepseek,LLM-023
+AC-009,revenue_cost,所有拟出租铺位的租金和条款均已由管理层确认并记录,存在未确认条款,文档审核,yes,needs_review,deepseek,LLM-023
+AC-010,operation_authorization,管理局书面确认经营授权，明确允许所有候选业态,存在限制或未回复,直接确认函,yes,needs_review,deepseek,LLM-023
+AC-011,operation_authorization,改造许可包括消防、结构等批复全部齐全,缺少任一许可,批复文件审核,yes,needs_review,deepseek,LLM-023
+AC-012,supply,目标公园内供给清单经现场核验，与高德数据一致，覆盖所有商业点,遗漏或错误,现场踏勘和高德比对,yes,needs_review,deepseek,LLM-023
+AC-013,competition,周边竞品供给列表完整，并已纳入竞争压力模型,关键竞品缺失,列表交叉验证,yes,needs_review,deepseek,LLM-023
+AC-014,visitor_profile,游客画像调查样本量足够，比例分布合理，并用于校准权重,样本不足或偏差大,统计检验,yes,needs_review,deepseek,LLM-023
+AC-015,behavior,场景消费行为观测记录至少包含20个观测时段，且与假设一致,观测不足,记录审核,yes,needs_review,deepseek,LLM-023
+AC-016,property,南园DWG成功转换且建筑边界清晰，北园所有面积已校准,关键面积缺失,图层检查,yes,needs_review,deepseek,LLM-023
+AC-017,model_gate,所有P3校准核心字段状态为checked，无 blocking 缺口,存在未关闭的缺口,自动化状态检查脚本,yes,needs_review,deepseek,LLM-023
+AC-018,model_gate,本地验证脚本输出通过，无仿真限制警告,有未解决问题,执行验证集,yes,needs_review,deepseek,LLM-023

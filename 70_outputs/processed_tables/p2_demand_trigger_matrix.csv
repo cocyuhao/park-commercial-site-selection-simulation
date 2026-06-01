@@ -1,0 +1,13 @@
+﻿trigger_id,persona_name,trigger_condition,demand_effect,prototype_multiplier,calibration_status,output_status
+P2-TRG-001,亲子家庭,周末/节假日,亲子活动与轻餐需求上升,1.25,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-002,亲子家庭,儿童疲劳/等待,休息、饮品、游乐消费触发,1.15,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-003,运动健身人群,运动后30分钟,补给、康复、装备需求上升,1.3,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-004,运动健身人群,赛事/活动,快速补给与品牌装备需求上升,1.2,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-005,周边白领与社交人群,午间/下午茶,咖啡、烘焙、早午餐需求上升,1.25,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-006,周边白领与社交人群,社交约见,环境型餐饮和轻社交需求上升,1.15,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-007,老人康养人群,上午低峰,康养体验和安静服务需求上升,1.1,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-008,老人康养人群,健康活动,中医康复与国学课程需求上升,1.2,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-009,外地游客与文化参观人群,参观动线经过,展陈、导览和纪念消费需求上升,1.15,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-010,外地游客与文化参观人群,活动展览,文化体验和轻餐停留需求上升,1.2,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-011,夜间活动与演艺人群,夜间演出,餐饮、饮品和活动补给需求上升,1.35,needs_real_flow_and_behavior_data,needs_review
+P2-TRG-012,夜间活动与演艺人群,政策允许夜间经营,夜间消费场景才可进入测算,1.0,needs_real_flow_and_behavior_data,needs_review

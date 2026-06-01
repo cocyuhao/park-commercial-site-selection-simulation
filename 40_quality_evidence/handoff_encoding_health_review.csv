@@ -1,0 +1,44 @@
+﻿check_id,status,severity,finding,evidence
+HANDOFF-ENC-001,pass,error,AGENTS.md exists,AGENTS.md
+HANDOFF-ENC-002,pass,error,AGENTS.md is readable as utf-8-sig,AGENTS.md
+HANDOFF-ENC-003,pass,error,AGENTS.md forbidden mojibake tokens=[],AGENTS.md
+HANDOFF-ENC-004,pass,error,progress.md exists,progress.md
+HANDOFF-ENC-005,pass,error,progress.md is readable as utf-8-sig,progress.md
+HANDOFF-ENC-006,pass,error,progress.md forbidden mojibake tokens=[],progress.md
+HANDOFF-ENC-007,pass,error,findings.md exists,findings.md
+HANDOFF-ENC-008,pass,error,findings.md is readable as utf-8-sig,findings.md
+HANDOFF-ENC-009,pass,error,findings.md forbidden mojibake tokens=[],findings.md
+HANDOFF-ENC-010,pass,error,handoff_next_chat.md exists,handoff_next_chat.md
+HANDOFF-ENC-011,pass,error,handoff_next_chat.md is readable as utf-8-sig,handoff_next_chat.md
+HANDOFF-ENC-012,pass,error,handoff_next_chat.md forbidden mojibake tokens=[],handoff_next_chat.md
+HANDOFF-ENC-013,pass,error,next_chat_prompt.md exists,next_chat_prompt.md
+HANDOFF-ENC-014,pass,error,next_chat_prompt.md is readable as utf-8-sig,next_chat_prompt.md
+HANDOFF-ENC-015,pass,error,next_chat_prompt.md forbidden mojibake tokens=[],next_chat_prompt.md
+HANDOFF-ENC-016,pass,error,task_plan.md exists,task_plan.md
+HANDOFF-ENC-017,pass,error,task_plan.md is readable as utf-8-sig,task_plan.md
+HANDOFF-ENC-018,pass,error,task_plan.md forbidden mojibake tokens=[],task_plan.md
+HANDOFF-ENC-019,pass,error,00_control/decisions.md exists,00_control/decisions.md
+HANDOFF-ENC-020,pass,error,00_control/decisions.md is readable as utf-8-sig,00_control/decisions.md
+HANDOFF-ENC-021,pass,error,00_control/decisions.md forbidden mojibake tokens=[],00_control/decisions.md
+HANDOFF-ENC-022,pass,error,00_control/plugin_routing.md exists,00_control/plugin_routing.md
+HANDOFF-ENC-023,pass,error,00_control/plugin_routing.md is readable as utf-8-sig,00_control/plugin_routing.md
+HANDOFF-ENC-024,pass,error,00_control/plugin_routing.md forbidden mojibake tokens=[],00_control/plugin_routing.md
+HANDOFF-ENC-025,pass,error,"AGENTS.md current phase says P2 method prototype is closed, not blocked",AGENTS.md
+HANDOFF-ENC-026,pass,error,AGENTS.md preserves P2 boundary and DeepSeek-first routing,AGENTS.md
+HANDOFF-ENC-027,pass,error,handoff_next_chat.md mentions LLM-018,handoff_next_chat.md
+HANDOFF-ENC-028,pass,error,handoff_next_chat.md mentions LLM-019,handoff_next_chat.md
+HANDOFF-ENC-029,pass,error,handoff_next_chat.md records latest gate,handoff_next_chat.md
+HANDOFF-ENC-030,pass,error,handoff_next_chat.md preserves DWG pending_conversion boundary,handoff_next_chat.md
+HANDOFF-ENC-031,pass,error,next_chat_prompt.md mentions LLM-018,next_chat_prompt.md
+HANDOFF-ENC-032,pass,error,next_chat_prompt.md mentions LLM-019,next_chat_prompt.md
+HANDOFF-ENC-033,pass,error,next_chat_prompt.md records latest gate,next_chat_prompt.md
+HANDOFF-ENC-034,pass,error,next_chat_prompt.md preserves DWG pending_conversion boundary,next_chat_prompt.md
+HANDOFF-ENC-035,pass,error,findings.md mentions LLM-018,findings.md
+HANDOFF-ENC-036,pass,error,findings.md mentions LLM-019,findings.md
+HANDOFF-ENC-037,pass,error,findings.md records latest gate,findings.md
+HANDOFF-ENC-038,pass,error,findings.md preserves DWG pending_conversion boundary,findings.md
+HANDOFF-ENC-039,pass,error,progress.md mentions LLM-018,progress.md
+HANDOFF-ENC-040,pass,error,progress.md mentions LLM-019,progress.md
+HANDOFF-ENC-041,pass,error,progress.md records latest gate,progress.md
+HANDOFF-ENC-042,pass,error,progress.md preserves DWG pending_conversion boundary,progress.md
+HANDOFF-ENC-043,pass,error,decisions.md records latest P2 and handoff decisions plus latest gate,00_control/decisions.md

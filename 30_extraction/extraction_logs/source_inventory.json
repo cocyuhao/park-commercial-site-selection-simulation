@@ -1,0 +1,54 @@
+{
+  "cataloged_at": "2026-05-22T13:51:58",
+  "file_count": 4,
+  "files": [
+    {
+      "source_id": "SRC-0001",
+      "file_path": "20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+      "file_name": "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+      "file_type": "pdf",
+      "size_bytes": 1477869,
+      "last_modified": "2026-05-19T11:59:06",
+      "cataloged_at": "2026-05-22T13:51:58",
+      "role": "source_report_pdf",
+      "evidence_strength_default": "medium_high",
+      "notes": ""
+    },
+    {
+      "source_id": "SRC-0002",
+      "file_path": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+      "file_name": "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+      "file_type": "pdf",
+      "size_bytes": 2874276,
+      "last_modified": "2026-05-18T22:13:22",
+      "cataloged_at": "2026-05-22T13:51:58",
+      "role": "source_report_pdf",
+      "evidence_strength_default": "medium_high",
+      "notes": ""
+    },
+    {
+      "source_id": "SRC-0003",
+      "file_path": "20_raw_data/ppt/AI (1)(1).pptx",
+      "file_name": "AI (1)(1).pptx",
+      "file_type": "pptx",
+      "size_bytes": 34877227,
+      "last_modified": "2026-05-19T11:59:10",
+      "cataloged_at": "2026-05-22T13:51:58",
+      "role": "presentation_or_assumption_material",
+      "evidence_strength_default": "medium_low",
+      "notes": ""
+    },
+    {
+      "source_id": "SRC-0004",
+      "file_path": "20_raw_data/ppt/奥森修改稿0306.pptx",
+      "file_name": "奥森修改稿0306.pptx",
+      "file_type": "pptx",
+      "size_bytes": 13128765,
+      "last_modified": "2026-05-18T22:13:31",
+      "cataloged_at": "2026-05-22T13:51:58",
+      "role": "presentation_or_assumption_material",
+      "evidence_strength_default": "medium_low",
+      "notes": ""
+    }
+  ]
+}

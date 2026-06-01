@@ -1,0 +1,29 @@
+{
+  "status": "1",
+  "info": "ok",
+  "infocode": "10000",
+  "count": "1",
+  "route": {
+    "origin": "116.407834,40.030595",
+    "destination": "116.407780,40.030533",
+    "paths": [
+      {
+        "distance": "3",
+        "duration": "2",
+        "steps": [
+          {
+            "instruction": "向西步行3米到达目的地",
+            "orientation": "西",
+            "road": [],
+            "distance": "3",
+            "duration": "2",
+            "polyline": "116.40776,40.030373;116.407734,40.030378",
+            "action": [],
+            "assistant_action": "到达目的地",
+            "walk_type": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

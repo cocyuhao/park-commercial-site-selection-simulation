@@ -1,0 +1,9 @@
+category_id,category_name,examples,default_need_weight,default_supply_decay_minutes,notes
+CAT-COFFEE,精品咖啡,"咖啡馆,瑞幸,星巴克,M Stand,独立咖啡",1.20,5,适合白领/运动后/休闲游客
+CAT-FASTFOOD,快餐小吃,"麦当劳,肯德基,小吃快餐,简餐",1.00,5,基础高频补给
+CAT-FAMILY,亲子餐饮,"儿童餐,亲子餐厅,家庭餐",1.15,8,亲子客群和周末需求
+CAT-CULTURAL,文创零售,"纪念品,文创,公园主题商品",0.90,10,游客和活动场景
+CAT-NIGHT,夜间餐酒,"酒吧,精酿,轻餐酒,夜市",1.10,8,17-22时段和夜间经济
+CAT-SPORT,运动补给,"轻食,能量饮料,运动营养,补给站",1.05,5,跑步/骑行/运动人群
+CAT-CONVENIENCE,便利零售,"便利店,自动售货,饮用水,应急用品",0.95,3,基础便利需求
+CAT-HEALTH,健康休闲,"瑜伽,普拉提,健身,康复理疗",0.85,10,需要更强空间和课程条件

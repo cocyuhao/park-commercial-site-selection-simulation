@@ -1,0 +1,7 @@
+﻿persona_id,persona_name,prototype_weight,key_needs,source_basis,calibration_status,output_status,p2_use
+P2-PER-001,亲子家庭,0.18,轻餐、游乐、亲子活动、遮阴休息,P1 需求画像 + P2 场景假设,needs_real_visitor_mix,needs_review,method_prototype_parameter_not_real_calibration
+P2-PER-002,运动健身人群,0.16,补给、运动装备、康复理疗、淋浴/储物线索,P1 TGI/运动空间标签 + P2 运动设施,needs_real_visitor_mix,needs_review,method_prototype_parameter_not_real_calibration
+P2-PER-003,周边白领与社交人群,0.15,咖啡、烘焙、早午餐、轻社交,P1 消费偏好 + DOCX 业态假设,needs_real_visitor_mix,needs_review,method_prototype_parameter_not_real_calibration
+P2-PER-004,老人康养人群,0.14,中医、康复、国学、安静休憩,DOCX 中医国学康养假设,needs_real_visitor_mix,needs_review,method_prototype_parameter_not_real_calibration
+P2-PER-005,外地游客与文化参观人群,0.17,展陈、纪念、文化体验、导览,DOCX 廉洁主题展馆和文化项目,needs_real_visitor_mix,needs_review,method_prototype_parameter_not_real_calibration
+P2-PER-006,夜间活动与演艺人群,0.2,露天剧场、夜间轻餐、活动补给,DOCX 南门露天剧场假设,needs_policy_and_flow_confirmation,needs_review,method_prototype_parameter_not_real_calibration

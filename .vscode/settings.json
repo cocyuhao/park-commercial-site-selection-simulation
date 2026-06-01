@@ -1,0 +1,7 @@
+﻿{
+    "python.defaultInterpreterPath": "C:\\Users\\Yy199\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "python.terminal.activateEnvironment": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
+}

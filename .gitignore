@@ -1,0 +1,19 @@
+# Local credentials
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+
+# Generated heavy/intermediate outputs
+30_extraction/extraction_logs/*.tmp
+70_outputs/**/*.tmp
+90_archive/old_runs/
+
+# Office temporary files
+~$*

@@ -1,0 +1,10 @@
+{
+  "run_id": "20260525T064804Z",
+  "total_tables": 63,
+  "completed_tables": 63,
+  "remaining_tables": 0,
+  "candidate_rows": 592,
+  "raw_chunks": 63,
+  "chunk_size": 1,
+  "updated_at": "2026-05-25T07:48:30Z"
+}

@@ -1,0 +1,33 @@
+﻿check_id,status,severity,finding,evidence
+P3-CALIB-REVIEW-001,pass,error,evidence request rows=24,70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-002,pass,error,acceptance rows=18,70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-003,pass,error,assumption limit rows=12,70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-004,pass,error,blocker rows=12,70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-005,pass,error,gate rows=6,70_outputs/processed_tables/p3_calibration_gate_status.csv
+P3-CALIB-REVIEW-006,pass,error,evidence statuses={'needs_review': 24},70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-007,pass,error,evidence executors={'deepseek': 24},70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-008,pass,error,evidence task ids={'LLM-023': 24},70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-009,pass,error,acceptance statuses={'needs_review': 18},70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-010,pass,error,acceptance executors={'deepseek': 18},70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-011,pass,error,acceptance task ids={'LLM-023': 18},70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-012,pass,error,limits statuses={'needs_review': 12},70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-013,pass,error,limits executors={'deepseek': 12},70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-014,pass,error,limits task ids={'LLM-023': 12},70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-015,pass,error,blockers statuses={'needs_review': 12},70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-016,pass,error,blockers executors={'deepseek': 12},70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-017,pass,error,blockers task ids={'LLM-023': 12},70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-018,pass,error,evidence covers core domains missing=[],70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-019,pass,error,acceptance covers core domains missing=[],70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-020,pass,error,limits covers core domains missing=[],70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-021,pass,error,blockers covers core domains missing=[],70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-022,pass,error,gate covers core domains missing=[],70_outputs/processed_tables/p3_calibration_gate_status.csv
+P3-CALIB-REVIEW-023,pass,error,"evidence statuses=['blocked_until_source_received', 'needs_review', 'pending_collection', 'pending_conversion']",70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-024,pass,error,geometry evidence remains pending_conversion,70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv
+P3-CALIB-REVIEW-025,pass,error,acceptance criteria block P4 conclusion,70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv
+P3-CALIB-REVIEW-026,pass,error,scenario limits forbid premature P4 outputs,70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv
+P3-CALIB-REVIEW-027,pass,error,blocker statuses={'blocked_until_source_received': 12},70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv
+P3-CALIB-REVIEW-028,pass,error,"P3 gates are not falsely closed statuses=['blocked_until_source_received', 'pending_conversion']",70_outputs/processed_tables/p3_calibration_gate_status.csv
+P3-CALIB-REVIEW-029,pass,error,all P3 gates required before P4 conclusion,70_outputs/processed_tables/p3_calibration_gate_status.csv
+P3-CALIB-REVIEW-030,pass,error,summary output_status=needs_review,40_quality_evidence/deepseek_p3_calibration_execution_package.json
+P3-CALIB-REVIEW-031,pass,error,summary executor=deepseek,40_quality_evidence/deepseek_p3_calibration_execution_package.json
+P3-CALIB-REVIEW-032,pass,error,summary task=LLM-023,40_quality_evidence/deepseek_p3_calibration_execution_package.json

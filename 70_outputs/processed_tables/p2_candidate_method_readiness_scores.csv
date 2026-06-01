@@ -1,0 +1,7 @@
+﻿candidate_score_id,node_id,node_name,candidate_theme_tags,demand_fit_score_prototype,spatial_access_score_prototype,implementation_feasibility_score_prototype,evidence_confidence_score_prototype,method_readiness_score_prototype,score_use_boundary,blocking_gaps,output_status
+P2-METHOD-SCORE-001,P2-NODE-001,桃花源白房子,文化休闲/轻餐,58,25,35,60,48.48,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review
+P2-METHOD-SCORE-002,P2-NODE-002,奥运廉洁主题展馆,文化展陈,57,25,35,60,48.12,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review
+P2-METHOD-SCORE-003,P2-NODE-003,12#西分区管理中心,运动康复/轻餐,56,25,35,60,47.76,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review
+P2-METHOD-SCORE-004,P2-NODE-004,南门地下预埋空间,大体量复合空间,56,25,35,60,47.76,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review
+P2-METHOD-SCORE-005,P2-NODE-005,南门露天剧场,活动演艺/夜间消费;烘焙早午餐;演艺活动,63,25,35,52,48.04,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review
+P2-METHOD-SCORE-006,P2-NODE-006,10#2A03分区管理中心,中医国学康养;康养,62,25,35,60,49.92,ranking_method_draft_not_final_site_selection,conversion_rate;geometry;model_gate;operation_authorization;revenue_cost;visitor_flow,needs_review

@@ -1,0 +1,17 @@
+﻿map_id,p2_source_table,p2_field_or_metric,p3_calibration_field,transformation_rule,calibration_status,output_status,executor,llm_task_id
+P3-MAP-001,p2_personas,prototype_weight,real_visitor_mix_proportion,用调查获取的真实游客画像比例替换原型权重; 归一化后使用,pending,needs_review,deepseek,LLM-022
+P3-MAP-002,p2_personas,key_needs,verified_demand_catalog,将原型需求库与实地需求调研比对，保留一致项，剔除/补充差异项,pending,needs_review,deepseek,LLM-022
+P3-MAP-003,p2_triggers,prototype_multiplier,observed_behavior_coefficient,基于实际观测数据（时间序列消费）计算乘数，替换原型值,pending,needs_review,deepseek,LLM-022
+P3-MAP-004,p2_triggers,trigger_condition,event_scenario_calendar,将触发条件映射为可验证的节假日/赛事/活动日历，并确认是否真实存在,pending,needs_review,deepseek,LLM-022
+P3-MAP-005,p2_formula (P2-FORM-001),demand_fit_score,calibrated_demand_score,使用真实需求调查数据重新计算匹配度，替换原型评分,pending,needs_review,deepseek,LLM-022
+P3-MAP-006,p2_formula (P2-FORM-002),supply_gap_score,calibrated_supply_gap,采用目标公园及周边真实POI供给重算缺口评分,pending,needs_review,deepseek,LLM-022
+P3-MAP-007,p2_formula (P2-FORM-003),spatial_access_score,calibrated_accessibility,基于DWG解析的几何和路网计算步行时间与距离，替代PDF代理评分,pending,needs_review,deepseek,LLM-022
+P3-MAP-008,p2_formula (P2-FORM-004),scene_synergy_score,calibrated_synergy,用地理标签（运动场、水景、展馆等）的真实坐标与属性重新评估协同效应,pending,needs_review,deepseek,LLM-022
+P3-MAP-009,p2_formula (P2-FORM-005),revenue_potential_score,calibrated_revenue_potential,结合真实客单价、转化率与租期参数重新计算营收潜力,pending,needs_review,deepseek,LLM-022
+P3-MAP-010,p2_formula (P2-FORM-006),implementation_feasibility_score,verified_feasibility,依据运营授权、施工许可及管理方反馈校准可行性评分,pending,needs_review,deepseek,LLM-022
+P3-MAP-011,p2_formula (P2-FORM-007),risk_penalty_score,calibrated_risk_penalty,依据政策审查、消防、夜间运营等确认结果调整风险扣分,pending,needs_review,deepseek,LLM-022
+P3-MAP-012,p2_formula (P2-FORM-008),evidence_confidence_score,calibrated_confidence,映射至P3证据状态（checked/needs_review），重新计算置信度,pending,needs_review,deepseek,LLM-022
+P3-MAP-013,p2_gap_register,GAP-001 (dwg_geometry_not_parsed),geometry_parsed_status,DWG成功转换为DXF/GeoJSON后，将此缺口标记为closed,blocked,needs_review,deepseek,LLM-022
+P3-MAP-014,p2_gap_register,GAP-003 (Real visitor flow),entrance_node_flow_data,接入真实客流数据后移除空白占位，并重新跑通校准管道,blocked,needs_review,deepseek,LLM-022
+P3-MAP-015,p2_gap_register,GAP-005 (Revenue/cost/rent/share),financial_parameter_set,用真实合同/经营数据替换空白，并校验模型输出,blocked,needs_review,deepseek,LLM-022
+P3-MAP-016,p2_project_node_candidates.csv,node_name,candidate_node_id_or_name,retain_as_candidate_label_only,needs_p3_validation,needs_review,deepseek,LLM-022
