@@ -256,6 +256,16 @@
               </div>
               <div id="integrationStatus" class="integration-list"></div>
             </section>
+            <section class="panel simulation-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>结构化仿真干跑</h2>
+                  <p>调用后端任务接口，只检查数据闭环和可复现性，不输出最终排序或收益预测。</p>
+                </div>
+                <button id="runSimulationBtn" class="primary-btn">运行干跑</button>
+              </div>
+              <div id="simulationStatus" class="simulation-status"></div>
+            </section>
           </section>
         </section>
 
@@ -285,6 +295,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260601b"></script>
+    <script src="/static/app.js?v=20260601c"></script>
   </body>
 </html>

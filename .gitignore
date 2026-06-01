@@ -14,6 +14,9 @@ __pycache__/
 30_extraction/extraction_logs/*.tmp
 70_outputs/**/*.tmp
 90_archive/old_runs/
+60_model/db/*.sqlite3
+60_model/db/*.sqlite3-*
+90_p6_expert_dashboard/cache/uvicorn_*.log
 
 # Office temporary files
 ~$*

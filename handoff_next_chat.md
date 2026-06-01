@@ -1,5 +1,15 @@
 # 下一次会话交接
 
+## 2026-06-01 员工A后端改进交接
+
+- 已新增后端数据库和仿真任务最小闭环。
+- 关键新增文件：`60_model/db/schema.sql`、`60_model/db/store.py`、`60_model/scripts/init_db.py`、`60_model/scripts/import_existing_outputs.py`、`60_model/simulation/engine.py`、`60_model/simulation/validators.py`。
+- `90_p6_expert_dashboard/app.py` 已新增接口：`/api/data/poi-candidates`、`/api/data/gates`、`/api/simulation/jobs`、`/api/simulation/jobs/{job_id}`、`/api/simulation/jobs/{job_id}/results`、`/api/simulation/jobs/{job_id}/export`。
+- `90_p6_expert_dashboard/static/index.html`、`app.js`、`styles.css` 已新增资料闭合中心的结构化仿真干跑面板。
+- 已验证：数据库导入 POI 227 条、P3 gate 6 条；创建任务 1 个，结果 15 行，导出正常。
+- 已用浏览器验证：点击“运行干跑”可生成任务并显示结果行、待复核状态和导出按钮。
+- 继续推进时，先保持当前边界：这是结构化干跑和任务闭环，不是最终 P4 仿真，不得输出最终排序、收益预测或推荐结论。
+
 ## 当前项目
 
 路径：`C:\Users\Yy199\Desktop\仿真设计`

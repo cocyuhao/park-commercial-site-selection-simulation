@@ -1,5 +1,24 @@
 # 项目进度
 
+## 2026-06-01 员工A后端改进第一阶段
+
+### 已完成
+
+- 已新增 SQLite 数据库表结构和读写层：`60_model/db/schema.sql`、`60_model/db/store.py`。
+- 已新增数据库初始化和导入脚本：`60_model/scripts/init_db.py`、`60_model/scripts/import_existing_outputs.py`。
+- 已新增结构化仿真干跑骨架和校验：`60_model/simulation/engine.py`、`60_model/simulation/validators.py`。
+- 已在 FastAPI 接入数据和仿真任务接口：POI 候选、P3 gate、创建任务、查询任务、查询结果、导出结果。
+- 已把本地运行态数据库和 uvicorn 日志加入 `.gitignore`。
+- 已生成本地 SQLite 数据库，导入 POI 候选 227 条、P3 gate 6 条。
+- 已验证接口闭环：创建仿真任务 1 个，产出 `needs_review / not_final` 结果 15 行，CSV 导出正常。
+- 已修改前端资料闭合中心：新增“结构化仿真干跑”面板、运行按钮、最新任务摘要、CSV/JSON 导出入口。
+- 已用浏览器验证前端：页面能显示新面板，点击“运行干跑”后生成任务并显示结果行、待复核状态和导出按钮。
+
+### 当前边界
+
+- 当前不是正式 P4 仿真，只是后端可复现任务闭环和结构化干跑。
+- P3 gate 仍有 6 项未闭合，接口不得输出最终排序、收益预测或推荐结论。
+
 ## 2026-05-28 P4完整仿真已完成!!!
 
 ### 当前状态

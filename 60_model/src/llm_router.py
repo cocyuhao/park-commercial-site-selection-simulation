@@ -58,6 +58,15 @@ def load_local_env(path: Path | None = None) -> None:
         value = value.strip().strip('"').strip("'")
         if key and key not in os.environ:
             os.environ[key] = value
+    env_aliases = {
+        "OPENAI_API_KEY": "DEEPSEEK_API_KEY",
+        "OPENAI_API_BASE": "DEEPSEEK_API_BASE",
+        "LLM_MODEL": "DEEPSEEK_MODEL",
+        "AMAP_API_KEY": "AMAP_WEB_SERVICE_KEY",
+    }
+    for source_key, target_key in env_aliases.items():
+        if source_key in os.environ and target_key not in os.environ:
+            os.environ[target_key] = os.environ[source_key]
 
 
 def deepseek_client() -> OpenAI:
@@ -69,7 +78,8 @@ def deepseek_client() -> OpenAI:
         timeout = float(os.environ.get("DEEPSEEK_TIMEOUT_SECONDS", "300"))
     except ValueError:
         timeout = 300.0
-    return OpenAI(api_key=api_key, base_url="https://api.deepseek.com", timeout=timeout)
+    base_url = os.environ.get("DEEPSEEK_API_BASE", "https://api.deepseek.com")
+    return OpenAI(api_key=api_key, base_url=base_url, timeout=timeout)
 
 
 def route_for(task_id: str) -> LLMRoute:
@@ -87,7 +97,7 @@ def run_deepseek_task(task_id: str, messages: Iterable[dict[str, str]], temperat
         raise RuntimeError(f"Task {task_id} is high-risk and must not be delegated to DeepSeek.")
     client = deepseek_client()
     response = client.chat.completions.create(
-        model=route.model or "deepseek-v4-pro",
+        model=os.environ.get("DEEPSEEK_MODEL") or route.model or "deepseek-v4-pro",
         messages=list(messages),
         temperature=temperature,
     )

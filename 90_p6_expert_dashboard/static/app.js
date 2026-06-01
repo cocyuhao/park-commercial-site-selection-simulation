@@ -1,5 +1,7 @@
 const state = {
   data: null,
+  simulationJobs: [],
+  latestSimulationResults: null,
   selectedNodeId: null,
   chatHistory: [],
   currentView: "overview",
@@ -60,8 +62,28 @@ async function loadDashboard() {
   const response = await fetch("/api/dashboard", { cache: "no-store" });
   if (!response.ok) throw new Error(`dashboard api failed: ${response.status}`);
   state.data = await response.json();
+  await loadSimulationJobs();
   state.selectedNodeId = state.selectedNodeId || state.data.nodes[0]?.node_id;
   renderAll();
+}
+
+async function loadSimulationJobs() {
+  try {
+    const response = await fetch("/api/simulation/jobs", { cache: "no-store" });
+    if (!response.ok) throw new Error(`simulation jobs api failed: ${response.status}`);
+    const payload = await response.json();
+    state.simulationJobs = payload.items || [];
+    const latestJob = state.simulationJobs[0];
+    if (latestJob?.job_id) {
+      const resultResponse = await fetch(`/api/simulation/jobs/${encodeURIComponent(latestJob.job_id)}/results`, { cache: "no-store" });
+      state.latestSimulationResults = resultResponse.ok ? await resultResponse.json() : null;
+    } else {
+      state.latestSimulationResults = null;
+    }
+  } catch (error) {
+    state.simulationJobs = [];
+    state.latestSimulationResults = { error: error.message };
+  }
 }
 
 function renderAll() {
@@ -75,6 +97,7 @@ function renderAll() {
   renderUploadList();
   renderCandidateList();
   renderDataPage();
+  renderSimulationPanel();
   renderAiContext();
   renderIntegrationStatus();
 }
@@ -460,6 +483,89 @@ function renderDataPage() {
   `;
 }
 
+function renderSimulationPanel() {
+  const box = $("#simulationStatus");
+  if (!box) return;
+  const latestJob = state.simulationJobs?.[0];
+  const resultItems = state.latestSimulationResults?.items || [];
+  if (state.latestSimulationResults?.error) {
+    box.innerHTML = `<div class="simulation-empty">仿真任务接口暂不可用：${esc(state.latestSimulationResults.error)}</div>`;
+    return;
+  }
+  if (!latestJob) {
+    box.innerHTML = `
+      <div class="simulation-empty">
+        还没有仿真任务。点击“运行干跑”会创建一个待复核任务，用当前 POI 和 P3 gate 检查后端闭环。
+      </div>
+    `;
+    return;
+  }
+  const blocked = resultItems[0]?.blocked_gate_count ?? 0;
+  const missingFields = resultItems.reduce((sum, row) => sum + Number(row.missing_business_field_count || 0), 0);
+  const categories = resultItems.slice(0, 6).map((row) => `
+    <tr>
+      <td>${esc(row.park_id)}</td>
+      <td>${esc(row.category)}</td>
+      <td>${esc(row.candidate_count)}</td>
+      <td>${esc(row.inside_osm_polygon_count)}</td>
+      <td>${esc(row.missing_business_field_count)}</td>
+    </tr>
+  `).join("");
+  box.innerHTML = `
+    <div class="simulation-summary">
+      <div><b>${esc(latestJob.job_id)}</b><span>${esc(latestJob.scenario_name)} · seed ${esc(latestJob.seed)} · ${esc(latestJob.iterations)} 次</span></div>
+      <span class="status-pill danger">待复核 / 非最终</span>
+    </div>
+    <div class="simulation-metrics">
+      <span><b>${esc(resultItems.length)}</b><em>结果行</em></span>
+      <span><b>${esc(blocked)}</b><em>P3 未闭合 gate</em></span>
+      <span><b>${esc(missingFields)}</b><em>经营字段缺失</em></span>
+    </div>
+    <div class="simulation-actions">
+      <button class="secondary-btn" id="refreshSimulationBtn">刷新任务</button>
+      <a class="secondary-btn" href="/api/simulation/jobs/${encodeURIComponent(latestJob.job_id)}/export?format=csv">导出 CSV</a>
+      <a class="secondary-btn" href="/api/simulation/jobs/${encodeURIComponent(latestJob.job_id)}/export?format=json">导出 JSON</a>
+    </div>
+    <div class="simulation-table">
+      <table>
+        <thead><tr><th>公园</th><th>业态</th><th>候选</th><th>边界内</th><th>缺字段</th></tr></thead>
+        <tbody>${categories}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+async function runSimulationDryRun() {
+  const button = $("#runSimulationBtn");
+  button.disabled = true;
+  button.textContent = "运行中";
+  state.lastAction = "正在运行结构化仿真干跑";
+  renderMeta();
+  try {
+    const response = await fetch("/api/simulation/jobs", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        scenario_name: "frontend_structural_dry_run",
+        seed: 20260601,
+        iterations: 100,
+      }),
+    });
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.detail || `simulation failed: ${response.status}`);
+    state.lastAction = `已生成 ${payload.result_count || 0} 行待复核干跑结果`;
+    await loadSimulationJobs();
+    renderSimulationPanel();
+    renderMeta();
+  } catch (error) {
+    state.lastAction = error.message;
+    renderMeta();
+  } finally {
+    button.disabled = false;
+    button.textContent = "运行干跑";
+  }
+}
+
 async function submitUpload(event) {
   event.preventDefault();
   const fileInput = $("#sourceFile");
@@ -710,6 +816,15 @@ function bindEvents() {
       state.lastAction = error.message;
       renderMeta();
     });
+    const refreshSimulationBtn = event.target.closest("#refreshSimulationBtn");
+    if (refreshSimulationBtn) loadSimulationJobs().then(() => {
+      state.lastAction = "仿真任务状态已刷新";
+      renderSimulationPanel();
+      renderMeta();
+    }).catch((error) => {
+      state.lastAction = error.message;
+      renderMeta();
+    });
     const removeAttachmentBtn = event.target.closest("[data-remove-attachment]");
     if (removeAttachmentBtn) {
       state.pendingAttachments.splice(Number(removeAttachmentBtn.dataset.removeAttachment), 1);
@@ -740,6 +855,12 @@ function bindEvents() {
     }
   });
   $("#refreshIntegrationBtn").addEventListener("click", renderIntegrationStatus);
+  $("#runSimulationBtn").addEventListener("click", () => {
+    runSimulationDryRun().catch((error) => {
+      state.lastAction = error.message;
+      renderMeta();
+    });
+  });
   $("#mapSearchForm").addEventListener("submit", (event) => {
     updateMapContext(event).catch((error) => {
       state.lastAction = error.message;

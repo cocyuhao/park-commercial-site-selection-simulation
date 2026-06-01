@@ -27,6 +27,8 @@ def load_local_env(path: Path = ENV_FILE) -> None:
         value = value.strip().strip('"').strip("'")
         if key and key not in os.environ:
             os.environ[key] = value
+    if "AMAP_API_KEY" in os.environ and "AMAP_WEB_SERVICE_KEY" not in os.environ:
+        os.environ["AMAP_WEB_SERVICE_KEY"] = os.environ["AMAP_API_KEY"]
 
 
 def main() -> None:

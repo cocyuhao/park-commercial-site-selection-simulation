@@ -36,11 +36,28 @@ AMAP_STATIC_CACHE = CACHE_DIR / "amap_static_map.png"
 AMAP_STATIC_STATUS_FILE = CACHE_DIR / "amap_static_map_status.json"
 PROCESSED = ROOT / "70_outputs" / "processed_tables"
 SRC_DIR = ROOT / "60_model" / "src"
+DB_DIR = ROOT / "60_model" / "db"
+SIM_DIR = ROOT / "60_model" / "simulation"
 
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
+if str(DB_DIR) not in sys.path:
+    sys.path.insert(0, str(DB_DIR))
+if str(SIM_DIR) not in sys.path:
+    sys.path.insert(0, str(SIM_DIR))
 
 from llm_router import load_local_env, run_deepseek_task  # noqa: E402
+from engine import run_structural_simulation  # noqa: E402
+from store import (  # noqa: E402
+    complete_job,
+    create_job,
+    get_job,
+    get_results,
+    import_existing_outputs,
+    list_calibration_gates,
+    list_jobs,
+    list_poi_candidates,
+)
 
 
 app = FastAPI(title="P6 Expert Decision Dashboard", version="0.1.0")
@@ -82,6 +99,17 @@ class ConfirmCandidateRequest(BaseModel):
 
 class MapContextRequest(BaseModel):
     keyword: str
+
+
+class SimulationJobRequest(BaseModel):
+    scenario_name: str = "structural_dry_run"
+    seed: int = 20260601
+    iterations: int = 100
+
+
+@app.on_event("startup")
+def prepare_local_database() -> None:
+    import_existing_outputs()
 
 
 def read_csv_rows(path: Path) -> list[dict[str, str]]:
@@ -905,6 +933,125 @@ def integration_status() -> dict[str, Any]:
             },
         ],
     }
+
+
+@app.get("/api/data/poi-candidates")
+def api_poi_candidates(limit: int = 200) -> dict[str, Any]:
+    import_existing_outputs()
+    rows = list_poi_candidates(limit=limit)
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "count": len(rows),
+        "items": rows,
+    }
+
+
+@app.get("/api/data/gates")
+def api_calibration_gates() -> dict[str, Any]:
+    import_existing_outputs()
+    rows = list_calibration_gates()
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "count": len(rows),
+        "items": rows,
+    }
+
+
+@app.get("/api/simulation/jobs")
+def api_simulation_jobs() -> dict[str, Any]:
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "items": list_jobs(),
+    }
+
+
+@app.post("/api/simulation/jobs")
+def api_create_simulation_job(request: SimulationJobRequest) -> dict[str, Any]:
+    import_existing_outputs()
+    stamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    job_id = f"SIM-{stamp}-{abs(request.seed) % 100000:05d}"
+    request_row = request.model_dump()
+    create_job(job_id, request.scenario_name, request.seed, request.iterations, request_row)
+    try:
+        results = run_structural_simulation(
+            list_poi_candidates(limit=10000),
+            list_calibration_gates(),
+            seed=request.seed,
+            iterations=request.iterations,
+        )
+        complete_job(job_id, results)
+    except Exception as exc:
+        complete_job(job_id, [], status="failed", error_message=f"{type(exc).__name__}: {exc}")
+        raise HTTPException(status_code=400, detail=f"simulation failed: {type(exc).__name__}: {exc}") from exc
+    job = get_job(job_id)
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "job": job,
+        "result_count": len(get_results(job_id)),
+    }
+
+
+@app.get("/api/simulation/jobs/{job_id}")
+def api_get_simulation_job(job_id: str) -> dict[str, Any]:
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="simulation job not found")
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "job": job,
+    }
+
+
+@app.get("/api/simulation/jobs/{job_id}/results")
+def api_get_simulation_results(job_id: str) -> dict[str, Any]:
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="simulation job not found")
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "job": job,
+        "items": get_results(job_id),
+    }
+
+
+@app.get("/api/simulation/jobs/{job_id}/export")
+def api_export_simulation_results(job_id: str, format: str = "json") -> Response:
+    job = get_job(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail="simulation job not found")
+    results = get_results(job_id)
+    if format == "csv":
+        fields = [
+            "result_id",
+            "job_id",
+            "park_id",
+            "category",
+            "candidate_count",
+            "inside_osm_polygon_count",
+            "missing_business_field_count",
+            "blocked_gate_count",
+            "output_status",
+            "not_final",
+        ]
+        lines = [",".join(fields)]
+        for row in results:
+            lines.append(",".join(str(row.get(field, "")) for field in fields))
+        return Response(
+            content="\n".join(lines) + "\n",
+            media_type="text/csv; charset=utf-8",
+            headers={"Content-Disposition": f'attachment; filename="{job_id}_results.csv"'},
+        )
+    return Response(
+        content=json.dumps({"job": job, "items": results}, ensure_ascii=False, indent=2),
+        media_type="application/json; charset=utf-8",
+        headers={"Content-Disposition": f'attachment; filename="{job_id}_results.json"'},
+    )
 
 
 @app.get("/api/amap/static-map")
