@@ -1,0 +1,18 @@
+﻿check_id,status,severity,finding,evidence
+P4-FEEDBACK-REVIEW-001,pass,error,node rows=6,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-002,pass,error,scenario rows=12,70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-003,pass,error,request rows=12,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv
+P4-FEEDBACK-REVIEW-004,pass,error,node output_status,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-005,pass,error,node executor,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-006,pass,error,node task,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-007,pass,error,scene output_status,70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-008,pass,error,scene executor,70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-009,pass,error,scene task,70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-010,pass,error,request output_status,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv
+P4-FEEDBACK-REVIEW-011,pass,error,request executor,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv
+P4-FEEDBACK-REVIEW-012,pass,error,request task,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv
+P4-FEEDBACK-REVIEW-013,pass,error,node ids are nonempty,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-014,pass,error,node rows marked feedback/not_final,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-015,pass,error,node rows disclose placeholder inputs,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-016,pass,error,no final/checked wording in node draft,70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv
+P4-FEEDBACK-REVIEW-017,pass,error,data requests include core missing inputs,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv

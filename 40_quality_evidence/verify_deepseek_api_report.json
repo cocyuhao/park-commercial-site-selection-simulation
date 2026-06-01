@@ -1,0 +1,146 @@
+{
+  "run_at": "2026-05-25T03:35:47Z",
+  "api_key_masked": "sk-b8...23ad",
+  "overall_verdict": "PASS",
+  "summary": {
+    "PASS": 4,
+    "WARN": 0,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "methods": [
+    {
+      "method": "M1_http_latency",
+      "description": "HTTP层连通性与延迟探测",
+      "probes": 5,
+      "errors": [],
+      "status_codes": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "latency_ms": {
+        "min": 3952.5,
+        "max": 10273.4,
+        "mean": 6540.6,
+        "p50": 5402.9,
+        "p95": 10273.4
+      },
+      "verdict": "PASS",
+      "verdict_detail": "全部5次HTTP 2xx, 均值延迟6540.6ms"
+    },
+    {
+      "method": "M2_models_endpoint",
+      "description": "GET /v1/models 鉴权与可用模型验证",
+      "http_status": 200,
+      "latency_ms": 3847.3,
+      "model_count": 2,
+      "model_ids": [
+        "deepseek-v4-flash",
+        "deepseek-v4-pro"
+      ],
+      "deepseek_models_found": [
+        "deepseek-v4-flash",
+        "deepseek-v4-pro"
+      ],
+      "verdict": "PASS",
+      "verdict_detail": "发现2个模型, deepseek系列: ['deepseek-v4-flash', 'deepseek-v4-pro']"
+    },
+    {
+      "method": "M3_json_consistency",
+      "description": "3次相同输入, temperature=0, JSON格式和答案一致性",
+      "runs": [
+        {
+          "run": 1,
+          "latency_ms": 4369.2,
+          "http_status": 200,
+          "fields_ok": true,
+          "missing_fields": [],
+          "topic_draft": "origin_residence_work",
+          "topic_valid": true,
+          "output_status": "draft",
+          "output_status_ok": true,
+          "parse_ok": true
+        },
+        {
+          "run": 2,
+          "latency_ms": 9368.5,
+          "http_status": 200,
+          "fields_ok": true,
+          "missing_fields": [],
+          "topic_draft": "origin_residence_work",
+          "topic_valid": true,
+          "output_status": "draft",
+          "output_status_ok": true,
+          "parse_ok": true
+        },
+        {
+          "run": 3,
+          "latency_ms": 3751.0,
+          "http_status": 200,
+          "fields_ok": true,
+          "missing_fields": [],
+          "topic_draft": "origin_residence_work",
+          "topic_valid": true,
+          "output_status": "draft",
+          "output_status_ok": true,
+          "parse_ok": true
+        }
+      ],
+      "topics_seen": [
+        "origin_residence_work",
+        "origin_residence_work",
+        "origin_residence_work"
+      ],
+      "consistent_topic": true,
+      "all_fields_ok": true,
+      "verdict": "PASS",
+      "verdict_detail": "3次结果topic一致=True, 字段完整=True, topics=['origin_residence_work', 'origin_residence_work', 'origin_residence_work']"
+    },
+    {
+      "method": "M4_historical_consistency",
+      "description": "从历史JSONL抽取样本, 重新分类, 与历史结果对比",
+      "latency_ms": 11989.0,
+      "http_status": 200,
+      "comparisons": [
+        {
+          "table_id": "TBL-00059",
+          "historical_topic": "tgi_preference",
+          "new_topic": "tgi_preference",
+          "match": true
+        },
+        {
+          "table_id": "TBL-00060",
+          "historical_topic": "tgi_preference",
+          "new_topic": "tgi_preference",
+          "match": true
+        },
+        {
+          "table_id": "TBL-00061",
+          "historical_topic": "tgi_preference",
+          "new_topic": "tgi_preference",
+          "match": true
+        },
+        {
+          "table_id": "TBL-00062",
+          "historical_topic": "tgi_preference",
+          "new_topic": "tgi_preference",
+          "match": true
+        },
+        {
+          "table_id": "TBL-00063",
+          "historical_topic": "tgi_preference",
+          "new_topic": "tgi_preference",
+          "match": true
+        }
+      ],
+      "agreement_rate": 1.0,
+      "match_count": 5,
+      "total": 5,
+      "verdict": "PASS",
+      "verdict_detail": "一致率 5/5 = 100.0%, 11989ms"
+    }
+  ]
+}

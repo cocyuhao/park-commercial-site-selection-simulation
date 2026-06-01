@@ -1,0 +1,17 @@
+﻿check_id,severity,scope,status,finding
+AMAPQA-001,info,fetch_log,pass,接口日志 26 条；状态分布 {'1': 26}；info 分布 {'OK': 26}。
+AMAPQA-002,error,fetch_log,pass,非成功接口日志 0 条。
+AMAPQA-003,warning,fetch_log,needs_review,零结果周边查询 8 条：cg_tea;cg_restaurant;cg_cultural_creative;cg_souvenir;cg_yoga;cg_pilates;cg_bar;os_souvenir。
+AMAPQA-004,warning,fetch_log,needs_review,达到单页上限 25 条的查询 9 条，后续可能需要分页：os_coffee;os_tea;os_cold_drink;os_fast_food;os_restaurant;os_convenience;os_sports_supply;os_yoga;os_bar。
+AMAPQA-005,info,amap_clean,pass,"清洗 POI 行 270 条；按公园 {'城市绿心森林公园': 17, '奥林匹克森林公园': 253}。"
+AMAPQA-006,info,amap_clean,pass,"按业态 {'coffee': 26, 'cold_drink': 30, 'convenience_retail': 28, 'cultural_creative': 5, 'fast_food': 32, 'night_dining_bar': 25, 'restaurant': 25, 'sports_supply': 26, 'tea_drink': 25, 'yoga_pilates': 48}。"
+AMAPQA-007,info,amap_clean,pass,按公园去重后的 Amap POI ID 数：227。
+AMAPQA-008,warning,amap_clean,needs_review,同一公园同一业态内重复 POI ID 17 个。
+AMAPQA-009,error,amap_clean,pass,longitude 缺失 0 条。
+AMAPQA-010,error,amap_clean,pass,latitude 缺失 0 条。
+AMAPQA-011,error,amap_clean,pass,distance_m 缺失 0 条。
+AMAPQA-012,info,amap_clean,pass,rating 有值 267 条。
+AMAPQA-013,info,amap_clean,pass,cost_yuan 有值 186 条。
+AMAPQA-014,info,amap_clean,pass,opentime_today 有值 232 条。
+AMAPQA-015,info,amap_clean,pass,opentime_week 有值 235 条。
+AMAPQA-016,info,amap_clean,pass,tel 有值 212 条。

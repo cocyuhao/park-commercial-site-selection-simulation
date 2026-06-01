@@ -1,0 +1,18 @@
+{
+  "id": "d1fe5ca9-1150-46d1-a4a3-3af667587ddd",
+  "name": "DeepSeek 仿真设计",
+  "values": [
+    {
+      "key": "base_url",
+      "value": "https://api.deepseek.com",
+      "enabled": true
+    },
+    {
+      "key": "api_key",
+      "value": "",
+      "enabled": true,
+      "type": "secret"
+    }
+  ],
+  "_postman_variable_scope": "environment"
+}

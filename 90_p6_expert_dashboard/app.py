@@ -1,0 +1,1182 @@
+from __future__ import annotations
+
+import ast
+import csv
+import html
+import json
+import os
+import re
+import zipfile
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.responses import FileResponse, Response
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+import httpx
+
+import sys
+
+
+ROOT = Path(__file__).resolve().parents[1]
+APP_DIR = ROOT / "90_p6_expert_dashboard"
+STATIC_DIR = APP_DIR / "static"
+CACHE_DIR = APP_DIR / "cache"
+CACHE_FILE = CACHE_DIR / "deepseek_ai_reviews.json"
+FEEDBACK_FILE = CACHE_DIR / "expert_feedback.json"
+UPLOAD_DIR = CACHE_DIR / "uploaded_sources"
+UPLOAD_INDEX_FILE = CACHE_DIR / "uploaded_sources.json"
+UPLOAD_CANDIDATES_FILE = CACHE_DIR / "upload_parse_candidates.json"
+GATE_INPUT_FILE = CACHE_DIR / "gate_inputs.json"
+MAP_CONTEXT_FILE = CACHE_DIR / "map_context.json"
+MAP_CONTEXT_POI_FILE = CACHE_DIR / "map_context_pois.json"
+AMAP_STATIC_CACHE = CACHE_DIR / "amap_static_map.png"
+AMAP_STATIC_STATUS_FILE = CACHE_DIR / "amap_static_map_status.json"
+PROCESSED = ROOT / "70_outputs" / "processed_tables"
+SRC_DIR = ROOT / "60_model" / "src"
+
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
+
+from llm_router import load_local_env, run_deepseek_task  # noqa: E402
+
+
+app = FastAPI(title="P6 Expert Decision Dashboard", version="0.1.0")
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+class AIRequest(BaseModel):
+    mode: str
+    node_id: str | None = None
+
+
+class ChatRequest(BaseModel):
+    node_id: str | None = None
+    message: str
+    position_note: str | None = None
+    upload_refs: list[dict[str, Any]] = []
+    history: list[dict[str, str]] = []
+
+
+class ExpertFeedback(BaseModel):
+    node_id: str
+    comment: str
+    expert_name: str | None = None
+    position_note: str | None = None
+    data_hint: str | None = None
+
+
+class GateInput(BaseModel):
+    calibration_domain: str
+    note: str = ""
+    owner: str | None = None
+    due_date: str | None = None
+    source_hint: str | None = None
+
+
+class ConfirmCandidateRequest(BaseModel):
+    reviewer_note: str = ""
+
+
+class MapContextRequest(BaseModel):
+    keyword: str
+
+
+def read_csv_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        return [dict(row) for row in csv.DictReader(f)]
+
+
+def parse_list(value: str | None) -> list[str]:
+    if not value:
+        return []
+    text = value.strip()
+    if not text:
+        return []
+    try:
+        parsed = ast.literal_eval(text)
+    except (SyntaxError, ValueError):
+        return [item.strip() for item in text.replace("；", ";").split(";") if item.strip()]
+    if isinstance(parsed, list):
+        return [str(item) for item in parsed if str(item).strip()]
+    return [str(parsed)]
+
+
+def normalize_row(row: dict[str, str]) -> dict[str, Any]:
+    normalized: dict[str, Any] = {}
+    for key, value in row.items():
+        normalized[key] = "" if value is None else value
+    return normalized
+
+
+def load_dashboard() -> dict[str, Any]:
+    nodes = read_csv_rows(PROCESSED / "p2_project_node_candidates.csv")
+    priorities = read_csv_rows(PROCESSED / "p4_feedback_node_priority_draft_deepseek.csv")
+    scenarios = read_csv_rows(PROCESSED / "p4_feedback_scenario_matrix_draft_deepseek.csv")
+    requests = read_csv_rows(PROCESSED / "p4_feedback_data_request_to_partner_deepseek.csv")
+    gates = read_csv_rows(PROCESSED / "p3_calibration_gate_status.csv")
+    assumptions = read_csv_rows(PROCESSED / "p2_business_scene_assumption_pool.csv")
+    gaps = read_csv_rows(PROCESSED / "p2_input_gap_register.csv")
+    amap_supply = load_amap_supply()
+
+    priority_by_id = {row.get("node_id", ""): row for row in priorities}
+    request_by_node: dict[str, list[dict[str, Any]]] = {}
+    scenario_by_node: dict[str, list[dict[str, Any]]] = {}
+    assumption_by_project: dict[str, list[dict[str, Any]]] = {}
+
+    for row in requests:
+        request_by_node.setdefault(row.get("node_id", ""), []).append(normalize_row(row))
+    for row in scenarios:
+        scenario_by_node.setdefault(row.get("node_id", ""), []).append(normalize_row(row))
+    for row in assumptions:
+        assumption_by_project.setdefault(row.get("source_project_name", ""), []).append(normalize_row(row))
+
+    merged_nodes: list[dict[str, Any]] = []
+    for index, row in enumerate(nodes):
+        node_id = row.get("node_id", "")
+        priority = priority_by_id.get(node_id, {})
+        source_project_name = row.get("source_project_name", "")
+        merged_nodes.append(
+            {
+                **normalize_row(row),
+                "area_sqm": priority.get("area_sqm") or row.get("area_sqm") or "",
+                "business_direction": parse_list(priority.get("business_direction") or row.get("candidate_business_formats")),
+                "candidate_business_formats": parse_list(row.get("candidate_business_formats")),
+                "discussion_score": priority.get("discussion_score", ""),
+                "feedback_priority": priority.get("feedback_priority", "discussion_only"),
+                "score_reason": priority.get("score_reason", ""),
+                "placeholder_inputs_used": priority.get("placeholder_inputs_used", ""),
+                "must_collect_before_final": priority.get("must_collect_before_final", ""),
+                "use_boundary": priority.get("use_boundary", "feedback_draft_not_final_ranking"),
+                "output_status": priority.get("output_status") or row.get("output_status") or "needs_review",
+                "data_requests": request_by_node.get(node_id, []),
+                "feedback_scenarios": scenario_by_node.get(node_id, []),
+                "assumption_refs": assumption_by_project.get(source_project_name, []),
+                "schematic_position": {
+                    "x": 18 + (index % 3) * 30,
+                    "y": 28 + (index // 3) * 34,
+                },
+            }
+        )
+
+    return {
+        "meta": {
+            "project_name": "奥森公园商业选址仿真 P6 原型",
+            "phase": "P6 expert dashboard prototype",
+            "data_status": "feedback_draft / needs_review / not_final",
+            "updated_at": datetime.now().isoformat(timespec="seconds"),
+            "source_tables": [
+                "p2_project_node_candidates.csv",
+                "p4_feedback_node_priority_draft_deepseek.csv",
+                "p4_feedback_scenario_matrix_draft_deepseek.csv",
+                "p4_feedback_data_request_to_partner_deepseek.csv",
+                "p3_calibration_gate_status.csv",
+            ],
+        },
+        "nodes": merged_nodes,
+        "p4_feedback": {
+            "node_priority": [normalize_row(row) for row in priorities],
+            "scenario_matrix": [normalize_row(row) for row in scenarios],
+            "data_requests": [normalize_row(row) for row in requests],
+        },
+        "p3_gates": [normalize_row(row) for row in gates],
+        "p2_gaps": [normalize_row(row) for row in gaps],
+        "amap": {
+            "status": amap_status(amap_supply),
+            "supply_points": amap_supply,
+            "static_map_url": "/api/amap/static-map",
+            "map_context": load_map_context(),
+        },
+        "uploads": load_upload_index(),
+        "upload_candidates": load_upload_candidates(),
+        "gate_inputs": load_gate_inputs(),
+    }
+
+
+def load_amap_supply(limit: int = 60) -> list[dict[str, Any]]:
+    context_pois = load_map_context_pois()
+    if context_pois:
+        return context_pois[:limit]
+    rows = read_csv_rows(PROCESSED / "poi_supply_candidates_amap_boundary_filter.csv")
+    olympic = [row for row in rows if row.get("park_id") == "sample_olympic_forest"]
+    preferred = sorted(
+        olympic,
+        key=lambda row: (
+            0 if row.get("boundary_filter_status") == "inside_osm_polygon" else 1,
+            float(row.get("computed_center_distance_m") or row.get("min_distance_m") or 999999),
+        ),
+    )
+    points: list[dict[str, Any]] = []
+    for row in preferred[:limit]:
+        lon = row.get("longitude")
+        lat = row.get("latitude")
+        if not lon or not lat:
+            continue
+        points.append(
+            {
+                "candidate_id": row.get("candidate_id", ""),
+                "poi_name": row.get("poi_name", ""),
+                "category": row.get("standard_categories", ""),
+                "amap_keywords": row.get("amap_keywords", ""),
+                "longitude": lon,
+                "latitude": lat,
+                "rating": row.get("rating", ""),
+                "cost_yuan": row.get("cost_yuan", ""),
+                "distance_m": row.get("computed_center_distance_m") or row.get("min_distance_m") or "",
+                "boundary_filter_status": row.get("boundary_filter_status", ""),
+                "supply_use_status": row.get("supply_use_status", ""),
+                "output_status": "needs_review",
+            }
+        )
+    return points
+
+
+def load_map_context_pois() -> list[dict[str, Any]]:
+    if MAP_CONTEXT_POI_FILE.exists():
+        try:
+            data = json.loads(MAP_CONTEXT_POI_FILE.read_text(encoding="utf-8"))
+            if isinstance(data, list):
+                return data
+        except json.JSONDecodeError:
+            return []
+    return []
+
+
+def save_map_context_pois(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    MAP_CONTEXT_POI_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def fetch_amap_around_pois(lon: str, lat: str, key: str, limit: int = 50) -> list[dict[str, Any]]:
+    collected: list[dict[str, Any]] = []
+    keywords = "咖啡|餐饮|便利店|书店|亲子|文创|茶饮"
+    with httpx.Client(timeout=10.0) as client:
+        for page in range(1, 3):
+            params = {
+                "key": key,
+                "location": f"{lon},{lat}",
+                "keywords": keywords,
+                "radius": "3500",
+                "offset": "25",
+                "page": str(page),
+                "extensions": "base",
+            }
+            response = client.get("https://restapi.amap.com/v3/place/around", params=params)
+            response.raise_for_status()
+            payload = response.json()
+            for poi in payload.get("pois") or []:
+                location = poi.get("location", "")
+                if "," not in location:
+                    continue
+                p_lon, p_lat = location.split(",", 1)
+                collected.append(
+                    {
+                        "candidate_id": poi.get("id", ""),
+                        "poi_name": poi.get("name", ""),
+                        "category": poi.get("type", ""),
+                        "amap_keywords": keywords,
+                        "longitude": p_lon,
+                        "latitude": p_lat,
+                        "rating": "",
+                        "cost_yuan": "",
+                        "distance_m": poi.get("distance", ""),
+                        "boundary_filter_status": "amap_around_current_context",
+                        "supply_use_status": "needs_review_context_poi",
+                        "output_status": "needs_review",
+                    }
+                )
+                if len(collected) >= limit:
+                    return collected
+    return collected
+
+
+def amap_status(points: list[dict[str, Any]]) -> dict[str, Any]:
+    load_local_env()
+    has_key = bool(os.environ.get("AMAP_WEB_SERVICE_KEY"))
+    return {
+        "web_service_key_available": has_key,
+        "key_location": ".env_or_environment" if has_key else "missing",
+        "frontend_key_exposed": False,
+        "source": "amap_web_service_static_map_proxy_and_existing_poi_csv",
+        "point_count": len(points),
+        "output_status": "needs_review",
+    }
+
+
+def save_amap_static_status(status: dict[str, Any]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    AMAP_STATIC_STATUS_FILE.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_amap_static_status() -> dict[str, Any]:
+    if not AMAP_STATIC_STATUS_FILE.exists():
+        return {
+            "status": "not_checked_in_this_session",
+            "output_status": "needs_review",
+            "frontend_key_exposed": False,
+        }
+    try:
+        return json.loads(AMAP_STATIC_STATUS_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {
+            "status": "status_file_unreadable",
+            "output_status": "needs_review",
+            "frontend_key_exposed": False,
+        }
+
+
+def amap_center() -> tuple[str, str]:
+    context = load_map_context()
+    if context.get("longitude") and context.get("latitude"):
+        return str(context["longitude"]), str(context["latitude"])
+    rows = read_csv_rows(PROCESSED / "poi_supply_candidates_amap_boundary_filter.csv")
+    for row in rows:
+        if row.get("park_id") == "sample_olympic_forest" and row.get("center_longitude") and row.get("center_latitude"):
+            return row["center_longitude"], row["center_latitude"]
+    return "116.392159", "40.018635"
+
+
+def load_map_context() -> dict[str, Any]:
+    if MAP_CONTEXT_FILE.exists():
+        try:
+            data = json.loads(MAP_CONTEXT_FILE.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                return data
+        except json.JSONDecodeError:
+            pass
+    return {
+        "keyword": "北京奥林匹克森林公园",
+        "longitude": "",
+        "latitude": "",
+        "source": "default_project_context",
+        "output_status": "needs_review",
+        "not_final": True,
+    }
+
+
+def save_map_context(row: dict[str, Any]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    MAP_CONTEXT_FILE.write_text(json.dumps(row, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_cache() -> dict[str, Any]:
+    if not CACHE_FILE.exists():
+        return {}
+    try:
+        return json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def load_feedback() -> list[dict[str, Any]]:
+    if not FEEDBACK_FILE.exists():
+        return []
+    try:
+        data = json.loads(FEEDBACK_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    return data if isinstance(data, list) else []
+
+
+def save_feedback(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    FEEDBACK_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_upload_index() -> list[dict[str, Any]]:
+    built_in = []
+    cad_dir = ROOT / "CAD图及其计划"
+    if cad_dir.exists():
+        for item in sorted(cad_dir.iterdir()):
+            if item.is_file():
+                built_in.append(
+                    {
+                        "upload_id": f"BUILTIN-{item.stem[:24]}",
+                        "filename": item.name,
+                        "source_type": "existing_project_material",
+                        "category": guess_upload_category(item.name),
+                        "size_bytes": item.stat().st_size,
+                        "stored_path": str(item.relative_to(ROOT)),
+                        "review_status": "待解析",
+                        "created_at": datetime.fromtimestamp(item.stat().st_mtime).isoformat(timespec="seconds"),
+                        "note": "来自 CAD图及其计划，仍需在网页流程中选择/解析/复核。",
+                    }
+                )
+    uploaded = []
+    if UPLOAD_INDEX_FILE.exists():
+        try:
+            data = json.loads(UPLOAD_INDEX_FILE.read_text(encoding="utf-8"))
+            uploaded = data if isinstance(data, list) else []
+        except json.JSONDecodeError:
+            uploaded = []
+    return built_in + uploaded
+
+
+def save_upload_index(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    uploaded_only = [row for row in rows if not str(row.get("upload_id", "")).startswith("BUILTIN-")]
+    UPLOAD_INDEX_FILE.write_text(json.dumps(uploaded_only, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def guess_upload_category(filename: str) -> str:
+    suffix = Path(filename).suffix.lower()
+    if suffix in {".dwg", ".dxf"}:
+        return "CAD / 图纸"
+    if suffix in {".png", ".jpg", ".jpeg", ".webp", ".bmp"}:
+        return "现场图片 / 位置图"
+    if suffix in {".csv", ".xlsx", ".xls"}:
+        return "数据表"
+    if suffix in {".pdf", ".docx", ".doc", ".pptx", ".ppt"}:
+        return "方案文件"
+    return "其他资料"
+
+
+def load_gate_inputs() -> list[dict[str, Any]]:
+    if not GATE_INPUT_FILE.exists():
+        return []
+    try:
+        data = json.loads(GATE_INPUT_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    return data if isinstance(data, list) else []
+
+
+def save_gate_inputs(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    GATE_INPUT_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_upload_candidates() -> list[dict[str, Any]]:
+    if not UPLOAD_CANDIDATES_FILE.exists():
+        return []
+    try:
+        data = json.loads(UPLOAD_CANDIDATES_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    return data if isinstance(data, list) else []
+
+
+def save_upload_candidates(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    UPLOAD_CANDIDATES_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def find_upload(upload_id: str) -> dict[str, Any]:
+    for row in load_upload_index():
+        if row.get("upload_id") == upload_id:
+            return row
+    raise HTTPException(status_code=404, detail="upload not found")
+
+
+def resolve_project_path(stored_path: str) -> Path:
+    path = (ROOT / stored_path).resolve()
+    try:
+        path.relative_to(ROOT.resolve())
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail="stored path outside project") from exc
+    return path
+
+
+def extract_source_preview(path: Path, limit: int = 5000) -> str:
+    suffix = path.suffix.lower()
+    try:
+        if suffix == ".pdf":
+            import fitz  # type: ignore
+
+            doc = fitz.open(path)
+            parts = [page.get_text("text") for page in doc[: min(len(doc), 6)]]
+            return "\n".join(parts)[:limit]
+        if suffix in {".docx", ".pptx", ".xlsx"}:
+            return extract_zip_text(path, limit)
+        if suffix in {".csv", ".txt", ".md", ".json"}:
+            return path.read_text(encoding="utf-8", errors="ignore")[:limit]
+        if suffix in {".dwg", ".dxf"}:
+            return (
+                f"文件类型：{suffix.upper()}；文件大小：{path.stat().st_size} bytes。"
+                "当前网页只登记图纸资料，不能直接生成 DWG 坐标、面积、图层或动线结论。"
+            )
+        if suffix in {".png", ".jpg", ".jpeg", ".webp", ".bmp"}:
+            return f"图片资料：{path.name}；文件大小：{path.stat().st_size} bytes。需由专家说明图片位置和用途。"
+    except Exception as exc:
+        return f"资料预览失败：{type(exc).__name__}。仍可作为待复核上传资料登记。"
+    return f"资料：{path.name}；文件大小：{path.stat().st_size} bytes。"
+
+
+def extract_zip_text(path: Path, limit: int) -> str:
+    chunks: list[str] = []
+    with zipfile.ZipFile(path) as zf:
+        names = [
+            name
+            for name in zf.namelist()
+            if name.endswith(".xml") and any(part in name for part in ["word/", "ppt/slides/", "xl/sharedStrings", "xl/worksheets/"])
+        ]
+        for name in names[:24]:
+            raw = zf.read(name).decode("utf-8", errors="ignore")
+            text = re.sub(r"<[^>]+>", " ", raw)
+            text = html.unescape(re.sub(r"\s+", " ", text)).strip()
+            if text:
+                chunks.append(text)
+            if sum(len(item) for item in chunks) >= limit:
+                break
+    return "\n".join(chunks)[:limit]
+
+
+def local_parse_candidate(upload: dict[str, Any], preview: str) -> dict[str, Any]:
+    filename = upload.get("filename", "")
+    category = upload.get("category", "")
+    related_gates: list[str] = []
+    text = f"{filename} {category} {preview}".lower()
+    gate_keywords = {
+        "geometry": ["dwg", "dxf", "cad", "图纸", "建筑", "平面", "geometry"],
+        "visitor_flow": ["客流", "人次", "游客", "票务", "visitor"],
+        "conversion_rate": ["转化", "消费", "购买", "conversion"],
+        "revenue_cost": ["租金", "成本", "收入", "分成", "revenue", "cost"],
+        "operation_authorization": ["授权", "审批", "消防", "运营", "authorization"],
+    }
+    for gate, keywords in gate_keywords.items():
+        if any(keyword in text for keyword in keywords):
+            related_gates.append(gate)
+    if upload.get("target_gate") and upload["target_gate"] not in related_gates:
+        related_gates.insert(0, upload["target_gate"])
+    if not related_gates:
+        related_gates = ["model_gate"]
+    return {
+        "candidate_type": "资料解析候选",
+        "summary": f"{filename} 可进入待复核资料池；建议先关联 {', '.join(related_gates)}。",
+        "related_nodes": [],
+        "related_gates": related_gates,
+        "suggested_actions": [
+            "人工确认资料对应的园区、节点或缺口",
+            "AI 只生成待复核候选，不自动写入最终结论",
+            "如为 DWG/CAD，需另行转换为可信 DXF/GeoJSON/SVG/PDF 后再做几何判断",
+        ],
+    }
+
+
+def save_cache(cache: dict[str, Any]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def node_context(payload: dict[str, Any], node_id: str | None) -> dict[str, Any]:
+    node = next((item for item in payload["nodes"] if item.get("node_id") == node_id), None)
+    if not node and payload["nodes"]:
+        node = payload["nodes"][0]
+    if not node:
+        raise HTTPException(status_code=404, detail="node not found")
+    feedback = [row for row in load_feedback() if row.get("node_id") == node.get("node_id")]
+    return {
+        "node": node,
+        "p3_gates": payload["p3_gates"],
+        "p2_gaps": payload["p2_gaps"],
+        "expert_feedback": feedback[-8:],
+    }
+
+
+def make_prompt(payload: dict[str, Any], mode: str, node_id: str | None) -> str:
+    nodes = payload["nodes"]
+    selected = next((node for node in nodes if node.get("node_id") == node_id), None)
+    gates = payload["p3_gates"]
+    common_boundary = (
+        "你是公园商业选址专家驾驶舱的 DeepSeek AI 草稿助手。"
+        "只能输出 needs_review / not_final 的反馈草案解释。"
+        "不得输出最终推荐、最终排序、收益预测、坐标、面积推断、DWG 几何结论或 checked 证据。"
+        "必须说明为什么当前只是 feedback draft，并列出缺失数据。"
+    )
+    if mode == "priority":
+        compact_nodes = [
+            {
+                "node_id": node.get("node_id"),
+                "node_name": node.get("node_name"),
+                "area_sqm": node.get("area_sqm"),
+                "discussion_score": node.get("discussion_score"),
+                "must_collect_before_final": node.get("must_collect_before_final"),
+                "use_boundary": node.get("use_boundary"),
+                "output_status": node.get("output_status"),
+            }
+            for node in nodes
+        ]
+        return (
+            f"{common_boundary}\n"
+            "请用中文解释多个节点的讨论优先级，只能叫讨论优先级，不能叫最终排名。\n"
+            "输出 JSON，字段为 output_status, boundary_notice, priority_discussion, missing_data, partner_questions。\n"
+            f"节点草案：{json.dumps(compact_nodes, ensure_ascii=False)}\n"
+            f"P3 gate：{json.dumps(gates, ensure_ascii=False)}"
+        )
+    if not selected:
+        raise HTTPException(status_code=404, detail="node_id not found")
+    return (
+        f"{common_boundary}\n"
+        "请对当前节点做方案解释，并给合作方提问清单。"
+        "输出 JSON，字段为 output_status, node_explanation, why_feedback_draft, missing_data, partner_questions, discussion_priority_note。\n"
+        f"当前节点：{json.dumps(selected, ensure_ascii=False)}\n"
+        f"P3 gate：{json.dumps(gates, ensure_ascii=False)}"
+    )
+
+
+@app.get("/")
+def index() -> FileResponse:
+    return FileResponse(STATIC_DIR / "index.html")
+
+
+@app.get("/api/dashboard")
+def dashboard() -> dict[str, Any]:
+    payload = load_dashboard()
+    payload["expert_feedback"] = load_feedback()
+    return payload
+
+
+@app.get("/api/uploads")
+def uploads() -> dict[str, Any]:
+    return {
+        "output_status": "needs_review",
+        "items": load_upload_index(),
+        "accepted_categories": ["CAD / 图纸", "现场图片 / 位置图", "数据表", "方案文件", "其他资料"],
+    }
+
+
+@app.post("/api/uploads")
+async def upload_source(
+    file: UploadFile = File(...),
+    category: str = Form("auto"),
+    note: str = Form(""),
+    target_gate: str = Form(""),
+) -> dict[str, Any]:
+    filename = Path(file.filename or "upload.bin").name
+    if not filename:
+        raise HTTPException(status_code=400, detail="filename is required")
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_name = "".join(ch if ch.isalnum() or ch in ".-_()[] " else "_" for ch in filename)
+    upload_id = f"UP-{stamp}-{len(load_upload_index()) + 1:03d}"
+    target_dir = UPLOAD_DIR / stamp
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target_path = target_dir / safe_name
+    content = await file.read()
+    target_path.write_bytes(content)
+    row = {
+        "upload_id": upload_id,
+        "filename": filename,
+        "source_type": "web_upload",
+        "category": guess_upload_category(filename) if category == "auto" else category,
+        "size_bytes": len(content),
+        "stored_path": str(target_path.relative_to(ROOT)),
+        "review_status": "待 AI 解析",
+        "target_gate": target_gate,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+        "note": note,
+        "output_status": "needs_review",
+        "not_final": True,
+    }
+    rows = load_upload_index()
+    rows.append(row)
+    save_upload_index(rows)
+    return row
+
+
+@app.post("/api/gate-inputs")
+def save_gate_input(payload: GateInput) -> dict[str, Any]:
+    rows = load_gate_inputs()
+    row = {
+        "input_id": f"GI-{len(rows) + 1:04d}",
+        "calibration_domain": payload.calibration_domain,
+        "note": payload.note,
+        "owner": payload.owner or "",
+        "due_date": payload.due_date or "",
+        "source_hint": payload.source_hint or "",
+        "output_status": "needs_review",
+        "not_final": True,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    rows.append(row)
+    save_gate_inputs(rows)
+    return row
+
+
+@app.get("/api/upload-candidates")
+def upload_candidates() -> dict[str, Any]:
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "items": load_upload_candidates(),
+    }
+
+
+@app.post("/api/uploads/{upload_id}/parse")
+def parse_upload(upload_id: str) -> dict[str, Any]:
+    upload = find_upload(upload_id)
+    path = resolve_project_path(upload.get("stored_path", ""))
+    if not path.exists():
+        raise HTTPException(status_code=404, detail="stored file not found")
+    preview = extract_source_preview(path)
+    local_candidate = local_parse_candidate(upload, preview)
+    nodes = [
+        {"node_id": node.get("node_id"), "node_name": node.get("node_name"), "primary_positioning": node.get("primary_positioning")}
+        for node in load_dashboard()["nodes"]
+    ]
+    prompt = (
+        "你是 P6 专家网页的资料解析草稿助手。"
+        "请把上传资料解析成待复核候选，不能输出最终推荐、最终排序、收益预测或 DWG 几何结论。"
+        "输出 JSON：candidate_type, summary, related_nodes, related_gates, suggested_actions。"
+        f"\n上传资料：{json.dumps(upload, ensure_ascii=False)}"
+        f"\n资料预览：{preview[:3500]}"
+        f"\n可选节点：{json.dumps(nodes, ensure_ascii=False)}"
+    )
+    generated_by = "local_rules"
+    parsed = local_candidate
+    try:
+        content = run_deepseek_task(
+            "LLM-026",
+            [
+                {"role": "system", "content": "你只输出 needs_review 的资料解析候选 JSON，不得升级为最终结论。"},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.1,
+        )
+        parsed_json = json.loads(content)
+        if isinstance(parsed_json, dict):
+            parsed = {**local_candidate, **parsed_json}
+            generated_by = "deepseek"
+    except Exception as exc:
+        parsed = {**local_candidate, "parse_warning": f"{type(exc).__name__}: {exc}"}
+    rows = load_upload_candidates()
+    existing_index = next((i for i, row in enumerate(rows) if row.get("upload_id") == upload_id), None)
+    candidate = {
+        "candidate_id": f"UC-{len(rows) + 1:04d}" if existing_index is None else rows[existing_index].get("candidate_id"),
+        "upload_id": upload_id,
+        "filename": upload.get("filename", ""),
+        "category": upload.get("category", ""),
+        "source_excerpt": preview[:900],
+        "review_status": "待人工确认",
+        "output_status": "needs_review",
+        "not_final": True,
+        "generated_by": generated_by,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+        **parsed,
+    }
+    if existing_index is None:
+        rows.append(candidate)
+    else:
+        rows[existing_index] = candidate
+    save_upload_candidates(rows)
+    return candidate
+
+
+@app.post("/api/upload-candidates/{candidate_id}/confirm")
+def confirm_upload_candidate(candidate_id: str, payload: ConfirmCandidateRequest) -> dict[str, Any]:
+    candidates = load_upload_candidates()
+    candidate = next((row for row in candidates if row.get("candidate_id") == candidate_id), None)
+    if not candidate:
+        raise HTTPException(status_code=404, detail="candidate not found")
+    candidate["review_status"] = "已确认入池"
+    candidate["reviewer_note"] = payload.reviewer_note
+    candidate["confirmed_at"] = datetime.now().isoformat(timespec="seconds")
+    candidate["output_status"] = "needs_review"
+    candidate["not_final"] = True
+    save_upload_candidates(candidates)
+
+    gate_inputs = load_gate_inputs()
+    for gate in candidate.get("related_gates", []) or ["model_gate"]:
+        gate_inputs.append(
+            {
+                "input_id": f"GI-{len(gate_inputs) + 1:04d}",
+                "calibration_domain": gate,
+                "note": f"已确认资料入池：{candidate.get('filename')}。{payload.reviewer_note}".strip(),
+                "owner": "网页确认",
+                "due_date": "",
+                "source_hint": candidate.get("upload_id", ""),
+                "output_status": "needs_review",
+                "not_final": True,
+                "created_at": datetime.now().isoformat(timespec="seconds"),
+            }
+        )
+    save_gate_inputs(gate_inputs)
+
+    uploads = load_upload_index()
+    for row in uploads:
+        if row.get("upload_id") == candidate.get("upload_id"):
+            row["review_status"] = "已确认入池"
+    save_upload_index(uploads)
+    return candidate
+
+
+@app.get("/api/amap/status")
+def amap_proxy_status() -> dict[str, Any]:
+    points = load_amap_supply()
+    return {**amap_status(points), "static_map": load_amap_static_status(), "map_context": load_map_context()}
+
+
+@app.post("/api/amap/context")
+def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
+    keyword = payload.keyword.strip()
+    if not keyword:
+        raise HTTPException(status_code=400, detail="keyword is required")
+    load_local_env()
+    key = os.environ.get("AMAP_WEB_SERVICE_KEY")
+    if not key:
+        raise HTTPException(status_code=400, detail="AMAP_WEB_SERVICE_KEY missing")
+    params = {"key": key, "keywords": keyword, "city": "全国", "offset": "1", "page": "1", "extensions": "base"}
+    try:
+        with httpx.Client(timeout=10.0) as client:
+            response = client.get("https://restapi.amap.com/v3/place/text", params=params)
+            response.raise_for_status()
+            data = response.json()
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=f"amap place search failed: {type(exc).__name__}") from exc
+    pois = data.get("pois") or []
+    if not pois:
+        raise HTTPException(status_code=404, detail="amap returned no poi")
+    poi = pois[0]
+    location = poi.get("location", "")
+    if "," not in location:
+        raise HTTPException(status_code=502, detail="amap poi has no location")
+    lon, lat = location.split(",", 1)
+    context = {
+        "keyword": keyword,
+        "matched_name": poi.get("name", ""),
+        "address": poi.get("address", ""),
+        "longitude": lon,
+        "latitude": lat,
+        "source": "amap_web_service_place_text",
+        "output_status": "needs_review",
+        "not_final": True,
+        "updated_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    save_map_context(context)
+    try:
+        save_map_context_pois(fetch_amap_around_pois(lon, lat, key))
+    except Exception:
+        save_map_context_pois([])
+    if AMAP_STATIC_CACHE.exists():
+        AMAP_STATIC_CACHE.unlink()
+    save_amap_static_status(
+        {
+            "status": "context_updated_pending_static_map_refresh",
+            "detail": f"地图目标已更新为：{context['matched_name'] or keyword}；刷新地图后重新请求高德静态图。",
+            "output_status": "needs_review",
+            "frontend_key_exposed": False,
+            "checked_at": datetime.now().isoformat(timespec="seconds"),
+        }
+    )
+    return context
+
+
+@app.get("/api/integration/status")
+def integration_status() -> dict[str, Any]:
+    payload = load_dashboard()
+    points = load_amap_supply()
+    deepseek_cache = load_cache()
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "items": [
+            {
+                "name": "P2/P4 节点与反馈 CSV",
+                "kind": "local_csv",
+                "status": "connected",
+                "detail": f"已读取 {len(payload['nodes'])} 个节点、{len(payload['p4_feedback']['data_requests'])} 条合作方数据请求。",
+            },
+            {
+                "name": "P3 gate CSV",
+                "kind": "local_csv",
+                "status": "connected",
+                "detail": f"已读取 {len(payload['p3_gates'])} 个 gate；仅表示当前阻塞状态，不表示通过。",
+            },
+            {
+                "name": "DeepSeek 后端代理",
+                "kind": "backend_ai",
+                "status": "configured" if os.environ.get("DEEPSEEK_API_KEY") else "missing_key",
+                "detail": f"前端不接触 Key；已缓存 {len(deepseek_cache)} 条 AI 草稿，所有输出 needs_review / not_final。",
+            },
+            {
+                "name": "AMap POI 历史抓取表",
+                "kind": "local_csv_from_amap",
+                "status": "connected",
+                "detail": f"已读取 {len(points)} 条用于地图 POI 示意的候选点；不是最终园内供给结论。",
+            },
+            {
+                "name": "AMap 静态地图后端代理",
+                "kind": "backend_map",
+                "status": load_amap_static_status().get("status", "not_checked_in_this_session"),
+                "detail": load_amap_static_status().get("detail", "尚未在本会话检查静态图返回；失败时显示本地示意底图。"),
+            },
+        ],
+    }
+
+
+@app.get("/api/amap/static-map")
+def amap_static_map() -> Response:
+    load_local_env()
+    key = os.environ.get("AMAP_WEB_SERVICE_KEY")
+    points = load_amap_supply()
+    if not key:
+        save_amap_static_status(
+            {
+                "status": "missing_key",
+                "detail": "未检测到 AMAP_WEB_SERVICE_KEY，显示本地 POI 坐标示意。",
+                "output_status": "needs_review",
+                "frontend_key_exposed": False,
+                "checked_at": datetime.now().isoformat(timespec="seconds"),
+            }
+        )
+        return Response(
+            content=render_fallback_map_svg(points, "未检测到高德 Key，显示本地 POI 坐标示意"),
+            media_type="image/svg+xml",
+            headers={"Cache-Control": "no-store"},
+        )
+    lon, lat = amap_center()
+    params = {
+        "location": f"{lon},{lat}",
+        "zoom": "14",
+        "size": "760*470",
+        "scale": "2",
+        "traffic": "0",
+        "key": key,
+    }
+    try:
+        with httpx.Client(timeout=8.0) as client:
+            response = client.get("https://restapi.amap.com/v3/staticmap", params=params)
+            response.raise_for_status()
+    except Exception as exc:
+        save_amap_static_status(
+            {
+                "status": "request_error",
+                "detail": f"高德静态图请求异常：{type(exc).__name__}，显示本地 POI 坐标示意。",
+                "output_status": "needs_review",
+                "frontend_key_exposed": False,
+                "checked_at": datetime.now().isoformat(timespec="seconds"),
+            }
+        )
+        if AMAP_STATIC_CACHE.exists():
+            return Response(
+                content=AMAP_STATIC_CACHE.read_bytes(),
+                media_type="image/png",
+                headers={"Cache-Control": "no-store"},
+            )
+        return Response(
+            content=render_fallback_map_svg(points, f"高德静态图暂不可达：{type(exc).__name__}，显示本地 POI 坐标示意"),
+            media_type="image/svg+xml",
+            headers={"Cache-Control": "no-store"},
+        )
+    content_type = response.headers.get("content-type", "")
+    if "image" not in content_type.lower():
+        note = "高德静态图未返回图片，显示本地 POI 坐标示意"
+        detail = note
+        try:
+            payload = response.json()
+            info = payload.get("info") or payload.get("infocode")
+            if info:
+                note = f"高德静态图未返回图片：{info}，显示本地 POI 坐标示意"
+                detail = f"高德返回非图片响应：{info}；前端继续使用本地示意底图。"
+        except ValueError:
+            pass
+        save_amap_static_status(
+            {
+                "status": "non_image_response",
+                "detail": detail,
+                "output_status": "needs_review",
+                "frontend_key_exposed": False,
+                "checked_at": datetime.now().isoformat(timespec="seconds"),
+            }
+        )
+        return Response(
+            content=render_fallback_map_svg(points, note),
+            media_type="image/svg+xml",
+            headers={"Cache-Control": "no-store"},
+        )
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    AMAP_STATIC_CACHE.write_bytes(response.content)
+    save_amap_static_status(
+        {
+            "status": "connected_image",
+            "detail": "高德静态地图返回图片，已通过后端代理缓存；前端未暴露 Key。",
+            "output_status": "needs_review",
+            "frontend_key_exposed": False,
+            "checked_at": datetime.now().isoformat(timespec="seconds"),
+        }
+    )
+    return Response(content=response.content, media_type=content_type, headers={"Cache-Control": "no-store"})
+
+
+def render_fallback_map_svg(points: list[dict[str, Any]], note: str) -> str:
+    valid = []
+    for point in points:
+        try:
+            valid.append(
+                {
+                    "lon": float(point.get("longitude", "")),
+                    "lat": float(point.get("latitude", "")),
+                    "inside": point.get("boundary_filter_status") == "inside_osm_polygon",
+                }
+            )
+        except ValueError:
+            continue
+    if valid:
+        min_lon = min(item["lon"] for item in valid)
+        max_lon = max(item["lon"] for item in valid)
+        min_lat = min(item["lat"] for item in valid)
+        max_lat = max(item["lat"] for item in valid)
+    else:
+        min_lon, max_lon, min_lat, max_lat = 116.37, 116.41, 40.00, 40.04
+    lon_span = max(max_lon - min_lon, 0.01)
+    lat_span = max(max_lat - min_lat, 0.01)
+    dots = []
+    for item in valid[:60]:
+        x = 52 + ((item["lon"] - min_lon) / lon_span) * 656
+        y = 410 - ((item["lat"] - min_lat) / lat_span) * 338
+        color = "#0f8f82" if item["inside"] else "#f5a623"
+        dots.append(
+            f'<circle cx="{x:.1f}" cy="{y:.1f}" r="4.8" fill="{color}" stroke="#fff" '
+            f'stroke-width="1.8" opacity="0.9" />'
+        )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="760" height="470" viewBox="0 0 760 470">
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e3efeb"/>
+      <stop offset="1" stop-color="#f5f8f5"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#bdddd9"/>
+      <stop offset="1" stop-color="#e3f0ed"/>
+    </linearGradient>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M 38 0 L 0 0 0 38" fill="none" stroke="#c9dad6" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#15443f" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="760" height="470" fill="url(#land)"/>
+  <rect width="760" height="470" fill="url(#grid)" opacity="0.32"/>
+  <path d="M55,98 C170,44 297,48 424,74 C540,98 642,76 738,38" fill="none" stroke="#d7dfdc" stroke-width="24" opacity="0.7"/>
+  <path d="M49,101 C169,55 295,57 420,84 C535,108 642,86 738,51" fill="none" stroke="#fff" stroke-width="8" opacity="0.88"/>
+  <path d="M35,362 C138,291 238,262 360,255 C495,247 593,207 735,116" fill="none" stroke="#d4dfdc" stroke-width="24" opacity="0.72"/>
+  <path d="M35,362 C138,291 238,262 360,255 C495,247 593,207 735,116" fill="none" stroke="#fff" stroke-width="8" opacity="0.9"/>
+  <path d="M132,318 C178,214 270,180 355,218 C446,259 512,176 632,202 C710,219 726,306 660,357 C572,426 456,363 358,379 C244,397 154,384 132,318Z" fill="url(#lake)" stroke="#9fc9c3" stroke-width="2.5" opacity="0.9"/>
+  <path d="M190,146 C232,116 298,116 355,141 C412,166 470,151 520,128" fill="none" stroke="#c4d7d2" stroke-width="10" opacity=".65"/>
+  <path d="M192,147 C238,124 298,124 351,148 C407,172 469,158 520,134" fill="none" stroke="#fff" stroke-width="4" opacity=".9"/>
+  <path d="M456,420 C470,335 510,278 580,238 C625,213 662,181 702,138" fill="none" stroke="#c4d7d2" stroke-width="10" opacity=".55"/>
+  <path d="M456,420 C470,335 510,278 580,238 C625,213 662,181 702,138" fill="none" stroke="#fff" stroke-width="4" opacity=".8"/>
+  <g opacity=".28">
+    <circle cx="106" cy="185" r="40" fill="#79b68b"/>
+    <circle cx="92" cy="238" r="25" fill="#79b68b"/>
+    <circle cx="640" cy="308" r="34" fill="#79b68b"/>
+    <circle cx="612" cy="356" r="24" fill="#79b68b"/>
+    <circle cx="307" cy="112" r="28" fill="#79b68b"/>
+  </g>
+  <g filter="url(#shadow)">
+  {''.join(dots)}
+  </g>
+</svg>"""
+
+
+@app.post("/api/ai/review")
+def ai_review(request: AIRequest) -> dict[str, Any]:
+    mode = request.mode if request.mode in {"node", "priority"} else "node"
+    cache_key = f"{mode}:{request.node_id or 'all'}"
+    cache = load_cache()
+    if cache_key in cache:
+        return {**cache[cache_key], "cached": True}
+
+    payload = load_dashboard()
+    prompt = make_prompt(payload, mode, request.node_id)
+    try:
+        content = run_deepseek_task(
+            "LLM-026",
+            [
+                {"role": "system", "content": "You return concise valid JSON only. Keep all conclusions not_final."},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.1,
+        )
+        try:
+            parsed = json.loads(content)
+        except json.JSONDecodeError:
+            parsed = {"output_status": "needs_review", "raw_text": content}
+        parsed.setdefault("output_status", "needs_review")
+        parsed["not_final"] = True
+        parsed["generated_by"] = "deepseek"
+    except Exception as exc:
+        parsed = {
+            "output_status": "needs_review",
+            "not_final": True,
+            "generated_by": "local_fallback",
+            "error": f"{type(exc).__name__}: {exc}",
+            "why_feedback_draft": "DeepSeek 调用不可用或超时；当前仍只能使用本地 CSV 的 feedback draft 数据。",
+            "missing_data": ["真实客流", "转化率", "收益成本", "运营授权", "DWG 可信转换产物"],
+        }
+    cache[cache_key] = parsed
+    save_cache(cache)
+    return {**parsed, "cached": False}
+
+
+@app.post("/api/ai/chat")
+def ai_chat(request: ChatRequest) -> dict[str, Any]:
+    message = request.message.strip()
+    if not message:
+        raise HTTPException(status_code=400, detail="message is required")
+    payload = load_dashboard()
+    context = node_context(payload, request.node_id)
+    prompt = (
+        "你是公园商业选址专家驾驶舱里的 DeepSeek 对话助手，像网页版对话一样连续协助专家。"
+        "你可以读取当前节点、专家意见、位置/图片文字说明、P3 gate 和 P4 feedback draft。"
+        "你的任务是：解释当前方案、追问缺失数据、把专家意见转为模型修改建议、提示哪些字段需要补数。"
+        "硬边界：所有输出只能是 needs_review / not_final；不得给最终推荐、最终排序、收益预测、坐标、面积推断、DWG几何结论或 checked 证据。"
+        "如果用户提到未来会给图或位置资料，只能说明应如何登记、如何进入待复核假设池。"
+        "请用中文回答，简洁但可操作，最后给出 3-6 条下一步提问或待补数据。"
+        f"\n当前上下文：{json.dumps(context, ensure_ascii=False)}"
+        f"\n位置/图片文字说明：{request.position_note or ''}"
+        f"\n本轮上传/关联资料：{json.dumps(request.upload_refs, ensure_ascii=False)}"
+        f"\n历史对话：{json.dumps(request.history[-8:], ensure_ascii=False)}"
+        f"\n专家/用户本轮输入：{message}"
+    )
+    try:
+        content = run_deepseek_task(
+            "LLM-026",
+            [
+                {"role": "system", "content": "你只输出 needs_review/not_final 的专家对话草稿，不得升级为最终结论。"},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.15,
+        )
+        return {
+            "output_status": "needs_review",
+            "not_final": True,
+            "generated_by": "deepseek",
+            "message": content,
+        }
+    except Exception as exc:
+        return {
+            "output_status": "needs_review",
+            "not_final": True,
+            "generated_by": "local_fallback",
+            "message": (
+                "DeepSeek 当前不可用或超时。当前意见仍可先登记为专家反馈，"
+                "但不能进入 checked/final。下一步请补充：真实客流、转化率、收益成本、运营授权、DWG可信转换产物。"
+            ),
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+
+
+@app.post("/api/expert-feedback")
+def save_expert_feedback(feedback: ExpertFeedback) -> dict[str, Any]:
+    if not feedback.comment.strip():
+        raise HTTPException(status_code=400, detail="comment is required")
+    rows = load_feedback()
+    row = {
+        "feedback_id": f"FB-{len(rows) + 1:04d}",
+        "node_id": feedback.node_id,
+        "expert_name": feedback.expert_name or "专家",
+        "comment": feedback.comment,
+        "position_note": feedback.position_note or "",
+        "data_hint": feedback.data_hint or "",
+        "output_status": "needs_review",
+        "not_final": True,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+    }
+    rows.append(row)
+    save_feedback(rows)
+    return row

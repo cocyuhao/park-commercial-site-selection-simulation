@@ -1,0 +1,24 @@
+[
+  {
+    "input_id": "GI-0001",
+    "calibration_domain": "geometry",
+    "note": "111",
+    "owner": "",
+    "due_date": "",
+    "source_hint": "",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-01T10:58:47"
+  },
+  {
+    "input_id": "GI-0002",
+    "calibration_domain": "geometry",
+    "note": "1111",
+    "owner": "",
+    "due_date": "",
+    "source_hint": "",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-01T10:58:51"
+  }
+]

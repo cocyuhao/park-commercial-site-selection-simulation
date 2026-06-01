@@ -1,0 +1,16 @@
+﻿assumption_metric_id,assumption_name,assumption_value,review_status,supporting_metric_ids,finding,required_next_evidence
+MET-0029,城市绿心PPT假设-四大改造方案合计投入,380万元,unsupported_financial_assumption,,城市绿心四大改造投入 380 万元目前只来自 PPT，缺少造价清单、工程量或招商报价。,改造清单、设备报价、施工估算、品牌方投入边界。
+MET-0030,城市绿心PPT假设-预计年公园收益增长,620万元/年,unsupported_financial_assumption,,城市绿心预计年公园收益 620 万元只来自 PPT，缺少转化率、客单价、租金和分成参数来源。,经营流水、租金合同、客单价、分成比例、转化率试点数据。
+MET-0031,城市绿心PPT假设-综合加权回收期,7.3月,formula_consistent_but_inputs_unverified,MET-0029;MET-0030,7.3 个月回收期与 380/620*12 的内部公式基本一致，但投入和收益输入均未验证。,先核验 MET-0029 和 MET-0030，再保留或修正回收期。
+MET-0032,城市绿心PPT假设-营业额分成比例下限,12%,unsupported_business_assumption,,12% 营业额分成下限目前只来自 PPT，未见合同或可比项目依据。,招商条款、同类公园分成案例、商户访谈。
+MET-0033,城市绿心PPT假设-营业额分成比例上限,15%,unsupported_business_assumption,,15% 营业额分成上限目前只来自 PPT，未见合同或可比项目依据。,招商条款、同类公园分成案例、商户访谈。
+MET-0034,城市绿心PPT假设-P0业态缺口数量,5个,partial_support_with_scope_gaps,MET-0003;MET-0017;MET-0018;MET-0044;MET-0045;MET-0046;MET-0047;MET-0048,城市绿心五大缺口中的需求侧信号有部分 PDF 支持，如咖啡 TGI=241、已育占比 69.49%、星级酒店 TGI=155、国家级景点 TGI=195；但园内供给、现场调研和五个缺口数量仍未被强证据闭合。另需注意 PPT 中“咖啡厅覆盖度 1.35%”应是北京市大盘值，PDF 目标客群覆盖度为 3.26%。,高德 POI、现场业态清单、园内营业点坐标、缺口评分公式。
+MET-0035,奥森PPT假设-P0业态缺口数量,5个,partial_support_with_scope_gaps,MET-0007;MET-0008;MET-0025;MET-0026;MET-0027;MET-0028;MET-0049;MET-0050,奥森五大缺口中的需求侧信号有部分 PDF 支持，如咖啡厅 TGI=286、瑜伽 TGI=382、冷饮店 TGI=332；但文创、夜间餐酒流量占比和供给覆盖仍未闭合。,高德 POI、17-22 时段完整小时序列、文创/餐酒现有点位、现场清单。
+MET-0036,奥森PPT假设-精品咖啡园内现状店数,2家,conflict_needs_external_validation,MET-0052,PPT 称奥森精品咖啡仅 2 家，但 PDF 热门到访表内已能看到 3 个咖啡相关 POI；该表不是完整供给清单，因此不能直接反证，但足以标记为冲突待核验。,高德关键词 POI 抓取、园内边界过滤、现场营业状态核验。
+MET-0037,奥森PPT假设-瑜伽/普拉提园内现状店数,0家,conflict_needs_external_validation,MET-0051,PPT 称奥森瑜伽/普拉提 0 家，但 PDF 热门到访表可见“悦健达专项体能·康复·普拉提运动中心”；需核验是否在园内、是否营业、是否可计入供给。,高德 POI、园区边界、现场清单。
+MET-0038,奥森PPT假设-P0改造当前日收益合计,1.13万元/日,unsupported_financial_assumption,,奥森 P0 改造当前日收益 1.13 万元只来自 PPT，未见经营台账或分项流水。,现有商户流水、租金、分成、分业态收入。
+MET-0039,奥森PPT假设-P0改造优化后日收益合计,5.06万元/日,unsupported_financial_assumption,,奥森 P0 改造优化后日收益 5.06 万元只来自 PPT，缺少转化率和客单价模型参数。,转化率、客单价、业态容量、分成比例、营业天数假设。
+MET-0040,奥森PPT假设-P0改造日收益增量,3.93万元/日,formula_consistent_but_inputs_unverified,MET-0038;MET-0039,日收益增量 3.93 万元与 5.06-1.13 的内部计算一致，但两个输入值仍未验证。,先核验当前日收益和优化后日收益。
+MET-0041,奥森PPT假设-P0改造年收入增量,1430万元/年,formula_consistent_but_inputs_unverified,MET-0040,"年收入增量 1,430 万元与 3.93 万元/日按全年折算基本接近，但营业天数和淡旺季未独立核验。",营业日历、季节系数、节假日/工作日分场景测算。
+MET-0042,奥森PPT假设-P0基准回收期,2.9月,formula_consistent_but_inputs_unverified,MET-0041;MET-0043,2.9 个月回收期与 350/1430*12 的内部公式基本一致，但投入和收益输入仍未验证。,先核验年收入增量和总改造投入。
+MET-0043,奥森PPT假设-P0总改造投入,350万元,unsupported_financial_assumption,,奥森 P0 总改造投入 350 万元只来自 PPT，缺少工程量、设备、品牌引入、不可预见费明细的外部核验。,改造工程量、设备报价、品牌合作条款、施工估算。

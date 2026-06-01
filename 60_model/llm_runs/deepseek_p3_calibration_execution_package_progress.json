@@ -1,0 +1,9 @@
+{
+  "task_id": "LLM-023",
+  "output_status": "needs_review",
+  "evidence_rows": 24,
+  "acceptance_rows": 18,
+  "limit_rows": 12,
+  "blocker_rows": 12,
+  "gate_rows": 6
+}

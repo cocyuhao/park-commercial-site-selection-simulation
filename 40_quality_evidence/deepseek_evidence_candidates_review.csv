@@ -1,0 +1,13 @@
+﻿check_id,status,severity,finding,evidence
+DSEV-001,pass,error,P0 source tables=63,30_extraction/tables/pdf_table_review_queue.csv
+DSEV-002,pass,error,DeepSeek evidence candidates rows=592,30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+DSEV-003,pass,error,missing P0 table ids=[],table_id coverage
+DSEV-004,pass,error,extra table ids=[],table_id coverage
+DSEV-005,pass,error,output_status counts={'needs_review': 592},output_status
+DSEV-006,pass,error,executor counts={'deepseek': 592},executor
+DSEV-007,pass,error,llm_task_id counts={'LLM-003': 592},llm_task_id
+DSEV-008,pass,error,invalid candidate types=[],candidate_type
+DSEV-009,pass,error,checked pollution=[],output_status
+DSEV-010,pass,warning,empty value rows=0,value_draft
+DSEV-011,pass,info,"candidate type distribution={'commercial_supply': 86, 'consumption_spending': 149, 'poi_hot_visit': 325, 'time_peak': 10, 'visitor_flow': 22}",candidate_type
+DSEV-012,pass,info,"review priority distribution={'P0_flow_or_peak_numeric_check': 32, 'P0_spending_numeric_check': 123, 'P1_poi_hot_visit_row_check': 325, 'P1_supply_context_check': 86, 'P2_low_priority_or_no_candidate': 26}",pdf_evidence_candidate_review_queue.csv

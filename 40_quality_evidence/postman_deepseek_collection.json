@@ -1,0 +1,85 @@
+{
+  "info": {
+    "name": "DeepSeek API - 仿真设计项目验证",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://api.deepseek.com",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "<填入真实Key, 当前masked=sk-b8...23ad>",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. 获取模型列表",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/v1/models",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "2. 连通性探测 (max_tokens=1)",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/v1/chat/completions",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"deepseek-chat\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"hi\"\n    }\n  ],\n  \"max_tokens\": 1,\n  \"temperature\": 0.0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "3. 表格分类 smoke test",
+      "request": {
+        "method": "POST",
+        "url": "{{base_url}}/v1/chat/completions",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{api_key}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"deepseek-chat\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"只输出 JSON 数组，不要输出 Markdown。\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"请对以下 PDF 原生表格摘要做主题分类草稿。\\n输入 JSON：\\n[{\\\"table_id\\\": \\\"TBL-00003\\\", \\\"source_file\\\": \\\"城市绿心.pdf\\\", \\\"page\\\": \\\"7\\\", \\\"row_count\\\": \\\"11\\\", \\\"column_count\\\": \\\"6\\\", \\\"sample\\\": \\\"排名 / 工作地名称 / 占比 | 1 / 北京东光实业 / 39.45%\\\"}]\"\n    }\n  ],\n  \"temperature\": 0.0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

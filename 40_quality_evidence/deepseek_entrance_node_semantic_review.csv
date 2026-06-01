@@ -1,0 +1,11 @@
+﻿check_id,status,severity,finding,evidence
+DSNODE-001,pass,error,DeepSeek node draft rows=45,amap_p0_entrance_node_semantic_draft_deepseek.csv
+DSNODE-002,pass,error,output_status counts={'draft': 45},output_status
+DSNODE-003,pass,error,executor counts={'deepseek': 45},executor
+DSNODE-004,pass,error,llm_task_id counts={'LLM-011': 45},llm_task_id
+DSNODE-005,pass,error,invalid semantic types=[],semantic_node_type_draft
+DSNODE-006,pass,error,invalid route priorities=[],route_use_priority_draft
+DSNODE-007,pass,info,"semantic type distribution={'internal_facility_node': 8, 'nearby_commercial_or_wrong_match': 6, 'park_area_centroid_or_generic': 3, 'parking_access_node': 24, 'transit_or_station_node': 4}",semantic_node_type_draft
+DSNODE-008,pass,info,"DeepSeek route priority distribution={'P1_valid_visit_node_candidate': 29, 'P2_context_or_internal_node': 10, 'P3_low_confidence_or_wrong_match': 6}",route_use_priority_draft
+DSNODE-009,pass,info,"local rule priority distribution={'P0_manual_check_gate_or_entrance': 20, 'P1_manual_check_parking_access': 7, 'P2_context_node_or_possible_wrong_match': 9, 'P3_unclear_manual_check': 9}",local_rule_priority
+DSNODE-010,pass,info,"final use gate distribution={'candidate_access_node_needs_official_or_field_confirmation': 20, 'do_not_use_as_access_node_until_manual_review': 18, 'secondary_access_node_needs_field_confirmation': 7}",final_use_gate

@@ -1,0 +1,452 @@
+{
+  "run_at": "2026-05-25T04:22:55Z",
+  "overall_verdict": "WARN",
+  "methods": [
+    {
+      "check": "C1_page_classification",
+      "verdict": "INFO",
+      "results": {
+        "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf": {
+          "total_pages": 250,
+          "sampled_pages": 10,
+          "image_page_count_in_sample": 1,
+          "image_page_rate_in_sample": 0.1,
+          "pdf_type": "text_pdf",
+          "page_stats": [
+            {
+              "image_count": 1,
+              "image_area_ratio": 1.0,
+              "text_length": 36,
+              "is_image_page": true,
+              "page": 1
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 599,
+              "is_image_page": false,
+              "page": 2
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 127,
+              "is_image_page": false,
+              "page": 3
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 599,
+              "is_image_page": false,
+              "page": 4
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 127,
+              "is_image_page": false,
+              "page": 5
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 599,
+              "is_image_page": false,
+              "page": 6
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 127,
+              "is_image_page": false,
+              "page": 7
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 195,
+              "is_image_page": false,
+              "page": 8
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 127,
+              "is_image_page": false,
+              "page": 9
+            },
+            {
+              "image_count": 1,
+              "image_area_ratio": 0.0,
+              "text_length": 209,
+              "is_image_page": false,
+              "page": 10
+            }
+          ]
+        },
+        "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf": {
+          "total_pages": 93,
+          "sampled_pages": 10,
+          "image_page_count_in_sample": 1,
+          "image_page_rate_in_sample": 0.1,
+          "pdf_type": "text_pdf",
+          "page_stats": [
+            {
+              "image_count": 1,
+              "image_area_ratio": 1.0,
+              "text_length": 45,
+              "is_image_page": true,
+              "page": 1
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 617,
+              "is_image_page": false,
+              "page": 2
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 208,
+              "is_image_page": false,
+              "page": 3
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 263,
+              "is_image_page": false,
+              "page": 4
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 155,
+              "is_image_page": false,
+              "page": 5
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 204,
+              "is_image_page": false,
+              "page": 6
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 371,
+              "is_image_page": false,
+              "page": 7
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 482,
+              "is_image_page": false,
+              "page": 8
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 221,
+              "is_image_page": false,
+              "page": 9
+            },
+            {
+              "image_count": 0,
+              "image_area_ratio": 0.0,
+              "text_length": 685,
+              "is_image_page": false,
+              "page": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "check": "C2_jsonl_coverage",
+      "results": {
+        "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf": {
+          "type": "image_pdf",
+          "table_count": 241,
+          "sample_tables": [
+            {
+              "table_id": "TBL-00089",
+              "page": 14,
+              "rows": 12,
+              "cols": 9,
+              "fill_rate": 0.046,
+              "first_row_preview": [
+                "39.83%",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "table_id": "TBL-00090",
+              "page": 15,
+              "rows": 13,
+              "cols": 9,
+              "fill_rate": 0.043,
+              "first_row_preview": [
+                "41.78%",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "table_id": "TBL-00091",
+              "page": 16,
+              "rows": 12,
+              "cols": 9,
+              "fill_rate": 0.046,
+              "first_row_preview": [
+                "45.35%",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "avg_fill_rate": 0.045,
+          "verdict": "WARN_LOW_FILL"
+        },
+        "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf": {
+          "type": "text_pdf",
+          "table_count": 88,
+          "sample_tables": [
+            {
+              "table_id": "TBL-00001",
+              "page": 4,
+              "rows": 7,
+              "cols": 8,
+              "fill_rate": 0.054,
+              "first_row_preview": [
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "table_id": "TBL-00002",
+              "page": 6,
+              "rows": 9,
+              "cols": 4,
+              "fill_rate": 0.0,
+              "first_row_preview": [
+                "",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "table_id": "TBL-00003",
+              "page": 7,
+              "rows": 11,
+              "cols": 6,
+              "fill_rate": 0.727,
+              "first_row_preview": [
+                "排名",
+                "工作地名称",
+                "占比",
+                "排名"
+              ]
+            }
+          ],
+          "avg_fill_rate": 0.26,
+          "verdict": "WARN_LOW_FILL"
+        }
+      }
+    },
+    {
+      "check": "C3_pdfplumber_retry",
+      "results": {
+        "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf": {
+          "tables_found": 6,
+          "tables": [
+            {
+              "page": 3,
+              "table_index": 1,
+              "rows": 10,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            },
+            {
+              "page": 5,
+              "table_index": 1,
+              "rows": 10,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            },
+            {
+              "page": 7,
+              "table_index": 1,
+              "rows": 10,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            },
+            {
+              "page": 8,
+              "table_index": 1,
+              "rows": 6,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            },
+            {
+              "page": 9,
+              "table_index": 1,
+              "rows": 10,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            },
+            {
+              "page": 10,
+              "table_index": 1,
+              "rows": 9,
+              "cols": 1,
+              "fill_rate": 0.0,
+              "first_row": [
+                ""
+              ]
+            }
+          ],
+          "verdict": "TABLES_FOUND",
+          "note": "pdfplumber 找到表格"
+        }
+      }
+    },
+    {
+      "check": "C4_direct_text_quality",
+      "results": {
+        "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf": {
+          "page_samples": [
+            {
+              "page": 1,
+              "text_length": 36,
+              "numbers_found": [
+                "20241230",
+                "20251229"
+              ],
+              "chinese_count": 17,
+              "preview": "奥林匹克森林公园区↵域大数据分析报告↵20241230-20251229"
+            },
+            {
+              "page": 2,
+              "text_length": 599,
+              "numbers_found": [
+                "11",
+                "20241230",
+                "20250106",
+                "20250113",
+                "20250120",
+                "20250127",
+                "20250203",
+                "20250210",
+                "20250217",
+                "20250224"
+              ],
+              "chinese_count": 38,
+              "preview": "F11客流量分析-区域人数按天分析↵20241230↵20250106↵20250113↵20250120↵20250127↵20250203↵20250210↵20250217↵20250224↵20250303↵20250310↵20250317↵20250324↵20250331↵20250407↵20250414↵20250421↵20250428↵20250505↵20250512↵20"
+            },
+            {
+              "page": 3,
+              "text_length": 127,
+              "numbers_found": [
+                "11",
+                "20241230",
+                "20251229",
+                "0",
+                "0.1",
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6"
+              ],
+              "chinese_count": 38,
+              "preview": "F11客流量分析-区域人数按天分析↵20241230-20251229↵0↵0.1↵0.2↵0.3↵0.4↵0.5↵0.6↵0.7↵0.8↵0.9↵1↵20241230-20251229期间到访“奥林匹克森林公园”的全部人口中：↵1）日的人数最大，为0。"
+            },
+            {
+              "page": 4,
+              "text_length": 599,
+              "numbers_found": [
+                "11",
+                "20241230",
+                "20250106",
+                "20250113",
+                "20250120",
+                "20250127",
+                "20250203",
+                "20250210",
+                "20250217",
+                "20250224"
+              ],
+              "chinese_count": 38,
+              "preview": "F11客流量分析-区域人数按天分析↵20241230↵20250106↵20250113↵20250120↵20250127↵20250203↵20250210↵20250217↵20250224↵20250303↵20250310↵20250317↵20250324↵20250331↵20250407↵20250414↵20250421↵20250428↵20250505↵20250512↵20"
+            },
+            {
+              "page": 5,
+              "text_length": 127,
+              "numbers_found": [
+                "11",
+                "20241230",
+                "20251229",
+                "0",
+                "0.1",
+                "0.2",
+                "0.3",
+                "0.4",
+                "0.5",
+                "0.6"
+              ],
+              "chinese_count": 38,
+              "preview": "F11客流量分析-区域人数按天分析↵20241230-20251229↵0↵0.1↵0.2↵0.3↵0.4↵0.5↵0.6↵0.7↵0.8↵0.9↵1↵20241230-20251229期间到访“奥林匹克森林公园”的流动人口中：↵1）日的人数最大，为0。"
+            }
+          ],
+          "avg_text_length_per_page": 298,
+          "verdict": "TEXT_LAYER_EXISTS_BUT_NO_TABLE_STRUCTURE",
+          "note": "文本层存在但不含表格结构信息（无向量线框），表格数据未被提取到 JSONL"
+        }
+      }
+    },
+    {
+      "check": "C5_final_conclusion",
+      "overall_verdict": "WARN",
+      "conclusions": [
+        {
+          "pdf": "奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+          "status": "DATA_DEGRADED",
+          "detail": "图像型PDF「奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf」有 241 张表但填充率低 → 表格结构可能损坏。"
+        },
+        {
+          "pdf": "城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+          "status": "DATA_OK",
+          "detail": "文本型PDF「城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf」有 88 张表，双引擎一致，数据已成功提取。"
+        }
+      ],
+      "recommendation": ""
+    }
+  ]
+}

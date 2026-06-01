@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>园区商业选址决策平台</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260601b" />
+  </head>
+  <body>
+    <div class="platform-shell">
+      <aside class="app-sidebar">
+        <div class="platform-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <b>园区商业选址决策平台</b>
+            <small>反馈草案</small>
+          </div>
+        </div>
+
+        <nav class="side-nav" aria-label="主导航">
+          <button class="side-nav-item active" data-view="overview">项目总览</button>
+          <button class="side-nav-item" data-view="nodes">节点清单</button>
+          <button class="side-nav-item" data-view="map">空间地图</button>
+          <button class="side-nav-item" data-view="upload">资料导入</button>
+          <button class="side-nav-item" data-view="data">资料闭合中心</button>
+          <button class="side-nav-item" data-view="ai">专家 AI 工作台</button>
+        </nav>
+
+        <div class="side-tip">
+          <b>当前边界</b>
+          <span>所有 AI 与评分只用于待复核草案，不是最终推荐。</span>
+        </div>
+      </aside>
+
+      <main class="decision-page">
+        <header class="project-header">
+          <div class="project-title">
+            <h1>云湖公园商业带选址评估</h1>
+            <span id="pageSubtitle">先选任务，再进入地图、节点或 AI 工作台</span>
+          </div>
+          <div class="header-actions">
+            <span id="dataVersion" class="status-pill">loading</span>
+            <button id="headerDataBtn" class="secondary-btn">查看待补数据</button>
+            <button id="headerAiBtn" class="primary-btn">打开 AI 工作台</button>
+          </div>
+        </header>
+
+        <section id="overviewView" class="view active">
+          <section class="home-grid">
+            <div class="home-intro">
+              <h2>请选择现在要做的事</h2>
+              <p>这个原型按“鼠标点击 + 打字反馈”设计。首页不放复杂闸门，把任务拆开，让专家按步骤看节点、看地图、补数据、问 AI。</p>
+              <div class="home-alert">
+                <b>请先按草案使用</b>
+                <span>当前只能用于讨论和补数。DWG 未完成可信转换，AI 只生成待复核意见。</span>
+              </div>
+            </div>
+            <button class="task-card" data-view="nodes">
+              <span>1</span>
+              <b>看节点方案</b>
+              <em>查看 6 个节点、业态方向、场景假设和待补数据</em>
+            </button>
+            <button class="task-card" data-view="map">
+              <span>2</span>
+              <b>看空间地图</b>
+              <em>查看位置关系、POI 分布和地图接入状态</em>
+            </button>
+            <button class="task-card" data-view="ai">
+              <span>3</span>
+              <b>问 AI / 写专家意见</b>
+              <em>像网页 AI 一样对话，记录专家意见</em>
+            </button>
+            <button class="task-card" data-view="data">
+              <span>4</span>
+              <b>闭合资料缺口</b>
+              <em>把缺什么、谁来补、为什么补看清楚</em>
+            </button>
+            <button class="task-card" data-view="upload">
+              <span>5</span>
+              <b>上传方案资料</b>
+              <em>上传 DWG、PDF、图片、表格后再让 AI 解析成节点和待复核数据</em>
+            </button>
+          </section>
+
+          <section class="overview-panels">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>当前节点</h2>
+                <button class="text-btn" data-view="nodes">进入节点清单</button>
+              </div>
+              <div id="overviewNodeList" class="overview-node-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <h2>下一步建议</h2>
+                <button class="text-btn" data-view="data">看补数清单</button>
+              </div>
+              <div id="overviewNextSteps" class="next-step-list"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="uploadView" class="view">
+          <section class="upload-page">
+            <section class="panel upload-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>资料导入</h2>
+                  <p>未来正式使用时，节点、图片、图纸和数据都从这里上传，不再写死在页面里。</p>
+                </div>
+              </div>
+              <form id="uploadForm" class="upload-form">
+                <label class="drop-zone">
+                  <input id="sourceFile" name="file" type="file" />
+                  <b>点击选择文件</b>
+                  <span>支持 DWG/DXF、PDF、DOCX、PPTX、图片、CSV/XLSX。上传后进入待解析资料池。</span>
+                </label>
+                <div class="form-grid">
+                  <label>资料类型
+                    <select id="uploadCategory" name="category">
+                      <option value="auto">自动识别</option>
+                      <option value="CAD / 图纸">CAD / 图纸</option>
+                      <option value="现场图片 / 位置图">现场图片 / 位置图</option>
+                      <option value="数据表">数据表</option>
+                      <option value="方案文件">方案文件</option>
+                    </select>
+                  </label>
+                  <label>关联缺口
+                    <select id="uploadGate" name="target_gate">
+                      <option value="">暂不关联</option>
+                      <option value="geometry">图纸/几何</option>
+                      <option value="visitor_flow">客流资料</option>
+                      <option value="conversion_rate">转化资料</option>
+                      <option value="revenue_cost">收益成本</option>
+                      <option value="operation_authorization">运营授权</option>
+                    </select>
+                  </label>
+                </div>
+                <textarea id="uploadNote" placeholder="给 AI 的说明，例如：这是南园 DWG、这张图标了入口、这个表是周末客流……"></textarea>
+                <button class="primary-btn" type="submit">上传并进入待解析</button>
+              </form>
+            </section>
+            <section class="panel upload-list-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>待解析资料池</h2>
+                  <p>包含你已放在 CAD图及其计划 里的资料，以及网页新上传的资料。</p>
+                </div>
+              </div>
+              <div id="uploadList" class="upload-list"></div>
+              <div id="candidateList" class="candidate-list"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="nodesView" class="view">
+          <section class="workspace-grid nodes-layout">
+            <section class="panel node-list-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>节点清单</h2>
+                  <p>来自 P2/P4 feedback draft 的 6 个节点</p>
+                </div>
+                <input id="nodeSearch" type="search" placeholder="搜索节点名称或编号" />
+              </div>
+              <div id="nodeList" class="node-list"></div>
+            </section>
+
+            <section class="panel node-detail-panel">
+              <div class="panel-head">
+                <div>
+                  <h2 id="detailTitle">节点详情</h2>
+                  <p id="detailSubtitle">面积、业态、场景假设、合作模式、待补数据</p>
+                </div>
+                <span id="statusTag" class="status-pill danger">待复核 / 非最终</span>
+              </div>
+              <div id="detailBody" class="detail-body"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="mapView" class="view">
+          <section class="map-page">
+            <section class="panel map-main-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>空间地图</h2>
+                  <p id="amapStatusText">地图数据加载中</p>
+                </div>
+                <div class="map-head-tools">
+                  <form id="mapSearchForm" class="map-search">
+                    <input id="mapSearchInput" type="search" placeholder="输入公园/地址，刷新高德底图" />
+                    <button type="submit">定位</button>
+                  </form>
+                  <div class="segmented" role="group" aria-label="地图图层">
+                    <button class="active" data-map-mode="risk">风险</button>
+                    <button data-map-mode="poi">POI</button>
+                    <button data-map-mode="simple">简洁</button>
+                  </div>
+                </div>
+              </div>
+              <div id="mapCanvas" class="map-canvas mode-risk">
+                <img id="amapBaseMap" alt="高德静态地图或本地示意底图" />
+                <div id="amapPoiLayer"></div>
+                <div id="mapNodes"></div>
+                <div class="map-loading">正在加载高德底图……</div>
+                <div class="map-controls" aria-label="地图控制">
+                  <button id="mapZoomIn" type="button" aria-label="放大">+</button>
+                  <button id="mapZoomOut" type="button" aria-label="缩小">-</button>
+                  <button id="mapReset" type="button">复位</button>
+                </div>
+                <div class="map-note">地图用于讨论位置关系，不代表 DWG 坐标、面积、图层或真实动线。</div>
+              </div>
+            </section>
+
+            <aside class="panel map-side-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>所选节点</h2>
+                  <p>点击地图标记或左侧节点可切换</p>
+                </div>
+              </div>
+              <div id="mapSideDetail" class="map-side-detail"></div>
+              <button id="mapAskAiBtn" class="primary-wide">拿这个节点问 AI</button>
+            </aside>
+          </section>
+        </section>
+
+        <section id="dataView" class="view">
+          <section class="workspace-grid data-layout">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>资料闭合状态</h2>
+                  <p>每个缺口都给出要上传什么、要填什么、下一步点哪里。</p>
+                </div>
+              </div>
+              <div id="gateList" class="gate-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>待确认资料清单</h2>
+                  <p>把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。</p>
+                </div>
+              </div>
+              <div id="dataNeeds" class="needs-table"></div>
+            </section>
+            <section class="panel integration-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>接口与数据真实接入状态</h2>
+                  <p>这里专门说明哪些是真接入、哪些是降级兜底，避免把示意当成最终结果</p>
+                </div>
+                <button id="refreshIntegrationBtn" class="secondary-btn">刷新状态</button>
+              </div>
+              <div id="integrationStatus" class="integration-list"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="aiWorkspaceView" class="view ai-workspace">
+          <section class="ai-workspace-layout">
+            <section class="panel ai-chat-card">
+              <div class="chat-head">
+                <div>
+                  <h2>专家 AI 工作台</h2>
+                  <p>一个输入框即可上传资料、描述位置、记录专家意见，并生成待复核修改建议。</p>
+                </div>
+                <span class="status-pill danger">待复核 / 非最终</span>
+              </div>
+              <div id="aiContext" class="ai-context-strip"></div>
+              <div id="chatMessages" class="chat-messages"></div>
+              <form id="aiComposer" class="ai-composer">
+                <input id="aiFileInput" type="file" multiple hidden />
+                <div id="attachmentTray" class="attachment-tray"></div>
+                <div class="composer-box">
+                  <button id="attachBtn" class="composer-icon-btn" type="button" aria-label="上传资料">+</button>
+                  <textarea id="chatInput" rows="1" placeholder="输入专家意见、位置描述或问题；也可以先点 + 上传图纸、图片或表格"></textarea>
+                  <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送">发送</button>
+                </div>
+              </form>
+            </section>
+          </section>
+        </section>
+      </main>
+    </div>
+    <script src="/static/app.js?v=20260601b"></script>
+  </body>
+</html>

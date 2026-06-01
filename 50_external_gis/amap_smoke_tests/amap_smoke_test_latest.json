@@ -1,0 +1,15 @@
+{
+  "run_at": "2026-05-25T01:55:24Z",
+  "endpoint": "v5/place/text",
+  "status": "ok",
+  "query_summary": {
+    "keywords": "奥林匹克森林公园",
+    "region": "北京",
+    "city_limit": "true",
+    "page_size": "1"
+  },
+  "amap_status": "1",
+  "amap_info": "OK",
+  "result_count": 1,
+  "notes": "Real Amap API call succeeded if status is ok. Key is not stored."
+}

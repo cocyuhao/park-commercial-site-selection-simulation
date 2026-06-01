@@ -1,0 +1,7 @@
+{
+  "status": "connected_image",
+  "detail": "高德静态地图返回图片，已通过后端代理缓存；前端未暴露 Key。",
+  "output_status": "needs_review",
+  "frontend_key_exposed": false,
+  "checked_at": "2026-06-01T13:38:57"
+}

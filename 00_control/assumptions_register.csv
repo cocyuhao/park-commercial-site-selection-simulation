@@ -1,0 +1,4 @@
+assumption_id,assumption,category,default_value,confidence,source,status,validation_plan
+A-001,当前城市绿心和奥森资料仅作为训练样例,scope,training_only,high,user_confirmed,active,后续真实目标公园进入时重新建 brief
+A-002,没有真实目标公园前不批量调用高德 API,workflow,no_bulk_api_before_target,high,project_rule,active,目标公园明确后再执行 GIS 补数
+A-003,PPT 数字默认低于 PDF/GIS/用户原始数据证据强度,evidence,ppt_is_weak_evidence,high,methodology,active,关键 PPT 数字必须回查强证据

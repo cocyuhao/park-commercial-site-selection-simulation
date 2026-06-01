@@ -1,0 +1,339 @@
+﻿check_id,group,severity,status,finding,evidence
+IMPL-001,files,error,pass,"00_control/llm_routing.md exists=True, bytes=2822",00_control/llm_routing.md
+IMPL-002,files,error,pass,"00_control/credential_handoff.md exists=True, bytes=1300",00_control/credential_handoff.md
+IMPL-003,files,error,pass,"00_control/model_orchestration.md exists=True, bytes=5319",00_control/model_orchestration.md
+IMPL-004,files,error,pass,"00_control/plugin_routing.md exists=True, bytes=5359",00_control/plugin_routing.md
+IMPL-005,files,error,pass,"00_control/decisions.md exists=True, bytes=13857",00_control/decisions.md
+IMPL-006,files,error,pass,"10_research/deepseek_api_notes.md exists=True, bytes=1670",10_research/deepseek_api_notes.md
+IMPL-007,files,error,pass,"60_model/configs/llm_task_routing.csv exists=True, bytes=3570",60_model/configs/llm_task_routing.csv
+IMPL-008,files,error,pass,"60_model/src/llm_router.py exists=True, bytes=5457",60_model/src/llm_router.py
+IMPL-009,files,error,pass,"60_model/src/auto_gate.py exists=True, bytes=15039",60_model/src/auto_gate.py
+IMPL-010,files,error,pass,"60_model/src/deepseek_review.py exists=True, bytes=9124",60_model/src/deepseek_review.py
+IMPL-011,files,error,pass,"60_model/scripts/run_deepseek_smoke_test.py exists=True, bytes=2390",60_model/scripts/run_deepseek_smoke_test.py
+IMPL-012,files,error,pass,"60_model/scripts/run_deepseek_table_classification.py exists=True, bytes=17662",60_model/scripts/run_deepseek_table_classification.py
+IMPL-013,files,error,pass,"60_model/scripts/review_deepseek_table_classification.py exists=True, bytes=9195",60_model/scripts/review_deepseek_table_classification.py
+IMPL-014,files,error,pass,"60_model/scripts/run_deepseek_evidence_candidates.py exists=True, bytes=15044",60_model/scripts/run_deepseek_evidence_candidates.py
+IMPL-015,files,error,pass,"60_model/scripts/review_deepseek_evidence_candidates.py exists=True, bytes=11288",60_model/scripts/review_deepseek_evidence_candidates.py
+IMPL-016,files,error,pass,"60_model/scripts/run_deepseek_entrance_node_classification.py exists=True, bytes=12598",60_model/scripts/run_deepseek_entrance_node_classification.py
+IMPL-017,files,error,pass,"60_model/scripts/review_deepseek_entrance_node_classification.py exists=True, bytes=10514",60_model/scripts/review_deepseek_entrance_node_classification.py
+IMPL-018,files,error,pass,"60_model/scripts/run_deepseek_p0_verification_package.py exists=True, bytes=12642",60_model/scripts/run_deepseek_p0_verification_package.py
+IMPL-019,files,error,pass,"60_model/scripts/review_deepseek_p0_verification_package.py exists=True, bytes=4874",60_model/scripts/review_deepseek_p0_verification_package.py
+IMPL-020,files,error,pass,"60_model/scripts/run_deepseek_project_context_sync.py exists=True, bytes=11409",60_model/scripts/run_deepseek_project_context_sync.py
+IMPL-021,files,error,pass,"60_model/scripts/review_deepseek_project_context_sync.py exists=True, bytes=3990",60_model/scripts/review_deepseek_project_context_sync.py
+IMPL-022,files,error,pass,"60_model/scripts/run_deepseek_p0_detail_query_plan.py exists=True, bytes=12077",60_model/scripts/run_deepseek_p0_detail_query_plan.py
+IMPL-023,files,error,pass,"60_model/scripts/review_deepseek_p0_detail_query_plan.py exists=True, bytes=5125",60_model/scripts/review_deepseek_p0_detail_query_plan.py
+IMPL-024,files,error,pass,"60_model/scripts/run_deepseek_p0_field_verification_checklist.py exists=True, bytes=14265",60_model/scripts/run_deepseek_p0_field_verification_checklist.py
+IMPL-025,files,error,pass,"60_model/scripts/review_deepseek_p0_field_verification_checklist.py exists=True, bytes=6031",60_model/scripts/review_deepseek_p0_field_verification_checklist.py
+IMPL-026,files,error,pass,"60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104",60_model/llm_runs/deepseek_table_classification_raw.jsonl
+IMPL-027,files,error,pass,"60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172",60_model/llm_runs/deepseek_table_classification_progress.json
+IMPL-028,files,error,pass,"60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288",60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
+IMPL-029,files,error,pass,"60_model/llm_runs/deepseek_evidence_candidates_progress.json exists=True, bytes=222",60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-030,files,error,pass,"60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl exists=True, bytes=20680",60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl
+IMPL-031,files,error,pass,"60_model/llm_runs/deepseek_entrance_node_semantic_progress.json exists=True, bytes=190",60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-032,files,error,pass,"60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl exists=True, bytes=8146",60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl
+IMPL-033,files,error,pass,"60_model/llm_runs/deepseek_p0_verification_package_progress.json exists=True, bytes=165",60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-034,files,error,pass,"60_model/llm_runs/deepseek_project_context_sync_raw.jsonl exists=True, bytes=7996",60_model/llm_runs/deepseek_project_context_sync_raw.jsonl
+IMPL-035,files,error,pass,"60_model/llm_runs/deepseek_project_context_sync_progress.json exists=True, bytes=215",60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-036,files,error,pass,"60_model/llm_runs/deepseek_project_context_sync_latest.json exists=True, bytes=7684",60_model/llm_runs/deepseek_project_context_sync_latest.json
+IMPL-037,files,error,pass,"60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl exists=True, bytes=4625",60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl
+IMPL-038,files,error,pass,"60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json exists=True, bytes=198",60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-039,files,error,pass,"60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl exists=True, bytes=10320",60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl
+IMPL-040,files,error,pass,"60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json exists=True, bytes=201",60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-041,files,error,pass,"30_extraction/tables/pdf_table_topic_draft_deepseek.csv exists=True, bytes=112578",30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-042,files,error,pass,"30_extraction/tables/pdf_table_review_queue.csv exists=True, bytes=164277",30_extraction/tables/pdf_table_review_queue.csv
+IMPL-043,files,error,pass,"30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv exists=True, bytes=237957",30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-044,files,error,pass,"30_extraction/tables/pdf_evidence_candidate_review_queue.csv exists=True, bytes=255144",30_extraction/tables/pdf_evidence_candidate_review_queue.csv
+IMPL-045,files,error,pass,"40_quality_evidence/deepseek_table_classification_report.md exists=True, bytes=997",40_quality_evidence/deepseek_table_classification_report.md
+IMPL-046,files,error,pass,"40_quality_evidence/deepseek_table_classification_review.csv exists=True, bytes=859",40_quality_evidence/deepseek_table_classification_review.csv
+IMPL-047,files,error,pass,"40_quality_evidence/deepseek_table_classification_review.md exists=True, bytes=1792",40_quality_evidence/deepseek_table_classification_review.md
+IMPL-048,files,error,pass,"40_quality_evidence/deepseek_evidence_candidates_report.md exists=True, bytes=958",40_quality_evidence/deepseek_evidence_candidates_report.md
+IMPL-049,files,error,pass,"40_quality_evidence/deepseek_evidence_candidates_review.csv exists=True, bytes=1210",40_quality_evidence/deepseek_evidence_candidates_review.csv
+IMPL-050,files,error,pass,"40_quality_evidence/deepseek_evidence_candidates_review.md exists=True, bytes=2602",40_quality_evidence/deepseek_evidence_candidates_review.md
+IMPL-051,files,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv exists=True, bytes=23702",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-052,files,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv exists=True, bytes=21307",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv
+IMPL-053,files,error,pass,"40_quality_evidence/deepseek_entrance_node_semantic_report.md exists=True, bytes=841",40_quality_evidence/deepseek_entrance_node_semantic_report.md
+IMPL-054,files,error,pass,"40_quality_evidence/deepseek_entrance_node_semantic_review.csv exists=True, bytes=1411",40_quality_evidence/deepseek_entrance_node_semantic_review.csv
+IMPL-055,files,error,pass,"40_quality_evidence/deepseek_entrance_node_semantic_review.md exists=True, bytes=3520",40_quality_evidence/deepseek_entrance_node_semantic_review.md
+IMPL-056,files,error,pass,"70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv exists=True, bytes=10851",70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-057,files,error,pass,"40_quality_evidence/deepseek_p0_verification_package_report.md exists=True, bytes=676",40_quality_evidence/deepseek_p0_verification_package_report.md
+IMPL-058,files,error,pass,"40_quality_evidence/deepseek_p0_verification_package_review.csv exists=True, bytes=741",40_quality_evidence/deepseek_p0_verification_package_review.csv
+IMPL-059,files,error,pass,"40_quality_evidence/deepseek_p0_verification_package_review.md exists=True, bytes=562",40_quality_evidence/deepseek_p0_verification_package_review.md
+IMPL-060,files,error,pass,"70_outputs/processed_tables/deepseek_first_task_queue.csv exists=True, bytes=3115",70_outputs/processed_tables/deepseek_first_task_queue.csv
+IMPL-061,files,error,pass,"40_quality_evidence/deepseek_project_context_sync_report.md exists=True, bytes=587",40_quality_evidence/deepseek_project_context_sync_report.md
+IMPL-062,files,error,pass,"40_quality_evidence/deepseek_project_context_sync_review.csv exists=True, bytes=807",40_quality_evidence/deepseek_project_context_sync_review.csv
+IMPL-063,files,error,pass,"40_quality_evidence/deepseek_project_context_sync_review.md exists=True, bytes=360",40_quality_evidence/deepseek_project_context_sync_review.md
+IMPL-064,files,error,pass,"50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv exists=True, bytes=4989",50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-065,files,error,pass,"40_quality_evidence/deepseek_p0_detail_query_plan_report.md exists=True, bytes=571",40_quality_evidence/deepseek_p0_detail_query_plan_report.md
+IMPL-066,files,error,pass,"40_quality_evidence/deepseek_p0_detail_query_plan_review.csv exists=True, bytes=1112",40_quality_evidence/deepseek_p0_detail_query_plan_review.csv
+IMPL-067,files,error,pass,"40_quality_evidence/deepseek_p0_detail_query_plan_review.md exists=True, bytes=380",40_quality_evidence/deepseek_p0_detail_query_plan_review.md
+IMPL-068,files,error,pass,"70_outputs/processed_tables/p0_business_field_fill_amap.csv exists=True, bytes=2636",70_outputs/processed_tables/p0_business_field_fill_amap.csv
+IMPL-069,files,error,pass,"70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv exists=True, bytes=8981",70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv
+IMPL-070,files,error,pass,"70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv exists=True, bytes=39418",70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-071,files,error,pass,"40_quality_evidence/deepseek_p0_field_verification_checklist_report.md exists=True, bytes=789",40_quality_evidence/deepseek_p0_field_verification_checklist_report.md
+IMPL-072,files,error,pass,"40_quality_evidence/deepseek_p0_field_verification_checklist_review.csv exists=True, bytes=1383",40_quality_evidence/deepseek_p0_field_verification_checklist_review.csv
+IMPL-073,files,error,pass,"40_quality_evidence/deepseek_p0_field_verification_checklist_review.md exists=True, bytes=461",40_quality_evidence/deepseek_p0_field_verification_checklist_review.md
+IMPL-074,files,error,pass,"10_research/github_tech_shrimp/github_import_plan.md exists=True, bytes=2746",10_research/github_tech_shrimp/github_import_plan.md
+IMPL-075,files,error,pass,"10_research/github_tech_shrimp/tech_shrimp_assessment.md exists=True, bytes=7462",10_research/github_tech_shrimp/tech_shrimp_assessment.md
+IMPL-076,files,error,pass,"10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.csv exists=True, bytes=8034",10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.csv
+IMPL-077,files,error,pass,"10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.json exists=True, bytes=15627",10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.json
+IMPL-078,files,error,pass,"10_research/github_tech_shrimp/fork_results_20260523.csv exists=True, bytes=2827",10_research/github_tech_shrimp/fork_results_20260523.csv
+IMPL-079,files,error,pass,"10_research/github_tech_shrimp/archive_repo_README.md exists=True, bytes=2122",10_research/github_tech_shrimp/archive_repo_README.md
+IMPL-080,files,error,pass,"40_quality_evidence/evidence_ledger.csv exists=True, bytes=174488",40_quality_evidence/evidence_ledger.csv
+IMPL-081,files,error,pass,"30_extraction/scripts/build_second_evidence_ledger.py exists=True, bytes=13978",30_extraction/scripts/build_second_evidence_ledger.py
+IMPL-082,files,error,pass,"40_quality_evidence/second_evidence_ledger_review.csv exists=True, bytes=7279",40_quality_evidence/second_evidence_ledger_review.csv
+IMPL-083,files,error,pass,"40_quality_evidence/second_evidence_ledger_report.md exists=True, bytes=1481",40_quality_evidence/second_evidence_ledger_report.md
+IMPL-084,files,error,pass,"70_outputs/processed_tables/poi_supply_base.csv exists=True, bytes=7552",70_outputs/processed_tables/poi_supply_base.csv
+IMPL-085,files,error,pass,"50_external_gis/amap_poi/amap_poi_query_plan.csv exists=True, bytes=4180",50_external_gis/amap_poi/amap_poi_query_plan.csv
+IMPL-086,files,error,pass,"50_external_gis/scripts/build_amap_spatial_precheck.py exists=True, bytes=13849",50_external_gis/scripts/build_amap_spatial_precheck.py
+IMPL-087,files,error,pass,"50_external_gis/scripts/fetch_osm_park_boundaries.py exists=True, bytes=6544",50_external_gis/scripts/fetch_osm_park_boundaries.py
+IMPL-088,files,error,pass,"50_external_gis/scripts/build_amap_boundary_filter.py exists=True, bytes=9501",50_external_gis/scripts/build_amap_boundary_filter.py
+IMPL-089,files,error,pass,"50_external_gis/scripts/build_in_park_candidate_review.py exists=True, bytes=9691",50_external_gis/scripts/build_in_park_candidate_review.py
+IMPL-090,files,error,pass,"50_external_gis/scripts/build_p0_in_park_followup_worklist.py exists=True, bytes=11952",50_external_gis/scripts/build_p0_in_park_followup_worklist.py
+IMPL-091,files,error,pass,"50_external_gis/scripts/fetch_amap_p0_routes.py exists=True, bytes=12786",50_external_gis/scripts/fetch_amap_p0_routes.py
+IMPL-092,files,error,pass,"50_external_gis/scripts/fetch_amap_p0_entrance_routes.py exists=True, bytes=22422",50_external_gis/scripts/fetch_amap_p0_entrance_routes.py
+IMPL-093,files,error,pass,"50_external_gis/scripts/run_amap_smoke_test.py exists=True, bytes=3464",50_external_gis/scripts/run_amap_smoke_test.py
+IMPL-094,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap.csv exists=True, bytes=120187",70_outputs/processed_tables/poi_supply_candidates_amap.csv
+IMPL-095,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv exists=True, bytes=186806",70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-096,files,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv exists=True, bytes=247111",70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv
+IMPL-097,files,error,pass,"70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv exists=True, bytes=25827",70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-098,files,error,pass,"70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv exists=True, bytes=7426",70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv
+IMPL-099,files,error,pass,"70_outputs/processed_tables/poi_supply_p0_route_access_review.csv exists=True, bytes=10123",70_outputs/processed_tables/poi_supply_p0_route_access_review.csv
+IMPL-100,files,error,pass,"50_external_gis/amap_poi/amap_refetch_followup_plan.csv exists=True, bytes=5348",50_external_gis/amap_poi/amap_refetch_followup_plan.csv
+IMPL-101,files,error,pass,"50_external_gis/amap_routes/amap_p0_route_fetch_log.csv exists=True, bytes=2288",50_external_gis/amap_routes/amap_p0_route_fetch_log.csv
+IMPL-102,files,error,pass,"50_external_gis/amap_routes/amap_p0_route_results.csv exists=True, bytes=3247",50_external_gis/amap_routes/amap_p0_route_results.csv
+IMPL-103,files,error,pass,"50_external_gis/amap_routes/p0_entrance_node_query_plan.csv exists=True, bytes=1697",50_external_gis/amap_routes/p0_entrance_node_query_plan.csv
+IMPL-104,files,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv exists=True, bytes=21640",50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv
+IMPL-105,files,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv exists=True, bytes=15078",50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv
+IMPL-106,files,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv exists=True, bytes=13775",50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv
+IMPL-107,files,error,pass,"70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv exists=True, bytes=10717",70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv
+IMPL-108,files,error,pass,"50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json exists=True, bytes=387",50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
+IMPL-109,files,error,pass,"50_external_gis/boundaries/osm_park_boundaries.geojson exists=True, bytes=22941",50_external_gis/boundaries/osm_park_boundaries.geojson
+IMPL-110,files,error,pass,"50_external_gis/boundaries/osm_park_boundary_fetch_log.csv exists=True, bytes=1041",50_external_gis/boundaries/osm_park_boundary_fetch_log.csv
+IMPL-111,files,error,pass,"40_quality_evidence/amap_spatial_precheck_report.md exists=True, bytes=1948",40_quality_evidence/amap_spatial_precheck_report.md
+IMPL-112,files,error,pass,"40_quality_evidence/osm_boundary_report.md exists=True, bytes=759",40_quality_evidence/osm_boundary_report.md
+IMPL-113,files,error,pass,"40_quality_evidence/amap_boundary_filter_report.md exists=True, bytes=1423",40_quality_evidence/amap_boundary_filter_report.md
+IMPL-114,files,error,pass,"40_quality_evidence/in_park_candidate_review_report.md exists=True, bytes=1565",40_quality_evidence/in_park_candidate_review_report.md
+IMPL-115,files,error,pass,"40_quality_evidence/p0_in_park_followup_worklist_report.md exists=True, bytes=1178",40_quality_evidence/p0_in_park_followup_worklist_report.md
+IMPL-116,files,error,pass,"40_quality_evidence/p0_route_access_review_report.md exists=True, bytes=987",40_quality_evidence/p0_route_access_review_report.md
+IMPL-117,files,error,pass,"40_quality_evidence/p0_entrance_route_review_report.md exists=True, bytes=1184",40_quality_evidence/p0_entrance_route_review_report.md
+IMPL-118,data,error,pass,"40_quality_evidence/data_catalog.csv rows=4, expected=4",40_quality_evidence/data_catalog.csv
+IMPL-119,data,error,pass,"40_quality_evidence/source_profile.csv rows=4, expected=4",40_quality_evidence/source_profile.csv
+IMPL-120,data,error,pass,"30_extraction/tables/keyword_hits.csv rows=1594, expected=1594",30_extraction/tables/keyword_hits.csv
+IMPL-121,data,error,pass,"30_extraction/tables/pdf_native_tables_summary.csv rows=329, expected=329",30_extraction/tables/pdf_native_tables_summary.csv
+IMPL-122,data,error,pass,"40_quality_evidence/evidence_ledger.csv rows=260, expected=260",40_quality_evidence/evidence_ledger.csv
+IMPL-123,data,error,pass,"40_quality_evidence/second_evidence_ledger_review.csv rows=216, expected=216",40_quality_evidence/second_evidence_ledger_review.csv
+IMPL-124,data,error,pass,"70_outputs/processed_tables/poi_supply_base.csv rows=20, expected=20",70_outputs/processed_tables/poi_supply_base.csv
+IMPL-125,data,error,pass,"50_external_gis/amap_poi/amap_poi_query_plan.csv rows=24, expected=24",50_external_gis/amap_poi/amap_poi_query_plan.csv
+IMPL-126,data,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap.csv rows=227, expected=227",70_outputs/processed_tables/poi_supply_candidates_amap.csv
+IMPL-127,data,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv rows=227, expected=227",70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-128,data,error,pass,"70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv rows=227, expected=227",70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv
+IMPL-129,data,error,pass,"70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv rows=26, expected=26",70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-130,data,error,pass,"70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv rows=7, expected=7",70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv
+IMPL-131,data,error,pass,"50_external_gis/amap_routes/amap_p0_route_results.csv rows=7, expected=7",50_external_gis/amap_routes/amap_p0_route_results.csv
+IMPL-132,data,error,pass,"50_external_gis/amap_routes/amap_p0_route_fetch_log.csv rows=7, expected=7",50_external_gis/amap_routes/amap_p0_route_fetch_log.csv
+IMPL-133,data,error,pass,"70_outputs/processed_tables/poi_supply_p0_route_access_review.csv rows=7, expected=7",70_outputs/processed_tables/poi_supply_p0_route_access_review.csv
+IMPL-134,data,error,pass,"50_external_gis/amap_routes/p0_entrance_node_query_plan.csv rows=12, expected=12",50_external_gis/amap_routes/p0_entrance_node_query_plan.csv
+IMPL-135,data,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv rows=45, expected=45",50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv
+IMPL-136,data,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv rows=40, expected=40",50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv
+IMPL-137,data,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv rows=28, expected=28",50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv
+IMPL-138,data,error,pass,"70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv rows=7, expected=7",70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv
+IMPL-139,data,error,pass,"50_external_gis/amap_poi/amap_refetch_followup_plan.csv rows=17, expected=17",50_external_gis/amap_poi/amap_refetch_followup_plan.csv
+IMPL-140,data,error,pass,"50_external_gis/boundaries/osm_park_boundary_fetch_log.csv rows=2, expected=2",50_external_gis/boundaries/osm_park_boundary_fetch_log.csv
+IMPL-141,data,error,pass,"60_model/configs/llm_task_routing.csv rows=15, expected=15",60_model/configs/llm_task_routing.csv
+IMPL-142,llm,error,pass,"30_extraction/tables/pdf_table_topic_draft_deepseek.csv rows=329, expected=329",30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-143,llm,error,pass,"30_extraction/tables/pdf_table_review_queue.csv rows=329, expected=329",30_extraction/tables/pdf_table_review_queue.csv
+IMPL-144,llm,error,pass,"40_quality_evidence/deepseek_table_classification_review.csv rows=8, expected=8",40_quality_evidence/deepseek_table_classification_review.csv
+IMPL-145,llm,error,pass,"30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv rows=592, expected=592",30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-146,llm,error,pass,"30_extraction/tables/pdf_evidence_candidate_review_queue.csv rows=592, expected=592",30_extraction/tables/pdf_evidence_candidate_review_queue.csv
+IMPL-147,llm,error,pass,"40_quality_evidence/deepseek_evidence_candidates_review.csv rows=12, expected=12",40_quality_evidence/deepseek_evidence_candidates_review.csv
+IMPL-148,llm,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv rows=45, expected=45",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-149,llm,error,pass,"50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv rows=45, expected=45",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv
+IMPL-150,llm,error,pass,"40_quality_evidence/deepseek_entrance_node_semantic_review.csv rows=10, expected=10",40_quality_evidence/deepseek_entrance_node_semantic_review.csv
+IMPL-151,llm,error,pass,"70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv rows=7, expected=7",70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-152,llm,error,pass,"40_quality_evidence/deepseek_p0_verification_package_review.csv rows=8, expected=8",40_quality_evidence/deepseek_p0_verification_package_review.csv
+IMPL-153,llm,error,pass,"70_outputs/processed_tables/deepseek_first_task_queue.csv rows=6, expected=6",70_outputs/processed_tables/deepseek_first_task_queue.csv
+IMPL-154,llm,error,pass,"40_quality_evidence/deepseek_project_context_sync_review.csv rows=6, expected=6",40_quality_evidence/deepseek_project_context_sync_review.csv
+IMPL-155,llm,error,pass,"50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv rows=7, expected=7",50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-156,llm,error,pass,"40_quality_evidence/deepseek_p0_detail_query_plan_review.csv rows=11, expected=11",40_quality_evidence/deepseek_p0_detail_query_plan_review.csv
+IMPL-157,data,error,pass,"70_outputs/processed_tables/p0_business_field_fill_amap.csv rows=7, expected=7",70_outputs/processed_tables/p0_business_field_fill_amap.csv
+IMPL-158,data,error,pass,"70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv rows=7, expected=7",70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv
+IMPL-159,llm,error,pass,"70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv rows=34, expected=34",70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-160,llm,error,pass,"40_quality_evidence/deepseek_p0_field_verification_checklist_review.csv rows=11, expected=11",40_quality_evidence/deepseek_p0_field_verification_checklist_review.csv
+IMPL-161,github,error,pass,"10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.csv rows=25, expected=25",10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.csv
+IMPL-162,github,error,pass,"10_research/github_tech_shrimp/fork_results_20260523.csv rows=25, expected=25",10_research/github_tech_shrimp/fork_results_20260523.csv
+IMPL-163,data,error,pass,evidence checked rows=245,40_quality_evidence/evidence_ledger.csv
+IMPL-164,data,warning,pass,presentation_assumption rows=15,40_quality_evidence/evidence_ledger.csv
+IMPL-165,data,error,pass,source_report_pdf rows=245,40_quality_evidence/evidence_ledger.csv
+IMPL-166,data,error,pass,second batch evidence rows=208,40_quality_evidence/evidence_ledger.csv
+IMPL-167,data,error,pass,"second evidence review counts={'added': 208, 'skipped_existing_first_batch': 8}",40_quality_evidence/second_evidence_ledger_review.csv
+IMPL-168,data,error,pass,poi_supply_base pending verification rows=20/20,70_outputs/processed_tables/poi_supply_base.csv
+IMPL-169,data,error,pass,grid coffee name keeps English space,70_outputs/processed_tables/poi_supply_base.csv
+IMPL-170,data,error,pass,amap query categories=10,50_external_gis/amap_poi/amap_poi_query_plan.csv
+IMPL-171,data,error,pass,spatial precheck rows match candidates=227/227,70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-172,data,error,pass,spatial precheck supply use counts={'do_not_use_as_in_park_supply_yet': 227},70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-173,data,error,pass,spatial precheck boundary counts={'needs_polygon_or_field_verification': 227},70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-174,data,info,pass,"spatial precheck status counts={'edge_or_adjacent_needs_boundary_confirmation': 25, 'near_core_needs_boundary_confirmation': 2, 'park_context_needs_boundary_confirmation': 31, 'pdf_seed_matched_needs_boundary_confirmation': 3, 'surrounding_competition_candidate': 166}",70_outputs/processed_tables/poi_supply_candidates_amap_spatial_precheck.csv
+IMPL-175,data,error,pass,"amap follow-up issue counts={'zero_result': 8, 'page_size_cap': 9}",50_external_gis/amap_poi/amap_refetch_followup_plan.csv
+IMPL-176,security,error,pass,amap follow-up requires key counts={'yes': 17},50_external_gis/amap_poi/amap_refetch_followup_plan.csv
+IMPL-177,data,error,pass,"boundary filter counts={'outside_osm_polygon': 201, 'inside_osm_polygon': 26}",70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv
+IMPL-178,data,error,pass,"boundary supply status counts={'boundary_filtered_surrounding_supply_candidate': 201, 'boundary_filtered_in_park_candidate_needs_field_review': 26}",70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv
+IMPL-179,data,error,pass,osm selected polygon boundaries=2,50_external_gis/boundaries/osm_park_boundary_fetch_log.csv
+IMPL-180,data,error,pass,in-park candidate use counts={'p1_in_park_candidate_not_final_supply': 26},70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-181,data,error,pass,in-park route access counts={'needs_entrance_or_route_api_verification': 26},70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-182,data,error,pass,in-park authorization counts={'needs_operator_or_field_confirmation': 26},70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-183,data,info,pass,"in-park business info counts={'amap_business_fields_partial': 4, 'amap_business_fields_sufficient_for_p1_review': 22}",70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-184,data,info,pass,"in-park priority counts={'P0_missing_business_fields': 4, 'P0_pdf_seed_boundary_match': 3, 'P1_key_category': 6, 'P2_normal_field_review': 13}",70_outputs/processed_tables/poi_supply_in_park_candidate_review.csv
+IMPL-185,data,error,pass,P0 worklist can enter P2 counts={'no': 7},70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv
+IMPL-186,data,error,pass,P0 worklist route api counts={'center_proxy_route_returned_needs_real_entrance_validation': 7},70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv
+IMPL-187,data,error,pass,P0 manual fieldwork counts={'not_started': 7},70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv
+IMPL-188,data,error,pass,P0 route api counts={'1': 7},50_external_gis/amap_routes/amap_p0_route_results.csv
+IMPL-189,data,error,pass,P0 route access counts={'amap_center_proxy_route_returned_needs_entrance_validation': 7},50_external_gis/amap_routes/amap_p0_route_results.csv
+IMPL-190,data,error,pass,P0 route distances present=7/7,50_external_gis/amap_routes/amap_p0_route_results.csv
+IMPL-191,security,error,pass,P0 route log params containing key=[],50_external_gis/amap_routes/amap_p0_route_fetch_log.csv
+IMPL-192,data,error,pass,P0 route log status counts={'1': 7},50_external_gis/amap_routes/amap_p0_route_fetch_log.csv
+IMPL-193,data,error,pass,P0 route review can enter P2 counts={'no': 7},70_outputs/processed_tables/poi_supply_p0_route_access_review.csv
+IMPL-194,external_api,error,pass,"P0 entrance node query plan by park={'sample_city_green_heart': 4, 'sample_olympic_forest': 8}",50_external_gis/amap_routes/p0_entrance_node_query_plan.csv
+IMPL-195,external_api,error,pass,"P0 entrance node candidates by park={'城市绿心森林公园': 11, '奥林匹克森林公园': 34}",50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv
+IMPL-196,external_api,info,pass,"P0 entrance node kinds={'nearby_transit_or_visit_node': 5, 'park_gate': 26, 'park_gate_or_road_node': 4, 'park_internal_node': 5, 'parking_or_visit_node': 5}",50_external_gis/amap_routes/amap_p0_entrance_node_candidates.csv
+IMPL-197,external_api,error,pass,P0 entrance route proxy status={'entrance_or_node_proxy_route_returned_needs_field_validation': 28},50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv
+IMPL-198,external_api,error,pass,P0 entrance route api status={'1': 28},50_external_gis/amap_routes/amap_p0_entrance_node_route_results.csv
+IMPL-199,security,error,pass,P0 entrance route log params containing key=False,50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv
+IMPL-200,external_api,error,pass,P0 entrance route log status={'1': 40},50_external_gis/amap_routes/amap_p0_entrance_node_fetch_log.csv
+IMPL-201,data,error,pass,P0 entrance route review status={'entrance_or_node_proxy_route_returned_needs_field_validation': 7},70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv
+IMPL-202,data,error,pass,P0 entrance route can enter P2 counts={'no': 7},70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv
+IMPL-203,data,error,pass,P0 entrance route best distances present=7/7,70_outputs/processed_tables/poi_supply_p0_entrance_route_review.csv
+IMPL-204,llm,error,pass,high-risk tasks routed to DeepSeek=[],60_model/configs/llm_task_routing.csv
+IMPL-205,llm,error,pass,DeepSeek outputs not draft/needs_review=[],60_model/configs/llm_task_routing.csv
+IMPL-206,llm,error,pass,DeepSeek table draft table_id coverage match=True,30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-207,llm,error,pass,DeepSeek table draft invalid topics=[],30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-208,llm,error,pass,DeepSeek table draft status counts={'draft': 329},30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-209,llm,error,pass,DeepSeek table draft executor counts={'deepseek': 329},30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-210,llm,error,pass,DeepSeek table draft task counts={'LLM-002': 329},30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-211,llm,info,pass,"DeepSeek table draft topic distribution={'commercial_supply': 9, 'consumption_spending': 12, 'demographic_profile': 42, 'empty_or_visual_noise': 35, 'origin_residence_work': 24, 'other': 4, 'poi_hot_visit': 38, 'tgi_preference': 161, 'time_peak': 1, 'visitor_flow': 3}",30_extraction/tables/pdf_table_topic_draft_deepseek.csv
+IMPL-212,llm,error,pass,"DeepSeek table review queue priorities={'P0_second_evidence_candidate': 63, 'P1_context_or_followup_candidate': 227, 'P2_low_priority_review': 4, 'P3_skip_or_low_value': 35}",30_extraction/tables/pdf_table_review_queue.csv
+IMPL-213,llm,error,pass,"DeepSeek evidence candidate statuses={'candidate_for_second_evidence_review': 63, 'context_candidate_needs_sampling': 227, 'unclear_needs_sampling': 4, 'not_evidence_noise_or_empty': 35}",30_extraction/tables/pdf_table_review_queue.csv
+IMPL-214,llm,error,pass,DeepSeek table local review statuses={'pass': 8},40_quality_evidence/deepseek_table_classification_review.csv
+IMPL-215,llm,error,pass,DeepSeek evidence candidates covered tables=63,30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-216,llm,error,pass,DeepSeek evidence candidate status counts={'needs_review': 592},30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-217,llm,error,pass,DeepSeek evidence candidate executor counts={'deepseek': 592},30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-218,llm,error,pass,DeepSeek evidence candidate task counts={'LLM-003': 592},30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-219,llm,error,pass,DeepSeek evidence candidate invalid types=[],30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-220,llm,info,pass,"DeepSeek evidence candidate type distribution={'commercial_supply': 86, 'consumption_spending': 149, 'poi_hot_visit': 325, 'time_peak': 10, 'visitor_flow': 22}",30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv
+IMPL-221,llm,error,pass,"DeepSeek evidence review priorities={'P0_flow_or_peak_numeric_check': 32, 'P0_spending_numeric_check': 123, 'P1_poi_hot_visit_row_check': 325, 'P1_supply_context_check': 86, 'P2_low_priority_or_no_candidate': 26}",30_extraction/tables/pdf_evidence_candidate_review_queue.csv
+IMPL-222,llm,error,pass,DeepSeek evidence ledger gate counts={'needs_pdf_row_check_before_ledger': 592},30_extraction/tables/pdf_evidence_candidate_review_queue.csv
+IMPL-223,llm,error,pass,DeepSeek evidence local review statuses={'pass': 12},40_quality_evidence/deepseek_evidence_candidates_review.csv
+IMPL-224,llm,error,pass,DeepSeek entrance node status counts={'draft': 45},50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-225,llm,error,pass,DeepSeek entrance node executor counts={'deepseek': 45},50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-226,llm,error,pass,DeepSeek entrance node task counts={'LLM-011': 45},50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-227,llm,info,pass,"DeepSeek entrance node semantic types={'internal_facility_node': 8, 'nearby_commercial_or_wrong_match': 6, 'park_area_centroid_or_generic': 3, 'parking_access_node': 24, 'transit_or_station_node': 4}",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_draft_deepseek.csv
+IMPL-228,llm,error,pass,"entrance node local priorities={'P0_manual_check_gate_or_entrance': 20, 'P1_manual_check_parking_access': 7, 'P2_context_node_or_possible_wrong_match': 9, 'P3_unclear_manual_check': 9}",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv
+IMPL-229,llm,error,pass,"entrance node final gates={'candidate_access_node_needs_official_or_field_confirmation': 20, 'secondary_access_node_needs_field_confirmation': 7, 'do_not_use_as_access_node_until_manual_review': 18}",50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv
+IMPL-230,llm,error,pass,DeepSeek entrance node local review statuses={'pass': 10},40_quality_evidence/deepseek_entrance_node_semantic_review.csv
+IMPL-231,llm,error,pass,DeepSeek P0 package status counts={'needs_review': 7},70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-232,llm,error,pass,DeepSeek P0 package executor counts={'deepseek': 7},70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-233,llm,error,pass,DeepSeek P0 package task counts={'LLM-012': 7},70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-234,llm,error,pass,DeepSeek P0 package P2 gates={'do_not_enter_p2_until_field_or_official_confirmation': 7},70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv
+IMPL-235,llm,error,pass,DeepSeek P0 package local review statuses={'pass': 8},40_quality_evidence/deepseek_p0_verification_package_review.csv
+IMPL-236,llm,error,pass,"DeepSeek-first delegate distribution={'deepseek': 3, 'local_python': 2, 'codex': 1}",70_outputs/processed_tables/deepseek_first_task_queue.csv
+IMPL-237,llm,error,pass,"DeepSeek-first output statuses={'completed': 3, 'needs_review': 3}",70_outputs/processed_tables/deepseek_first_task_queue.csv
+IMPL-238,llm,error,pass,DeepSeek-first unexpected P2/checked claims=[],70_outputs/processed_tables/deepseek_first_task_queue.csv
+IMPL-239,llm,error,pass,DeepSeek context sync local review statuses={'pass': 6},40_quality_evidence/deepseek_project_context_sync_review.csv
+IMPL-240,llm,error,pass,P0 detail plan output statuses={'needs_review': 7},50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-241,llm,error,pass,P0 detail plan gates={'do_not_enter_p2_until_field_or_official_confirmation': 7},50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-242,llm,error,pass,P0 detail plan executors={'deepseek': 7},50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-243,llm,error,pass,P0 detail plan task ids={'LLM-014': 7},50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-244,llm,error,pass,P0 detail plan missing amap ids=[],50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-245,llm,info,pass,P0 detail plan endpoint distribution={'https://restapi.amap.com/v5/place/detail': 7},50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv
+IMPL-246,llm,error,pass,P0 detail plan review statuses={'pass': 11},40_quality_evidence/deepseek_p0_detail_query_plan_review.csv
+IMPL-247,data,error,pass,"P0 business fill verification statuses={'needs_field_verification': 2, 'partially_verified': 5}",70_outputs/processed_tables/p0_business_field_fill_amap.csv
+IMPL-248,data,error,pass,P0 business fill rows with at least one verified field=5,70_outputs/processed_tables/p0_business_field_fill_amap.csv
+IMPL-249,data,error,pass,"P0 enriched status counts={'detail_api_called_no_new_data': 2, 'detail_api_called_fields_confirmed': 5}",70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv
+IMPL-250,data,error,pass,P0 enriched P2 gates={'no': 7},70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv
+IMPL-251,data,info,pass,"P0 enriched detail status counts={'detail_api_called_no_new_data': 2, 'detail_api_called_fields_confirmed': 5}",70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv
+IMPL-252,llm,error,pass,P0 field checklist output statuses={'needs_review': 34},70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-253,llm,error,pass,P0 field checklist P2 gates={'do_not_enter_p2_until_field_or_official_confirmation': 34},70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-254,llm,error,pass,P0 field checklist executors={'deepseek': 34},70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-255,llm,error,pass,P0 field checklist task ids={'LLM-015': 34},70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-256,llm,error,pass,"P0 field checklist type counts={'p0_poi_business_and_authorization': 7, 'primary_access_node_field_check': 20, 'secondary_parking_or_visit_node_field_check': 7}",70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-257,llm,error,pass,P0 field checklist missing core text=[],70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv
+IMPL-258,llm,error,pass,P0 field checklist review statuses={'pass': 11},40_quality_evidence/deepseek_p0_field_verification_checklist_review.csv
+IMPL-259,github,info,pass,"tech-shrimp license distribution={'Apache-2.0': 2, 'MIT': 7, 'NOASSERTION': 16}",10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.csv
+IMPL-260,github,error,pass,"fork status counts={'forked': 24, 'failed': 1}",10_research/github_tech_shrimp/fork_results_20260523.csv
+IMPL-261,github,warning,pass,failed fork is expected HTTP 451 WechatMoments,10_research/github_tech_shrimp/fork_results_20260523.csv
+IMPL-262,files,error,pass,10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.json json list rows=25,10_research/github_tech_shrimp/tech_shrimp_repos_gh_api_20260523.json
+IMPL-263,files,error,pass,10_research/github_tech_shrimp/tech_shrimp_repos_combined_observed.json json list rows=25,10_research/github_tech_shrimp/tech_shrimp_repos_combined_observed.json
+IMPL-264,files,error,pass,10_research/github_tech_shrimp/tech_shrimp_repos_partial.json json list rows=20,10_research/github_tech_shrimp/tech_shrimp_repos_partial.json
+IMPL-265,llm,error,pass,DeepSeek smoke test status=ok,60_model/llm_runs/deepseek_smoke_test_latest.json
+IMPL-266,llm,error,pass,DeepSeek smoke test model=deepseek-v4-pro,60_model/llm_runs/deepseek_smoke_test_latest.json
+IMPL-267,external_api,error,pass,Amap smoke test status=ok,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
+IMPL-268,external_api,error,pass,Amap smoke test result_count=1,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
+IMPL-269,llm,error,pass,DeepSeek table classification classified_rows=329,60_model/llm_runs/deepseek_table_classification_progress.json
+IMPL-270,llm,error,pass,DeepSeek table classification remaining_rows=0,60_model/llm_runs/deepseek_table_classification_progress.json
+IMPL-271,llm,error,pass,DeepSeek table classification raw chunks=44,60_model/llm_runs/deepseek_table_classification_raw.jsonl
+IMPL-272,llm,error,pass,DeepSeek evidence candidates completed_tables=63,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-273,llm,error,pass,DeepSeek evidence candidates remaining_tables=0,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-274,llm,error,pass,DeepSeek evidence candidates rows=592,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-275,llm,error,pass,DeepSeek evidence candidates raw chunks=63,60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
+IMPL-276,llm,error,pass,DeepSeek entrance node semantic classified_rows=45,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-277,llm,error,pass,DeepSeek entrance node semantic remaining_rows=0,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-278,llm,error,pass,DeepSeek entrance node semantic raw_chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-279,llm,error,pass,DeepSeek entrance node semantic raw chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl
+IMPL-280,llm,error,pass,DeepSeek P0 package work_items=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-281,llm,error,pass,DeepSeek P0 package rows=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-282,llm,error,pass,DeepSeek P0 package remaining_rows=0,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-283,llm,error,pass,DeepSeek P0 package raw_chunks=1,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-284,llm,error,pass,DeepSeek P0 package raw chunks=1,60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl
+IMPL-285,llm,error,pass,DeepSeek context sync text files=8,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-286,llm,error,pass,DeepSeek context sync csv files=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-287,llm,error,pass,DeepSeek context sync task queue rows=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-288,llm,error,pass,DeepSeek context sync raw_chunks=1,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-289,llm,error,pass,DeepSeek context sync output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-290,llm,error,pass,DeepSeek context sync raw chunks=1,60_model/llm_runs/deepseek_project_context_sync_raw.jsonl
+IMPL-291,llm,error,pass,DeepSeek context sync latest output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_latest.json
+IMPL-292,llm,error,pass,DeepSeek context sync latest task_queue rows=6,60_model/llm_runs/deepseek_project_context_sync_latest.json
+IMPL-293,llm,error,pass,DeepSeek P0 detail plan work_items=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-294,llm,error,pass,DeepSeek P0 detail plan rows=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-295,llm,error,pass,DeepSeek P0 detail plan remaining_rows=0,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-296,llm,error,pass,DeepSeek P0 detail plan raw_chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-297,llm,error,pass,DeepSeek P0 detail plan output_status=needs_review,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-298,llm,error,pass,DeepSeek P0 detail plan raw chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl
+IMPL-299,llm,error,pass,DeepSeek P0 field checklist work_items=7,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-300,llm,error,pass,DeepSeek P0 field checklist node_items=27,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-301,llm,error,pass,DeepSeek P0 field checklist rows=34,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-302,llm,error,pass,DeepSeek P0 field checklist raw_chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-303,llm,error,pass,DeepSeek P0 field checklist output_status=needs_review,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-304,llm,error,pass,DeepSeek P0 field checklist raw chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl
+IMPL-305,files,error,pass,osm boundary geojson features=2,50_external_gis/boundaries/osm_park_boundaries.geojson
+IMPL-306,files,error,pass,"osm boundary park ids=['sample_city_green_heart', 'sample_olympic_forest']",50_external_gis/boundaries/osm_park_boundaries.geojson
+IMPL-307,scripts,error,pass,python compile failures=[],python -m py_compile
+IMPL-308,scripts,error,pass,"amap dry run: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/fetch_amap_poi.py --dry-run
+IMPL-309,scripts,error,pass,poi supply review: exit=0,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_poi_supply_base.py
+IMPL-310,scripts,error,pass,"amap spatial precheck rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_spatial_precheck.py
+IMPL-311,scripts,error,pass,"amap boundary filter rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_boundary_filter.py
+IMPL-312,scripts,error,pass,"in-park candidate review rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_in_park_candidate_review.py
+IMPL-313,llm,error,pass,loaded routes=15,60_model/src/llm_router.py
+IMPL-314,llm,error,pass,LLM-001 routes to DeepSeek,60_model/configs/llm_task_routing.csv
+IMPL-315,llm,error,pass,LLM-006 remains high-risk final conclusion,60_model/configs/llm_task_routing.csv
+IMPL-316,llm,error,pass,LLM-009 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
+IMPL-317,llm,error,pass,LLM-010 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
+IMPL-318,llm,error,pass,LLM-011 entrance node semantic screening remains draft,60_model/configs/llm_task_routing.csv
+IMPL-319,llm,error,pass,LLM-012 P0 verification package remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-320,llm,error,pass,LLM-013 context sync remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-321,llm,error,pass,LLM-014 P0 Amap detail query plan remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-322,llm,error,pass,LLM-015 field verification checklist remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-323,llm,error,pass,LLM-006 high-risk/non-DeepSeek guard triggered,60_model/src/llm_router.py
+IMPL-324,llm,error,pass,DeepSeek key must come from environment,60_model/src/llm_router.py
+IMPL-325,security,error,pass,sensitive matches=[],project text scan
+IMPL-326,files,error,pass,mojibake placeholders=[],"rg ""???"" equivalent"
+IMPL-327,security,error,pass,.env.example keeps empty placeholders only,.env.example
+IMPL-328,security,error,pass,.env has local DeepSeek key configured,.env
+IMPL-329,security,error,pass,.env has local Amap key configured,.env
+IMPL-330,security,error,pass,.gitignore excludes .env,.gitignore
+IMPL-331,github,error,pass,gh repo list cocyuhao: exit=0,"gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url"
+IMPL-332,github,error,pass,fork parent verification failures=[],gh repo list cocyuhao
+IMPL-333,github,error,pass,archive repo contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents
+IMPL-334,github,error,pass,"archive root paths=['README.md', 'docs', 'manifests']",cocyuhao/tech-shrimp-open-source-archive
+IMPL-335,github,error,pass,archive docs contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/docs
+IMPL-336,github,error,pass,"archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']",cocyuhao/tech-shrimp-open-source-archive/docs
+IMPL-337,github,error,pass,archive manifests contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/manifests
+IMPL-338,github,error,pass,"archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']",cocyuhao/tech-shrimp-open-source-archive/manifests

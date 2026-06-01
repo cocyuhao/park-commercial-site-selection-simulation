@@ -1,0 +1,136 @@
+{
+  "output_status": "needs_review",
+  "phase_assessment": "当前处于 P1 样例资料拆解收尾阶段。已完成证据入账、POI 供给底表构建、高德小批量抓取与空间过滤、入口/节点语义初筛及 P0 人工核验包草稿。P0 供给项的经营字段（opening_hours, contact, cost_yuan）仍未补全，入口/节点候选仍需人工/官方现场确认，运营授权未闭合。P1 质量报告尚未形成，但已具备进入 P2 的大部分条件。整体仍需若干低风险整理和本地 API 补数工作，方可进入 P2 方法原型阶段。所有输出仍需门禁，尚未进入 P2。",
+  "delegation_policy": "遵循 DeepSeek‑first 原则：大量简单、繁琐、可复核的整理、分类、草稿和核对任务优先交给 deepseek；涉及外部 API 调用（高德）、数据清洗、统计和验证脚本等可复现任务交给 local_python；Codex 仅负责任务拆分、最终证据门禁、商业决策和阶段推进，不直接产生低风险草稿。凭据仍由本地脚本从 .env 读取，不写入 DeepSeek prompt 或 raw 输出。",
+  "task_queue": [
+    {
+      "priority": 1,
+      "task_name": "生成 P0 供给项高德详情查询计划与补字段策略草稿",
+      "delegate_to": "deepseek",
+      "codex_role": "review_and_approve",
+      "input_paths": [
+        "70_outputs/processed_tables/poi_supply_p0_followup_worklist.csv"
+      ],
+      "output_paths": [
+        "50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv"
+      ],
+      "gate_type": "review",
+      "output_status": "needs_review",
+      "reason": "DeepSeek 可根据现有 P0 工作项生成高德详情搜索所需参数（POI ID、名称、地址）和补字段优先级草稿，减少主模型查文档耗时，输出仍需本地检查。"
+    },
+    {
+      "priority": 2,
+      "task_name": "执行高德详情 API 并更新 P0 工作项经营字段",
+      "delegate_to": "local_python",
+      "codex_role": "review_output_and_trigger_next",
+      "input_paths": [
+        "50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv",
+        ".env"
+      ],
+      "output_paths": [
+        "70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv"
+      ],
+      "gate_type": "script_exit_and_log_review",
+      "output_status": "draft",
+      "reason": "本地脚本读取查询计划调用高德详情 API（需 AMAP_WEB_SERVICE_KEY），拉取营业时间、电话、人均消费等字段，更新工作单。输出作为草稿供后续复核，不直接升为事实。"
+    },
+    {
+      "priority": 3,
+      "task_name": "整理入口/节点现场核验标准化检查表",
+      "delegate_to": "deepseek",
+      "codex_role": "review_and_finalize_gate",
+      "input_paths": [
+        "50_external_gis/amap_routes/amap_p0_entrance_node_semantic_review_queue.csv",
+        "70_outputs/processed_tables/p0_manual_verification_package_deepseek.csv"
+      ],
+      "output_paths": [
+        "70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv"
+      ],
+      "gate_type": "review",
+      "output_status": "needs_review",
+      "reason": "将零散的入口节点复核队列和核验包整合为可直接打印的现场记录表，包含检查项、优先级、预期答案和拍照框，降低人工核验遗漏。"
+    },
+    {
+      "priority": 4,
+      "task_name": "生成 P1 质量报告初稿",
+      "delegate_to": "deepseek",
+      "codex_role": "final_approval_and_merge",
+      "input_paths": [
+        "40_quality_evidence/evidence_ledger.csv",
+        "40_quality_evidence/*report*.md",
+        "40_quality_evidence/verification/implementation_verification_20260524.md",
+        "findings.md"
+      ],
+      "output_paths": [
+        "40_quality_evidence/p1_quality_report_draft_deepseek.md"
+      ],
+      "gate_type": "review",
+      "output_status": "needs_review",
+      "reason": "综合已有证据台账、复核报告和落实性验证结果，撰写 P1 质量结论草稿，明确证据完整度、剩余缺口、风险点和 P2 进入建议。"
+    },
+    {
+      "priority": 5,
+      "task_name": "扩展落实性验证脚本并生成最新全量门禁报告",
+      "delegate_to": "local_python",
+      "codex_role": "confirm_all_checks_pass_before_P2",
+      "input_paths": [
+        "30_extraction/scripts/verify_project_implementation.py",
+        "70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv",
+        "70_outputs/processed_tables/p0_field_verification_checklist_deepseek.csv",
+        "40_quality_evidence/p1_quality_report_draft_deepseek.md",
+        "50_external_gis/amap_poi/amap_p0_detail_query_plan_deepseek.csv"
+      ],
+      "output_paths": [
+        "40_quality_evidence/verification/implementation_verification_20260526.csv",
+        "40_quality_evidence/verification/implementation_verification_20260526.md"
+      ],
+      "gate_type": "script_exit_zero",
+      "output_status": "needs_review",
+      "reason": "更新验证脚本以覆盖新增的 draft/needs_review 文件、API 调用日志和补字段结果，确保所有检查 pass。脚本本身需要 Codex 最终审查。"
+    },
+    {
+      "priority": 6,
+      "task_name": "汇总审核所有 P1 产出并更新控制文档",
+      "delegate_to": "codex",
+      "codex_role": "final_gatekeeper",
+      "input_paths": [
+        "all draft/needs_review files from tasks 1-5",
+        "40_quality_evidence/evidence_ledger.csv",
+        "70_outputs/processed_tables/poi_supply_p0_followup_worklist_enriched.csv"
+      ],
+      "output_paths": [
+        "progress.md",
+        "handoff_next_chat.md",
+        "00_control/decisions.md"
+      ],
+      "gate_type": "manual_and_script_combined",
+      "output_status": "needs_review",
+      "reason": "Codex 最终检查所有证据、门禁通过情况和缺失项，决定是否正式关闭 P1 并授权进入 P2。更新交接文件并记录决策。"
+    }
+  ],
+  "gate_delegation": {
+    "deepseek_pre_review_gates": [
+      "DeepSeek 输出的内部一致性（如字段缺失项与工作单一致）",
+      "查询计划参数与原始 POI ID/名称匹配度",
+      "现场核验检查表是否覆盖所有必要入口候选",
+      "质量报告初稿中引用的完成项与现有报告一致"
+    ],
+    "local_script_gates": [
+      "文件存在性、行数、字段 schema",
+      "敏感信息扫描（无 Key 泄露）",
+      "高德 API 调用返回状态和脱敏日志",
+      "落实性验证脚本 257+ 项全 pass（exit 0）",
+      "所有 DeepSeek draft/needs_review 文件确实存在且不可为空",
+      "enriched 工作单中经营字段填充率与预期一致"
+    ],
+    "codex_final_gates": [
+      "所有证据真实性、置信度最终裁定",
+      "P0 供给项是否具备进入 P2 的条件（仍有缺口则保持 no）",
+      "入口/节点官方确认状态（仍为候选则不得用于 P2 路径）",
+      "P1 质量报告是否可以正式发布并作为阶段收尾依据"
+    ]
+  },
+  "codex_minimal_role": "Codex 仅负责任务拆分、最终证据门禁、商业决策、方法选择和阶段推进批准；不编写低风险脚本或生成 DeepSeek 草稿，只在关键逻辑点（如验证脚本扩展）提供最小必要代码。",
+  "immediate_next_step": "首先执行 priority 1：让 DeepSeek 基于 P0 工作项生成高德详情查询计划草稿（needs_review），接着由本地 Python 执行 priority 2 的高德详情 API 调用和字段补全。",
+  "run_id": "20260526T014417Z"
+}

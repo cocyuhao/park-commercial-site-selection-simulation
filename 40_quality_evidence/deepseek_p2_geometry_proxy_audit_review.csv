@@ -1,0 +1,24 @@
+﻿check_id,status,severity,finding,evidence
+P2-GEOM-PROXY-REVIEW-001,pass,error,PDF proxy zone rows=10,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_pdf_proxy_zone_candidates_deepseek.csv
+P2-GEOM-PROXY-REVIEW-002,pass,error,DWG conversion rows=8,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_dwg_conversion_worklist_deepseek.csv
+P2-GEOM-PROXY-REVIEW-003,pass,error,geometry limitation rows=8,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_geometry_proxy_limitations_deepseek.csv
+P2-GEOM-PROXY-REVIEW-004,pass,error,zones output statuses={'needs_review': 10},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_pdf_proxy_zone_candidates_deepseek.csv
+P2-GEOM-PROXY-REVIEW-005,pass,error,zones executors={'deepseek': 10},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_pdf_proxy_zone_candidates_deepseek.csv
+P2-GEOM-PROXY-REVIEW-006,pass,error,zones task_ids={'LLM-021': 10},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_pdf_proxy_zone_candidates_deepseek.csv
+P2-GEOM-PROXY-REVIEW-007,pass,error,dwg output statuses={'needs_review': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_dwg_conversion_worklist_deepseek.csv
+P2-GEOM-PROXY-REVIEW-008,pass,error,dwg executors={'deepseek': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_dwg_conversion_worklist_deepseek.csv
+P2-GEOM-PROXY-REVIEW-009,pass,error,dwg task_ids={'LLM-021': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_dwg_conversion_worklist_deepseek.csv
+P2-GEOM-PROXY-REVIEW-010,pass,error,limits output statuses={'needs_review': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_geometry_proxy_limitations_deepseek.csv
+P2-GEOM-PROXY-REVIEW-011,pass,error,limits executors={'deepseek': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_geometry_proxy_limitations_deepseek.csv
+P2-GEOM-PROXY-REVIEW-012,pass,error,limits task_ids={'LLM-021': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_geometry_proxy_limitations_deepseek.csv
+P2-GEOM-PROXY-REVIEW-013,pass,error,PDF proxy zones preserve label-only geometry status,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_pdf_proxy_zone_candidates_deepseek.csv
+P2-GEOM-PROXY-REVIEW-014,pass,error,DWG tasks remain pending_conversion,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_dwg_conversion_worklist_deepseek.csv
+P2-GEOM-PROXY-REVIEW-015,pass,error,boundary keyword covered: coordinates,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-016,pass,error,boundary keyword covered: area,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-017,pass,error,boundary keyword covered: layer,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-018,pass,error,boundary keyword covered: movement,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-019,pass,error,boundary keyword covered: DWG,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-020,pass,error,boundary keyword covered: geometry,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-021,pass,error,boundary keyword covered: PDF,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-022,pass,error,boundary keyword covered: pending_conversion,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json
+P2-GEOM-PROXY-REVIEW-023,pass,error,no false precision claims,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_geometry_proxy_audit.json

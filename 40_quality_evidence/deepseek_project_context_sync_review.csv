@@ -1,0 +1,7 @@
+﻿check_id,status,severity,finding,evidence
+DS-FIRST-001,pass,error,context sync output_status=needs_review,C:\Users\Yy199\Desktop\仿真设计\60_model\llm_runs\deepseek_project_context_sync_latest.json
+DS-FIRST-002,pass,error,DeepSeek-first task queue rows=6,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\deepseek_first_task_queue.csv
+DS-FIRST-003,pass,error,"delegate distribution={'deepseek': 3, 'local_python': 2, 'codex': 1}",delegate_to
+DS-FIRST-004,pass,error,"task output_status distribution={'needs_review': 5, 'draft': 1}",output_status
+DS-FIRST-005,pass,error,unexpected P2/checked claims=[],task queue text
+DS-FIRST-006,pass,info,"gate_type distribution={'review': 3, 'script_exit_and_log_review': 1, 'script_exit_zero': 1, 'manual_and_script_combined': 1}",gate_type

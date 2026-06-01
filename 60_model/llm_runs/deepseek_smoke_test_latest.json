@@ -1,0 +1,11 @@
+{
+  "run_at": "2026-05-25T01:53:43Z",
+  "task_id": "LLM-001",
+  "task_name": "页面主题分类",
+  "executor": "deepseek",
+  "model": "deepseek-v4-pro",
+  "expected_output_status": "draft",
+  "status": "ok",
+  "response_excerpt": "{\"topic\": \"TGI\", \"reason\": \"文本中包含“咖啡 TGI”，TGI 是指标中的明确关键词，且其他元素如峰值、POI、消费可作为补充，但核心分类词为 TGI。\", \"output_status\": \"success\"}",
+  "notes": "Real DeepSeek API call succeeded. Output remains draft and is not evidence."
+}

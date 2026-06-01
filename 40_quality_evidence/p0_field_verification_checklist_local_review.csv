@@ -1,0 +1,14 @@
+﻿check_id,status,severity,finding,evidence
+FIELD-AUDIT-001,pass,error,field checklist rows=34,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p0_field_verification_checklist_deepseek.csv
+FIELD-AUDIT-002,pass,error,"field checklist type counts={'p0_poi_business_and_authorization': 7, 'primary_access_node_field_check': 20, 'secondary_parking_or_visit_node_field_check': 7}",checklist_type
+FIELD-AUDIT-003,pass,error,field checklist output_status counts={'needs_review': 34},output_status
+FIELD-AUDIT-004,pass,error,field checklist executor counts={'deepseek': 34},executor
+FIELD-AUDIT-005,pass,error,field checklist llm_task_id counts={'LLM-015': 34},llm_task_id
+FIELD-AUDIT-006,pass,error,field checklist p2 gate counts={'do_not_enter_p2_until_field_or_official_confirmation': 34},p2_gate_draft
+FIELD-AUDIT-007,pass,error,"business checklist source ids=['P0-INPARK-001', 'P0-INPARK-002', 'P0-INPARK-003', 'P0-INPARK-004', 'P0-INPARK-005', 'P0-INPARK-006', 'P0-INPARK-007']",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\poi_supply_p0_followup_worklist_enriched.csv
+FIELD-AUDIT-008,pass,error,business missing field mismatches=[],current_known_info vs missing_business_fields
+FIELD-AUDIT-009,pass,error,business items still blocked locally=7/7,route_access_status + operation_authorization_status + can_enter_p2_supply
+FIELD-AUDIT-010,pass,error,"center-proxy route reviewed items=['P0-INPARK-001', 'P0-INPARK-002', 'P0-INPARK-003', 'P0-INPARK-004', 'P0-INPARK-005', 'P0-INPARK-006', 'P0-INPARK-007']",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\poi_supply_p0_route_access_review.csv
+FIELD-AUDIT-011,pass,warning,unmatched business origin phrases=[],on_site_questions_draft vs node checklist aliases
+FIELD-AUDIT-012,pass,info,"duplicate node clusters for field visit batching={'城市绿心森林公园:P6停车场': 2, '奥林匹克森林公园:北园东门1号停车场': 3, '奥林匹克森林公园:北园体育园地面停车场': 2, '奥林匹克森林公园:北园北门地面停车场': 2, '奥林匹克森林公园:北园西门停车场': 2, '奥林匹克森林公园:南园东门停车场': 2, '奥林匹克森林公园:南园西门停车场': 2}",node checklist target_name
+FIELD-AUDIT-013,pass,info,all checklist rows still require field or official confirmation; no row can be closed locally=34/34,checklist + enriched worklist + route review

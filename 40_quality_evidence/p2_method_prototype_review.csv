@@ -1,0 +1,26 @@
+﻿check_id,status,severity,finding,evidence
+P2-METHOD-REVIEW-001,pass,error,"personas rows=6, expected=6",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_persona_parameter_prototype.csv
+P2-METHOD-REVIEW-002,pass,error,personas output statuses={'needs_review': 6},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_persona_parameter_prototype.csv
+P2-METHOD-REVIEW-003,pass,error,"triggers rows=12, expected=12",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_demand_trigger_matrix.csv
+P2-METHOD-REVIEW-004,pass,error,triggers output statuses={'needs_review': 12},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_demand_trigger_matrix.csv
+P2-METHOD-REVIEW-005,pass,error,"formula rows=8, expected=8",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_supply_gap_scoring_formula.csv
+P2-METHOD-REVIEW-006,pass,error,formula output statuses={'needs_review': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_supply_gap_scoring_formula.csv
+P2-METHOD-REVIEW-007,pass,error,"scores rows=6, expected=6",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-008,pass,error,scores output statuses={'needs_review': 6},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-009,pass,error,"api rows=8, expected=8",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_postman_api_contract_draft.csv
+P2-METHOD-REVIEW-010,pass,error,api output statuses={'needs_review': 8},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_postman_api_contract_draft.csv
+P2-METHOD-REVIEW-011,pass,error,persona prototype weights sum=1.0,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_persona_parameter_prototype.csv
+P2-METHOD-REVIEW-012,pass,error,formula prototype weights include risk penalty and sum=0.9,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_supply_gap_scoring_formula.csv
+P2-METHOD-REVIEW-013,pass,error,score use boundaries={'ranking_method_draft_not_final_site_selection': 6},C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-014,pass,error,score blocking gaps include geometry,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-015,pass,error,score blocking gaps include visitor_flow,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-016,pass,error,score blocking gaps include conversion_rate,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-017,pass,error,score blocking gaps include revenue_cost,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-018,pass,error,score blocking gaps include operation_authorization,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-019,pass,error,score blocking gaps include model_gate,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_candidate_method_readiness_scores.csv
+P2-METHOD-REVIEW-020,pass,error,"api key policy={'no_key_required': 1, 'no_real_key_in_collection': 7}",C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_postman_api_contract_draft.csv
+P2-METHOD-REVIEW-021,pass,error,report includes P2 方法原型,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p2_method_prototype_report.md
+P2-METHOD-REVIEW-022,pass,error,report includes 不是 P3,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p2_method_prototype_report.md
+P2-METHOD-REVIEW-023,pass,error,report includes 不是 P4,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p2_method_prototype_report.md
+P2-METHOD-REVIEW-024,pass,error,report includes pending_conversion,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p2_method_prototype_report.md
+P2-METHOD-REVIEW-025,pass,error,report includes needs_review,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p2_method_prototype_report.md

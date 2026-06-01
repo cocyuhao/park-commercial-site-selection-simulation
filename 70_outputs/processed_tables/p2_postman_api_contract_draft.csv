@@ -1,0 +1,9 @@
+﻿api_id,method,path,purpose,auth_or_key_policy,request_body_status,response_status,output_status
+P2-API-001,GET,/p2/health,模型服务健康检查,no_key_required,draft_schema_only,no_key,needs_review
+P2-API-002,GET,/p2/personas,读取 persona 参数原型,no_real_key_in_collection,draft_schema_only,needs_review,needs_review
+P2-API-003,GET,/p2/triggers,读取需求触发矩阵,no_real_key_in_collection,draft_schema_only,needs_review,needs_review
+P2-API-004,GET,/p2/candidates,读取 P2 项目节点候选,no_real_key_in_collection,draft_schema_only,needs_review,needs_review
+P2-API-005,GET,/p2/formula,读取供需缺口评分公式,no_real_key_in_collection,draft_schema_only,needs_review,needs_review
+P2-API-006,POST,/p2/score-preview,用原型参数返回候选节点评分预览,no_real_key_in_collection,draft_schema_only,prototype_only,needs_review
+P2-API-007,GET,/p2/gaps,读取输入缺口登记,no_real_key_in_collection,draft_schema_only,needs_review,needs_review
+P2-API-008,GET,/p2/evidence-status,读取证据/缺口/转换状态摘要,no_real_key_in_collection,draft_schema_only,needs_review,needs_review

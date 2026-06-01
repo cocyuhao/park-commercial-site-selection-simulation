@@ -1,0 +1,13 @@
+﻿item_id,component,preparation_task,can_start_before_p3_closed,must_not_do_before_p3_closed,verification_hint,output_status,executor,llm_task_id
+P4-SKEL-001,SimEngine,搭建Monte Carlo仿真代码骨架，定义抽象接口和参数注入,yes,加载真实校准数据运行仿真或输出候选点排序,确保所有数据源通过接口注入，不硬编码；提交空跑测试桩,needs_review,deepseek,LLM-022
+P4-SKEL-002,API Server,实现P4所需的GET/POST端点占位，返回模拟成功响应,yes,暴露仿真结果或真实数据接口; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,Postman集合调用占位API获得200状态码和示例响应,needs_review,deepseek,LLM-022
+P4-SKEL-003,Postman Collection,基于P4 API契约生成回归测试集和环境变量模板,yes,断言仿真结论或依赖真实数据值的测试; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,运行回归集合，所有测试应仅检查结构，值应为mock,needs_review,deepseek,LLM-022
+P4-SKEL-004,Scenario Config,设计YAML/JSON模板存储场景参数（客流、天气、业态）,yes,填入已闭合的P3真实值; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,模板包含字段验证，所有值默认为占位符,needs_review,deepseek,LLM-022
+P4-SKEL-005,Frontend Shell,搭建专家决策驾驶舱的HTML/CSS/JS框架，预埋API调用,yes,展示基于真实数据的结论或地图; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,界面可与P4模拟数据桩交互，看到占位图表,needs_review,deepseek,LLM-022
+P4-SKEL-006,DataModel,定义关系型/时序数据库模式，用于存储仿真结果和配置,yes,包含P3特有字段的正式填充; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,DDL脚本创建空表，允许空跑迁移,needs_review,deepseek,LLM-022
+P4-SKEL-007,Logging & Monitoring,设置仿真运行的结构化日志和指标收集,yes,记录真实校准数据的日志; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,空跑生成示例日志，确认格式正确,needs_review,deepseek,LLM-022
+P4-SKEL-008,CI/CD,配置GitHub Actions来自动运行lint、单元测试和Postman回归,yes,部署仿真服务到生产环境; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,push代码触发流水线，测试通过,needs_review,deepseek,LLM-022
+P4-SKEL-009,Documentation,编写P4仿真架构文档、API文档及运行说明的框架,yes,声称校准完成或附上未经审核的结论; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,文档中明确标记所有输入要求来自P3,needs_review,deepseek,LLM-022
+P4-SKEL-010,Validation Scripts,开发对仿真结果的合理性检查脚本（范围、单调性等）,yes,对真实结果运行并作为通过/失败门禁; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,用随机占位数据运行检查，确认脚本逻辑正确,needs_review,deepseek,LLM-022
+P4-SKEL-011,Monte Carlo Skeleton,实现蒙特卡洛循环、概率分布抽样、汇总统计的框架,yes,调用P3校准数据或声称结果可信; 不得输出完整仿真结论、最终推荐、候选点排序、收益预测、坐标面积或真实校准参数,使用硬编码的均匀分布产出伪结果，确认流程可跑,needs_review,deepseek,LLM-022
+P4-SKEL-012,Report Templates,制作决策报告（地图、收益表、风险表）的模板和生成脚本,yes,输出包含真实数据的最终推荐,用模拟数据生成报告样式，所有指标标注为示例,needs_review,deepseek,LLM-022

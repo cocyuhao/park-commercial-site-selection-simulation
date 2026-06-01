@@ -1,0 +1,107 @@
+{
+  "run_at": "2026-05-25T04:35:31Z",
+  "title": "P0 数据提取完整性深度审计 (最终版)",
+  "overall_verdict": "COMPLETE_WITH_MINOR_ROUTE_GAPS",
+  "summary": {
+    "A1_pdf_text": {
+      "status": "COMPLETE",
+      "note": "两份 PDF 全文提取完整。奥林匹克 80,212 字符，城市绿心 31,974 字符，含充分的中文和数字内容。"
+    },
+    "A2_pdf_tables": {
+      "status": "COMPLETE",
+      "note": "表格提取质量优秀。奥林匹克 235/241(97.5%) 好表，城市绿心 82/88(93.2%) 好表。内容包含居住地/工作地排名、POI热门到访表、TGI消费画像等核心业务数据，均成功提取。警示：早期 verify_image_pdf_tables_report.json 因抽样偏差错误报告奥林匹克填充率仅4.5%，该结论已被本次全量统计推翻，实际平均填充率为 95.3%。",
+      "olympic_total": 241,
+      "olympic_good": 235,
+      "olympic_good_rate": 0.975,
+      "green_total": 88,
+      "green_good": 82,
+      "green_good_rate": 0.932
+    },
+    "A3_ppt_text": {
+      "status": "COMPLETE",
+      "note": "PPT 文本按幻灯片完整提取，15张/15张全部有内容。文本密度（KB文本/MB原始）看似偏低，但这是因为 PPT 以图表图片为主，提取的是幻灯片中的文字说明、标题和关键结论，内容有效。AI(1)(1).pptx=城市绿心诊断报告 15张，奥森修改稿0306.pptx=奥森商业优化方案 15张，均包含 P0 级业态缺口识别和改造方案的核心文字。"
+    },
+    "A4_topic_classification": {
+      "status": "COMPLETE",
+      "note": "329张表100%完成主题分类，294张业务表，35张噪声/空白表。"
+    },
+    "A5_evidence_ledger": {
+      "status": "COMPLETE",
+      "total_rows": 52,
+      "metric_id_range": "MET-0001 ~ MET-0052",
+      "validation_status_dist": {
+        "checked": 37,
+        "needs_review": 13,
+        "conflict": 2
+      },
+      "source_dist": {
+        "source_report_pdf": 37,
+        "presentation_assumption": 15
+      },
+      "correction_note": "早期审计脚本查找不存在的列名(verification_status/evidence_id)误报全空。本次直读CSV确认：metric_id和validation_status均完整填写，无空值行。"
+    },
+    "A6_p0_routes": {
+      "status": "PARTIAL",
+      "note": "7个P0候选全部成功调用高德步行路径API（route_status=1），路径距离 1219m~2552m。但 origin 均为公园中心点代理，非实际入口/内部节点，所有候选 can_enter_p2_supply=no，阻塞缺口：真实入口步行路径、经营授权、部分商户缺少cost_yuan。路径数据已获取但置信度为 medium，需现场核验后升为 high。",
+      "candidates_total": 7,
+      "candidates_can_enter_p2": 0,
+      "candidates_blocked": 7,
+      "routes_api_ok": 7,
+      "routes_api_fail": 0,
+      "top_blocking_gaps": {
+        "real_entrance_or_node_route_access": 7,
+        "operation_authorization": 7,
+        "cost_yuan": 5,
+        "contact": 4,
+        "opening_hours": 3
+      }
+    }
+  },
+  "previous_report_correction": {
+    "file": "40_quality_evidence/verify_image_pdf_tables_report.json",
+    "wrong_conclusion": "奥林匹克 PDF avg_fill_rate=0.045, verdict=DATA_DEGRADED",
+    "correct_conclusion": "奥林匹克 PDF avg_fill_rate=0.953, 97.5%好表，结论应为 DATA_GOOD",
+    "root_cause": "原脚本仅抽样3张表（TBL-00089/00090/附近），恰好是241张中仅有的5张低填充表，样本严重偏差。",
+    "action": "需覆盖更新 verify_image_pdf_tables_report.json 中的错误结论。"
+  },
+  "gaps_requiring_action": [
+    {
+      "priority": "P1",
+      "item": "P0路径入口验证（medium→high confidence）",
+      "detail": "7个候选均用公园中心点代理起点，需补充真实入口坐标或现场核实",
+      "responsible": "用户现场或补充高德入口POI坐标"
+    },
+    {
+      "priority": "P1",
+      "item": "7个P0候选 can_enter_p2_supply=no，3大阻塞未解",
+      "detail": "真实入口路径、经营授权、部分cost_yuan未获取，补齐前不得进入P2",
+      "responsible": "用户与公园方确认"
+    },
+    {
+      "priority": "P2",
+      "item": "verify_image_pdf_tables_report.json历史错误结论",
+      "detail": "该文件错报奥林匹克fill=4.5%/DATA_DEGRADED，实际95.3%/DATA_GOOD，需覆盖",
+      "responsible": "可由脚本自动覆盖"
+    },
+    {
+      "priority": "P2",
+      "item": "台账2条conflict需人工裁定",
+      "detail": "validation_status=conflict的2条记录存在数值冲突",
+      "responsible": "Codex复核"
+    }
+  ],
+  "cross_validation_summary": {
+    "method": "全部数字由直读原始文件(JSONL/JSON/CSV)的独立脚本重新计算，与历史脚本结果交叉对比",
+    "corrections_found": [
+      "A5证据台账：之前误报validation_status全空；本次直读确认checked=37/needs_review=13/conflict=2",
+      "根因：旧脚本中列名拼写错误(verification_status/evidence_id vs 实际的validation_status/metric_id)"
+    ],
+    "confirmed_correct": [
+      "JSONL总行数=329（直读计数），奥林匹克=241，绿心=88",
+      "奥林匹克good表率97.5%(235/241)，avg_fill=0.953（全量计算）",
+      "绿心good表率93.2%(82/88)，avg_fill=0.910（全量计算）",
+      "PPT两份各15张幻灯片全部提取，内容真实可读（slide_count与列表长度一致）",
+      "P0路径CSV共7行，route_status全为1(ok)，7条记录命名P0-INPARK-001~007"
+    ]
+  }
+}

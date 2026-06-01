@@ -1,0 +1,61 @@
+﻿coverage_type,item_id,item_name,coverage_status,evidence,output_status
+source_file,P2SRC-001,奥森北园(字体放大)-改造建筑示意-Model(1).pdf,extracted_local,use_as_north_cad_readable_proxy_before_dwg_conversion,needs_review
+source_file,P2SRC-002,奥森北园(字体放大)-改造建筑示意_t5.dwg,pending_conversion,pending_conversion_before_geometry_or_layer_use,needs_review
+source_file,P2SRC-003,奥森南园（字体放大）-改造建筑示意_t5.dwg,pending_conversion,pending_conversion_before_geometry_or_layer_use,needs_review
+source_file,P2SRC-004,奥森重点项目策划思路20260521.docx,extracted_local,use_for_objective_scope_and_assumption_breakdown,needs_review
+project_node,P2-NODE-001,桃花源白房子,needs_review_from_docx_semantics,项目一：桃花源（白房子155㎡）,needs_review
+project_node,P2-NODE-002,奥运廉洁主题展馆,needs_review_from_docx_semantics,项目二：奥运廉洁主题展馆（575.72㎡）,needs_review
+project_node,P2-NODE-003,12#西分区管理中心,needs_review_from_docx_semantics,项目三：12#西分区管理中心（1059.39㎡）,needs_review
+project_node,P2-NODE-004,南门地下预埋空间,needs_review_from_docx_semantics,项目四：南门地下预埋（5417㎡）,needs_review
+project_node,P2-NODE-005,南门露天剧场,needs_review_from_docx_semantics,项目五：南门露天剧场,needs_review
+project_node,P2-NODE-006,10#2A03分区管理中心,needs_review_from_docx_semantics,项目六：10#2A03分区管理中心（1804.5㎡）,needs_review
+business_scene_assumption,P2-ASSUMP-001,活动场景,需参考同类场地案例及季节波动数据,小型婚礼、婚纱摄影、生日聚会、团建、艺术沙龙等活动可在白房子及周边举办，作为多功能活动据点。,needs_review
+business_scene_assumption,P2-ASSUMP-002,日常经营,需公园客流及餐饮客单价数据,咖啡、茶饮、简餐（三明治、甜点、冰淇淋）及季节限定产品可作为日常收入基础。,needs_review
+business_scene_assumption,P2-ASSUMP-003,合作模式,需市场可比租金水平,整体租赁给一家运营公司，租期5-8年，纯租金（含物业费）。,needs_review
+business_scene_assumption,P2-ASSUMP-004,功能分区,需设备容量和服务流程设计,检测区、疗愈室、功法/瑜伽室、营养咨询+茶吧等模块提供健康管理服务。,needs_review
+business_scene_assumption,P2-ASSUMP-005,定价参考,需高端健康管理市场价格数据,对标瑞士青草地疗养院模式，以精密检测和个性化干预为核心，高溢价疗程包。,needs_review
+business_scene_assumption,P2-ASSUMP-006,合作结构,需各合作方投入与分成比例,三方合作：公园收租金，华蓝瑞兆工程分成，运营公司负责客户转化。,needs_review
+business_scene_assumption,P2-ASSUMP-007,全天候场景（方案一）,需不同时段客流转换率数据,白天西式简餐与咖啡，夜晚Live House（小型乐队、脱口秀），实现全时段消费。,needs_review
+business_scene_assumption,P2-ASSUMP-008,怀旧零售场景（方案二）,需参考国潮文创零售坪效数据,北冰洋饮品、义利糕点、文创零售、复古打卡区，主打国潮消费。,needs_review
+business_scene_assumption,P2-ASSUMP-009,折扣零售场景,需奥莱业态坪效与转化率,运动户外品牌折扣集合店，品牌快闪与换季特卖，服务家庭客群。,needs_review
+business_scene_assumption,P2-ASSUMP-010,地面配套,需地上入口客流计数,地上联排房设品牌专卖店/咖啡店或IP文创店，作为地上引流入口。,needs_review
+business_scene_assumption,P2-ASSUMP-011,湖畔生活场景,需草坪活动容量和天气影响数据,湖畔阳光烘焙工坊+草坪市集、音乐演出、亲子工坊，构建户外复合消费。,needs_review
+business_scene_assumption,P2-ASSUMP-012,文化康养场景,需中医康养服务客单价与频次,中医诊疗、国学讲堂、康复理疗、文化体验，打造身心修养院落。,needs_review
+spatial_label,P2-SPATIAL-001,林萃路,pdf_text_label_only_pending_dwg_conversion,road,needs_review
+spatial_label,P2-SPATIAL-002,北五环辅路,pdf_text_label_only_pending_dwg_conversion,road,needs_review
+spatial_label,P2-SPATIAL-003,仰山沟,pdf_text_label_only_pending_dwg_conversion,water_green,needs_review
+spatial_label,P2-SPATIAL-004,奥林西桥,pdf_text_label_only_pending_dwg_conversion,bridge_or_gate,needs_review
+spatial_label,P2-SPATIAL-005,停车场,pdf_text_label_only_pending_dwg_conversion,parking,needs_review
+spatial_label,P2-SPATIAL-006,运动场,pdf_text_label_only_pending_dwg_conversion,sports,needs_review
+spatial_label,P2-SPATIAL-007,足球场,pdf_text_label_only_pending_dwg_conversion,sports,needs_review
+spatial_label,P2-SPATIAL-008,篮球场,pdf_text_label_only_pending_dwg_conversion,sports,needs_review
+spatial_label,P2-SPATIAL-009,羽毛球气膜馆,pdf_text_label_only_pending_dwg_conversion,sports,needs_review
+spatial_label,P2-SPATIAL-010,游乐场,pdf_text_label_only_pending_dwg_conversion,recreation,needs_review
+spatial_label,P2-SPATIAL-011,花海,pdf_text_label_only_pending_dwg_conversion,recreation,needs_review
+spatial_label,P2-SPATIAL-012,丛林穿越,pdf_text_label_only_pending_dwg_conversion,recreation,needs_review
+spatial_label,P2-SPATIAL-013,儿童卡丁车,pdf_text_label_only_pending_dwg_conversion,recreation,needs_review
+spatial_label,P2-SPATIAL-014,厕所,pdf_text_label_only_pending_dwg_conversion,facility,needs_review
+spatial_label,P2-SPATIAL-015,管理用房,pdf_text_label_only_pending_dwg_conversion,facility,needs_review
+spatial_label,P2-SPATIAL-016,车行桥,pdf_text_label_only_pending_dwg_conversion,bridge_or_gate,needs_review
+spatial_label,P2-SPATIAL-017,变电站,pdf_text_label_only_pending_dwg_conversion,facility,needs_review
+spatial_label,P2-SPATIAL-018,消防队,pdf_text_label_only_pending_dwg_conversion,service,needs_review
+spatial_label,P2-SPATIAL-019,水务站,pdf_text_label_only_pending_dwg_conversion,facility,needs_review
+spatial_label,P2-SPATIAL-020,乐仕堡,pdf_text_label_only_pending_dwg_conversion,recreation,needs_review
+spatial_label,P2-SPATIAL-021,保安公司,pdf_text_label_only_pending_dwg_conversion,service,needs_review
+spatial_label,P2-SPATIAL-022,世奥森林公园开发经营有限公司,pdf_text_label_only_pending_dwg_conversion,building,needs_review
+input_gap,P2-GAP-001,geometry,pending_conversion,dwg_geometry_not_parsed,needs_review
+input_gap,P2-GAP-002,spatial_nodes,missing_south_cad_proxy,south_park_no_pdf_or_dwg_extracted,needs_review
+input_gap,P2-GAP-003,visitor_flow,not_provided,Real visitor flow by entrance/node/time,needs_review
+input_gap,P2-GAP-004,conversion_rate,not_provided,Business-format conversion rates,needs_review
+input_gap,P2-GAP-005,revenue_cost,not_provided,Revenue/cost/rent/share parameters,needs_review
+input_gap,P2-GAP-006,operation_authorization,not_confirmed,Operator authorization and lease feasibility,needs_review
+input_gap,P2-GAP-007,regulatory,not_confirmed,Construction/renovation permission,needs_review
+input_gap,P2-GAP-008,demand_fit,not_linked_to_checked_evidence,Demand evidence for planned formats,needs_review
+input_gap,P2-GAP-009,competition_supply,not_built_for_real_site,In-park and nearby supply baseline for target park,needs_review
+input_gap,P2-GAP-010,model_gate,not_started,P2 schema review and final gate,needs_review
+deepseek_boundary,BOUNDARY-001,DWG几何已解析,must_not_claim,DeepSeek LLM-020 audit,needs_review
+deepseek_boundary,BOUNDARY-002,P3真实校准已完成,must_not_claim,DeepSeek LLM-020 audit,needs_review
+deepseek_boundary,BOUNDARY-003,P4完整仿真已完成,must_not_claim,DeepSeek LLM-020 audit,needs_review
+deepseek_boundary,BOUNDARY-004,PPT可回填缺口,must_not_claim,DeepSeek LLM-020 audit,needs_review
+deepseek_boundary,BOUNDARY-005,候选评分是最终选址排序,must_not_claim,DeepSeek LLM-020 audit,needs_review
+deepseek_boundary,BOUNDARY-006,needs_review可当checked,must_not_claim,DeepSeek LLM-020 audit,needs_review

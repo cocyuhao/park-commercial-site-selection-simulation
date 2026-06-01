@@ -1,0 +1,14 @@
+﻿check_id,severity,scope,status,finding
+POIQA-001,info,supply_base,pass,供给底表当前 20 条；这是 PDF 热门到访种子，不是完整园内供给结论。
+POIQA-002,error,supply_base,pass,POI 名称空值 0 条。
+POIQA-003,error,supply_base,pass,非待高德/现场核验状态 0 条。
+POIQA-004,warning,supply_base,pass,高德字段已被填充 0 条；P1 当前应先保留为空，待 API 核验后再写入。
+POIQA-005,warning,supply_base,pass,疑似英文品牌空格被吞并 0 条：
+POIQA-006,info,supply_base,pass,"标准业态分布：{'coffee': 3, 'convenience_retail': 1, 'family_recreation': 1, 'family_restaurant': 1, 'food_dining': 6, 'retail': 3, 'sports_service': 1, 'sports_supply': 3, 'yoga_pilates': 1}"
+POIQA-007,error,amap_query_plan,pass,高德查询计划 24 条，预期 24 条。
+POIQA-008,error,amap_query_plan,pass,重复 query_id 0 个：
+POIQA-009,error,amap_query_plan,pass,"覆盖公园：['sample_city_green_heart', 'sample_olympic_forest']。"
+POIQA-010,warning,amap_query_plan,pass,缺少高德查询业态：[]。
+POIQA-011,error,amap_query_plan,pass,无效半径 0 条。
+POIQA-012,error,amap_query_plan,pass,关键查询字段空值 0 条：
+POIQA-013,info,amap_query_plan,pass,"查询优先级分布：{'P0': 8, 'P1': 13, 'P2': 3}"

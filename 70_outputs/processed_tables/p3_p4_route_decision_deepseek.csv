@@ -1,0 +1,4 @@
+﻿decision_id,route_option,recommendation,rationale,p3_gate,p4_allowed_parallel_work,forbidden_before_p3_closed,output_status,executor,llm_task_id
+P3P4-ROUTE-001,Route A: Continue P3 real data collection and parallel P4 skeleton development,True,"P3 gate is mandatory before any simulation conclusions; but code skeleton, API, and tests can be prepared now to reduce schedule risk.",真实客流/转化率/收益证据闭合; DWG转为可解析几何,开发仿真代码骨架、Postman集合、场景模板、API占位,产出候选点排序、蒙特卡洛仿真结论、财务测算; P3未闭合前不得运行完整仿真结论、候选点排序、财务收益预测、坐标面积推断或最终选址建议,needs_review,deepseek,LLM-022
+P3P4-ROUTE-002,Route B: Stop all work and wait for P3 data,False,会造成时间浪费; 允许并行准备非仿真工作,同Route A,无,全部P4仿真工作; P3未闭合前不得运行完整仿真结论、候选点排序、财务收益预测、坐标面积推断或最终选址建议,needs_review,deepseek,LLM-022
+P3P4-ROUTE-003,Route C: Proceed with limited simulation using placeholder assumptions and mark results as draft,False,违反硬边界，不可使用弱假设替代真实校准，会导致不可靠结论,仍需要P3闭合,参考值计算但不形成结论,声称验证通过或给出推荐方案; P3未闭合前不得运行完整仿真结论、候选点排序、财务收益预测、坐标面积推断或最终选址建议,needs_review,deepseek,LLM-022

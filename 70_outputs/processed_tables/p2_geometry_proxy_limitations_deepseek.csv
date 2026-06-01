@@ -1,0 +1,9 @@
+﻿limitation_id,limitation_domain,limitation,why_it_matters,allowed_use,forbidden_claim,output_status,executor,llm_task_id
+P2-GEOM-LIMIT-001,坐标系统,无法从PDF代理中提取或推断任何点的真实世界坐标或投影坐标,所有空间定位和叠图分析均需坐标框架,文本标签与主题映射,声称某设施位于具体坐标或可量测的位置,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-002,面积计算,无法计算或推导任何区域、建筑物或地块的面积数值,规划涉及用地面积、建筑密度等关键指标,概念性分区示意,声称桃花源白房子155㎡经代理验证或可引用,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-003,长度与距离,无法测量任何路径、边界或障碍带的长短距离,流线设计、服务半径分析需要精确长度,基于标签猜测路径存在,给出道路长度或设施间距的数值,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-004,图层信息,PDF文本代理不保留原DWG图层结构和对象分类,图层控制着改造时哪些元素可关闭或保留,等待DWG转换后补充,声称某元素属于特定图层,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-005,几何对象类型,无法分辨是点、线、多段线还是面域，无法统计对象数量,后续工程量估算和BIM转换需要对象类型,以标签作为地理实体的代理,声称存在多少条线段或多少个闭合多边形,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-006,拓扑与连通性,不能确定道路网络是否连接、水体是否贯通、桥梁是否车行,动线和应急疏散分析依赖拓扑,使用相对方位（南侧、北侧）描述,宣称A点到B点可达性或有连续路径,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-007,高程信息,PDF代理不含任何高程或Z值数据,剖面设计和排水分析需要高程,仅靠文字如'山''沟'推测地形起伏,给定任何点的标高或坡度,needs_review,deepseek,LLM-021
+P2-GEOM-LIMIT-008,精确边界,无法绘制用地红线或设施边界框，所有区域边界均模糊,规划审批需要精确的红线范围,按标签聚类形成柔性概念区,声称某设施占地边界或与其他设施的距离,needs_review,deepseek,LLM-021

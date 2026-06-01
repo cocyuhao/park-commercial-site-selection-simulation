@@ -1,0 +1,62 @@
+{
+  "status": "1",
+  "info": "ok",
+  "infocode": "10000",
+  "count": "1",
+  "route": {
+    "origin": "116.407485,40.031081",
+    "destination": "116.406125,40.031554",
+    "paths": [
+      {
+        "distance": "189",
+        "duration": "151",
+        "steps": [
+          {
+            "instruction": "向北步行30米左转",
+            "orientation": "北",
+            "road": [],
+            "distance": "30",
+            "duration": "24",
+            "polyline": "116.407626,40.031033;116.407669,40.031115;116.407687,40.031228;116.407687,40.031302",
+            "action": "左转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向西步行121米右转",
+            "orientation": "西",
+            "road": [],
+            "distance": "121",
+            "duration": "97",
+            "polyline": "116.407682,40.031302;116.407378,40.031393;116.407287,40.031411;116.406289,40.031398",
+            "action": "右转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向北步行25米左转",
+            "orientation": "北",
+            "road": [],
+            "distance": "25",
+            "duration": "20",
+            "polyline": "116.406285,40.031393;116.40628,40.031628",
+            "action": "左转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向西步行13米到达目的地",
+            "orientation": "西",
+            "road": [],
+            "distance": "13",
+            "duration": "10",
+            "polyline": "116.406276,40.031628;116.406124,40.031628",
+            "action": [],
+            "assistant_action": "到达目的地",
+            "walk_type": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

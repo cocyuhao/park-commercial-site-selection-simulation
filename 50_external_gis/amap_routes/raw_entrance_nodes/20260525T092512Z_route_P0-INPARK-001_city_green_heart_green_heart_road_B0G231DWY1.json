@@ -1,0 +1,106 @@
+{
+  "status": "1",
+  "info": "ok",
+  "infocode": "10000",
+  "count": "1",
+  "route": {
+    "origin": "116.717080,39.867014",
+    "destination": "116.719038,39.868211",
+    "paths": [
+      {
+        "distance": "576",
+        "duration": "461",
+        "steps": [
+          {
+            "instruction": "向东北步行52米左转",
+            "orientation": "东北",
+            "road": [],
+            "distance": "52",
+            "duration": "42",
+            "polyline": "116.71694,39.86717;116.717261,39.867335;116.717405,39.86747",
+            "action": "左转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向北步行180米左转",
+            "orientation": "北",
+            "road": [],
+            "distance": "180",
+            "duration": "144",
+            "polyline": "116.717405,39.86747;116.71694,39.867721;116.71694,39.867721;116.716762,39.867856;116.716693,39.867964;116.716684,39.868069;116.716723,39.868134;116.716819,39.86822;116.716866,39.868281;116.716927,39.868377;116.716957,39.868455;116.716927,39.868494;116.716853,39.868537;116.716849,39.868602;116.716975,39.868711",
+            "action": "左转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "沿绿心路向西北步行30米右转",
+            "orientation": "西北",
+            "road": "绿心路",
+            "distance": "30",
+            "duration": "24",
+            "polyline": "116.71697,39.868711;116.716745,39.868919",
+            "action": "右转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "步行11米右转",
+            "orientation": [],
+            "road": [],
+            "distance": "11",
+            "duration": "9",
+            "polyline": "116.71674,39.868919;116.716845,39.86898",
+            "action": "右转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "沿绿心路向东南步行219米左转",
+            "orientation": "东南",
+            "road": "绿心路",
+            "distance": "219",
+            "duration": "175",
+            "polyline": "116.716845,39.86898;116.71707,39.86878;116.71707,39.86878;116.717804,39.868112;116.717804,39.868112;116.718108,39.86783;116.718546,39.8675",
+            "action": "左转",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向东北步行31米直行",
+            "orientation": "东北",
+            "road": [],
+            "distance": "31",
+            "duration": "25",
+            "polyline": "116.718546,39.867491;116.718815,39.867691",
+            "action": "直行",
+            "assistant_action": [],
+            "walk_type": "0"
+          },
+          {
+            "instruction": "向东北步行21米直行",
+            "orientation": "东北",
+            "road": [],
+            "distance": "21",
+            "duration": "17",
+            "polyline": "116.718815,39.867691;116.718993,39.867826",
+            "action": "直行",
+            "assistant_action": [],
+            "walk_type": "20"
+          },
+          {
+            "instruction": "向东北步行32米到达目的地",
+            "orientation": "东北",
+            "road": [],
+            "distance": "32",
+            "duration": "26",
+            "polyline": "116.718993,39.867821;116.719266,39.868025",
+            "action": [],
+            "assistant_action": "到达目的地",
+            "walk_type": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

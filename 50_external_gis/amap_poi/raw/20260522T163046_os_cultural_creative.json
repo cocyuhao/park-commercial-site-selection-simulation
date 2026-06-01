@@ -1,0 +1,120 @@
+{
+  "status": "1",
+  "info": "OK",
+  "infocode": "10000",
+  "pois": [
+    {
+      "name": "故宫文创产品专卖店",
+      "id": "B0FFKDLU4I",
+      "location": "116.406993,40.003180",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "pname": "北京市",
+      "cityname": "北京市",
+      "adname": "朝阳区",
+      "address": "慧忠北里309号第五大道三层亚运村图书大厦内",
+      "pcode": "110000",
+      "citycode": "010",
+      "adcode": "110105",
+      "business": {
+        "business_area": "北辰",
+        "tel": "010-64801180",
+        "rectag": "节日礼品",
+        "keytag": "礼品店",
+        "rating": "4.0",
+        "opentime_today": "10:00-21:00",
+        "opentime_week": "周一至周日 10:00-21:00"
+      },
+      "distance": "2135",
+      "parent": "B000A9KTJW"
+    },
+    {
+      "name": "中船文创",
+      "id": "B0KK257QK0",
+      "location": "116.365907,40.007830",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "pname": "北京市",
+      "cityname": "北京市",
+      "adname": "朝阳区",
+      "address": "G6辅路与北沙滩路交叉口西北300米",
+      "pcode": "110000",
+      "citycode": "010",
+      "adcode": "110105",
+      "business": {
+        "business_area": "林萃",
+        "rectag": "公司",
+        "keytag": "公司"
+      },
+      "distance": "2540",
+      "parent": ""
+    },
+    {
+      "name": "广慈中医文创体验馆(鸟巢店)",
+      "id": "B0L6MYQM1Y",
+      "location": "116.396953,39.994694",
+      "type": "购物服务;购物相关场所;购物相关场所",
+      "typecode": "060000",
+      "pname": "北京市",
+      "cityname": "北京市",
+      "adname": "朝阳区",
+      "address": "国家体育场东北入口1号安检口鸟巢文化中心G层",
+      "pcode": "110000",
+      "citycode": "010",
+      "adcode": "110105",
+      "business": {
+        "business_area": "北辰",
+        "keytag": "购物服务,购物相关场所,购物相关场所",
+        "rating": "3.5"
+      },
+      "distance": "2696",
+      "parent": ""
+    },
+    {
+      "name": "老故事503文创园",
+      "id": "B0J097U6YI",
+      "location": "116.384814,39.992556",
+      "type": "商务住宅;产业园区;产业园区",
+      "typecode": "120100",
+      "pname": "北京市",
+      "cityname": "北京市",
+      "adname": "朝阳区",
+      "address": "亚运村",
+      "pcode": "110000",
+      "citycode": "010",
+      "adcode": "110105",
+      "business": {
+        "business_area": "北辰",
+        "tel": "18701686074",
+        "rectag": "工业园区",
+        "keytag": "工业园区"
+      },
+      "distance": "2969",
+      "parent": ""
+    },
+    {
+      "name": "快狗打车(北京文化创意大厦店)(暂停营业)",
+      "id": "B0HKJL4Y60",
+      "location": "116.416210,40.038151",
+      "type": "公司企业;公司;公司",
+      "typecode": "170200",
+      "pname": "北京市",
+      "cityname": "北京市",
+      "adname": "朝阳区",
+      "address": "北苑路30号院北京文化创意大厦F3层",
+      "pcode": "110000",
+      "citycode": "010",
+      "adcode": "110105",
+      "business": {
+        "business_area": "来广营",
+        "rectag": "公司",
+        "keytag": "公司",
+        "opentime_today": "08:00-21:00",
+        "opentime_week": "周一至周日 08:00-21:00"
+      },
+      "distance": "2987",
+      "parent": "B0FFGZT38R"
+    }
+  ],
+  "count": "5"
+}

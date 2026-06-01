@@ -1,0 +1,9 @@
+﻿check_id,status,severity,finding,evidence
+DS-P0-PKG-001,pass,error,P0 verification package rows=7,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p0_manual_verification_package_deepseek.csv
+DS-P0-PKG-002,pass,error,unique work_item_ids=7,work_item_id
+DS-P0-PKG-003,pass,error,output_status counts={'needs_review': 7},output_status
+DS-P0-PKG-004,pass,error,executor counts={'deepseek': 7},executor
+DS-P0-PKG-005,pass,error,llm_task_id counts={'LLM-012': 7},llm_task_id
+DS-P0-PKG-006,pass,error,p2_gate counts={'do_not_enter_p2_until_field_or_official_confirmation': 7},p2_gate_draft
+DS-P0-PKG-007,pass,error,empty required summaries=[],summary fields
+DS-P0-PKG-008,pass,error,risky conclusion terms=[],text fields

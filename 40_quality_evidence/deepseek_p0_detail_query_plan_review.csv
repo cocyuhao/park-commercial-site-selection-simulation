@@ -1,0 +1,12 @@
+﻿check_id,status,severity,finding,evidence
+P0-DETAIL-001,pass,error,"plan rows=7, worklist rows=7",C:\Users\Yy199\Desktop\仿真设计\50_external_gis\amap_poi\amap_p0_detail_query_plan_deepseek.csv
+P0-DETAIL-002,pass,error,plan ids match worklist=True,work_item_id
+P0-DETAIL-003,pass,error,output_status distribution={'needs_review': 7},output_status
+P0-DETAIL-004,pass,error,p2 gate distribution={'do_not_enter_p2_until_field_or_official_confirmation': 7},p2_gate_draft
+P0-DETAIL-005,pass,error,task id distribution={'LLM-014': 7},llm_task_id
+P0-DETAIL-006,pass,error,executor distribution={'deepseek': 7},executor
+P0-DETAIL-007,pass,error,missing amap_detail_poi_id rows=[],amap_detail_poi_id
+P0-DETAIL-008,pass,error,unexpected checked/P2 claims=[],plan text
+P0-DETAIL-009,pass,info,endpoint distribution={'https://restapi.amap.com/v5/place/detail': 7},amap_endpoint_draft
+P0-DETAIL-010,pass,info,query mode distribution={'detail_by_amap_poi_id': 7},query_mode_draft
+P0-DETAIL-011,pass,info,"query priority distribution={'P0_detail_api_high': 4, 'P1_cost_or_business_field': 3}",query_priority

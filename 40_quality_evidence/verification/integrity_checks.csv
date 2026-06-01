@@ -1,0 +1,25 @@
+﻿check_id,scope,method,status,detail,evidence_path
+CAT-001,data_catalog,raw file list equals catalog,PASS,"raw_supported_files=4, catalog_rows=4",40_quality_evidence/data_catalog.csv
+CAT-002,20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,catalog path and size check,PASS,"exists=True, size_ok=True",20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf
+CAT-003,20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,catalog path and size check,PASS,"exists=True, size_ok=True",20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf
+CAT-004,20_raw_data/ppt/AI (1)(1).pptx,catalog path and size check,PASS,"exists=True, size_ok=True",20_raw_data/ppt/AI (1)(1).pptx
+CAT-005,20_raw_data/ppt/奥森修改稿0306.pptx,catalog path and size check,PASS,"exists=True, size_ok=True",20_raw_data/ppt/奥森修改稿0306.pptx
+PDF-006,20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,raw PDF page count vs extracted JSON,PASS,"raw_pages=93, json_pages=93",30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json
+PDF-007,20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,all JSON page text nonempty,PASS,"nonempty_pages=93/93, total_text=31881",30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json
+PDF-008,20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,raw extraction length equals saved JSON length,PASS,"raw_total=31881, json_total=31881",30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json
+PDF-009,20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf,PyMuPDF table detection,PASS,"detected_native_tables=88, heuristic_candidates_recorded_in=table_candidates.csv",40_quality_evidence/verification/table_candidates.csv
+PDF-010,20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,raw PDF page count vs extracted JSON,PASS,"raw_pages=250, json_pages=250",30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json
+PDF-011,20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,all JSON page text nonempty,PASS,"nonempty_pages=250/250, total_text=79960",30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json
+PDF-012,20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,raw extraction length equals saved JSON length,PASS,"raw_total=79960, json_total=79960",30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json
+PDF-013,20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf,PyMuPDF table detection,PASS,"detected_native_tables=241, heuristic_candidates_recorded_in=table_candidates.csv",40_quality_evidence/verification/table_candidates.csv
+PPT-014,20_raw_data/ppt/AI (1)(1).pptx,raw PPT slide count vs extracted JSON,PASS,"raw_slides=15, json_slides=15",30_extraction/ppt_text/AI (1)(1).json
+PPT-015,20_raw_data/ppt/AI (1)(1).pptx,all JSON slide text nonempty,PASS,"nonempty_slides=15/15, total_text=2967",30_extraction/ppt_text/AI (1)(1).json
+PPT-016,20_raw_data/ppt/AI (1)(1).pptx,raw PPT text length equals saved JSON length,PASS,"raw_total=2967, json_total=2967",30_extraction/ppt_text/AI (1)(1).json
+PPT-017,20_raw_data/ppt/AI (1)(1).pptx,native PPT tables and pictures,PASS,"native_tables=0, pictures=28; table-like text recorded separately",40_quality_evidence/verification/table_candidates.csv
+PPT-018,20_raw_data/ppt/奥森修改稿0306.pptx,raw PPT slide count vs extracted JSON,PASS,"raw_slides=15, json_slides=15",30_extraction/ppt_text/奥森修改稿0306.json
+PPT-019,20_raw_data/ppt/奥森修改稿0306.pptx,all JSON slide text nonempty,PASS,"nonempty_slides=15/15, total_text=4268",30_extraction/ppt_text/奥森修改稿0306.json
+PPT-020,20_raw_data/ppt/奥森修改稿0306.pptx,raw PPT text length equals saved JSON length,PASS,"raw_total=4268, json_total=4268",30_extraction/ppt_text/奥森修改稿0306.json
+PPT-021,20_raw_data/ppt/奥森修改稿0306.pptx,native PPT tables and pictures,PASS,"native_tables=0, pictures=17; table-like text recorded separately",40_quality_evidence/verification/table_candidates.csv
+KEY-022,keyword_hits,recompute keyword occurrence counts from extracted JSON,PASS,"keyword_hit_rows=1594, direct_occurrences=1704; hit rows are capped snippets per unit",40_quality_evidence/verification/keyword_recount.csv
+PRO-023,source_profile,profile rows match extracted JSON sources,PASS,"profile_rows=4, extracted_sources=4",40_quality_evidence/source_profile.csv
+LED-024,evidence_ledger,formal evidence rows exist,WARN,formal_evidence_rows=0; zero means extraction is done but metric verification has not been booked,40_quality_evidence/evidence_ledger.csv

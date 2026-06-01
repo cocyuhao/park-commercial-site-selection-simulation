@@ -1,0 +1,13 @@
+{
+  "summary": "P2方法原型完成，所有输出均为needs_review；P3真实校准缺失关键信号（DWG几何、客流、转化率、收益等），阻塞P4完整仿真结论。允许并行准备代码骨架、API契约和回归测试；禁止P3关闭前输出仿真结论或排序推荐。",
+  "route_rows": 3,
+  "dwg_work_rows": 8,
+  "calibration_rows": 16,
+  "mapping_rows": 16,
+  "p4_skeleton_rows": 12,
+  "output_status": "needs_review",
+  "executor": "deepseek",
+  "llm_task_id": "LLM-022",
+  "model": "deepseek-v4-pro",
+  "run_id": "20260529T024724Z"
+}

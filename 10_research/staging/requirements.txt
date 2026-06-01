@@ -1,0 +1,39 @@
+# staging/requirements.txt
+# Park Business Simulation - Pre-installed Dependencies
+# Updated: 2026-05-28
+# Python 3.12+
+
+# === Phase 1-2 Verified ===
+# Already in main requirements.txt
+
+# === Phase 3-4 GIS & Simulation ===
+folium==0.18.0
+geopandas==0.14.4
+branca==0.8.1
+
+# === Phase 3-4 Optimization & Algorithms ===
+# Already installed: ezdxf, networkx, deap, pulp
+
+# === Phase 5 Report Generation ===
+# NOTE: weasyprint removed - requires GTK which is complex on Windows
+# Alternative: use matplotlib + reportlab for PDF, or export to HTML
+jinja2==3.1.4
+MarkupSafe==3.0.2
+
+# === Phase 6 Backend API ===
+fastapi==0.115.6
+uvicorn==0.34.0
+python-multipart==0.0.20
+
+# === Phase 6 Data Serialization ===
+pydantic==2.10.5
+pydantic-settings==2.7.1
+
+# === Phase 6 Validation ===
+pytest==8.3.4
+pytest-asyncio==0.25.2
+httpx==0.28.1
+
+# === Utilities ===
+colorama==0.4.6
+ rich==13.9.4
