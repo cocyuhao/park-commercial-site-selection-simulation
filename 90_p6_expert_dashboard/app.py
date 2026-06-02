@@ -27,6 +27,7 @@ STATIC_DIR = APP_DIR / "static"
 CACHE_DIR = APP_DIR / "cache"
 CACHE_FILE = CACHE_DIR / "deepseek_ai_reviews.json"
 FEEDBACK_FILE = CACHE_DIR / "expert_feedback.json"
+AI_SESSIONS_FILE = CACHE_DIR / "ai_sessions.json"
 UPLOAD_DIR = CACHE_DIR / "uploaded_sources"
 UPLOAD_INDEX_FILE = CACHE_DIR / "uploaded_sources.json"
 UPLOAD_CANDIDATES_FILE = CACHE_DIR / "upload_parse_candidates.json"
@@ -103,6 +104,9 @@ class AIRequest(BaseModel):
 
 class ChatRequest(BaseModel):
     node_id: str | None = None
+    session_id: str | None = None
+    project_id: str | None = None
+    project_name: str | None = None
     message: str
     position_note: str | None = None
     upload_refs: list[dict[str, Any]] = []
@@ -127,6 +131,21 @@ class GateInput(BaseModel):
 
 class ConfirmCandidateRequest(BaseModel):
     reviewer_note: str = ""
+
+
+class UploadActionRequest(BaseModel):
+    action: str
+
+
+class ChatSessionCreateRequest(BaseModel):
+    project_id: str | None = None
+    project_name: str | None = None
+    title: str | None = None
+    node_id: str | None = None
+
+
+class ChatReportRequest(BaseModel):
+    instruction: str | None = None
 
 
 class MapContextRequest(BaseModel):
@@ -154,6 +173,30 @@ def read_csv_rows(path: Path) -> list[dict[str, str]]:
         return []
     with path.open("r", encoding="utf-8-sig", newline="") as f:
         return [dict(row) for row in csv.DictReader(f)]
+
+
+def amap_get_json(url: str, params: dict[str, Any], *, timeout: float = 4.0, retries: int = 1) -> dict[str, Any]:
+    last_error: Exception | None = None
+    for attempt in range(retries + 1):
+        try:
+            with httpx.Client(timeout=timeout) as client:
+                response = client.get(url, params=params)
+                response.raise_for_status()
+                data = response.json()
+            if data.get("status") == "0":
+                raise RuntimeError(data.get("info") or "amap api returned status=0")
+            return data
+        except Exception as exc:
+            last_error = exc
+            if attempt >= retries:
+                break
+    raise HTTPException(
+        status_code=502,
+        detail={
+            "message": "高德接口暂时连接失败，请稍后重试或改用地图直接搜索。",
+            "error_type": type(last_error).__name__ if last_error else "UnknownError",
+        },
+    ) from last_error
 
 
 def parse_list(value: str | None) -> list[str]:
@@ -234,8 +277,8 @@ def backend_draft_score(
         return {
             "discussion_score_draft": 0,
             "score_status": "external_preview_only",
-            "score_label": "外部预览",
-            "score_explanation": "当前地图不是奥森项目上下文，只返回地图/POI/边界预览，不套用奥森节点评分。",
+            "score_label": "位置参考",
+            "score_explanation": "当前地图不是既有项目上下文，只返回地图、POI 与边界位置参考，不套用固定节点评分。",
             "score_inputs": {
                 "project_context": "external",
                 "base_score": node.get("discussion_score", ""),
@@ -256,7 +299,7 @@ def backend_draft_score(
         "discussion_score_draft": score,
         "score_status": "needs_review_not_final",
         "score_label": f"{score} 分 · 待复核",
-        "score_explanation": "后端草案分仅用于讨论，已按 P3 gate、缺失字段、POI 数量和边界状态扣分；不是最终排序。",
+        "score_explanation": "草案分仅用于内部讨论，已按 P3 gate、缺失字段、POI 数量和边界状态扣分；不是最终排序。",
         "score_inputs": {
             "project_context": "osen",
             "base_score": base,
@@ -416,7 +459,7 @@ def load_dashboard() -> dict[str, Any]:
 
     return {
         "meta": {
-            "project_name": "奥森公园商业选址仿真 P6 原型",
+            "project_name": "公园商业选址仿真 P6 原型",
             "phase": "P6 expert dashboard prototype",
             "data_status": "feedback_draft / needs_review / not_final",
             "source_mode": "uploaded_project_materials" if has_external_uploads else "empty_until_external_upload",
@@ -649,9 +692,11 @@ def load_map_context() -> dict[str, Any]:
         except json.JSONDecodeError:
             pass
     return {
-        "keyword": "北京奥林匹克森林公园",
-        "longitude": "",
-        "latitude": "",
+        "keyword": "青年湖公园",
+        "matched_name": "青年湖公园",
+        "address": "北京市东城区安德里北街",
+        "longitude": "116.403153",
+        "latitude": "39.954271",
         "radius_m": 1200,
         "source": "default_project_context",
         "output_status": "needs_review",
@@ -1089,6 +1134,161 @@ def save_feedback(rows: list[dict[str, Any]]) -> None:
     FEEDBACK_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def load_ai_sessions() -> dict[str, Any]:
+    if not AI_SESSIONS_FILE.exists():
+        return {"sessions": []}
+    try:
+        data = json.loads(AI_SESSIONS_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {"sessions": []}
+    if isinstance(data, dict) and isinstance(data.get("sessions"), list):
+        return data
+    if isinstance(data, list):
+        return {"sessions": data}
+    return {"sessions": []}
+
+
+def save_ai_sessions(data: dict[str, Any]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    AI_SESSIONS_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def current_project_from_payload(payload: dict[str, Any]) -> dict[str, str]:
+    context = payload.get("amap", {}).get("map_context", {})
+    name = context.get("matched_name") or context.get("keyword") or "当前选址项目"
+    project_id = re.sub(r"[^0-9A-Za-z\u4e00-\u9fff_-]+", "-", name).strip("-") or "current-project"
+    return {"project_id": project_id[:48], "project_name": name}
+
+
+def summarize_ai_sessions(data: dict[str, Any]) -> dict[str, Any]:
+    sessions = sorted(data.get("sessions", []), key=lambda item: item.get("updated_at", ""), reverse=True)
+    projects: dict[str, dict[str, Any]] = {}
+    for session in sessions:
+        project_id = session.get("project_id") or "current-project"
+        project = projects.setdefault(project_id, {
+            "project_id": project_id,
+            "project_name": session.get("project_name") or "当前选址项目",
+            "count": 0,
+            "updated_at": session.get("updated_at", ""),
+        })
+        project["count"] += 1
+        if session.get("updated_at", "") > project.get("updated_at", ""):
+            project["updated_at"] = session.get("updated_at", "")
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "projects": sorted(projects.values(), key=lambda item: item.get("updated_at", ""), reverse=True),
+        "sessions": [
+            {key: session.get(key) for key in [
+                "session_id", "project_id", "project_name", "title", "node_id", "created_at", "updated_at", "message_count"
+            ]}
+            for session in sessions
+        ],
+    }
+
+
+def create_ai_session_record(
+    payload: dict[str, Any],
+    project_id: str | None = None,
+    project_name: str | None = None,
+    title: str | None = None,
+    node_id: str | None = None,
+) -> dict[str, Any]:
+    now = datetime.now().isoformat(timespec="seconds")
+    project = current_project_from_payload(payload)
+    safe_project_id = project_id or project["project_id"]
+    safe_project_name = project_name or project["project_name"]
+    data = load_ai_sessions()
+    session = {
+        "session_id": f"CHAT-{datetime.now().strftime('%Y%m%d%H%M%S')}-{len(data.get('sessions', [])) + 1:04d}",
+        "project_id": safe_project_id,
+        "project_name": safe_project_name,
+        "title": title or "新对话",
+        "node_id": node_id,
+        "messages": [],
+        "message_count": 0,
+        "output_status": "needs_review",
+        "not_final": True,
+        "created_at": now,
+        "updated_at": now,
+    }
+    data.setdefault("sessions", []).append(session)
+    save_ai_sessions(data)
+    return session
+
+
+def find_ai_session(session_id: str) -> tuple[dict[str, Any], dict[str, Any]]:
+    data = load_ai_sessions()
+    for session in data.get("sessions", []):
+        if session.get("session_id") == session_id:
+            return data, session
+    raise HTTPException(status_code=404, detail="ai session not found")
+
+
+def title_from_message(message: str) -> str:
+    compact = re.sub(r"\s+", " ", message).strip()
+    return (compact[:22] + "…") if len(compact) > 22 else (compact or "新对话")
+
+
+def ai_session_to_markdown(session: dict[str, Any], instruction: str | None = None) -> str:
+    title = session.get("title") or "AI 会话报告"
+    messages = session.get("messages", [])
+    lines = [
+        f"# {title}",
+        "",
+        "> 本报告由专家 AI 工作台会话生成，状态为 `needs_review / not_final`。不得直接作为最终推荐、最终排序、收益预测或 ROI。",
+        "",
+        "## 会话信息",
+        "",
+        f"- 项目：{session.get('project_name') or '当前选址项目'}",
+        f"- 会话：{session.get('session_id')}",
+        f"- 关联节点：{session.get('node_id') or '项目综合'}",
+        f"- 生成时间：{datetime.now().isoformat(timespec='seconds')}",
+    ]
+    if instruction:
+        lines.extend(["", "## 生成要求", "", instruction.strip()])
+    lines.extend(["", "## 关键对话记录", ""])
+    if not messages:
+        lines.append("暂无可整理的对话内容。")
+    for item in messages:
+        role = "用户" if item.get("role") == "user" else "AI"
+        lines.extend([
+            f"### {role} · {item.get('created_at', '')}",
+            "",
+            str(item.get("content") or "").strip(),
+            "",
+        ])
+    latest_ai = next((item for item in reversed(messages) if item.get("role") == "assistant"), None)
+    lines.extend([
+        "## 待复核整理结论",
+        "",
+        latest_ai.get("content", "暂无 AI 总结。") if latest_ai else "暂无 AI 总结。",
+        "",
+        "## 后续人工确认",
+        "",
+        "- 补齐真实客流、转化率、收益成本、运营授权和可信几何资料。",
+        "- 人工确认报告语气、证据来源和节点归属。",
+        "- 保持 `needs_review / not_final`，不要升级为最终商业结论。",
+    ])
+    return "\n".join(lines).replace("\r\n", "\n")
+
+
+def write_ai_session_report(session: dict[str, Any], instruction: str | None = None) -> dict[str, Any]:
+    report_dir = REPORT_DIR / "ai_chat_reports"
+    report_dir.mkdir(parents=True, exist_ok=True)
+    safe_id = re.sub(r"[^0-9A-Za-z_-]", "_", session.get("session_id", "chat"))
+    path = report_dir / f"{safe_id}.md"
+    content = ai_session_to_markdown(session, instruction)
+    path.write_text(content, encoding="utf-8")
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "report_path": str(path.relative_to(ROOT)).replace("\\", "/"),
+        "download_url": f"/api/ai/sessions/{session.get('session_id')}/report/download",
+        "byte_size": path.stat().st_size,
+    }
+
+
 def load_upload_index() -> list[dict[str, Any]]:
     uploaded = []
     if UPLOAD_INDEX_FILE.exists():
@@ -1254,14 +1454,48 @@ def save_cache(cache: dict[str, Any]) -> None:
 
 
 def node_context(payload: dict[str, Any], node_id: str | None) -> dict[str, Any]:
+    if not node_id:
+        nodes = payload.get("nodes", [])
+        score_status_counts: dict[str, int] = {}
+        positioning_options: list[str] = []
+        for node in nodes:
+            status = str(node.get("score_status") or node.get("output_status") or "unknown")
+            score_status_counts[status] = score_status_counts.get(status, 0) + 1
+            positioning = str(node.get("primary_positioning") or "").strip()
+            if positioning and positioning not in positioning_options:
+                positioning_options.append(positioning)
+        feedback_rows = load_feedback()
+        return {
+            "scope": "project_overall",
+            "project": payload.get("meta", {}),
+            "map_context": payload.get("amap", {}).get("map_context", {}),
+            "node_overview": {
+                "node_count": len(nodes),
+                "score_status_counts": score_status_counts,
+                "positioning_options": positioning_options[:12],
+                "detail_rule": "项目综合对话不列出具体节点 ID 或节点名称；需要单点分析时由用户在节点清单中明确选择。",
+            },
+            "p3_gates": payload["p3_gates"],
+            "p2_gaps": payload["p2_gaps"],
+            "uploads": payload.get("uploads", []),
+            "upload_candidates": payload.get("upload_candidates", []),
+            "demand_supply_status": {
+                "output_status": payload.get("demand_supply", {}).get("output_status"),
+                "not_final": payload.get("demand_supply", {}).get("not_final"),
+                "message": payload.get("demand_supply", {}).get("gap", {}).get("message"),
+            },
+            "expert_feedback_summary": {
+                "feedback_count": len(feedback_rows),
+                "usage_rule": "这里只告诉 AI 有反馈待整理，不把旧节点反馈原文带入项目综合回答。",
+            },
+            "boundary_notice": "这是项目综合上下文，不绑定任何单个节点；只有用户明确选择节点时才进入节点分析。",
+        }
     node = next((item for item in payload["nodes"] if item.get("node_id") == node_id), None)
-    if not node and payload["nodes"]:
-        node = payload["nodes"][0]
     if not node:
         return {
             "node": {
-                "node_id": "PROJECT-UPLOAD",
-                "node_name": "待上传项目",
+                "node_id": node_id,
+                "node_name": "未找到的节点",
                 "output_status": "needs_review",
                 "not_final": True,
             },
@@ -1443,6 +1677,56 @@ async def upload_source(
     return row
 
 
+@app.patch("/api/uploads/{upload_id}")
+def update_upload_status(upload_id: str, payload: UploadActionRequest) -> dict[str, Any]:
+    rows = load_upload_index()
+    row = next((item for item in rows if item.get("upload_id") == upload_id), None)
+    if not row:
+        raise HTTPException(status_code=404, detail="upload not found")
+    labels = {
+        "use": "已启用",
+        "discard": "已放弃",
+        "restore": "待 AI 解析",
+    }
+    if payload.action not in labels:
+        raise HTTPException(status_code=400, detail="action must be use, discard, or restore")
+    row["review_status"] = labels[payload.action]
+    row["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    row["output_status"] = "needs_review"
+    row["not_final"] = True
+    save_upload_index(rows)
+    return row
+
+
+@app.delete("/api/uploads/{upload_id}")
+def delete_upload(upload_id: str) -> dict[str, Any]:
+    rows = load_upload_index()
+    row = next((item for item in rows if item.get("upload_id") == upload_id), None)
+    if not row:
+        raise HTTPException(status_code=404, detail="upload not found")
+    remaining = [item for item in rows if item.get("upload_id") != upload_id]
+    save_upload_index(remaining)
+
+    candidates = [item for item in load_upload_candidates() if item.get("upload_id") != upload_id]
+    save_upload_candidates(candidates)
+
+    stored_path = resolve_project_path(row.get("stored_path", ""))
+    deleted_file = False
+    try:
+        if stored_path.exists() and UPLOAD_DIR in stored_path.parents:
+            stored_path.unlink()
+            deleted_file = True
+    except OSError:
+        deleted_file = False
+    return {
+        "upload_id": upload_id,
+        "status": "deleted",
+        "deleted_file": deleted_file,
+        "output_status": "needs_review",
+        "not_final": True,
+    }
+
+
 @app.post("/api/gate-inputs")
 def save_gate_input(payload: GateInput) -> dict[str, Any]:
     rows = load_gate_inputs()
@@ -1577,6 +1861,26 @@ def amap_proxy_status() -> dict[str, Any]:
     return {**amap_status(points), "static_map": load_amap_static_status(), "map_context": load_map_context()}
 
 
+@app.get("/api/amap/js-config")
+def amap_js_config() -> dict[str, Any]:
+    load_local_env()
+    js_key = os.environ.get("AMAP_JS_API_KEY") or os.environ.get("AMAP_WEB_SERVICE_KEY") or ""
+    security_code = os.environ.get("AMAP_JS_SECURITY_CODE") or ""
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "available": bool(js_key),
+        "key": js_key,
+        "security_code": security_code,
+        "using_web_service_key_as_fallback": bool(js_key and not os.environ.get("AMAP_JS_API_KEY")),
+        "message": (
+            "已配置高德 JS API key，可加载可拖拽地图。"
+            if js_key
+            else "缺少 AMAP_JS_API_KEY；请在 .env 中配置高德 Web端 JS API key。"
+        ),
+    }
+
+
 @app.post("/api/amap/context")
 def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
     keyword = payload.keyword.strip()
@@ -1592,13 +1896,7 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
         poi = {"name": payload.matched_name or normalized_keyword, "address": payload.address or ""}
     else:
         params = {"key": key, "keywords": normalized_keyword, "city": "全国", "offset": "1", "page": "1", "extensions": "base"}
-        try:
-            with httpx.Client(timeout=10.0) as client:
-                response = client.get("https://restapi.amap.com/v3/place/text", params=params)
-                response.raise_for_status()
-                data = response.json()
-        except Exception as exc:
-            raise HTTPException(status_code=502, detail=f"amap place search failed: {type(exc).__name__}") from exc
+        data = amap_get_json("https://restapi.amap.com/v3/place/text", params=params)
         pois = data.get("pois") or []
         if not pois:
             suggestions = amap_input_tips(keyword, key)
@@ -1657,30 +1955,30 @@ def amap_input_tips(keyword: str, key: str) -> list[dict[str, Any]]:
     data: dict[str, Any] = {}
     exact_pois: list[dict[str, Any]] = []
     try:
-        with httpx.Client(timeout=8.0) as client:
-            response = client.get(
-                "https://restapi.amap.com/v3/assistant/inputtips",
-                params={"key": key, "keywords": normalized_keyword, "city": "全国", "datatype": "all"},
+        data = amap_get_json(
+            "https://restapi.amap.com/v3/assistant/inputtips",
+            params={"key": key, "keywords": normalized_keyword, "city": "全国", "datatype": "all"},
+            timeout=8.0,
+            retries=1,
+        )
+        place_keywords = [normalized_keyword]
+        if preferred_name and preferred_name != normalized_keyword:
+            place_keywords.append(preferred_name)
+        for place_keyword in place_keywords:
+            place_data = amap_get_json(
+                "https://restapi.amap.com/v3/place/text",
+                params={
+                    "key": key,
+                    "keywords": place_keyword,
+                    "city": "全国",
+                    "offset": "3",
+                    "page": "1",
+                    "extensions": "base",
+                },
+                timeout=8.0,
+                retries=1,
             )
-            response.raise_for_status()
-            data = response.json()
-            place_keywords = [normalized_keyword]
-            if preferred_name and preferred_name != normalized_keyword:
-                place_keywords.append(preferred_name)
-            for place_keyword in place_keywords:
-                place_response = client.get(
-                    "https://restapi.amap.com/v3/place/text",
-                    params={
-                        "key": key,
-                        "keywords": place_keyword,
-                        "city": "全国",
-                        "offset": "3",
-                        "page": "1",
-                        "extensions": "base",
-                    },
-                )
-                place_response.raise_for_status()
-                exact_pois.extend(place_response.json().get("pois") or [])
+            exact_pois.extend(place_data.get("pois") or [])
     except Exception:
         if not data:
             return []
@@ -2151,21 +2449,39 @@ def ai_chat(request: ChatRequest) -> dict[str, Any]:
         raise HTTPException(status_code=400, detail="message is required")
     payload = load_dashboard()
     context = node_context(payload, request.node_id)
+    session: dict[str, Any]
+    sessions_data: dict[str, Any]
+    if request.session_id:
+        sessions_data, session = find_ai_session(request.session_id)
+    else:
+        session = create_ai_session_record(
+            payload,
+            project_id=request.project_id,
+            project_name=request.project_name,
+            title=title_from_message(message),
+            node_id=request.node_id,
+        )
+        sessions_data, session = find_ai_session(session["session_id"])
+    history = session.get("messages", [])[-8:] or request.history[-8:]
     prompt = (
         "你是公园商业选址专家驾驶舱里的 DeepSeek 对话助手，像网页版对话一样连续协助专家。"
-        "你可以读取当前节点、专家意见、位置/图片文字说明、P3 gate 和 P4 feedback draft。"
-        "你的任务是：解释当前方案、追问缺失数据、把专家意见转为模型修改建议、提示哪些字段需要补数。"
+        "你可以读取项目综合上下文、明确选中的当前节点、专家意见、位置/图片文字说明、P3 gate 和 P4 feedback draft。"
+        "你的任务是：在项目综合范围内做整合分析；只有上下文里存在明确 node_id 且不是 project_overall 时，才解释单个节点。"
+        "追问缺失数据、把专家意见转为模型修改建议、提示哪些字段需要补数。"
+        "不要默认分析第一个节点，不要在项目综合对话里说自己正在分析某个固定节点，也不要输出具体节点 ID。"
         "硬边界：所有输出只能是 needs_review / not_final；不得给最终推荐、最终排序、收益预测、坐标、面积推断、DWG几何结论或 checked 证据。"
         "如果用户提到未来会给图或位置资料，只能说明应如何登记、如何进入待复核假设池。"
         "请用中文回答，简洁但可操作，最后给出 3-6 条下一步提问或待补数据。"
         f"\n当前上下文：{json.dumps(context, ensure_ascii=False)}"
         f"\n位置/图片文字说明：{request.position_note or ''}"
         f"\n本轮上传/关联资料：{json.dumps(request.upload_refs, ensure_ascii=False)}"
-        f"\n历史对话：{json.dumps(request.history[-8:], ensure_ascii=False)}"
+        f"\n历史对话：{json.dumps(history, ensure_ascii=False)}"
         f"\n专家/用户本轮输入：{message}"
     )
+    assistant_message = ""
+    generated_by = "deepseek"
     try:
-        content = run_deepseek_task(
+        assistant_message = run_deepseek_task(
             "LLM-026",
             [
                 {"role": "system", "content": "你只输出 needs_review/not_final 的专家对话草稿，不得升级为最终结论。"},
@@ -2173,23 +2489,92 @@ def ai_chat(request: ChatRequest) -> dict[str, Any]:
             ],
             temperature=0.15,
         )
-        return {
-            "output_status": "needs_review",
-            "not_final": True,
-            "generated_by": "deepseek",
-            "message": content,
-        }
     except Exception as exc:
-        return {
-            "output_status": "needs_review",
-            "not_final": True,
-            "generated_by": "local_fallback",
-            "message": (
-                "DeepSeek 当前不可用或超时。当前意见仍可先登记为专家反馈，"
-                "但不能进入 checked/final。下一步请补充：真实客流、转化率、收益成本、运营授权、DWG可信转换产物。"
-            ),
-            "error": f"{type(exc).__name__}: {exc}",
-        }
+        generated_by = "local_fallback"
+        assistant_message = (
+            "DeepSeek 当前不可用或超时。当前意见仍可先登记为专家反馈，"
+            "但不能进入 checked/final。下一步请补充：真实客流、转化率、收益成本、运营授权、DWG可信转换产物。"
+        )
+        error = f"{type(exc).__name__}: {exc}"
+    else:
+        error = ""
+    now = datetime.now().isoformat(timespec="seconds")
+    session.setdefault("messages", []).extend([
+        {"role": "user", "content": message, "upload_refs": request.upload_refs, "created_at": now},
+        {"role": "assistant", "content": assistant_message, "generated_by": generated_by, "created_at": now},
+    ])
+    if session.get("title") == "新对话":
+        session["title"] = title_from_message(message)
+    session["node_id"] = request.node_id or session.get("node_id")
+    session["message_count"] = len(session.get("messages", []))
+    session["updated_at"] = now
+    save_ai_sessions(sessions_data)
+    response = {
+        "output_status": "needs_review",
+        "not_final": True,
+        "generated_by": generated_by,
+        "message": assistant_message,
+        "session": {key: session.get(key) for key in ["session_id", "project_id", "project_name", "title", "node_id", "message_count", "updated_at"]},
+    }
+    if error:
+        response["error"] = error
+    return response
+
+
+@app.get("/api/ai/sessions")
+def list_ai_sessions() -> dict[str, Any]:
+    return summarize_ai_sessions(load_ai_sessions())
+
+
+@app.post("/api/ai/sessions")
+def create_ai_session(request: ChatSessionCreateRequest) -> dict[str, Any]:
+    session = create_ai_session_record(
+        load_dashboard(),
+        project_id=request.project_id,
+        project_name=request.project_name,
+        title=request.title,
+        node_id=request.node_id,
+    )
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "session": session,
+    }
+
+
+@app.get("/api/ai/sessions/{session_id}")
+def get_ai_session(session_id: str) -> dict[str, Any]:
+    _, session = find_ai_session(session_id)
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "session": session,
+    }
+
+
+@app.delete("/api/ai/sessions/{session_id}")
+def delete_ai_session(session_id: str) -> dict[str, Any]:
+    data = load_ai_sessions()
+    before = len(data.get("sessions", []))
+    data["sessions"] = [item for item in data.get("sessions", []) if item.get("session_id") != session_id]
+    if len(data["sessions"]) == before:
+        raise HTTPException(status_code=404, detail="ai session not found")
+    save_ai_sessions(data)
+    return {"output_status": "needs_review", "not_final": True, "deleted": session_id}
+
+
+@app.post("/api/ai/sessions/{session_id}/report")
+def generate_ai_session_report(session_id: str, request: ChatReportRequest) -> dict[str, Any]:
+    _, session = find_ai_session(session_id)
+    return write_ai_session_report(session, request.instruction)
+
+
+@app.get("/api/ai/sessions/{session_id}/report/download")
+def download_ai_session_report(session_id: str) -> FileResponse:
+    _, session = find_ai_session(session_id)
+    report = write_ai_session_report(session)
+    path = ROOT / report["report_path"]
+    return FileResponse(path, media_type="text/markdown; charset=utf-8", filename=path.name)
 
 
 @app.post("/api/expert-feedback")

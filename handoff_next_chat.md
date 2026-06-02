@@ -1193,3 +1193,24 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - 修复 `30_extraction/scripts/build_p2_real_site_input_index.py`：忽略 Office 临时 `~$*.docx`，避免本地 Word 临时文件造成总门禁失败。
 - 最新验证：`checks=725 failures=0`；截图 `90_p6_expert_dashboard/qa/map_sync_verified.png`。
 - 提交前不要加入 `90_p6_expert_dashboard/cache/`、`90_p6_expert_dashboard/qa/*.png` 或真实 `.env`。
+# 2026-06-02 最新交接：AI 工作台已补项目会话、历史和生成报告
+
+本轮在用户追加要求后，已单独补上“生成报告”按钮，并把专家 AI 工作台改成更接近 Codex/豆包的真实工作流：
+
+已完成：
+- 左侧项目与历史会话栏：支持按项目看会话、打开历史、开启新对话。
+- 当前对话区：保留中央阅读区、底部居中的大输入框和快捷工具条。
+- “生成报告”按钮：位于当前对话标题区右侧，AI 正在回复时禁用；点击后调用报告接口并下载/打开生成结果。
+- 后端会话 API：`/api/ai/sessions`、`/api/ai/sessions/{session_id}`。
+- 后端报告 API：`POST /api/ai/sessions/{session_id}/report`、`GET /api/ai/sessions/{session_id}/report/download`。
+- 报告输出目录：`80_delivery/ai_chat_reports/`。
+
+验证证据：
+- `40_quality_evidence/ai_session_report_api_test_20260602.json`
+- `40_quality_evidence/selenium_ai_sessions_report_20260602.json`
+- `40_quality_evidence/selenium_ai_sessions_report_20260602.png`
+- `40_quality_evidence/tool_plugin_web_report_20260602.md`
+
+注意：
+- 会话缓存和测试生成报告属于运行态产物，提交前要谨慎选择是否入库。
+- 所有 AI 报告继续是 `needs_review / not_final`，不能替代最终商业结论。

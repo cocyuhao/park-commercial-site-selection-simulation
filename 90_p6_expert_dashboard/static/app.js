@@ -2,6 +2,10 @@ const state = {
   data: null,
   simulationJobs: [],
   latestSimulationResults: null,
+  aiSessions: { projects: [], sessions: [] },
+  activeAiSessionId: null,
+  activeAiProjectId: null,
+  aiBusy: false,
   selectedNodeId: null,
   chatHistory: [],
   currentView: "overview",
@@ -14,11 +18,23 @@ const state = {
   mapSuggestTimer: null,
   mapAutoLocateTimer: null,
   mapTipsSeq: 0,
+  mapSuppressTipsUntil: 0,
   mapContextHistory: [],
   mapSelectedOnly: false,
+  mapLoading: false,
+  amapConfig: null,
+  amapMap: null,
+  amapMarkers: [],
+  amapPoiMarkers: [],
+  amapNodeMarkers: [],
+  amapReady: false,
+  amapError: "",
+  assetDrawerOpen: false,
+  aiScope: "project",
   lastAction: "",
   pendingAttachments: [],
 };
+window.__APP_STATE__ = state;
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
@@ -69,7 +85,7 @@ function scoreOf(node) {
 }
 
 function scoreText(node) {
-  if (node?.score_status === "external_preview_only") return node.score_label || "外部预览";
+  if (node?.score_status === "external_preview_only") return "位置参考";
   return `${scoreOf(node)} 分`;
 }
 
@@ -91,8 +107,27 @@ async function loadDashboard() {
   if (!response.ok) throw new Error(`dashboard api failed: ${response.status}`);
   state.data = await response.json();
   await loadSimulationJobs();
+  await loadAiSessions();
   state.selectedNodeId = state.selectedNodeId || state.data.nodes[0]?.node_id;
   renderAll();
+}
+
+async function loadAiSessions() {
+  try {
+    const response = await fetch("/api/ai/sessions", { cache: "no-store" });
+    if (!response.ok) throw new Error(`ai sessions api failed: ${response.status}`);
+    state.aiSessions = await response.json();
+    const currentProject = currentProjectInfo();
+    const firstProject = state.aiSessions.projects?.[0];
+    state.activeAiProjectId = state.activeAiProjectId || firstProject?.project_id || "current-project";
+    if (state.activeAiProjectId === "current-project") state.activeAiProjectId = currentProject.project_id;
+    if (!state.activeAiSessionId) {
+      const firstSession = (state.aiSessions.sessions || []).find((item) => item.project_id === state.activeAiProjectId);
+      state.activeAiSessionId = firstSession?.session_id || null;
+    }
+  } catch (error) {
+    state.aiSessions = { projects: [], sessions: [], error: error.message };
+  }
 }
 
 async function loadSimulationJobs() {
@@ -124,10 +159,12 @@ function renderAll() {
   renderMapSide();
   renderUploadList();
   renderCandidateList();
+  renderAssetDrawer();
   renderDataPage();
   renderSimulationPanel();
   renderGapStatus();
   renderReport();
+  renderAiSessions();
   renderAiContext();
   renderIntegrationStatus();
 }
@@ -159,7 +196,7 @@ function setView(view) {
 }
 
 function priorityLabel(node) {
-  if (node?.score_status === "external_preview_only") return [node.score_label || "仅地图预览", "preview"];
+  if (node?.score_status === "external_preview_only") return ["仅看位置关系", "preview"];
   const score = scoreOf(node);
   if (score >= 70) return ["优先讨论", "good"];
   if (score >= 55) return ["需补证再议", "warn"];
@@ -250,6 +287,51 @@ function renderCandidateList() {
   `;
 }
 
+function renderAssetDrawer() {
+  const drawer = $("#assetDrawer");
+  const list = $("#assetDrawerList");
+  if (!drawer || !list) return;
+  drawer.classList.toggle("open", state.assetDrawerOpen);
+  const uploads = state.data?.uploads || [];
+  if (!uploads.length) {
+    list.innerHTML = `<div class="empty-state">还没有上传资料。可以从“资料导入”或 AI 工作台的 + 上传。</div>`;
+    return;
+  }
+  list.innerHTML = uploads.slice().reverse().map((item) => `
+    <article class="asset-item">
+      <b>${esc(item.filename)}</b>
+      <span>${esc(item.category)} · ${esc(item.review_status || "待处理")} · ${esc(Math.round((Number(item.size_bytes) || 0) / 1024))} KB</span>
+      <span>${esc(item.note || "未填写说明")}</span>
+      <div class="asset-actions">
+        <button type="button" data-upload-action="use" data-upload-id="${esc(item.upload_id)}">使用</button>
+        <button type="button" data-upload-action="discard" data-upload-id="${esc(item.upload_id)}">放弃使用</button>
+        <button type="button" class="parse-upload-btn" data-upload-id="${esc(item.upload_id)}">AI 解析</button>
+        <button type="button" class="danger" data-upload-action="delete" data-upload-id="${esc(item.upload_id)}">删除</button>
+      </div>
+    </article>
+  `).join("");
+}
+
+async function updateUploadAction(uploadId, action) {
+  if (action === "delete") {
+    if (!window.confirm("确定删除这份上传资料吗？只删除网页资料池副本，不会删除项目原始文件。")) return;
+    const response = await fetch(`/api/uploads/${encodeURIComponent(uploadId)}`, { method: "DELETE" });
+    if (!response.ok) throw new Error(`delete upload failed: ${response.status}`);
+    state.lastAction = "资料已从资料池删除";
+  } else {
+    const response = await fetch(`/api/uploads/${encodeURIComponent(uploadId)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action }),
+    });
+    if (!response.ok) throw new Error(`update upload failed: ${response.status}`);
+    state.lastAction = action === "use" ? "资料已标记为使用" : "资料已标记为放弃使用";
+  }
+  await loadDashboard();
+  state.assetDrawerOpen = true;
+  renderAssetDrawer();
+}
+
 function nodeSearchKeyword() {
   const input = $("#nodeSearch");
   return input ? input.value.trim().toLowerCase() : "";
@@ -308,18 +390,21 @@ function renderDetail() {
   $("#detailBody").innerHTML = `
     <div class="detail-top">
       <div class="metric"><span>面积</span><b>${esc(node.area_sqm)} m²</b></div>
-      <div class="metric"><span>后端草案分</span><b>${esc(scoreText(node))}</b></div>
-      <div class="metric"><span>状态</span><b>${esc(node.score_label || node.status_label || "待复核")}</b></div>
+      <div class="metric"><span>草案分</span><b>${esc(scoreText(node))}</b></div>
+      <div class="metric"><span>状态</span><b>${esc(node.score_status === "external_preview_only" ? "位置参考" : (node.score_label || node.status_label || "待复核"))}</b></div>
     </div>
     <section class="detail-section">
       <h3>评分解释</h3>
       <p>${esc(node.score_explanation || "后端暂未返回评分解释；当前仍按待复核草案展示。")}</p>
-      <div class="request-tags">
-        <span>score_status: ${esc(node.score_status || "needs_review_not_final")}</span>
-        <span>blocked_gate: ${esc(scoreInputs.blocked_gate_count ?? "待复核")}</span>
-        <span>missing_fields: ${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
-        <span>poi_count: ${esc(scoreInputs.poi_count ?? "待复核")}</span>
-      </div>
+      <details class="tech-trace">
+        <summary>技术追踪</summary>
+        <div class="request-tags">
+          <span>score_status: ${esc(node.score_status || "needs_review_not_final")}</span>
+          <span>blocked_gate: ${esc(scoreInputs.blocked_gate_count ?? "待复核")}</span>
+          <span>missing_fields: ${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
+          <span>poi_count: ${esc(scoreInputs.poi_count ?? "待复核")}</span>
+        </div>
+      </details>
     </section>
     <section class="detail-section">
       <h3>TGI / POI 缺口</h3>
@@ -364,35 +449,160 @@ function renderDetail() {
     </section>
     <div class="detail-actions">
       <button class="secondary-btn" data-view="map">在地图中查看</button>
-      <button class="primary-btn" data-view="ai">带着这个节点问 AI</button>
+      <button class="primary-btn" data-view="ai" data-ai-scope="node">带着这个节点问 AI</button>
     </div>
   `;
 }
 
 function renderMap() {
-  const active = currentNode();
   const amap = state.data.amap || {};
   const status = amap.status || {};
   const context = amap.map_context || {};
-  const contextName = `${context.keyword || ""}${context.matched_name || ""}`;
-  const isOsenContext = contextName.includes("奥森") || contextName.includes("奥林匹克森林");
   $("#amapStatusText").textContent = status.web_service_key_available
-    ? `目标：${context.matched_name || context.keyword || "默认项目"}；已加载 ${status.point_count || 0} 条 POI`
-    : "未检测到高德 Key；显示本地示意层；前端不会暴露 Key";
+    ? `目标：${context.matched_name || context.keyword || "当前地点"}；已加载 ${status.point_count || 0} 条 POI`
+    : "未检测到高德 Key；先显示本地示意层";
   const modeStatus = $("#mapModeStatus");
   if (modeStatus) {
-    modeStatus.textContent = status.web_service_key_available
-      ? (isOsenContext ? "奥森评分模式：可展示待复核草案分，不是最终推荐。" : "外部预览模式：只看地图和周边 POI，不套用奥森评分。")
-      : "地图数据异常：只能看本地示意层，不能做评分。";
-    modeStatus.className = `map-mode-status ${status.web_service_key_available ? (isOsenContext ? "score-mode" : "preview-mode") : "error-mode"}`;
+    modeStatus.textContent = state.amapError || "地图用于位置、边界、POI 和候选点的综合查看；不按某一个公园强行套评分。";
+    modeStatus.className = `map-mode-status ${state.amapError ? "error-mode" : "score-mode"}`;
   }
   if ($("#mapSearchInput") && !$("#mapSearchInput").value) {
     $("#mapSearchInput").placeholder = context.keyword ? `搜索地点、拼音或地址 · 当前：${context.keyword}` : "搜索地点、拼音或地址";
   }
 
   $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
+  $("#mapCanvas").classList.toggle("loading", state.mapLoading);
+  initInteractiveMap().catch((error) => {
+    state.amapError = `高德 JS 地图加载失败：${error.message}`;
+    renderStaticMapFallback();
+  });
+}
+
+async function fetchAmapConfig() {
+  if (state.amapConfig) return state.amapConfig;
+  const response = await fetch("/api/amap/js-config", { cache: "no-store" });
+  if (!response.ok) throw new Error(`js-config ${response.status}`);
+  state.amapConfig = await response.json();
+  return state.amapConfig;
+}
+
+function loadAmapScript(config) {
+  if (window.AMap) return Promise.resolve();
+  if (!config.available || !config.key) throw new Error(config.message || "缺少高德 JS API Key");
+  if (config.security_code) {
+    window._AMapSecurityConfig = { securityJsCode: config.security_code };
+  }
+  return new Promise((resolve, reject) => {
+    const existing = document.querySelector("script[data-amap-js='true']");
+    if (existing) {
+      existing.addEventListener("load", resolve, { once: true });
+      existing.addEventListener("error", () => reject(new Error("高德脚本加载失败")), { once: true });
+      return;
+    }
+    const script = document.createElement("script");
+    script.dataset.amapJs = "true";
+    script.src = `https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(config.key)}&plugin=AMap.AutoComplete,AMap.PlaceSearch,AMap.Scale,AMap.ToolBar,AMap.Geolocation`;
+    script.onload = resolve;
+    script.onerror = () => reject(new Error("高德脚本加载失败"));
+    document.head.appendChild(script);
+  });
+}
+
+async function initInteractiveMap() {
+  const amap = state.data.amap || {};
+  const context = amap.map_context || {};
+  const config = await fetchAmapConfig();
+  await loadAmapScript(config);
+  const center = [Number(context.longitude || 116.392159), Number(context.latitude || 40.018635)];
+  if (!state.amapMap) {
+    state.amapMap = new AMap.Map("amapInteractiveMap", {
+      center,
+      zoom: nativeZoomFromBounds(amap.map_bounds || {}),
+      resizeEnable: true,
+      dragEnable: true,
+      zoomEnable: true,
+      viewMode: "2D",
+      mapStyle: "amap://styles/normal",
+    });
+    state.amapMap.addControl(new AMap.Scale());
+    state.amapMap.addControl(new AMap.ToolBar({ position: "RB" }));
+    state.amapReady = true;
+  } else {
+    state.amapMap.setZoomAndCenter(nativeZoomFromBounds(amap.map_bounds || {}), center, false, 700);
+  }
+  state.amapError = "";
+  $("#staticMapLayer").style.display = "none";
+  $("#amapInteractiveMap").style.display = "block";
+  state.mapLoading = false;
+  $("#mapCanvas").classList.remove("loading");
+  renderAmapMarkers();
+}
+
+function clearAmapMarkers() {
+  if (!state.amapMap) return;
+  [...state.amapPoiMarkers, ...state.amapNodeMarkers].forEach((marker) => state.amapMap.remove(marker));
+  state.amapPoiMarkers = [];
+  state.amapNodeMarkers = [];
+}
+
+function renderAmapMarkers() {
+  if (!state.amapMap || !window.AMap) return;
+  clearAmapMarkers();
+  const amap = state.data.amap || {};
+  if (state.mapMode !== "nodes") {
+    state.amapPoiMarkers = (amap.supply_points || []).slice(0, 80).map((p) => {
+      const marker = new AMap.Marker({
+        position: [Number(p.longitude), Number(p.latitude)],
+        title: p.poi_name || "POI",
+        content: `<div class="amap-poi-marker ${p.boundary_filter_status === "inside_osm_polygon" ? "inside" : ""}"></div>`,
+        offset: new AMap.Pixel(-6, -6),
+      });
+      marker.on("click", () => {
+        $("#mapSideDetail").innerHTML = `
+          <h3>${esc(p.poi_name || "周边 POI")}</h3>
+          <div class="map-score preview">${esc(p.category || p.amap_keywords || "商业/服务点位")}</div>
+          <p>${esc(p.boundary_filter_status || "位置关系待复核")}</p>
+          <div class="mini-kv"><span>距离</span><b>${esc(p.distance_m || "待测")} m</b></div>
+          <div class="mini-kv"><span>状态</span><b>仅作供给参考</b></div>
+        `;
+      });
+      return marker;
+    });
+    state.amapMap.add(state.amapPoiMarkers);
+  }
+  if (state.mapMode !== "poi") {
+    const nodeRows = state.mapSelectedOnly
+      ? (amap.context_nodes || []).filter((item) => item.node_id === state.selectedNodeId)
+      : (amap.context_nodes || []);
+    state.amapNodeMarkers = nodeRows.map((mapNode) => {
+      const node = (state.data.nodes || []).find((item) => item.node_id === mapNode.node_id) || mapNode;
+      const marker = new AMap.Marker({
+        position: [Number(mapNode.longitude), Number(mapNode.latitude)],
+        title: node.node_name || node.node_id,
+        content: `<button class="amap-node-marker ${node.node_id === state.selectedNodeId ? "active" : ""}">${esc(shortId(node.node_id))}</button>`,
+        offset: new AMap.Pixel(-19, -19),
+      });
+      marker.on("click", () => {
+        state.selectedNodeId = node.node_id;
+        state.aiScope = "node";
+        renderAll();
+        setView("map");
+      });
+      return marker;
+    });
+    state.amapMap.add(state.amapNodeMarkers);
+  }
+  renderMapSide();
+}
+
+function renderStaticMapFallback() {
+  const active = currentNode();
+  const amap = state.data.amap || {};
+  const context = amap.map_context || {};
   const img = $("#amapBaseMap");
-  $("#mapCanvas").classList.add("loading");
+  $("#staticMapLayer").style.display = "block";
+  $("#amapInteractiveMap").style.display = "none";
+  if (!state.amapReady) $("#mapCanvas").classList.add("loading");
   img.onload = () => $("#mapCanvas").classList.remove("loading");
   state.mapCenter = {
     lon: Number(context.longitude || 116.392159),
@@ -465,6 +675,11 @@ function refreshMapImage() {
 }
 
 function changeMapZoom(delta) {
+  if (state.amapMap) {
+    const nextZoom = Math.max(3, Math.min(20, state.amapMap.getZoom() + delta * 4));
+    state.amapMap.setZoom(nextZoom, false, 350);
+    return;
+  }
   state.mapNativeZoom = Math.max(3, Math.min(20, Number((state.mapNativeZoom + delta).toFixed(2))));
   state.mapZoom = 1;
   state.mapPan = { x: 0, y: 0 };
@@ -473,6 +688,16 @@ function changeMapZoom(delta) {
 }
 
 function resetMapView() {
+  if (state.amapMap) {
+    const context = state.data?.amap?.map_context || {};
+    state.amapMap.setZoomAndCenter(
+      nativeZoomFromBounds(state.data?.amap?.map_bounds || {}),
+      [Number(context.longitude || 116.392159), Number(context.latitude || 40.018635)],
+      false,
+      500,
+    );
+    return;
+  }
   state.mapZoom = 1;
   state.mapPan = { x: 0, y: 0 };
   state.mapNativeZoom = nativeZoomFromBounds(state.data?.amap?.map_bounds || {});
@@ -590,7 +815,7 @@ function renderMapSide() {
   if (!node) return;
   const [label, cls] = priorityLabel(node);
   const nextDataNeeded = listItems(node.next_data_needed);
-  const scoreLine = node?.score_status === "external_preview_only" ? "仅地图预览 · 不生成评分" : `${label} · ${scoreText(node)}`;
+  const scoreLine = node?.score_status === "external_preview_only" ? "位置参考 · 不生成评分" : `${label} · ${scoreText(node)}`;
   $("#mapSideDetail").innerHTML = `
     <h3>${esc(shortId(node.node_id))} ${esc(node.node_name)}</h3>
     <div class="map-score ${cls}">${esc(scoreLine)}</div>
@@ -919,55 +1144,76 @@ async function updateMapContext(event) {
     return;
   }
   state.lastAction = `正在定位：${keyword}`;
-  $("#mapCanvas").classList.add("loading");
+  state.mapLoading = true;
+  state.mapTipsSeq += 1;
+  state.mapSuppressTipsUntil = Date.now() + 2500;
+  if (!state.amapReady) $("#mapCanvas").classList.add("loading");
   $("#mapSuggest").innerHTML = "";
   renderMeta();
-  const response = await fetch("/api/amap/context", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ keyword }),
-  });
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`地图定位失败：${text}`);
+  try {
+    const response = await fetch("/api/amap/context", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ keyword }),
+    });
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`地图定位失败：${text}`);
+    }
+    const data = await response.json();
+    pushMapHistory(state.data?.amap?.map_context);
+    state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
+    input.value = "";
+    $("#mapSuggest").innerHTML = "";
+    await loadDashboard();
+    if (state.amapMap) state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 500);
+    setView("map");
+  } finally {
+    state.mapLoading = false;
+    $("#mapCanvas").classList.remove("loading");
+    $("#mapSuggest").innerHTML = "";
   }
-  const data = await response.json();
-  pushMapHistory(state.data?.amap?.map_context);
-  state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
-  input.value = "";
-  resetMapView();
-  await loadDashboard();
-  setView("map");
 }
 
 async function updateMapContextFromSuggestion(tip) {
   $("#mapSearchInput").value = tip.name;
   $("#mapSuggest").innerHTML = "";
   state.lastAction = `正在定位：${tip.name}`;
+  state.mapLoading = true;
+  state.mapTipsSeq += 1;
+  state.mapSuppressTipsUntil = Date.now() + 2500;
   $("#mapCanvas").classList.add("loading");
   renderMeta();
-  const response = await fetch("/api/amap/context", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      keyword: tip.name,
-      matched_name: tip.name,
-      address: tip.address || tip.district || "",
-      longitude: tip.longitude || "",
-      latitude: tip.latitude || "",
-    }),
-  });
-  if (!response.ok) throw new Error(`地图定位失败：${await response.text()}`);
-  const data = await response.json();
-  pushMapHistory(state.data?.amap?.map_context);
-  state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
-  $("#mapSearchInput").value = "";
-  resetMapView();
-  await loadDashboard();
-  setView("map");
+  try {
+    const response = await fetch("/api/amap/context", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        keyword: tip.name,
+        matched_name: tip.name,
+        address: tip.address || tip.district || "",
+        longitude: tip.longitude || "",
+        latitude: tip.latitude || "",
+      }),
+    });
+    if (!response.ok) throw new Error(`地图定位失败：${await response.text()}`);
+    const data = await response.json();
+    pushMapHistory(state.data?.amap?.map_context);
+    state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
+    $("#mapSearchInput").value = "";
+    $("#mapSuggest").innerHTML = "";
+    await loadDashboard();
+    if (state.amapMap) state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 500);
+    setView("map");
+  } finally {
+    state.mapLoading = false;
+    $("#mapCanvas").classList.remove("loading");
+    $("#mapSuggest").innerHTML = "";
+  }
 }
 
 async function fetchMapTips() {
+  if (Date.now() < state.mapSuppressTipsUntil) return;
   const q = $("#mapSearchInput").value.trim();
   if (!q) {
     $("#mapSuggest").innerHTML = "";
@@ -1059,6 +1305,11 @@ async function saveGateNote(domain) {
 }
 
 function fallbackAiIntro(node) {
+  if (state.aiScope !== "node") {
+    const uploadCount = state.data?.uploads?.length || 0;
+    const nodeCount = state.data?.nodes?.length || 0;
+    return `请从全局看这个项目：当前有 ${uploadCount} 份上传资料、${nodeCount} 个待复核节点。先综合判断资料缺口、地图位置、POI 供给和下一步工作，不要直接给最终推荐。`;
+  }
   if (!node) {
     return "当前还没有外部上传项目资料。请先上传 DWG/DOCX/PDF/客流表等资料，AI 只能生成待复核解析建议。";
   }
@@ -1068,8 +1319,126 @@ function fallbackAiIntro(node) {
   return `当前节点是 ${node.node_name}。它只能作为待复核草案讨论：几何、客流、转化率、收益成本、运营授权仍未闭合。下一步应向合作方补充：${missing}。`;
 }
 
+function currentProjectInfo() {
+  const context = state.data?.amap?.map_context || {};
+  const name = context.matched_name || context.keyword || "当前选址项目";
+  const id = name.replace(/[^\w\u4e00-\u9fff-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48) || "current-project";
+  return { project_id: id, project_name: name };
+}
+
+function renderAiSessions() {
+  if (!$("#aiProjectList") || !$("#aiSessionList")) return;
+  const currentProject = currentProjectInfo();
+  const projects = [...(state.aiSessions.projects || [])];
+  if (!projects.some((item) => item.project_id === currentProject.project_id)) {
+    projects.unshift({ ...currentProject, count: 0, updated_at: "" });
+  }
+  if (!state.activeAiProjectId) state.activeAiProjectId = projects[0]?.project_id || currentProject.project_id;
+  $("#aiProjectList").innerHTML = projects.map((project) => `
+    <button type="button" class="ai-project-item ${project.project_id === state.activeAiProjectId ? "active" : ""}" data-ai-project-id="${esc(project.project_id)}">
+      <b>${esc(project.project_name || project.project_id)}</b>
+      <span>${esc(project.count || 0)} 个对话</span>
+    </button>
+  `).join("");
+  const sessions = (state.aiSessions.sessions || []).filter((item) => item.project_id === state.activeAiProjectId);
+  $("#aiSessionList").innerHTML = sessions.length ? sessions.map((session) => `
+    <button type="button" class="ai-session-item ${session.session_id === state.activeAiSessionId ? "active" : ""}" data-ai-session-id="${esc(session.session_id)}">
+      <b>${esc(session.title || "未命名对话")}</b>
+      <span>${esc(session.message_count || 0)} 条 · ${esc(session.updated_at || session.created_at || "")}</span>
+    </button>
+  `).join("") : `<div class="ai-rail-empty">这个项目还没有对话。点“新对话”开始。</div>`;
+}
+
+function renderChatMessagesFromSession(session) {
+  const box = $("#chatMessages");
+  box.innerHTML = "";
+  const messages = session?.messages || [];
+  if (!messages.length) {
+    box.innerHTML = `
+      <div class="chat-empty-state">
+        <h2>项目综合回聊</h2>
+        <p>上传资料、描述位置或直接说问题。系统会按全局资料、当前地图和节点缺口一起看。</p>
+      </div>
+    `;
+    return;
+  }
+  messages.forEach((item) => addChatMessage(item.role === "user" ? "user" : "assistant", item.content || "", item.created_at || ""));
+}
+
+async function openAiSession(sessionId) {
+  const response = await fetch(`/api/ai/sessions/${encodeURIComponent(sessionId)}`, { cache: "no-store" });
+  if (!response.ok) throw new Error(`会话读取失败：${response.status}`);
+  const data = await response.json();
+  const session = data.session;
+  state.activeAiSessionId = session.session_id;
+  state.activeAiProjectId = session.project_id || state.activeAiProjectId;
+  state.chatHistory = (session.messages || []).map((item) => ({ role: item.role, content: item.content }));
+  renderAiSessions();
+  renderChatMessagesFromSession(session);
+  renderAiContext();
+}
+
+async function createAiSession() {
+  const project = currentProjectInfo();
+  const response = await fetch("/api/ai/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      project_id: project.project_id,
+      project_name: project.project_name,
+      title: "新对话",
+      node_id: state.aiScope === "node" ? state.selectedNodeId : null,
+    }),
+  });
+  if (!response.ok) throw new Error(`新建对话失败：${response.status}`);
+  const data = await response.json();
+  await loadAiSessions();
+  await openAiSession(data.session.session_id);
+  state.lastAction = "已开启新对话";
+  renderMeta();
+}
+
+async function generateChatReport() {
+  if (state.aiBusy) {
+    state.lastAction = "AI 还在整理当前回复，等回复完成后再生成报告";
+    renderMeta();
+    return;
+  }
+  if (!state.activeAiSessionId) await createAiSession();
+  const response = await fetch(`/api/ai/sessions/${encodeURIComponent(state.activeAiSessionId)}/report`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ instruction: "根据当前会话，整理为给同事/客户看的待复核选址沟通报告。" }),
+  });
+  if (!response.ok) throw new Error(`生成报告失败：${response.status}`);
+  const data = await response.json();
+  state.lastAction = `AI 会话报告已生成：${data.report_path}`;
+  renderMeta();
+  addChatMessage("assistant", `报告已生成，可下载查看：${data.report_path}`, "needs_review / not_final");
+  window.open(data.download_url, "_blank");
+}
+
 function renderAiContext() {
   const node = currentNode();
+  const uploadCount = state.data?.uploads?.length || 0;
+  const nodeCount = state.data?.nodes?.length || 0;
+  if (state.aiScope !== "node") {
+    $("#aiContext").innerHTML = `
+      <details open class="ai-context-details">
+        <summary>项目综合分析</summary>
+        <div>
+          <b>全局视角</b>
+          <span>综合 ${nodeCount} 个节点、${uploadCount} 份上传资料、当前地图 POI 和资料缺口；默认不锁定任何单个节点。</span>
+        </div>
+        <div>
+          <b>输出边界</b>
+          <span>写给人看：先说判断，再说依据和下一步；不输出最终排名、收益预测或 ROI。</span>
+        </div>
+      </details>
+      <button class="secondary-btn" type="button" id="aiUseNodeBtn">改为分析当前节点</button>
+    `;
+    return;
+  }
   if (!node) {
     $("#aiContext").innerHTML = `
       <div>
@@ -1097,6 +1466,7 @@ function renderAiContext() {
 
 function addChatMessage(role, text, meta = "") {
   const box = $("#chatMessages");
+  box.querySelector(".chat-empty-state")?.remove();
   const item = document.createElement("div");
   item.className = `chat-message ${role}`;
   item.innerHTML = `<div>${esc(text)}</div>${meta ? `<span>${esc(meta)}</span>` : ""}`;
@@ -1109,7 +1479,10 @@ async function sendChat() {
   const input = $("#chatInput");
   const message = input.value.trim();
   if (!message && !state.pendingAttachments.length) return;
-  const node = currentNode();
+  const node = state.aiScope === "node" ? currentNode() : null;
+  const project = currentProjectInfo();
+  state.aiBusy = true;
+  if ($("#generateChatReportBtn")) $("#generateChatReportBtn").disabled = true;
   input.value = "";
   autoResizeComposer();
   const uploaded = await uploadComposerAttachments(message);
@@ -1121,24 +1494,36 @@ async function sendChat() {
   const thinking = addChatMessage("assistant thinking", "正在思考，请稍等……", "DeepSeek 深度分析中");
   thinking.querySelector("div").textContent = "正在读取上下文、整理资料缺口、调用 DeepSeek，并自动登记专家输入……";
   await saveFeedbackDraft(node, composedMessage, uploaded);
-  const response = await fetch("/api/ai/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      node_id: node?.node_id,
-      message: composedMessage,
-      upload_refs: uploaded,
-      history: state.chatHistory.slice(-8),
-    }),
-  });
-  const data = await response.json();
-  thinking.remove();
-  state.chatHistory.push({ role: "user", content: composedMessage });
-  state.chatHistory.push({ role: "assistant", content: data.message || "" });
-  addChatMessage("assistant", data.message || "DeepSeek 未返回内容", `${data.generated_by || "deepseek"} · 待复核`);
-  state.lastAction = "AI 对话已更新，专家输入已登记为待复核";
-  await loadDashboard();
-  setView("ai");
+  try {
+    const response = await fetch("/api/ai/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        session_id: state.activeAiSessionId,
+        project_id: project.project_id,
+        project_name: project.project_name,
+        node_id: node?.node_id,
+        message: composedMessage,
+        upload_refs: uploaded,
+        history: state.chatHistory.slice(-8),
+      }),
+    });
+    const data = await response.json();
+    thinking.remove();
+    state.activeAiSessionId = data.session?.session_id || state.activeAiSessionId;
+    state.activeAiProjectId = data.session?.project_id || state.activeAiProjectId;
+    state.chatHistory.push({ role: "user", content: composedMessage });
+    state.chatHistory.push({ role: "assistant", content: data.message || "" });
+    addChatMessage("assistant", data.message || "DeepSeek 未返回内容", `${data.generated_by || "deepseek"} · 待复核`);
+    state.lastAction = "AI 对话已更新，专家输入已登记为待复核";
+    await loadAiSessions();
+    renderAiSessions();
+    await loadDashboard();
+    setView("ai");
+  } finally {
+    state.aiBusy = false;
+    if ($("#generateChatReportBtn")) $("#generateChatReportBtn").disabled = false;
+  }
 }
 
 async function saveFeedbackDraft(node, comment, uploaded = []) {
@@ -1192,17 +1577,73 @@ function autoResizeComposer() {
 }
 
 function bindEvents() {
-  document.body.addEventListener("click", (event) => {
-    const viewBtn = event.target.closest("[data-view]");
-    if (viewBtn) {
-      setView(viewBtn.dataset.view);
-      return;
-    }
+document.body.addEventListener("click", (event) => {
     const nodeBtn = event.target.closest("[data-node-id]");
     if (nodeBtn) {
       state.selectedNodeId = nodeBtn.dataset.nodeId;
+      state.aiScope = "node";
       renderAll();
-      if (nodeBtn.classList.contains("map-pin")) setView("map");
+      if (nodeBtn.classList.contains("map-pin")) {
+        setView("map");
+      } else if (nodeBtn.dataset.view) {
+        setView(nodeBtn.dataset.view);
+      }
+      return;
+    }
+    const viewBtn = event.target.closest("[data-view]");
+    if (viewBtn) {
+      if (viewBtn.dataset.view === "ai") {
+        state.aiScope = viewBtn.dataset.aiScope || "project";
+      }
+      setView(viewBtn.dataset.view);
+      return;
+    }
+    const aiPromptBtn = event.target.closest("[data-ai-prompt]");
+    if (aiPromptBtn) {
+      const input = $("#chatInput");
+      input.value = aiPromptBtn.dataset.aiPrompt || "";
+      input.focus();
+      autoResizeComposer();
+      return;
+    }
+    const newAiSessionBtn = event.target.closest("#newAiSessionBtn");
+    if (newAiSessionBtn) {
+      createAiSession().catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
+    const aiProjectBtn = event.target.closest("[data-ai-project-id]");
+    if (aiProjectBtn) {
+      state.activeAiProjectId = aiProjectBtn.dataset.aiProjectId;
+      const firstSession = (state.aiSessions.sessions || []).find((item) => item.project_id === state.activeAiProjectId);
+      state.activeAiSessionId = firstSession?.session_id || null;
+      state.chatHistory = [];
+      renderAiSessions();
+      renderChatMessagesFromSession(null);
+      return;
+    }
+    const aiSessionBtn = event.target.closest("[data-ai-session-id]");
+    if (aiSessionBtn) {
+      openAiSession(aiSessionBtn.dataset.aiSessionId).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
+    const reportBtn = event.target.closest("#generateChatReportBtn");
+    if (reportBtn) {
+      generateChatReport().catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
+    const aiUseNodeBtn = event.target.closest("#aiUseNodeBtn");
+    if (aiUseNodeBtn) {
+      state.aiScope = "node";
+      renderAiContext();
       return;
     }
     const modeBtn = event.target.closest("[data-map-mode]");
@@ -1245,13 +1686,34 @@ function bindEvents() {
       state.pendingAttachments.splice(Number(removeAttachmentBtn.dataset.removeAttachment), 1);
       renderAttachmentTray();
     }
+    const uploadActionBtn = event.target.closest("[data-upload-action]");
+    if (uploadActionBtn) {
+      updateUploadAction(uploadActionBtn.dataset.uploadId, uploadActionBtn.dataset.uploadAction).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+    }
   });
 
   $("#nodeSearch").addEventListener("input", renderNodes);
   $("#uploadForm").addEventListener("submit", submitUpload);
-  $("#headerAiBtn").addEventListener("click", () => setView("ai"));
+  $("#assetDrawerBtn").addEventListener("click", () => {
+    state.assetDrawerOpen = !state.assetDrawerOpen;
+    renderAssetDrawer();
+  });
+  $("#assetDrawerClose").addEventListener("click", () => {
+    state.assetDrawerOpen = false;
+    renderAssetDrawer();
+  });
+  $("#headerAiBtn").addEventListener("click", () => {
+    state.aiScope = "project";
+    setView("ai");
+  });
   $("#headerDataBtn").addEventListener("click", () => setView("data"));
-  $("#mapAskAiBtn").addEventListener("click", () => setView("ai"));
+  $("#mapAskAiBtn").addEventListener("click", () => {
+    state.aiScope = "node";
+    setView("ai");
+  });
   $("#aiComposer").addEventListener("submit", (event) => {
     event.preventDefault();
     sendChat();

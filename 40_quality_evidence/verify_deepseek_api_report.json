@@ -1,11 +1,11 @@
 {
-  "run_at": "2026-06-02T04:08:55Z",
+  "run_at": "2026-06-02T09:10:15Z",
   "api_key_masked": "sk-57...5486",
-  "overall_verdict": "WARN",
+  "overall_verdict": "PASS",
   "summary": {
-    "PASS": 3,
+    "PASS": 4,
     "WARN": 0,
-    "FAIL": 1,
+    "FAIL": 0,
     "SKIP": 0
   },
   "methods": [
@@ -22,20 +22,31 @@
         200
       ],
       "latency_ms": {
-        "min": 3119.0,
-        "max": 9637.4,
-        "mean": 6672.1,
-        "p50": 7957.3,
-        "p95": 9637.4
+        "min": 2904.6,
+        "max": 8084.8,
+        "mean": 4169.2,
+        "p50": 3063.1,
+        "p95": 8084.8
       },
       "verdict": "PASS",
-      "verdict_detail": "全部5次HTTP 2xx, 均值延迟6672.1ms"
+      "verdict_detail": "全部5次HTTP 2xx, 均值延迟4169.2ms"
     },
     {
       "method": "M2_models_endpoint",
       "description": "GET /v1/models 鉴权与可用模型验证",
-      "verdict": "FAIL",
-      "verdict_detail": "请求异常: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)"
+      "http_status": 200,
+      "latency_ms": 2846.4,
+      "model_count": 2,
+      "model_ids": [
+        "deepseek-v4-flash",
+        "deepseek-v4-pro"
+      ],
+      "deepseek_models_found": [
+        "deepseek-v4-flash",
+        "deepseek-v4-pro"
+      ],
+      "verdict": "PASS",
+      "verdict_detail": "发现2个模型, deepseek系列: ['deepseek-v4-flash', 'deepseek-v4-pro']"
     },
     {
       "method": "M3_json_consistency",
@@ -43,7 +54,7 @@
       "runs": [
         {
           "run": 1,
-          "latency_ms": 9383.8,
+          "latency_ms": 3874.6,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -55,7 +66,7 @@
         },
         {
           "run": 2,
-          "latency_ms": 5646.8,
+          "latency_ms": 4995.9,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -67,7 +78,7 @@
         },
         {
           "run": 3,
-          "latency_ms": 4826.4,
+          "latency_ms": 3989.8,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -91,7 +102,7 @@
     {
       "method": "M4_historical_consistency",
       "description": "从历史JSONL抽取样本, 重新分类, 与历史结果对比",
-      "latency_ms": 9712.1,
+      "latency_ms": 5594.9,
       "http_status": 200,
       "comparisons": [
         {
@@ -129,7 +140,7 @@
       "match_count": 5,
       "total": 5,
       "verdict": "PASS",
-      "verdict_detail": "一致率 5/5 = 100.0%, 9712ms"
+      "verdict_detail": "一致率 5/5 = 100.0%, 5595ms"
     }
   ]
 }

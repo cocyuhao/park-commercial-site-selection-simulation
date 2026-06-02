@@ -1,0 +1,16 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "rounds": 5,
+  "actions": 98,
+  "ok_actions": 98,
+  "errors": [],
+  "checks": {
+    "no_old_n001_lock_copy": true,
+    "no_external_preview_copy": true,
+    "ai_project_copy_present": true,
+    "asset_drawer_button_present": true,
+    "interactive_map_container_present": true,
+    "ai_tool_buttons_present": true
+  },
+  "screenshot": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\selenium_ui_roundtrip_20260602.png"
+}

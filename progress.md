@@ -1062,3 +1062,49 @@
 ### 待继续
 - 当前仍不是真正高德 JS API 地图；若要完全 1:1 的高德自由拖拽/缩放体验，需要浏览器端受限 JS Key + 安全密钥代理，而不能暴露 Web Service Key。
 - 伙伴 dry-run 目前仍是结构化严格检查，不输出 ROI/收益/最终排序；后续可把更多真实输入闭合后再提升模型严谨度。
+# 2026-06-02 豆包实站学习、AI 工作台重构与高德 JS 地图回归
+
+### 已完成
+- 已先同步同事 GitHub main 到本地，当前工作基线为 `74b6aeb799132c19e7037c290b281937cd76318e`，提交信息 `Add upload-driven TGI POI gap report`。
+- 已实际打开豆包官网 `https://www.doubao.com/chat/` 学习网页端布局，不再只按用户截图猜测；现场证据保存为 `40_quality_evidence/doubao_live_reference_20260602.png/json`。
+- 专家 AI 工作台已改为豆包式结构：中央阅读区、大留白、底部居中悬浮输入框、输入框内快捷工具条；普通 AI 入口默认项目综合分析，不再锁定 N-001。
+- AI 快捷工具条已做成真实按钮：快速分析、资料解析、报告润色、地图核对会直接填入输入框，不是静态摆设。
+- 项目总览节点跳转已修复：点击不同 overview 节点会带着具体 `node_id` 进入节点清单。
+- “外部预览 / 仅地图预览 / 后端草案分”等内部或误导文案已替换为“位置参考 / 仅看位置关系 / 草案分”等面向用户的说法，技术字段折叠到“技术追踪”。
+- 地图已优先接入高德 JS API 2.0 容器，可拖拽、缩放；静态图只作兜底。地图 loading 和输入建议竞态已修复。
+- 资料池已增加右侧抽屉，支持查看资料、使用、放弃使用、恢复解析和删除。
+- 新增同事同步报告 `40_quality_evidence/tool_plugin_web_report_20260602.md`，记录本轮实际使用的软件、插件、网页、验证方法和证据路径，不写完整 Key。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py` 通过。
+- `/api/dashboard` 返回 200，`/api/amap/js-config` 返回 200，`/api/uploads` 返回 200。
+- `py -3.12 60_model\scripts\verify_deepseek_api.py` 总体 PASS，4/4 方法通过。
+- `py -3.12 30_extraction\scripts\verify_pdf_tables.py` 总体 PASS，4/4 方法通过。
+- `py -3.12 50_external_gis\scripts\run_amap_smoke_test.py` 输出 `status=ok`。
+- Selenium 4.44.0 已安装并完成 5 轮全界面回归：98 个动作、0 个失败；报告为 `40_quality_evidence/selenium_ui_roundtrip_20260602.json`。
+- 人工视觉复核截图：`selenium_ai_doubao_style_20260602.png`、`selenium_map_visual_wait_20260602.png`、`selenium_ui_roundtrip_20260602.png`。
+
+### 当前边界
+- 高德 JS 地图前端需要浏览器端 Key；当前 `/api/amap/js-config` 用于前端加载地图。报告和交接文件不得记录完整 Key。
+- AI、地图、上传解析、仿真 dry-run 仍为 `needs_review / not_final`，不能输出最终排名、最终推荐、收益预测或 ROI。
+- 上传计划自动拆节点已有入口和资料池动作，但“计划 -> 节点 -> 证据 -> 报告”的完整业务闭环仍需继续扩展。
+# 2026-06-02 Codex/豆包式 AI 工作台、会话历史与生成报告按钮
+
+### 已完成
+- 已把专家 AI 工作台从单一固定面板改为“项目 / 历史会话 / 新对话 / 当前对话”的工作台结构，避免永远固定在 `N-001 桃花源白房子`。
+- 已新增 AI 会话持久化：`GET/POST /api/ai/sessions`、`GET/DELETE /api/ai/sessions/{session_id}`，前端可按项目查看历史、开启新对话并回看记录。
+- 已新增“生成报告”按钮，放在当前对话标题区右侧；只有 AI 理解完当前对话且不在回复中时才允许生成，避免用户还在沟通时导出半成品。
+- 已新增报告接口：`POST /api/ai/sessions/{session_id}/report` 和 `GET /api/ai/sessions/{session_id}/report/download`，报告写入 `80_delivery/ai_chat_reports/`，并继续标记为 `needs_review / not_final`。
+- 已用豆包官网真实页面学习输入框、工具条、留白和阅读区；同时参考 Codex 截图补充项目分组、新对话和历史记录逻辑。
+- 已更新工具/插件/网页同步报告：`40_quality_evidence/tool_plugin_web_report_20260602.md`。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py` 通过。
+- AI 会话 + 生成报告 API 通过，证据为 `40_quality_evidence/ai_session_report_api_test_20260602.json`。
+- Selenium 页面复核通过，证据为 `40_quality_evidence/selenium_ai_sessions_report_20260602.json/png`。
+
+### 当前边界
+- 生成报告是“当前沟通纪要 / 待复核交付稿”，不是最终商业报告；最终报告仍必须闭合真实证据链、P3 输入和人工复核。
+- 会话缓存属于运行态数据，后续提交时应避免把临时 QA 对话误当成业务代码。

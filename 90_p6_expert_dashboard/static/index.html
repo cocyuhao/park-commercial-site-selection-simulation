@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>公园商业选址仿真决策系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260602g" />
+    <link rel="stylesheet" href="/static/styles.css?v=20260602n" />
   </head>
   <body>
     <div class="platform-shell">
@@ -41,10 +41,21 @@
           </div>
           <div class="header-actions">
             <span id="dataVersion" class="status-pill">loading</span>
+            <button id="assetDrawerBtn" class="secondary-btn" type="button">资料池</button>
             <button id="headerDataBtn" class="secondary-btn">查看待补数据</button>
             <button id="headerAiBtn" class="primary-btn">打开 AI 工作台</button>
           </div>
         </header>
+        <aside id="assetDrawer" class="asset-drawer" aria-label="资料池">
+          <div class="asset-drawer-head">
+            <div>
+              <b>当前资料池</b>
+              <span>上传、启用、放弃和删除都在这里处理</span>
+            </div>
+            <button id="assetDrawerClose" type="button" aria-label="关闭资料池">×</button>
+          </div>
+          <div id="assetDrawerList" class="asset-drawer-list"></div>
+        </aside>
 
         <section id="overviewView" class="view active">
           <section class="home-grid">
@@ -204,10 +215,13 @@
                 </div>
               </div>
               <div id="mapCanvas" class="map-canvas mode-risk">
-                <img id="amapBaseMap" alt="高德静态地图或本地示意底图" />
-                <div id="mapRangeLayer"></div>
-                <div id="amapPoiLayer"></div>
-                <div id="mapNodes"></div>
+                <div id="amapInteractiveMap" class="amap-interactive-map"></div>
+                <div id="staticMapLayer" class="static-map-layer">
+                  <img id="amapBaseMap" alt="高德静态地图或本地示意底图" />
+                  <div id="mapRangeLayer"></div>
+                  <div id="amapPoiLayer"></div>
+                  <div id="mapNodes"></div>
+                </div>
                 <div class="map-loading">正在刷新地图图层……</div>
                 <div class="map-controls" aria-label="地图控制">
                   <button id="mapZoomIn" type="button" aria-label="放大">+</button>
@@ -306,23 +320,50 @@
 
         <section id="aiWorkspaceView" class="view ai-workspace">
           <section class="ai-workspace-layout">
-            <section class="panel ai-chat-card">
+            <aside class="ai-session-rail">
+              <div class="ai-rail-head">
+                <button id="newAiSessionBtn" type="button" class="new-chat-btn">新对话</button>
+              </div>
+              <div class="ai-rail-section">
+                <h3>项目</h3>
+                <div id="aiProjectList" class="ai-project-list"></div>
+              </div>
+              <div class="ai-rail-section">
+                <h3>历史记录</h3>
+                <div id="aiSessionList" class="ai-session-list"></div>
+              </div>
+            </aside>
+            <section class="ai-chat-card">
               <div class="chat-head">
                 <div>
                   <h2>专家 AI 工作台</h2>
-                  <p>一个输入框即可上传资料、描述位置、记录专家意见，并生成待复核修改建议。</p>
+                  <p>项目资料、地图位置、节点问题放在同一个回聊里处理。</p>
                 </div>
-                <span class="status-pill danger">待复核 / 非最终</span>
+                <div class="chat-head-actions">
+                  <button id="generateChatReportBtn" type="button" class="secondary-btn">生成报告</button>
+                  <span class="status-pill danger">待复核 / 非最终</span>
+                </div>
               </div>
               <div id="aiContext" class="ai-context-strip"></div>
-              <div id="chatMessages" class="chat-messages"></div>
+              <div id="chatMessages" class="chat-messages">
+                <div class="chat-empty-state">
+                  <h2>项目综合回聊</h2>
+                  <p>上传资料、描述位置或直接说问题。系统会按全局资料、当前地图和节点缺口一起看。</p>
+                </div>
+              </div>
               <form id="aiComposer" class="ai-composer">
                 <input id="aiFileInput" type="file" multiple hidden />
                 <div id="attachmentTray" class="attachment-tray"></div>
                 <div class="composer-box">
-                  <button id="attachBtn" class="composer-icon-btn" type="button" aria-label="上传资料">+</button>
-                  <textarea id="chatInput" rows="1" placeholder="输入专家意见、位置描述或问题；也可以先点 + 上传图纸、图片或表格"></textarea>
-                  <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送并登记">发送并登记</button>
+                  <textarea id="chatInput" rows="1" placeholder="发消息..."></textarea>
+                  <div class="composer-tools">
+                    <button id="attachBtn" class="composer-icon-btn" type="button" aria-label="上传资料">+</button>
+                    <button type="button" data-ai-prompt="请综合当前上传资料、地图 POI 和节点缺口，先给出三条最应该处理的问题。">快速分析</button>
+                    <button type="button" data-ai-prompt="请把我上传的资料拆成节点、证据、待补数据三类，并说明哪些能直接用于本项目。">资料解析</button>
+                    <button type="button" data-ai-prompt="请按给客户看的语气，重写当前报告摘要：先判断，再依据，最后下一步。">报告润色</button>
+                    <button type="button" data-ai-prompt="请核对当前地图目标、POI 和节点之间的关系，指出不该强行套用的地方。">地图核对</button>
+                  </div>
+                  <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送">↑</button>
                 </div>
               </form>
             </section>
@@ -330,6 +371,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260602g"></script>
+    <script src="/static/app.js?v=20260602n"></script>
   </body>
 </html>

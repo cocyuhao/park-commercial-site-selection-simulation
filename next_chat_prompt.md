@@ -886,3 +886,28 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - 浏览器能打开页面不等于磁盘文件还在；要同时看文件、`git status` 和重启后的接口。
 - 资料池只显示网页外部上传资料，不自动读取 `CAD图及其计划`。
 - 缺口计算缺少外部客流/TGI资料时必须阻塞，不可用奥森内置资料硬算。
+# 下一轮启动提示：AI 工作台已补项目会话、历史和生成报告
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前重点是 P6 dashboard 的专家 AI 工作台已经从固定节点式问答，改成项目会话工作流：左侧项目/历史/新对话，右侧当前对话，标题区右侧有“生成报告”按钮。
+
+启动后先读：
+1. `AGENTS.md`
+2. `40_quality_evidence/tool_plugin_web_report_20260602.md`
+3. `progress.md`
+4. `findings.md`
+5. `handoff_next_chat.md`
+6. `90_p6_expert_dashboard/app.py`
+7. `90_p6_expert_dashboard/static/app.js`
+
+最新验证证据：
+```powershell
+node --check 90_p6_expert_dashboard\static\app.js
+py -3.12 -m py_compile 90_p6_expert_dashboard\app.py
+```
+
+会话/报告链路证据：
+- `40_quality_evidence/ai_session_report_api_test_20260602.json`
+- `40_quality_evidence/selenium_ai_sessions_report_20260602.json`
+- `40_quality_evidence/selenium_ai_sessions_report_20260602.png`
+
+注意：不要把一次 QA 会话缓存误当成正式业务数据。AI 生成报告仍是 `needs_review / not_final`，最终商业报告必须等真实证据链和 P3 输入闭合。
