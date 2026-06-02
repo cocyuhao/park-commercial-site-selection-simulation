@@ -686,3 +686,19 @@
 - 伙伴新增的 simulation dry-run 后端可用于严格检查当前 POI、P3 gate 和经营字段缺口；它当前仍是结构化干跑，不输出 ROI、收益预测或最终排序。
 - P6 前端评分应以奥森上下文为前提；当用户搜索外部地点时，只能作为地图预览，不应把奥森训练资料和节点评分套到外部地点。
 - 本地存在 Office 临时文件 `~$重点项目策划思路20260521.docx`，会导致 P2 输入索引脚本把 DOCX 数量误判为 2；脚本应忽略 `~$` 临时文件。
+
+# 2026-06-02 员工B前端契约接入发现
+
+- 前端原 `scoreOf()` 会基于当前地图上下文、P3 gate、仿真结果、POI 数量和边界状态重新扣分，和员工A后端统一契约重复，且外部地点容易被误读为套用了奥森评分。
+- 修正后前端只消费后端 `discussion_score_draft`、`score_status`、`score_label`、`score_explanation`；外部地点由后端 `external_preview_only` 控制展示。
+- 专家界面更需要看到“为什么卡住 / 下一步补什么”，因此 dry-run 表格优先展示 `why_blocked` 和 `next_data_needed`，不再只看候选数、边界内数、缺字段数。
+- `gh` 当前 keyring token 失效且 GitHub API 连接失败，导致项目总门禁的 GitHub CLI 检查失败；代码语法、API 契约和 dry-run 结果断言均已通过。
+
+# 2026-06-02 员工A后端契约修正发现
+
+- 前端仍保留本地 `computeDraftScore` 逻辑，但后端现在已经提供 `discussion_score_draft`、`score_status`、`score_explanation` 和 `score_inputs`，后续员工B可逐步切换到后端字段。
+- 外部地图搜索上下文不能套用奥森训练节点和草案评分；后端在非奥森上下文返回 `score_status=external_preview_only`，只允许地图/POI/边界预览。
+- dry-run 只返回数量不够用；本轮已补 `why_blocked`、`missing_required_fields`、`next_data_needed`，让页面和导出结果能解释“为什么不能最终化”。
+- 上传资料、解析候选和 gate input 仍保留 JSON 缓存以兼容当前页面，但已同步写入 SQLite；后续可逐步迁移读取路径，不必一次性重构前端。
+- 既有 SQLite 文件可通过 `migrate_db()` 自动补 `simulation_results` 新列；不需要删除本地运行态数据库。
+- 本轮没有修改前端布局、样式或截图文件，避免和员工B职责冲突。

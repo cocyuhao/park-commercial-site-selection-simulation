@@ -468,7 +468,11 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 }
 .metric span,
 .mini-kv span { color: var(--muted); font-size: 12px; }
-.metric b { font-size: 19px; }
+.metric b {
+  min-width: 0;
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
 .detail-section { margin-top: 16px; }
 .detail-section h3 { margin-bottom: 8px; }
 .chip-row,
@@ -776,6 +780,12 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
   align-items: center;
   border-bottom: 1px solid var(--line);
 }
+.mini-kv b {
+  min-width: 0;
+  max-width: 68%;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
 .map-side-panel .primary-wide { margin: 0 16px 16px; width: calc(100% - 32px); }
 
 .gate-list { padding: 12px; display: grid; gap: 10px; }
@@ -882,6 +892,9 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
 }
 .simulation-table {
   overflow: auto;
+}
+.simulation-table table {
+  min-width: 760px;
 }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th, td {

@@ -3,7 +3,7 @@ IMPL-001,files,error,pass,"00_control/llm_routing.md exists=True, bytes=3065",00
 IMPL-002,files,error,pass,"00_control/credential_handoff.md exists=True, bytes=1300",00_control/credential_handoff.md
 IMPL-003,files,error,pass,"00_control/model_orchestration.md exists=True, bytes=5652",00_control/model_orchestration.md
 IMPL-004,files,error,pass,"00_control/plugin_routing.md exists=True, bytes=5359",00_control/plugin_routing.md
-IMPL-005,files,error,pass,"00_control/decisions.md exists=True, bytes=35052",00_control/decisions.md
+IMPL-005,files,error,pass,"00_control/decisions.md exists=True, bytes=37082",00_control/decisions.md
 IMPL-006,files,error,pass,"10_research/deepseek_api_notes.md exists=True, bytes=1670",10_research/deepseek_api_notes.md
 IMPL-007,files,error,pass,"60_model/configs/llm_task_routing.csv exists=True, bytes=9183",60_model/configs/llm_task_routing.csv
 IMPL-008,files,error,pass,"60_model/src/llm_router.py exists=True, bytes=6112",60_model/src/llm_router.py
@@ -45,10 +45,10 @@ IMPL-043,files,error,pass,"60_model/scripts/run_deepseek_p4_feedback_draft.py ex
 IMPL-044,files,error,pass,"60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730",60_model/scripts/review_deepseek_p4_feedback_draft.py
 IMPL-045,files,error,pass,"60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628",60_model/scripts/build_p2_method_prototype.py
 IMPL-046,files,error,pass,"60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838",60_model/scripts/review_p2_method_prototype.py
-IMPL-047,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=80268",90_p6_expert_dashboard/app.py
-IMPL-048,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=14774",90_p6_expert_dashboard/static/index.html
-IMPL-049,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=26162",90_p6_expert_dashboard/static/styles.css
-IMPL-050,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=49226",90_p6_expert_dashboard/static/app.js
+IMPL-047,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=87230",90_p6_expert_dashboard/app.py
+IMPL-048,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=14773",90_p6_expert_dashboard/static/index.html
+IMPL-049,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=26340",90_p6_expert_dashboard/static/styles.css
+IMPL-050,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=49782",90_p6_expert_dashboard/static/app.js
 IMPL-051,files,error,pass,"60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104",60_model/llm_runs/deepseek_table_classification_raw.jsonl
 IMPL-052,files,error,pass,"60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172",60_model/llm_runs/deepseek_table_classification_progress.json
 IMPL-053,files,error,pass,"60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288",60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
@@ -716,11 +716,4 @@ IMPL-714,security,error,pass,.env.example keeps empty placeholders only,.env.exa
 IMPL-715,security,error,pass,.env has local DeepSeek key configured,.env
 IMPL-716,security,error,pass,.env has local Amap key configured,.env
 IMPL-717,security,error,pass,.gitignore excludes .env,.gitignore
-IMPL-718,github,error,pass,gh repo list cocyuhao: exit=0,"gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url"
-IMPL-719,github,error,pass,fork parent verification failures=[],gh repo list cocyuhao
-IMPL-720,github,error,pass,archive repo contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents
-IMPL-721,github,error,pass,"archive root paths=['README.md', 'docs', 'manifests']",cocyuhao/tech-shrimp-open-source-archive
-IMPL-722,github,error,pass,archive docs contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/docs
-IMPL-723,github,error,pass,"archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']",cocyuhao/tech-shrimp-open-source-archive/docs
-IMPL-724,github,error,pass,archive manifests contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/manifests
-IMPL-725,github,error,pass,"archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']",cocyuhao/tech-shrimp-open-source-archive/manifests
+IMPL-718,github,error,fail,gh repo list cocyuhao: exit=1,"gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url"

@@ -2,9 +2,9 @@
 
 ## 结论
 
-- 总检查项：725
-- 状态统计：{'pass': 725}
-- 失败项：0
+- 总检查项：718
+- 状态统计：{'fail': 1, 'pass': 717}
+- 失败项：1
 - 警告项：0
 
 ## 覆盖范围
@@ -28,7 +28,7 @@
 
 ## 失败项
 
-- 无。
+- `IMPL-718` github: gh repo list cocyuhao: exit=1 (gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url)
 
 ## 检查明细
 
@@ -36,7 +36,7 @@
 - `IMPL-002` `pass` `files` 00_control/credential_handoff.md exists=True, bytes=1300
 - `IMPL-003` `pass` `files` 00_control/model_orchestration.md exists=True, bytes=5652
 - `IMPL-004` `pass` `files` 00_control/plugin_routing.md exists=True, bytes=5359
-- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=35052
+- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=37082
 - `IMPL-006` `pass` `files` 10_research/deepseek_api_notes.md exists=True, bytes=1670
 - `IMPL-007` `pass` `files` 60_model/configs/llm_task_routing.csv exists=True, bytes=9183
 - `IMPL-008` `pass` `files` 60_model/src/llm_router.py exists=True, bytes=6112
@@ -78,10 +78,10 @@
 - `IMPL-044` `pass` `files` 60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730
 - `IMPL-045` `pass` `files` 60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628
 - `IMPL-046` `pass` `files` 60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838
-- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=80268
-- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=14774
-- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=26162
-- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=49226
+- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=87230
+- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=14773
+- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=26340
+- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=49782
 - `IMPL-051` `pass` `files` 60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104
 - `IMPL-052` `pass` `files` 60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172
 - `IMPL-053` `pass` `files` 60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288
@@ -749,11 +749,4 @@
 - `IMPL-715` `pass` `security` .env has local DeepSeek key configured
 - `IMPL-716` `pass` `security` .env has local Amap key configured
 - `IMPL-717` `pass` `security` .gitignore excludes .env
-- `IMPL-718` `pass` `github` gh repo list cocyuhao: exit=0
-- `IMPL-719` `pass` `github` fork parent verification failures=[]
-- `IMPL-720` `pass` `github` archive repo contents: exit=0
-- `IMPL-721` `pass` `github` archive root paths=['README.md', 'docs', 'manifests']
-- `IMPL-722` `pass` `github` archive docs contents: exit=0
-- `IMPL-723` `pass` `github` archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']
-- `IMPL-724` `pass` `github` archive manifests contents: exit=0
-- `IMPL-725` `pass` `github` archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']
+- `IMPL-718` `fail` `github` gh repo list cocyuhao: exit=1

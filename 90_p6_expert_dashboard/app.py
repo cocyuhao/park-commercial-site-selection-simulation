@@ -70,8 +70,14 @@ from store import (  # noqa: E402
     get_results,
     import_existing_outputs,
     list_calibration_gates,
+    list_gate_inputs,
     list_jobs,
     list_poi_candidates,
+    list_runtime_uploads,
+    list_upload_candidates,
+    upsert_gate_input,
+    upsert_runtime_upload,
+    upsert_upload_candidate,
 )
 
 
@@ -161,6 +167,123 @@ def normalize_row(row: dict[str, str]) -> dict[str, Any]:
     return normalized
 
 
+def review_meta(
+    *,
+    source_hint: str = "",
+    evidence_hint: str = "",
+    status_label: str = "待复核 / 非最终",
+) -> dict[str, Any]:
+    return {
+        "output_status": "needs_review",
+        "not_final": True,
+        "status_label": status_label,
+        "source_hint": source_hint,
+        "evidence_hint": evidence_hint,
+    }
+
+
+def is_osen_context(context: dict[str, Any]) -> bool:
+    text = f"{context.get('keyword', '')}{context.get('matched_name', '')}"
+    return "奥森" in text or "奥林匹克森林" in text
+
+
+def blocked_gate_count(gates: list[dict[str, Any]]) -> int:
+    return sum(
+        1
+        for gate in gates
+        if gate.get("required_before_p4_conclusion") == "yes"
+        and gate.get("current_gate_status") not in {"closed", "passed"}
+    )
+
+
+def node_missing_fields(node: dict[str, Any], gates: list[dict[str, Any]]) -> list[str]:
+    fields: list[str] = []
+    for item in node.get("data_requests", []):
+        value = item.get("missing_input") or item.get("calibration_domain")
+        if value and value not in fields:
+            fields.append(str(value))
+    for gate in gates:
+        if gate.get("required_before_p4_conclusion") == "yes" and gate.get("current_gate_status") not in {"closed", "passed"}:
+            domain = str(gate.get("calibration_domain") or "")
+            if domain and domain not in fields:
+                fields.append(domain)
+    return fields
+
+
+def backend_draft_score(
+    node: dict[str, Any],
+    *,
+    gates: list[dict[str, Any]],
+    amap_supply: list[dict[str, Any]],
+    map_boundary: dict[str, Any] | None,
+    estimated_boundary: dict[str, Any] | None,
+    map_context: dict[str, Any],
+) -> dict[str, Any]:
+    if not is_osen_context(map_context):
+        return {
+            "discussion_score_draft": 0,
+            "score_status": "external_preview_only",
+            "score_label": "外部预览",
+            "score_explanation": "当前地图不是奥森项目上下文，只返回地图/POI/边界预览，不套用奥森节点评分。",
+            "score_inputs": {
+                "project_context": "external",
+                "base_score": node.get("discussion_score", ""),
+            },
+        }
+    base = safe_float(node.get("discussion_score")) or 50.0
+    gate_count = blocked_gate_count(gates)
+    missing_fields = node_missing_fields(node, gates)
+    boundary_status = (map_boundary or estimated_boundary or {}).get("boundary_status", "estimated_range_needs_review")
+    poi_count = len(amap_supply)
+    penalty = min(30, gate_count * 5) + min(18, len(missing_fields) * 2)
+    if poi_count < 20:
+        penalty += 6
+    if "estimated" in str(boundary_status):
+        penalty += 8
+    score = max(0, min(100, round(base - penalty)))
+    return {
+        "discussion_score_draft": score,
+        "score_status": "needs_review_not_final",
+        "score_label": f"{score} 分 · 待复核",
+        "score_explanation": "后端草案分仅用于讨论，已按 P3 gate、缺失字段、POI 数量和边界状态扣分；不是最终排序。",
+        "score_inputs": {
+            "project_context": "osen",
+            "base_score": base,
+            "blocked_gate_count": gate_count,
+            "missing_required_fields": missing_fields,
+            "poi_context_count": poi_count,
+            "boundary_status": boundary_status,
+            "penalty": penalty,
+        },
+    }
+
+
+def enrich_gate(row: dict[str, Any]) -> dict[str, Any]:
+    status = row.get("current_gate_status", "")
+    label = "已闭合" if status in {"closed", "passed"} else "待补资料 / 待复核"
+    return {
+        **row,
+        **review_meta(
+            source_hint=row.get("source_table", "p3_calibration_gate_status.csv"),
+            evidence_hint=row.get("blocking_reason", ""),
+            status_label=label,
+        ),
+    }
+
+
+def enrich_poi(row: dict[str, Any]) -> dict[str, Any]:
+    boundary = str(row.get("boundary_filter_status", ""))
+    label = "公开边界内候选 / 待复核" if boundary == "inside_osm_polygon" else "周边或边界未确认 / 待复核"
+    return {
+        **row,
+        **review_meta(
+            source_hint=row.get("source_path", "poi_supply_candidates_amap_boundary_filter.csv"),
+            evidence_hint=row.get("supply_use_status", "do_not_use_as_in_park_supply_yet"),
+            status_label=label,
+        ),
+    }
+
+
 def load_dashboard() -> dict[str, Any]:
     nodes = read_csv_rows(PROCESSED / "p2_project_node_candidates.csv")
     priorities = read_csv_rows(PROCESSED / "p4_feedback_node_priority_draft_deepseek.csv")
@@ -197,26 +320,50 @@ def load_dashboard() -> dict[str, Any]:
         node_id = row.get("node_id", "")
         priority = priority_by_id.get(node_id, {})
         source_project_name = row.get("source_project_name", "")
+        base_node = {
+            **normalize_row(row),
+            "area_sqm": priority.get("area_sqm") or row.get("area_sqm") or "",
+            "business_direction": parse_list(priority.get("business_direction") or row.get("candidate_business_formats")),
+            "candidate_business_formats": parse_list(row.get("candidate_business_formats")),
+            "discussion_score": priority.get("discussion_score", ""),
+            "feedback_priority": priority.get("feedback_priority", "discussion_only"),
+            "score_reason": priority.get("score_reason", ""),
+            "placeholder_inputs_used": priority.get("placeholder_inputs_used", ""),
+            "must_collect_before_final": priority.get("must_collect_before_final", ""),
+            "use_boundary": priority.get("use_boundary", "feedback_draft_not_final_ranking"),
+            "output_status": priority.get("output_status") or row.get("output_status") or "needs_review",
+            "data_requests": request_by_node.get(node_id, []),
+            "feedback_scenarios": scenario_by_node.get(node_id, []),
+            "assumption_refs": assumption_by_project.get(source_project_name, []),
+            "schematic_position": {
+                "x": 18 + (index % 3) * 30,
+                "y": 28 + (index // 3) * 34,
+            },
+        }
+        score_payload = backend_draft_score(
+            base_node,
+            gates=gates,
+            amap_supply=amap_supply,
+            map_boundary=map_boundary,
+            estimated_boundary=estimated_boundary,
+            map_context=map_context,
+        )
+        missing_fields = node_missing_fields(base_node, gates)
         merged_nodes.append(
             {
-                **normalize_row(row),
-                "area_sqm": priority.get("area_sqm") or row.get("area_sqm") or "",
-                "business_direction": parse_list(priority.get("business_direction") or row.get("candidate_business_formats")),
-                "candidate_business_formats": parse_list(row.get("candidate_business_formats")),
-                "discussion_score": priority.get("discussion_score", ""),
-                "feedback_priority": priority.get("feedback_priority", "discussion_only"),
-                "score_reason": priority.get("score_reason", ""),
-                "placeholder_inputs_used": priority.get("placeholder_inputs_used", ""),
-                "must_collect_before_final": priority.get("must_collect_before_final", ""),
-                "use_boundary": priority.get("use_boundary", "feedback_draft_not_final_ranking"),
-                "output_status": priority.get("output_status") or row.get("output_status") or "needs_review",
-                "data_requests": request_by_node.get(node_id, []),
-                "feedback_scenarios": scenario_by_node.get(node_id, []),
-                "assumption_refs": assumption_by_project.get(source_project_name, []),
-                "schematic_position": {
-                    "x": 18 + (index % 3) * 30,
-                    "y": 28 + (index // 3) * 34,
-                },
+                **base_node,
+                **review_meta(
+                    source_hint="p2_project_node_candidates.csv; p4_feedback_node_priority_draft_deepseek.csv",
+                    evidence_hint="P4 feedback draft; not final ranking",
+                    status_label="反馈草案 / 待复核",
+                ),
+                **score_payload,
+                "missing_required_fields": missing_fields,
+                "next_data_needed": [
+                    "补齐 P3 gate 真实来源",
+                    "确认 DWG/DXF/GeoJSON/SVG/PDF 可信几何导出",
+                    "补齐真实客流、转化率、收益成本和运营授权",
+                ],
             }
         )
 
@@ -240,7 +387,7 @@ def load_dashboard() -> dict[str, Any]:
             "scenario_matrix": [normalize_row(row) for row in scenarios],
             "data_requests": [normalize_row(row) for row in requests],
         },
-        "p3_gates": [normalize_row(row) for row in gates],
+        "p3_gates": [enrich_gate(normalize_row(row)) for row in gates],
         "p2_gaps": [normalize_row(row) for row in gaps],
         "amap": {
             "status": amap_status(amap_supply),
@@ -926,6 +1073,8 @@ def save_upload_index(rows: list[dict[str, Any]]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     uploaded_only = [row for row in rows if not str(row.get("upload_id", "")).startswith("BUILTIN-")]
     UPLOAD_INDEX_FILE.write_text(json.dumps(uploaded_only, ensure_ascii=False, indent=2), encoding="utf-8")
+    for row in uploaded_only:
+        upsert_runtime_upload(row)
 
 
 def guess_upload_category(filename: str) -> str:
@@ -954,6 +1103,8 @@ def load_gate_inputs() -> list[dict[str, Any]]:
 def save_gate_inputs(rows: list[dict[str, Any]]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     GATE_INPUT_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    for row in rows:
+        upsert_gate_input(row)
 
 
 def load_upload_candidates() -> list[dict[str, Any]]:
@@ -969,6 +1120,8 @@ def load_upload_candidates() -> list[dict[str, Any]]:
 def save_upload_candidates(rows: list[dict[str, Any]]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     UPLOAD_CANDIDATES_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    for row in rows:
+        upsert_upload_candidate(row)
 
 
 def find_upload(upload_id: str) -> dict[str, Any]:
@@ -1133,14 +1286,27 @@ def index() -> FileResponse:
 def dashboard() -> dict[str, Any]:
     payload = load_dashboard()
     payload["expert_feedback"] = load_feedback()
+    payload["api_contract"] = {
+        **review_meta(
+            source_hint="backend_response_schema_v2",
+            evidence_hint="All conclusions remain needs_review / not_final",
+            status_label="接口字段已统一 / 待前端逐步切换",
+        ),
+        "machine_status_field": "output_status",
+        "human_status_field": "status_label",
+        "score_field": "discussion_score_draft",
+    }
     return payload
 
 
 @app.get("/api/uploads")
 def uploads() -> dict[str, Any]:
+    items = load_upload_index()
     return {
-        "output_status": "needs_review",
-        "items": load_upload_index(),
+        **review_meta(source_hint="uploaded_sources.json + runtime_uploads", status_label="资料池 / 待解析"),
+        "count": len(items),
+        "db_runtime_count": len(list_runtime_uploads()),
+        "items": items,
         "accepted_categories": ["CAD / 图纸", "现场图片 / 位置图", "数据表", "方案文件", "其他资料"],
     }
 
@@ -1204,10 +1370,12 @@ def save_gate_input(payload: GateInput) -> dict[str, Any]:
 
 @app.get("/api/upload-candidates")
 def upload_candidates() -> dict[str, Any]:
+    items = load_upload_candidates()
     return {
-        "output_status": "needs_review",
-        "not_final": True,
-        "items": load_upload_candidates(),
+        **review_meta(source_hint="upload_parse_candidates.json + upload_candidates", status_label="解析候选 / 待人工确认"),
+        "count": len(items),
+        "db_candidate_count": len(list_upload_candidates()),
+        "items": items,
     }
 
 
@@ -1535,10 +1703,9 @@ def integration_status() -> dict[str, Any]:
 @app.get("/api/data/poi-candidates")
 def api_poi_candidates(limit: int = 200) -> dict[str, Any]:
     import_existing_outputs()
-    rows = list_poi_candidates(limit=limit)
+    rows = [enrich_poi(row) for row in list_poi_candidates(limit=limit)]
     return {
-        "output_status": "needs_review",
-        "not_final": True,
+        **review_meta(source_hint="SQLite poi_candidates", status_label="POI 候选 / 待复核"),
         "count": len(rows),
         "items": rows,
     }
@@ -1547,10 +1714,9 @@ def api_poi_candidates(limit: int = 200) -> dict[str, Any]:
 @app.get("/api/data/gates")
 def api_calibration_gates() -> dict[str, Any]:
     import_existing_outputs()
-    rows = list_calibration_gates()
+    rows = [enrich_gate(row) for row in list_calibration_gates()]
     return {
-        "output_status": "needs_review",
-        "not_final": True,
+        **review_meta(source_hint="SQLite calibration_gates", status_label="P3 闸门 / 待闭合"),
         "count": len(rows),
         "items": rows,
     }
@@ -1558,10 +1724,11 @@ def api_calibration_gates() -> dict[str, Any]:
 
 @app.get("/api/simulation/jobs")
 def api_simulation_jobs() -> dict[str, Any]:
+    items = list_jobs()
     return {
-        "output_status": "needs_review",
-        "not_final": True,
-        "items": list_jobs(),
+        **review_meta(source_hint="SQLite simulation_jobs", status_label="仿真任务 / 非最终"),
+        "count": len(items),
+        "items": items,
     }
 
 
@@ -1585,8 +1752,7 @@ def api_create_simulation_job(request: SimulationJobRequest) -> dict[str, Any]:
         raise HTTPException(status_code=400, detail=f"simulation failed: {type(exc).__name__}: {exc}") from exc
     job = get_job(job_id)
     return {
-        "output_status": "needs_review",
-        "not_final": True,
+        **review_meta(source_hint="SQLite simulation_jobs + simulation_results", status_label="干跑完成 / 待复核"),
         "job": job,
         "result_count": len(get_results(job_id)),
     }
@@ -1598,8 +1764,7 @@ def api_get_simulation_job(job_id: str) -> dict[str, Any]:
     if not job:
         raise HTTPException(status_code=404, detail="simulation job not found")
     return {
-        "output_status": "needs_review",
-        "not_final": True,
+        **review_meta(source_hint="SQLite simulation_jobs", status_label="仿真任务 / 非最终"),
         "job": job,
     }
 
@@ -1610,9 +1775,9 @@ def api_get_simulation_results(job_id: str) -> dict[str, Any]:
     if not job:
         raise HTTPException(status_code=404, detail="simulation job not found")
     return {
-        "output_status": "needs_review",
-        "not_final": True,
+        **review_meta(source_hint="SQLite simulation_results", status_label="干跑结果 / 待复核"),
         "job": job,
+        "count": len(get_results(job_id)),
         "items": get_results(job_id),
     }
 
@@ -1629,16 +1794,23 @@ def api_export_simulation_results(job_id: str, format: str = "json") -> Response
             "job_id",
             "park_id",
             "category",
+            "group_context",
+            "boundary_filter_status",
+            "source_hint",
             "candidate_count",
             "inside_osm_polygon_count",
             "missing_business_field_count",
             "blocked_gate_count",
+            "why_blocked",
+            "missing_required_fields",
+            "next_data_needed",
             "output_status",
             "not_final",
+            "status_label",
         ]
         lines = [",".join(fields)]
         for row in results:
-            lines.append(",".join(str(row.get(field, "")) for field in fields))
+            lines.append(",".join(json.dumps(row.get(field, ""), ensure_ascii=False) for field in fields))
         return Response(
             content="\n".join(lines) + "\n",
             media_type="text/csv; charset=utf-8",

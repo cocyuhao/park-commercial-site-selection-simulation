@@ -1,3 +1,49 @@
+# 2026-06-02 员工B前端消费后端契约修正
+
+### 已完成
+- 判断员工A后端契约统一后，下一步应由员工B前端接入后端字段，而不是继续扩展后端计算。
+- `90_p6_expert_dashboard/static/app.js` 已停止在前端用 gate、仿真结果、POI 数量自行重算草案分；节点分数改为读取后端 `discussion_score_draft`。
+- 节点列表、详情、地图侧栏继续展示 `score_status`、`score_label`、`score_explanation`、`missing_required_fields`、`next_data_needed`。
+- 外部地点继续按 `external_preview_only` 展示为地图预览，不套用奥森节点评分。
+- 仿真面板表格改为展示 `why_blocked` 和 `next_data_needed`，弱化单纯计数，便于专家理解“为什么卡住 / 下一步补什么”。
+- `90_p6_expert_dashboard/static/styles.css` 只补了长文本换行和仿真表格最小宽度，避免解释字段撑破布局。
+- `90_p6_expert_dashboard/static/index.html` 已更新静态资源版本号，避免旧 JS/CSS 缓存。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 60_model\scripts\import_existing_outputs.py` 输出 `poi_candidates=227`、`calibration_gates=6`。
+- 本地服务 `http://127.0.0.1:8765/api/dashboard` 返回 200；页面引用 `app.js?v=20260602b` 和 `styles.css?v=20260602b`。
+- API 契约断言通过：节点包含 `discussion_score_draft`、`score_status`、`score_explanation`、`next_data_needed`，`api_contract.score_field=discussion_score_draft`。
+- FastAPI TestClient 创建 dry-run job 200，结果 22 行，首行含 `why_blocked`、`next_data_needed`、`output_status=needs_review`。
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 本轮为 `checks=718 failures=1`，唯一失败是外部 GitHub CLI 检查 `gh repo list cocyuhao`，原因是本机 `gh` keyring token 失效 / GitHub API 连接失败；非本次代码逻辑失败。
+
+### 当前边界
+- 本轮只改前端消费和显示逻辑，不改后端计算、数据库、仿真分组算法。
+- dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测、最终排序或最终推荐。
+
+# 2026-06-02 员工A后端接口契约与 dry-run 分组修正
+
+### 已完成
+- 统一后端返回语义：`/api/dashboard`、`/api/data/poi-candidates`、`/api/data/gates`、`/api/uploads`、`/api/upload-candidates`、`/api/simulation/jobs*` 均补充 `output_status=needs_review`、`not_final=true`、`status_label`、`source_hint`、`evidence_hint` 等字段。
+- 节点返回新增后端草案评分字段：`discussion_score_draft`、`score_status`、`score_label`、`score_explanation`、`score_inputs`；外部搜索地点只返回 `external_preview_only`，不套用奥森节点评分。
+- 结构化仿真 dry-run 从单纯 `park_id + standard_categories` 扩展为 `park_id + category + boundary_filter_status` 分组，并返回 `group_context`、`why_blocked`、`missing_required_fields`、`next_data_needed`、`source_hint`。
+- SQLite schema 新增上传资料、解析候选、gate input 运行态表；现有 JSON 缓存流程保留，同时写入 SQLite，避免破坏当前页面。
+- `simulation_results` 增加解释字段和迁移逻辑，已有本地 SQLite 可自动补列，不需要删库。
+- 保持员工A边界：未修改 `90_p6_expert_dashboard/static/app.js`、`index.html`、`styles.css` 和 `qa/` 截图。
+
+### 验证
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 60_model\scripts\import_existing_outputs.py` 输出 `poi_candidates=227`、`calibration_gates=6`。
+- FastAPI TestClient smoke test：`/api/dashboard` 200，节点 6 个；`/api/data/poi-candidates` 200；`/api/data/gates` 200；创建 dry-run job 200，结果 22 行，且包含 `why_blocked` 与 `next_data_needed`。
+- `/api/amap/tips?q=aosen` 第一项为“奥林匹克森林公园”；`dongba` 第一项为“东坝公园”；`cygy` 第一项为“朝阳公园”。
+- 项目总门禁：`py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。
+
+### 当前边界
+- dry-run 仍只是结构化检查，不输出 ROI、收益预测、最终排序或最终推荐。
+- 所有 AI、地图、上传解析和仿真输出仍为 `needs_review / not_final`。
+- 真实 Key 继续只允许从 `.env` 或环境变量读取；本轮未写入前端、JSON、Markdown 或日志。
+
 # 项目进度
 
 ## 2026-06-01 员工A后端改进第一阶段

@@ -1,3 +1,20 @@
+# DEC-064 P6 前端草案评分只消费后端契约字段
+
+- 日期：2026-06-02
+- 决策：P6 专家驾驶舱前端不再自行根据 gate、POI、边界和仿真结果重算草案分；前端只展示后端返回的 `discussion_score_draft`、`score_status`、`score_label`、`score_explanation`。
+- 原因：员工A/员工B 分工要求后端负责数据闭环和分组逻辑，前端负责展示与专家工作流；重复计算会导致外部地图地点误套奥森节点评分。
+- 影响：外部地点统一显示为 `external_preview_only` / 地图预览；节点详情和仿真面板优先展示 `missing_required_fields`、`why_blocked`、`next_data_needed`。
+- 边界：该分数仍为 `needs_review / not_final`，不得转写为最终排序、收益预测、ROI 或推荐结论。
+
+# DEC-063 P6 后端契约统一与 dry-run 解释字段
+
+- 日期：2026-06-02
+- 决策：员工A后端接口统一返回 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`，并把节点草案评分和 dry-run 阻塞解释放到后端生成；前端可继续保留旧字段，后续逐步切换到后端字段。
+- 原因：前端自行猜字段和计算分数会导致 A/B 职责冲突；dry-run 只返回数量不能解释为什么不能最终化；外部地图搜索地点不能套用奥森训练节点评分。
+- 实现：`/api/dashboard` 增加 `api_contract` 和节点评分解释；`/api/data/*`、`/api/uploads`、`/api/upload-candidates`、`/api/simulation/*` 增加统一语义字段；`simulation_results` 增加 `group_context`、`why_blocked`、`missing_required_fields`、`next_data_needed`；上传资料、解析候选和 gate input 同步落 SQLite。
+- 边界：后端草案分仅用于讨论，`score_status=external_preview_only` 时只能做地图预览；dry-run 仍不得输出 ROI、收益预测、最终排序或最终推荐。
+- 后续校验：本轮 `py_compile`、接口 smoke、AMap tips smoke 和项目总门禁均通过；最新总门禁为 `checks=725 failures=0`。
+
 # 决策日志
 
 | ID | 日期 | 决策 | 原因 | 风险 | 后续校验 |

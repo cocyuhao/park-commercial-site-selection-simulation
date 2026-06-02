@@ -1,3 +1,57 @@
+# 2026-06-02 最新交接：员工B前端已接入后端评分契约
+
+本轮在员工A后端契约统一后，继续完成员工B前端显示修正；只修改 `90_p6_expert_dashboard/static/`，未继续改后端计算/数据库/仿真分组。
+
+已完成：
+- `static/app.js` 中节点草案分改为读取后端 `node.discussion_score_draft`，不再由前端根据 gate、POI、边界和仿真结果自行扣分。
+- 节点列表、节点详情、地图侧栏展示后端返回的 `score_status`、`score_label`、`score_explanation`。
+- 外部地图地点按 `external_preview_only` 展示为“外部预览/仅地图预览”，不套用奥森节点评分。
+- 节点详情新增后端缺口提示：`missing_required_fields`、`next_data_needed`。
+- 仿真结果表格新增可读解释：`why_blocked`、`next_data_needed`。
+- `static/styles.css` 只补长文本换行和仿真表格宽度稳定性；`static/index.html` 更新 JS/CSS cache bust 版本。
+
+验证结果：
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 60_model\scripts\import_existing_outputs.py` 输出 `poi_candidates=227`、`calibration_gates=6`。
+- 本地服务 `http://127.0.0.1:8765/api/dashboard` 200；首页引用 `app.js?v=20260602b`、`styles.css?v=20260602b`。
+- API 契约断言通过：节点含 `discussion_score_draft`、`score_status`、`score_explanation`、`next_data_needed`，`api_contract.score_field=discussion_score_draft`。
+- FastAPI TestClient 创建 dry-run job 200，结果 22 行，含 `why_blocked` 和 `next_data_needed`。
+- 项目总门禁目前 `checks=718 failures=1`，唯一失败是 `gh repo list cocyuhao`，原因是本机 GitHub CLI keyring token 失效 / API 连接失败；不是本轮代码逻辑失败。
+
+继续边界：
+- dry-run 不是最终仿真，不输出 ROI、收益预测、最终排序或最终推荐。
+- 前端继续只消费后端契约字段，不恢复本地评分算法。
+- GitHub 上传优先用普通 `git push`；`gh` 相关检查需要用户重新认证后才能恢复为 0 failure。
+
+# 2026-06-02 最新交接：员工A后端契约与 dry-run 解释字段
+
+当前服务仍为 `http://127.0.0.1:8765/`，本轮只改员工A职责范围，未改 `90_p6_expert_dashboard/static/` 前端文件。
+
+已完成：
+- `/api/dashboard` 增加 `api_contract`，节点增加 `discussion_score_draft`、`score_status`、`score_label`、`score_explanation`、`score_inputs`、`missing_required_fields`、`next_data_needed`。
+- `/api/data/poi-candidates`、`/api/data/gates`、`/api/uploads`、`/api/upload-candidates`、`/api/simulation/jobs*` 统一补充 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`。
+- 非奥森地图上下文返回 `score_status=external_preview_only`，只做地图/POI/边界预览，不套用奥森节点评分。
+- `60_model/simulation/engine.py` 的 dry-run 改为按 `park_id + category + boundary_filter_status` 分组，结果包含 `group_context`、`why_blocked`、`missing_required_fields`、`next_data_needed`。
+- `60_model/db/schema.sql` 和 `store.py` 新增运行态上传、上传解析候选、gate input 表；JSON 缓存仍保留，同时写 SQLite。
+- `simulation_results` 新增解释字段并带迁移逻辑，已有本地 SQLite 会自动补列。
+
+验证结果：
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 60_model\scripts\import_existing_outputs.py` 输出 `poi_candidates=227`、`calibration_gates=6`。
+- FastAPI TestClient：`/api/dashboard` 200，节点 6 个；`/api/data/poi-candidates` 200；`/api/data/gates` 200；创建 simulation job 200，结果 22 行，含 `why_blocked` 和 `next_data_needed`。
+- `/api/amap/tips?q=aosen` 第一项“奥林匹克森林公园”；`dongba` 第一项“东坝公园”；`cygy` 第一项“朝阳公园”。
+- 项目总门禁：`checks=725 failures=0`。
+
+后续给员工B的字段：
+- `node.discussion_score_draft`：后端草案分，仅奥森上下文有效。
+- `node.score_status`：`needs_review_not_final` 或 `external_preview_only`。
+- `node.score_explanation`：扣分/禁用原因中文说明。
+- `node.score_inputs`：blocked gate、缺失字段、POI 数、边界状态等可展示解释。
+- `simulation_result.why_blocked`、`missing_required_fields`、`next_data_needed`：仿真干跑解释字段。
+
+边界继续保持：dry-run 不是最终仿真；不得输出 ROI、收益预测、最终排序或最终推荐；所有 AI/地图/上传解析/仿真输出仍为 `needs_review / not_final`。
+
 # 下一次会话交接
 
 ## 2026-06-01 员工A后端改进交接

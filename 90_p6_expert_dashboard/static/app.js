@@ -57,36 +57,21 @@ function gateTitle(domain) {
   return GATE_LABELS[domain] || domain || "待确认闸门";
 }
 
+function listItems(value) {
+  if (Array.isArray(value)) return value.filter((item) => valueText(item, "").trim());
+  if (value === undefined || value === null || value === "") return [];
+  return [String(value)];
+}
+
 function scoreOf(node) {
-  const base = Number(node?.discussion_score || 0);
-  const raw = Number.isFinite(base) ? base : 50;
-  const context = state.data?.amap?.map_context || {};
-  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
-  const isOsen = contextText.includes("奥森") || contextText.includes("奥林匹克森林");
-  if (!isOsen) return 0;
-  const gates = state.data?.p3_gates || [];
-  const blockedGateCount = gates.filter((gate) => {
-    const status = String(gate.current_gate_status || "");
-    return status.includes("blocked") || status.includes("pending") || status.includes("not_ready");
-  }).length;
-  const simRows = state.latestSimulationResults?.items || [];
-  const simMissing = simRows.reduce((sum, row) => sum + Number(row.missing_business_field_count || 0), 0);
-  const simBlocked = Number(simRows[0]?.blocked_gate_count || blockedGateCount || 0);
-  const poiCount = Number(state.data?.amap?.status?.point_count || 0);
-  const boundaryStatus = String(state.data?.amap?.boundary_status || "");
-  let penalty = 0;
-  penalty += Math.min(30, simBlocked * 5);
-  penalty += Math.min(18, Math.ceil(simMissing / 8));
-  if (!simRows.length) penalty += 8;
-  if (poiCount < 20) penalty += 6;
-  if (boundaryStatus.includes("estimated")) penalty += 8;
-  return Math.max(0, Math.min(100, Math.round(raw - penalty)));
+  const direct = Number(node?.discussion_score_draft);
+  if (Number.isFinite(direct)) return Math.max(0, Math.min(100, Math.round(direct)));
+  const fallback = Number(node?.discussion_score || 0);
+  return Number.isFinite(fallback) ? Math.max(0, Math.min(100, Math.round(fallback))) : 0;
 }
 
 function scoreText(node) {
-  const context = state.data?.amap?.map_context || {};
-  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
-  if (!(contextText.includes("奥森") || contextText.includes("奥林匹克森林"))) return "外部预览";
+  if (node?.score_status === "external_preview_only") return node.score_label || "外部预览";
   return `${scoreOf(node)} 分`;
 }
 
@@ -164,10 +149,8 @@ function setView(view) {
 }
 
 function priorityLabel(node) {
+  if (node?.score_status === "external_preview_only") return [node.score_label || "仅地图预览", "fail"];
   const score = scoreOf(node);
-  const context = state.data?.amap?.map_context || {};
-  const contextText = `${context.keyword || ""}${context.matched_name || ""}`;
-  if (!(contextText.includes("奥森") || contextText.includes("奥林匹克森林"))) return ["仅地图预览", "fail"];
   if (score >= 70) return ["优先讨论", "good"];
   if (score >= 55) return ["需补证再议", "warn"];
   return ["暂缓讨论", "fail"];
@@ -287,18 +270,31 @@ function renderDetail() {
   const node = currentNode();
   if (!node) return;
   $("#detailTitle").textContent = `${shortId(node.node_id)} ${node.node_name}`;
-  $("#statusTag").textContent = "待复核 / 非最终";
+  $("#statusTag").textContent = node.status_label || "待复核 / 非最终";
   const directions = node.business_direction?.length ? node.business_direction : node.candidate_business_formats || [];
   const scenarios = node.feedback_scenarios?.length ? node.feedback_scenarios : [];
   const requests = node.data_requests?.length ? node.data_requests : [];
   const assumptions = node.assumption_refs?.slice(0, 3) || [];
+  const missingFields = listItems(node.missing_required_fields);
+  const nextDataNeeded = listItems(node.next_data_needed);
+  const scoreInputs = node.score_inputs || {};
 
   $("#detailBody").innerHTML = `
     <div class="detail-top">
       <div class="metric"><span>面积</span><b>${esc(node.area_sqm)} m²</b></div>
-      <div class="metric"><span>实时草案分</span><b>${esc(scoreText(node))}</b></div>
-      <div class="metric"><span>边界</span><b>反馈草案</b></div>
+      <div class="metric"><span>后端草案分</span><b>${esc(scoreText(node))}</b></div>
+      <div class="metric"><span>状态</span><b>${esc(node.score_label || node.status_label || "待复核")}</b></div>
     </div>
+    <section class="detail-section">
+      <h3>评分解释</h3>
+      <p>${esc(node.score_explanation || "后端暂未返回评分解释；当前仍按待复核草案展示。")}</p>
+      <div class="request-tags">
+        <span>score_status: ${esc(node.score_status || "needs_review_not_final")}</span>
+        <span>blocked_gate: ${esc(scoreInputs.blocked_gate_count ?? "待复核")}</span>
+        <span>missing_fields: ${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
+        <span>poi_count: ${esc(scoreInputs.poi_count ?? "待复核")}</span>
+      </div>
+    </section>
     <section class="detail-section">
       <h3>业态方向</h3>
       <div class="chip-row">${directions.map((item) => `<span>${esc(item)}</span>`).join("") || "<span>待补</span>"}</div>
@@ -328,6 +324,13 @@ function renderDetail() {
       <div class="request-tags">
         ${requests.map((item) => `<span>${esc(item.missing_input || item.calibration_domain || "待补数据")} · ${esc(item.priority || "needs_review")}</span>`).join("") || `<span>${esc(node.must_collect_before_final || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物")}</span>`}
       </div>
+    </section>
+    <section class="detail-section">
+      <h3>后端缺口提示</h3>
+      <div class="request-tags">
+        ${missingFields.map((item) => `<span>${esc(item)}</span>`).join("") || "<span>暂无结构化缺失字段</span>"}
+      </div>
+      <p>${nextDataNeeded.length ? esc(nextDataNeeded.join("；")) : "下一步仍以 P3 gate 和资料闭合清单为准。"}</p>
     </section>
     <div class="detail-actions">
       <button class="secondary-btn" data-view="map">在地图中查看</button>
@@ -547,13 +550,16 @@ function renderMapSide() {
   const node = contextNode || currentNode();
   if (!node) return;
   const [label, cls] = priorityLabel(node);
+  const nextDataNeeded = listItems(node.next_data_needed);
   $("#mapSideDetail").innerHTML = `
     <h3>${esc(shortId(node.node_id))} ${esc(node.node_name)}</h3>
     <div class="map-score ${cls}">${label} · ${esc(scoreText(node))}</div>
     <p>${esc(node.primary_positioning || node.scene_assumptions || "待补场景")}</p>
     <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm === "待测" ? "待测" : `${node.area_sqm} m²`)}</b></div>
-    <div class="mini-kv"><span>状态</span><b>待复核 / 非最终</b></div>
+    <div class="mini-kv"><span>状态</span><b>${esc(node.status_label || "待复核 / 非最终")}</b></div>
+    <div class="mini-kv"><span>评分说明</span><b>${esc(node.score_explanation || "仅作讨论草案")}</b></div>
     <div class="mini-kv"><span>地图边界</span><b>示意层，非 DWG</b></div>
+    ${nextDataNeeded.length ? `<div class="mini-kv"><span>下一步</span><b>${esc(nextDataNeeded.slice(0, 2).join("；"))}</b></div>` : ""}
     ${node.source_node_name ? `<div class="mini-kv"><span>来源草案</span><b>${esc(node.source_node_name)}</b></div>` : ""}
   `;
 }
@@ -648,7 +654,8 @@ function renderSimulationPanel() {
       <td>${esc(row.category)}</td>
       <td>${esc(row.candidate_count)}</td>
       <td>${esc(row.inside_osm_polygon_count)}</td>
-      <td>${esc(row.missing_business_field_count)}</td>
+      <td>${esc(listItems(row.why_blocked).slice(0, 2).join("；") || "待复核")}</td>
+      <td>${esc(listItems(row.next_data_needed).slice(0, 2).join("；") || "待补资料")}</td>
     </tr>
   `).join("");
   box.innerHTML = `
@@ -668,7 +675,7 @@ function renderSimulationPanel() {
     </div>
     <div class="simulation-table">
       <table>
-        <thead><tr><th>公园</th><th>业态</th><th>候选</th><th>边界内</th><th>缺字段</th></tr></thead>
+        <thead><tr><th>公园</th><th>业态</th><th>候选</th><th>边界内</th><th>为什么卡住</th><th>下一步资料</th></tr></thead>
         <tbody>${categories}</tbody>
       </table>
     </div>

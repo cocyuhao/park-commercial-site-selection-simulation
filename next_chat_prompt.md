@@ -1,3 +1,76 @@
+# 下一轮启动提示：P6 前端已消费后端契约
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家驾驶舱项目。最新状态是：员工A后端契约统一已完成，员工B前端显示接入也已完成一轮。
+
+启动后先读：
+1. `AGENTS.md`
+2. `progress.md`
+3. `findings.md`
+4. `handoff_next_chat.md`
+5. `00_control/decisions.md`
+
+最新前端状态：
+- `90_p6_expert_dashboard/static/app.js` 已停止前端本地重算草案分。
+- 节点分数读取后端 `discussion_score_draft`。
+- 节点状态和解释读取后端 `score_status`、`score_label`、`score_explanation`。
+- 外部地点读取 `external_preview_only` 后只展示地图预览，不套用奥森节点评分。
+- 节点详情展示 `missing_required_fields`、`next_data_needed`。
+- 仿真面板展示 `why_blocked`、`next_data_needed`。
+- `index.html` 静态资源版本为 `app.js?v=20260602b`、`styles.css?v=20260602b`。
+
+最新验证：
+```powershell
+node --check 90_p6_expert_dashboard\static\app.js
+py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
+py -3.12 60_model\scripts\import_existing_outputs.py
+```
+已通过；本地 API 契约断言和 FastAPI TestClient dry-run 也已通过。
+
+注意：
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 当前唯一失败是外部 GitHub CLI 检查 `gh repo list cocyuhao`，本机 `gh` keyring token 已失效且 GitHub API 连接失败。用户重新 `gh auth login` 后再复跑项目总门禁。
+- 普通 Git 远端是 `https://github.com/cocyuhao/park-commercial-site-selection-simulation.git`，上传优先用 `git push`。
+- dry-run 始终保持 `needs_review / not_final`，不要输出 ROI、收益预测、最终排序或最终推荐。
+
+# 下一轮启动提示：P6 员工A后端契约已统一
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家驾驶舱项目。当前员工A后端改进已完成一轮，前端静态文件未改。
+
+启动后先读：
+1. `AGENTS.md`
+2. `progress.md`
+3. `findings.md`
+4. `handoff_next_chat.md`
+5. `00_control/decisions.md`
+
+最新后端状态：
+- `/api/dashboard` 已增加 `api_contract`。
+- 节点对象新增：`discussion_score_draft`、`score_status`、`score_label`、`score_explanation`、`score_inputs`、`missing_required_fields`、`next_data_needed`。
+- `/api/data/poi-candidates`、`/api/data/gates`、`/api/uploads`、`/api/upload-candidates`、`/api/simulation/jobs*` 已统一补充 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`。
+- dry-run 结果新增：`group_context`、`boundary_filter_status`、`source_hint`、`why_blocked`、`missing_required_fields`、`next_data_needed`。
+- SQLite 已新增 `runtime_uploads`、`upload_candidates`、`gate_inputs`，并为 `simulation_results` 自动迁移解释字段。
+
+最新验证：
+```powershell
+py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
+py -3.12 60_model\scripts\import_existing_outputs.py
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+最后一次结果：`poi_candidates=227`、`calibration_gates=6`、`checks=725 failures=0`。
+
+接口 smoke 已确认：
+- `/api/dashboard` 200，节点 6 个。
+- 创建 `/api/simulation/jobs` 返回 22 行 dry-run 结果，且包含解释字段。
+- `/api/amap/tips?q=aosen` 第一项是“奥林匹克森林公园”；`dongba` 第一项“东坝公园”；`cygy` 第一项“朝阳公园”。
+
+给员工B的下一步建议：
+- 前端可逐步从本地 `computeDraftScore` 切换到后端 `discussion_score_draft` 与 `score_explanation`。
+- 外部搜索地点看到 `score_status=external_preview_only` 时，只展示地图预览，不展示奥森节点评分。
+
+硬边界：
+- dry-run 仍不是最终仿真，不输出 ROI、收益预测、最终排序或最终推荐。
+- 所有 AI、地图、上传解析、仿真输出都保持 `needs_review / not_final`。
+- 真实 Key 只允许在 `.env` 或环境变量中，由后端读取。
+
 # 下一轮对话启动提示
 
 员工A前后端改进第一阶段已完成：SQLite 数据库、现有 POI/P3 gate 导入、仿真任务 API、资料闭合中心前端入口、结构化干跑和结果导出已打通。当前结果只能是 `needs_review / not_final`，不得写成最终排序、收益预测或推荐结论。
