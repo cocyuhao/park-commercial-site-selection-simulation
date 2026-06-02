@@ -16,8 +16,6 @@ const state = {
   mapTipsSeq: 0,
   mapContextHistory: [],
   mapSelectedOnly: false,
-  mapAddMode: false,
-  manualNodes: [],
   lastAction: "",
   pendingAttachments: [],
 };
@@ -75,6 +73,14 @@ function scoreText(node) {
   return `${scoreOf(node)} 分`;
 }
 
+function invalidMapKeywordMessage(keyword) {
+  if (!keyword) return "";
+  if (/^\d+$/.test(keyword)) return "请输入地点名或完整地址，不要只输入数字。";
+  const chineseCount = (keyword.match(/[\u4e00-\u9fff]/g) || []).length;
+  if (keyword.length < 2 || (chineseCount > 0 && chineseCount < 2)) return "请输入更完整的地点名或地址。";
+  return "";
+}
+
 function currentNode() {
   if (!state.data?.nodes?.length) return null;
   return state.data.nodes.find((node) => node.node_id === state.selectedNodeId) || state.data.nodes[0];
@@ -127,9 +133,9 @@ function renderAll() {
 function renderMeta() {
   $("#dataVersion").textContent = `待复核草案 · ${state.data.meta?.updated_at || ""}`;
   const titles = {
-    overview: "先选任务，再进入地图、节点或 AI 工作台",
-    nodes: "查看节点细节，所有内容仍为 feedback draft",
-    map: "用地图讨论位置关系，不生成 DWG 几何结论",
+    overview: "基于地图、资料、AI 反馈和仿真干跑，形成待复核选址方案",
+    nodes: "查看节点细节，所有内容仍为反馈草案",
+    map: "用地图讨论位置关系，底图文字只作参考",
     upload: "上传方案、图纸、图片和数据表，进入待解析资料池",
     data: "把资料缺口变成可执行任务",
     ai: "像网页 AI 一样对话、追问、记录专家意见",
@@ -149,7 +155,7 @@ function setView(view) {
 }
 
 function priorityLabel(node) {
-  if (node?.score_status === "external_preview_only") return [node.score_label || "仅地图预览", "fail"];
+  if (node?.score_status === "external_preview_only") return [node.score_label || "仅地图预览", "preview"];
   const score = scoreOf(node);
   if (score >= 70) return ["优先讨论", "good"];
   if (score >= 55) return ["需补证再议", "warn"];
@@ -173,7 +179,6 @@ function renderOverview() {
     ["补齐几何", "已有 CAD图及其计划 资料，但需要上传/选择后进入解析流程。", "upload", "上传或选择图纸"],
     ["补真实客流", "客流、转化率、收益成本等闸门仍不能作为 checked。", "data", "查看数据请求"],
     ["专家录入意见", `当前已记录 ${feedbackCount} 条专家意见；继续写入后会自动刷新。`, "ai", "打开 AI 工作台"],
-    ["留给员工 A 的接口", "可继续接正式地图底图、导出报告、图片上传和 Figma 视觉细化。", "map", "查看地图接口"],
   ].map(([title, body, view, action]) => `
     <button class="next-step action-step" data-view="${view}">
       <span><b>${title}</b><em>${body}</em></span>
@@ -197,10 +202,16 @@ function renderUploadList() {
         <span>${esc(item.category)} · ${esc(item.review_status || "待解析")}</span>
       </div>
       <p>${esc(item.note || "上传后先进入待解析资料池，不自动变成最终数据。")}</p>
+      <div class="upload-flow">
+        <span class="done">已上传</span>
+        <span class="${item.review_status === "已确认入池" ? "done" : "active"}">AI 解析</span>
+        <span class="${item.review_status === "已确认入池" ? "done" : ""}">确认入池</span>
+        <span>关联资料缺口</span>
+      </div>
       <div class="upload-actions">
-        <button class="secondary-btn parse-upload-btn" data-upload-id="${esc(item.upload_id)}">AI 解析</button>
-        <button class="secondary-btn" data-view="ai" data-upload-name="${esc(item.filename)}">带入 AI 对话</button>
-        <button class="secondary-btn" data-view="data">关联资料缺口</button>
+        <button class="primary-btn parse-upload-btn" data-upload-id="${esc(item.upload_id)}">1. AI 解析</button>
+        <button class="secondary-btn" data-view="data">2. 关联资料缺口</button>
+        <button class="secondary-btn" data-view="ai" data-upload-name="${esc(item.filename)}">带入 AI 工作台</button>
       </div>
     </div>
   `).join("");
@@ -220,10 +231,11 @@ function renderCandidateList() {
       <div class="candidate-item ${item.review_status === "已确认入池" ? "confirmed" : ""}">
         <div>
           <b>${esc(item.filename)}</b>
-          <span>${esc(item.review_status)} · ${esc(item.generated_by || "local_rules")}</span>
+          <span>${esc(item.review_status)} · ${esc(item.generated_by === "local_rules" ? "本地规则" : item.generated_by || "本地规则")}</span>
         </div>
         <p>${esc(item.summary || "已生成待复核资料候选。")}</p>
         <div class="request-tags">${(item.related_gates || []).map((gate) => `<span>${esc(gateTitle(gate))}</span>`).join("")}</div>
+        <div class="candidate-next">${esc(item.review_status === "已确认入池" ? "已进入资料闭合中心，可继续查看缺口状态。" : "下一步：确认资料是否真实对应当前项目，再入池。")}</div>
         <div class="candidate-actions">
           <button class="secondary-btn" data-view="data">查看资料闭合</button>
           ${item.review_status === "已确认入池" ? "" : `<button class="primary-btn confirm-candidate-btn" data-candidate-id="${esc(item.candidate_id)}">确认入池</button>`}
@@ -347,12 +359,20 @@ function renderMap() {
   const contextName = `${context.keyword || ""}${context.matched_name || ""}`;
   const isOsenContext = contextName.includes("奥森") || contextName.includes("奥林匹克森林");
   $("#amapStatusText").textContent = status.web_service_key_available
-    ? `高德后端读取；目标：${context.matched_name || context.keyword || "默认项目"}；${isOsenContext ? "奥森项目上下文" : "外部地点仅作地图预览，不套用奥森评分"}；已加载 ${status.point_count || 0} 条 POI`
+    ? `目标：${context.matched_name || context.keyword || "默认项目"}；已加载 ${status.point_count || 0} 条 POI`
     : "未检测到高德 Key；显示本地示意层；前端不会暴露 Key";
+  const modeStatus = $("#mapModeStatus");
+  if (modeStatus) {
+    modeStatus.textContent = status.web_service_key_available
+      ? (isOsenContext ? "奥森评分模式：可展示待复核草案分，不是最终推荐。" : "外部预览模式：只看地图和周边 POI，不套用奥森评分。")
+      : "地图数据异常：只能看本地示意层，不能做评分。";
+    modeStatus.className = `map-mode-status ${status.web_service_key_available ? (isOsenContext ? "score-mode" : "preview-mode") : "error-mode"}`;
+  }
   if ($("#mapSearchInput") && !$("#mapSearchInput").value) {
     $("#mapSearchInput").placeholder = context.keyword ? `搜索地点、拼音或地址 · 当前：${context.keyword}` : "搜索地点、拼音或地址";
   }
 
+  $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
   const img = $("#amapBaseMap");
   $("#mapCanvas").classList.add("loading");
   img.onload = () => $("#mapCanvas").classList.remove("loading");
@@ -381,12 +401,8 @@ function renderMap() {
         ${esc(shortId(node.node_id))}
       </button>
     `;
-  }).join("") + state.manualNodes.map((node, index) => `
-    <button class="map-pin manual" style="left:${node.x}%;top:${node.y}%" title="人工新增待复核节点">M-${index + 1}</button>
-  `).join("");
+  }).join("");
 
-  $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
-  if (state.mapAddMode) $("#mapCanvas").classList.add("add-mode");
   applyMapTransform();
 }
 
@@ -551,9 +567,10 @@ function renderMapSide() {
   if (!node) return;
   const [label, cls] = priorityLabel(node);
   const nextDataNeeded = listItems(node.next_data_needed);
+  const scoreLine = node?.score_status === "external_preview_only" ? "仅地图预览 · 不生成评分" : `${label} · ${scoreText(node)}`;
   $("#mapSideDetail").innerHTML = `
     <h3>${esc(shortId(node.node_id))} ${esc(node.node_name)}</h3>
-    <div class="map-score ${cls}">${label} · ${esc(scoreText(node))}</div>
+    <div class="map-score ${cls}">${esc(scoreLine)}</div>
     <p>${esc(node.primary_positioning || node.scene_assumptions || "待补场景")}</p>
     <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm === "待测" ? "待测" : `${node.area_sqm} m²`)}</b></div>
     <div class="mini-kv"><span>状态</span><b>${esc(node.status_label || "待复核 / 非最终")}</b></div>
@@ -641,7 +658,7 @@ function renderSimulationPanel() {
   if (!latestJob) {
     box.innerHTML = `
       <div class="simulation-empty">
-        还没有仿真任务。点击“运行干跑”会创建一个待复核任务，用当前 POI 和 P3 gate 检查后端闭环。
+        还没有仿真检查任务。点击“运行检查”会创建一个待复核任务，用当前 POI 和资料门禁检查数据闭环。
       </div>
     `;
     return;
@@ -665,7 +682,7 @@ function renderSimulationPanel() {
     </div>
     <div class="simulation-metrics">
       <span><b>${esc(resultItems.length)}</b><em>结果行</em></span>
-      <span><b>${esc(blocked)}</b><em>P3 未闭合 gate</em></span>
+      <span><b>${esc(blocked)}</b><em>资料门禁未闭合</em></span>
       <span><b>${esc(missingFields)}</b><em>经营字段缺失</em></span>
     </div>
     <div class="simulation-actions">
@@ -686,21 +703,21 @@ async function runSimulationDryRun() {
   const button = $("#runSimulationBtn");
   button.disabled = true;
   button.textContent = "运行中";
-  state.lastAction = "正在运行结构化仿真干跑";
+  state.lastAction = "正在运行仿真检查";
   renderMeta();
   try {
     const response = await fetch("/api/simulation/jobs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        scenario_name: "frontend_structural_dry_run",
+        scenario_name: "frontend_simulation_check",
         seed: 20260601,
         iterations: 100,
       }),
     });
     const payload = await response.json();
     if (!response.ok) throw new Error(payload.detail || `simulation failed: ${response.status}`);
-    state.lastAction = `已生成 ${payload.result_count || 0} 行待复核干跑结果`;
+    state.lastAction = `已生成 ${payload.result_count || 0} 行待复核检查结果`;
     await loadSimulationJobs();
     renderSimulationPanel();
     renderMeta();
@@ -709,7 +726,7 @@ async function runSimulationDryRun() {
     renderMeta();
   } finally {
     button.disabled = false;
-    button.textContent = "运行干跑";
+    button.textContent = "运行检查";
   }
 }
 
@@ -766,6 +783,12 @@ async function updateMapContext(event) {
   const input = $("#mapSearchInput");
   const keyword = input.value.trim();
   if (!keyword) return;
+  const invalidMessage = invalidMapKeywordMessage(keyword);
+  if (invalidMessage) {
+    state.lastAction = invalidMessage;
+    renderMeta();
+    return;
+  }
   state.lastAction = `正在定位：${keyword}`;
   $("#mapCanvas").classList.add("loading");
   $("#mapSuggest").innerHTML = "";
@@ -819,6 +842,11 @@ async function fetchMapTips() {
   const q = $("#mapSearchInput").value.trim();
   if (!q) {
     $("#mapSuggest").innerHTML = "";
+    return;
+  }
+  const invalidMessage = invalidMapKeywordMessage(q);
+  if (invalidMessage) {
+    $("#mapSuggest").innerHTML = `<div class="map-suggest-empty">${esc(invalidMessage)}</div>`;
     return;
   }
   const seq = ++state.mapTipsSeq;
@@ -933,19 +961,6 @@ function addChatMessage(role, text, meta = "") {
   return item;
 }
 
-async function requestAiReview(mode = "node") {
-  const node = currentNode();
-  addChatMessage("assistant", "正在请求 DeepSeek 生成待复核草稿……", "非最终");
-  const response = await fetch("/api/ai/review", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ mode, node_id: node?.node_id }),
-  });
-  const data = await response.json();
-  const text = data.node_explanation || data.priority_discussion || data.why_feedback_draft || data.raw_text || JSON.stringify(data, null, 2);
-  addChatMessage("assistant", text, data.generated_by || "deepseek");
-}
-
 async function sendChat() {
   const input = $("#chatInput");
   const message = input.value.trim();
@@ -960,7 +975,7 @@ async function sendChat() {
   const composedMessage = `${message || "请先查看我上传的资料，并说明下一步怎么进入待复核解析。"}${attachmentText}`;
   addChatMessage("user", composedMessage);
   const thinking = addChatMessage("assistant thinking", "正在思考，请稍等……", "DeepSeek 深度分析中");
-  thinking.querySelector("div").textContent = "正在读取上下文、整理资料缺口、调用 DeepSeek……";
+  thinking.querySelector("div").textContent = "正在读取上下文、整理资料缺口、调用 DeepSeek，并自动登记专家输入……";
   await saveFeedbackDraft(node, composedMessage, uploaded);
   const response = await fetch("/api/ai/chat", {
     method: "POST",
@@ -977,7 +992,7 @@ async function sendChat() {
   state.chatHistory.push({ role: "user", content: composedMessage });
   state.chatHistory.push({ role: "assistant", content: data.message || "" });
   addChatMessage("assistant", data.message || "DeepSeek 未返回内容", `${data.generated_by || "deepseek"} · 待复核`);
-  state.lastAction = "AI 对话已更新";
+  state.lastAction = "AI 对话已更新，专家输入已登记为待复核";
   await loadDashboard();
   setView("ai");
 }
@@ -1067,7 +1082,7 @@ function bindEvents() {
     });
     const refreshSimulationBtn = event.target.closest("#refreshSimulationBtn");
     if (refreshSimulationBtn) loadSimulationJobs().then(() => {
-      state.lastAction = "?????????";
+      state.lastAction = "仿真检查任务已刷新";
       renderSimulationPanel();
       renderMeta();
     }).catch((error) => {
@@ -1110,7 +1125,11 @@ function bindEvents() {
       sendChat();
     }
   });
-  $("#refreshIntegrationBtn").addEventListener("click", renderIntegrationStatus);
+  $("#refreshIntegrationBtn").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    renderIntegrationStatus();
+  });
   $("#runSimulationBtn").addEventListener("click", () => {
     runSimulationDryRun().catch((error) => {
       state.lastAction = error.message;
@@ -1141,30 +1160,12 @@ function bindEvents() {
     renderMeta();
     renderMap();
   });
-  $("#mapAddNode").addEventListener("click", () => {
-    state.mapAddMode = !state.mapAddMode;
-    state.lastAction = state.mapAddMode ? "设点模式：在地图上点击新增待复核节点" : "已退出设点模式";
-    renderMeta();
-    renderMap();
-  });
   $("#mapCanvas").addEventListener("wheel", (event) => {
     event.preventDefault();
     changeMapZoom(event.deltaY < 0 ? 0.15 : -0.15);
   }, { passive: false });
   $("#mapCanvas").addEventListener("pointerdown", (event) => {
     if (event.target.closest("button")) return;
-    if (state.mapAddMode) {
-      const rect = $("#mapCanvas").getBoundingClientRect();
-      state.manualNodes.push({
-        x: Number((((event.clientX - rect.left) / rect.width) * 100).toFixed(2)),
-        y: Number((((event.clientY - rect.top) / rect.height) * 100).toFixed(2)),
-      });
-      state.mapAddMode = false;
-      state.lastAction = "已新增 1 个待复核人工节点";
-      renderMeta();
-      renderMap();
-      return;
-    }
     $("#mapCanvas").setPointerCapture(event.pointerId);
     state.mapDragging = { id: event.pointerId, x: event.clientX, y: event.clientY, pan: { ...state.mapPan } };
   });

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>园区商业选址决策平台</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260602b" />
+    <title>公园商业选址仿真决策系统</title>
+    <link rel="stylesheet" href="/static/styles.css?v=20260602e" />
   </head>
   <body>
     <div class="platform-shell">
@@ -35,7 +35,7 @@
       <main class="decision-page">
         <header class="project-header">
           <div class="project-title">
-            <h1>云湖公园商业带选址评估</h1>
+            <h1>公园商业选址仿真决策系统</h1>
             <span id="pageSubtitle">先选任务，再进入地图、节点或 AI 工作台</span>
           </div>
           <div class="header-actions">
@@ -186,6 +186,7 @@
                 <div>
                   <h2>空间地图</h2>
                   <p id="amapStatusText">地图数据加载中</p>
+                  <div id="mapModeStatus" class="map-mode-status">正在判断当前地图模式</div>
                 </div>
                 <div class="map-head-tools">
                   <form id="mapSearchForm" class="map-search">
@@ -205,16 +206,15 @@
                 <div id="mapRangeLayer"></div>
                 <div id="amapPoiLayer"></div>
                 <div id="mapNodes"></div>
-                <div class="map-loading">正在加载高德底图……</div>
+                <div class="map-loading">正在刷新地图图层……</div>
                 <div class="map-controls" aria-label="地图控制">
                   <button id="mapZoomIn" type="button" aria-label="放大">+</button>
                   <button id="mapZoomOut" type="button" aria-label="缩小">-</button>
                   <button id="mapReset" type="button">复位</button>
                   <button id="mapUndo" type="button">撤回</button>
                   <button id="mapSelectedOnly" type="button">只看选中</button>
-                  <button id="mapAddNode" type="button">设点</button>
                 </div>
-                <div class="map-note">地图用于讨论位置关系，不代表 DWG 坐标、面积、图层或真实动线。</div>
+                <div class="map-note">底图文字来自高德，仅作位置参考；系统判断以当前搜索目标和上传资料为准，不代表 DWG 坐标、面积或真实动线。</div>
               </div>
             </section>
 
@@ -251,23 +251,23 @@
               </div>
               <div id="dataNeeds" class="needs-table"></div>
             </section>
-            <section class="panel integration-panel">
-              <div class="panel-head">
-                <div>
-                  <h2>接口与数据真实接入状态</h2>
-                  <p>这里专门说明哪些是真接入、哪些是降级兜底，避免把示意当成最终结果</p>
-                </div>
-                <button id="refreshIntegrationBtn" class="secondary-btn">刷新状态</button>
-              </div>
+            <details class="panel integration-panel">
+              <summary>
+                <span>
+                  <b>系统接入状态</b>
+                  <em>查看数据、地图和 AI 是否真实接入</em>
+                </span>
+                <button id="refreshIntegrationBtn" class="secondary-btn" type="button">刷新状态</button>
+              </summary>
               <div id="integrationStatus" class="integration-list"></div>
-            </section>
+            </details>
             <section class="panel simulation-panel">
               <div class="panel-head">
                 <div>
-                  <h2>结构化仿真干跑</h2>
-                  <p>调用后端任务接口，只检查数据闭环和可复现性，不输出最终排序或收益预测。</p>
+                  <h2>仿真检查</h2>
+                  <p>检查 POI、资料门禁和经营字段缺口，不输出最终排序或收益预测。</p>
                 </div>
-                <button id="runSimulationBtn" class="primary-btn">运行干跑</button>
+                <button id="runSimulationBtn" class="primary-btn">运行检查</button>
               </div>
               <div id="simulationStatus" class="simulation-status"></div>
             </section>
@@ -292,7 +292,7 @@
                 <div class="composer-box">
                   <button id="attachBtn" class="composer-icon-btn" type="button" aria-label="上传资料">+</button>
                   <textarea id="chatInput" rows="1" placeholder="输入专家意见、位置描述或问题；也可以先点 + 上传图纸、图片或表格"></textarea>
-                  <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送">发送</button>
+                  <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送并登记">发送并登记</button>
                 </div>
               </form>
             </section>
@@ -300,6 +300,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260602b"></script>
+    <script src="/static/app.js?v=20260602e"></script>
   </body>
 </html>
