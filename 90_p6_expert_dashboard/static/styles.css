@@ -1018,6 +1018,92 @@ th, td {
 }
 th { color: var(--muted); font-weight: 700; background: #f8fbfb; }
 
+.gap-panel { grid-column: 1 / -1; }
+.gap-status,
+.report-body {
+  padding: 14px 16px 18px;
+}
+.gap-blocked {
+  border: 1px solid #ffd4cf;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fff6f4;
+}
+.gap-blocked b { color: #b7352f; }
+.gap-summary,
+.gap-mini-grid,
+.report-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.gap-summary span,
+.gap-mini-grid span,
+.report-summary div {
+  min-height: 62px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fbfdfd;
+}
+.gap-summary b,
+.gap-mini-grid b,
+.report-summary b {
+  display: block;
+  color: var(--text);
+  font-size: 18px;
+}
+.gap-summary em,
+.gap-mini-grid em,
+.report-summary span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+}
+.gap-table,
+.report-section {
+  overflow: auto;
+}
+.gap-table table,
+.report-section table {
+  min-width: 680px;
+}
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.report-actions a {
+  text-decoration: none;
+}
+.report-section {
+  margin-top: 14px;
+}
+.report-section h3 {
+  margin-bottom: 10px;
+}
+.report-node-list {
+  display: grid;
+  gap: 10px;
+}
+.report-node {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fbfdfd;
+}
+.integration-quiet {
+  padding: 14px;
+  border: 1px solid #cfe8de;
+  border-radius: 7px;
+  background: #f3fbf6;
+  color: #237345;
+  font-size: 14px;
+}
+
 .ai-workspace-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -1205,4 +1291,7 @@ th { color: var(--muted); font-weight: 700; background: #f8fbfb; }
   .node-status { text-align: left; }
   .detail-top { grid-template-columns: 1fr; }
   .gate-item { grid-template-columns: 1fr; }
+  .gap-summary,
+  .gap-mini-grid,
+  .report-summary { grid-template-columns: 1fr; }
 }

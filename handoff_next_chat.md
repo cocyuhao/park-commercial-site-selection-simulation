@@ -1,3 +1,24 @@
+# 2026-06-02 最新交接：TGI/POI 供需缺口改动已恢复
+
+本轮用户发现报告页还能打开，但磁盘改动不在。已确认原因：旧 `uvicorn` 进程仍在内存中运行旧代码，磁盘工作区没有保留 `demand_gap.py` 和前端/后端改动。
+
+已恢复：
+- `60_model/simulation/demand_gap.py`
+- 后端接口：`/api/supply-gap`、`/api/visitor-simulation`、`/api/reports/site-selection`、`/api/reports/site-selection/download`
+- 前端导航“分析报告”、报告页、下载 Markdown/JSON、资料闭合中心 TGI/POI 缺口面板、节点详情缺口块
+- 资料池只显示网页外部上传资料，不自动读取 `CAD图及其计划`
+- 系统接入状态只显示异常或阻塞项
+
+验证：
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过
+- `py -m py_compile 90_p6_expert_dashboard\app.py 60_model\simulation\demand_gap.py 60_model\simulation\engine.py 60_model\db\store.py` 通过
+- API 烟测 `passed=5 failed=0`
+- 已重启 `127.0.0.1:8765`，浏览器 `#report` 页确认 `reportView` 激活，下载入口 2 个
+
+边界：
+- 缺少外部上传客流/TGI资料时，只显示阻塞，不用奥森内置资料硬算。
+- 所有输出仍为 `needs_review / not_final`，不能作为最终推荐、最终排序或收益预测。
+
 # 2026-06-02 最新交接：B/C/D 验收已完成并生成同事同步报告
 
 当前本地 P6 dashboard 已在 `d43db1c60f9976f04399de43058d1ee36378a65f` 基线上完成本轮 B/C/D 验收。

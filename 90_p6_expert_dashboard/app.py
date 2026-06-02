@@ -37,6 +37,7 @@ MAP_BOUNDARY_FILE = CACHE_DIR / "map_boundary.json"
 AMAP_STATIC_CACHE = CACHE_DIR / "amap_static_map.png"
 AMAP_TILE_CACHE_DIR = CACHE_DIR / "amap_static_tiles"
 AMAP_STATIC_STATUS_FILE = CACHE_DIR / "amap_static_map_status.json"
+REPORT_DIR = ROOT / "80_delivery"
 KNOWN_OSM_BOUNDARY_FILE = ROOT / "50_external_gis" / "boundaries" / "osm_park_boundaries.geojson"
 MAP_KEYWORD_ALIASES = {
     "aosen": "北京奥森",
@@ -63,6 +64,16 @@ if str(SIM_DIR) not in sys.path:
 
 from llm_router import load_local_env, run_deepseek_task  # noqa: E402
 from engine import run_structural_simulation  # noqa: E402
+from demand_gap import (  # noqa: E402
+    attach_gap_to_nodes,
+    build_gap_report,
+    build_supply_profile,
+    build_tgi_profile,
+    calculate_supply_gap,
+    parse_uploaded_visitor_sources,
+    report_to_markdown,
+    write_report_files,
+)
 from store import (  # noqa: E402
     complete_job,
     create_job,
@@ -284,14 +295,46 @@ def enrich_poi(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def build_supply_gap_payload(
+    nodes: list[dict[str, Any]],
+    amap_supply: list[dict[str, Any]],
+    uploads: list[dict[str, Any]],
+    upload_candidates: list[dict[str, Any]],
+) -> dict[str, Any]:
+    visitor_sources = parse_uploaded_visitor_sources(uploads, upload_candidates)
+    tgi = build_tgi_profile(visitor_sources["combined_text"])
+    supply = build_supply_profile(amap_supply)
+    gap = calculate_supply_gap(tgi, supply)
+    report = build_gap_report(nodes, gap, uploads)
+    return {
+        **review_meta(
+            source_hint="web uploads + current AMap POI context",
+            evidence_hint="TGI and POI gap are needs_review / not_final",
+            status_label="供需缺口 / 待复核",
+        ),
+        "visitor_sources": {
+            "has_uploaded_visitor_flow": visitor_sources["has_uploaded_visitor_flow"],
+            "count": len(visitor_sources["sources"]),
+            "items": visitor_sources["sources"],
+        },
+        "tgi": tgi,
+        "supply": supply,
+        "gap": gap,
+        "report": report,
+    }
+
+
 def load_dashboard() -> dict[str, Any]:
-    nodes = read_csv_rows(PROCESSED / "p2_project_node_candidates.csv")
-    priorities = read_csv_rows(PROCESSED / "p4_feedback_node_priority_draft_deepseek.csv")
-    scenarios = read_csv_rows(PROCESSED / "p4_feedback_scenario_matrix_draft_deepseek.csv")
-    requests = read_csv_rows(PROCESSED / "p4_feedback_data_request_to_partner_deepseek.csv")
+    uploads = load_upload_index()
+    upload_candidates = load_upload_candidates()
+    has_external_uploads = bool(uploads)
+    nodes = read_csv_rows(PROCESSED / "p2_project_node_candidates.csv") if has_external_uploads else []
+    priorities = read_csv_rows(PROCESSED / "p4_feedback_node_priority_draft_deepseek.csv") if has_external_uploads else []
+    scenarios = read_csv_rows(PROCESSED / "p4_feedback_scenario_matrix_draft_deepseek.csv") if has_external_uploads else []
+    requests = read_csv_rows(PROCESSED / "p4_feedback_data_request_to_partner_deepseek.csv") if has_external_uploads else []
     gates = read_csv_rows(PROCESSED / "p3_calibration_gate_status.csv")
-    assumptions = read_csv_rows(PROCESSED / "p2_business_scene_assumption_pool.csv")
-    gaps = read_csv_rows(PROCESSED / "p2_input_gap_register.csv")
+    assumptions = read_csv_rows(PROCESSED / "p2_business_scene_assumption_pool.csv") if has_external_uploads else []
+    gaps = read_csv_rows(PROCESSED / "p2_input_gap_register.csv") if has_external_uploads else []
     amap_supply = load_amap_supply()
     map_context = load_map_context()
     map_boundary = load_map_boundary_for_context(map_context) or load_known_osm_boundary(map_context)
@@ -367,11 +410,16 @@ def load_dashboard() -> dict[str, Any]:
             }
         )
 
+    gap_payload = build_supply_gap_payload(merged_nodes, amap_supply, uploads, upload_candidates)
+    merged_nodes = attach_gap_to_nodes(merged_nodes, gap_payload["gap"]["items"])
+    gap_payload["report"] = build_gap_report(merged_nodes, gap_payload["gap"], uploads)
+
     return {
         "meta": {
             "project_name": "奥森公园商业选址仿真 P6 原型",
             "phase": "P6 expert dashboard prototype",
             "data_status": "feedback_draft / needs_review / not_final",
+            "source_mode": "uploaded_project_materials" if has_external_uploads else "empty_until_external_upload",
             "updated_at": datetime.now().isoformat(timespec="seconds"),
             "source_tables": [
                 "p2_project_node_candidates.csv",
@@ -389,6 +437,7 @@ def load_dashboard() -> dict[str, Any]:
         },
         "p3_gates": [enrich_gate(normalize_row(row)) for row in gates],
         "p2_gaps": [normalize_row(row) for row in gaps],
+        "demand_supply": gap_payload,
         "amap": {
             "status": amap_status(amap_supply),
             "supply_points": amap_supply,
@@ -400,8 +449,8 @@ def load_dashboard() -> dict[str, Any]:
             "boundary_source": (map_boundary or estimated_boundary or {}).get("source", "computed_from_visible_points"),
             "context_nodes": build_context_nodes(merged_nodes, map_context),
         },
-        "uploads": load_upload_index(),
-        "upload_candidates": load_upload_candidates(),
+        "uploads": uploads,
+        "upload_candidates": upload_candidates,
         "gate_inputs": load_gate_inputs(),
     }
 
@@ -1041,24 +1090,6 @@ def save_feedback(rows: list[dict[str, Any]]) -> None:
 
 
 def load_upload_index() -> list[dict[str, Any]]:
-    built_in = []
-    cad_dir = ROOT / "CAD图及其计划"
-    if cad_dir.exists():
-        for item in sorted(cad_dir.iterdir()):
-            if item.is_file():
-                built_in.append(
-                    {
-                        "upload_id": f"BUILTIN-{item.stem[:24]}",
-                        "filename": item.name,
-                        "source_type": "existing_project_material",
-                        "category": guess_upload_category(item.name),
-                        "size_bytes": item.stat().st_size,
-                        "stored_path": str(item.relative_to(ROOT)),
-                        "review_status": "待解析",
-                        "created_at": datetime.fromtimestamp(item.stat().st_mtime).isoformat(timespec="seconds"),
-                        "note": "来自 CAD图及其计划，仍需在网页流程中选择/解析/复核。",
-                    }
-                )
     uploaded = []
     if UPLOAD_INDEX_FILE.exists():
         try:
@@ -1066,19 +1097,20 @@ def load_upload_index() -> list[dict[str, Any]]:
             uploaded = data if isinstance(data, list) else []
         except json.JSONDecodeError:
             uploaded = []
-    return built_in + uploaded
+    return uploaded
 
 
 def save_upload_index(rows: list[dict[str, Any]]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    uploaded_only = [row for row in rows if not str(row.get("upload_id", "")).startswith("BUILTIN-")]
-    UPLOAD_INDEX_FILE.write_text(json.dumps(uploaded_only, ensure_ascii=False, indent=2), encoding="utf-8")
-    for row in uploaded_only:
+    UPLOAD_INDEX_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    for row in rows:
         upsert_runtime_upload(row)
 
 
 def guess_upload_category(filename: str) -> str:
     suffix = Path(filename).suffix.lower()
+    if any(token in filename for token in ["客流", "人流", "游客", "visitor", "flow"]):
+        return "客流数据"
     if suffix in {".dwg", ".dxf"}:
         return "CAD / 图纸"
     if suffix in {".png", ".jpg", ".jpeg", ".webp", ".bmp"}:
@@ -1226,7 +1258,20 @@ def node_context(payload: dict[str, Any], node_id: str | None) -> dict[str, Any]
     if not node and payload["nodes"]:
         node = payload["nodes"][0]
     if not node:
-        raise HTTPException(status_code=404, detail="node not found")
+        return {
+            "node": {
+                "node_id": "PROJECT-UPLOAD",
+                "node_name": "待上传项目",
+                "output_status": "needs_review",
+                "not_final": True,
+            },
+            "p3_gates": payload["p3_gates"],
+            "p2_gaps": payload["p2_gaps"],
+            "uploads": payload.get("uploads", []),
+            "upload_candidates": payload.get("upload_candidates", []),
+            "demand_supply": payload.get("demand_supply", {}),
+            "expert_feedback": load_feedback()[-8:],
+        }
     feedback = [row for row in load_feedback() if row.get("node_id") == node.get("node_id")]
     return {
         "node": node,
@@ -1299,6 +1344,55 @@ def dashboard() -> dict[str, Any]:
     return payload
 
 
+@app.get("/api/supply-gap")
+def api_supply_gap() -> dict[str, Any]:
+    payload = load_dashboard()
+    return payload["demand_supply"]
+
+
+@app.get("/api/visitor-simulation")
+def api_visitor_simulation() -> dict[str, Any]:
+    payload = load_dashboard()
+    return {
+        **review_meta(source_hint="web uploaded visitor flow sources", status_label="游客仿真 / 待复核"),
+        "visitor_sources": payload["demand_supply"]["visitor_sources"],
+        "tgi": payload["demand_supply"]["tgi"],
+    }
+
+
+@app.get("/api/reports/site-selection")
+def api_site_selection_report() -> dict[str, Any]:
+    payload = load_dashboard()
+    report = payload["demand_supply"]["report"]
+    write_report_files(report, REPORT_DIR)
+    return {
+        **review_meta(source_hint="web uploads + AMap POI + gap calculator", status_label="报告 / 待复核"),
+        "report": report,
+        "download": {
+            "md": "/api/reports/site-selection/download?format=md",
+            "json": "/api/reports/site-selection/download?format=json",
+        },
+    }
+
+
+@app.get("/api/reports/site-selection/download")
+def api_download_site_selection_report(format: str = "md") -> Response:
+    payload = load_dashboard()
+    report = payload["demand_supply"]["report"]
+    write_report_files(report, REPORT_DIR)
+    if format == "json":
+        return Response(
+            content=json.dumps(report, ensure_ascii=False, indent=2),
+            media_type="application/json; charset=utf-8",
+            headers={"Content-Disposition": 'attachment; filename="site_selection_gap_report_latest.json"'},
+        )
+    return Response(
+        content=report_to_markdown(report),
+        media_type="text/markdown; charset=utf-8",
+        headers={"Content-Disposition": 'attachment; filename="site_selection_gap_report_latest.md"'},
+    )
+
+
 @app.get("/api/uploads")
 def uploads() -> dict[str, Any]:
     items = load_upload_index()
@@ -1307,7 +1401,7 @@ def uploads() -> dict[str, Any]:
         "count": len(items),
         "db_runtime_count": len(list_runtime_uploads()),
         "items": items,
-        "accepted_categories": ["CAD / 图纸", "现场图片 / 位置图", "数据表", "方案文件", "其他资料"],
+        "accepted_categories": ["CAD / 图纸", "现场图片 / 位置图", "客流数据", "数据表", "方案文件", "其他资料"],
     }
 
 
@@ -1659,12 +1753,15 @@ def amap_tips(q: str = "") -> dict[str, Any]:
 
 @app.get("/api/integration/status")
 def integration_status() -> dict[str, Any]:
+    load_local_env()
     payload = load_dashboard()
     points = load_amap_supply()
     deepseek_cache = load_cache()
+    gap = payload.get("demand_supply", {}).get("gap", {})
     return {
         "output_status": "needs_review",
         "not_final": True,
+        "display_policy": "show_only_failed_or_warning_items",
         "items": [
             {
                 "name": "P2/P4 节点与反馈 CSV",
@@ -1695,6 +1792,12 @@ def integration_status() -> dict[str, Any]:
                 "kind": "backend_map",
                 "status": load_amap_static_status().get("status", "not_checked_in_this_session"),
                 "detail": load_amap_static_status().get("detail", "尚未在本会话检查静态图返回；失败时显示本地示意底图。"),
+            },
+            {
+                "name": "供需缺口计算器",
+                "kind": "demand_supply_gap",
+                "status": "connected" if gap.get("status") == "calculated_needs_review" else "blocked",
+                "detail": gap.get("message", "等待外部客流/TGI资料和当前 POI。"),
             },
         ],
     }

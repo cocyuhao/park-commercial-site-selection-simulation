@@ -126,6 +126,8 @@ function renderAll() {
   renderCandidateList();
   renderDataPage();
   renderSimulationPanel();
+  renderGapStatus();
+  renderReport();
   renderAiContext();
   renderIntegrationStatus();
 }
@@ -138,6 +140,7 @@ function renderMeta() {
     map: "用地图讨论位置关系，底图文字只作参考",
     upload: "上传方案、图纸、图片和数据表，进入待解析资料池",
     data: "把资料缺口变成可执行任务",
+    report: "查看 TGI、POI、供需缺口和节点改进报告",
     ai: "像网页 AI 一样对话、追问、记录专家意见",
   };
   const title = titles[state.currentView] || titles.overview;
@@ -151,6 +154,7 @@ function setView(view) {
   $$("[data-view]").forEach((btn) => btn.classList.toggle("active", btn.dataset.view === view && btn.classList.contains("side-nav-item")));
   renderMeta();
   if (view === "ai") renderAiContext();
+  if (view === "report") renderReport();
   requestAnimationFrame(() => window.scrollTo(0, 0));
 }
 
@@ -164,7 +168,7 @@ function priorityLabel(node) {
 
 function renderOverview() {
   const nodes = state.data.nodes || [];
-  $("#overviewNodeList").innerHTML = nodes.map((node) => {
+  $("#overviewNodeList").innerHTML = nodes.length ? nodes.map((node) => {
     const [label, cls] = priorityLabel(node);
     return `
       <button class="overview-node ${node.node_id === state.selectedNodeId ? "active" : ""}" data-node-id="${esc(node.node_id)}" data-view="nodes">
@@ -172,12 +176,13 @@ function renderOverview() {
         <span class="${cls}">${label} · ${esc(scoreText(node))}</span>
       </button>
     `;
-  }).join("");
+  }).join("") : `<div class="empty-state">还没有外部上传项目资料。请先进入“资料导入”。</div>`;
 
   const feedbackCount = state.data.expert_feedback?.length || 0;
   $("#overviewNextSteps").innerHTML = [
-    ["补齐几何", "已有 CAD图及其计划 资料，但需要上传/选择后进入解析流程。", "upload", "上传或选择图纸"],
+    ["上传项目资料", "方案、图纸、DOCX、PDF 和客流表都应由外部上传后再分析。", "upload", "上传资料"],
     ["补真实客流", "客流、转化率、收益成本等闸门仍不能作为 checked。", "data", "查看数据请求"],
+    ["看供需缺口", "TGI 来自外部客流资料，POI 来自当前地图上下文。", "report", "打开报告"],
     ["专家录入意见", `当前已记录 ${feedbackCount} 条专家意见；继续写入后会自动刷新。`, "ai", "打开 AI 工作台"],
   ].map(([title, body, view, action]) => `
     <button class="next-step action-step" data-view="${view}">
@@ -262,6 +267,10 @@ function renderNodes() {
     return !keyword || haystack.includes(keyword);
   });
 
+  if (!nodes.length) {
+    $("#nodeList").innerHTML = `<div class="empty-state">还没有外部上传项目资料，节点方案暂为空。</div>`;
+    return;
+  }
   $("#nodeList").innerHTML = nodes.map((node) => {
     const [label, cls] = priorityLabel(node);
     return `
@@ -280,7 +289,12 @@ function renderNodes() {
 
 function renderDetail() {
   const node = currentNode();
-  if (!node) return;
+  if (!node) {
+    $("#detailTitle").textContent = "节点详情";
+    $("#statusTag").textContent = "等待上传";
+    $("#detailBody").innerHTML = `<div class="empty-state">上传并解析项目资料后，这里才会显示节点、TGI、POI 和缺口建议。</div>`;
+    return;
+  }
   $("#detailTitle").textContent = `${shortId(node.node_id)} ${node.node_name}`;
   $("#statusTag").textContent = node.status_label || "待复核 / 非最终";
   const directions = node.business_direction?.length ? node.business_direction : node.candidate_business_formats || [];
@@ -306,6 +320,10 @@ function renderDetail() {
         <span>missing_fields: ${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
         <span>poi_count: ${esc(scoreInputs.poi_count ?? "待复核")}</span>
       </div>
+    </section>
+    <section class="detail-section">
+      <h3>TGI / POI 缺口</h3>
+      ${renderNodeGapBlock(node)}
     </section>
     <section class="detail-section">
       <h3>业态方向</h3>
@@ -525,7 +543,12 @@ async function renderIntegrationStatus() {
   try {
     const response = await fetch("/api/integration/status", { cache: "no-store" });
     const data = await response.json();
-    box.innerHTML = (data.items || []).map((item) => {
+    const visibleItems = (data.items || []).filter((item) => !["connected", "configured", "connected_image"].includes(item.status));
+    if (!visibleItems.length) {
+      box.innerHTML = `<div class="integration-quiet">后台接口与数据源当前无失败项。</div>`;
+      return;
+    }
+    box.innerHTML = visibleItems.map((item) => {
       const cls = item.status === "connected" || item.status === "configured" || item.status === "connected_image"
         ? "good"
         : item.status === "missing_key"
@@ -578,6 +601,23 @@ function renderMapSide() {
     <div class="mini-kv"><span>地图边界</span><b>示意层，非 DWG</b></div>
     ${nextDataNeeded.length ? `<div class="mini-kv"><span>下一步</span><b>${esc(nextDataNeeded.slice(0, 2).join("；"))}</b></div>` : ""}
     ${node.source_node_name ? `<div class="mini-kv"><span>来源草案</span><b>${esc(node.source_node_name)}</b></div>` : ""}
+  `;
+}
+
+function renderNodeGapBlock(node) {
+  const gap = node?.supply_gap_match || {};
+  if (!gap.business_type) {
+    return `<p>当前节点还没有匹配到可计算缺口。请先上传客流/TGI资料，并确认当前地图 POI。</p>`;
+  }
+  const examples = listItems(gap.poi_examples).slice(0, 4).join("、");
+  return `
+    <div class="gap-mini-grid">
+      <span><b>${esc(gap.business_type)}</b><em>匹配业态</em></span>
+      <span><b>${esc(gap.tgi)}</b><em>TGI</em></span>
+      <span><b>${esc(gap.poi_count)}</b><em>POI 数</em></span>
+      <span><b>${esc(gap.gap_index)}</b><em>缺口指数</em></span>
+    </div>
+    <p>${esc(gap.priority)}；${examples ? `参考 POI：${examples}` : "暂无 POI 示例"}</p>
   `;
 }
 
@@ -643,6 +683,95 @@ function renderDataPage() {
         `).join("")}
       </tbody>
     </table>
+  `;
+}
+
+function renderGapStatus() {
+  const box = $("#gapStatus");
+  if (!box) return;
+  const payload = state.data?.demand_supply || {};
+  const tgi = payload.tgi || {};
+  const supply = payload.supply || {};
+  const gap = payload.gap || {};
+  if (gap.status !== "calculated_needs_review") {
+    box.innerHTML = `
+      <div class="gap-blocked">
+        <b>暂不能计算</b>
+        <p>${esc(gap.message || "请上传客流/TGI资料，并确认当前地图 POI。")}</p>
+        <div class="request-tags">
+          <span>客流资料：${payload.visitor_sources?.count || 0} 份</span>
+          <span>TGI：${esc(tgi.status || "未生成")}</span>
+          <span>POI：${esc(supply.status || "未生成")}</span>
+        </div>
+      </div>
+    `;
+    return;
+  }
+  box.innerHTML = `
+    <div class="gap-summary">
+      <span><b>${esc(payload.visitor_sources?.count || 0)}</b><em>客流资料</em></span>
+      <span><b>${esc(Object.keys(tgi.tgi_profile || {}).length)}</b><em>TGI 业态</em></span>
+      <span><b>${esc(Object.keys(supply.poi_counts || {}).length)}</b><em>POI 业态</em></span>
+    </div>
+    <div class="gap-table">
+      <table>
+        <thead><tr><th>业态</th><th>TGI</th><th>POI</th><th>缺口指数</th><th>建议</th></tr></thead>
+        <tbody>
+          ${(gap.items || []).slice(0, 8).map((item) => `
+            <tr>
+              <td>${esc(item.business_type)}</td>
+              <td>${esc(item.tgi)}</td>
+              <td>${esc(item.poi_count)}</td>
+              <td>${esc(item.gap_index)}</td>
+              <td>${esc(item.priority)}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderReport() {
+  const box = $("#reportBody");
+  if (!box) return;
+  const report = state.data?.demand_supply?.report || {};
+  const topGaps = report.top_gaps || [];
+  const nodes = report.nodes || [];
+  box.innerHTML = `
+    <section class="report-summary">
+      <div><span>状态</span><b>待复核 / 非最终</b></div>
+      <div><span>上传资料</span><b>${esc(report.source_upload_count || 0)} 份</b></div>
+      <div><span>缺口状态</span><b>${esc(report.gap_status || "未计算")}</b></div>
+    </section>
+    <section class="report-section">
+      <h3>主要供需缺口</h3>
+      ${topGaps.length ? `
+        <table>
+          <thead><tr><th>业态</th><th>TGI</th><th>POI</th><th>缺口</th><th>建议</th></tr></thead>
+          <tbody>${topGaps.map((item) => `
+            <tr>
+              <td>${esc(item.business_type)}</td>
+              <td>${esc(item.tgi)}</td>
+              <td>${esc(item.poi_count)}</td>
+              <td>${esc(item.gap_index)}</td>
+              <td>${esc(item.priority)}</td>
+            </tr>
+          `).join("")}</tbody>
+        </table>
+      ` : `<p>${esc(report.summary || "请先上传外部客流/TGI资料。")}</p>`}
+    </section>
+    <section class="report-section">
+      <h3>节点改进建议</h3>
+      <div class="report-node-list">
+        ${nodes.map((node) => `
+          <div class="report-node">
+            <b>${esc(shortId(node.node_id))} ${esc(node.node_name)}</b>
+            <p>${esc(node.improvement)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
   `;
 }
 
@@ -930,6 +1059,9 @@ async function saveGateNote(domain) {
 }
 
 function fallbackAiIntro(node) {
+  if (!node) {
+    return "当前还没有外部上传项目资料。请先上传 DWG/DOCX/PDF/客流表等资料，AI 只能生成待复核解析建议。";
+  }
   const missing = node.data_requests?.map((item) => item.missing_input).filter(Boolean).join("、")
     || node.must_collect_before_final
     || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物";
@@ -938,7 +1070,19 @@ function fallbackAiIntro(node) {
 
 function renderAiContext() {
   const node = currentNode();
-  if (!node) return;
+  if (!node) {
+    $("#aiContext").innerHTML = `
+      <div>
+        <b>等待外部上传资料</b>
+        <span>当前没有可分析节点，先上传项目文件或客流数据。</span>
+      </div>
+      <div>
+        <b>边界</b>
+        <span>只生成待复核草案，不输出最终推荐。</span>
+      </div>
+    `;
+    return;
+  }
   $("#aiContext").innerHTML = `
     <div>
       <b>${esc(shortId(node.node_id))} ${esc(node.node_name)}</b>
@@ -1003,7 +1147,7 @@ async function saveFeedbackDraft(node, comment, uploaded = []) {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      node_id: node?.node_id,
+      node_id: node?.node_id || "PROJECT-UPLOAD",
       comment,
       position_note: uploaded.map((item) => item.filename).join("；"),
       data_hint: uploaded.length ? "uploaded_source_needs_review" : "needs_review",
@@ -1188,7 +1332,7 @@ function bindEvents() {
 
 function initFromHash() {
   const hash = window.location.hash.replace("#", "");
-  if (["nodes", "map", "upload", "data", "ai"].includes(hash)) setView(hash);
+  if (["nodes", "map", "upload", "data", "report", "ai"].includes(hash)) setView(hash);
 }
 
 bindEvents();

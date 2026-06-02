@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>公园商业选址仿真决策系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260602e" />
+    <link rel="stylesheet" href="/static/styles.css?v=20260602g" />
   </head>
   <body>
     <div class="platform-shell">
@@ -23,6 +23,7 @@
           <button class="side-nav-item" data-view="map">空间地图</button>
           <button class="side-nav-item" data-view="upload">资料导入</button>
           <button class="side-nav-item" data-view="data">资料闭合中心</button>
+          <button class="side-nav-item" data-view="report">分析报告</button>
           <button class="side-nav-item" data-view="ai">专家 AI 工作台</button>
         </nav>
 
@@ -121,6 +122,7 @@
                       <option value="auto">自动识别</option>
                       <option value="CAD / 图纸">CAD / 图纸</option>
                       <option value="现场图片 / 位置图">现场图片 / 位置图</option>
+                      <option value="客流数据">客流数据</option>
                       <option value="数据表">数据表</option>
                       <option value="方案文件">方案文件</option>
                     </select>
@@ -144,7 +146,7 @@
               <div class="panel-head">
                 <div>
                   <h2>待解析资料池</h2>
-                  <p>包含你已放在 CAD图及其计划 里的资料，以及网页新上传的资料。</p>
+                  <p>只显示网页外部上传的资料；项目目录里的样例文件不会自动入池。</p>
                 </div>
               </div>
               <div id="uploadList" class="upload-list"></div>
@@ -271,6 +273,34 @@
               </div>
               <div id="simulationStatus" class="simulation-status"></div>
             </section>
+            <section class="panel gap-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>TGI / POI 供需缺口</h2>
+                  <p>只读取外部上传的客流资料和当前地图 POI，缺资料时不计算。</p>
+                </div>
+                <button class="secondary-btn" data-view="report">查看报告</button>
+              </div>
+              <div id="gapStatus" class="gap-status"></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="reportView" class="view">
+          <section class="report-page">
+            <section class="panel report-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>供需缺口与节点改进报告</h2>
+                  <p>报告来自外部上传资料、当前高德 POI 和待复核缺口计算。</p>
+                </div>
+                <div class="report-actions">
+                  <a class="secondary-btn" href="/api/reports/site-selection/download?format=md">下载 Markdown</a>
+                  <a class="secondary-btn" href="/api/reports/site-selection/download?format=json">下载 JSON</a>
+                </div>
+              </div>
+              <div id="reportBody" class="report-body"></div>
+            </section>
           </section>
         </section>
 
@@ -300,6 +330,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260602e"></script>
+    <script src="/static/app.js?v=20260602g"></script>
   </body>
 </html>

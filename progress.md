@@ -1,3 +1,23 @@
+# 2026-06-02 TGI/POI 供需缺口改动恢复
+
+### 已完成
+- 已确认此前浏览器能访问报告页，是旧 `uvicorn` 进程仍在跑内存代码；磁盘中的 `demand_gap.py` 和前端/后端改动已丢失。
+- 已重新添加 `60_model/simulation/demand_gap.py`。
+- 已恢复后端接口：`/api/supply-gap`、`/api/visitor-simulation`、`/api/reports/site-selection`、`/api/reports/site-selection/download`。
+- 已恢复前端“分析报告”导航、报告页、下载按钮、资料闭合中心 TGI/POI 缺口面板、节点详情缺口块。
+- 已恢复资料池规则：只显示网页外部上传资料，项目目录内置样例不会自动入池。
+- 已恢复系统接入状态规则：成功项收起，只显示异常或阻塞项。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py 60_model\simulation\demand_gap.py 60_model\simulation\engine.py 60_model\db\store.py` 通过。
+- API 烟测通过：`passed=5 failed=0`。
+- 已重启 `127.0.0.1:8765`，浏览器报告页显示 `reportView`，下载入口 2 个。
+
+### 当前边界
+- 本轮恢复的是待复核功能，不输出最终推荐、最终排序、收益预测或 ROI。
+- 缺少外部客流/TGI资料时，供需缺口保持阻塞状态。
+
 # 2026-06-02 B/C/D 一口气验收、浏览器确认与工具报告
 
 ### 已完成

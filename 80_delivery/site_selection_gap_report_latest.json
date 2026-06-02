@@ -1,0 +1,67 @@
+{
+  "report_id": "RPT-20260602153331",
+  "title": "供需缺口与节点改进报告",
+  "generated_at": "2026-06-02T15:33:31",
+  "output_status": "needs_review",
+  "not_final": true,
+  "source_upload_count": 3,
+  "gap_status": "blocked_until_uploaded_visitor_flow_and_poi_ready",
+  "summary": "缺少外部客流/TGI资料或高德 POI，供需缺口暂不能计算。",
+  "top_gaps": [],
+  "nodes": [
+    {
+      "node_id": "P2-NODE-001",
+      "node_name": "桃花源白房子",
+      "score": 38,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "P2-NODE-002",
+      "node_name": "奥运廉洁主题展馆",
+      "score": 34,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "P2-NODE-003",
+      "node_name": "12#西分区管理中心",
+      "score": 30,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "P2-NODE-004",
+      "node_name": "南门地下预埋空间",
+      "score": 26,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "P2-NODE-005",
+      "node_name": "南门露天剧场",
+      "score": 22,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "P2-NODE-006",
+      "node_name": "10#2A03分区管理中心",
+      "score": 18,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    }
+  ]
+}

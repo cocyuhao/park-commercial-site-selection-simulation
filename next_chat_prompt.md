@@ -872,3 +872,17 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - 地图修正已继续合并在新版本上：搜索实时提示、拼音别名、撤回、只看选中、后端按 zoom/center 重新取高德静态图。
 - 评分不要再当固定 CSV 数：页面当前用“实时草案分”，只在奥森上下文显示，外部地点搜索仅作为地图预览。
 - 若继续改地图，优先处理高德 JS API 正式接入方案；不要把 Web Service Key 放到前端。
+# 下一轮提示：TGI/POI 供需缺口恢复后继续
+
+先读 `CONTEXT.md`、`progress.md`、`handoff_next_chat.md`、`findings.md` 和 `AGENTS.md`。
+
+最新状态：
+- 本轮已恢复丢失的 TGI/POI 供需缺口和报告页改动。
+- 关键文件：`60_model/simulation/demand_gap.py`、`90_p6_expert_dashboard/app.py`、`90_p6_expert_dashboard/static/index.html`、`app.js`、`styles.css`。
+- 服务已重启到 `http://127.0.0.1:8765/#report`。
+- API 烟测通过：dashboard、supply-gap、visitor-simulation、report、report download。
+
+必须记住：
+- 浏览器能打开页面不等于磁盘文件还在；要同时看文件、`git status` 和重启后的接口。
+- 资料池只显示网页外部上传资料，不自动读取 `CAD图及其计划`。
+- 缺口计算缺少外部客流/TGI资料时必须阻塞，不可用奥森内置资料硬算。

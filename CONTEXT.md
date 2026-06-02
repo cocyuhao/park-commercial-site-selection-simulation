@@ -1,3 +1,11 @@
+# 2026-06-02 TGI/POI 供需缺口改动已恢复
+- 当前正在做：已把丢失的 TGI/POI 供需缺口和分析报告功能重新写回磁盘，并重启 `http://127.0.0.1:8765/`。
+- 上次停在：用户发现页面还能看，但磁盘文件不在；原因是旧 uvicorn 进程仍在内存里跑旧代码，磁盘工作区没有保存这些改动。
+- 关键决定：资料池只读取网页外部上传资料，不再自动把 `CAD图及其计划` 中的奥森样例文件当成用户项目。
+- 当前实现：`60_model/simulation/demand_gap.py`、`/api/supply-gap`、`/api/visitor-simulation`、`/api/reports/site-selection`、前端“分析报告”页和资料闭合中心缺口面板已恢复。
+- 当前验证：`node --check` 通过；`py -m py_compile` 通过；API 烟测 `passed=5 failed=0`；浏览器 `#report` 页确认显示“分析报告”和 2 个下载入口。
+- 当前边界：缺少外部上传客流/TGI资料时，缺口计算只显示阻塞，不用内置奥森资料硬算。
+
 # 2026-06-02 B/C/D 验收入口
 - 主报告：`80_delivery/codex_bcd_validation_and_tool_report_20260602.md`。
 - 本地服务：`http://127.0.0.1:8000` 已跑通。
