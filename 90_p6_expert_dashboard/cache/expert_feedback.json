@@ -9,5 +9,27 @@
     "output_status": "needs_review",
     "not_final": true,
     "created_at": "2026-05-29T16:26:20"
+  },
+  {
+    "feedback_id": "FB-0002",
+    "node_id": "qa-node",
+    "expert_name": "Codex QA",
+    "comment": "QA smoke feedback; still needs_review, not final.",
+    "position_note": "browser/API pass",
+    "data_hint": "no final revenue",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-02T12:04:40"
+  },
+  {
+    "feedback_id": "FB-0003",
+    "node_id": "P2-NODE-001",
+    "expert_name": "专家",
+    "comment": "请用一句话确认当前只能作为待复核草案。",
+    "position_note": "",
+    "data_hint": "needs_review",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-02T12:16:19"
   }
 ]

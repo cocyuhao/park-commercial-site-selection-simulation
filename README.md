@@ -26,6 +26,16 @@ py -m py_compile 60_model\db\store.py 60_model\simulation\engine.py 90_p6_expert
 py 50_external_gis\scripts\run_amap_smoke_test.py
 ```
 
+## 双人 Codex 协作
+
+团队分工见 `00_control/team_codex_division.md`。每轮开始先同步远端、确认工作泳道，再做本轮修改和验证。
+
+推荐同步命令：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\sync_from_github_main.ps1
+```
+
 ## 搜索记录
 
 - 本轮未做外部方案搜索；改进直接基于项目现有 FastAPI、CSV/JSON 产物和员工A职责表落地。

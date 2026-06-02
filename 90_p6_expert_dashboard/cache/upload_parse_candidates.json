@@ -34,5 +34,31 @@
       "评估改造对周边运动场、停车场等设施的影响",
       "初步筛选优先级节点并标注需进一步深化设计的点位"
     ]
+  },
+  {
+    "candidate_id": "UC-0002",
+    "upload_id": "UP-20260602_120532-007",
+    "filename": "qa_candidates.csv",
+    "category": "数据表",
+    "source_excerpt": "park_id,category,boundary_status,visitor_flow,competitor_count,rent_level\nqa_upload,tea,inside,900,2,low\n",
+    "review_status": "待人工确认",
+    "output_status": "needs_review",
+    "not_final": true,
+    "generated_by": "deepseek",
+    "created_at": "2026-06-02T12:05:53",
+    "candidate_type": "茶饮/茶馆业态入驻候选",
+    "summary": "上传资料显示一条 park_id=qa_upload 的候选数据，业态类别为 tea（茶），位于公园内部（inside），游客流量 900，竞争对手仅 2 家，租金水平低（low）。该数据指向一个潜在的茶饮/茶馆业态入驻机会，当前处于待核验状态。",
+    "related_nodes": [
+      "P2-NODE-001",
+      "P2-NODE-005",
+      "P2-NODE-003"
+    ],
+    "related_gates": [],
+    "suggested_actions": [
+      "核实 park_id 对应的具体公园与空间坐标",
+      "匹配内部茶业态的落位可行性（面积、给排水、外摆等）",
+      "对比现有竞争对手业态，评估茶饮定位差异化",
+      "输出初步商务条件测算（租金低、流量 900）"
+    ]
   }
 ]

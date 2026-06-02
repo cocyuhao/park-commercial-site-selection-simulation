@@ -1,3 +1,67 @@
+# 下一轮启动提示：B/C/D 验收已完成，先读主报告
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前本地已同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，并已完成一轮 B/C/D 验收。
+
+启动后先读：
+1. `AGENTS.md`
+2. `80_delivery/codex_bcd_validation_and_tool_report_20260602.md`
+3. `00_control/team_codex_division.md`
+4. `CONTEXT.md`
+5. `progress.md`
+6. `handoff_next_chat.md`
+7. `00_control/decisions.md`
+
+最新验证结论：
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+# checks=725 failures=0
+
+py -3.12 30_extraction\scripts\verify_pdf_tables.py
+# 总体 PASS
+
+py -3.12 50_external_gis\scripts\run_amap_smoke_test.py
+# status=ok
+```
+
+浏览器验证也已完成：Codex Browser 窄屏、Chrome 1440x1000 宽屏、地图搜索、前端仿真检查、AI 工作台提问均通过。桌面截图在：
+`90_p6_expert_dashboard/qa/browser_desktop_map_20260602.png`
+
+注意：DeepSeek 综合验证为 WARN，只有 `/v1/models` 出现一次 SSL EOF；业务 chat 和 JSON 重现通过。所有输出仍必须保持 `needs_review / not_final`，P3 未闭合前不能给最终排序、ROI、收益预测或推荐结论。
+
+# 下一轮启动提示：已同步 d43db1c，使用双人 Codex 泳道分工
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前本地已同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，提交信息 `Polish park simulation UI workflow`。
+
+启动后先读：
+1. `AGENTS.md`
+2. `00_control/team_codex_division.md`
+3. `CONTEXT.md`
+4. `progress.md`
+5. `handoff_next_chat.md`
+6. `00_control/decisions.md`
+
+本轮新增协作/同步文件：
+- `00_control/team_codex_division.md`
+- `00_control/sync_from_github_main.ps1`
+
+如果这些文件已经提交到远端，下轮可直接运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\sync_from_github_main.ps1
+```
+
+当前验证已通过：
+
+```powershell
+node --check 90_p6_expert_dashboard\static\app.js
+py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+总门禁结果：`checks=725 failures=0`。
+
+注意：如果本轮新增文件尚未提交，不要先运行同步脚本，因为它会按设计重置到 `origin/main`。
+
 # 下一轮启动提示：P6 前端已消费后端契约
 
 请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家驾驶舱项目。最新状态是：员工A后端契约统一已完成，员工B前端显示接入也已完成一轮。

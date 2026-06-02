@@ -1,3 +1,50 @@
+# 2026-06-02 B/C/D 一口气验收、浏览器确认与工具报告
+
+### 已完成
+- 已在 `d43db1c60f9976f04399de43058d1ee36378a65f` 同步基线上启动本地 P6 dashboard：`http://127.0.0.1:8000`。
+- 已补齐/确认依赖：Python requirements 已安装；`python-multipart=0.0.30` 可用；为 Chrome 宽屏截图在临时目录安装 `playwright-core`，不污染项目源码。
+- 已新增同事同步报告：`80_delivery/codex_bcd_validation_and_tool_report_20260602.md`，记录本轮使用的软件、插件、网页/API、验证方法、证据路径和剩余风险。
+- 已用 API 覆盖页面、dashboard、integration、POI、gates、simulation jobs、job detail/results/export、upload、parse、expert feedback、gate input、AI chat 等链路。
+- 已用 Codex Browser 做窄屏人眼检查：项目总览、空间地图、资料导入、资料闭合中心、节点清单、专家 AI 工作台均可切换；页面无白屏、无替换字符乱码、无本地页面控制台错误。
+- 已用浏览器从前端触发“运行检查”，生成 `SIM-20260602121545-60601`，22 行待复核干跑结果，并显示 CSV/JSON 导出入口。
+- 已用浏览器从 AI 工作台发送问题，返回内容包含 `needs_review / not_final`，前端输入框恢复正常。
+- 已用 Chrome 148 做 1440x1000 桌面地图截图，截图路径：`90_p6_expert_dashboard/qa/browser_desktop_map_20260602.png`。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py 30_extraction\scripts\verify_project_implementation.py` 通过。
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。
+- `py -3.12 30_extraction\scripts\verify_pdf_tables.py` 输出总体 `PASS`，4 项方法全部通过。
+- `py -3.12 50_external_gis\scripts\run_amap_smoke_test.py` 输出 `status=ok`。
+- `py -3.12 60_model\scripts\verify_deepseek_api.py` 输出总体 `WARN`：HTTP 探测、JSON 输出、历史样本重现通过；模型列表端点出现 1 次 SSL EOF。
+- `.env` 以外真实 Key 值扫描输出 `SECRET_SCAN_REAL_VALUES findings=0`。
+
+### 当前边界
+- DeepSeek 模型列表端点的 SSL EOF 记为外部服务 WARN，不阻塞本地验收；前端 AI chat 和 JSON 重现均实际通过。
+- `90_p6_expert_dashboard/cache/` 有历史跟踪文件，QA 会写入运行状态；后续建议单独清理版本控制中的运行时缓存。
+- 所有 dry-run、AI、地图、上传解析和评分解释继续保持 `needs_review / not_final`，不能作为最终排序、收益预测或推荐结论。
+
+# 2026-06-02 GitHub 同步、双人 Codex 分工与一键同步脚本
+
+### 已完成
+- 已确认远端 `main` 最新提交为 `d43db1c60f9976f04399de43058d1ee36378a65f`，提交信息 `Polish park simulation UI workflow`。
+- 已执行 `git fetch origin main` 并 `git reset --hard origin/main`，本地工作区同步到同事最新版本；本地 `.env` 仍保留且未提交。
+- 已按 `requirements.txt` 补齐依赖，`python-multipart` 已从 `0.0.20` 升级到 `0.0.30`。
+- 已新增 `00_control/team_codex_division.md`，把两人都使用 Codex 的协作方式改为泳道分工：数据与后端契约、专家工作台与交互、证据链与门禁、真实校准/P3 输入、GitHub 同步与发布。
+- 已新增 `00_control/sync_from_github_main.ps1`，把同步远端、依赖安装和最小门禁固化为一条命令；普通 fetch 失败时会尝试 `gh auth token` 认证 fetch，最后才用 ZIP 镜像兜底。
+- 已更新 `CONTEXT.md`、`README.md` 和 `00_control/decisions.md`，记录当前同步基线、协作入口和 DEC-063/DEC-064。
+
+### 验证
+- PowerShell 解析 `00_control\sync_from_github_main.ps1` 通过。
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。
+
+### 当前边界
+- 当前新增的是协作与同步基础设施，不改变 P6 页面业务逻辑。
+- `sync_from_github_main.ps1` 在未提交前不要直接执行完整同步，否则会按设计重置到远端并清掉本轮未提交新增文件。
+- dry-run、AI、上传解析、地图 POI 和评分解释继续保持 `needs_review / not_final`，不得升级为最终排序、收益预测或推荐结论。
+
 # 2026-06-02 员工B前端消费后端契约修正
 
 ### 已完成

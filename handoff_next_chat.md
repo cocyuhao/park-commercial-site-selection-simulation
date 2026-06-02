@@ -1,3 +1,60 @@
+# 2026-06-02 最新交接：B/C/D 验收已完成并生成同事同步报告
+
+当前本地 P6 dashboard 已在 `d43db1c60f9976f04399de43058d1ee36378a65f` 基线上完成本轮 B/C/D 验收。
+
+本轮新增主报告：
+- `80_delivery/codex_bcd_validation_and_tool_report_20260602.md`
+
+关键通过项：
+- 本地服务：`http://127.0.0.1:8000`
+- 实现门禁：`py -3.12 30_extraction\scripts\verify_project_implementation.py` -> `checks=725 failures=0`
+- PDF 表格验证：`py -3.12 30_extraction\scripts\verify_pdf_tables.py` -> 总体 `PASS`
+- AMap 烟测：`py -3.12 50_external_gis\scripts\run_amap_smoke_test.py` -> `status=ok`
+- 真实 Key 值扫描：`.env` 以外 `findings=0`
+- Browser 窄屏检查：项目总览、空间地图、资料导入、资料闭合中心、节点清单、专家 AI 工作台均可打开，无白屏、无替换字符乱码、无本地页面控制台错误
+- Chrome 宽屏检查：1440x1000 地图截图通过，路径 `90_p6_expert_dashboard/qa/browser_desktop_map_20260602.png`
+- 浏览器交互：地图搜索 `aosen`、运行仿真检查、AI 工作台提问均通过
+
+需要记住的 WARN：
+- `py -3.12 60_model\scripts\verify_deepseek_api.py` 总体为 `WARN`，原因是 `/v1/models` 出现 1 次 SSL EOF；HTTP 探测、JSON 输出、历史样本重现和前端 AI chat 均通过。
+- `90_p6_expert_dashboard/cache/` 有历史跟踪文件，QA 会写入运行状态；后续如做提交，建议不要把一次 QA 缓存状态当成业务代码变更。
+
+继续边界：
+- 所有 dry-run、AI、地图、上传解析和评分解释必须保持 `needs_review / not_final`。
+- P3 真实几何、真实客流、转化率、收益/成本和运营授权未闭合前，不得输出最终排序、收益预测、ROI 或最终推荐。
+
+# 2026-06-02 最新交接：已同步 d43db1c 并补双人 Codex 分工
+
+当前本地 `main` 已同步到远端最新提交：
+
+- commit：`d43db1c60f9976f04399de43058d1ee36378a65f`
+- message：`Polish park simulation UI workflow`
+- 远端：`https://github.com/cocyuhao/park-commercial-site-selection-simulation`
+
+本轮新增：
+- `00_control/team_codex_division.md`：双人 Codex 泳道分工，避免老派固定前后端分工。
+- `00_control/sync_from_github_main.ps1`：一键同步脚本，执行远端同步、依赖安装和最小门禁。
+- `CONTEXT.md`、`README.md`、`00_control/decisions.md` 已记录当前基线和同步方式。
+
+本轮依赖补齐：
+- 已执行 `py -3.12 -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`。
+- `python-multipart` 已升级到 `0.0.30`。
+
+验证：
+- PowerShell 解析 `00_control\sync_from_github_main.ps1` 通过。
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过。
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。
+
+下一轮建议：
+- 本轮文件提交/推送后，下次启动可直接运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\sync_from_github_main.ps1
+```
+
+- 如果本轮尚未提交，不要先运行该脚本，因为它会按设计 `reset --hard origin/main`。
+
 # 2026-06-02 最新交接：员工B前端已接入后端评分契约
 
 本轮在员工A后端契约统一后，继续完成员工B前端显示修正；只修改 `90_p6_expert_dashboard/static/`，未继续改后端计算/数据库/仿真分组。

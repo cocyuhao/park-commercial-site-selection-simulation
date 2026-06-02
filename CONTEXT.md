@@ -1,6 +1,16 @@
+# 2026-06-02 B/C/D 验收入口
+- 主报告：`80_delivery/codex_bcd_validation_and_tool_report_20260602.md`。
+- 本地服务：`http://127.0.0.1:8000` 已跑通。
+- 核心门禁：`checks=725 failures=0`；PDF 表格验证 PASS；AMap 烟测 `status=ok`；真实 Key 值扫描 `findings=0`。
+- 浏览器验证：Codex Browser 窄屏视图切换、地图搜索、前端仿真、AI 工作台均通过；Chrome 1440x1000 截图在 `90_p6_expert_dashboard/qa/browser_desktop_map_20260602.png`。
+- WARN：DeepSeek `/v1/models` 本轮出现 1 次 SSL EOF，但业务 chat、JSON 输出、历史样本重现通过。
+- 边界：P3 未闭合前，全部输出仍为 `needs_review / not_final`，不得给最终排序、收益预测、ROI 或最终推荐。
+
 # 当前上下文
 
-- 当前正在做：员工B前端改进已和 GitHub 最新提交 `08846dd` 的后端字段同步，准备提交推送。
-- 上次停在：后续 `git fetch` 已成功，本地指针已同步到 `origin/main`，当前只保留员工B前端修复和上下文记录改动。
+- 当前正在做：本地已完全同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，提交信息为 `Polish park simulation UI workflow`。
+- 同步方式：先用 GitHub API 确认远端最新提交，再 `git fetch origin main`，最后 `git reset --hard origin/main`；本地 `.env` 保留且未提交。
+- 依赖补充：已按 `requirements.txt` 执行 `py -3.12 -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`，新增/升级 `python-multipart==0.0.30`。
+- 协作补充：新增 `00_control/team_codex_division.md`，按双人 Codex 泳道分工，不再依赖老派固定前后端分工；新增 `00_control/sync_from_github_main.ps1`，把同步、依赖补齐和门禁验证固化为一条命令。
 - 关键决定：P3 门禁未闭合前，仿真只输出 `needs_review / not_final` 的检查结果，不输出最终排序、收益预测或推荐结论；外部地点只做地图预览，不套用奥森评分。
-- 验证结果：前端 JS 语法通过，后端入口和仿真/数据库模块编译通过，高德 smoke test 通过，首页与 `/api/dashboard` 均返回 200；浏览器反复检查地图、节点清单、资料闭合页通过。已移除内部“员工 A”入口、临时设点和旧 AI 入口，折叠系统接入状态，把“干跑”改为“仿真检查”，并保留 GitHub 最新后端评分字段。浏览器插件输入框自动打字受剪贴板组件限制，纯数字搜索拦截按代码路径确认。
+- 当前验证：`node --check 90_p6_expert_dashboard\static\app.js` 通过；`py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过；`py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。

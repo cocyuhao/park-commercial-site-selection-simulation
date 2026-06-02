@@ -2,9 +2,9 @@
 
 ## 结论
 
-- 总检查项：718
-- 状态统计：{'fail': 1, 'pass': 717}
-- 失败项：1
+- 总检查项：725
+- 状态统计：{'pass': 725}
+- 失败项：0
 - 警告项：0
 
 ## 覆盖范围
@@ -28,7 +28,7 @@
 
 ## 失败项
 
-- `IMPL-718` github: gh repo list cocyuhao: exit=1 (gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url)
+- 无。
 
 ## 检查明细
 
@@ -36,11 +36,11 @@
 - `IMPL-002` `pass` `files` 00_control/credential_handoff.md exists=True, bytes=1300
 - `IMPL-003` `pass` `files` 00_control/model_orchestration.md exists=True, bytes=5652
 - `IMPL-004` `pass` `files` 00_control/plugin_routing.md exists=True, bytes=5359
-- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=37082
+- `IMPL-005` `pass` `files` 00_control/decisions.md exists=True, bytes=38822
 - `IMPL-006` `pass` `files` 10_research/deepseek_api_notes.md exists=True, bytes=1670
-- `IMPL-007` `pass` `files` 60_model/configs/llm_task_routing.csv exists=True, bytes=9183
+- `IMPL-007` `pass` `files` 60_model/configs/llm_task_routing.csv exists=True, bytes=9190
 - `IMPL-008` `pass` `files` 60_model/src/llm_router.py exists=True, bytes=6112
-- `IMPL-009` `pass` `files` 60_model/src/auto_gate.py exists=True, bytes=15039
+- `IMPL-009` `pass` `files` 60_model/src/auto_gate.py exists=True, bytes=15058
 - `IMPL-010` `pass` `files` 60_model/src/deepseek_review.py exists=True, bytes=9124
 - `IMPL-011` `pass` `files` 60_model/scripts/run_deepseek_smoke_test.py exists=True, bytes=2390
 - `IMPL-012` `pass` `files` 60_model/scripts/run_deepseek_table_classification.py exists=True, bytes=17662
@@ -78,10 +78,10 @@
 - `IMPL-044` `pass` `files` 60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730
 - `IMPL-045` `pass` `files` 60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628
 - `IMPL-046` `pass` `files` 60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838
-- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=87230
-- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=14773
-- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=26340
-- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=49782
+- `IMPL-047` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=87643
+- `IMPL-048` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=14810
+- `IMPL-049` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=28674
+- `IMPL-050` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=50232
 - `IMPL-051` `pass` `files` 60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104
 - `IMPL-052` `pass` `files` 60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172
 - `IMPL-053` `pass` `files` 60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288
@@ -169,8 +169,8 @@
 - `IMPL-135` `pass` `files` 70_outputs/processed_tables/p2_real_site_input_worklist.csv exists=True, bytes=2496
 - `IMPL-136` `pass` `files` 70_outputs/processed_tables/p2_simulation_input_requirements.csv exists=True, bytes=1957
 - `IMPL-137` `pass` `files` 40_quality_evidence/p2_real_site_preparation_report.md exists=True, bytes=2246
-- `IMPL-138` `pass` `files` 70_outputs/processed_tables/p2_docx_project_semantic_draft_deepseek.csv exists=True, bytes=13592
-- `IMPL-139` `pass` `files` 70_outputs/processed_tables/p2_pdf_spatial_label_draft_deepseek.csv exists=True, bytes=6525
+- `IMPL-138` `pass` `files` 70_outputs/processed_tables/p2_docx_project_semantic_draft_deepseek.csv exists=True, bytes=13643
+- `IMPL-139` `pass` `files` 70_outputs/processed_tables/p2_pdf_spatial_label_draft_deepseek.csv exists=True, bytes=6533
 - `IMPL-140` `pass` `files` 70_outputs/processed_tables/p2_project_node_candidates.csv exists=True, bytes=4395
 - `IMPL-141` `pass` `files` 70_outputs/processed_tables/p2_business_scene_assumption_pool.csv exists=True, bytes=3810
 - `IMPL-142` `pass` `files` 70_outputs/processed_tables/p2_spatial_label_candidates.csv exists=True, bytes=6055
@@ -217,7 +217,7 @@
 - `IMPL-183` `pass` `files` 40_quality_evidence/deepseek_p3_prework_package.md exists=True, bytes=400
 - `IMPL-184` `pass` `files` 40_quality_evidence/deepseek_p3_prework_package_review.csv exists=True, bytes=5769
 - `IMPL-185` `pass` `files` 40_quality_evidence/deepseek_p3_prework_package_review.md exists=True, bytes=286
-- `IMPL-186` `pass` `files` 70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv exists=True, bytes=5357
+- `IMPL-186` `pass` `files` 70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv exists=True, bytes=5359
 - `IMPL-187` `pass` `files` 70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv exists=True, bytes=3174
 - `IMPL-188` `pass` `files` 70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv exists=True, bytes=3321
 - `IMPL-189` `pass` `files` 70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv exists=True, bytes=2784
@@ -749,4 +749,11 @@
 - `IMPL-715` `pass` `security` .env has local DeepSeek key configured
 - `IMPL-716` `pass` `security` .env has local Amap key configured
 - `IMPL-717` `pass` `security` .gitignore excludes .env
-- `IMPL-718` `fail` `github` gh repo list cocyuhao: exit=1
+- `IMPL-718` `pass` `github` gh repo list cocyuhao: exit=0
+- `IMPL-719` `pass` `github` fork parent verification failures=[]
+- `IMPL-720` `pass` `github` archive repo contents: exit=0
+- `IMPL-721` `pass` `github` archive root paths=['README.md', 'docs', 'manifests']
+- `IMPL-722` `pass` `github` archive docs contents: exit=0
+- `IMPL-723` `pass` `github` archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']
+- `IMPL-724` `pass` `github` archive manifests contents: exit=0
+- `IMPL-725` `pass` `github` archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']

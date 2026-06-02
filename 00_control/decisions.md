@@ -156,3 +156,19 @@
 - 原因：伙伴已新增数据库层和 simulation dry-run API，P6 不能继续只展示固定 CSV 分数；同时用户要求团队内部通过 GitHub 协作。
 - 实现：保留伙伴 `60_model/db`、`60_model/simulation` 和 `/api/simulation/jobs` 能力；P6 前端显示“实时草案分”，结合 P3 gate、dry-run 缺口、POI 数量和边界状态扣分。
 - 边界：实时草案分只在奥森项目上下文显示；外部地点搜索只作为地图预览，不套用奥森评分。dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测或最终排序。
+
+# DEC-063 双人 Codex 泳道协作
+
+- 日期：2026-06-02
+- 决策：团队协作按“数据与后端契约、专家工作台与交互、证据链与门禁、真实校准/P3 输入、GitHub 同步与发布”五条泳道分工，而不是固定老派前后端人肉分工。
+- 原因：双方都有 Codex，适合让每个人带一个 agent 负责完整泳道的设计、实现、验证和交接；固定前后端切分容易造成接口重复计算、评分口径冲突和同步混乱。
+- 当前落实：新增 `00_control/team_codex_division.md`；本地已同步到 `d43db1c60f9976f04399de43058d1ee36378a65f`，并补齐 `requirements.txt` 中缺失的 `python-multipart==0.0.30`。
+- 边界：跨泳道修改必须写清原因和验证命令；发版者必须跑 JS 语法、Python 编译和 `verify_project_implementation.py`，且不得提交 `.env`、运行日志、无关缓存或半成品截图。
+
+# DEC-064 GitHub 同步必须工具化兜底
+
+- 日期：2026-06-02
+- 决策：新增 `00_control/sync_from_github_main.ps1` 作为每轮同步入口，优先普通 `git fetch/reset`，再用 `gh auth token` 认证 fetch，最后才用 GitHub ZIP 镜像兜底；同步后自动安装 `requirements.txt` 并运行最小项目门禁。
+- 原因：本机普通 HTTPS fetch 偶发不稳，手工 `gh api` 重定向 ZIP 曾破坏二进制；若不工具化，文件越多越容易留下半同步状态。
+- 安全：脚本保留 `.git` 和本地 `.env`，不把真实凭据写入仓库；ZIP 兜底会校验 `50 4B 03 04` 文件头后再解压。
+- 边界：若 ZIP 兜底触发，文件层可同步，但 Git 元数据仍建议后续重新跑 fetch；正常协作优先以 `git fetch/reset` 成功为准。

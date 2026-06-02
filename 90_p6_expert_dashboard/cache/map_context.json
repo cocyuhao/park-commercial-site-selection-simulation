@@ -1,11 +1,12 @@
 {
-  "keyword": "东坝公园",
-  "matched_name": "东坝公园",
-  "address": "东坝乡东五环外(近机场第二高速)",
-  "longitude": "116.573945",
-  "latitude": "39.950193",
+  "keyword": "奥林匹克森林公园",
+  "matched_name": "奥林匹克森林公园",
+  "address": "科荟路33号",
+  "longitude": "116.392159",
+  "latitude": "40.018635",
+  "radius_m": 1200,
   "source": "amap_web_service_place_text",
   "output_status": "needs_review",
   "not_final": true,
-  "updated_at": "2026-06-01T13:38:13"
+  "updated_at": "2026-06-02T12:13:55"
 }
