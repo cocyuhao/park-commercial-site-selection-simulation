@@ -10,7 +10,7 @@
       "console_errors": [
         "{'level': 'SEVERE', 'message': 'http://127.0.0.1:8765/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)', 'source': 'network', 'timestamp': 1780457839297}"
       ],
-      "visual_notes": "?????????/?? POI/?????",
+      "visual_notes": "Map visible; POI and node result area remains populated.",
       "loading_kept_before_tabs": true,
       "loading_kept_after_tabs": true,
       "result_not_blank_during_tabs": true,
@@ -22,7 +22,7 @@
       "failed_actions": [],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\race_round_02.png",
       "console_errors": [],
-      "visual_notes": "?????????/?? POI/?????",
+      "visual_notes": "Map visible; POI and node result area remains populated.",
       "loading_kept_before_tabs": true,
       "loading_kept_after_tabs": true,
       "result_not_blank_during_tabs": true,
@@ -34,7 +34,7 @@
       "failed_actions": [],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\race_round_03.png",
       "console_errors": [],
-      "visual_notes": "?????????/?? POI/?????",
+      "visual_notes": "Map visible; POI and node result area remains populated.",
       "loading_kept_before_tabs": true,
       "loading_kept_after_tabs": true,
       "result_not_blank_during_tabs": true,
@@ -50,7 +50,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_01.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-079"
+      "visual_notes": "Full round hit a Selenium timeout; created_id=N-079; POI tab remained recoverable."
     },
     {
       "round_number": 2,
@@ -60,7 +60,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_02.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-080"
+      "visual_notes": "Full round hit a Selenium timeout; created_id=N-080; POI tab remained recoverable."
     },
     {
       "round_number": 3,
@@ -70,7 +70,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_03.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+      "visual_notes": "Full round hit a Selenium timeout before node id creation; POI tab remained recoverable."
     },
     {
       "round_number": 4,
@@ -80,7 +80,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_04.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+      "visual_notes": "Full round hit a Selenium timeout before node id creation; POI tab remained recoverable."
     },
     {
       "round_number": 5,
@@ -90,7 +90,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_05.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-090"
+      "visual_notes": "Full round hit a Selenium timeout; created_id=N-090; POI tab remained recoverable."
     },
     {
       "round_number": 6,
@@ -100,7 +100,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_06.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-094"
+      "visual_notes": "Full round hit a stale element error; created_id=N-094; POI tab remained recoverable."
     },
     {
       "round_number": 7,
@@ -110,7 +110,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_07.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+      "visual_notes": "Full round hit a Selenium timeout before node id creation; POI tab remained recoverable."
     },
     {
       "round_number": 8,
@@ -120,7 +120,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_08.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+      "visual_notes": "Full round hit an interactability error before node id creation; POI tab remained recoverable."
     },
     {
       "round_number": 9,
@@ -130,7 +130,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_09.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-101"
+      "visual_notes": "Full round hit a Selenium timeout; created_id=N-101; POI tab remained recoverable."
     },
     {
       "round_number": 10,
@@ -140,7 +140,7 @@
       ],
       "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_10.png",
       "console_errors": [],
-      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-102"
+      "visual_notes": "Full round hit a Selenium timeout; created_id=N-102; POI tab remained recoverable."
     }
   ],
   "summary": {

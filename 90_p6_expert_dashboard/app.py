@@ -1489,12 +1489,43 @@ def load_node_drafts() -> list[dict[str, Any]]:
     except json.JSONDecodeError:
         return []
     rows = data if isinstance(data, list) else []
-    return [normalize_node_draft(row, index) for index, row in enumerate(rows)]
+    drafts = dedupe_node_drafts([normalize_node_draft(row, index) for index, row in enumerate(rows)])
+    if len(drafts) != len(rows):
+        save_node_drafts(drafts)
+    return drafts
 
 
 def save_node_drafts(rows: list[dict[str, Any]]) -> None:
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    NODE_DRAFTS_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    NODE_DRAFTS_FILE.write_text(json.dumps(dedupe_node_drafts(rows), ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def node_draft_key(row: dict[str, Any]) -> tuple[str, str, str, str]:
+    if row.get("source") == "project_plan_import":
+        directions = row.get("business_direction") or row.get("candidate_business_formats") or []
+        if isinstance(directions, list):
+            direction_key = "|".join(sorted(str(item).strip() for item in directions if str(item).strip()))
+        else:
+            direction_key = str(directions).strip()
+        return (
+            "project_plan_import",
+            str(row.get("node_name") or "").strip(),
+            str(row.get("location_description") or row.get("primary_positioning") or "").strip(),
+            direction_key,
+        )
+    return ("manual", str(row.get("node_id") or ""), "", "")
+
+
+def dedupe_node_drafts(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[tuple[str, str, str, str]] = set()
+    result: list[dict[str, Any]] = []
+    for row in rows:
+        key = node_draft_key(row)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(row)
+    return result
 
 
 def next_node_draft_id(rows: list[dict[str, Any]]) -> str:
@@ -1555,25 +1586,30 @@ def build_plan_node_drafts(upload: dict[str, Any], existing: list[dict[str, Any]
     locations = ["主入口周边", "核心游线交汇处", "临水或停留空间"]
     drafts: list[dict[str, Any]] = []
     rows = list(existing)
+    existing_keys = {node_draft_key(row) for row in rows}
     for location, direction in zip(locations, directions):
+        draft_name = f"{base_name}-{location}"
+        draft_key = ("project_plan_import", draft_name, location, direction)
+        if draft_key in existing_keys:
+            continue
         node_id = next_node_draft_id(rows + drafts)
-        drafts.append(
-            normalize_node_draft(
-                {
-                    "node_id": node_id,
-                    "node_name": f"{base_name}-{location}",
-                    "location_description": location,
-                    "business_direction": [direction],
-                    "area_sqm": "待测",
-                    "note": f"由 {upload.get('filename')} 生成的节点草案，需人工复核。",
-                    "enabled": True,
-                    "source": "project_plan_import",
-                    "source_upload_id": upload.get("upload_id"),
-                    "created_at": datetime.now().isoformat(timespec="seconds"),
-                },
-                len(rows) + len(drafts),
-            )
+        draft = normalize_node_draft(
+            {
+                "node_id": node_id,
+                "node_name": draft_name,
+                "location_description": location,
+                "business_direction": [direction],
+                "area_sqm": "待测",
+                "note": f"由 {upload.get('filename')} 生成的节点草案，需人工复核。",
+                "enabled": True,
+                "source": "project_plan_import",
+                "source_upload_id": upload.get("upload_id"),
+                "created_at": datetime.now().isoformat(timespec="seconds"),
+            },
+            len(rows) + len(drafts),
         )
+        drafts.append(draft)
+        existing_keys.add(draft_key)
     return drafts
 
 

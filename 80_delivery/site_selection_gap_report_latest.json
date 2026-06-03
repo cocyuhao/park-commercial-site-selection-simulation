@@ -1,10 +1,10 @@
 {
-  "report_id": "RPT-20260602153331",
+  "report_id": "RPT-20260603170830",
   "title": "供需缺口与节点改进报告",
-  "generated_at": "2026-06-02T15:33:31",
+  "generated_at": "2026-06-03T17:08:30",
   "output_status": "needs_review",
   "not_final": true,
-  "source_upload_count": 3,
+  "source_upload_count": 19,
   "gap_status": "blocked_until_uploaded_visitor_flow_and_poi_ready",
   "summary": "缺少外部客流/TGI资料或高德 POI，供需缺口暂不能计算。",
   "top_gaps": [],
@@ -12,7 +12,7 @@
     {
       "node_id": "P2-NODE-001",
       "node_name": "桃花源白房子",
-      "score": 38,
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",
@@ -21,7 +21,7 @@
     {
       "node_id": "P2-NODE-002",
       "node_name": "奥运廉洁主题展馆",
-      "score": 34,
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",
@@ -30,7 +30,7 @@
     {
       "node_id": "P2-NODE-003",
       "node_name": "12#西分区管理中心",
-      "score": 30,
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",
@@ -39,7 +39,7 @@
     {
       "node_id": "P2-NODE-004",
       "node_name": "南门地下预埋空间",
-      "score": 26,
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",
@@ -48,7 +48,7 @@
     {
       "node_id": "P2-NODE-005",
       "node_name": "南门露天剧场",
-      "score": 22,
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",
@@ -57,7 +57,169 @@
     {
       "node_id": "P2-NODE-006",
       "node_name": "10#2A03分区管理中心",
-      "score": 18,
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-001",
+      "node_name": "qingnianhu_project-主入口周边",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-002",
+      "node_name": "qingnianhu_project-核心游线交汇处",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-003",
+      "node_name": "qingnianhu_project-临水或停留空间",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-061",
+      "node_name": "direct-node-test-4",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-062",
+      "node_name": "native-click-node-3",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-066",
+      "node_name": "auto-node-1780457573-1",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-070",
+      "node_name": "auto-node-1780457573-2",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-071",
+      "node_name": "auto-node-1780457573-3",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-072",
+      "node_name": "auto-node-1780457573-4",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-073",
+      "node_name": "auto-node-1780457573-6",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-074",
+      "node_name": "auto-node-1780457573-7",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-075",
+      "node_name": "auto-node-1780457573-9",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-079",
+      "node_name": "auto-node-1780457837-1",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-080",
+      "node_name": "auto-node-1780457837-2",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-090",
+      "node_name": "auto-node-1780457837-5",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-094",
+      "node_name": "auto-node-1780457837-6",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-101",
+      "node_name": "auto-node-1780457837-9",
+      "score": 0,
+      "matched_gap": {},
+      "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
+      "output_status": "needs_review",
+      "not_final": true
+    },
+    {
+      "node_id": "N-102",
+      "node_name": "auto-node-1780457837-10",
+      "score": 0,
       "matched_gap": {},
       "improvement": "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。",
       "output_status": "needs_review",

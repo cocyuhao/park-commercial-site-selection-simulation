@@ -1,3 +1,56 @@
+# 2026-06-03 最新交接：用户全流程回归与交互修复
+
+本轮按用户要求“模仿用户使用网页全部流程”完成检查，并修复发现的交互问题。
+
+已检查：
+- 项目总览
+- 节点清单
+- 空间地图
+- 资料导入
+- 资料闭合中心
+- 分析报告
+- 专家 AI 工作台
+
+已修复：
+- 地图搜索成功后不再强制跳回地图页，避免用户切到 AI/资料页后被异步结果拉走。
+- 新增 hash 路由监听，`#ai`、`#map`、浏览器前进/后退能正确切换页面。
+- 空 AI 会话禁用“生成报告”，有消息后才允许生成。
+- 节点草案生成和读取增加去重，避免同一项目计划反复生成同名节点。
+- 更新 `app.js` 静态版本号到 `20260603flow6`，避免浏览器缓存旧脚本。
+
+验证：
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py 30_extraction\scripts\verify_project_implementation.py` 通过。
+- `py 30_extraction\scripts\verify_project_implementation.py` -> `checks=723 failures=0`。
+- 截图：`90_p6_expert_dashboard/qa/user_flow_check_ai_20260603.png`。
+
+注意：
+- 当前接口返回节点数从 108 降到 24；剩余包含历史手工测试节点，如 `auto-node-*`、`direct-node-test-*`、`native-click-node-*`。
+- 本轮未删除运行态缓存；如果要清理这些测试数据，需要用户明确同意。
+
+# 2026-06-03 最新交接：GitHub 同步、LFS 补全与门禁修复
+
+本轮按用户要求同步 GitHub 远程内容并检查门禁。
+
+已完成：
+- `git fetch origin main --prune` 后确认 `HEAD...origin/main` 为 `0 0`，本地 `main` 与远端一致。
+- 执行 `git lfs pull origin main`，两个 DWG 从 LFS 指针恢复为真实大文件。
+- 重建 P2 真实资料索引后，两个 DWG header 均为 `AC1018`，状态仍保持 `pending_conversion`。
+- 修正项目总门禁：GitHub 检查改为检查当前仓库远端、同步状态和 LFS 文件，不再依赖本机 `gh` 或外部 fork 匿名 API。
+- 修正 `.env` 门禁：承认项目代码已支持的 `OPENAI_API_KEY` 和 `AMAP_API_KEY` 别名。
+- 修复 `selenium_map_material_node_overview_20260603.json` 中的乱码说明字段。
+
+验证：
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py 30_extraction\scripts\verify_project_implementation.py` 通过。
+- `py 30_extraction\scripts\verify_project_implementation.py` -> `checks=723 failures=0`。
+- `py 30_extraction\scripts\verify_pdf_tables.py` -> `PASS=4 FAIL=0`。
+- `py 60_model\scripts\verify_deepseek_api.py` -> `PASS=4 FAIL=0`。
+
+注意：
+- DWG 大文件已落地，不等于 DWG 几何已经解析；没有可信转换产物前，不得输出坐标、面积、图层、动线或最终推荐。
+- 工作区仍有上一轮运行态缓存、截图和验证产物改动；提交前需要单独筛选，不要一股脑加入。
+
 # 2026-06-03 最新交接：高德 JS 地图真实可用
 
 本轮按用户要求完成“空间地图”专项改造，只动地图、资料/节点联动相关代码，未改专家 AI 工作台聊天界面、报告文风和输入框视觉。

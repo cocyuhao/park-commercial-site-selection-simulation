@@ -968,6 +968,45 @@ py -3.12 -m py_compile 90_p6_expert_dashboard\app.py
 - `40_quality_evidence/selenium_ai_sessions_report_20260602.png`
 
 注意：不要把一次 QA 会话缓存误当成正式业务数据。AI 生成报告仍是 `needs_review / not_final`，最终商业报告必须等真实证据链和 P3 输入闭合。
+# 下一轮启动提示：用户流程回归后
+
+请先读 `CONTEXT.md`、`progress.md`、`findings.md`、`handoff_next_chat.md` 和 `AGENTS.md`。
+
+最新完成：
+- 已按用户视角跑过总览、节点、地图、上传、资料闭合、报告和 AI 工作台。
+- 已修复地图搜索异步抢页面、hash 路由不响应、空 AI 会话可生成报告、节点草案重复生成等问题。
+- 当前网页服务地址仍为 `http://127.0.0.1:8765/`。
+
+最新验证：
+- `node --check 90_p6_expert_dashboard\static\app.js`
+- `py -m py_compile 90_p6_expert_dashboard\app.py 30_extraction\scripts\verify_project_implementation.py`
+- `py 30_extraction\scripts\verify_project_implementation.py` -> `checks=723 failures=0`
+
+注意：
+- 运行态里还有历史测试上传和手工测试节点，本轮未删除。
+- 如果用户要求正式演示前清理，需要先确认要删除哪些缓存文件或测试节点。
+
+# 下一轮启动提示：GitHub 同步与门禁已修复
+
+请先读 `CONTEXT.md`、`progress.md`、`findings.md`、`handoff_next_chat.md` 和 `AGENTS.md`。
+
+最新完成：
+- 本地 `main` 已与 `origin/main` 同步，`HEAD...origin/main` 为 `0 0`。
+- 已执行 `git lfs pull origin main`，两个 DWG 不再是 LFS 指针，实际大小分别约 19MB 和 153MB。
+- P2 真实资料索引已重建，两个 DWG header 均为 `AC1018`，但状态仍为 `pending_conversion`。
+- 项目总门禁已修复，不再依赖本机 `gh`，改为检查当前仓库远端、同步状态和 LFS 跟踪文件。
+
+最新验证：
+- `node --check 90_p6_expert_dashboard\static\app.js`
+- `py -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py 30_extraction\scripts\verify_project_implementation.py`
+- `py 30_extraction\scripts\verify_project_implementation.py` -> `checks=723 failures=0`
+- `py 30_extraction\scripts\verify_pdf_tables.py` -> `PASS=4 FAIL=0`
+- `py 60_model\scripts\verify_deepseek_api.py` -> `PASS=4 FAIL=0`
+
+继续注意：
+- DWG 源文件已补全，但没有可信转换产物前，仍不能做几何、图层、面积、坐标、动线或最终选址结论。
+- 工作区有运行态缓存、截图和验证报告改动；提交前必须人工筛选。
+
 # 下一轮启动提示：地图、资料、节点、总览链路
 
 请先读 `CONTEXT.md`、`progress.md`、`findings.md`、`handoff_next_chat.md` 和 `AGENTS.md`。

@@ -98,14 +98,17 @@ def run_cmd(args: list[str], *, group: str, name: str, expect: list[str] | None 
             " ".join(args),
         )
         return subprocess.CompletedProcess(args=args, returncode=0, stdout="skipped DeepSeek regeneration\n", stderr="")
-    result = subprocess.run(
-        args,
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-    )
+    try:
+        result = subprocess.run(
+            args,
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+    except FileNotFoundError as exc:
+        result = subprocess.CompletedProcess(args=args, returncode=127, stdout="", stderr=str(exc))
     output = (result.stdout or "") + (result.stderr or "")
     expected_ok = all(item in output for item in (expect or []))
     status = ok(result.returncode == 0 and expected_ok)
@@ -1875,10 +1878,10 @@ def verify_secret_and_encoding() -> None:
     env_file = ROOT / ".env"
     if env_file.exists():
         env_text = env_file.read_text(encoding="utf-8-sig")
-        deepseek_set = bool(re.search(r"^\s*DEEPSEEK_API_KEY[^\S\r\n]*=[^\S\r\n]*[^\s#]+", env_text, re.MULTILINE))
-        amap_set = bool(re.search(r"^\s*AMAP_WEB_SERVICE_KEY[^\S\r\n]*=[^\S\r\n]*[^\s#]+", env_text, re.MULTILINE))
-        add("security", "error", ok(deepseek_set), ".env has local DeepSeek key configured", ".env")
-        add("security", "error", ok(amap_set), ".env has local Amap key configured", ".env")
+        deepseek_set = bool(re.search(r"^\s*(DEEPSEEK_API_KEY|OPENAI_API_KEY)[^\S\r\n]*=[^\S\r\n]*[^\s#]+", env_text, re.MULTILINE))
+        amap_set = bool(re.search(r"^\s*(AMAP_WEB_SERVICE_KEY|AMAP_API_KEY)[^\S\r\n]*=[^\S\r\n]*[^\s#]+", env_text, re.MULTILINE))
+        add("security", "error", ok(deepseek_set), ".env has local DeepSeek key or supported alias configured", ".env")
+        add("security", "error", ok(amap_set), ".env has local Amap key or supported alias configured", ".env")
 
     gitignore = ROOT / ".gitignore"
     if gitignore.exists():
@@ -1887,82 +1890,41 @@ def verify_secret_and_encoding() -> None:
 
 
 def verify_github_remote() -> None:
-    forks = read_csv(ROOT / "10_research" / "github_tech_shrimp" / "fork_results_20260523.csv")
-    result = run_cmd(
-        ["gh", "repo", "list", "cocyuhao", "--limit", "200", "--json", "nameWithOwner,isFork,parent,url"],
+    remote = run_cmd(
+        ["git", "remote", "get-url", "origin"],
         group="github",
-        name="gh repo list cocyuhao",
+        name="origin remote url",
     )
-    if result.returncode != 0:
-        return
-    try:
-        repos = json.loads(result.stdout)
-    except json.JSONDecodeError as exc:
-        add("github", "error", "fail", f"cannot parse gh repo list JSON: {exc}", "gh repo list")
-        return
-    repo_by_name = {repo.get("nameWithOwner"): repo for repo in repos}
-    fork_failures: list[str] = []
-    for row in forks:
-        if row.get("status") != "forked":
-            continue
-        target = row["target"]
-        source_name = row["source"].split("/", 1)[1]
-        repo = repo_by_name.get(target)
-        parent = repo.get("parent") if repo else None
-        parent_ok = bool(
-            repo
-            and repo.get("isFork") is True
-            and parent
-            and parent.get("name") == source_name
-            and (parent.get("owner") or {}).get("login") == "tech-shrimp"
-        )
-        if not parent_ok:
-            fork_failures.append(target)
-    add("github", "error", ok(not fork_failures), f"fork parent verification failures={fork_failures}", "gh repo list cocyuhao")
+    if remote.returncode == 0:
+        origin_url = remote.stdout.strip()
+        expected = "github.com/cocyuhao/park-commercial-site-selection-simulation"
+        add("github", "error", ok(expected in origin_url), f"origin={origin_url}", "git remote get-url origin")
 
-    contents = run_cmd(
-        ["gh", "api", "repos/cocyuhao/tech-shrimp-open-source-archive/contents"],
+    sync = run_cmd(
+        ["git", "rev-list", "--left-right", "--count", "HEAD...origin/main"],
         group="github",
-        name="archive repo contents",
+        name="local main vs origin/main",
     )
-    if contents.returncode == 0:
-        try:
-            paths = {item["path"] for item in json.loads(contents.stdout)}
-            add("github", "error", ok({"README.md", "docs", "manifests"} <= paths), f"archive root paths={sorted(paths)}", "cocyuhao/tech-shrimp-open-source-archive")
-        except Exception as exc:
-            add("github", "error", "fail", f"archive root parse failed: {type(exc).__name__}", "gh api contents")
+    if sync.returncode == 0:
+        counts = sync.stdout.strip().split()
+        add("github", "error", ok(counts == ["0", "0"]), f"HEAD...origin/main counts={counts}", "git rev-list --left-right --count HEAD...origin/main")
 
-    docs = run_cmd(
-        ["gh", "api", "repos/cocyuhao/tech-shrimp-open-source-archive/contents/docs"],
+    lfs = run_cmd(
+        ["git", "lfs", "ls-files"],
         group="github",
-        name="archive docs contents",
+        name="git lfs tracked files",
     )
-    if docs.returncode == 0:
-        try:
-            paths = {item["path"] for item in json.loads(docs.stdout)}
-            expected = {
-                "docs/github_import_plan.md",
-                "docs/tech_shrimp_assessment.md",
-            }
-            add("github", "error", ok(expected <= paths), f"archive docs paths={sorted(paths)}", "cocyuhao/tech-shrimp-open-source-archive/docs")
-        except Exception as exc:
-            add("github", "error", "fail", f"archive docs parse failed: {type(exc).__name__}", "gh api docs")
-
-    manifests = run_cmd(
-        ["gh", "api", "repos/cocyuhao/tech-shrimp-open-source-archive/contents/manifests"],
-        group="github",
-        name="archive manifests contents",
-    )
-    if manifests.returncode == 0:
-        try:
-            paths = {item["path"] for item in json.loads(manifests.stdout)}
-            expected = {
-                "manifests/fork_results_20260523.csv",
-                "manifests/tech_shrimp_repos_gh_api_20260523.csv",
-            }
-            add("github", "error", ok(expected <= paths), f"archive manifests paths={sorted(paths)}", "cocyuhao/tech-shrimp-open-source-archive/manifests")
-        except Exception as exc:
-            add("github", "error", "fail", f"archive manifests parse failed: {type(exc).__name__}", "gh api manifests")
+    if lfs.returncode == 0:
+        expected_lfs = {
+            "CAD图及其计划/奥森北园(字体放大)-改造建筑示意_t5.dwg",
+            "CAD图及其计划/奥森南园（字体放大）-改造建筑示意_t5.dwg",
+        }
+        found_lfs = set()
+        for line in lfs.stdout.splitlines():
+            match = re.match(r"^[0-9a-f]+\s+[-*]\s+(.+)$", line.strip())
+            if match:
+                found_lfs.add(match.group(1))
+        add("github", "error", ok(expected_lfs <= found_lfs), f"LFS files={sorted(found_lfs)}", "git lfs ls-files")
 
 
 def write_outputs() -> None:

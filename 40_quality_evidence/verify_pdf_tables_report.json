@@ -1,7 +1,7 @@
 {
-  "run_at": "2026-06-02T09:10:14Z",
-  "tables_jsonl": "C:\\Users\\Yy199\\Desktop\\仿真设计\\30_extraction\\tables\\pdf_native_tables.jsonl",
-  "tables_csv": "C:\\Users\\Yy199\\Desktop\\仿真设计\\30_extraction\\tables\\pdf_native_tables_summary.csv",
+  "run_at": "2026-06-03T08:37:34Z",
+  "tables_jsonl": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\30_extraction\\tables\\pdf_native_tables.jsonl",
+  "tables_csv": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\30_extraction\\tables\\pdf_native_tables_summary.csv",
   "overall_verdict": "PASS",
   "summary": {
     "PASS": 4,

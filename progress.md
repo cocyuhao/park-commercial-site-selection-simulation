@@ -1,3 +1,47 @@
+# 2026-06-03 用户全流程回归与交互修复
+
+### 已完成
+- 已模拟普通用户打开项目总览、节点清单、空间地图、资料导入、资料闭合中心、分析报告和专家 AI 工作台。
+- 已修复地图搜索成功后无条件 `setView("map")` 的问题；用户切到其他页面后，不会再被异步地图搜索拉回地图。
+- 已新增 hash 路由监听；直接进入 `#ai`、`#map` 或浏览器前进/后退时，页面会和 URL 保持一致。
+- 已修复空 AI 会话也能点击“生成报告”的问题；当前会话没有消息时按钮禁用。
+- 已给节点草案读取和保存增加去重，避免同一项目计划反复生成同名节点草案。
+- 已更新静态资源版本号，避免浏览器继续使用旧 `app.js`。
+
+### 验证
+- 主导航 7 个页面均可打开，无白屏。
+- 地图、AI、首页 hash 路由切换通过。
+- 报告下载接口通过：Markdown 和 JSON 均返回 200。
+- AI 页面空会话下“生成报告”按钮已禁用，发送按钮可用。
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py 30_extraction\scripts\verify_project_implementation.py` 通过。
+- `py 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=723 failures=0`。
+- 截图：`90_p6_expert_dashboard/qa/user_flow_check_ai_20260603.png`。
+
+### 当前边界
+- 当前运行态仍有历史测试上传和人工测试节点；本轮不擅自删除缓存。
+- 节点数已从 108 降到 24，但其中仍包含历史手工测试节点，清理前需确认。
+
+# 2026-06-03 GitHub 同步、LFS 补全与门禁修复
+
+### 已完成
+- 已执行 `git fetch origin main --prune`，确认本地 `main` 与 `origin/main` 一致，差异计数为 `0 0`。
+- 已执行 `git lfs pull origin main`，两个 DWG 从 Git LFS 指针恢复为真实大文件。
+- 已重建 P2 真实资料索引，两个 DWG 文件头恢复为 `AC1018`，状态继续保持 `pending_conversion`。
+- 已修正 `30_extraction/scripts/verify_project_implementation.py`：缺少外部命令时不再崩溃；GitHub 门禁改为检查当前仓库远端、同步状态和 LFS 文件；`.env` 检查承认项目已支持的变量别名。
+- 已修复 `40_quality_evidence/selenium_map_material_node_overview_20260603.json` 中的乱码说明字段，保留原始失败动作和截图路径。
+
+### 验证
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py 30_extraction\scripts\verify_project_implementation.py` 通过。
+- `py 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=723 failures=0`。
+- `py 30_extraction\scripts\verify_pdf_tables.py` 输出 `PASS=4 FAIL=0`。
+- `py 60_model\scripts\verify_deepseek_api.py` 输出 `PASS=4 FAIL=0`。
+
+### 当前边界
+- DWG 只是源文件已补全，不代表几何、图层、面积、坐标或动线已经解析。
+- 本轮没有清理上一轮遗留的运行态缓存、截图和验证产物；提交前需要单独筛选。
+
 # 2026-06-03 高德 JS 地图真实可用改造
 
 ### 已完成

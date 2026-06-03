@@ -218,9 +218,13 @@ function renderMeta() {
 
 function setView(view) {
   state.currentView = view;
-  window.location.hash = view === "overview" ? "" : view;
+  const nextHash = view === "overview" ? "" : `#${view}`;
+  if (window.location.hash !== nextHash) {
+    window.location.hash = nextHash;
+  }
   $$(".view").forEach((el) => el.classList.toggle("active", el.id === `${view}View` || (view === "ai" && el.id === "aiWorkspaceView")));
   $$("[data-view]").forEach((btn) => btn.classList.toggle("active", btn.dataset.view === view && btn.classList.contains("side-nav-item")));
+  if (view !== "map" && $("#mapSuggest")) $("#mapSuggest").innerHTML = "";
   renderMeta();
   if (view === "ai") renderAiContext();
   if (view === "report") renderReport();
@@ -1538,7 +1542,6 @@ async function updateMapContext(event) {
       state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 300);
       fitAmapView();
     }
-    setView("map");
   } catch (error) {
     state.mapError = mapUserError(error);
     state.lastAction = state.mapError;
@@ -1549,6 +1552,8 @@ async function updateMapContext(event) {
     state.mapSearchLoading = false;
     state.pendingSearchKeyword = "";
     $("#mapCanvas").classList.toggle("loading", mapIsLoading());
+    renderMap();
+    renderMeta();
   }
 }
 
@@ -1588,7 +1593,6 @@ async function updateMapContextFromSuggestion(tip) {
       state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 300);
       fitAmapView();
     }
-    setView("map");
   } catch (error) {
     state.mapError = mapUserError(error);
     state.lastAction = state.mapError;
@@ -1599,6 +1603,8 @@ async function updateMapContextFromSuggestion(tip) {
     state.mapSearchLoading = false;
     state.pendingSearchKeyword = "";
     $("#mapCanvas").classList.toggle("loading", mapIsLoading());
+    renderMap();
+    renderMeta();
   }
 }
 
@@ -1743,6 +1749,7 @@ function renderChatMessagesFromSession(session) {
   const box = $("#chatMessages");
   box.innerHTML = "";
   const messages = session?.messages || [];
+  updateReportButtonState(messages.length);
   if (!messages.length) {
     box.innerHTML = `
       <div class="chat-empty-state">
@@ -1753,6 +1760,22 @@ function renderChatMessagesFromSession(session) {
     return;
   }
   messages.forEach((item) => addChatMessage(item.role === "user" ? "user" : "assistant", item.content || "", item.created_at || ""));
+}
+
+function currentAiSession() {
+  return (state.aiSessions.sessions || []).find((item) => item.session_id === state.activeAiSessionId) || null;
+}
+
+function currentAiMessageCount() {
+  const session = currentAiSession();
+  if (session) return Number(session.message_count || 0);
+  return Number(state.chatHistory.length || 0);
+}
+
+function updateReportButtonState(messageCount = currentAiMessageCount()) {
+  const button = $("#generateChatReportBtn");
+  if (!button) return;
+  button.disabled = Boolean(state.aiBusy || !state.activeAiSessionId || messageCount <= 0);
 }
 
 async function openAiSession(sessionId) {
@@ -1795,6 +1818,12 @@ async function generateChatReport() {
     return;
   }
   if (!state.activeAiSessionId) await createAiSession();
+  if (currentAiMessageCount() <= 0) {
+    state.lastAction = "当前对话还没有内容，先和 AI 沟通后再生成报告";
+    renderMeta();
+    updateReportButtonState(0);
+    return;
+  }
   const response = await fetch(`/api/ai/sessions/${encodeURIComponent(state.activeAiSessionId)}/report`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -1812,6 +1841,7 @@ function renderAiContext() {
   const node = currentNode();
   const uploadCount = state.data?.uploads?.length || 0;
   const nodeCount = state.data?.nodes?.length || 0;
+  updateReportButtonState();
   if (state.aiScope !== "node") {
     $("#aiContext").innerHTML = `
       <details open class="ai-context-details">
@@ -1872,7 +1902,7 @@ async function sendChat() {
   const node = state.aiScope === "node" ? currentNode() : null;
   const project = currentProjectInfo();
   state.aiBusy = true;
-  if ($("#generateChatReportBtn")) $("#generateChatReportBtn").disabled = true;
+  updateReportButtonState();
   input.value = "";
   autoResizeComposer();
   const uploaded = await uploadComposerAttachments(message);
@@ -1912,7 +1942,7 @@ async function sendChat() {
     setView("ai");
   } finally {
     state.aiBusy = false;
-    if ($("#generateChatReportBtn")) $("#generateChatReportBtn").disabled = false;
+    updateReportButtonState();
   }
 }
 
@@ -2259,10 +2289,15 @@ document.body.addEventListener("click", (event) => {
 
 function initFromHash() {
   const hash = window.location.hash.replace("#", "");
-  if (["nodes", "map", "upload", "data", "report", "ai"].includes(hash)) setView(hash);
+  if (["nodes", "map", "upload", "data", "report", "ai"].includes(hash)) {
+    setView(hash);
+  } else if (!hash) {
+    setView("overview");
+  }
 }
 
 bindEvents();
+window.addEventListener("hashchange", initFromHash);
 loadDashboard()
   .then(initFromHash)
   .catch((error) => {

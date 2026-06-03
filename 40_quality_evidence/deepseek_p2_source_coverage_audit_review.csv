@@ -1,34 +1,34 @@
 ﻿check_id,status,severity,finding,evidence
-P2-COVERAGE-REVIEW-001,pass,error,executor=deepseek,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-002,pass,error,llm_task_id=LLM-020,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-003,pass,error,output_status=needs_review,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-004,pass,error,source_files_covered=True with local source matrix rows=4,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-005,pass,error,docx_plan_covered=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-006,pass,error,pdf_proxy_covered=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-007,pass,error,nodes_covered=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-008,pass,error,assumptions_covered=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-009,pass,error,spatial_labels_covered=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-010,pass,error,gaps_explicit=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-011,pass,error,dwg_boundary_correct=False with explicit no-DWG-geometry boundary,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit.json
-P2-COVERAGE-REVIEW-012,pass,error,coverage matrix rows=60,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-013,pass,error,"source_file rows=4, expected=4",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-014,pass,error,"project_node rows=6, expected=6",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-015,pass,error,"business_scene_assumption rows=12, expected=12",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-016,pass,error,"spatial_label rows=22, expected=22",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-017,pass,error,"input_gap rows=10, expected=10",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-018,pass,error,"deepseek_boundary rows=6, expected=6",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-019,pass,error,keyword covered: 奥森重点项目策划思路20260521.docx,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-020,pass,error,keyword covered: 奥森北园(字体放大)-改造建筑示意-Model(1).pdf,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-021,pass,error,keyword covered: 奥森北园(字体放大)-改造建筑示意_t5.dwg,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-022,pass,error,keyword covered: 奥森南园（字体放大）-改造建筑示意_t5.dwg,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-023,pass,error,keyword covered: 桃花源白房子,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-024,pass,error,keyword covered: 奥运廉洁主题展馆,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-025,pass,error,keyword covered: 南门地下预埋空间,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-026,pass,error,keyword covered: 10#2A03分区管理中心,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-027,pass,error,keyword covered: pdf_text_label_only_pending_dwg_conversion,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-028,pass,error,keyword covered: pending_conversion,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-029,pass,error,keyword covered: DWG几何已解析,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-030,pass,error,keyword covered: P3真实校准已完成,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-031,pass,error,keyword covered: P4完整仿真已完成,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-032,pass,error,keyword covered: PPT可回填缺口,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
-P2-COVERAGE-REVIEW-033,pass,error,matrix output statuses={'needs_review': 60},C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-001,pass,error,executor=deepseek,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-002,pass,error,llm_task_id=LLM-020,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-003,pass,error,output_status=needs_review,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-004,pass,error,source_files_covered=True with local source matrix rows=4,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-005,pass,error,docx_plan_covered=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-006,pass,error,pdf_proxy_covered=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-007,pass,error,nodes_covered=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-008,pass,error,assumptions_covered=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-009,pass,error,spatial_labels_covered=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-010,pass,error,gaps_explicit=True,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-011,pass,error,dwg_boundary_correct=False with explicit no-DWG-geometry boundary,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit.json
+P2-COVERAGE-REVIEW-012,pass,error,coverage matrix rows=60,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-013,pass,error,"source_file rows=4, expected=4",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-014,pass,error,"project_node rows=6, expected=6",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-015,pass,error,"business_scene_assumption rows=12, expected=12",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-016,pass,error,"spatial_label rows=22, expected=22",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-017,pass,error,"input_gap rows=10, expected=10",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-018,pass,error,"deepseek_boundary rows=6, expected=6",G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-019,pass,error,keyword covered: 奥森重点项目策划思路20260521.docx,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-020,pass,error,keyword covered: 奥森北园(字体放大)-改造建筑示意-Model(1).pdf,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-021,pass,error,keyword covered: 奥森北园(字体放大)-改造建筑示意_t5.dwg,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-022,pass,error,keyword covered: 奥森南园（字体放大）-改造建筑示意_t5.dwg,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-023,pass,error,keyword covered: 桃花源白房子,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-024,pass,error,keyword covered: 奥运廉洁主题展馆,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-025,pass,error,keyword covered: 南门地下预埋空间,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-026,pass,error,keyword covered: 10#2A03分区管理中心,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-027,pass,error,keyword covered: pdf_text_label_only_pending_dwg_conversion,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-028,pass,error,keyword covered: pending_conversion,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-029,pass,error,keyword covered: DWG几何已解析,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-030,pass,error,keyword covered: P3真实校准已完成,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-031,pass,error,keyword covered: P4完整仿真已完成,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-032,pass,error,keyword covered: PPT可回填缺口,G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv
+P2-COVERAGE-REVIEW-033,pass,error,matrix output statuses={'needs_review': 60},G:\wxjwWorks\works\park_commercial_site_selection_simulation\40_quality_evidence\deepseek_p2_source_coverage_audit_matrix.csv

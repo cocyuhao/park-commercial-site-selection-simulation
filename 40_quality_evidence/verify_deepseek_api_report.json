@@ -1,6 +1,6 @@
 {
-  "run_at": "2026-06-02T09:10:15Z",
-  "api_key_masked": "sk-57...5486",
+  "run_at": "2026-06-03T08:38:32Z",
+  "api_key_masked": "sk-79...5b15",
   "overall_verdict": "PASS",
   "summary": {
     "PASS": 4,
@@ -22,20 +22,20 @@
         200
       ],
       "latency_ms": {
-        "min": 2904.6,
-        "max": 8084.8,
-        "mean": 4169.2,
-        "p50": 3063.1,
-        "p95": 8084.8
+        "min": 2392.2,
+        "max": 3051.1,
+        "mean": 2602.2,
+        "p50": 2544.7,
+        "p95": 3051.1
       },
       "verdict": "PASS",
-      "verdict_detail": "全部5次HTTP 2xx, 均值延迟4169.2ms"
+      "verdict_detail": "全部5次HTTP 2xx, 均值延迟2602.2ms"
     },
     {
       "method": "M2_models_endpoint",
       "description": "GET /v1/models 鉴权与可用模型验证",
       "http_status": 200,
-      "latency_ms": 2846.4,
+      "latency_ms": 1728.4,
       "model_count": 2,
       "model_ids": [
         "deepseek-v4-flash",
@@ -54,7 +54,7 @@
       "runs": [
         {
           "run": 1,
-          "latency_ms": 3874.6,
+          "latency_ms": 3093.0,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -66,7 +66,7 @@
         },
         {
           "run": 2,
-          "latency_ms": 4995.9,
+          "latency_ms": 3052.3,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -78,7 +78,7 @@
         },
         {
           "run": 3,
-          "latency_ms": 3989.8,
+          "latency_ms": 3153.1,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -102,7 +102,7 @@
     {
       "method": "M4_historical_consistency",
       "description": "从历史JSONL抽取样本, 重新分类, 与历史结果对比",
-      "latency_ms": 5594.9,
+      "latency_ms": 5310.9,
       "http_status": 200,
       "comparisons": [
         {
@@ -140,7 +140,7 @@
       "match_count": 5,
       "total": 5,
       "verdict": "PASS",
-      "verdict_detail": "一致率 5/5 = 100.0%, 5595ms"
+      "verdict_detail": "一致率 5/5 = 100.0%, 5311ms"
     }
   ]
 }
