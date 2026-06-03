@@ -968,3 +968,21 @@ py -3.12 -m py_compile 90_p6_expert_dashboard\app.py
 - `40_quality_evidence/selenium_ai_sessions_report_20260602.png`
 
 注意：不要把一次 QA 会话缓存误当成正式业务数据。AI 生成报告仍是 `needs_review / not_final`，最终商业报告必须等真实证据链和 P3 输入闭合。
+# 下一轮启动提示：地图、资料、节点、总览链路
+
+请先读 `CONTEXT.md`、`progress.md`、`findings.md`、`handoff_next_chat.md` 和 `AGENTS.md`。
+
+最新完成：
+- 地图 loading 竞态已拆状态并通过 3 轮 Selenium。
+- 资料导入已改为项目资料链。
+- 节点可以新增、编辑、删除、启停，并能从项目计划生成待复核草案。
+- 项目总览已改成动态状态和“决策前置条件”。
+
+最新证据：
+- `40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md`
+- `40_quality_evidence/selenium_map_material_node_overview_20260603.json`
+- `40_quality_evidence/selenium_screenshots_20260603/`
+
+继续重点：
+- 配置适配本地访问域名的高德 JS API Key，否则 Chrome 会出现平台授权不匹配，底图瓦片可能空白。
+- 继续优化完整 Selenium 10 轮的长页面动态 DOM 稳定性。

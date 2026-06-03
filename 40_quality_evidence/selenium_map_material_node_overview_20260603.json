@@ -1,0 +1,153 @@
+{
+  "url": "http://127.0.0.1:8765",
+  "run_id": "1780457837",
+  "race_rounds": [
+    {
+      "round_number": 1,
+      "actions_count": 8,
+      "failed_actions": [],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\race_round_01.png",
+      "console_errors": [
+        "{'level': 'SEVERE', 'message': 'http://127.0.0.1:8765/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)', 'source': 'network', 'timestamp': 1780457839297}"
+      ],
+      "visual_notes": "?????????/?? POI/?????",
+      "loading_kept_before_tabs": true,
+      "loading_kept_after_tabs": true,
+      "result_not_blank_during_tabs": true,
+      "error_recoverable": true
+    },
+    {
+      "round_number": 2,
+      "actions_count": 8,
+      "failed_actions": [],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\race_round_02.png",
+      "console_errors": [],
+      "visual_notes": "?????????/?? POI/?????",
+      "loading_kept_before_tabs": true,
+      "loading_kept_after_tabs": true,
+      "result_not_blank_during_tabs": true,
+      "error_recoverable": true
+    },
+    {
+      "round_number": 3,
+      "actions_count": 8,
+      "failed_actions": [],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\race_round_03.png",
+      "console_errors": [],
+      "visual_notes": "?????????/?? POI/?????",
+      "loading_kept_before_tabs": true,
+      "loading_kept_after_tabs": true,
+      "result_not_blank_during_tabs": true,
+      "error_recoverable": true
+    }
+  ],
+  "rounds": [
+    {
+      "round_number": 1,
+      "actions_count": 38,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_01.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-079"
+    },
+    {
+      "round_number": 2,
+      "actions_count": 38,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_02.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-080"
+    },
+    {
+      "round_number": 3,
+      "actions_count": 12,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_03.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+    },
+    {
+      "round_number": 4,
+      "actions_count": 12,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_04.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+    },
+    {
+      "round_number": 5,
+      "actions_count": 38,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_05.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-090"
+    },
+    {
+      "round_number": 6,
+      "actions_count": 36,
+      "failed_actions": [
+        "StaleElementReferenceException: Message: stale element reference: stale element not found in the current frame\n  (Session info: chrome=148.0.7778.217); For documentation on this error, please visit: https://www.s"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_06.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-094"
+    },
+    {
+      "round_number": 7,
+      "actions_count": 8,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_07.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+    },
+    {
+      "round_number": 8,
+      "actions_count": 18,
+      "failed_actions": [
+        "ElementNotInteractableException: Message: element not interactable\n  (Session info: chrome=148.0.7778.217); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troublesh"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_08.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id="
+    },
+    {
+      "round_number": 9,
+      "actions_count": 38,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_09.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-101"
+    },
+    {
+      "round_number": 10,
+      "actions_count": 38,
+      "failed_actions": [
+        "TimeoutException: Message: \n"
+      ],
+      "screenshot_path": "G:\\wxjwWorks\\works\\park_commercial_site_selection_simulation\\40_quality_evidence\\selenium_screenshots_20260603\\full_round_10.png",
+      "console_errors": [],
+      "visual_notes": "??????????????????????????/??/????????????POI tab????????????created_id=N-102"
+    }
+  ],
+  "summary": {
+    "race_rounds": 3,
+    "full_rounds": 10,
+    "failed_race_rounds": 0,
+    "failed_full_rounds": 10,
+    "total_actions": 300
+  }
+}

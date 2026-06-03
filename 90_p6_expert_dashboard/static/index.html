@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>公园商业选址仿真决策系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260603map1" />
+    <link rel="stylesheet" href="/static/styles.css?v=20260603flow2" />
   </head>
   <body>
     <div class="platform-shell">
@@ -97,6 +97,13 @@
           <section class="overview-panels">
             <section class="panel">
               <div class="panel-head">
+                <h2>当前项目状态</h2>
+                <button class="text-btn" data-view="upload">补充资料</button>
+              </div>
+              <div id="overviewStatusList" class="overview-status-list"></div>
+            </section>
+            <section class="panel">
+              <div class="panel-head">
                 <h2>当前节点</h2>
                 <button class="text-btn" data-view="nodes">进入节点清单</button>
               </div>
@@ -104,7 +111,7 @@
             </section>
             <section class="panel">
               <div class="panel-head">
-                <h2>下一步建议</h2>
+                <h2>决策前置条件</h2>
                 <button class="text-btn" data-view="data">看补数清单</button>
               </div>
               <div id="overviewNextSteps" class="next-step-list"></div>
@@ -122,20 +129,25 @@
                 </div>
               </div>
               <form id="uploadForm" class="upload-form">
+                <div class="import-actions">
+                  <button id="oneClickPlanImportBtn" class="primary-btn" type="button">一键导入项目计划</button>
+                  <span>先上传或采用项目计划，再生成节点草案。</span>
+                </div>
                 <label class="drop-zone">
                   <input id="sourceFile" name="file" type="file" />
                   <b>点击选择文件</b>
                   <span>支持 DWG/DXF、PDF、DOCX、PPTX、图片、CSV/XLSX。上传后进入待解析资料池。</span>
                 </label>
                 <div class="form-grid">
-                  <label>资料类型
+                  <label>资料用途
                     <select id="uploadCategory" name="category">
-                      <option value="auto">自动识别</option>
-                      <option value="CAD / 图纸">CAD / 图纸</option>
-                      <option value="现场图片 / 位置图">现场图片 / 位置图</option>
-                      <option value="客流数据">客流数据</option>
-                      <option value="数据表">数据表</option>
-                      <option value="方案文件">方案文件</option>
+                      <option value="项目计划">项目计划</option>
+                      <option value="地图/CAD/平面图">地图/CAD/平面图</option>
+                      <option value="客流/TGI">客流/TGI</option>
+                      <option value="POI/竞品">POI/竞品</option>
+                      <option value="经营收益/成本">经营收益/成本</option>
+                      <option value="现场照片/截图">现场照片/截图</option>
+                      <option value="其他">其他</option>
                     </select>
                   </label>
                   <label>关联缺口
@@ -172,7 +184,11 @@
               <div class="panel-head">
                 <div>
                   <h2>节点清单</h2>
-                  <p>来自 P2/P4 feedback draft 的 6 个节点</p>
+                  <p>可以手动新增，也可以从项目计划生成待复核草案。</p>
+                </div>
+                <div class="node-toolbar">
+                  <button id="quickNewNodeBtn" class="secondary-btn" type="button">新增节点</button>
+                  <button id="quickGeneratePlanNodesBtn" class="secondary-btn" type="button">从项目计划生成</button>
                 </div>
                 <input id="nodeSearch" type="search" placeholder="搜索节点名称或编号" />
               </div>
@@ -373,6 +389,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260603map1"></script>
+    <script src="/static/app.js?v=20260603flow5"></script>
   </body>
 </html>

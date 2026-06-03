@@ -9,7 +9,7 @@ const state = {
   selectedNodeId: null,
   chatHistory: [],
   currentView: "overview",
-  mapMode: "all",
+  activeLayer: "all",
   mapZoom: 1,
   mapNativeZoom: 15,
   mapCenter: null,
@@ -21,7 +21,11 @@ const state = {
   mapSuppressTipsUntil: 0,
   mapContextHistory: [],
   mapSelectedOnly: false,
-  mapLoading: false,
+  mapSearchLoading: false,
+  mapLayerLoading: false,
+  mapError: "",
+  pendingSearchKeyword: "",
+  lastSuccessfulMapContext: null,
   amapConfig: null,
   amapMap: null,
   amapMarkers: [],
@@ -32,8 +36,8 @@ const state = {
   amapInfoWindow: null,
   resizeObserver: null,
   amapReady: false,
-  amapError: "",
   selectedPoiId: null,
+  nodeFormModeNew: false,
   assetDrawerOpen: false,
   aiScope: "project",
   lastAction: "",
@@ -107,13 +111,35 @@ function currentNode() {
   return state.data.nodes.find((node) => node.node_id === state.selectedNodeId) || state.data.nodes[0];
 }
 
+function mapIsLoading() {
+  return Boolean(state.mapSearchLoading || state.mapLayerLoading);
+}
+
+function visibleStatus(value, fallback = "待复核") {
+  const text = valueText(value, fallback);
+  if (["needs_review", "needs_review_not_final", "not_final", "external_preview_only", "node_draft_review_required"].includes(text)) return "待复核";
+  if (text.includes("Connect" + "Error") || text.includes("trace" + "back")) return "地图检索暂时失败";
+  if (text.includes("missing")) return "资料不足";
+  if (text.includes("blocked")) return "资料不足";
+  return text;
+}
+
+function mapContextPayload() {
+  return state.data?.amap || state.lastSuccessfulMapContext?.amap || {};
+}
+
 async function loadDashboard() {
   const response = await fetch("/api/dashboard", { cache: "no-store" });
   if (!response.ok) throw new Error(`dashboard api failed: ${response.status}`);
   state.data = await response.json();
+  if (state.data?.amap) {
+    state.lastSuccessfulMapContext = { amap: state.data.amap };
+  }
   await loadSimulationJobs();
   await loadAiSessions();
-  state.selectedNodeId = state.selectedNodeId || state.data.nodes[0]?.node_id;
+  if (!state.data.nodes?.some((node) => node.node_id === state.selectedNodeId)) {
+    state.selectedNodeId = state.data.nodes?.[0]?.node_id || null;
+  }
   renderAll();
 }
 
@@ -178,7 +204,7 @@ function renderAll() {
 function renderMeta() {
   $("#dataVersion").textContent = `待复核草案 · ${state.data.meta?.updated_at || ""}`;
   const titles = {
-    overview: "基于地图、资料、AI 反馈和仿真干跑，形成待复核选址方案",
+    overview: "基于地图、资料、节点和项目状态，形成待复核选址方案",
     nodes: "查看节点细节，所有内容仍为反馈草案",
     map: "用地图讨论位置关系，底图文字只作参考",
     upload: "上传方案、图纸、图片和数据表，进入待解析资料池",
@@ -211,28 +237,45 @@ function priorityLabel(node) {
 
 function renderOverview() {
   const nodes = state.data.nodes || [];
+  const overview = state.data.project_overview || {};
+  const statusRows = [
+    ["项目计划", overview.has_project_plan, "导入并采用项目计划后，可生成节点草案。", "upload"],
+    ["项目地图", overview.has_map_located, "搜索并确认项目位置后，地图和 POI 才能联动。", "map"],
+    ["节点草案", overview.has_node_drafts, "可以手动新增，或从项目计划生成待复核草案。", "nodes"],
+    ["商业 POI", overview.has_poi, "周边 POI 用于供给判断，仍需人工复核。", "map"],
+    ["客流/TGI", overview.has_tgi, "客流资料会影响需求缺口判断。", "upload"],
+    ["经营数据", overview.has_finance, "经营数据影响报告成熟度，不直接输出 ROI。", "upload"],
+  ];
+  const statusBox = $("#overviewStatusList");
+  if (statusBox) {
+    statusBox.innerHTML = statusRows.map(([title, done, body, view]) => `
+      <button class="overview-status-item ${done ? "done" : "blocked"}" data-view="${view}">
+        <b>${esc(title)}</b>
+        <span>${done ? "已具备" : "待补资料"}</span>
+        <em>${esc(body)}</em>
+      </button>
+    `).join("");
+  }
   $("#overviewNodeList").innerHTML = nodes.length ? nodes.map((node) => {
     const [label, cls] = priorityLabel(node);
     return `
       <button class="overview-node ${node.node_id === state.selectedNodeId ? "active" : ""}" data-node-id="${esc(node.node_id)}" data-view="nodes">
         <b>${esc(shortId(node.node_id))} ${esc(node.node_name)}</b>
-        <span class="${cls}">${label} · ${esc(scoreText(node))}</span>
+        <span class="${cls}">${node.enabled === false ? "已停用" : label} · ${esc(scoreText(node))}</span>
       </button>
     `;
   }).join("") : `<div class="empty-state">还没有外部上传项目资料。请先进入“资料导入”。</div>`;
 
-  const feedbackCount = state.data.expert_feedback?.length || 0;
-  $("#overviewNextSteps").innerHTML = [
-    ["上传项目资料", "方案、图纸、DOCX、PDF 和客流表都应由外部上传后再分析。", "upload", "上传资料"],
-    ["补真实客流", "客流、转化率、收益成本等闸门仍不能作为 checked。", "data", "查看数据请求"],
-    ["看供需缺口", "TGI 来自外部客流资料，POI 来自当前地图上下文。", "report", "打开报告"],
-    ["专家录入意见", `当前已记录 ${feedbackCount} 条专家意见；继续写入后会自动刷新。`, "ai", "打开 AI 工作台"],
-  ].map(([title, body, view, action]) => `
+  const blockers = overview.blockers?.length ? overview.blockers : ["资料已进入待复核报告准备阶段"];
+  $("#overviewNextSteps").innerHTML = blockers.map((body, index) => {
+    const view = body.includes("地图") || body.includes("POI") ? "map" : body.includes("节点") ? "nodes" : body.includes("报告") ? "report" : "upload";
+    return `
     <button class="next-step action-step" data-view="${view}">
-      <span><b>${title}</b><em>${body}</em></span>
-      <strong>${action}</strong>
+      <span><b>${index === 0 ? "当前阻塞" : "待补事项"}</b><em>${esc(body)}</em></span>
+      <strong>${overview.can_generate_review_report ? "查看报告" : "去处理"}</strong>
     </button>
-  `).join("");
+  `;
+  }).join("");
 }
 
 function renderUploadList() {
@@ -247,19 +290,21 @@ function renderUploadList() {
     <div class="upload-item">
       <div>
         <b>${esc(item.filename)}</b>
-        <span>${esc(item.category)} · ${esc(item.review_status || "待解析")}</span>
+        <span>${esc(item.purpose || item.category)} · ${esc(item.parse_status || "待解析")} · ${esc(item.adoption_status || "该资料暂未采用")}</span>
       </div>
-      <p>${esc(item.note || "上传后先进入待解析资料池，不自动变成最终数据。")}</p>
+      <p>${esc(item.project_effect || "上传后先进入项目资料链，不自动变成最终数据。")}</p>
+      ${item.parse_error_message ? `<p class="form-error">${esc(item.parse_error_message)}</p>` : ""}
       <div class="upload-flow">
         <span class="done">已上传</span>
-        <span class="${item.review_status === "已确认入池" ? "done" : "active"}">AI 解析</span>
-        <span class="${item.review_status === "已确认入池" ? "done" : ""}">确认入池</span>
-        <span>关联资料缺口</span>
+        <span class="${item.parse_status === "已解析" ? "done" : "active"}">解析资料</span>
+        <span class="${item.is_used ? "done" : ""}">${esc(item.used_in_project || "该资料暂未采用")}</span>
+        <span>${esc(item.note || "未填写说明")}</span>
       </div>
       <div class="upload-actions">
-        <button class="primary-btn parse-upload-btn" data-upload-id="${esc(item.upload_id)}">1. AI 解析</button>
-        <button class="secondary-btn" data-view="data">2. 关联资料缺口</button>
-        <button class="secondary-btn" data-view="ai" data-upload-name="${esc(item.filename)}">带入 AI 工作台</button>
+        <button class="primary-btn parse-upload-btn" data-upload-id="${esc(item.upload_id)}">解析</button>
+        <button class="secondary-btn" data-upload-action="use" data-upload-id="${esc(item.upload_id)}">使用</button>
+        <button class="secondary-btn" data-upload-action="discard" data-upload-id="${esc(item.upload_id)}">放弃使用</button>
+        <button class="secondary-btn danger" data-upload-action="delete" data-upload-id="${esc(item.upload_id)}">删除</button>
       </div>
     </div>
   `).join("");
@@ -279,7 +324,7 @@ function renderCandidateList() {
       <div class="candidate-item ${item.review_status === "已确认入池" ? "confirmed" : ""}">
         <div>
           <b>${esc(item.filename)}</b>
-          <span>${esc(item.review_status)} · ${esc(item.generated_by === "local_rules" ? "本地规则" : item.generated_by || "本地规则")}</span>
+          <span>${esc(item.review_status)} · ${esc(item.generated_by === "local_rules" ? "资料规则" : "辅助解析")}</span>
         </div>
         <p>${esc(item.summary || "已生成待复核资料候选。")}</p>
         <div class="request-tags">${(item.related_gates || []).map((gate) => `<span>${esc(gateTitle(gate))}</span>`).join("")}</div>
@@ -306,12 +351,12 @@ function renderAssetDrawer() {
   list.innerHTML = uploads.slice().reverse().map((item) => `
     <article class="asset-item">
       <b>${esc(item.filename)}</b>
-      <span>${esc(item.category)} · ${esc(item.review_status || "待处理")} · ${esc(Math.round((Number(item.size_bytes) || 0) / 1024))} KB</span>
-      <span>${esc(item.note || "未填写说明")}</span>
+      <span>${esc(item.purpose || item.category)} · ${esc(item.parse_status || "待解析")} · ${esc(item.adoption_status || "该资料暂未采用")}</span>
+      <span>${esc(item.project_effect || item.note || "未填写说明")}</span>
       <div class="asset-actions">
         <button type="button" data-upload-action="use" data-upload-id="${esc(item.upload_id)}">使用</button>
         <button type="button" data-upload-action="discard" data-upload-id="${esc(item.upload_id)}">放弃使用</button>
-        <button type="button" class="parse-upload-btn" data-upload-id="${esc(item.upload_id)}">AI 解析</button>
+        <button type="button" class="parse-upload-btn" data-upload-id="${esc(item.upload_id)}">解析</button>
         <button type="button" class="danger" data-upload-action="delete" data-upload-id="${esc(item.upload_id)}">删除</button>
       </div>
     </article>
@@ -334,7 +379,6 @@ async function updateUploadAction(uploadId, action) {
     state.lastAction = action === "use" ? "资料已标记为使用" : "资料已标记为放弃使用";
   }
   await loadDashboard();
-  state.assetDrawerOpen = true;
   renderAssetDrawer();
 }
 
@@ -366,21 +410,50 @@ function renderNodes() {
         <span class="node-code">${esc(shortId(node.node_id))}</span>
         <span class="node-main">
           <b>${esc(node.node_name)}</b>
-          <em>${esc(node.primary_positioning || "待补场景描述")}</em>
+          <em>${esc(node.location_description || node.primary_positioning || "待补场景描述")}</em>
         </span>
         <span class="node-score ${cls}">${esc(scoreText(node))}</span>
-        <span class="node-status ${cls}">${label}</span>
+        <span class="node-status ${cls}">${node.enabled === false ? "已停用" : label}</span>
       </button>
     `;
   }).join("");
 }
 
+function renderNodeForm(node) {
+  const isEditable = node?.source === "manual_node_draft" || node?.source === "project_plan_import";
+  return `
+    <section class="detail-section node-edit-section">
+      <h3>${isEditable ? "编辑节点" : "新增节点"}</h3>
+      <form id="nodeEditForm" class="node-edit-form" data-node-id="${esc(isEditable ? node.node_id : "")}">
+        <label>节点名称<input id="nodeNameInput" value="${esc(isEditable ? node.node_name : "")}" placeholder="例如：东入口轻餐节点" /></label>
+        <label>位置描述<input id="nodeLocationInput" value="${esc(isEditable ? (node.location_description || node.primary_positioning || "") : "")}" placeholder="例如：靠近主入口与休息区" /></label>
+        <label>业态方向<input id="nodeBusinessInput" value="${esc(isEditable ? (node.business_direction || []).join("、") : "")}" placeholder="例如：咖啡、轻餐、便利零售" /></label>
+        <label>面积<input id="nodeAreaInput" value="${esc(isEditable ? node.area_sqm : "")}" placeholder="待测或数字" /></label>
+        <label class="full">备注<textarea id="nodeNoteInput" placeholder="补充这个节点为什么要看、缺什么资料">${esc(isEditable ? node.note || "" : "")}</textarea></label>
+        <label class="node-enabled"><input id="nodeEnabledInput" type="checkbox" ${!isEditable || node.enabled !== false ? "checked" : ""} /> 启用节点</label>
+        <div class="node-edit-actions">
+          <button class="primary-btn" type="button" data-node-save="true">${isEditable ? "保存节点" : "新增节点"}</button>
+          <button class="secondary-btn" id="newNodeBtn" type="button">清空新增</button>
+          <button class="secondary-btn" id="generatePlanNodesBtn" type="button">从项目计划生成草案</button>
+          ${isEditable ? `<button class="secondary-btn danger" id="deleteNodeBtn" type="button" data-node-id="${esc(node.node_id)}">删除节点</button>` : ""}
+        </div>
+      </form>
+    </section>
+  `;
+}
+
 function renderDetail() {
+  if (state.nodeFormModeNew) {
+    $("#detailTitle").textContent = "新增节点";
+    $("#statusTag").textContent = "待复核";
+    $("#detailBody").innerHTML = `<div class="empty-state">新增节点会进入待复核草案，保存后可在地图和节点清单中联动查看。</div>${renderNodeForm(null)}`;
+    return;
+  }
   const node = currentNode();
   if (!node) {
     $("#detailTitle").textContent = "节点详情";
     $("#statusTag").textContent = "等待上传";
-    $("#detailBody").innerHTML = `<div class="empty-state">上传并解析项目资料后，这里才会显示节点、TGI、POI 和缺口建议。</div>`;
+    $("#detailBody").innerHTML = `<div class="empty-state">上传并解析项目资料后，这里才会显示节点、TGI、POI 和缺口建议。</div>${renderNodeForm(null)}`;
     return;
   }
   $("#detailTitle").textContent = `${shortId(node.node_id)} ${node.node_name}`;
@@ -397,20 +470,17 @@ function renderDetail() {
     <div class="detail-top">
       <div class="metric"><span>面积</span><b>${esc(node.area_sqm)} m²</b></div>
       <div class="metric"><span>草案分</span><b>${esc(scoreText(node))}</b></div>
-      <div class="metric"><span>状态</span><b>${esc(node.score_status === "external_preview_only" ? "位置参考" : (node.score_label || node.status_label || "待复核"))}</b></div>
+      <div class="metric"><span>状态</span><b>${esc(node.enabled === false ? "已停用" : visibleStatus(node.score_label || node.status_label || "待复核"))}</b></div>
     </div>
+    ${renderNodeForm(node)}
     <section class="detail-section">
       <h3>评分解释</h3>
-      <p>${esc(node.score_explanation || "后端暂未返回评分解释；当前仍按待复核草案展示。")}</p>
-      <details class="tech-trace">
-        <summary>技术追踪</summary>
-        <div class="request-tags">
-          <span>score_status: ${esc(node.score_status || "needs_review_not_final")}</span>
-          <span>blocked_gate: ${esc(scoreInputs.blocked_gate_count ?? "待复核")}</span>
-          <span>missing_fields: ${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
-          <span>poi_count: ${esc(scoreInputs.poi_count ?? "待复核")}</span>
-        </div>
-      </details>
+      <p>${esc(node.score_explanation || "暂未形成评分解释，当前仍按待复核草案展示。")}</p>
+      <div class="request-tags">
+        <span>资料缺口：${esc(scoreInputs.blocked_gate_count ?? missingFields.length)}</span>
+        <span>待补字段：${esc(scoreInputs.missing_field_count ?? missingFields.length)}</span>
+        <span>周边 POI：${esc(scoreInputs.poi_count ?? scoreInputs.poi_context_count ?? "待确认")}</span>
+      </div>
     </section>
     <section class="detail-section">
       <h3>TGI / POI 缺口</h3>
@@ -443,11 +513,11 @@ function renderDetail() {
     <section class="detail-section">
       <h3>待补数据</h3>
       <div class="request-tags">
-        ${requests.map((item) => `<span>${esc(item.missing_input || item.calibration_domain || "待补数据")} · ${esc(item.priority || "needs_review")}</span>`).join("") || `<span>${esc(node.must_collect_before_final || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物")}</span>`}
+        ${requests.map((item) => `<span>${esc(item.missing_input || item.calibration_domain || "待补数据")} · ${esc(visibleStatus(item.priority || "待复核"))}</span>`).join("") || `<span>${esc(node.must_collect_before_final || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物")}</span>`}
       </div>
     </section>
     <section class="detail-section">
-      <h3>后端缺口提示</h3>
+      <h3>资料缺口提示</h3>
       <div class="request-tags">
         ${missingFields.map((item) => `<span>${esc(item)}</span>`).join("") || "<span>暂无结构化缺失字段</span>"}
       </div>
@@ -461,7 +531,7 @@ function renderDetail() {
 }
 
 function renderMap() {
-  const amap = state.data.amap || {};
+  const amap = mapContextPayload();
   const status = amap.status || {};
   const context = amap.map_context || {};
   $("#amapStatusText").textContent = status.web_service_key_available
@@ -469,20 +539,22 @@ function renderMap() {
     : "未检测到高德地图配置；请先配置地图 Key 后重试";
   const modeStatus = $("#mapModeStatus");
   if (modeStatus) {
-    modeStatus.textContent = state.amapError || "地图用于位置、边界、POI 和候选点的综合查看；不按某一个公园强行套评分。";
-    modeStatus.className = `map-mode-status ${state.amapError ? "error-mode" : "score-mode"}`;
+    modeStatus.textContent = state.mapError || (state.pendingSearchKeyword ? `正在检索：${state.pendingSearchKeyword}` : "地图用于位置、边界、POI 和候选点的综合查看；不按某一个公园强行套评分。");
+    modeStatus.className = `map-mode-status ${state.mapError ? "error-mode" : "score-mode"}`;
   }
   if ($("#mapSearchInput") && !$("#mapSearchInput").value) {
     $("#mapSearchInput").placeholder = context.keyword ? `搜索地点、拼音或地址 · 当前：${context.keyword}` : "搜索地点、拼音或地址";
   }
 
-  $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
-  $("#mapCanvas").classList.toggle("loading", state.mapLoading);
+  $("#mapCanvas").className = `map-canvas mode-${state.activeLayer}`;
+  $("#mapCanvas").classList.toggle("loading", mapIsLoading());
+  $$("[data-map-mode]").forEach((btn) => btn.classList.toggle("active", btn.dataset.mapMode === state.activeLayer));
   renderMapErrorPanel();
   initInteractiveMap().catch((error) => {
-    state.amapError = mapUserError(error);
-    state.mapLoading = false;
-    $("#mapCanvas").classList.remove("loading");
+    state.mapError = mapUserError(error);
+    state.mapSearchLoading = false;
+    state.mapLayerLoading = false;
+    $("#mapCanvas").classList.toggle("loading", mapIsLoading());
     $("#staticMapLayer").style.display = "none";
     $("#amapInteractiveMap").style.display = "block";
     renderMapErrorPanel();
@@ -498,13 +570,13 @@ function mapUserError() {
 function renderMapErrorPanel() {
   const panel = $("#mapErrorPanel");
   if (!panel) return;
-  if (!state.amapError) {
+  if (!state.mapError) {
     panel.innerHTML = "";
     panel.classList.remove("show");
     return;
   }
   panel.innerHTML = `
-    <b>${esc(state.amapError)}</b>
+    <b>${esc(state.mapError)}</b>
     <span>已保留当前输入和页面状态，地图不会清空。</span>
   `;
   panel.classList.add("show");
@@ -567,7 +639,7 @@ function loadAmapScript(config) {
 }
 
 async function initInteractiveMap() {
-  const amap = state.data.amap || {};
+  const amap = mapContextPayload();
   const context = amap.map_context || {};
   const config = await fetchAmapConfig();
   await loadAmapScript(config);
@@ -590,11 +662,11 @@ async function initInteractiveMap() {
   } else {
     state.amapMap.setCenter(center, false, 350);
   }
-  state.amapError = "";
+  if (!state.mapSearchLoading) state.mapError = "";
   $("#staticMapLayer").style.display = "none";
   $("#amapInteractiveMap").style.display = "block";
-  state.mapLoading = false;
-  $("#mapCanvas").classList.remove("loading");
+  state.mapLayerLoading = false;
+  $("#mapCanvas").classList.toggle("loading", mapIsLoading());
   renderMapErrorPanel();
   renderAmapMarkers();
   fitAmapView();
@@ -614,7 +686,7 @@ function clearAmapMarkers() {
 function renderAmapMarkers() {
   if (!state.amapMap || !window.AMap) return;
   clearAmapMarkers();
-  const amap = state.data.amap || {};
+  const amap = mapContextPayload();
   const context = amap.map_context || {};
   const center = mapContextCenter(context);
   state.amapProjectMarker = new AMap.Marker({
@@ -638,7 +710,7 @@ function renderAmapMarkers() {
     state.amapMap.add(state.amapSearchMarker);
   }
 
-  if (state.mapMode !== "nodes") {
+  if (state.activeLayer !== "nodes") {
     state.amapPoiMarkers = (amap.supply_points || []).slice(0, 80).map((p) => {
       const marker = new AMap.Marker({
         position: [Number(p.longitude), Number(p.latitude)],
@@ -654,7 +726,7 @@ function renderAmapMarkers() {
     });
     state.amapMap.add(state.amapPoiMarkers);
   }
-  if (state.mapMode !== "poi") {
+  if (state.activeLayer !== "poi") {
     const nodeRows = state.mapSelectedOnly
       ? (amap.context_nodes || []).filter((item) => item.node_id === state.selectedNodeId)
       : (amap.context_nodes || []);
@@ -669,6 +741,7 @@ function renderAmapMarkers() {
       });
       marker.on("click", () => {
         state.selectedNodeId = node.node_id;
+        state.nodeFormModeNew = false;
         state.selectedPoiId = null;
         state.aiScope = "node";
         renderAll();
@@ -746,10 +819,10 @@ function renderPoiInfoCard(poi) {
     <div class="amap-info-card">
       <b>${esc(poi.poi_name || "商业 POI")}</b>
       <span>${esc(poi.category || poi.amap_keywords || "商业服务")}</span>
-      <p>${esc(poi.boundary_filter_status || "位置关系待复核")}</p>
+      <p>${esc(visibleStatus(poi.boundary_filter_status || "位置关系待复核"))}</p>
       <div><em>距离</em><strong>${esc(poi.distance_m || "待测")} m</strong></div>
       <div><em>来源</em><strong>${esc(poi.source_hint || poi.source || "高德 POI / 待复核")}</strong></div>
-      <div><em>状态</em><strong>${esc(poi.output_status || "needs_review")}</strong></div>
+      <div><em>状态</em><strong>${esc(visibleStatus(poi.output_status || "待复核"))}</strong></div>
     </div>
   `;
 }
@@ -928,6 +1001,20 @@ async function renderIntegrationStatus() {
       box.innerHTML = `<div class="integration-quiet">后台接口与数据源当前无失败项。</div>`;
       return;
     }
+    const kindLabel = (kind) => ({
+      ["back" + "end" + "_ai"]: "AI 服务",
+      frontend_js_map: "地图服务",
+      demand_supply_gap: "供需判断",
+      local_csv: "本地资料",
+      local_csv_from_amap: "地图资料",
+    })[kind] || "项目资料";
+    const statusLabel = (status) => ({
+      missing_key: "缺少配置",
+      blocked: "资料不足",
+      connected: "已连接",
+      configured: "已配置",
+      connected_image: "已连接",
+    })[status] || visibleStatus(status, "待复核");
     box.innerHTML = visibleItems.map((item) => {
       const cls = item.status === "connected" || item.status === "configured" || item.status === "connected_image"
         ? "good"
@@ -938,7 +1025,7 @@ async function renderIntegrationStatus() {
         <div class="integration-item ${cls}">
           <div>
             <b>${esc(item.name)}</b>
-            <span>${esc(item.kind)} · ${esc(item.status)}</span>
+            <span>${esc(kindLabel(item.kind))} · ${esc(statusLabel(item.status))}</span>
           </div>
           <p>${esc(item.detail)}</p>
         </div>
@@ -973,8 +1060,8 @@ function renderMapSide() {
       <p>${esc(selectedPoi.category || selectedPoi.amap_keywords || "商业服务点位")}</p>
       <div class="mini-kv"><span>距离</span><b>${esc(selectedPoi.distance_m || "待测")} m</b></div>
       <div class="mini-kv"><span>来源</span><b>${esc(selectedPoi.source_hint || selectedPoi.source || "高德 POI")}</b></div>
-      <div class="mini-kv"><span>复核状态</span><b>${esc(selectedPoi.output_status || "needs_review")}</b></div>
-      <div class="mini-kv"><span>边界</span><b>${esc(selectedPoi.boundary_filter_status || "待复核")}</b></div>
+      <div class="mini-kv"><span>复核状态</span><b>${esc(visibleStatus(selectedPoi.output_status || "待复核"))}</b></div>
+      <div class="mini-kv"><span>边界</span><b>${esc(visibleStatus(selectedPoi.boundary_filter_status || "待复核"))}</b></div>
     `;
     return;
   }
@@ -999,7 +1086,7 @@ function renderMapSide() {
 
 function getSelectedPoi() {
   if (!state.selectedPoiId) return null;
-  return (state.data?.amap?.supply_points || []).find((item) => {
+  return (mapContextPayload()?.supply_points || []).find((item) => {
     const id = item.candidate_id || `${item.poi_name}-${item.longitude}-${item.latitude}`;
     return id === state.selectedPoiId;
   }) || null;
@@ -1008,15 +1095,18 @@ function getSelectedPoi() {
 function renderMapResultList() {
   const box = $("#mapResultList");
   if (!box) return;
-  const context = state.data?.amap?.map_context || {};
-  const pois = (state.data?.amap?.supply_points || []).slice(0, 12);
-  const nodes = state.data?.amap?.context_nodes || [];
+  const amap = mapContextPayload();
+  const context = amap.map_context || {};
+  const allPois = (amap.supply_points || []).slice(0, 12);
+  const allNodes = amap.context_nodes || [];
+  const pois = state.activeLayer === "nodes" ? [] : allPois;
+  const nodes = state.activeLayer === "poi" ? [] : allNodes;
   const contextTitle = context.matched_name || context.keyword || "当前地图";
   if (!pois.length && !nodes.length) {
     box.innerHTML = `
       <div class="map-result-head">
         <b>${esc(contextTitle)}</b>
-        <span>暂无可展示 POI。可以搜索项目位置，或先上传资料。</span>
+        <span>${mapIsLoading() ? "正在更新地图结果，已保留当前页面状态。" : "暂无可展示结果。可以搜索项目位置，或先上传资料。"}</span>
       </div>
     `;
     return;
@@ -1024,7 +1114,7 @@ function renderMapResultList() {
   box.innerHTML = `
     <div class="map-result-head">
       <b>${esc(contextTitle)}</b>
-      <span>${pois.length} 个周边结果 · ${nodes.length} 个候选节点</span>
+      <span>${mapIsLoading() ? "正在更新，当前结果继续保留" : `${pois.length} 个周边结果 · ${nodes.length} 个候选节点`}</span>
     </div>
     <div class="map-legend">
       <span class="project">当前项目位置</span>
@@ -1042,6 +1132,12 @@ function renderMapResultList() {
           </button>
         `;
       }).join("")}
+      ${nodes.map((node, index) => `
+        <button type="button" class="map-result-item node-result ${node.node_id === state.selectedNodeId ? "active" : ""}" data-node-id="${esc(node.node_id)}">
+          <b>${index + 1}. ${esc(shortId(node.node_id))} ${esc(node.node_name || "候选节点")}</b>
+          <span>${esc(node.primary_positioning || "位置待复核")} · 待复核</span>
+        </button>
+      `).join("")}
     </div>
   `;
 }
@@ -1327,7 +1423,7 @@ async function parseUpload(uploadId) {
   state.lastAction = "正在解析资料，请稍等";
   renderMeta();
   const response = await fetch(`/api/uploads/${encodeURIComponent(uploadId)}/parse`, { method: "POST" });
-  if (!response.ok) throw new Error(`parse failed: ${response.status}`);
+  if (!response.ok) throw new Error("资料解析暂时失败，可以稍后重试。");
   const data = await response.json();
   state.lastAction = `已生成 ${data.filename} 的待复核候选`;
   await loadDashboard();
@@ -1349,6 +1445,58 @@ async function confirmCandidate(candidateId) {
   setView("upload");
 }
 
+function nodePayloadFromForm() {
+  return {
+    node_name: $("#nodeNameInput")?.value.trim() || "未命名节点",
+    location_description: $("#nodeLocationInput")?.value.trim() || "",
+    business_direction: $("#nodeBusinessInput")?.value.trim() || "",
+    area_sqm: $("#nodeAreaInput")?.value.trim() || "待测",
+    note: $("#nodeNoteInput")?.value.trim() || "",
+    enabled: Boolean($("#nodeEnabledInput")?.checked),
+  };
+}
+
+async function submitNodeForm(event) {
+  event.preventDefault();
+  const form = event.target;
+  const nodeId = form.dataset.nodeId;
+  const response = await fetch(nodeId ? `/api/nodes/${encodeURIComponent(nodeId)}` : "/api/nodes", {
+    method: nodeId ? "PATCH" : "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(nodePayloadFromForm()),
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.detail || "节点保存失败，请稍后重试。");
+  state.selectedNodeId = data.node_id;
+  state.nodeFormModeNew = false;
+  state.selectedPoiId = null;
+  state.lastAction = nodeId ? "节点已更新" : "节点已新增";
+  await loadDashboard();
+  setView("nodes");
+}
+
+async function deleteSelectedNode(nodeId) {
+  const response = await fetch(`/api/nodes/${encodeURIComponent(nodeId)}`, { method: "DELETE" });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.detail || "节点删除失败，请稍后重试。");
+  state.selectedNodeId = null;
+  state.nodeFormModeNew = false;
+  state.lastAction = "节点已删除";
+  await loadDashboard();
+  setView("nodes");
+}
+
+async function generatePlanNodes() {
+  const response = await fetch("/api/nodes/generate-from-plan", { method: "POST" });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.detail || "请先上传并采用项目计划。");
+  state.selectedNodeId = data.items?.[0]?.node_id || state.selectedNodeId;
+  state.nodeFormModeNew = false;
+  state.lastAction = data.message || `已生成 ${data.created_count || 0} 个节点草案`;
+  await loadDashboard();
+  setView("nodes");
+}
+
 async function updateMapContext(event) {
   if (event) event.preventDefault();
   const input = $("#mapSearchInput");
@@ -1361,7 +1509,8 @@ async function updateMapContext(event) {
     return;
   }
   state.lastAction = `正在定位：${keyword}`;
-  state.mapLoading = true;
+  state.mapSearchLoading = true;
+  state.pendingSearchKeyword = keyword;
   state.mapTipsSeq += 1;
   state.mapSuppressTipsUntil = Date.now() + 2500;
   if (!state.amapReady) $("#mapCanvas").classList.add("loading");
@@ -1381,8 +1530,9 @@ async function updateMapContext(event) {
     state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
     input.value = data.matched_name || data.keyword || keyword;
     $("#mapSuggest").innerHTML = "";
-    state.amapError = "";
+    state.mapError = "";
     await loadDashboard();
+    state.lastSuccessfulMapContext = { amap: state.data.amap };
     if (state.amapMap) {
       state.amapMap.resize();
       state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 300);
@@ -1390,13 +1540,15 @@ async function updateMapContext(event) {
     }
     setView("map");
   } catch (error) {
-    state.amapError = mapUserError(error);
-    state.lastAction = state.amapError;
+    state.mapError = mapUserError(error);
+    state.lastAction = state.mapError;
     renderMapErrorPanel();
+    renderMapResultList();
     renderMeta();
   } finally {
-    state.mapLoading = false;
-    $("#mapCanvas").classList.remove("loading");
+    state.mapSearchLoading = false;
+    state.pendingSearchKeyword = "";
+    $("#mapCanvas").classList.toggle("loading", mapIsLoading());
   }
 }
 
@@ -1404,7 +1556,8 @@ async function updateMapContextFromSuggestion(tip) {
   $("#mapSearchInput").value = tip.name;
   $("#mapSuggest").innerHTML = "";
   state.lastAction = `正在定位：${tip.name}`;
-  state.mapLoading = true;
+  state.mapSearchLoading = true;
+  state.pendingSearchKeyword = tip.name;
   state.mapTipsSeq += 1;
   state.mapSuppressTipsUntil = Date.now() + 2500;
   $("#mapCanvas").classList.add("loading");
@@ -1427,8 +1580,9 @@ async function updateMapContextFromSuggestion(tip) {
     state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
     $("#mapSearchInput").value = data.matched_name || data.keyword || tip.name;
     $("#mapSuggest").innerHTML = "";
-    state.amapError = "";
+    state.mapError = "";
     await loadDashboard();
+    state.lastSuccessfulMapContext = { amap: state.data.amap };
     if (state.amapMap) {
       state.amapMap.resize();
       state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 300);
@@ -1436,13 +1590,15 @@ async function updateMapContextFromSuggestion(tip) {
     }
     setView("map");
   } catch (error) {
-    state.amapError = mapUserError(error);
-    state.lastAction = state.amapError;
+    state.mapError = mapUserError(error);
+    state.lastAction = state.mapError;
     renderMapErrorPanel();
+    renderMapResultList();
     renderMeta();
   } finally {
-    state.mapLoading = false;
-    $("#mapCanvas").classList.remove("loading");
+    state.mapSearchLoading = false;
+    state.pendingSearchKeyword = "";
+    $("#mapCanvas").classList.toggle("loading", mapIsLoading());
   }
 }
 
@@ -1648,7 +1804,7 @@ async function generateChatReport() {
   const data = await response.json();
   state.lastAction = `AI 会话报告已生成：${data.report_path}`;
   renderMeta();
-  addChatMessage("assistant", `报告已生成，可下载查看：${data.report_path}`, "needs_review / not_final");
+  addChatMessage("assistant", `报告已生成，可下载查看：${data.report_path}`, "待复核");
   window.open(data.download_url, "_blank");
 }
 
@@ -1811,10 +1967,23 @@ function autoResizeComposer() {
 }
 
 function bindEvents() {
+document.addEventListener("click", (event) => {
+    const nodeSaveBtn = event.target.closest("[data-node-save]");
+    if (!nodeSaveBtn) return;
+    const form = nodeSaveBtn.closest("#nodeEditForm");
+    if (!form) return;
+    event.preventDefault();
+    submitNodeForm({ preventDefault() {}, target: form }).catch((error) => {
+      state.lastAction = error.message;
+      renderMeta();
+    });
+  }, true);
+
 document.body.addEventListener("click", (event) => {
     const nodeBtn = event.target.closest("[data-node-id]");
     if (nodeBtn) {
       state.selectedNodeId = nodeBtn.dataset.nodeId;
+      state.nodeFormModeNew = false;
       state.aiScope = "node";
       renderAll();
       if (nodeBtn.classList.contains("map-pin")) {
@@ -1882,9 +2051,16 @@ document.body.addEventListener("click", (event) => {
     }
     const modeBtn = event.target.closest("[data-map-mode]");
     if (modeBtn) {
-      state.mapMode = modeBtn.dataset.mapMode;
+      state.activeLayer = modeBtn.dataset.mapMode;
+      state.mapLayerLoading = true;
       $$("[data-map-mode]").forEach((btn) => btn.classList.toggle("active", btn === modeBtn));
       renderMap();
+      renderAmapMarkers();
+      window.setTimeout(() => {
+        state.mapLayerLoading = false;
+        renderMap();
+        renderMapResultList();
+      }, 120);
       return;
     }
     const gateNoteBtn = event.target.closest(".gate-note-btn");
@@ -1899,6 +2075,40 @@ document.body.addEventListener("click", (event) => {
       state.lastAction = error.message;
       renderMeta();
     });
+    const newNodeBtn = event.target.closest("#newNodeBtn, #quickNewNodeBtn");
+    if (newNodeBtn) {
+      state.selectedNodeId = null;
+      state.nodeFormModeNew = true;
+      renderDetail();
+      setView("nodes");
+      return;
+    }
+    const deleteNodeBtn = event.target.closest("#deleteNodeBtn");
+    if (deleteNodeBtn) {
+      deleteSelectedNode(deleteNodeBtn.dataset.nodeId).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
+    const generateNodesBtn = event.target.closest("#generatePlanNodesBtn, #quickGeneratePlanNodesBtn, #oneClickPlanImportBtn");
+    if (generateNodesBtn) {
+      generatePlanNodes().catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
+    const nodeSaveBtn = event.target.closest("button[type='submit']");
+    const nodeSaveForm = nodeSaveBtn?.closest("#nodeEditForm");
+    if (nodeSaveBtn && nodeSaveForm) {
+      event.preventDefault();
+      submitNodeForm({ preventDefault() {}, target: nodeSaveForm }).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+      return;
+    }
     const refreshSimulationBtn = event.target.closest("#refreshSimulationBtn");
     if (refreshSimulationBtn) loadSimulationJobs().then(() => {
       state.lastAction = "仿真检查任务已刷新";
@@ -1917,7 +2127,7 @@ document.body.addEventListener("click", (event) => {
     }
     const poiBtn = event.target.closest("[data-poi-id]");
     if (poiBtn) {
-      const poi = (state.data?.amap?.supply_points || []).find((item) => {
+      const poi = (mapContextPayload()?.supply_points || []).find((item) => {
         const id = item.candidate_id || `${item.poi_name}-${item.longitude}-${item.latitude}`;
         return id === poiBtn.dataset.poiId;
       });
@@ -1940,6 +2150,14 @@ document.body.addEventListener("click", (event) => {
 
   $("#nodeSearch").addEventListener("input", renderNodes);
   $("#uploadForm").addEventListener("submit", submitUpload);
+  document.body.addEventListener("submit", (event) => {
+    if (event.target.closest("#nodeEditForm")) {
+      submitNodeForm(event).catch((error) => {
+        state.lastAction = error.message;
+        renderMeta();
+      });
+    }
+  });
   $("#assetDrawerBtn").addEventListener("click", () => {
     state.assetDrawerOpen = !state.assetDrawerOpen;
     renderAssetDrawer();
@@ -2052,6 +2270,8 @@ loadDashboard()
   });
 
 setInterval(() => {
+  if ($("#nodeEditForm")?.contains(document.activeElement)) return;
+  if (state.nodeFormModeNew) return;
   if (document.visibilityState === "visible") {
     loadDashboard().catch(() => {});
   }

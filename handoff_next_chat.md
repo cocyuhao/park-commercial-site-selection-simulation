@@ -1264,3 +1264,17 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 注意：
 - 会话缓存和测试生成报告属于运行态产物，提交前要谨慎选择是否入库。
 - 所有 AI 报告继续是 `needs_review / not_final`，不能替代最终商业结论。
+# 2026-06-03 交接：地图竞态、资料链、节点和总览
+
+已完成：
+- 地图状态拆分为 `mapSearchLoading`、`mapLayerLoading`、`mapError`、`activeLayer`、`pendingSearchKeyword`、`lastSuccessfulMapContext`。
+- 资料导入已改为项目资料链，支持项目计划、地图/CAD/平面图、客流/TGI、POI/竞品、经营收益/成本、现场照片/截图和其他用途。
+- 节点支持新增、编辑、删除、启停，并可从项目计划生成待复核节点草案。
+- 项目总览动态展示项目计划、地图定位、节点草案、POI、客流/TGI、经营数据和阻塞项；“下一步建议”已改为“决策前置条件”。
+- 验证报告：`40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md`。
+- Selenium JSON：`40_quality_evidence/selenium_map_material_node_overview_20260603.json`。
+
+继续注意：
+- 当前本地高德 JS Key 在 Chrome 中出现平台授权不匹配，需配置适配 `127.0.0.1` 或本地域名的 JS API Key。
+- 完整 Selenium 10 轮已执行，但仍有长页面动态 DOM 导致的自动化失败项；竞态专项 3 轮通过。
+- 不要提交 `.env`、运行态 cache 或真实 Key。

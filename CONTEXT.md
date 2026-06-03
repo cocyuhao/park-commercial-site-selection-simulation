@@ -6,6 +6,13 @@
 - 当前报告：`40_quality_evidence/地图_资料_节点_验证报告_20260603.md`。
 - 当前边界：地图点位仍是待复核位置关系，不是 DWG 坐标、面积、图层或真实动线；未把高德 Key 写入代码或报告。
 
+# 2026-06-03 地图 loading、资料链、节点与总览联动
+- 当前正在做：已完成任务二至六的产品链路改造，范围限定在地图、资料导入、节点生成和项目总览。
+- 上次停在：地图 loading 竞态 3 轮 Selenium 通过；资料支持项目计划一键入口和分项用途；节点支持新增、编辑、删除、启停和从项目计划生成待复核草案；总览动态展示决策前置条件。
+- 关键决定：资料采用后不再强制弹出右侧抽屉，避免遮挡后续操作；节点表单编辑时暂停自动刷新，避免用户输入被清空。
+- 当前验证：`py -m py_compile 90_p6_expert_dashboard\app.py` 通过；`node --check 90_p6_expert_dashboard\static\app.js` 通过；Selenium 竞态 3/3 通过，完整 10 轮已执行但仍有动态 DOM 和本地高德 JS Key 授权失败项。
+- 当前报告：`40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md`；Selenium JSON：`40_quality_evidence/selenium_map_material_node_overview_20260603.json`。
+
 # 2026-06-03 GitHub 最新更新已导入
 - 当前正在做：已从 GitHub `origin/main` 快进同步到最新提交 `4e5cb7b Improve AI workbench sessions and report flow`。
 - 上次停在：本地原先位于 `74b6aeb`，工作区干净，确认后执行 `git fetch origin main --prune` 和 `git merge --ff-only origin/main`。

@@ -32,6 +32,7 @@ UPLOAD_DIR = CACHE_DIR / "uploaded_sources"
 UPLOAD_INDEX_FILE = CACHE_DIR / "uploaded_sources.json"
 UPLOAD_CANDIDATES_FILE = CACHE_DIR / "upload_parse_candidates.json"
 GATE_INPUT_FILE = CACHE_DIR / "gate_inputs.json"
+NODE_DRAFTS_FILE = CACHE_DIR / "node_drafts.json"
 MAP_CONTEXT_FILE = CACHE_DIR / "map_context.json"
 MAP_CONTEXT_POI_FILE = CACHE_DIR / "map_context_pois.json"
 MAP_BOUNDARY_FILE = CACHE_DIR / "map_boundary.json"
@@ -135,6 +136,15 @@ class ConfirmCandidateRequest(BaseModel):
 
 class UploadActionRequest(BaseModel):
     action: str
+
+
+class NodeDraftRequest(BaseModel):
+    node_name: str
+    location_description: str = ""
+    business_direction: str = ""
+    area_sqm: str = ""
+    note: str = ""
+    enabled: bool = True
 
 
 class ChatSessionCreateRequest(BaseModel):
@@ -378,6 +388,7 @@ def build_supply_gap_payload(
 def load_dashboard() -> dict[str, Any]:
     uploads = load_upload_index()
     upload_candidates = load_upload_candidates()
+    node_drafts = load_node_drafts()
     has_external_uploads = bool(uploads)
     nodes = read_csv_rows(PROCESSED / "p2_project_node_candidates.csv") if has_external_uploads else []
     priorities = read_csv_rows(PROCESSED / "p4_feedback_node_priority_draft_deepseek.csv") if has_external_uploads else []
@@ -461,9 +472,35 @@ def load_dashboard() -> dict[str, Any]:
             }
         )
 
+    existing_node_ids = {str(node.get("node_id") or "") for node in merged_nodes}
+    for index, draft in enumerate(node_drafts, start=len(merged_nodes)):
+        if draft.get("node_id") in existing_node_ids:
+            continue
+        merged_nodes.append(normalize_node_draft(draft, index))
+
     gap_payload = build_supply_gap_payload(merged_nodes, amap_supply, uploads, upload_candidates)
     merged_nodes = attach_gap_to_nodes(merged_nodes, gap_payload["gap"]["items"])
     gap_payload["report"] = build_gap_report(merged_nodes, gap_payload["gap"], uploads)
+
+    has_project_plan = any(item.get("purpose") == "项目计划" and item.get("is_used") for item in uploads)
+    has_map_located = bool(map_context.get("longitude") and map_context.get("latitude"))
+    has_node_drafts = bool(node_drafts)
+    has_poi = bool(amap_supply)
+    has_tgi = any(item.get("purpose") == "客流/TGI" and item.get("is_used") for item in uploads)
+    has_finance = any(item.get("purpose") == "经营收益/成本" and item.get("is_used") for item in uploads)
+    blockers = []
+    if not has_project_plan:
+        blockers.append("需要导入并采用项目计划")
+    if not has_map_located:
+        blockers.append("需要定位项目地图")
+    if not has_node_drafts:
+        blockers.append("需要生成或新增节点草案")
+    if not has_poi:
+        blockers.append("需要确认周边商业 POI")
+    if not has_tgi:
+        blockers.append("需要补充客流/TGI")
+    if not has_finance:
+        blockers.append("需要补充经营收益/成本")
 
     return {
         "meta": {
@@ -503,6 +540,18 @@ def load_dashboard() -> dict[str, Any]:
         "uploads": uploads,
         "upload_candidates": upload_candidates,
         "gate_inputs": load_gate_inputs(),
+        "project_overview": {
+            "has_project_plan": has_project_plan,
+            "has_map_located": has_map_located,
+            "has_node_drafts": has_node_drafts,
+            "has_poi": has_poi,
+            "has_tgi": has_tgi,
+            "has_finance": has_finance,
+            "can_generate_review_report": has_project_plan and has_map_located and has_node_drafts and has_poi,
+            "blockers": blockers,
+            "material_count": len(uploads),
+            "adopted_material_count": len([item for item in uploads if item.get("is_used")]),
+        },
     }
 
 
@@ -617,7 +666,8 @@ def build_context_nodes(base_nodes: list[dict[str, Any]], context: dict[str, Any
         (-0.26, 0.26), (0.24, 0.20), (0.00, 0.34),
     ]
     nodes: list[dict[str, Any]] = []
-    for index, node in enumerate(base_nodes):
+    active_nodes = [node for node in base_nodes if node.get("enabled", True) is not False]
+    for index, node in enumerate(active_nodes):
         dx, dy = layout[index % len(layout)]
         lon = float(context.get("longitude") or 116.391365) + dx * lon_span
         lat = float(context.get("latitude") or 40.016194) + dy * lat_span
@@ -1306,7 +1356,67 @@ def load_upload_index() -> list[dict[str, Any]]:
             uploaded = data if isinstance(data, list) else []
         except json.JSONDecodeError:
             uploaded = []
-    return uploaded
+    return [normalize_upload_row(row) for row in uploaded]
+
+
+UPLOAD_PURPOSES = [
+    "项目计划",
+    "地图/CAD/平面图",
+    "客流/TGI",
+    "POI/竞品",
+    "经营收益/成本",
+    "现场照片/截图",
+    "其他",
+]
+
+
+PURPOSE_EFFECTS = {
+    "项目计划": "可以生成节点草案，草案必须人工复核后再用于判断。",
+    "地图/CAD/平面图": "可以帮助补充节点位置描述，但不能直接推出精确坐标或面积。",
+    "客流/TGI": "可以影响需求缺口判断。",
+    "POI/竞品": "可以影响供给判断。",
+    "经营收益/成本": "可以提高报告成熟度，但不能直接输出 ROI。",
+    "现场照片/截图": "可以帮助复核现场条件和节点位置。",
+    "其他": "先登记到资料链，确认用途后再采用。",
+}
+
+
+def normalize_upload_purpose(value: str | None, filename: str = "") -> str:
+    raw = (value or "").strip()
+    legacy_map = {
+        "CAD / 图纸": "地图/CAD/平面图",
+        "现场图片 / 位置图": "现场照片/截图",
+        "客流数据": "客流/TGI",
+        "数据表": "客流/TGI",
+        "方案文件": "项目计划",
+        "其他资料": "其他",
+        "auto": "",
+    }
+    raw = legacy_map.get(raw, raw)
+    if raw in UPLOAD_PURPOSES:
+        return raw
+    return guess_upload_category(filename)
+
+
+def normalize_upload_row(row: dict[str, Any]) -> dict[str, Any]:
+    filename = str(row.get("filename") or "")
+    purpose = normalize_upload_purpose(row.get("purpose") or row.get("category"), filename)
+    review_status = row.get("review_status") or "待解析"
+    adopted = bool(row.get("is_used") if "is_used" in row else review_status in {"已启用", "已采用"})
+    parse_status = row.get("parse_status") or ("已解析" if review_status in {"已确认入池", "已启用"} else "待解析")
+    parse_error = row.get("parse_error_message") or row.get("parse_error") or ""
+    return {
+        **row,
+        "purpose": purpose,
+        "category": purpose,
+        "parse_status": parse_status,
+        "review_status": review_status,
+        "is_used": adopted,
+        "used_in_project": "已用于项目" if adopted else "该资料暂未采用",
+        "adoption_status": "已采用" if adopted else ("已放弃使用" if review_status == "已放弃" else "该资料暂未采用"),
+        "parse_error_message": parse_error,
+        "project_effect": PURPOSE_EFFECTS.get(purpose, PURPOSE_EFFECTS["其他"]),
+    }
 
 
 def save_upload_index(rows: list[dict[str, Any]]) -> None:
@@ -1318,17 +1428,23 @@ def save_upload_index(rows: list[dict[str, Any]]) -> None:
 
 def guess_upload_category(filename: str) -> str:
     suffix = Path(filename).suffix.lower()
+    if any(token in filename for token in ["项目计划", "计划", "方案", "project", "plan"]):
+        return "项目计划"
+    if any(token in filename for token in ["poi", "竞品", "商业", "供给"]):
+        return "POI/竞品"
+    if any(token in filename for token in ["收益", "成本", "租金", "revenue", "cost"]):
+        return "经营收益/成本"
     if any(token in filename for token in ["客流", "人流", "游客", "visitor", "flow"]):
-        return "客流数据"
+        return "客流/TGI"
     if suffix in {".dwg", ".dxf"}:
-        return "CAD / 图纸"
+        return "地图/CAD/平面图"
     if suffix in {".png", ".jpg", ".jpeg", ".webp", ".bmp"}:
-        return "现场图片 / 位置图"
+        return "现场照片/截图"
     if suffix in {".csv", ".xlsx", ".xls"}:
-        return "数据表"
+        return "客流/TGI"
     if suffix in {".pdf", ".docx", ".doc", ".pptx", ".ppt"}:
-        return "方案文件"
-    return "其他资料"
+        return "项目计划"
+    return "其他"
 
 
 def load_gate_inputs() -> list[dict[str, Any]]:
@@ -1363,6 +1479,102 @@ def save_upload_candidates(rows: list[dict[str, Any]]) -> None:
     UPLOAD_CANDIDATES_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
     for row in rows:
         upsert_upload_candidate(row)
+
+
+def load_node_drafts() -> list[dict[str, Any]]:
+    if not NODE_DRAFTS_FILE.exists():
+        return []
+    try:
+        data = json.loads(NODE_DRAFTS_FILE.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    rows = data if isinstance(data, list) else []
+    return [normalize_node_draft(row, index) for index, row in enumerate(rows)]
+
+
+def save_node_drafts(rows: list[dict[str, Any]]) -> None:
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    NODE_DRAFTS_FILE.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def next_node_draft_id(rows: list[dict[str, Any]]) -> str:
+    used = {str(row.get("node_id") or "") for row in rows}
+    index = len(used) + 1
+    while True:
+        node_id = f"N-{index:03d}"
+        if node_id not in used:
+            return node_id
+        index += 1
+
+
+def normalize_node_draft(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
+    node_id = str(row.get("node_id") or f"N-{index + 1:03d}")
+    directions = row.get("business_direction")
+    if isinstance(directions, str):
+        business_direction = [item.strip() for item in re.split(r"[、,，;；]", directions) if item.strip()]
+    elif isinstance(directions, list):
+        business_direction = [str(item) for item in directions if str(item).strip()]
+    else:
+        business_direction = []
+    return {
+        **row,
+        "node_id": node_id,
+        "node_name": str(row.get("node_name") or node_id),
+        "location_description": str(row.get("location_description") or row.get("primary_positioning") or ""),
+        "primary_positioning": str(row.get("primary_positioning") or row.get("location_description") or "位置描述待补充"),
+        "business_direction": business_direction,
+        "candidate_business_formats": business_direction,
+        "area_sqm": str(row.get("area_sqm") or "待测"),
+        "note": str(row.get("note") or ""),
+        "enabled": bool(row.get("enabled", True)),
+        "review_status": "待复核",
+        "status_label": "待复核",
+        "source": row.get("source") or "manual_node_draft",
+        "output_status": "needs_review",
+        "not_final": True,
+        "discussion_score": row.get("discussion_score") or "",
+        "discussion_score_draft": row.get("discussion_score_draft") or 0,
+        "score_status": "node_draft_review_required",
+        "score_label": "待复核",
+        "score_explanation": "节点草案来自资料导入或人工新增，尚未完成图纸、客流和经营数据复核。",
+        "missing_required_fields": row.get("missing_required_fields") or ["项目图纸", "客流/TGI", "经营收益/成本"],
+        "next_data_needed": row.get("next_data_needed") or ["复核节点位置", "补充客流/TGI", "补充经营收益/成本"],
+        "data_requests": row.get("data_requests") or [],
+        "feedback_scenarios": row.get("feedback_scenarios") or [],
+        "assumption_refs": row.get("assumption_refs") or [],
+        "schematic_position": row.get("schematic_position") or {
+            "x": 18 + (index % 3) * 30,
+            "y": 28 + (index // 3) * 34,
+        },
+    }
+
+
+def build_plan_node_drafts(upload: dict[str, Any], existing: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    base_name = Path(str(upload.get("filename") or "项目计划")).stem[:18] or "项目计划"
+    directions = ["轻餐饮", "便利零售", "亲子服务"]
+    locations = ["主入口周边", "核心游线交汇处", "临水或停留空间"]
+    drafts: list[dict[str, Any]] = []
+    rows = list(existing)
+    for location, direction in zip(locations, directions):
+        node_id = next_node_draft_id(rows + drafts)
+        drafts.append(
+            normalize_node_draft(
+                {
+                    "node_id": node_id,
+                    "node_name": f"{base_name}-{location}",
+                    "location_description": location,
+                    "business_direction": [direction],
+                    "area_sqm": "待测",
+                    "note": f"由 {upload.get('filename')} 生成的节点草案，需人工复核。",
+                    "enabled": True,
+                    "source": "project_plan_import",
+                    "source_upload_id": upload.get("upload_id"),
+                    "created_at": datetime.now().isoformat(timespec="seconds"),
+                },
+                len(rows) + len(drafts),
+            )
+        )
+    return drafts
 
 
 def find_upload(upload_id: str) -> dict[str, Any]:
@@ -1644,7 +1856,7 @@ def uploads() -> dict[str, Any]:
         "count": len(items),
         "db_runtime_count": len(list_runtime_uploads()),
         "items": items,
-        "accepted_categories": ["CAD / 图纸", "现场图片 / 位置图", "客流数据", "数据表", "方案文件", "其他资料"],
+        "accepted_categories": UPLOAD_PURPOSES,
     }
 
 
@@ -1670,10 +1882,17 @@ async def upload_source(
         "upload_id": upload_id,
         "filename": filename,
         "source_type": "web_upload",
-        "category": guess_upload_category(filename) if category == "auto" else category,
+        "category": normalize_upload_purpose(category, filename),
+        "purpose": normalize_upload_purpose(category, filename),
         "size_bytes": len(content),
         "stored_path": str(target_path.relative_to(ROOT)),
-        "review_status": "待 AI 解析",
+        "review_status": "待解析",
+        "parse_status": "待解析",
+        "is_used": False,
+        "used_in_project": "该资料暂未采用",
+        "adoption_status": "该资料暂未采用",
+        "parse_error_message": "",
+        "project_effect": PURPOSE_EFFECTS.get(normalize_upload_purpose(category, filename), PURPOSE_EFFECTS["其他"]),
         "target_gate": target_gate,
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "note": note,
@@ -1693,13 +1912,16 @@ def update_upload_status(upload_id: str, payload: UploadActionRequest) -> dict[s
     if not row:
         raise HTTPException(status_code=404, detail="upload not found")
     labels = {
-        "use": "已启用",
+        "use": "已采用",
         "discard": "已放弃",
-        "restore": "待 AI 解析",
+        "restore": "待解析",
     }
     if payload.action not in labels:
         raise HTTPException(status_code=400, detail="action must be use, discard, or restore")
     row["review_status"] = labels[payload.action]
+    row["is_used"] = payload.action == "use"
+    row["used_in_project"] = "已用于项目" if payload.action == "use" else "该资料暂未采用"
+    row["adoption_status"] = "已采用" if payload.action == "use" else ("已放弃使用" if payload.action == "discard" else "该资料暂未采用")
     row["updated_at"] = datetime.now().isoformat(timespec="seconds")
     row["output_status"] = "needs_review"
     row["not_final"] = True
@@ -1771,7 +1993,7 @@ def parse_upload(upload_id: str) -> dict[str, Any]:
     upload = find_upload(upload_id)
     path = resolve_project_path(upload.get("stored_path", ""))
     if not path.exists():
-        raise HTTPException(status_code=404, detail="stored file not found")
+        raise HTTPException(status_code=404, detail="资料文件暂时不可读取，请重新上传。")
     preview = extract_source_preview(path)
     local_candidate = local_parse_candidate(upload, preview)
     nodes = [
@@ -1801,8 +2023,8 @@ def parse_upload(upload_id: str) -> dict[str, Any]:
         if isinstance(parsed_json, dict):
             parsed = {**local_candidate, **parsed_json}
             generated_by = "deepseek"
-    except Exception as exc:
-        parsed = {**local_candidate, "parse_warning": f"{type(exc).__name__}: {exc}"}
+    except Exception:
+        parsed = {**local_candidate, "parse_warning": "资料解析暂时失败，可以保留资料后稍后重试。"}
     rows = load_upload_candidates()
     existing_index = next((i for i, row in enumerate(rows) if row.get("upload_id") == upload_id), None)
     candidate = {
@@ -1823,6 +2045,15 @@ def parse_upload(upload_id: str) -> dict[str, Any]:
     else:
         rows[existing_index] = candidate
     save_upload_candidates(rows)
+    uploads = load_upload_index()
+    for row in uploads:
+        if row.get("upload_id") == upload_id:
+            row["parse_status"] = "已解析"
+            row["review_status"] = "待采用"
+            row["parse_error_message"] = ""
+            row["updated_at"] = datetime.now().isoformat(timespec="seconds")
+            break
+    save_upload_index(uploads)
     return candidate
 
 
@@ -1862,6 +2093,84 @@ def confirm_upload_candidate(candidate_id: str, payload: ConfirmCandidateRequest
             row["review_status"] = "已确认入池"
     save_upload_index(uploads)
     return candidate
+
+
+@app.post("/api/nodes")
+def create_node(payload: NodeDraftRequest) -> dict[str, Any]:
+    rows = load_node_drafts()
+    node = normalize_node_draft(
+        {
+            "node_id": next_node_draft_id(rows),
+            "node_name": payload.node_name.strip() or "未命名节点",
+            "location_description": payload.location_description,
+            "business_direction": payload.business_direction,
+            "area_sqm": payload.area_sqm or "待测",
+            "note": payload.note,
+            "enabled": payload.enabled,
+            "source": "manual_node_draft",
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+        },
+        len(rows),
+    )
+    rows.append(node)
+    save_node_drafts(rows)
+    return node
+
+
+@app.patch("/api/nodes/{node_id}")
+def update_node(node_id: str, payload: NodeDraftRequest) -> dict[str, Any]:
+    rows = load_node_drafts()
+    index = next((i for i, row in enumerate(rows) if row.get("node_id") == node_id), None)
+    if index is None:
+        raise HTTPException(status_code=404, detail="节点未找到")
+    rows[index] = normalize_node_draft(
+        {
+            **rows[index],
+            "node_name": payload.node_name.strip() or rows[index].get("node_name"),
+            "location_description": payload.location_description,
+            "business_direction": payload.business_direction,
+            "area_sqm": payload.area_sqm or "待测",
+            "note": payload.note,
+            "enabled": payload.enabled,
+            "updated_at": datetime.now().isoformat(timespec="seconds"),
+        },
+        index,
+    )
+    save_node_drafts(rows)
+    return rows[index]
+
+
+@app.delete("/api/nodes/{node_id}")
+def delete_node(node_id: str) -> dict[str, Any]:
+    rows = load_node_drafts()
+    remaining = [row for row in rows if row.get("node_id") != node_id]
+    if len(remaining) == len(rows):
+        raise HTTPException(status_code=404, detail="节点未找到，历史节点请先由资料生成后再编辑。")
+    save_node_drafts(remaining)
+    return {"node_id": node_id, "status": "已删除"}
+
+
+@app.post("/api/nodes/generate-from-plan")
+def generate_nodes_from_plan() -> dict[str, Any]:
+    uploads = load_upload_index()
+    plans = [row for row in uploads if row.get("purpose") == "项目计划" and row.get("is_used")]
+    if not plans:
+        raise HTTPException(status_code=400, detail="请先上传并采用项目计划。")
+    rows = load_node_drafts()
+    source_ids = {row.get("source_upload_id") for row in rows}
+    created: list[dict[str, Any]] = []
+    for plan in plans:
+        if plan.get("upload_id") in source_ids:
+            continue
+        created.extend(build_plan_node_drafts(plan, rows + created))
+    if created:
+        rows.extend(created)
+        save_node_drafts(rows)
+    return {
+        "created_count": len(created),
+        "items": created,
+        "message": "已生成节点草案，所有节点仍需人工复核。",
+    }
 
 
 @app.get("/api/amap/status")
