@@ -9,7 +9,7 @@ const state = {
   selectedNodeId: null,
   chatHistory: [],
   currentView: "overview",
-  mapMode: "risk",
+  mapMode: "all",
   mapZoom: 1,
   mapNativeZoom: 15,
   mapCenter: null,
@@ -27,8 +27,13 @@ const state = {
   amapMarkers: [],
   amapPoiMarkers: [],
   amapNodeMarkers: [],
+  amapProjectMarker: null,
+  amapSearchMarker: null,
+  amapInfoWindow: null,
+  resizeObserver: null,
   amapReady: false,
   amapError: "",
+  selectedPoiId: null,
   assetDrawerOpen: false,
   aiScope: "project",
   lastAction: "",
@@ -157,6 +162,7 @@ function renderAll() {
   renderDetail();
   renderMap();
   renderMapSide();
+  renderMapResultList();
   renderUploadList();
   renderCandidateList();
   renderAssetDrawer();
@@ -460,7 +466,7 @@ function renderMap() {
   const context = amap.map_context || {};
   $("#amapStatusText").textContent = status.web_service_key_available
     ? `目标：${context.matched_name || context.keyword || "当前地点"}；已加载 ${status.point_count || 0} 条 POI`
-    : "未检测到高德 Key；先显示本地示意层";
+    : "未检测到高德地图配置；请先配置地图 Key 后重试";
   const modeStatus = $("#mapModeStatus");
   if (modeStatus) {
     modeStatus.textContent = state.amapError || "地图用于位置、边界、POI 和候选点的综合查看；不按某一个公园强行套评分。";
@@ -472,10 +478,46 @@ function renderMap() {
 
   $("#mapCanvas").className = `map-canvas mode-${state.mapMode}`;
   $("#mapCanvas").classList.toggle("loading", state.mapLoading);
+  renderMapErrorPanel();
   initInteractiveMap().catch((error) => {
-    state.amapError = `高德 JS 地图加载失败：${error.message}`;
-    renderStaticMapFallback();
+    state.amapError = mapUserError(error);
+    state.mapLoading = false;
+    $("#mapCanvas").classList.remove("loading");
+    $("#staticMapLayer").style.display = "none";
+    $("#amapInteractiveMap").style.display = "block";
+    renderMapErrorPanel();
+    renderMapResultList();
+    renderMapSide();
   });
+}
+
+function mapUserError() {
+  return "地图检索暂时失败，可以稍后重试，或先手动输入项目位置。";
+}
+
+function renderMapErrorPanel() {
+  const panel = $("#mapErrorPanel");
+  if (!panel) return;
+  if (!state.amapError) {
+    panel.innerHTML = "";
+    panel.classList.remove("show");
+    return;
+  }
+  panel.innerHTML = `
+    <b>${esc(state.amapError)}</b>
+    <span>已保留当前输入和页面状态，地图不会清空。</span>
+  `;
+  panel.classList.add("show");
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = 8500) {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
 async function fetchAmapConfig() {
@@ -495,14 +537,30 @@ function loadAmapScript(config) {
   return new Promise((resolve, reject) => {
     const existing = document.querySelector("script[data-amap-js='true']");
     if (existing) {
-      existing.addEventListener("load", resolve, { once: true });
+      if (window.AMap) {
+        resolve();
+        return;
+      }
+      existing.addEventListener("load", () => window.AMap ? resolve() : reject(new Error("高德脚本未完成初始化")), { once: true });
       existing.addEventListener("error", () => reject(new Error("高德脚本加载失败")), { once: true });
       return;
     }
+    const callbackName = `__amapInit_${Date.now()}`;
+    window[callbackName] = () => {
+      delete window[callbackName];
+      window.AMap ? resolve() : reject(new Error("高德脚本未完成初始化"));
+    };
     const script = document.createElement("script");
     script.dataset.amapJs = "true";
-    script.src = `https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(config.key)}&plugin=AMap.AutoComplete,AMap.PlaceSearch,AMap.Scale,AMap.ToolBar,AMap.Geolocation`;
-    script.onload = resolve;
+    script.src = `https://webapi.amap.com/maps?v=2.0&key=${encodeURIComponent(config.key)}&callback=${encodeURIComponent(callbackName)}&plugin=AMap.AutoComplete,AMap.PlaceSearch,AMap.Scale,AMap.ToolBar,AMap.Geolocation`;
+    script.onload = () => {
+      setTimeout(() => {
+        if (window.AMap) {
+          delete window[callbackName];
+          resolve();
+        }
+      }, 0);
+    };
     script.onerror = () => reject(new Error("高德脚本加载失败"));
     document.head.appendChild(script);
   });
@@ -513,7 +571,7 @@ async function initInteractiveMap() {
   const context = amap.map_context || {};
   const config = await fetchAmapConfig();
   await loadAmapScript(config);
-  const center = [Number(context.longitude || 116.392159), Number(context.latitude || 40.018635)];
+  const center = mapContextCenter(context);
   if (!state.amapMap) {
     state.amapMap = new AMap.Map("amapInteractiveMap", {
       center,
@@ -526,45 +584,71 @@ async function initInteractiveMap() {
     });
     state.amapMap.addControl(new AMap.Scale());
     state.amapMap.addControl(new AMap.ToolBar({ position: "RB" }));
+    state.amapInfoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -18), closeWhenClickMap: true });
+    observeMapResize();
     state.amapReady = true;
   } else {
-    state.amapMap.setZoomAndCenter(nativeZoomFromBounds(amap.map_bounds || {}), center, false, 700);
+    state.amapMap.setCenter(center, false, 350);
   }
   state.amapError = "";
   $("#staticMapLayer").style.display = "none";
   $("#amapInteractiveMap").style.display = "block";
   state.mapLoading = false;
   $("#mapCanvas").classList.remove("loading");
+  renderMapErrorPanel();
   renderAmapMarkers();
+  fitAmapView();
 }
 
 function clearAmapMarkers() {
   if (!state.amapMap) return;
-  [...state.amapPoiMarkers, ...state.amapNodeMarkers].forEach((marker) => state.amapMap.remove(marker));
+  [...state.amapPoiMarkers, ...state.amapNodeMarkers, state.amapProjectMarker, state.amapSearchMarker]
+    .filter(Boolean)
+    .forEach((marker) => state.amapMap.remove(marker));
   state.amapPoiMarkers = [];
   state.amapNodeMarkers = [];
+  state.amapProjectMarker = null;
+  state.amapSearchMarker = null;
 }
 
 function renderAmapMarkers() {
   if (!state.amapMap || !window.AMap) return;
   clearAmapMarkers();
   const amap = state.data.amap || {};
+  const context = amap.map_context || {};
+  const center = mapContextCenter(context);
+  state.amapProjectMarker = new AMap.Marker({
+    position: center,
+    title: context.matched_name || context.keyword || "当前项目位置",
+    content: `<button class="amap-project-marker" type="button">项目</button>`,
+    offset: new AMap.Pixel(-24, -24),
+    zIndex: 120,
+  });
+  state.amapProjectMarker.on("click", () => openProjectInfoWindow(context, center));
+  state.amapMap.add(state.amapProjectMarker);
+
+  if (context.source === "amap_web_service_place_text" && context.keyword) {
+    state.amapSearchMarker = new AMap.Marker({
+      position: center,
+      title: context.matched_name || context.keyword,
+      content: `<div class="amap-search-marker" title="搜索结果"></div>`,
+      offset: new AMap.Pixel(-9, -28),
+      zIndex: 130,
+    });
+    state.amapMap.add(state.amapSearchMarker);
+  }
+
   if (state.mapMode !== "nodes") {
     state.amapPoiMarkers = (amap.supply_points || []).slice(0, 80).map((p) => {
       const marker = new AMap.Marker({
         position: [Number(p.longitude), Number(p.latitude)],
         title: p.poi_name || "POI",
-        content: `<div class="amap-poi-marker ${p.boundary_filter_status === "inside_osm_polygon" ? "inside" : ""}"></div>`,
+        content: `<button class="amap-poi-marker ${p.boundary_filter_status === "inside_osm_polygon" ? "inside" : ""}" type="button" aria-label="${esc(p.poi_name || "商业 POI")}"></button>`,
         offset: new AMap.Pixel(-6, -6),
+        zIndex: 80,
       });
       marker.on("click", () => {
-        $("#mapSideDetail").innerHTML = `
-          <h3>${esc(p.poi_name || "周边 POI")}</h3>
-          <div class="map-score preview">${esc(p.category || p.amap_keywords || "商业/服务点位")}</div>
-          <p>${esc(p.boundary_filter_status || "位置关系待复核")}</p>
-          <div class="mini-kv"><span>距离</span><b>${esc(p.distance_m || "待测")} m</b></div>
-          <div class="mini-kv"><span>状态</span><b>仅作供给参考</b></div>
-        `;
+        selectPoi(p);
       });
       return marker;
     });
@@ -581,9 +665,11 @@ function renderAmapMarkers() {
         title: node.node_name || node.node_id,
         content: `<button class="amap-node-marker ${node.node_id === state.selectedNodeId ? "active" : ""}">${esc(shortId(node.node_id))}</button>`,
         offset: new AMap.Pixel(-19, -19),
+        zIndex: 100,
       });
       marker.on("click", () => {
         state.selectedNodeId = node.node_id;
+        state.selectedPoiId = null;
         state.aiScope = "node";
         renderAll();
         setView("map");
@@ -592,7 +678,80 @@ function renderAmapMarkers() {
     });
     state.amapMap.add(state.amapNodeMarkers);
   }
+  renderMapResultList();
   renderMapSide();
+}
+
+function mapContextCenter(context = {}) {
+  const lon = Number(context.longitude);
+  const lat = Number(context.latitude);
+  return [Number.isFinite(lon) ? lon : 116.397428, Number.isFinite(lat) ? lat : 39.90923];
+}
+
+function observeMapResize() {
+  if (state.resizeObserver || !window.ResizeObserver) return;
+  const target = $("#mapCanvas");
+  state.resizeObserver = new ResizeObserver(() => {
+    if (!state.amapMap) return;
+    window.clearTimeout(state.mapResizeTimer);
+    state.mapResizeTimer = window.setTimeout(() => {
+      state.amapMap.resize();
+      fitAmapView();
+    }, 120);
+  });
+  state.resizeObserver.observe(target);
+}
+
+function fitAmapView() {
+  if (!state.amapMap || !window.AMap) return;
+  const markers = [
+    state.amapProjectMarker,
+    state.amapSearchMarker,
+    ...state.amapNodeMarkers,
+    ...state.amapPoiMarkers.slice(0, 24),
+  ].filter(Boolean);
+  if (markers.length > 1) {
+    state.amapMap.setFitView(markers, false, [70, 70, 70, 70], 17);
+  } else if (markers.length === 1) {
+    state.amapMap.setZoomAndCenter(15, markers[0].getPosition(), false, 300);
+  }
+}
+
+function openProjectInfoWindow(context, center) {
+  if (!state.amapInfoWindow || !state.amapMap) return;
+  state.amapInfoWindow.setContent(`
+    <div class="amap-info-card">
+      <b>${esc(context.matched_name || context.keyword || "当前项目位置")}</b>
+      <span>当前项目位置</span>
+      <p>${esc(context.address || "位置来源为本轮地图搜索或默认地图中心，仍需人工复核。")}</p>
+    </div>
+  `);
+  state.amapInfoWindow.open(state.amapMap, center);
+}
+
+function selectPoi(poi) {
+  state.selectedPoiId = poi.candidate_id || `${poi.poi_name}-${poi.longitude}-${poi.latitude}`;
+  renderMapSide();
+  renderMapResultList();
+  if (state.amapInfoWindow && state.amapMap) {
+    const position = [Number(poi.longitude), Number(poi.latitude)];
+    state.amapInfoWindow.setContent(renderPoiInfoCard(poi));
+    state.amapInfoWindow.open(state.amapMap, position);
+    state.amapMap.panTo(position);
+  }
+}
+
+function renderPoiInfoCard(poi) {
+  return `
+    <div class="amap-info-card">
+      <b>${esc(poi.poi_name || "商业 POI")}</b>
+      <span>${esc(poi.category || poi.amap_keywords || "商业服务")}</span>
+      <p>${esc(poi.boundary_filter_status || "位置关系待复核")}</p>
+      <div><em>距离</em><strong>${esc(poi.distance_m || "待测")} m</strong></div>
+      <div><em>来源</em><strong>${esc(poi.source_hint || poi.source || "高德 POI / 待复核")}</strong></div>
+      <div><em>状态</em><strong>${esc(poi.output_status || "needs_review")}</strong></div>
+    </div>
+  `;
 }
 
 function renderStaticMapFallback() {
@@ -677,7 +836,7 @@ function refreshMapImage() {
 function changeMapZoom(delta) {
   if (state.amapMap) {
     const nextZoom = Math.max(3, Math.min(20, state.amapMap.getZoom() + delta * 4));
-    state.amapMap.setZoom(nextZoom, false, 350);
+    state.amapMap.setZoom(nextZoom, false, 260);
     return;
   }
   state.mapNativeZoom = Math.max(3, Math.min(20, Number((state.mapNativeZoom + delta).toFixed(2))));
@@ -690,12 +849,8 @@ function changeMapZoom(delta) {
 function resetMapView() {
   if (state.amapMap) {
     const context = state.data?.amap?.map_context || {};
-    state.amapMap.setZoomAndCenter(
-      nativeZoomFromBounds(state.data?.amap?.map_bounds || {}),
-      [Number(context.longitude || 116.392159), Number(context.latitude || 40.018635)],
-      false,
-      500,
-    );
+    state.amapMap.setZoomAndCenter(15, mapContextCenter(context), false, 300);
+    fitAmapView();
     return;
   }
   state.mapZoom = 1;
@@ -810,6 +965,19 @@ function renderPoiLayer(points) {
 }
 
 function renderMapSide() {
+  const selectedPoi = getSelectedPoi();
+  if (selectedPoi) {
+    $("#mapSideDetail").innerHTML = `
+      <h3>${esc(selectedPoi.poi_name || "商业 POI")}</h3>
+      <div class="map-score preview">商业 POI · 待复核</div>
+      <p>${esc(selectedPoi.category || selectedPoi.amap_keywords || "商业服务点位")}</p>
+      <div class="mini-kv"><span>距离</span><b>${esc(selectedPoi.distance_m || "待测")} m</b></div>
+      <div class="mini-kv"><span>来源</span><b>${esc(selectedPoi.source_hint || selectedPoi.source || "高德 POI")}</b></div>
+      <div class="mini-kv"><span>复核状态</span><b>${esc(selectedPoi.output_status || "needs_review")}</b></div>
+      <div class="mini-kv"><span>边界</span><b>${esc(selectedPoi.boundary_filter_status || "待复核")}</b></div>
+    `;
+    return;
+  }
   const contextNode = (state.data?.amap?.context_nodes || []).find((item) => item.node_id === state.selectedNodeId);
   const node = contextNode || currentNode();
   if (!node) return;
@@ -823,9 +991,58 @@ function renderMapSide() {
     <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm === "待测" ? "待测" : `${node.area_sqm} m²`)}</b></div>
     <div class="mini-kv"><span>状态</span><b>${esc(node.status_label || "待复核 / 非最终")}</b></div>
     <div class="mini-kv"><span>评分说明</span><b>${esc(node.score_explanation || "仅作讨论草案")}</b></div>
-    <div class="mini-kv"><span>地图边界</span><b>示意层，非 DWG</b></div>
+      <div class="mini-kv"><span>地图边界</span><b>待复核，非 DWG</b></div>
     ${nextDataNeeded.length ? `<div class="mini-kv"><span>下一步</span><b>${esc(nextDataNeeded.slice(0, 2).join("；"))}</b></div>` : ""}
     ${node.source_node_name ? `<div class="mini-kv"><span>来源草案</span><b>${esc(node.source_node_name)}</b></div>` : ""}
+  `;
+}
+
+function getSelectedPoi() {
+  if (!state.selectedPoiId) return null;
+  return (state.data?.amap?.supply_points || []).find((item) => {
+    const id = item.candidate_id || `${item.poi_name}-${item.longitude}-${item.latitude}`;
+    return id === state.selectedPoiId;
+  }) || null;
+}
+
+function renderMapResultList() {
+  const box = $("#mapResultList");
+  if (!box) return;
+  const context = state.data?.amap?.map_context || {};
+  const pois = (state.data?.amap?.supply_points || []).slice(0, 12);
+  const nodes = state.data?.amap?.context_nodes || [];
+  const contextTitle = context.matched_name || context.keyword || "当前地图";
+  if (!pois.length && !nodes.length) {
+    box.innerHTML = `
+      <div class="map-result-head">
+        <b>${esc(contextTitle)}</b>
+        <span>暂无可展示 POI。可以搜索项目位置，或先上传资料。</span>
+      </div>
+    `;
+    return;
+  }
+  box.innerHTML = `
+    <div class="map-result-head">
+      <b>${esc(contextTitle)}</b>
+      <span>${pois.length} 个周边结果 · ${nodes.length} 个候选节点</span>
+    </div>
+    <div class="map-legend">
+      <span class="project">当前项目位置</span>
+      <span class="node">候选节点</span>
+      <span class="poi">商业 POI</span>
+      <span class="search">搜索结果</span>
+    </div>
+    <div class="map-result-scroll">
+      ${pois.map((poi, index) => {
+        const id = poi.candidate_id || `${poi.poi_name}-${poi.longitude}-${poi.latitude}`;
+        return `
+          <button type="button" class="map-result-item ${id === state.selectedPoiId ? "active" : ""}" data-poi-id="${esc(id)}">
+            <b>${index + 1}. ${esc(poi.poi_name || "商业 POI")}</b>
+            <span>${esc(poi.category || poi.amap_keywords || "商业服务")} · ${esc(poi.distance_m || "待测")} m · 待复核</span>
+          </button>
+        `;
+      }).join("")}
+    </div>
   `;
 }
 
@@ -1151,27 +1368,35 @@ async function updateMapContext(event) {
   $("#mapSuggest").innerHTML = "";
   renderMeta();
   try {
-    const response = await fetch("/api/amap/context", {
+    const response = await fetchWithTimeout("/api/amap/context", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ keyword }),
-    });
+    }, 14000);
     if (!response.ok) {
-      const text = await response.text();
-      throw new Error(`地图定位失败：${text}`);
+      throw new Error(mapUserError());
     }
     const data = await response.json();
     pushMapHistory(state.data?.amap?.map_context);
     state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
-    input.value = "";
+    input.value = data.matched_name || data.keyword || keyword;
     $("#mapSuggest").innerHTML = "";
+    state.amapError = "";
     await loadDashboard();
-    if (state.amapMap) state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 500);
+    if (state.amapMap) {
+      state.amapMap.resize();
+      state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 300);
+      fitAmapView();
+    }
     setView("map");
+  } catch (error) {
+    state.amapError = mapUserError(error);
+    state.lastAction = state.amapError;
+    renderMapErrorPanel();
+    renderMeta();
   } finally {
     state.mapLoading = false;
     $("#mapCanvas").classList.remove("loading");
-    $("#mapSuggest").innerHTML = "";
   }
 }
 
@@ -1185,7 +1410,7 @@ async function updateMapContextFromSuggestion(tip) {
   $("#mapCanvas").classList.add("loading");
   renderMeta();
   try {
-    const response = await fetch("/api/amap/context", {
+    const response = await fetchWithTimeout("/api/amap/context", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -1195,20 +1420,29 @@ async function updateMapContextFromSuggestion(tip) {
         longitude: tip.longitude || "",
         latitude: tip.latitude || "",
       }),
-    });
-    if (!response.ok) throw new Error(`地图定位失败：${await response.text()}`);
+    }, 14000);
+    if (!response.ok) throw new Error(mapUserError());
     const data = await response.json();
     pushMapHistory(state.data?.amap?.map_context);
     state.lastAction = `地图目标已更新：${data.matched_name || data.keyword}`;
-    $("#mapSearchInput").value = "";
+    $("#mapSearchInput").value = data.matched_name || data.keyword || tip.name;
     $("#mapSuggest").innerHTML = "";
+    state.amapError = "";
     await loadDashboard();
-    if (state.amapMap) state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 500);
+    if (state.amapMap) {
+      state.amapMap.resize();
+      state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 300);
+      fitAmapView();
+    }
     setView("map");
+  } catch (error) {
+    state.amapError = mapUserError(error);
+    state.lastAction = state.amapError;
+    renderMapErrorPanel();
+    renderMeta();
   } finally {
     state.mapLoading = false;
     $("#mapCanvas").classList.remove("loading");
-    $("#mapSuggest").innerHTML = "";
   }
 }
 
@@ -1228,11 +1462,11 @@ async function fetchMapTips() {
   $("#mapSuggest").innerHTML = `<div class="map-suggest-empty">正在搜索“${esc(q)}”……</div>`;
   let items = [];
   try {
-    const response = await fetch(`/api/amap/tips?q=${encodeURIComponent(q)}`, { cache: "no-store" });
+    const response = await fetchWithTimeout(`/api/amap/tips?q=${encodeURIComponent(q)}`, { cache: "no-store" }, 7000);
     const data = await response.json();
     items = Array.isArray(data.items) ? data.items : [];
   } catch (error) {
-    state.lastAction = `地图提示暂未返回：${error.message}`;
+    state.lastAction = mapUserError(error);
     renderMeta();
   }
   if (seq !== state.mapTipsSeq) return;
@@ -1677,9 +1911,18 @@ document.body.addEventListener("click", (event) => {
     const suggestBtn = event.target.closest(".map-suggest-item");
     if (suggestBtn) {
       updateMapContextFromSuggestion(JSON.parse(suggestBtn.dataset.tip)).catch((error) => {
-        state.lastAction = error.message;
+        state.lastAction = mapUserError(error);
         renderMeta();
       });
+    }
+    const poiBtn = event.target.closest("[data-poi-id]");
+    if (poiBtn) {
+      const poi = (state.data?.amap?.supply_points || []).find((item) => {
+        const id = item.candidate_id || `${item.poi_name}-${item.longitude}-${item.latitude}`;
+        return id === poiBtn.dataset.poiId;
+      });
+      if (poi) selectPoi(poi);
+      return;
     }
     const removeAttachmentBtn = event.target.closest("[data-remove-attachment]");
     if (removeAttachmentBtn) {
@@ -1744,7 +1987,7 @@ document.body.addEventListener("click", (event) => {
   });
   $("#mapSearchForm").addEventListener("submit", (event) => {
     updateMapContext(event).catch((error) => {
-      state.lastAction = error.message;
+      state.lastAction = mapUserError(error);
       renderMeta();
     });
   });
@@ -1767,15 +2010,18 @@ document.body.addEventListener("click", (event) => {
     renderMap();
   });
   $("#mapCanvas").addEventListener("wheel", (event) => {
+    if (state.amapMap) return;
     event.preventDefault();
     changeMapZoom(event.deltaY < 0 ? 0.15 : -0.15);
   }, { passive: false });
   $("#mapCanvas").addEventListener("pointerdown", (event) => {
+    if (state.amapMap) return;
     if (event.target.closest("button")) return;
     $("#mapCanvas").setPointerCapture(event.pointerId);
     state.mapDragging = { id: event.pointerId, x: event.clientX, y: event.clientY, pan: { ...state.mapPan } };
   });
   $("#mapCanvas").addEventListener("pointermove", (event) => {
+    if (state.amapMap) return;
     if (!state.mapDragging || state.mapDragging.id !== event.pointerId) return;
     state.mapPan = {
       x: state.mapDragging.pan.x + event.clientX - state.mapDragging.x,
@@ -1784,6 +2030,7 @@ document.body.addEventListener("click", (event) => {
     applyMapTransform();
   });
   $("#mapCanvas").addEventListener("pointerup", () => {
+    if (state.amapMap) return;
     if (state.mapDragging && (Math.abs(state.mapPan.x) > 6 || Math.abs(state.mapPan.y) > 6)) {
       panMapNative(state.mapPan.x, state.mapPan.y);
     }

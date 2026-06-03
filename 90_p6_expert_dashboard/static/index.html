@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>公园商业选址仿真决策系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260602n" />
+    <link rel="stylesheet" href="/static/styles.css?v=20260603map1" />
   </head>
   <body>
     <div class="platform-shell">
@@ -214,15 +214,16 @@
                   </div>
                 </div>
               </div>
-              <div id="mapCanvas" class="map-canvas mode-risk">
+              <div id="mapCanvas" class="map-canvas mode-all">
                 <div id="amapInteractiveMap" class="amap-interactive-map"></div>
                 <div id="staticMapLayer" class="static-map-layer">
-                  <img id="amapBaseMap" alt="高德静态地图或本地示意底图" />
+                  <img id="amapBaseMap" alt="" />
                   <div id="mapRangeLayer"></div>
                   <div id="amapPoiLayer"></div>
                   <div id="mapNodes"></div>
                 </div>
                 <div class="map-loading">正在刷新地图图层……</div>
+                <div id="mapErrorPanel" class="map-error-panel" aria-live="polite"></div>
                 <div class="map-controls" aria-label="地图控制">
                   <button id="mapZoomIn" type="button" aria-label="放大">+</button>
                   <button id="mapZoomOut" type="button" aria-label="缩小">-</button>
@@ -242,6 +243,7 @@
                 </div>
               </div>
               <div id="mapSideDetail" class="map-side-detail"></div>
+              <div id="mapResultList" class="map-result-list"></div>
               <button id="mapAskAiBtn" class="primary-wide">拿这个节点问 AI</button>
             </aside>
           </section>
@@ -371,6 +373,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260602n"></script>
+    <script src="/static/app.js?v=20260603map1"></script>
   </body>
 </html>

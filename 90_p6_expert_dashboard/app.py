@@ -194,9 +194,17 @@ def amap_get_json(url: str, params: dict[str, Any], *, timeout: float = 4.0, ret
         status_code=502,
         detail={
             "message": "高德接口暂时连接失败，请稍后重试或改用地图直接搜索。",
-            "error_type": type(last_error).__name__ if last_error else "UnknownError",
+            "output_status": "needs_review",
         },
     ) from last_error
+
+
+def map_search_error_detail() -> dict[str, Any]:
+    return {
+        "message": "地图检索暂时失败，可以稍后重试，或先手动输入项目位置。",
+        "output_status": "needs_review",
+        "not_final": True,
+    }
 
 
 def parse_list(value: str | None) -> list[str]:
@@ -530,6 +538,7 @@ def load_amap_supply(limit: int = 60) -> list[dict[str, Any]]:
                 "distance_m": row.get("computed_center_distance_m") or row.get("min_distance_m") or "",
                 "boundary_filter_status": row.get("boundary_filter_status", ""),
                 "supply_use_status": row.get("supply_use_status", ""),
+                "source_hint": "历史高德 POI 候选表 / 待复核",
                 "output_status": "needs_review",
             }
         )
@@ -555,8 +564,8 @@ def save_map_context_pois(rows: list[dict[str, Any]]) -> None:
 def fetch_amap_around_pois(lon: str, lat: str, key: str, limit: int = 50) -> list[dict[str, Any]]:
     collected: list[dict[str, Any]] = []
     keywords = "咖啡|餐饮|便利店|书店|亲子|文创|茶饮"
-    with httpx.Client(timeout=10.0) as client:
-        for page in range(1, 3):
+    with httpx.Client(timeout=5.0) as client:
+        for page in range(1, 2):
             params = {
                 "key": key,
                 "location": f"{lon},{lat}",
@@ -587,6 +596,7 @@ def fetch_amap_around_pois(lon: str, lat: str, key: str, limit: int = 50) -> lis
                         "distance_m": poi.get("distance", ""),
                         "boundary_filter_status": "amap_around_current_context",
                         "supply_use_status": "needs_review_context_poi",
+                        "source_hint": "高德周边 POI / 当前地图上下文",
                         "output_status": "needs_review",
                     }
                 )
@@ -596,8 +606,7 @@ def fetch_amap_around_pois(lon: str, lat: str, key: str, limit: int = 50) -> lis
 
 
 def build_context_nodes(base_nodes: list[dict[str, Any]], context: dict[str, Any]) -> list[dict[str, Any]]:
-    context_text = f"{context.get('keyword', '')}{context.get('matched_name', '')}"
-    if "奥森" not in context_text and "奥林匹克森林" not in context_text:
+    if not base_nodes or not context.get("longitude") or not context.get("latitude"):
         return []
     boundary = load_map_boundary_for_context(context) or load_known_osm_boundary(context) or estimated_boundary_from_points(load_map_context_pois(), context)
     bounds = boundary_bounds(boundary) if boundary else map_bounds_from_context(context)
@@ -1890,7 +1899,7 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
     load_local_env()
     key = os.environ.get("AMAP_WEB_SERVICE_KEY")
     if not key:
-        raise HTTPException(status_code=400, detail="AMAP_WEB_SERVICE_KEY missing")
+        raise HTTPException(status_code=400, detail=map_search_error_detail())
     if payload.longitude and payload.latitude:
         lon, lat = payload.longitude, payload.latitude
         poi = {"name": payload.matched_name or normalized_keyword, "address": payload.address or ""}
@@ -1901,12 +1910,14 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
         if not pois:
             suggestions = amap_input_tips(keyword, key)
             if suggestions:
-                raise HTTPException(status_code=404, detail={"message": "amap returned no poi", "suggestions": suggestions})
-            raise HTTPException(status_code=404, detail="amap returned no poi")
+                detail = map_search_error_detail()
+                detail["suggestions"] = suggestions
+                raise HTTPException(status_code=404, detail=detail)
+            raise HTTPException(status_code=404, detail=map_search_error_detail())
         poi = pois[0]
         location = poi.get("location", "")
         if "," not in location:
-            raise HTTPException(status_code=502, detail="amap poi has no location")
+            raise HTTPException(status_code=502, detail=map_search_error_detail())
         lon, lat = location.split(",", 1)
     context = {
         "keyword": keyword,
@@ -1930,8 +1941,8 @@ def update_amap_context(payload: MapContextRequest) -> dict[str, Any]:
         AMAP_STATIC_CACHE.unlink()
     save_amap_static_status(
         {
-            "status": "context_updated_pending_static_map_refresh",
-            "detail": f"地图目标已更新为：{context['matched_name'] or keyword}；刷新地图后重新请求高德静态图。",
+            "status": "context_updated",
+            "detail": f"地图目标已更新为：{context['matched_name'] or keyword}；前端高德 JS 地图将重新定位并刷新 POI。",
             "output_status": "needs_review",
             "frontend_key_exposed": False,
             "checked_at": datetime.now().isoformat(timespec="seconds"),
@@ -2086,10 +2097,10 @@ def integration_status() -> dict[str, Any]:
                 "detail": f"已读取 {len(points)} 条用于地图 POI 示意的候选点；不是最终园内供给结论。",
             },
             {
-                "name": "AMap 静态地图后端代理",
-                "kind": "backend_map",
-                "status": load_amap_static_status().get("status", "not_checked_in_this_session"),
-                "detail": load_amap_static_status().get("detail", "尚未在本会话检查静态图返回；失败时显示本地示意底图。"),
+                "name": "AMap JS 交互地图",
+                "kind": "frontend_js_map",
+                "status": "configured" if os.environ.get("AMAP_JS_API_KEY") or os.environ.get("AMAP_WEB_SERVICE_KEY") else "missing_key",
+                "detail": "空间地图页使用高德 JS API 2.0 渲染，可拖拽、滚轮缩放和按钮缩放；前端运行时只读取受控地图配置。",
             },
             {
                 "name": "供需缺口计算器",

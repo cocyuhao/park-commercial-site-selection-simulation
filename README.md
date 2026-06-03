@@ -5,6 +5,7 @@
 ## 技术架构
 
 - `90_p6_expert_dashboard/`：FastAPI 后端和本地网页驾驶舱。
+- `90_p6_expert_dashboard/static/`：P6 网页前端，包含真实高德 JS 地图、资料导入、节点清单、资料闭合和报告页。
 - `60_model/db/`：SQLite 表结构和数据库读写层。
 - `60_model/simulation/`：结构化仿真干跑骨架和结果校验。
 - `60_model/simulation/demand_gap.py`：外部客流资料生成 TGI、当前高德 POI 生成供给画像，并计算供需缺口。
@@ -24,6 +25,7 @@ py -m uvicorn app:app --host 127.0.0.1 --port 8000 --app-dir 90_p6_expert_dashbo
 
 ```powershell
 py -m py_compile 60_model\db\store.py 60_model\simulation\engine.py 90_p6_expert_dashboard\app.py
+node --check 90_p6_expert_dashboard\static\app.js
 py 50_external_gis\scripts\run_amap_smoke_test.py
 ```
 
@@ -39,13 +41,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\sync_from_githu
 
 ## 搜索记录
 
+- 2026-06-03 已查阅高德官方 JS API 2.0、Marker、Autocomplete、InfoWindow、地图状态和 setFitView 示例文档；本轮地图改造采用真实高德 JS 地图，不再用静态图假装交互地图。
 - 本轮未做外部方案搜索；改进直接基于项目现有 FastAPI、CSV/JSON 产物和员工A职责表落地。
 - 2026-06-02 已查看 `https://github.com/Hiromitsu1207/POI_TGI_Calculator`：可参考其 TouristAgent、SupplyCalculator、GapCalculator 的“需求画像 + POI 供给 + 缺口指数”结构；本项目只采用结构思想，所有输出保持 `needs_review / not_final`。
 
 ## 已完成功能
 
 - FastAPI 本地驾驶舱。
-- 高德 POI、路径、静态图代理的基础接入。
+- 真实高德 JS 交互地图：支持搜索候选、拖拽、滚轮缩放、按钮缩放、POI 信息卡和右侧结果列表。
 - SQLite 数据库初始化和现有 POI/P3 gate 导入。
 - 仿真任务 API：创建任务、查任务、查结果、导出结果。
 - TGI/POI 供需缺口接口：读取外部上传客流资料和当前地图 POI，生成待复核缺口。

@@ -781,10 +781,11 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
   inset: 0;
 }
 .amap-interactive-map {
-  display: none;
+  display: block;
   z-index: 1;
 }
 .static-map-layer {
+  display: none;
   z-index: 0;
 }
 #amapBaseMap {
@@ -805,8 +806,29 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
   background: #147ad6;
   border: 2px solid #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,.22);
+  padding: 0;
 }
 .amap-poi-marker.inside { background: #22a952; }
+.amap-project-marker {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #d84a43;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(120,20,16,.28);
+}
+.amap-search-marker {
+  width: 18px;
+  height: 28px;
+  border-radius: 10px 10px 10px 2px;
+  background: #e6a020;
+  border: 2px solid #fff;
+  transform: rotate(-45deg);
+  box-shadow: 0 8px 18px rgba(110,70,0,.25);
+}
 .amap-node-marker {
   min-width: 38px;
   height: 38px;
@@ -874,6 +896,29 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
   color: #30444d;
   font-weight: 700;
   z-index: 8;
+}
+.map-error-panel {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  z-index: 12;
+  display: none;
+  max-width: min(420px, calc(100% - 120px));
+  padding: 12px 14px;
+  border: 1px solid #f0c0bb;
+  border-radius: 9px;
+  background: rgba(255,244,242,.96);
+  color: #96362f;
+  box-shadow: 0 12px 28px rgba(14,43,54,.12);
+}
+.map-error-panel.show { display: block; }
+.map-error-panel b,
+.map-error-panel span { display: block; }
+.map-error-panel span {
+  margin-top: 5px;
+  color: #6c4c48;
+  font-size: 12px;
+  line-height: 1.5;
 }
 .map-canvas.loading .map-loading { display: grid; }
 .map-controls {
@@ -978,6 +1023,121 @@ p { color: var(--muted); font-size: 14px; line-height: 1.65; }
   overflow-wrap: anywhere;
 }
 .map-side-panel .primary-wide { margin: 0 16px 16px; width: calc(100% - 32px); }
+.map-result-list {
+  border-top: 1px solid var(--line);
+  padding: 12px 16px 14px;
+}
+.map-result-head b,
+.map-result-head span { display: block; }
+.map-result-head span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0;
+}
+.map-legend span {
+  min-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #40545d;
+  font-size: 12px;
+}
+.map-legend span::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #147ad6;
+}
+.map-legend .project::before { background: #d84a43; }
+.map-legend .node::before { background: var(--teal); }
+.map-legend .poi::before { background: #147ad6; }
+.map-legend .search::before {
+  border-radius: 2px;
+  background: #e6a020;
+  transform: rotate(45deg);
+}
+.map-result-scroll {
+  max-height: 310px;
+  overflow: auto;
+  display: grid;
+  gap: 7px;
+}
+.map-result-item {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  text-align: left;
+  padding: 9px 10px;
+}
+.map-result-item:hover,
+.map-result-item.active {
+  border-color: var(--teal);
+  background: #f4fbfa;
+}
+.map-result-item b,
+.map-result-item span { display: block; }
+.map-result-item b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.map-result-item span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+.amap-info-card {
+  min-width: 220px;
+  max-width: 300px;
+  color: #17262e;
+}
+.amap-info-card b,
+.amap-info-card span,
+.amap-info-card p { display: block; }
+.amap-info-card b { font-size: 15px; }
+.amap-info-card span {
+  margin-top: 4px;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 800;
+}
+.amap-info-card p {
+  margin: 7px 0;
+  color: #40545d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.amap-info-card div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 24px;
+  align-items: center;
+  border-top: 1px solid #edf2f3;
+}
+.amap-info-card em {
+  color: #70848c;
+  font-size: 12px;
+  font-style: normal;
+}
+.amap-info-card strong {
+  max-width: 180px;
+  color: #17262e;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
 
 .gate-list { padding: 12px; display: grid; gap: 10px; }
 .gate-item {

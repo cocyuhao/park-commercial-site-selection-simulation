@@ -1,3 +1,53 @@
+# 2026-06-03 最新交接：高德 JS 地图真实可用
+
+本轮按用户要求完成“空间地图”专项改造，只动地图、资料/节点联动相关代码，未改专家 AI 工作台聊天界面、报告文风和输入框视觉。
+
+已完成：
+- 空间地图主路径改为真实高德 JS API 2.0 地图。
+- 不再用静态图假装地图。
+- 支持高德原生拖拽、滚轮缩放、按钮缩放。
+- 容器变化后触发 `resize` 和 `setFitView`。
+- 当前项目位置、候选节点、商业 POI、搜索结果已做视觉区分。
+- 点击 POI 显示信息卡：名称、类型、距离、来源、待复核状态。
+- 右侧新增简洁 POI 结果列表，可点击定位。
+- 搜索失败不显示后端异常原文，统一显示：`地图检索暂时失败，可以稍后重试，或先手动输入项目位置。`
+- 搜索失败保留用户输入，地图不崩。
+- 候选节点可跟随当前搜索地点生成待复核位置草案，但不套用奥森评分。
+
+验证：
+- `node --check 90_p6_expert_dashboard\static\app.js` 通过。
+- `py -m py_compile 90_p6_expert_dashboard\app.py` 通过。
+- Selenium + Chrome 10 轮完整点击测试通过，失败 0。
+- 失败搜索场景通过：输入保留、地图不崩、机器错误隐藏、产品提示显示。
+- 截图：`90_p6_expert_dashboard/qa/amap_js_map_success_20260603.png`。
+- 报告：`40_quality_evidence/地图_资料_节点_验证报告_20260603.md`。
+
+注意：
+- 项目总门禁 `verify_project_implementation.py` 本轮未完成，因为本机缺少 `gh` 命令，脚本停在 GitHub 远端检查处；不是地图代码失败。
+- 运行测试时安装了 `selenium==4.44.0`，并已把 `selenium>=4.44.0` 写入 `requirements.txt`。
+- 地图点位和候选节点仍是待复核草案，不是 DWG 坐标、面积、图层或真实动线。
+- 不要提交 `.env`、运行态 cache 或无关 QA 缓存。
+
+# 2026-06-03 最新交接：GitHub 最新更新已导入
+
+当前本地 `main` 已快进同步到 GitHub `origin/main` 最新提交：
+
+- commit：`4e5cb7b Improve AI workbench sessions and report flow`
+- 同步方式：`git fetch origin main --prune` 后执行 `git merge --ff-only origin/main`
+- 同步前状态：本地在 `74b6aeb`，工作区干净
+
+本轮补齐依赖：
+- 当前 `py` 指向 Python 3.13。
+- 已用官方 PyPI 源执行 `py -m pip install -r requirements.txt`，补齐缺失包。
+
+验证：
+- `py 60_model\scripts\verify_deepseek_api.py` -> `PASS=4 FAIL=0`
+- `py 30_extraction\scripts\verify_pdf_tables.py` -> `PASS=4 FAIL=0`
+
+注意：
+- 验证脚本会更新 `40_quality_evidence` 下的报告文件。
+- P3 真实输入未闭合前，所有输出仍保持 `needs_review / not_final`。
+
 # 2026-06-02 最新交接：TGI/POI 供需缺口改动已恢复
 
 本轮用户发现报告页还能打开，但磁盘改动不在。已确认原因：旧 `uvicorn` 进程仍在内存中运行旧代码，磁盘工作区没有保留 `demand_gap.py` 和前端/后端改动。

@@ -3,7 +3,7 @@
 ## 文件职责
 
 - `90_p6_expert_dashboard/app.py`：FastAPI 后端入口，提供网页、上传、AI、高德、数据和仿真任务接口。
-- `90_p6_expert_dashboard/static/`：本地网页前端，资料闭合中心可触发结构化仿真干跑并查看结果摘要。
+- `90_p6_expert_dashboard/static/`：本地网页前端，包含真实高德 JS 地图、资料导入、节点清单、资料闭合、仿真干跑和报告页。
 - `60_model/db/schema.sql`：SQLite 数据库表结构。
 - `60_model/db/store.py`：数据库初始化、CSV 导入、任务和结果读写。
 - `60_model/scripts/init_db.py`：初始化本地 SQLite 数据库。
@@ -22,7 +22,7 @@
 
 生成供需缺口时，`app.py` 调用 `simulation.demand_gap`：先读取网页上传资料生成 TGI，再读取当前地图 POI 生成供给画像，最后生成缺口列表和报告。
 
-高德和历史 POI 结果仍由 `50_external_gis/` 脚本生成，数据库只导入当前已存在的结构化结果。
+空间地图由 `app.py` 提供高德 JS 配置、地图搜索和周边 POI 数据，前端用高德 JS API 渲染真实地图；历史 POI 结果仍可由 `50_external_gis/` 脚本生成，数据库只导入当前已存在的结构化结果。
 
 ## 关键决定
 
@@ -30,3 +30,4 @@
 - SQLite 文件是本地运行态产物，已加入 `.gitignore`，可由导入脚本重建。
 - P3 gate 未闭合前，所有仿真接口返回都必须保持 `needs_review / not_final`。
 - 未上传外部项目资料时，方案节点保持空状态；内置奥森资料只能作为样例基线，不能伪装成用户上传项目。
+- 空间地图点位和候选节点只表示待复核位置关系，不代表 DWG 坐标、面积、图层或真实动线。

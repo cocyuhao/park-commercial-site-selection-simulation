@@ -1,3 +1,18 @@
+# 2026-06-03 高德 JS 地图真实可用改造
+- 当前正在做：已完成空间地图专项改造，页面主路径改为真实高德 JS API 2.0 地图，不再用静态图假装地图。
+- 上次停在：地图可显示高德 canvas、项目位置、候选节点、商业 POI、搜索结果和右侧结果列表；点击 POI 有信息卡。
+- 关键决定：地图搜索失败统一显示产品话术，不显示后端异常原文；失败时保留输入，地图不崩；候选节点可跟随当前搜索项目生成待复核位置草案，但不套用奥森评分。
+- 当前验证：`node --check` 通过；`py -m py_compile` 通过；Selenium + Chrome 10 轮点击测试通过，失败 0；失败搜索场景通过。
+- 当前报告：`40_quality_evidence/地图_资料_节点_验证报告_20260603.md`。
+- 当前边界：地图点位仍是待复核位置关系，不是 DWG 坐标、面积、图层或真实动线；未把高德 Key 写入代码或报告。
+
+# 2026-06-03 GitHub 最新更新已导入
+- 当前正在做：已从 GitHub `origin/main` 快进同步到最新提交 `4e5cb7b Improve AI workbench sessions and report flow`。
+- 上次停在：本地原先位于 `74b6aeb`，工作区干净，确认后执行 `git fetch origin main --prune` 和 `git merge --ff-only origin/main`。
+- 关键决定：只做快进同步，不创建分支、不重置历史；当前机器 `py` 指向 Python 3.13，缺少依赖时按 `requirements.txt` 补齐。
+- 当前验证：DeepSeek API 验证 `PASS=4 FAIL=0`；PDF 表格验证 `PASS=4 FAIL=0`。
+- 当前边界：验证脚本更新了 `40_quality_evidence/verify_deepseek_api_report.json` 和 `40_quality_evidence/postman_deepseek_collection.json`，属于本轮验证产物。
+
 # 2026-06-02 TGI/POI 供需缺口改动已恢复
 - 当前正在做：已把丢失的 TGI/POI 供需缺口和分析报告功能重新写回磁盘，并重启 `http://127.0.0.1:8765/`。
 - 上次停在：用户发现页面还能看，但磁盘文件不在；原因是旧 uvicorn 进程仍在内存里跑旧代码，磁盘工作区没有保存这些改动。

@@ -1,3 +1,60 @@
+# 下一轮启动提示：高德 JS 地图已真实可用
+
+请继续 `G:\wxjwWorks\works\park_commercial_site_selection_simulation`。当前本地已完成空间地图专项改造：真实高德 JS API 2.0 地图、搜索候选、POI 信息卡、右侧结果列表、失败保护和 Selenium 10 轮验证。
+
+启动后先读：
+1. `AGENTS.md`
+2. `CONTEXT.md`
+3. `progress.md`
+4. `findings.md`
+5. `handoff_next_chat.md`
+6. `40_quality_evidence/地图_资料_节点_验证报告_20260603.md`
+
+本轮关键结果：
+- 地图页不再用静态图假装地图。
+- 可拖拽、滚轮缩放、按钮缩放。
+- 容器变化后有 `resize` / `setFitView`。
+- 当前项目位置、候选节点、商业 POI、搜索结果视觉区分。
+- 点击 POI 有信息卡。
+- 右侧有简洁 POI 结果列表。
+- 搜索失败显示产品话术，不显示后端异常原文，且保留输入。
+
+最新验证：
+```powershell
+node --check 90_p6_expert_dashboard\static\app.js
+py -m py_compile 90_p6_expert_dashboard\app.py
+```
+均通过。
+
+Selenium + Chrome 10 轮完整点击测试通过，失败 0。
+
+注意：
+- 本机缺少 `gh` 命令，`verify_project_implementation.py` 会停在 GitHub 远端检查处；这不是地图代码失败。
+- 地图点位和候选节点仍为待复核草案，不是最终 DWG 几何。
+- 不要改专家 AI 工作台聊天界面、报告文风、输入框视觉，避免和并行 Codex 冲突。
+
+# 下一轮启动提示：已同步到 4e5cb7b
+
+请继续 `G:\wxjwWorks\works\park_commercial_site_selection_simulation`。当前本地已从 GitHub `origin/main` 快进同步到最新提交 `4e5cb7b Improve AI workbench sessions and report flow`。
+
+启动后先读：
+1. `AGENTS.md`
+2. `CONTEXT.md`
+3. `progress.md`
+4. `handoff_next_chat.md`
+5. `findings.md`
+
+最新验证结论：
+```powershell
+py 60_model\scripts\verify_deepseek_api.py
+# PASS=4 FAIL=0
+
+py 30_extraction\scripts\verify_pdf_tables.py
+# PASS=4 FAIL=0
+```
+
+注意：当前机器 `py` 指向 Python 3.13；本轮已按 `requirements.txt` 补齐依赖。P3 未闭合前，仍不能给最终排序、ROI、收益预测或推荐结论。
+
 # 下一轮启动提示：B/C/D 验收已完成，先读主报告
 
 请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前本地已同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，并已完成一轮 B/C/D 验收。
