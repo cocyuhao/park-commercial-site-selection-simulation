@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 import sqlite3
+import threading
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -12,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DB_PATH = ROOT / "60_model" / "db" / "simulation.sqlite3"
 SCHEMA_PATH = ROOT / "60_model" / "db" / "schema.sql"
 PROCESSED = ROOT / "70_outputs" / "processed_tables"
+_IMPORT_LOCK = threading.Lock()
 
 
 def utc_now() -> str:
@@ -20,8 +22,9 @@ def utc_now() -> str:
 
 def connect(db_path: Path = DB_PATH) -> sqlite3.Connection:
     db_path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(db_path, timeout=30)
     conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA busy_timeout=30000")
     return conn
 
 
@@ -76,65 +79,66 @@ def to_float(value: str | None) -> float | None:
 
 
 def import_existing_outputs(db_path: Path = DB_PATH) -> dict[str, int]:
-    init_db(db_path)
-    poi_path = PROCESSED / "poi_supply_candidates_amap_boundary_filter.csv"
-    gate_path = PROCESSED / "p3_calibration_gate_status.csv"
-    poi_rows = read_csv_rows(poi_path)
-    gate_rows = read_csv_rows(gate_path)
-    loaded_at = utc_now()
-    with connect(db_path) as conn:
-        for row in poi_rows:
+    with _IMPORT_LOCK:
+        init_db(db_path)
+        poi_path = PROCESSED / "poi_supply_candidates_amap_boundary_filter.csv"
+        gate_path = PROCESSED / "p3_calibration_gate_status.csv"
+        poi_rows = read_csv_rows(poi_path)
+        gate_rows = read_csv_rows(gate_path)
+        loaded_at = utc_now()
+        with connect(db_path) as conn:
+            for row in poi_rows:
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO poi_candidates (
+                      candidate_id, park_id, park_name, poi_name, standard_categories,
+                      longitude, latitude, rating, cost_yuan, opentime_today, tel,
+                      boundary_filter_status, supply_use_status, source_path, raw_json
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        row.get("candidate_id", ""),
+                        row.get("park_id", ""),
+                        row.get("park_name", ""),
+                        row.get("poi_name", ""),
+                        row.get("standard_categories", ""),
+                        to_float(row.get("longitude")),
+                        to_float(row.get("latitude")),
+                        to_float(row.get("rating")),
+                        to_float(row.get("cost_yuan")),
+                        row.get("opentime_today", "") or "",
+                        row.get("tel", "") or "",
+                        row.get("boundary_filter_status", ""),
+                        row.get("supply_use_status", ""),
+                        str(poi_path.relative_to(ROOT)),
+                        json.dumps(row, ensure_ascii=False),
+                    ),
+                )
+            for row in gate_rows:
+                conn.execute(
+                    """
+                    INSERT OR REPLACE INTO calibration_gates (
+                      gate_id, calibration_domain, required_before_p4_conclusion,
+                      current_gate_status, blocking_reason, source_table
+                    ) VALUES (?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        row.get("gate_id", ""),
+                        row.get("calibration_domain", ""),
+                        row.get("required_before_p4_conclusion", ""),
+                        row.get("current_gate_status", ""),
+                        row.get("blocking_reason", ""),
+                        row.get("source_table", ""),
+                    ),
+                )
             conn.execute(
-                """
-                INSERT OR REPLACE INTO poi_candidates (
-                  candidate_id, park_id, park_name, poi_name, standard_categories,
-                  longitude, latitude, rating, cost_yuan, opentime_today, tel,
-                  boundary_filter_status, supply_use_status, source_path, raw_json
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    row.get("candidate_id", ""),
-                    row.get("park_id", ""),
-                    row.get("park_name", ""),
-                    row.get("poi_name", ""),
-                    row.get("standard_categories", ""),
-                    to_float(row.get("longitude")),
-                    to_float(row.get("latitude")),
-                    to_float(row.get("rating")),
-                    to_float(row.get("cost_yuan")),
-                    row.get("opentime_today", "") or "",
-                    row.get("tel", "") or "",
-                    row.get("boundary_filter_status", ""),
-                    row.get("supply_use_status", ""),
-                    str(poi_path.relative_to(ROOT)),
-                    json.dumps(row, ensure_ascii=False),
-                ),
+                "INSERT OR REPLACE INTO data_sources VALUES (?, ?, ?, ?, ?)",
+                ("poi_candidates", str(poi_path.relative_to(ROOT)), "csv", loaded_at, len(poi_rows)),
             )
-        for row in gate_rows:
             conn.execute(
-                """
-                INSERT OR REPLACE INTO calibration_gates (
-                  gate_id, calibration_domain, required_before_p4_conclusion,
-                  current_gate_status, blocking_reason, source_table
-                ) VALUES (?, ?, ?, ?, ?, ?)
-                """,
-                (
-                    row.get("gate_id", ""),
-                    row.get("calibration_domain", ""),
-                    row.get("required_before_p4_conclusion", ""),
-                    row.get("current_gate_status", ""),
-                    row.get("blocking_reason", ""),
-                    row.get("source_table", ""),
-                ),
+                "INSERT OR REPLACE INTO data_sources VALUES (?, ?, ?, ?, ?)",
+                ("calibration_gates", str(gate_path.relative_to(ROOT)), "csv", loaded_at, len(gate_rows)),
             )
-        conn.execute(
-            "INSERT OR REPLACE INTO data_sources VALUES (?, ?, ?, ?, ?)",
-            ("poi_candidates", str(poi_path.relative_to(ROOT)), "csv", loaded_at, len(poi_rows)),
-        )
-        conn.execute(
-            "INSERT OR REPLACE INTO data_sources VALUES (?, ?, ?, ?, ?)",
-            ("calibration_gates", str(gate_path.relative_to(ROOT)), "csv", loaded_at, len(gate_rows)),
-        )
     return {"poi_candidates": len(poi_rows), "calibration_gates": len(gate_rows)}
 
 

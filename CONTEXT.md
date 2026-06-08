@@ -31,3 +31,8 @@
 - 协作补充：新增 `00_control/team_codex_division.md`，按双人 Codex 泳道分工，不再依赖老派固定前后端分工；新增 `00_control/sync_from_github_main.ps1`，把同步、依赖补齐和门禁验证固化为一条命令。
 - 关键决定：P3 门禁未闭合前，仿真只输出 `needs_review / not_final` 的检查结果，不输出最终排序、收益预测或推荐结论；外部地点只做地图预览，不套用奥森评分。
 - 当前验证：`node --check 90_p6_expert_dashboard\static\app.js` 通过；`py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py` 通过；`py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=725 failures=0`。
+# 2026-06-08 TestFiles 自动化测试环境与全量脚本
+- 已沿用本机 Python 环境搭建测试依赖，新增 `TestFiles` 自动化测试入口和报告生成。
+- 最新报告：`TestFiles/reports/test_report_20260608_143919.md`，结果为通过 78、警告 1、失败 1。
+- 后端 OpenAPI 53 个接口全部覆盖；前端覆盖总览、资料导入、资料闭合、节点、地图、AI 工作台和报告页。
+- 当前问题：真实 Uvicorn 运行态下报告依据链 JSON 导出返回 502；20 个控件缺少 id 或可见名称。

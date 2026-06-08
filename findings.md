@@ -1068,3 +1068,8 @@
 - 最新总门禁：`py -3.12 30_extraction\scripts\verify_project_implementation.py` -> `checks=1132 failures=0`。
 - 事实边界：这证明收入/价格带进入了结构化覆盖池、预检和对象链；仍不证明完整仿真、最终 ROI、最终排名或真实世界校准已完成。
 
+# 2026-06-08 TestFiles 自动化测试发现
+- FastAPI OpenAPI 共 53 个接口，本轮自动化覆盖缺失接口 0。
+- 前端主要交互均进入 Playwright 流程。
+- 真实问题：报告依据链 JSON 导出在真实 Uvicorn + Chrome 流程下返回 502，但 TestClient API 测试中返回 200。
+- 交互警告：20 个控件缺少 id 或可见名称，影响自动化和无障碍稳定性。

@@ -1858,3 +1858,8 @@
 - 本轮仍未推送 GitHub，避免和同事新改动发生二次冲突。
 - 远端质量报告快照未直接覆盖本地，因为本地门禁已重新生成并通过。
 - 本机普通 `httpx` 可能受代理环境影响返回 `502`；验证本地服务时使用 `trust_env=False`。
+# 2026-06-08 TestFiles 自动化测试
+- 已沿用本机 Python 安装 `pytest`、`playwright`，前端测试使用系统 Chrome。
+- 已新增 `TestFiles/run_all_tests.py`、`TestFiles/check_db_health.py`、`TestFiles/README.md` 和测试 fixtures。
+- 已修复 SQLite 并发导入锁和真实校准补充重建脚本缺失。
+- 最新全量报告：`TestFiles/reports/test_report_20260608_143919.md`，通过 78、警告 1、失败 1。

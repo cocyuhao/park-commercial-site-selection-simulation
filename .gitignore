@@ -1,5 +1,7 @@
 # Local credentials
 .env
+TestFiles/reports/
+TestFiles/__pycache__/
 *.key
 
 # Python

@@ -2251,3 +2251,8 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 4. 再决定现有代码哪些保留、哪些改名、哪些重写；不要先改 UI 或继续说“完成”。
 
 # 2026-06-03 最新交接：同事链路已局部吸收，准备 GitHub 同步
+# 2026-06-08 TestFiles 自动化测试交接
+- 自动化入口：`py TestFiles\run_all_tests.py`。
+- 最新报告：`TestFiles/reports/test_report_20260608_143919.md`，结果 `passed=78 warning=1 failed=1`。
+- 已覆盖后端 53 个 OpenAPI 接口和前端主要交互。
+- 当前唯一失败：`/api/reports/site-selection/download?format=json` 在真实 Uvicorn 浏览器路径下返回 502。

@@ -825,3 +825,5 @@ py -3.12 90_p6_expert_dashboard\qa\selenium_visual_integration_20260603.py
 3. 下一版页面顺序应是：`全局链路台 -> 资料与空间底座 -> 人物仿真对象工坊 -> 仿真任务预检 -> 决策解释与报告工作稿`。
 4. 必须保留 DeepSeek-only 生产边界、完整仿真阻止、老板资料/CAD/证据链入口、采用/放弃/锁定机制。
 5. 不要推 GitHub，除非用户明确要求。
+# 下一轮建议提示：TestFiles 自动化测试
+请先读取 `TestFiles/reports/test_report_20260608_143919.md`。自动化入口为 `py TestFiles\run_all_tests.py`，已覆盖后端 53 个 OpenAPI 接口和前端主要交互。当前唯一失败是报告依据链 JSON 导出在真实 Uvicorn 浏览器路径下返回 502；优先定位 live server 与 TestClient 行为不一致的原因。
