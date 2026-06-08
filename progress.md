@@ -1863,3 +1863,9 @@
 - 已新增 `TestFiles/run_all_tests.py`、`TestFiles/check_db_health.py`、`TestFiles/README.md` 和测试 fixtures。
 - 已修复 SQLite 并发导入锁和真实校准补充重建脚本缺失。
 - 最新全量报告：`TestFiles/reports/test_report_20260608_143919.md`，通过 78、警告 1、失败 1。
+
+# 2026-06-08 TestFiles 502 修复
+- 已确认 502 来自测试脚本默认 `httpx` 环境传输配置，失败请求没有进入本地 Uvicorn。
+- 已仅修改 `TestFiles/run_all_tests.py` 的本地请求和服务就绪判断。
+- UI 测试：通过 16、警告 1、失败 0。
+- 全量测试：通过 79、警告 1、失败 0；报告为 `TestFiles/reports/test_report_20260608_163052.md`。

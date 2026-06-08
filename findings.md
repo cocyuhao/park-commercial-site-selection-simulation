@@ -1073,3 +1073,8 @@
 - 前端主要交互均进入 Playwright 流程。
 - 真实问题：报告依据链 JSON 导出在真实 Uvicorn + Chrome 流程下返回 502，但 TestClient API 测试中返回 200。
 - 交互警告：20 个控件缺少 id 或可见名称，影响自动化和无障碍稳定性。
+
+# 2026-06-08 TestFiles 502 根因结论
+- 502 不是报告业务接口错误：默认 `httpx.get()` 请求没有进入本地 Uvicorn；同一路径使用 `trust_env=False` 后 JSON、MD、DOCX 均返回 200。
+- 测试脚本原先把任意 `<600` 状态码视为服务已就绪，会错误接受 502。
+- 修复后全量自动化结果为 `passed=79 warning=1 failed=0`。

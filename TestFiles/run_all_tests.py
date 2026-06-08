@@ -664,13 +664,13 @@ def start_server(port: int) -> ServerHandle:
         if not thread.is_alive():
             raise RuntimeError("uvicorn thread exited early")
         try:
-            response = httpx.get(f"{base_url}/", timeout=2)
+            response = httpx.get(f"{base_url}/", timeout=2, trust_env=False)
             last_probe = f"HTTP {response.status_code}"
-            if response.status_code < 600:
+            if response.status_code == 200:
                 warmup_deadline = time.time() + 60
                 while time.time() < warmup_deadline:
                     try:
-                        dashboard_response = httpx.get(f"{base_url}/api/dashboard", timeout=3)
+                        dashboard_response = httpx.get(f"{base_url}/api/dashboard", timeout=3, trust_env=False)
                         if dashboard_response.status_code == 200:
                             break
                         last_probe = f"dashboard HTTP {dashboard_response.status_code}"
@@ -834,7 +834,7 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 href = page.locator("#exportReportBackupBtn").get_attribute("href", timeout=8000)
                 if not href:
                     raise RuntimeError("导出依据链按钮缺少 href")
-                response = httpx.get(f"{base_url}{href}", timeout=30)
+                response = httpx.get(f"{base_url}{href}", timeout=30, trust_env=False)
                 response.raise_for_status()
                 target = REPORT_DIR / f"ui_report_basis_{RUN_ID}.json"
                 target.write_bytes(response.content)

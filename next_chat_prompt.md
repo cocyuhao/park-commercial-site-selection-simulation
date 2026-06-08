@@ -827,3 +827,6 @@ py -3.12 90_p6_expert_dashboard\qa\selenium_visual_integration_20260603.py
 5. 不要推 GitHub，除非用户明确要求。
 # 下一轮建议提示：TestFiles 自动化测试
 请先读取 `TestFiles/reports/test_report_20260608_143919.md`。自动化入口为 `py TestFiles\run_all_tests.py`，已覆盖后端 53 个 OpenAPI 接口和前端主要交互。当前唯一失败是报告依据链 JSON 导出在真实 Uvicorn 浏览器路径下返回 502；优先定位 live server 与 TestClient 行为不一致的原因。
+
+# 下一轮建议提示：TestFiles 502 已修复
+请先读取 `TestFiles/reports/test_report_20260608_163052.md`。自动化入口为 `py TestFiles\run_all_tests.py`，当前全量结果为 `passed=79 warning=1 failed=0`。502 根因是测试脚本默认 `httpx` 环境传输配置截走本地请求，已通过 `trust_env=False` 修复。

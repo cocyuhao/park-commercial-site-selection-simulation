@@ -36,3 +36,8 @@
 - 最新报告：`TestFiles/reports/test_report_20260608_143919.md`，结果为通过 78、警告 1、失败 1。
 - 后端 OpenAPI 53 个接口全部覆盖；前端覆盖总览、资料导入、资料闭合、节点、地图、AI 工作台和报告页。
 - 当前问题：真实 Uvicorn 运行态下报告依据链 JSON 导出返回 502；20 个控件缺少 id 或可见名称。
+
+# 2026-06-08 TestFiles 本地请求 502 修复
+- 根因确认：测试脚本访问本地 Uvicorn 时使用默认 `httpx` 环境配置，请求被本机传输环境截走，未进入 Uvicorn，返回空 502。
+- 修复范围仅限 `TestFiles/run_all_tests.py`：本地请求增加 `trust_env=False`，服务就绪条件收紧为首页 HTTP 200。
+- 最新全量报告：`TestFiles/reports/test_report_20260608_163052.md`，结果为通过 79、警告 1、失败 0。

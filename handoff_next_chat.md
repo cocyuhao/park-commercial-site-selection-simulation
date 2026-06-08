@@ -2256,3 +2256,8 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - 最新报告：`TestFiles/reports/test_report_20260608_143919.md`，结果 `passed=78 warning=1 failed=1`。
 - 已覆盖后端 53 个 OpenAPI 接口和前端主要交互。
 - 当前唯一失败：`/api/reports/site-selection/download?format=json` 在真实 Uvicorn 浏览器路径下返回 502。
+
+# 2026-06-08 TestFiles 502 修复交接
+- 已仅修改 `TestFiles/run_all_tests.py`：本地 `httpx` 请求使用 `trust_env=False`，服务就绪要求首页 HTTP 200。
+- 根因是测试请求未进入本地 Uvicorn，不是报告下载业务接口错误。
+- 最新全量报告：`TestFiles/reports/test_report_20260608_163052.md`，结果 `passed=79 warning=1 failed=0`。
