@@ -1,0 +1,9 @@
+﻿formula_id,metric_name,prototype_weight,metric_definition,value_range,calibration_status,output_status
+P2-FORM-001,demand_fit_score,0.18,业态/场景与 persona 需求匹配度,0-100,needs_review_assumption,needs_review
+P2-FORM-002,supply_gap_score,0.18,目标需求与现有供给覆盖差距,0-100,needs_verified_supply,needs_review
+P2-FORM-003,spatial_access_score,0.14,入口/节点/路径可达性,0-100,blocked_by_dwg_and_route_gap,needs_review
+P2-FORM-004,scene_synergy_score,0.12,与周边运动/文化/游乐/水绿标签的协同,0-100,pdf_proxy_only,needs_review
+P2-FORM-005,revenue_potential_score,0.12,消费转化、客单、频次的潜在贡献,0-100,blocked_by_revenue_cost_gap,needs_review
+P2-FORM-006,implementation_feasibility_score,0.12,改造、授权、政策、施工可行性,0-100,needs_operator_confirmation,needs_review
+P2-FORM-007,risk_penalty_score,-0.1,审批、授权、夜间经营、施工和邻避风险扣分,0-100,needs_review,needs_review
+P2-FORM-008,evidence_confidence_score,0.14,输入证据完整度与可追溯性,0-100,computed_from_status_fields,needs_review

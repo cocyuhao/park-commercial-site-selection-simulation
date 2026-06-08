@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-06-06T22:45:06",
+  "purpose": "Codex 主线防偏航上下文包：锁定全局 AI 仿真决策系统重基线，避免旧文件和旧 P6 口径误导后续判断。",
+  "current_priority": "先完成全局重基线门禁，再继续重构 AI 工作台、方法对象池、资料池、仿真任务和旧产物信任地图。",
+  "mainline_insert_rule": "Codex 自身强化只能作为主线防偏航层插入，不得替代仿真主线。",
+  "next_mainline_step": "按全局 AI 仿真决策系统重基线，继续重构 AI 工作台、资料池/方法对象池、仿真任务入口，并建立旧文件信任地图，避免历史产物被误判为新方向成果。",
+  "non_negotiables": [
+    "系统总定位是 AI 驱动仿真决策系统；公园商业选址只是当前场景，不得把全局能力写死为单一公园商业工作台。",
+    "老板六份方法资料是系统级重基线，不是补缺口资料。",
+    "Flowus 和 2026 AI/HCI/agentic UI 资料是判断材料，必须落成对象、状态、交互和门禁，不得只写学习总结。",
+    "方法、工具、插件、论文和同事成果必须进入审计清单，不能再用一句“已学习/已参考/已使用”带过。",
+    "DeepSeek 是低成本语义工人，只能输出 draft/needs_review。",
+    "旧 P4 完整仿真、ROI、最终排名、裸分数必须降级或重审。",
+    "choice_probability 不得编造 probability_value。",
+    "simulation_validation_target 用于阻止旧 dry-run 被误写成完整仿真。",
+    "同事远端成果只能只读比较、选择性吸收，不能覆盖本地胜出逻辑。",
+    "历史长文件夹必须建立信任分级：仍可信、需降级、仅历史参考、应废弃，不能默认沿用旧结论。",
+    "老板模型和外部论文必须通过落点覆盖审计，不得只列模型名或论文名。",
+    "DeepSeek 并发按账号计算，不能靠多 API Key 当架构；系统不得逐游客实时调用 DeepSeek。"
+  ],
+  "authoritative_files": [
+    {
+      "path": "AGENTS.md",
+      "exists": true,
+      "bytes": 13784
+    },
+    {
+      "path": "00_control/codex_mainline_guardrails.md",
+      "exists": true,
+      "bytes": 3726
+    },
+    {
+      "path": "00_control/decisions.md",
+      "exists": true,
+      "bytes": 78475
+    },
+    {
+      "path": "progress.md",
+      "exists": true,
+      "bytes": 154044
+    },
+    {
+      "path": "findings.md",
+      "exists": true,
+      "bytes": 111569
+    },
+    {
+      "path": "handoff_next_chat.md",
+      "exists": true,
+      "bytes": 135083
+    },
+    {
+      "path": "next_chat_prompt.md",
+      "exists": true,
+      "bytes": 28477
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md",
+      "exists": true,
+      "bytes": 13080
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md",
+      "exists": true,
+      "bytes": 9182
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+      "exists": true,
+      "bytes": 8083
+    },
+    {
+      "path": "10_research/global_ai_simulation_design_rebaseline_20260604.md",
+      "exists": true,
+      "bytes": 11902
+    },
+    {
+      "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+      "exists": true,
+      "bytes": 12749
+    },
+    {
+      "path": "10_research/method_tool_plugin_audit_20260604.md",
+      "exists": true,
+      "bytes": 11517
+    },
+    {
+      "path": "10_research/deepseek_api_concurrency_capacity_20260605.md",
+      "exists": true,
+      "bytes": 3247
+    },
+    {
+      "path": "40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json",
+      "exists": true,
+      "bytes": 11897
+    },
+    {
+      "path": "40_quality_evidence/project_context_legacy_risk_audit_20260605.md",
+      "exists": true,
+      "bytes": 18791
+    },
+    {
+      "path": "40_quality_evidence/method_model_landing_coverage_20260605.md",
+      "exists": true,
+      "bytes": 9506
+    },
+    {
+      "path": "60_model/scripts/adapt_choice_probability_and_validation_targets.py",
+      "exists": true,
+      "bytes": 24753
+    },
+    {
+      "path": "40_quality_evidence/choice_probability_adapter_20260604.md",
+      "exists": true,
+      "bytes": 793
+    },
+    {
+      "path": "40_quality_evidence/simulation_validation_target_adapter_20260604.md",
+      "exists": true,
+      "bytes": 790
+    }
+  ],
+  "mainline_outputs": [
+    {
+      "path": "60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json",
+      "exists": true,
+      "bytes": 100222
+    },
+    {
+      "path": "60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json",
+      "exists": true,
+      "bytes": 20591
+    },
+    {
+      "path": "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "exists": true,
+      "bytes": 42969
+    },
+    {
+      "path": "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "exists": true,
+      "bytes": 4676
+    },
+    {
+      "path": "40_quality_evidence/choice_probability_contract_validation_20260604.json",
+      "exists": true,
+      "bytes": 306
+    },
+    {
+      "path": "40_quality_evidence/simulation_validation_target_contract_validation_20260604.json",
+      "exists": true,
+      "bytes": 313
+    },
+    {
+      "path": "40_quality_evidence/simulation_object_pool_api_validation_20260604.json",
+      "exists": true,
+      "bytes": 872
+    },
+    {
+      "path": "40_quality_evidence/simulation_object_pool_browser_validation_20260604.json",
+      "exists": true,
+      "bytes": 1421
+    },
+    {
+      "path": "40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json",
+      "exists": true,
+      "bytes": 590
+    },
+    {
+      "path": "40_quality_evidence/project_context_legacy_risk_audit_20260605.json",
+      "exists": true,
+      "bytes": 59218
+    },
+    {
+      "path": "40_quality_evidence/method_model_landing_coverage_20260605.json",
+      "exists": true,
+      "bytes": 17035
+    }
+  ],
+  "missing_files": [],
+  "stale_top_phrase_findings": [],
+  "verification_summary": {
+    "exists": true,
+    "path": "40_quality_evidence/verification/implementation_verification_20260526.md",
+    "checks": "1049",
+    "failures": "0"
+  },
+  "startup_commands": [
+    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1",
+    "powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1 -FullGate"
+  ]
+}

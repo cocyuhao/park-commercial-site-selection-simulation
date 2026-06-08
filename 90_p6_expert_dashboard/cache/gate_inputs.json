@@ -31,5 +31,71 @@
     "output_status": "needs_review",
     "not_final": true,
     "created_at": "2026-06-02T12:04:40"
+  },
+  {
+    "input_id": "GI-0004",
+    "calibration_domain": "model_gate",
+    "note": "已确认资料入池：qa_candidates.csv。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "UP-20260602_120532-007",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:20"
+  },
+  {
+    "input_id": "GI-0005",
+    "calibration_domain": "场地条件满足度",
+    "note": "已确认资料入池：奥森北园(字体放大)-改造建筑示意-Model(1).pdf。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "BUILTIN-奥森北园(字体放大)-改造建筑示意-Model(",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:27"
+  },
+  {
+    "input_id": "GI-0006",
+    "calibration_domain": "既有建筑结构与管理用途",
+    "note": "已确认资料入池：奥森北园(字体放大)-改造建筑示意-Model(1).pdf。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "BUILTIN-奥森北园(字体放大)-改造建筑示意-Model(",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:27"
+  },
+  {
+    "input_id": "GI-0007",
+    "calibration_domain": "改造功能与周边设施相容性",
+    "note": "已确认资料入池：奥森北园(字体放大)-改造建筑示意-Model(1).pdf。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "BUILTIN-奥森北园(字体放大)-改造建筑示意-Model(",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:27"
+  },
+  {
+    "input_id": "GI-0008",
+    "calibration_domain": "交通与客流可达性",
+    "note": "已确认资料入池：奥森北园(字体放大)-改造建筑示意-Model(1).pdf。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "BUILTIN-奥森北园(字体放大)-改造建筑示意-Model(",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:27"
+  },
+  {
+    "input_id": "GI-0009",
+    "calibration_domain": "审批与规划合规性",
+    "note": "已确认资料入池：奥森北园(字体放大)-改造建筑示意-Model(1).pdf。",
+    "owner": "网页确认",
+    "due_date": "",
+    "source_hint": "BUILTIN-奥森北园(字体放大)-改造建筑示意-Model(",
+    "output_status": "needs_review",
+    "not_final": true,
+    "created_at": "2026-06-05T17:56:27"
   }
 ]

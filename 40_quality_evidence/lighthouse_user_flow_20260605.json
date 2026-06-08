@@ -1,0 +1,111 @@
+{
+  "validator": "lighthouse_user_flow_probe.mjs",
+  "generated_at": "2026-06-05T04:07:11.441Z",
+  "status": "pass",
+  "check_count": 7,
+  "failure_count": 0,
+  "base_url": "http://127.0.0.1:49923",
+  "flow_report_html": "40_quality_evidence/lighthouse_user_flow_20260605/p6_dashboard_user_flow.html",
+  "steps": [
+    {
+      "name": "打开全局推进台",
+      "gather_mode": "navigation",
+      "final_url": "http://127.0.0.1:49923/",
+      "scores": {
+        "performance": 0.96,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.9,
+        "agentic-browsing": 1
+      },
+      "warning_count": 0
+    },
+    {
+      "name": "切换 AI、资料池、节点与报告",
+      "gather_mode": "timespan",
+      "final_url": "http://127.0.0.1:49923/#report",
+      "scores": {
+        "performance": 1,
+        "best-practices": 1
+      },
+      "warning_count": 0
+    },
+    {
+      "name": "报告页与资料池状态快照",
+      "gather_mode": "snapshot",
+      "final_url": "http://127.0.0.1:49923/#report",
+      "scores": {
+        "performance": 0,
+        "accessibility": 1,
+        "best-practices": 1,
+        "seo": 0.75,
+        "agentic-browsing": 1
+      },
+      "warning_count": 0
+    }
+  ],
+  "snapshot_performance_scores_recorded_not_gated": [
+    0
+  ],
+  "checks": [
+    {
+      "name": "flow_has_three_steps",
+      "passed": true,
+      "evidence": [
+        "打开全局推进台",
+        "切换 AI、资料池、节点与报告",
+        "报告页与资料池状态快照"
+      ]
+    },
+    {
+      "name": "accessibility_scores_present",
+      "passed": true,
+      "evidence": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "accessibility_minimum_090",
+      "passed": true,
+      "evidence": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "best_practices_scores_present",
+      "passed": true,
+      "evidence": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "performance_scores_recorded",
+      "passed": true,
+      "evidence": [
+        0.96,
+        1
+      ]
+    },
+    {
+      "name": "navigation_timespan_performance_minimum_080",
+      "passed": true,
+      "evidence": [
+        0.96,
+        1
+      ]
+    },
+    {
+      "name": "flow_html_written",
+      "passed": true,
+      "evidence": {
+        "path": "40_quality_evidence/lighthouse_user_flow_20260605/p6_dashboard_user_flow.html",
+        "bytes": 1289669
+      }
+    }
+  ],
+  "server_stderr_tail": ""
+}

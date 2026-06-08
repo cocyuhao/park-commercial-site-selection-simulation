@@ -1,0 +1,83 @@
+{
+  "validator": "simulation_feature_scene_browser_validation_20260607.py",
+  "generated_at": "2026-06-06T22:49:15Z",
+  "status": "pass",
+  "check_count": 12,
+  "failure_count": 0,
+  "base_url": "http://127.0.0.1:55686",
+  "derivative_id": "PSD-0001",
+  "job_id": "SIM-20260607064914-60601",
+  "screenshot": "40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png",
+  "console_errors": [],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "checks": [
+    {
+      "name": "feature_scene_visible",
+      "passed": true,
+      "evidence": true
+    },
+    {
+      "name": "adopted_scene_metric",
+      "passed": true,
+      "evidence": "资料闭合状态\n\n每个缺口都给出要上传什么、要填什么、下一步点哪里。\n\n几何图纸\ngeometry · 尚未关联资料\n\n上传 DWG/DXF/PDF，并说明图纸对应北园或南园\n\n上传资料\n填写说明\n问 AI 怎么补\n客流数据\nvisitor_flow · 尚未关联资料\n\n上传客流表、时段图、票务/运营记录\n\n上传资料\n填写说明\n问 AI 怎么补\n转化口径\nconversion_rate · 尚未关联资料\n\n填写入口客流到消费转化的口径或上传历史经营表\n\n上传资料\n填写说明\n问 AI 怎么补\n收益成本\nrevenue_cost · 尚未关联资料\n\n上传租金、分成、装修、人工、运营成本表\n\n上传资料\n填写说明\n问 AI 怎么补\n运营授权\noperation_authorization · 尚未关联资料\n\n上传授权、消防、业态限制、审批口径文件\n\n上传资料\n填写说明\n问 AI 怎么补\n模型综合\nmodel_gate · 尚未关联资料\n\n等待前面资料闭合后再复核模型\n\n上传资料\n填写说明\n问 AI 怎么补\n待确认资料清单\n\n把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。\n\n节点"
+    },
+    {
+      "name": "real_calibration_metric",
+      "passed": true,
+      "evidence": "资料闭合状态\n\n每个缺口都给出要上传什么、要填什么、下一步点哪里。\n\n几何图纸\ngeometry · 尚未关联资料\n\n上传 DWG/DXF/PDF，并说明图纸对应北园或南园\n\n上传资料\n填写说明\n问 AI 怎么补\n客流数据\nvisitor_flow · 尚未关联资料\n\n上传客流表、时段图、票务/运营记录\n\n上传资料\n填写说明\n问 AI 怎么补\n转化口径\nconversion_rate · 尚未关联资料\n\n填写入口客流到消费转化的口径或上传历史经营表\n\n上传资料\n填写说明\n问 AI 怎么补\n收益成本\nrevenue_cost · 尚未关联资料\n\n上传租金、分成、装修、人工、运营成本表\n\n上传资料\n填写说明\n问 AI 怎么补\n运营授权\noperation_authorization · 尚未关联资料\n\n上传授权、消防、业态限制、审批口径文件\n\n上传资料\n填写说明\n问 AI 怎么补\n模型综合\nmodel_gate · 尚未关联资料\n\n等待前面资料闭合后再复核模型\n\n上传资料\n填写说明\n问 AI 怎么补\n待确认资料清单\n\n把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。\n\n节点\t要补什么\t用途\t状态\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-006\t运营授权\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-00"
+    },
+    {
+      "name": "income_price_visible",
+      "passed": true,
+      "evidence": "资料闭合状态\n\n每个缺口都给出要上传什么、要填什么、下一步点哪里。\n\n几何图纸\ngeometry · 尚未关联资料\n\n上传 DWG/DXF/PDF，并说明图纸对应北园或南园\n\n上传资料\n填写说明\n问 AI 怎么补\n客流数据\nvisitor_flow · 尚未关联资料\n\n上传客流表、时段图、票务/运营记录\n\n上传资料\n填写说明\n问 AI 怎么补\n转化口径\nconversion_rate · 尚未关联资料\n\n填写入口客流到消费转化的口径或上传历史经营表\n\n上传资料\n填写说明\n问 AI 怎么补\n收益成本\nrevenue_cost · 尚未关联资料\n\n上传租金、分成、装修、人工、运营成本表\n\n上传资料\n填写说明\n问 AI 怎么补\n运营授权\noperation_authorization · 尚未关联资料\n\n上传授权、消防、业态限制、审批口径文件\n\n上传资料\n填写说明\n问 AI 怎么补\n模型综合\nmodel_gate · 尚未关联资料\n\n等待前面资料闭合后再复核模型\n\n上传资料\n填写说明\n问 AI 怎么补\n待确认资料清单\n\n把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。\n\n节点\t要补什么\t用途\t状态\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-006\t运营授权\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于"
+    },
+    {
+      "name": "accuracy_visible",
+      "passed": true,
+      "evidence": "资料闭合状态\n\n每个缺口都给出要上传什么、要填什么、下一步点哪里。\n\n几何图纸\ngeometry · 尚未关联资料\n\n上传 DWG/DXF/PDF，并说明图纸对应北园或南园\n\n上传资料\n填写说明\n问 AI 怎么补\n客流数据\nvisitor_flow · 尚未关联资料\n\n上传客流表、时段图、票务/运营记录\n\n上传资料\n填写说明\n问 AI 怎么补\n转化口径\nconversion_rate · 尚未关联资料\n\n填写入口客流到消费转化的口径或上传历史经营表\n\n上传资料\n填写说明\n问 AI 怎么补\n收益成本\nrevenue_cost · 尚未关联资料\n\n上传租金、分成、装修、人工、运营成本表\n\n上传资料\n填写说明\n问 AI 怎么补\n运营授权\noperation_authorization · 尚未关联资料\n\n上传授权、消防、业态限制、审批口径文件\n\n上传资料\n填写说明\n问 AI 怎么补\n模型综合\nmodel_gate · 尚未关联资料\n\n等待前面资料闭合后再复核模型\n\n上传资料\n填写说明\n问 AI 怎么补\n待确认资料清单\n\n把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。\n\n节点\t要补什么\t用途\t状态\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-006\t运营授权\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-006\t运营授权\t用于把反馈草案升级为可校准P4模型。\t待复核\n工作能力状态\n只显示会影响客服使用的问题\n人物仿真对象池\n\n把人群状态、行为程序、选择概率和验证目标变成可采用、可锁定、可编辑的仿真输入。\n\n新增人群状态\n新增行为程序\n新增选择候选\n新增验证目标\n6\n人群状态画像\n12\n行为程序\n36\n选择概率候选\n10\n仿真验证目标\n0\n已采用\n0\n已锁定\n\n默认显示 4 / 64 个对象，优先处理已采用、已锁定和最近候选。 其余对象展开后再逐项复核，避免资料页变成说明书。\n\n展开全部对象（还有 60 个）\n选择概率候选\nP2-PER-001 在 P2-NODE-001 的消费选择候选\n暂未采用 "
+    },
+    {
+      "name": "operation_visible",
+      "passed": true,
+      "evidence": "资料闭合状态\n\n每个缺口都给出要上传什么、要填什么、下一步点哪里。\n\n几何图纸\ngeometry · 尚未关联资料\n\n上传 DWG/DXF/PDF，并说明图纸对应北园或南园\n\n上传资料\n填写说明\n问 AI 怎么补\n客流数据\nvisitor_flow · 尚未关联资料\n\n上传客流表、时段图、票务/运营记录\n\n上传资料\n填写说明\n问 AI 怎么补\n转化口径\nconversion_rate · 尚未关联资料\n\n填写入口客流到消费转化的口径或上传历史经营表\n\n上传资料\n填写说明\n问 AI 怎么补\n收益成本\nrevenue_cost · 尚未关联资料\n\n上传租金、分成、装修、人工、运营成本表\n\n上传资料\n填写说明\n问 AI 怎么补\n运营授权\noperation_authorization · 尚未关联资料\n\n上传授权、消防、业态限制、审批口径文件\n\n上传资料\n填写说明\n问 AI 怎么补\n模型综合\nmodel_gate · 尚未关联资料\n\n等待前面资料闭合后再复核模型\n\n上传资料\n填写说明\n问 AI 怎么补\n待确认资料清单\n\n把资料请求转成可执行任务：上传文件、填写说明、交给 AI 解析。\n\n节点\t要补什么\t用途\t状态\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-004\t租金/分成\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-005\t装修/人工/运营成本\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-006\t运营授权\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-001\t真实客流\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-002\t转化率\t用于把反馈草案升级为可校准P4模型。\t待复核\nN-003\t客单价\t用于"
+    },
+    {
+      "name": "table_scene_columns",
+      "passed": true,
+      "evidence": "公园\t业态\t候选\t边界内\t场景命中\t场景动作\t准确性\t为什么卡住\t下一步资料\n当前目标公园\t咖啡\t1\t1\t0 / 1\t暂无命中动作\t关键门禁未闭合\t图纸/几何 not closed；客流 not closed\t补齐 P3 gate: 图纸/几何 / 客流 / 消费转化率 / 收益成本 / 运营授权 / 模型综合\n当前目标公园\t冷饮\t5\t5\t0 / 1\t暂无命中动作\t关键门禁未闭合\t图纸/几何 not closed；客流 not closed\t补齐 P3 gate: 图纸/几何 / 客流 / 消费转化率 / 收益成本 / 运营授权 / 模型综合\n当前目标公园\t即时零售\t2\t2\t1 / 1\t饮水机/直饮水点\t关键门禁未闭合\t图纸/几何 not closed；客流 not closed\t补齐 P3 gate: 图纸/几何 / 客流 / 消费转化率 / 收益成本 / 运营授权 / 模型综合；补齐经营字段: 人均消费/成本字段\n当前目标公园\t即时零售\t1\t0\t1 / 1\t饮水机/直饮水点\t关键门禁未闭合\t图纸/几何 not closed；客流 not closed\t补齐 P3 gate: 图纸/"
+    },
+    {
+      "name": "job_id_visible",
+      "passed": true,
+      "evidence": "SIM-20260607064914-60601"
+    },
+    {
+      "name": "pressure_card_count",
+      "passed": true,
+      "evidence": 3
+    },
+    {
+      "name": "no_forbidden_words",
+      "passed": true,
+      "evidence": {
+        "words": [],
+        "contexts": []
+      }
+    },
+    {
+      "name": "console_clean",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "screenshot_written",
+      "passed": true,
+      "evidence": {
+        "path": "40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png",
+        "bytes": 1094958
+      }
+    }
+  ],
+  "scope": "真实浏览器验证采用人物场景进入仿真检查 UI；不证明完整真实仿真完成。"
+}

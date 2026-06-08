@@ -1,0 +1,42 @@
+{
+  "task_id": "LEGACY-deepseek_evidence_candidates_progress",
+  "task_type": "source_summary",
+  "output_status": "needs_review",
+  "source_refs": [
+    {
+      "source_file": "60_model/llm_runs/deepseek_evidence_candidates_progress.json",
+      "page_or_slide": "file",
+      "quote_or_table_ref": "legacy DeepSeek output metadata only; original content not semantically revalidated"
+    }
+  ],
+  "assumptions": [
+    "This envelope adapts file-level metadata only.",
+    "Original DeepSeek output predates the 2026-06-04 boss-method rebaseline.",
+    "The envelope does not certify semantic correctness, evidence status, ranking, ROI, or simulation completion."
+  ],
+  "uncertainties": [
+    "Original content may contain old-stage assumptions, node scores, or P4 feedback draft language.",
+    "Task-specific fields must be re-extracted against the current schema before use."
+  ],
+  "needs_human_review": true,
+  "items": [
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_evidence_candidates_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_evidence_candidates_progress",
+      "line_count": 10,
+      "byte_count": 222,
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only",
+      "allowed_use": "history_tracking_and_reaudit",
+      "prohibited_use": [
+        "checked_evidence",
+        "final_ranking",
+        "roi_forecast",
+        "simulation_complete",
+        "operation_decision"
+      ],
+      "next_action": "Run a task-specific adapter or re-extraction script before using any item in persona, behavior, node, report, or simulation outputs."
+    }
+  ]
+}

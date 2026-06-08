@@ -1,0 +1,13 @@
+{
+  "overview_status_cards": 6,
+  "status_grid_columns": "349px 349px 349px",
+  "console_errors": [
+    {
+      "level": "SEVERE",
+      "message": "http://127.0.0.1:8000/favicon.ico - Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "source": "network",
+      "timestamp": 1780458375000
+    }
+  ],
+  "screenshot": "40_quality_evidence\\overview_collapse_baseline_20260603\\overview_baseline_after_grid_fix.png"
+}

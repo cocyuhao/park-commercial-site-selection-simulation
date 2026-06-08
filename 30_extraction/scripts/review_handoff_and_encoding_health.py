@@ -33,6 +33,9 @@ FORBIDDEN_TEXT = [
     "鍥惧",
 ]
 
+LATEST_GATE = "checks=725 failures=0"
+LEGACY_GATE = "checks=589 failures=0"
+
 
 def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8-sig")
@@ -103,14 +106,23 @@ def main() -> None:
     ]:
         add(rows, ok("LLM-018" in text), "error", f"{item} mentions LLM-018", item)
         add(rows, ok("LLM-019" in text), "error", f"{item} mentions LLM-019", item)
-        add(rows, ok("checks=589 failures=0" in text), "error", f"{item} records latest gate", item)
+        add(rows, ok(LATEST_GATE in text), "error", f"{item} records latest gate {LATEST_GATE}", item)
+        add(rows, ok(LEGACY_GATE in text), "warn", f"{item} preserves legacy gate {LEGACY_GATE}", item)
         add(rows, ok("pending_conversion" in text), "error", f"{item} preserves DWG pending_conversion boundary", item)
 
     add(
         rows,
-        ok("DEC-039" in decisions and "DEC-040" in decisions and "DEC-041" in decisions and "DEC-042" in decisions and "DEC-043" in decisions and "checks=589 failures=0" in decisions),
+        ok(
+            "DEC-039" in decisions
+            and "DEC-040" in decisions
+            and "DEC-041" in decisions
+            and "DEC-042" in decisions
+            and "DEC-043" in decisions
+            and LATEST_GATE in decisions
+            and LEGACY_GATE in decisions
+        ),
         "error",
-        "decisions.md records latest P2 and handoff decisions plus latest gate",
+        "decisions.md records P2 handoff decisions plus latest and legacy gates",
         "00_control/decisions.md",
     )
 
@@ -134,8 +146,9 @@ def main() -> None:
                 "## 结论",
                 "",
                 "- durable 交接文件必须保持 UTF-8 可读，不保留 mojibake 占位符。",
-                "- `AGENTS.md` 必须明确当前为 P2 准备中，而不是 P2 暂不启动。",
-                "- 最新 DeepSeek LLM-021 图纸代理审计、LLM-020 覆盖细审和 `checks=589 failures=0` 必须进入交接链路。",
+                "- `AGENTS.md` 必须明确当前为 P2 方法原型已闭环，P3 真实校准仍未闭合。",
+                f"- 最新实现门禁 `{LATEST_GATE}` 必须进入交接链路；历史基线 `{LEGACY_GATE}` 只作为旧阶段记录保留。",
+                "- `LLM-018`、`LLM-019` 和 DWG `pending_conversion` 边界必须持续保留，避免后续 agent 误判阶段。",
             ]
         )
         + "\n",

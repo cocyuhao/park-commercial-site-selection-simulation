@@ -1,0 +1,448 @@
+[
+  {
+    "query": "AgentSociety Large-Scale Simulation LLM-Driven Generative Agents",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "year": 2025,
+        "doi": "https://doi.org/10.2139/ssrn.5954414",
+        "openalex_url": "https://openalex.org/W7116746165",
+        "cited_by_count": 11,
+        "primary_location_url": "https://doi.org/10.2139/ssrn.5954414",
+        "type": "preprint"
+      },
+      {
+        "title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2502.08691",
+        "openalex_url": "https://openalex.org/W4407570917",
+        "cited_by_count": 3,
+        "primary_location_url": "https://arxiv.org/abs/2502.08691",
+        "type": "preprint"
+      },
+      {
+        "title": "Integrating LLM in Agent-Based Social Simulation: Opportunities and Challenges",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2507.19364",
+        "openalex_url": "https://openalex.org/W4417266324",
+        "cited_by_count": 2,
+        "primary_location_url": "http://arxiv.org/abs/2507.19364",
+        "type": "preprint"
+      },
+      {
+        "title": "Depression Detection on Social Media with Large Language Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2403.10750",
+        "openalex_url": "https://openalex.org/W4392972000",
+        "cited_by_count": 13,
+        "primary_location_url": "http://arxiv.org/abs/2403.10750",
+        "type": "preprint"
+      },
+      {
+        "title": "Depression Detection on Social Media with Large Language Models",
+        "year": 2025,
+        "doi": "https://doi.org/10.18653/v1/2025.emnlp-industry.151",
+        "openalex_url": "https://openalex.org/W4416037369",
+        "cited_by_count": 12,
+        "primary_location_url": "https://doi.org/10.18653/v1/2025.emnlp-industry.151",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "query": "AI Metropolis Scaling Large Language Model Multi-Agent Simulation Out-of-order Execution",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "AI Metropolis: Scaling Large Language Model-based Multi-Agent Simulation with Out-of-order Execution",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2411.03519",
+        "openalex_url": "https://openalex.org/W4404354770",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2411.03519",
+        "type": "preprint"
+      },
+      {
+        "title": "LAMINA: An MLIR-Based Translation Library for Heterogeneous Quantum-Classical Compilation",
+        "year": 2020,
+        "doi": "https://doi.org/10.4230/oasics.parma-ditam.2026.5",
+        "openalex_url": "https://openalex.org/W3010243192",
+        "cited_by_count": 312,
+        "primary_location_url": "http://arxiv.org/abs/2003.02989",
+        "type": "preprint"
+      },
+      {
+        "title": "Digitalization of Battery Manufacturing: Current Status, Challenges, and Opportunities",
+        "year": 2021,
+        "doi": "https://doi.org/10.1002/aenm.202102696",
+        "openalex_url": "https://openalex.org/W4200367498",
+        "cited_by_count": 173,
+        "primary_location_url": "https://doi.org/10.1002/aenm.202102696",
+        "type": "article"
+      },
+      {
+        "title": "Operational research and artificial intelligence methods in banking",
+        "year": 2022,
+        "doi": "https://doi.org/10.1016/j.ejor.2022.04.027",
+        "openalex_url": "https://openalex.org/W4224981375",
+        "cited_by_count": 166,
+        "primary_location_url": "https://doi.org/10.1016/j.ejor.2022.04.027",
+        "type": "article"
+      },
+      {
+        "title": "Deep Reinforcement Learning for Traffic Signal Control: A Review",
+        "year": 2020,
+        "doi": "https://doi.org/10.1109/access.2020.3034141",
+        "openalex_url": "https://openalex.org/W3096632704",
+        "cited_by_count": 149,
+        "primary_location_url": "https://doi.org/10.1109/access.2020.3034141",
+        "type": "review"
+      }
+    ]
+  },
+  {
+    "query": "CAMS CityGPT Powered Agentic Framework Mobility Simulation",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "CAMS: A CityGPT-Powered Agentic Framework for Urban Human Mobility Simulation",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2506.13599",
+        "openalex_url": "https://openalex.org/W4415109218",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2506.13599",
+        "type": "preprint"
+      },
+      {
+        "title": "Theory-Informed Generative Agents for Human Mobility Modeling",
+        "year": 2026,
+        "doi": "https://doi.org/10.21203/rs.3.rs-8902418/v1",
+        "openalex_url": "https://openalex.org/W7131360617",
+        "cited_by_count": 1,
+        "primary_location_url": "https://doi.org/10.21203/rs.3.rs-8902418/v1",
+        "type": "preprint"
+      },
+      {
+        "title": "Understanding World or Predicting Future? A Comprehensive Survey of World Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2411.14499",
+        "openalex_url": "https://openalex.org/W4404985365",
+        "cited_by_count": 2,
+        "primary_location_url": "http://arxiv.org/abs/2411.14499",
+        "type": "preprint"
+      },
+      {
+        "title": "ARMove: Learning to Predict Human Mobility through Agentic Reasoning",
+        "year": 2026,
+        "doi": null,
+        "openalex_url": "https://openalex.org/W7155244681",
+        "cited_by_count": 0,
+        "primary_location_url": "https://arxiv.org/abs/2604.17419",
+        "type": "article"
+      },
+      {
+        "title": "TrajAgent: An LLM-Agent Framework for Trajectory Modeling via Large-and-Small Model Collaboration",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2410.20445",
+        "openalex_url": "https://openalex.org/W4404314020",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2410.20445",
+        "type": "preprint"
+      }
+    ]
+  },
+  {
+    "query": "MobiVerse Scaling Urban Mobility Simulation Hybrid Lightweight Domain-Specific Generator Large Language Models",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "MobiVerse: Scaling Urban Mobility Simulation with Hybrid Lightweight Domain-Specific Generator and Large Language Models",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2506.21784",
+        "openalex_url": "https://openalex.org/W4416260398",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2506.21784",
+        "type": "preprint"
+      },
+      {
+        "title": "MobiVerse: Scaling Urban Mobility Simulation with Hybrid Lightweight Domain-Specific Generator and Large Language Models",
+        "year": 2025,
+        "doi": "https://doi.org/10.1109/itsc60802.2025.11423465",
+        "openalex_url": "https://openalex.org/W7136339556",
+        "cited_by_count": 0,
+        "primary_location_url": "https://doi.org/10.1109/itsc60802.2025.11423465",
+        "type": "article"
+      },
+      {
+        "title": "LLMs for Human Mobility: Opportunities, Challenges, and Future Directions",
+        "year": 2026,
+        "doi": null,
+        "openalex_url": "https://openalex.org/W7138824187",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2603.12420",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "query": "USTBench UAgentEnv spatiotemporal reasoning urban agents",
+    "status_code": 200,
+    "works": []
+  },
+  {
+    "query": "CitySim LLM agents urban simulation",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "CitySim: Modeling Urban Behaviors and City Dynamics with Large-Scale LLM-Driven Agent Simulation",
+        "year": 2025,
+        "doi": "https://doi.org/10.18653/v1/2025.emnlp-industry.15",
+        "openalex_url": "https://openalex.org/W4416037314",
+        "cited_by_count": 2,
+        "primary_location_url": "https://doi.org/10.18653/v1/2025.emnlp-industry.15",
+        "type": "article"
+      },
+      {
+        "title": "Urban building energy modeling (UBEM) tools: A state-of-the-art review of bottom-up physics-based approaches",
+        "year": 2020,
+        "doi": "https://doi.org/10.1016/j.scs.2020.102408",
+        "openalex_url": "https://openalex.org/W3042542258",
+        "cited_by_count": 336,
+        "primary_location_url": "https://doi.org/10.1016/j.scs.2020.102408",
+        "type": "article"
+      },
+      {
+        "title": "CitySim: Modeling Urban Behaviors and City Dynamics with Large-Scale LLM-Driven Agent Simulation",
+        "year": 2025,
+        "doi": "https://doi.org/10.48448/r6nv-wn60",
+        "openalex_url": "https://openalex.org/W7106792822",
+        "cited_by_count": 0,
+        "primary_location_url": null,
+        "type": "other"
+      },
+      {
+        "title": "CitySim: Modeling Urban Behaviors and City Dynamics with Large-Scale LLM-Driven Agent Simulation",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2506.21805",
+        "openalex_url": "https://openalex.org/W4416260418",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2506.21805",
+        "type": "preprint"
+      },
+      {
+        "title": "DiLu: A Knowledge-Driven Approach to Autonomous Driving with Large Language Models",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2309.16292",
+        "openalex_url": "https://openalex.org/W4387221829",
+        "cited_by_count": 38,
+        "primary_location_url": "http://arxiv.org/abs/2309.16292",
+        "type": "preprint"
+      }
+    ]
+  },
+  {
+    "query": "GATSim Generative Agent-based Traffic Simulation Large Language Models",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "GATSim: Urban Mobility Simulation with Generative Agents",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2506.23306",
+        "openalex_url": "https://openalex.org/W4416530809",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2506.23306",
+        "type": "preprint"
+      },
+      {
+        "title": "GATSim: Urban mobility simulation with generative agents",
+        "year": 2026,
+        "doi": "https://doi.org/10.1016/j.trc.2026.105576",
+        "openalex_url": "https://openalex.org/W7131261455",
+        "cited_by_count": 0,
+        "primary_location_url": "https://doi.org/10.1016/j.trc.2026.105576",
+        "type": "article"
+      },
+      {
+        "title": "Gatsim: Urban Mobility Simulation with Generative Agents",
+        "year": 2025,
+        "doi": "https://doi.org/10.2139/ssrn.5362962",
+        "openalex_url": "https://openalex.org/W4412617431",
+        "cited_by_count": 0,
+        "primary_location_url": "https://doi.org/10.2139/ssrn.5362962",
+        "type": "preprint"
+      },
+      {
+        "title": "Modeling realistic human behavior using generative agents in a multimodal transport system: Software architecture and Application to Toulouse",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2510.19497",
+        "openalex_url": "https://openalex.org/W4416016011",
+        "cited_by_count": 0,
+        "primary_location_url": "http://arxiv.org/abs/2510.19497",
+        "type": "preprint"
+      },
+      {
+        "title": "Language Models Meet Urban Mobility: A Data-Centric Review",
+        "year": 2025,
+        "doi": "https://doi.org/10.36227/techrxiv.176703984.41856875/v1",
+        "openalex_url": "https://openalex.org/W7117483845",
+        "cited_by_count": 0,
+        "primary_location_url": "https://doi.org/10.36227/techrxiv.176703984.41856875/v1",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "query": "large language model agent based simulation urban mobility digital twin",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+        "year": 2019,
+        "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+        "openalex_url": "https://openalex.org/W2969625533",
+        "cited_by_count": 3989,
+        "primary_location_url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+        "type": "article"
+      },
+      {
+        "title": "Tackling Climate Change with Machine Learning",
+        "year": 2022,
+        "doi": "https://doi.org/10.1145/3485128",
+        "openalex_url": "https://openalex.org/W4210916416",
+        "cited_by_count": 832,
+        "primary_location_url": "https://opus4.kobv.de/opus4-hsog/frontdoor/index/index/docId/4117",
+        "type": "review"
+      },
+      {
+        "title": "Integration of IoT-Enabled Technologies and Artificial Intelligence (AI) for Smart City Scenario: Recent Advancements and Future Trends",
+        "year": 2023,
+        "doi": "https://doi.org/10.3390/s23115206",
+        "openalex_url": "https://openalex.org/W4378882744",
+        "cited_by_count": 587,
+        "primary_location_url": "https://doi.org/10.3390/s23115206",
+        "type": "review"
+      },
+      {
+        "title": "Artificial intelligence and smart vision for building and construction 4.0: Machine and deep learning methods and applications",
+        "year": 2022,
+        "doi": "https://doi.org/10.1016/j.autcon.2022.104440",
+        "openalex_url": "https://openalex.org/W4283392904",
+        "cited_by_count": 904,
+        "primary_location_url": "https://doi.org/10.1016/j.autcon.2022.104440",
+        "type": "article"
+      },
+      {
+        "title": "City Digital Twin Potentials: A Review and Research Agenda",
+        "year": 2021,
+        "doi": "https://doi.org/10.3390/su13063386",
+        "openalex_url": "https://openalex.org/W3139158806",
+        "cited_by_count": 429,
+        "primary_location_url": "https://doi.org/10.3390/su13063386",
+        "type": "review"
+      }
+    ]
+  },
+  {
+    "query": "human behavior simulation large language models urban mobility",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+        "year": 2021,
+        "doi": "https://doi.org/10.1186/s40537-021-00444-8",
+        "openalex_url": "https://openalex.org/W3140854437",
+        "cited_by_count": 7473,
+        "primary_location_url": "https://doi.org/10.1186/s40537-021-00444-8",
+        "type": "article"
+      },
+      {
+        "title": "Internet of things: Vision, applications and research challenges",
+        "year": 2012,
+        "doi": "https://doi.org/10.1016/j.adhoc.2012.02.016",
+        "openalex_url": "https://openalex.org/W2119046642",
+        "cited_by_count": 3551,
+        "primary_location_url": "https://doi.org/10.1016/j.adhoc.2012.02.016",
+        "type": "article"
+      },
+      {
+        "title": "Confronting the Challenges of Participatory Culture: Media Education for the 21st Century",
+        "year": 2006,
+        "doi": null,
+        "openalex_url": "https://openalex.org/W2112957339",
+        "cited_by_count": 3191,
+        "primary_location_url": "https://openresearchlibrary.org/viewer/035b2379-8107-48cf-a023-14a25c7f4243",
+        "type": "book"
+      },
+      {
+        "title": "Economic Analysis of Social Interactions",
+        "year": 2000,
+        "doi": "https://doi.org/10.1257/jep.14.3.115",
+        "openalex_url": "https://openalex.org/W2107295826",
+        "cited_by_count": 2086,
+        "primary_location_url": "https://doi.org/10.1257/jep.14.3.115",
+        "type": "article"
+      },
+      {
+        "title": "A Survey of Autonomous Driving: <i>Common Practices and Emerging Technologies</i>",
+        "year": 2020,
+        "doi": "https://doi.org/10.1109/access.2020.2983149",
+        "openalex_url": "https://openalex.org/W2953303875",
+        "cited_by_count": 1711,
+        "primary_location_url": "https://doi.org/10.1109/access.2020.2983149",
+        "type": "article"
+      }
+    ]
+  },
+  {
+    "query": "LLM agent social simulation benchmark urban",
+    "status_code": 200,
+    "works": [
+      {
+        "title": "ChatGPT and Open-AI Models: A Preliminary Review",
+        "year": 2023,
+        "doi": "https://doi.org/10.3390/fi15060192",
+        "openalex_url": "https://openalex.org/W4378574344",
+        "cited_by_count": 677,
+        "primary_location_url": "https://doi.org/10.3390/fi15060192",
+        "type": "review"
+      },
+      {
+        "title": "Philosophical Transactions of the Royal Society of London. Series A, Mathematical and Physical Sciences",
+        "year": 2019,
+        "doi": "https://doi.org/10.1098/rsta",
+        "openalex_url": "https://openalex.org/W4242282425",
+        "cited_by_count": 391,
+        "primary_location_url": "https://doi.org/10.1098/rsta",
+        "type": "paratext"
+      },
+      {
+        "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+        "year": 2023,
+        "doi": "https://doi.org/10.1111/1748-8583.12524",
+        "openalex_url": "https://openalex.org/W4383913712",
+        "cited_by_count": 750,
+        "primary_location_url": "https://doi.org/10.1111/1748-8583.12524",
+        "type": "article"
+      },
+      {
+        "title": "Large language models empowered agent-based modeling and simulation: a survey and perspectives",
+        "year": 2024,
+        "doi": "https://doi.org/10.1057/s41599-024-03611-3",
+        "openalex_url": "https://openalex.org/W4402901320",
+        "cited_by_count": 186,
+        "primary_location_url": "https://doi.org/10.1057/s41599-024-03611-3",
+        "type": "article"
+      },
+      {
+        "title": "Leveraging generative AI for urban digital twins: a scoping review on the autonomous generation of urban data, scenarios, designs, and 3D city models for smart city advancement",
+        "year": 2024,
+        "doi": "https://doi.org/10.1007/s44212-024-00060-w",
+        "openalex_url": "https://openalex.org/W4403371192",
+        "cited_by_count": 118,
+        "primary_location_url": "https://doi.org/10.1007/s44212-024-00060-w",
+        "type": "review"
+      }
+    ]
+  }
+]

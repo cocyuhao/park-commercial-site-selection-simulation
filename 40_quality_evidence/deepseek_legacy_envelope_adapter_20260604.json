@@ -1,0 +1,358 @@
+{
+  "adapter": "adapt_deepseek_legacy_outputs.py",
+  "status": "metadata_wrapped_only",
+  "legacy_file_count": 35,
+  "important_boundary": "Passing contract validation for generated envelopes only proves old files are registered for audit; it does not validate old DeepSeek content.",
+  "rows": [
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_entrance_node_semantic_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_entrance_node_semantic_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_entrance_node_semantic_progress",
+      "line_count": "9",
+      "byte_count": "190",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_entrance_node_semantic_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-011",
+      "line_count": "6",
+      "byte_count": "20680",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_evidence_candidates_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_evidence_candidates_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_evidence_candidates_progress",
+      "line_count": "10",
+      "byte_count": "222",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_evidence_candidates_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-003",
+      "line_count": "63",
+      "byte_count": "300288",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_detail_query_plan_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p0_detail_query_plan_progress",
+      "line_count": "9",
+      "byte_count": "198",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_detail_query_plan_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-014",
+      "line_count": "1",
+      "byte_count": "4625",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_field_verification_checklist_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p0_field_verification_checklist_progress",
+      "line_count": "9",
+      "byte_count": "201",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_field_verification_checklist_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-015",
+      "line_count": "1",
+      "byte_count": "10320",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_verification_package_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_verification_package_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p0_verification_package_progress",
+      "line_count": "8",
+      "byte_count": "165",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p0_verification_package_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-012",
+      "line_count": "1",
+      "byte_count": "8146",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p1_quality_report_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p1_quality_report_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p1_quality_report_progress",
+      "line_count": "10",
+      "byte_count": "258",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p1_quality_report_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p1_quality_report_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-016",
+      "line_count": "1",
+      "byte_count": "5373",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_completion_readiness_audit_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p2_completion_readiness_audit_progress",
+      "line_count": "9",
+      "byte_count": "211",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_completion_readiness_audit_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_completion_readiness_audit_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-019",
+      "line_count": "1",
+      "byte_count": "3929",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_geometry_proxy_audit_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_geometry_proxy_audit_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p2_geometry_proxy_audit_progress",
+      "line_count": "7",
+      "byte_count": "148",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_geometry_proxy_audit_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_geometry_proxy_audit_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-021",
+      "line_count": "1",
+      "byte_count": "5745",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_input_schema_candidates_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p2_input_schema_candidates_progress",
+      "line_count": "9",
+      "byte_count": "202",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_input_schema_candidates_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_input_schema_candidates_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-018",
+      "line_count": "1",
+      "byte_count": "8312",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_real_site_semantic_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p2_real_site_semantic_progress",
+      "line_count": "7",
+      "byte_count": "177",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_real_site_semantic_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_real_site_semantic_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-017",
+      "line_count": "1",
+      "byte_count": "9703",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_source_coverage_audit_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p2_source_coverage_audit_progress",
+      "line_count": "12",
+      "byte_count": "268",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p2_source_coverage_audit_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p2_source_coverage_audit_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-020",
+      "line_count": "1",
+      "byte_count": "2092",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p3_calibration_execution_package_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p3_calibration_execution_package_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "LLM-023",
+      "line_count": "9",
+      "byte_count": "177",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p3_calibration_execution_package_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p3_calibration_execution_package_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-023",
+      "line_count": "1",
+      "byte_count": "27331",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p3_prework_package_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p3_prework_package_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_p3_prework_package_progress",
+      "line_count": "13",
+      "byte_count": "580",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p3_prework_package_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p3_prework_package_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-022",
+      "line_count": "1",
+      "byte_count": "6666",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p4_feedback_draft_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p4_feedback_draft_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "LLM-025",
+      "line_count": "7",
+      "byte_count": "130",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p4_feedback_draft_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p4_feedback_draft_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-025",
+      "line_count": "1",
+      "byte_count": "16582",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_p4_premature_audit_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_p4_premature_audit_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-024",
+      "line_count": "1",
+      "byte_count": "921",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_project_context_sync_latest.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_project_context_sync_latest.json",
+      "legacy_kind": "latest_json",
+      "original_task_id": "legacy:deepseek_project_context_sync_latest",
+      "line_count": "136",
+      "byte_count": "7684",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_project_context_sync_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_project_context_sync_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_project_context_sync_progress",
+      "line_count": "9",
+      "byte_count": "215",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_project_context_sync_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_project_context_sync_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-013",
+      "line_count": "1",
+      "byte_count": "7996",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_smoke_test_latest.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_smoke_test_latest.json",
+      "legacy_kind": "latest_json",
+      "original_task_id": "LLM-001",
+      "line_count": "11",
+      "byte_count": "564",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_table_classification_progress.json",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_table_classification_progress.json",
+      "legacy_kind": "progress_json",
+      "original_task_id": "legacy:deepseek_table_classification_progress",
+      "line_count": "8",
+      "byte_count": "172",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    },
+    {
+      "legacy_file": "60_model/llm_runs/deepseek_table_classification_raw.jsonl",
+      "envelope_file": "60_model/llm_runs/contract_envelopes/legacy_deepseek_table_classification_raw.json",
+      "legacy_kind": "raw_jsonl",
+      "original_task_id": "LLM-002",
+      "line_count": "44",
+      "byte_count": "142104",
+      "parse_error": "",
+      "adaptation_status": "metadata_wrapped_only"
+    }
+  ]
+}

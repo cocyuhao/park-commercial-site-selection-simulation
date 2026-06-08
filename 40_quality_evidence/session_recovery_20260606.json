@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-06-06",
+  "purpose": "post-shutdown capability recovery for the simulation design mainline",
+  "checks": [
+    {
+      "name": "plugins_enabled",
+      "status": "pass",
+      "evidence": {
+        "count": 62,
+        "marketplaces": {
+          "openai-primary-runtime": 3,
+          "openai-curated": 51,
+          "openai-bundled": 2,
+          "community": 2,
+          "yy199-curated": 4
+        }
+      }
+    },
+    {
+      "name": "ui_ux_pro_max_available",
+      "status": "pass",
+      "evidence": {
+        "path": "C:\\Users\\Yy199\\.codex\\skills\\ui-ux-pro-max\\SKILL.md",
+        "exists": true,
+        "bytes": 10612
+      }
+    },
+    {
+      "name": "skill_inventory_available",
+      "status": "pass",
+      "evidence": {
+        "count": 203
+      }
+    },
+    {
+      "name": "qa_node_stack_available",
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "90_p6_expert_dashboard/qa/package.json",
+          "exists": true,
+          "bytes": 337
+        },
+        {
+          "path": "90_p6_expert_dashboard/qa/package-lock.json",
+          "exists": true,
+          "bytes": 97508
+        }
+      ]
+    },
+    {
+      "name": "deepseek_api_pass",
+      "status": "pass",
+      "evidence": {
+        "PASS": 4,
+        "WARN": 0,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "pdf_table_gate_pass",
+      "status": "pass",
+      "evidence": {
+        "PASS": 4,
+        "WARN": 0,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "amap_smoke_pass",
+      "status": "pass",
+      "evidence": {
+        "run_at": "2026-06-06T14:49:37Z",
+        "endpoint": "v5/place/text",
+        "status": "ok",
+        "query_summary": {
+          "keywords": "奥林匹克森林公园",
+          "region": "北京",
+          "city_limit": "true",
+          "page_size": "1"
+        },
+        "amap_status": "1",
+        "amap_info": "OK",
+        "result_count": 1,
+        "notes": "Real Amap API call succeeded if status is ok. Key is not stored."
+      }
+    },
+    {
+      "name": "mainline_context_pass",
+      "status": "pass",
+      "evidence": {
+        "missing_count": 0,
+        "context_bytes": {
+          "path": "40_quality_evidence/codex_mainline_context_20260604.json",
+          "exists": true,
+          "bytes": 6857
+        }
+      }
+    }
+  ],
+  "summary": {
+    "pass": 8
+  },
+  "notes": [
+    "Chrome DevTools MCP was reconnected in the current session after clearing the isolated chrome-devtools-mcp profile.",
+    "Playwright, axe, and Lighthouse are project QA dependencies under 90_p6_expert_dashboard/qa.",
+    "ui-ux-pro-max is not listed in the current skill menu, but its SKILL.md remains installed and is treated as a manual routing capability for UI decisions."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "list_status": 200,
+  "initial_count": 46,
+  "type_counts": {
+    "choice_probability": 36,
+    "simulation_validation_target": 10
+  },
+  "summary": {
+    "choice_probability": 36,
+    "simulation_validation_target": 10,
+    "adopted": 0,
+    "locked": 0
+  },
+  "create_status": 200,
+  "created_id": "SIMOBJ-CP-037",
+  "update_status": 200,
+  "updated_summary": "已编辑：把补水选择候选改为可复核对象。",
+  "use_status": 200,
+  "adoption_after_use": "已采用",
+  "lock_status": 200,
+  "locked": true,
+  "delete_locked_status": 409,
+  "delete_locked_detail": "object is locked; unlock before deleting",
+  "unlock_status": 200,
+  "delete_status": 200,
+  "delete_payload": {
+    "object_id": "SIMOBJ-CP-037",
+    "status": "deleted",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  "final_count": 46
+}

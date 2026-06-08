@@ -1,0 +1,523 @@
+{
+  "generated_at": "2026-06-05T12:54:46",
+  "purpose": "Audit whether boss methods and external papers have real landing points in schemas, UI, contracts, scripts, and gates.",
+  "status_counts": {
+    "covered": 8,
+    "partial": 1,
+    "missing": 0
+  },
+  "items": [
+    {
+      "id": "SSR_DLR_FLR",
+      "name": "DLR / FLR / SSR synthetic user rating methods",
+      "source": "老板长图与 591775 PDF；boss_model_inventory",
+      "principle": "LLM 不直接打裸分；先产生动机、担忧、放弃理由，再映射为推进优先级。",
+      "signals": [
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "exists": true,
+          "matched": [
+            "DLR",
+            "FLR",
+            "SSR"
+          ],
+          "missing": [],
+          "bytes": 11173
+        },
+        {
+          "path": "00_control/decisions.md",
+          "exists": true,
+          "matched": [
+            "裸分数",
+            "推进优先级"
+          ],
+          "missing": [],
+          "bytes": 69785
+        },
+        {
+          "path": "90_p6_expert_dashboard/static/app.js",
+          "exists": true,
+          "matched": [
+            "discussion_score_draft",
+            "推进优先级"
+          ],
+          "missing": [],
+          "bytes": 125472
+        }
+      ],
+      "required_next": "继续清理用户可见分数字段，把分数默认折叠，主视觉只保留建议、依据和补证动作。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 3,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "ROTE_BEHAVIOR_PROGRAM",
+      "name": "ROTE / behavior program / finite state behavior",
+      "source": "2510.01272v1.pdf；ROTE / Modeling Others' Minds as Code",
+      "principle": "游客行为应变成可编辑、可复核的行为程序，不是每次临场让 LLM 编故事。",
+      "signals": [
+        {
+          "path": "60_model/schemas/behavior_program.schema.json",
+          "exists": true,
+          "matched": [
+            "trigger_context",
+            "candidate_actions",
+            "failure_condition"
+          ],
+          "missing": [],
+          "bytes": 2834
+        },
+        {
+          "path": "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+          "exists": true,
+          "matched": [
+            "program_id",
+            "trigger_condition",
+            "abandon_or_spillover_condition"
+          ],
+          "missing": [],
+          "bytes": 6224
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "exists": true,
+          "matched": [
+            "ROTE",
+            "Finite State Machines"
+          ],
+          "missing": [],
+          "bytes": 11173
+        },
+        {
+          "path": "90_p6_expert_dashboard/static/index.html",
+          "exists": true,
+          "matched": [
+            "behavior_program",
+            "新增行为程序"
+          ],
+          "missing": [],
+          "bytes": 23535
+        },
+        {
+          "path": "40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json",
+          "exists": true,
+          "matched": [
+            "has_behavior_program_objects",
+            "behavior_program=12"
+          ],
+          "missing": [],
+          "bytes": 1938
+        }
+      ],
+      "required_next": "behavior_program 已进入对象池；下一步是让仿真任务入口选择、组合和预检行为程序，而不是只展示对象。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 5,
+        "existing_file_count": 5,
+        "full_match_count": 5,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "HUMANLM_LATENT_STATE",
+      "name": "HumanLM latent state alignment",
+      "source": "2603.03303.pdf；HumanLM",
+      "principle": "人物仿真准确性先看潜在状态是否充分，而不是看 AI 回答像不像人。",
+      "signals": [
+        {
+          "path": "60_model/schemas/persona_state.schema.json",
+          "exists": true,
+          "matched": [
+            "purpose",
+            "time_pressure",
+            "queue_tolerance",
+            "companion_context"
+          ],
+          "missing": [],
+          "bytes": 2117
+        },
+        {
+          "path": "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+          "exists": true,
+          "matched": [
+            "persona_id",
+            "visit_purpose",
+            "calibration_status"
+          ],
+          "missing": [],
+          "bytes": 2755
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "exists": true,
+          "matched": [
+            "HumanLM",
+            "Latent State Modeling"
+          ],
+          "missing": [],
+          "bytes": 11173
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md",
+          "exists": true,
+          "matched": [
+            "状态准确",
+            "行为准确"
+          ],
+          "missing": [],
+          "bytes": 6365
+        },
+        {
+          "path": "90_p6_expert_dashboard/static/index.html",
+          "exists": true,
+          "matched": [
+            "persona_state",
+            "新增人群状态"
+          ],
+          "missing": [],
+          "bytes": 23535
+        },
+        {
+          "path": "40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json",
+          "exists": true,
+          "matched": [
+            "has_persona_state_objects",
+            "persona_state=6"
+          ],
+          "missing": [],
+          "bytes": 1938
+        }
+      ],
+      "required_next": "persona_state 已进入对象池；下一步是让 AI 工作台和仿真预检稳定显示 state -> behavior -> demand -> advice 链。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 6,
+        "existing_file_count": 6,
+        "full_match_count": 6,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "RL_LLM_SOCIAL_SIM",
+      "name": "RL + LLM high-definition social simulation",
+      "source": "人工智能模拟实验论文.docx；已转换 - main-1.docx",
+      "principle": "宏观统计奖励 + 微观 LLM 草评；不能用页面 smoke test 代替仿真准确性验证。",
+      "signals": [
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "exists": true,
+          "matched": [
+            "PPO",
+            "Macro Statistical Reward",
+            "Micro LLM Reward"
+          ],
+          "missing": [],
+          "bytes": 11173
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md",
+          "exists": true,
+          "matched": [
+            "状态-行为-证据链一致性",
+            "宏观统计一致性双门禁"
+          ],
+          "missing": [],
+          "bytes": 11446
+        },
+        {
+          "path": "60_model/schemas/simulation_validation_target.schema.json",
+          "exists": true,
+          "matched": [
+            "metric_family",
+            "acceptance_rule"
+          ],
+          "missing": [],
+          "bytes": 3763
+        }
+      ],
+      "required_next": "建立微观状态-行为一致性验证脚本和宏观校准目标清单，不把干跑结果当完整仿真。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 3,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "SPATIAL_ACTIVITY_CHAIN",
+      "name": "Social Force / RVO / MATSim spatial and activity-chain simulation",
+      "source": "外部论文；老板统一矩阵",
+      "principle": "空间仿真不是地图点位展示；需要路径、容量、活动链、拥挤和可达约束。",
+      "signals": [
+        {
+          "path": "10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md",
+          "exists": true,
+          "matched": [
+            "Social Force",
+            "RVO",
+            "MATSim"
+          ],
+          "missing": [],
+          "bytes": 11446
+        },
+        {
+          "path": "60_model/simulation/engine.py",
+          "exists": true,
+          "matched": [
+            "boundary_filter_status",
+            "blocked_gate_count"
+          ],
+          "missing": [],
+          "bytes": 5045
+        },
+        {
+          "path": "90_p6_expert_dashboard/app.py",
+          "exists": true,
+          "matched": [
+            "MAP_CONTEXT_FILE",
+            "MAP_BOUNDARY_FILE"
+          ],
+          "missing": [],
+          "bytes": 165790
+        }
+      ],
+      "required_next": "将现有地图/POI 只作为空间线索，后续在 P3 几何闭合后再接路网/容量/活动链。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 3,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "CHOICE_GAP_MODEL",
+      "name": "Huff / Logit / Gravity / POI-TGI demand-supply gap",
+      "source": "外部零售选址模型；同事 POI_TGI_Calculator",
+      "principle": "供需缺口是辅助层；选择概率由人群状态、行为程序、空间成本、排队、价格和供给共同决定。",
+      "signals": [
+        {
+          "path": "60_model/schemas/choice_probability.schema.json",
+          "exists": true,
+          "matched": [
+            "factor_inputs",
+            "distance_decay",
+            "queue_penalty"
+          ],
+          "missing": [],
+          "bytes": 3927
+        },
+        {
+          "path": "10_research/poi_tgi_calculator_selective_absorption_20260604.md",
+          "exists": true,
+          "matched": [
+            "POI_TGI_Calculator",
+            "选择性吸收"
+          ],
+          "missing": [],
+          "bytes": 5179
+        },
+        {
+          "path": "10_research/method_tool_plugin_audit_20260604.md",
+          "exists": true,
+          "matched": [
+            "POI_TGI_Calculator",
+            "降级为辅助"
+          ],
+          "missing": [],
+          "bytes": 11517
+        }
+      ],
+      "required_next": "把 POI/TGI 指标接入 choice_probability.factor_inputs，作为可开关辅助因子。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 3,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "MACRO_VALIDATION_METRICS",
+      "name": "SARIMA / SSIM / KL-Divergence / DTW validation metrics",
+      "source": "老板社区仿真资料与统一矩阵",
+      "principle": "真实准确性需要对齐时段客流、热力形态、分布和曲线，而不是只靠截图或 AI 文字。",
+      "signals": [
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "exists": true,
+          "matched": [
+            "SARIMA",
+            "SSIM",
+            "KL-Divergence",
+            "DTW"
+          ],
+          "missing": [],
+          "bytes": 11173
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md",
+          "exists": true,
+          "matched": [
+            "宏观验证"
+          ],
+          "missing": [
+            "DTW"
+          ],
+          "bytes": 6365
+        },
+        {
+          "path": "60_model/schemas/simulation_validation_target.schema.json",
+          "exists": true,
+          "matched": [
+            "metric_family",
+            "reference_data",
+            "required_fields"
+          ],
+          "missing": [],
+          "bytes": 3763
+        }
+      ],
+      "required_next": "把验证目标对象在 UI 中作为运行前置条件展示，并阻止未闭合数据时宣称仿真可信。",
+      "status": "partial",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 2,
+        "partial_match_count": 1,
+        "missing_files": [],
+        "missing_terms": {
+          "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md": [
+            "DTW"
+          ]
+        }
+      }
+    },
+    {
+      "id": "DEEPSEEK_CONSTRAINED_WORKER",
+      "name": "DeepSeek constrained semantic worker",
+      "source": "DeepSeek API docs；本地契约；老板资料",
+      "principle": "DeepSeek 便宜但不是总设计师；禁止逐游客实时调用，采用批处理、缓存和本地验证。",
+      "signals": [
+        {
+          "path": "10_research/deepseek_api_concurrency_capacity_20260605.md",
+          "exists": true,
+          "matched": [
+            "账号并发",
+            "capacity expansion",
+            "不应每个虚拟游客都调用一次 DeepSeek"
+          ],
+          "missing": [],
+          "bytes": 3247
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+          "exists": true,
+          "matched": [
+            "行为程序编译器",
+            "逐游客"
+          ],
+          "missing": [],
+          "bytes": 3435
+        },
+        {
+          "path": "60_model/schemas/deepseek_task_contract.schema.json",
+          "exists": true,
+          "matched": [
+            "output_status",
+            "review_required"
+          ],
+          "missing": [],
+          "bytes": 2221
+        },
+        {
+          "path": "60_model/src/llm_router.py",
+          "exists": true,
+          "matched": [
+            "run_deepseek_task",
+            "risk == \"high\""
+          ],
+          "missing": [],
+          "bytes": 16806
+        }
+      ],
+      "required_next": "补 DeepSeek 调用队列、缓存、429 退避和 OpenTelemetry span；不得把多 key 当并发方案。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 4,
+        "existing_file_count": 4,
+        "full_match_count": 4,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    },
+    {
+      "id": "AGENTIC_UI_HUMAN_OVERSIGHT",
+      "name": "Agentic UI / human oversight / GUI agent risk",
+      "source": "2026 AI/HCI 检索、Flowus、豆包/Codex 参考",
+      "principle": "界面要让用户采用、放弃、锁定、复核；不能把 AI 草稿当不可修改的系统判断。",
+      "signals": [
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "exists": true,
+          "matched": [
+            "agent 可读 UI",
+            "检查点调度",
+            "旧产物信任地图"
+          ],
+          "missing": [],
+          "bytes": 12749
+        },
+        {
+          "path": "40_quality_evidence/advanced_agentic_workflow_validation_20260604.json",
+          "exists": true,
+          "matched": [
+            "risk_taxonomy",
+            "agent_readability"
+          ],
+          "missing": [],
+          "bytes": 21729
+        },
+        {
+          "path": "90_p6_expert_dashboard/static/app.js",
+          "exists": true,
+          "matched": [
+            "user_locked",
+            "adoption_status"
+          ],
+          "missing": [],
+          "bytes": 125472
+        }
+      ],
+      "required_next": "把人群状态、行为程序、选择概率、验证目标全部做成同样的可控对象链路。",
+      "status": "covered",
+      "coverage": {
+        "signal_count": 3,
+        "existing_file_count": 3,
+        "full_match_count": 3,
+        "partial_match_count": 0,
+        "missing_files": [],
+        "missing_terms": {}
+      }
+    }
+  ],
+  "completion_boundary": "Partial coverage is not completion. A model is useful only after it has explicit schema/API/UI/validation/gate landing points and user-facing wording stays non-final."
+}

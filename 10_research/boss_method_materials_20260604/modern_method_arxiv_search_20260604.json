@@ -1,0 +1,55 @@
+[
+  {
+    "query": "AgentSociety LLM-driven generative agents simulation urban",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "AI Metropolis out-of-order execution large language model multi-agent simulation",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "CAMS CityGPT mobility simulation agentic framework",
+    "status_code": null,
+    "error": "ReadTimeout: The read operation timed out",
+    "works": []
+  },
+  {
+    "query": "MobiVerse urban mobility simulation large language models",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "USTBench UAgentEnv spatiotemporal reasoning urban agents",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "CitySim large language model urban simulation agents",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "GATSim generative agent traffic simulation large language model",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "large language model agent based simulation urban mobility benchmark",
+    "status_code": 429,
+    "works": []
+  },
+  {
+    "query": "human behavior simulation large language models urban mobility",
+    "status_code": null,
+    "error": "ReadTimeout: The read operation timed out",
+    "works": []
+  },
+  {
+    "query": "LLM agent mobility simulation digital twin city",
+    "status_code": null,
+    "error": "ConnectError: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)",
+    "works": []
+  }
+]

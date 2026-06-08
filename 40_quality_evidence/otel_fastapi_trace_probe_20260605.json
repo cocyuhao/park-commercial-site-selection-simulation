@@ -1,0 +1,237 @@
+{
+  "validator": "otel_fastapi_trace_probe_20260605.py",
+  "generated_at": "2026-06-05T03:56:32Z",
+  "status": "pass",
+  "check_count": 6,
+  "failure_count": 0,
+  "responses": {
+    "/api/dashboard": 200,
+    "/api/object-chain": 200,
+    "/api/ai/sessions": 200
+  },
+  "span_count": 9,
+  "spans": [
+    {
+      "name": "GET /api/dashboard http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/dashboard http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/dashboard",
+      "status": "UNSET",
+      "attributes": {
+        "http.route": "/api/dashboard"
+      }
+    },
+    {
+      "name": "GET /api/object-chain http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/object-chain http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/object-chain",
+      "status": "UNSET",
+      "attributes": {
+        "http.route": "/api/object-chain"
+      }
+    },
+    {
+      "name": "GET /api/ai/sessions http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/ai/sessions http send",
+      "status": "UNSET",
+      "attributes": {}
+    },
+    {
+      "name": "GET /api/ai/sessions",
+      "status": "UNSET",
+      "attributes": {
+        "http.route": "/api/ai/sessions"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "all_endpoints_http_200",
+      "passed": true,
+      "evidence": {
+        "/api/dashboard": 200,
+        "/api/object-chain": 200,
+        "/api/ai/sessions": 200
+      }
+    },
+    {
+      "name": "spans_generated",
+      "passed": true,
+      "evidence": 9
+    },
+    {
+      "name": "dashboard_span_present",
+      "passed": true,
+      "evidence": [
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/dashboard"
+          }
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/object-chain"
+          }
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "name": "object_chain_span_present",
+      "passed": true,
+      "evidence": [
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/dashboard"
+          }
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/object-chain"
+          }
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "name": "ai_sessions_span_present",
+      "passed": true,
+      "evidence": [
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/dashboard",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/dashboard"
+          }
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/object-chain",
+          "status": "UNSET",
+          "attributes": {
+            "http.route": "/api/object-chain"
+          }
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        },
+        {
+          "name": "GET /api/ai/sessions http send",
+          "status": "UNSET",
+          "attributes": {}
+        }
+      ]
+    },
+    {
+      "name": "no_error_spans",
+      "passed": true,
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-06-04T14:17:57",
+  "status": "pass",
+  "package_count": 14,
+  "status_counts": {
+    "pass": 14
+  },
+  "pass_group_counts": {
+    "modern_data_engine": 2,
+    "contract_gate": 2,
+    "geospatial": 4,
+    "trajectory": 1,
+    "agent_simulation": 2,
+    "event_simulation": 1,
+    "calibration": 2
+  },
+  "packages": [
+    {
+      "module": "duckdb",
+      "dist": "duckdb",
+      "group": "modern_data_engine",
+      "purpose": "SQL-on-files and reproducible intermediate tables for large simulation runs.",
+      "status": "pass",
+      "version": "1.5.3",
+      "detail": ""
+    },
+    {
+      "module": "polars",
+      "dist": "polars",
+      "group": "modern_data_engine",
+      "purpose": "Fast columnar data transforms for scenario grids and evidence joins.",
+      "status": "pass",
+      "version": "1.41.2",
+      "detail": ""
+    },
+    {
+      "module": "jsonschema",
+      "dist": "jsonschema",
+      "group": "contract_gate",
+      "purpose": "Local schema validation for LLM outputs and handoff artifacts.",
+      "status": "pass",
+      "version": "4.26.0",
+      "detail": ""
+    },
+    {
+      "module": "pydantic",
+      "dist": "pydantic",
+      "group": "contract_gate",
+      "purpose": "Typed runtime models for simulation objects and API envelopes.",
+      "status": "pass",
+      "version": "2.10.5",
+      "detail": ""
+    },
+    {
+      "module": "geopandas",
+      "dist": "geopandas",
+      "group": "geospatial",
+      "purpose": "Vector geospatial dataframes for boundaries, POI layers, and spatial joins.",
+      "status": "pass",
+      "version": "1.1.3",
+      "detail": ""
+    },
+    {
+      "module": "shapely",
+      "dist": "shapely",
+      "group": "geospatial",
+      "purpose": "Geometry operations for boundaries, buffers, distances, and validity checks.",
+      "status": "pass",
+      "version": "2.1.2",
+      "detail": ""
+    },
+    {
+      "module": "networkx",
+      "dist": "networkx",
+      "group": "geospatial",
+      "purpose": "Graph representation for routes, entrances, and walkable network prototypes.",
+      "status": "pass",
+      "version": "3.6.1",
+      "detail": ""
+    },
+    {
+      "module": "osmnx",
+      "dist": "osmnx",
+      "group": "geospatial",
+      "purpose": "Street-network acquisition and routing prototypes; not a substitute for Amap/DWG validation.",
+      "status": "pass",
+      "version": "2.1.0",
+      "detail": ""
+    },
+    {
+      "module": "movingpandas",
+      "dist": "movingpandas",
+      "group": "trajectory",
+      "purpose": "Trajectory objects and movement-analysis vocabulary for later real track calibration.",
+      "status": "pass",
+      "version": "0.22.4",
+      "detail": ""
+    },
+    {
+      "module": "mesa",
+      "dist": "mesa",
+      "group": "agent_simulation",
+      "purpose": "Python agent-based modeling prototype layer for personas and behavior programs.",
+      "status": "pass",
+      "version": "3.5.1",
+      "detail": ""
+    },
+    {
+      "module": "mesa_geo",
+      "dist": "mesa-geo",
+      "group": "agent_simulation",
+      "purpose": "Geospatial ABM extension; candidate bridge between agents and map geometries.",
+      "status": "pass",
+      "version": "0.9.3",
+      "detail": ""
+    },
+    {
+      "module": "simpy",
+      "dist": "simpy",
+      "group": "event_simulation",
+      "purpose": "Discrete-event queues for service, waiting, stockout, and operating-hour constraints.",
+      "status": "pass",
+      "version": "4.1.2",
+      "detail": ""
+    },
+    {
+      "module": "SALib",
+      "dist": "SALib",
+      "group": "calibration",
+      "purpose": "Sensitivity analysis for deciding which uncertain inputs matter most.",
+      "status": "pass",
+      "version": "1.5.2",
+      "detail": ""
+    },
+    {
+      "module": "optuna",
+      "dist": "optuna",
+      "group": "calibration",
+      "purpose": "Parameter search and calibration once field observations or reliable proxies exist.",
+      "status": "pass",
+      "version": "4.9.0",
+      "detail": ""
+    }
+  ],
+  "intentionally_deferred": [
+    {
+      "name": "Ray",
+      "reason": "Useful for very large distributed agent execution, but heavy for current local P2/P3 validation."
+    },
+    {
+      "name": "MATSim / SUMO",
+      "reason": "Good external engines for mature transport simulation, but require clean road network, demand, and calibration data first."
+    },
+    {
+      "name": "AnyLogic / Unreal",
+      "reason": "Can support high-fidelity demos later, but would distract from evidence, schema, and calibration gates now."
+    }
+  ],
+  "architecture_note": "Modern local stack is ready for evidence-bound hybrid simulation: domain generator, geospatial constraints, agent/event prototypes, sensitivity/calibration, and strict LLM contracts."
+}

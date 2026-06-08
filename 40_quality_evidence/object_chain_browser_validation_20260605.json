@@ -1,0 +1,63 @@
+{
+  "validator": "inline_object_chain_browser_validation_20260605",
+  "generated_at": "2026-06-05T02:57:13Z",
+  "status": "pass",
+  "base_url": "http://127.0.0.1:49787",
+  "check_count": 10,
+  "failure_count": 0,
+  "console_errors": [],
+  "screenshot": "40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png",
+  "checks": [
+    {
+      "name": "visible_对象链路矩阵",
+      "passed": true,
+      "evidence": "对象链路矩阵"
+    },
+    {
+      "name": "visible_人群状态画像",
+      "passed": true,
+      "evidence": "人群状态画像"
+    },
+    {
+      "name": "visible_行为程序",
+      "passed": true,
+      "evidence": "行为程序"
+    },
+    {
+      "name": "visible_选择概率候选",
+      "passed": true,
+      "evidence": "选择概率候选"
+    },
+    {
+      "name": "visible_仿真验证目标",
+      "passed": true,
+      "evidence": "仿真验证目标"
+    },
+    {
+      "name": "visible_节点推进对象",
+      "passed": true,
+      "evidence": "节点推进对象"
+    },
+    {
+      "name": "visible_AI 沟通记录",
+      "passed": true,
+      "evidence": "AI 沟通记录"
+    },
+    {
+      "name": "visible_报告工作稿",
+      "passed": true,
+      "evidence": "报告工作稿"
+    },
+    {
+      "name": "no_backend_words",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "console_no_errors",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "server_stderr_tail": ""
+}

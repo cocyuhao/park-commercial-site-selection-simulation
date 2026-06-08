@@ -1,0 +1,209 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "rounds": [
+    {
+      "round": 1,
+      "views": [
+        {
+          "view": "home",
+          "clicked": false,
+          "text_len": 830
+        },
+        {
+          "view": "map",
+          "clicked": true,
+          "text_len": 582
+        },
+        {
+          "view": "upload",
+          "clicked": true,
+          "text_len": 1180
+        },
+        {
+          "view": "report",
+          "clicked": true,
+          "text_len": 661
+        },
+        {
+          "view": "ai",
+          "clicked": true,
+          "text_len": 350
+        }
+      ],
+      "asset_drawer": {
+        "clicked": true,
+        "opened": true
+      }
+    },
+    {
+      "round": 2,
+      "views": [
+        {
+          "view": "home",
+          "clicked": false,
+          "text_len": 350
+        },
+        {
+          "view": "map",
+          "clicked": true,
+          "text_len": 592
+        },
+        {
+          "view": "upload",
+          "clicked": true,
+          "text_len": 1180
+        },
+        {
+          "view": "report",
+          "clicked": true,
+          "text_len": 661
+        },
+        {
+          "view": "ai",
+          "clicked": true,
+          "text_len": 350
+        }
+      ],
+      "asset_drawer": {
+        "clicked": true,
+        "opened": true
+      }
+    },
+    {
+      "round": 3,
+      "views": [
+        {
+          "view": "home",
+          "clicked": false,
+          "text_len": 350
+        },
+        {
+          "view": "map",
+          "clicked": true,
+          "text_len": 592
+        },
+        {
+          "view": "upload",
+          "clicked": true,
+          "text_len": 1180
+        },
+        {
+          "view": "report",
+          "clicked": true,
+          "text_len": 661
+        },
+        {
+          "view": "ai",
+          "clicked": true,
+          "text_len": 350
+        }
+      ],
+      "asset_drawer": {
+        "clicked": true,
+        "opened": true
+      }
+    },
+    {
+      "round": 4,
+      "views": [
+        {
+          "view": "home",
+          "clicked": false,
+          "text_len": 350
+        },
+        {
+          "view": "map",
+          "clicked": true,
+          "text_len": 592
+        },
+        {
+          "view": "upload",
+          "clicked": true,
+          "text_len": 1180
+        },
+        {
+          "view": "report",
+          "clicked": true,
+          "text_len": 661
+        },
+        {
+          "view": "ai",
+          "clicked": true,
+          "text_len": 350
+        }
+      ],
+      "asset_drawer": {
+        "clicked": true,
+        "opened": true
+      }
+    },
+    {
+      "round": 5,
+      "views": [
+        {
+          "view": "home",
+          "clicked": false,
+          "text_len": 350
+        },
+        {
+          "view": "map",
+          "clicked": true,
+          "text_len": 592
+        },
+        {
+          "view": "upload",
+          "clicked": true,
+          "text_len": 1180
+        },
+        {
+          "view": "report",
+          "clicked": true,
+          "text_len": 661
+        },
+        {
+          "view": "ai",
+          "clicked": true,
+          "text_len": 350
+        }
+      ],
+      "asset_drawer": {
+        "clicked": true,
+        "opened": true
+      }
+    }
+  ],
+  "failures": [],
+  "screenshots": {
+    "business_report_view_final_20260603.png": "40_quality_evidence\\business_report_view_final_20260603.png",
+    "ai_workbench_final_human_view_20260603.png": "40_quality_evidence\\ai_workbench_final_human_view_20260603.png",
+    "map_view_final_human_check_20260603.png": "40_quality_evidence\\map_view_final_human_check_20260603.png"
+  },
+  "report_metrics": {
+    "bodyWidth": 1095,
+    "evidenceCards": 3,
+    "hero": true,
+    "sections": [
+      "摘要",
+      "关键依据",
+      "当前缺口",
+      "推进事项"
+    ]
+  },
+  "ai_metrics": {
+    "assistantWidth": 0,
+    "bodyText": "新对话\n展开\n专家 AI 工作台\n\n项目资料、地图位置、节点问题放在同一个回聊里处理。\n\n项目综合\n生成报告\n待人工确认\n项目综合分析\n6 个节点 · 3 份资料 · 默认不绑定单点\n改为分析当前节点\n项目综合回聊\n\n上传资料、描述位置或直接说问题。系统会按全局资料、当前地图和节点缺口一起看。\n\n+\n快速分析\n资料解析\n报告润色\n生成报告\n地图核对\n↑",
+    "composerWidth": 961,
+    "railCollapsed": true,
+    "railWidth": 64,
+    "sessionTitles": [
+      "资料范围与青年湖报告验证"
+    ]
+  },
+  "map_metrics": {
+    "hasAmap": true,
+    "height": 674,
+    "poiDots": 0,
+    "text": "200 米\n+\n-\n+\n-\n复位\n撤回\n只看选中\n底图文字来自高德，仅作位置参考；系统判断以当前搜索目标和上传资料为准，不代表 DWG 坐标、面积或真实动线。",
+    "width": 751
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "source_id": "BOSS-METHOD-001",
+    "source_type": "long_image",
+    "original_name": "1e00cea7fa6c97950ae18ae4b762644.jpg",
+    "bytes": 809325,
+    "width": 414,
+    "height": 10782,
+    "char_count": "manual_visual_review_required",
+    "text_output": "10_research/boss_method_materials_20260604/extracted/long_image_crops/",
+    "extract_status": "ok"
+  },
+  {
+    "source_id": "BOSS-METHOD-002",
+    "source_type": "pdf",
+    "original_name": "2510.01272v1.pdf",
+    "bytes": 2127129,
+    "page_count": 31,
+    "char_count": 100675,
+    "title": "Modeling Others' Minds as Code",
+    "text_output": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\boss_method_materials_20260604\\extracted\\BOSS-METHOD-002_text.txt",
+    "extract_status": "ok"
+  },
+  {
+    "source_id": "BOSS-METHOD-003",
+    "source_type": "pdf",
+    "original_name": "2603.03303.pdf",
+    "bytes": 4108797,
+    "page_count": 27,
+    "char_count": 84807,
+    "title": "HumanLM: Simulating Users with State Alignment Beats Response Imitation",
+    "text_output": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\boss_method_materials_20260604\\extracted\\BOSS-METHOD-003_text.txt",
+    "extract_status": "ok"
+  },
+  {
+    "source_id": "BOSS-METHOD-004",
+    "source_type": "pdf",
+    "original_name": "591775 (已转换).pdf",
+    "bytes": 927374,
+    "page_count": 7,
+    "char_count": 5806,
+    "title": "游戏不再做歪！AI模拟千名玩家、准确率超85%，用研,测试,买量“省大钱”？ | 游戏大观 | GameLook.com.cn",
+    "text_output": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\boss_method_materials_20260604\\extracted\\BOSS-METHOD-004_text.txt",
+    "extract_status": "ok"
+  },
+  {
+    "source_id": "BOSS-METHOD-005",
+    "source_type": "docx",
+    "original_name": "人工智能模拟实验论文.docx",
+    "bytes": 18284,
+    "paragraph_count": 46,
+    "table_count": 0,
+    "char_count": 1129,
+    "text_output": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\boss_method_materials_20260604\\extracted\\BOSS-METHOD-005_text.txt",
+    "extract_status": "ok"
+  },
+  {
+    "source_id": "BOSS-METHOD-006",
+    "source_type": "docx",
+    "original_name": "已转换 - main-1.docx",
+    "bytes": 3436046,
+    "paragraph_count": 312,
+    "table_count": 5,
+    "char_count": 82024,
+    "text_output": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\boss_method_materials_20260604\\extracted\\BOSS-METHOD-006_text.txt",
+    "extract_status": "ok"
+  }
+]

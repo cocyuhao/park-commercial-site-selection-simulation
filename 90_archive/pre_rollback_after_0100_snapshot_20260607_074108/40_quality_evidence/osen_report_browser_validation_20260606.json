@@ -1,0 +1,72 @@
+{
+  "validator": "osen_report_browser_validation_20260606.py",
+  "generated_at": "2026-06-06T22:20:44Z",
+  "status": "pass",
+  "check_count": 10,
+  "failure_count": 0,
+  "base_url": "http://127.0.0.1:60824",
+  "screenshot": "40_quality_evidence/osen_report_browser_validation_20260606/report_view.png",
+  "console_errors": [],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "checks": [
+    {
+      "name": "required_terms_visible",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "docx_download_link",
+      "passed": true,
+      "evidence": "/api/reports/site-selection/download?format=docx"
+    },
+    {
+      "name": "node_options_visible",
+      "passed": true,
+      "evidence": 18
+    },
+    {
+      "name": "old_report_title_removed",
+      "passed": true,
+      "evidence": false
+    },
+    {
+      "name": "no_backend_words_visible",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "report_sections_present",
+      "passed": true,
+      "evidence": 9
+    },
+    {
+      "name": "real_calibration_visible",
+      "passed": true,
+      "evidence": "AI 仿真决策系统\n公园商业选址场景\n01\n全局链路台\n先看整体状态\n02\n资料与空间底座\n策划、CAD、POI\n资料导入\n空间地图\n03\n人物仿真工坊\n人群、行为、选择\n对象池\n任务预检\n04\n节点与候选点\n只承接已闭合条件\n05\n决策解释与报告\n对话沉淀为工作稿\nAI 工作台\n分析报告\n当前边界\n所有 AI、仿真判断和报告只用于待复核工作稿，不是最终推荐。\nAI 仿真决策系统\n决策解释与报告：生成可复核的商业汇报工作稿\n待复核草案 · 2026-06-07T06:20:43\n资料池\n查看推进事项\n打开 AI 工作台\n奥森商业改造综合评估与修正建议工作稿\n\n报告来自策划书、CAD 图纸、证据台账、当前地图语境和节点讨论，仍需人工复核后进入正式汇报。\n\n下载 DOCX 工作稿\n导出资料备份\n沟通工作稿\n奥森商业改造综合评估与修正建议工作稿\n\n这页用于把策划书、CAD 图纸、资料台账、地图语境和节点讨论整理成可复核的业务工作稿。当前仍需人工确认，不把任何草案包装成最终结论。\n\n资料基础\n3 份资料已进入资料池\n缺口判断\n缺口计算等待客流、TGI、POI 资料闭合\n节点状态\n6 个节点可回看\n校准输入\n14 条校准输入已分层接入\n人物场景\n1 条采用/锁定场景进入报告\n摘要\n\n本稿按奥森重点项目策划书、南北园 CAD/DWG、北园图纸 PDF、已有客流/消费画像和高德 POI 线索生成，定位为“可讨论的综合工作稿”，不是最终投资或收益结论。；原计划不是单点方案，而是 6 个项目节点的组合：桃花源白房子、奥运廉洁主题展馆、12#西分区管理中心、南门地下预埋空间、南门露天剧场、10#2A03分区管理中心。报告按节点条件、业态逻辑和落地风险合并判断，不再用单一分数替代建议。\n\n关键依据\n专家评审底座\n\n已完成 80/80 组主题检索，筛出 6448 条高相关研究候选；这些只用于约束维度和证据门槛，不替代现场数据。\n\n收入边界\n国家统计局北京调查总队披露：2025 年北京居民人均可支配收入 89090 元，城镇居民 96292 元。\n消费支出\n同源资料披露：2025 年北京居民人均消费支出 50667 元，城镇居民 54122 元。\n服务消费\n服务性消费支出 30052 元，占居民消费支出 59.3%；教育文化娱乐支出 4838 元，同比增长 6.5%。\n使用边界\n这些是全市上位消费能力边界，不能替代奥森周边街道、社区、办公和游客来源的收入分层。\n政策与公园适配\n目标人群\n周边人口与收入\n时间节律\n天气与季节\n地理与可达\n空间与工程\n消防与安全\n真实校准输入与使用边界\n\n报告必须区分宏观收入/消费边界、本地画像与代理变量、竞品价格线索和待复核方案假设；任何一层都不能单独推出收益、排名或投资定案。\n\n官方宏观边界\n3 条输入\n本地大数据画像\n3 条输入\n设备价格代理\n2 条输入\n竞品价格线索\n2 条输入\n本地需求热度线索\n1 条输入\n方案假设待复核\n3 条输入\nORCI-001 · 北京市居民人均可支配收入\n官方宏观边界 · 全市居民 · 2025\n数值：89090元/人/年\n用法：约束价格带和支付能力讨论的上位边界。\n不能当作奥森周边街道级收入，也不能证明某节点高客单成立。\nORCI-002 · 北京市居民人均消费支出\n官方宏观边界 · 全市居民 · 2025\n数值：50667元/人/年\n用法：约束文娱、亲子、康养、轻餐等业态的价格带讨论。\n不能替代项目周边真实消费结构和园内实际转化。\nORCI-003 · 北京市居民人均服务性消费支出\n官方宏观边界 · 全市居民 · 2025\n数值：30052元/人/年\n用法：说明服务消费有宏观背景，可约束体验、活动、康养和文娱判断。\n不能证明奥森某节点能承接高服务客单。\nORCI-101 · 美食/食材/票务生活偏好"
+    },
+    {
+      "name": "hero_readable_width",
+      "passed": true,
+      "evidence": {
+        "x": 345,
+        "y": 190.34375,
+        "width": 1036,
+        "height": 159.984375
+      }
+    },
+    {
+      "name": "screenshot_written",
+      "passed": true,
+      "evidence": {
+        "path": "40_quality_evidence/osen_report_browser_validation_20260606/report_view.png",
+        "bytes": 554987
+      }
+    },
+    {
+      "name": "console_clean",
+      "passed": true,
+      "evidence": []
+    }
+  ]
+}

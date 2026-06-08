@@ -1,0 +1,66 @@
+{
+  "validator": "simulation_object_pool_persona_behavior_validation_20260605.py",
+  "generated_at": "2026-06-05T02:13:36Z",
+  "status": "pass",
+  "check_count": 9,
+  "failure_count": 0,
+  "type_counts": {
+    "choice_probability": 36,
+    "simulation_validation_target": 10,
+    "persona_state": 6,
+    "behavior_program": 12
+  },
+  "checks": [
+    {
+      "name": "has_persona_state_objects",
+      "passed": true,
+      "evidence": "persona_state=6"
+    },
+    {
+      "name": "has_behavior_program_objects",
+      "passed": true,
+      "evidence": "behavior_program=12"
+    },
+    {
+      "name": "keeps_choice_probability_objects",
+      "passed": true,
+      "evidence": "choice_probability=36"
+    },
+    {
+      "name": "keeps_validation_target_objects",
+      "passed": true,
+      "evidence": "simulation_validation_target=10"
+    },
+    {
+      "name": "dashboard_exposes_objects",
+      "passed": true,
+      "evidence": "dashboard=64 objects=64"
+    },
+    {
+      "name": "frontend_has_four_type_options",
+      "passed": true,
+      "evidence": "index select contains four object types"
+    },
+    {
+      "name": "frontend_has_add_buttons",
+      "passed": true,
+      "evidence": "index buttons include four add actions"
+    },
+    {
+      "name": "frontend_labels_human_readable",
+      "passed": true,
+      "evidence": "JS labels are business-readable"
+    },
+    {
+      "name": "frontend_action_controls_retained",
+      "passed": true,
+      "evidence": "adopt discard delete edit controls retained"
+    }
+  ],
+  "basis": [
+    "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+    "40_quality_evidence/method_model_landing_coverage_20260605.md",
+    "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+    "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv"
+  ]
+}

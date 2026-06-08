@@ -1,0 +1,54 @@
+{
+  "validator": "validate_deepseek_contract_output.py",
+  "status": "fail",
+  "file_count": 1,
+  "failure_count": 8,
+  "results": [
+    {
+      "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+      "passed": false,
+      "failures": [
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "invalid_output_status",
+          "detail": "output_status='checked' is not allowed"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "review_required",
+          "detail": "needs_human_review must be true"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "field_empty",
+          "detail": "source_refs must not be empty"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "node_advice_missing",
+          "detail": "node_explanation requires non-empty specific_advice"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "node_review_actions_missing",
+          "detail": "node_explanation requires non-empty review_actions"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "score_not_hidden",
+          "detail": "score_if_any.hidden_by_default must be true"
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "forbidden_final_claim",
+          "detail": "forbidden token found: \"output_status\": \"checked\""
+        },
+        {
+          "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_invalid_sample.json",
+          "code": "forbidden_final_claim",
+          "detail": "forbidden token found: 最终推荐为"
+        }
+      ]
+    }
+  ]
+}

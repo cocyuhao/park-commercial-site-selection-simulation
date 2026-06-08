@@ -1,0 +1,206 @@
+{
+  "generated_at": "2026-06-07T06:24:57",
+  "status": "pass",
+  "failure_count": 0,
+  "supplement_id": "RC-SUP-20260607062446-001",
+  "screenshot": "40_quality_evidence/real_calibration_supplement_loop_validation_20260607/report_with_supplement.png",
+  "checks": [
+    {
+      "check_id": "API-SUPPLEMENT-CREATE",
+      "status": "pass",
+      "message": "可新增真实校准补充输入。",
+      "evidence": 200
+    },
+    {
+      "check_id": "API-SUPPLEMENT-ID",
+      "status": "pass",
+      "message": "新增补充输入有稳定编号。",
+      "evidence": "RC-SUP-20260607062446-001"
+    },
+    {
+      "check_id": "PREFLIGHT-COUNT-CHANGED",
+      "status": "pass",
+      "message": "预检校准输入数量随新增资料增加。",
+      "evidence": {
+        "before": 14,
+        "after": 15
+      }
+    },
+    {
+      "check_id": "PREFLIGHT-SUPPLEMENT-COUNT",
+      "status": "pass",
+      "message": "预检上下文记录补充输入数量。",
+      "evidence": {
+        "before": 0,
+        "after": 1
+      }
+    },
+    {
+      "check_id": "PREFLIGHT-SUPPLEMENT-ITEM",
+      "status": "pass",
+      "message": "新增补充输入进入预检上下文。",
+      "evidence": [
+        {
+          "calibration_id": "ORCI-S001",
+          "dimension": "income_spending_power",
+          "indicator_name": "周边收入与消费能力补充",
+          "segment": "奥森周边 1-3 公里目标人群",
+          "period": "用户补充 / 待复核",
+          "value": "月可支配收入 13500 元/人；休闲餐饮客单 45-75 元",
+          "unit": "待复核",
+          "source_strength": "local_user_supplement",
+          "simulation_use": "用于约束目标人群支付能力、客单价上限、套餐组合和高低价格带配比。",
+          "cannot_claim": "不能写成已核验街道收入或真实成交客单。",
+          "next_data_needed": "补社区/街道收入来源、样本口径、竞品真实客单、支付笔数和分人群消费结构。"
+        },
+        {
+          "calibration_id": "ORCI-001",
+          "dimension": "macro_income",
+          "indicator_name": "北京市居民人均可支配收入",
+          "segment": "全市居民",
+          "period": "2025",
+          "value": "89090",
+          "unit": "元/人/年",
+          "source_strength": "official_macro_boundary",
+          "simulation_use": "约束价格带和支付能力讨论的上位边界。",
+          "cannot_claim": "不能当作奥森周边街道级收入，也不能证明某节点高客单成立。",
+          "next_data_needed": "补奥森周边 1-3 公里街道/社区收入、居住办公结构和游客来源。"
+        },
+        {
+          "calibration_id": "ORCI-002",
+          "dimension": "macro_consumption",
+          "indicator_name": "北京市居民人均消费支出",
+          "segment": "全市居民",
+          "period": "2025",
+          "value": "50667",
+          "unit": "元/人/年",
+          "source_strength": "official_macro_boundary",
+          "simulation_use": "约束文娱、亲子、康养、轻餐等业态的价格带讨论。",
+          "cannot_claim": "不能替代项目周边真实消费结构和园内实际转化。",
+          "next_data_needed": "补竞品客单价、园内交易、支付笔数、分时段转化率。"
+        }
+      ]
+    },
+    {
+      "check_id": "API-SUPPLEMENT-PATCH",
+      "status": "pass",
+      "message": "可更新真实校准补充输入并重建。",
+      "evidence": 200
+    },
+    {
+      "check_id": "PREFLIGHT-PATCH-VISIBLE",
+      "status": "pass",
+      "message": "更新后的补充数值进入预检上下文。",
+      "evidence": "月可支配收入 14800 元/人"
+    },
+    {
+      "check_id": "JOB-CREATED",
+      "status": "pass",
+      "message": "可基于新增校准输入创建仿真干跑任务。",
+      "evidence": 200
+    },
+    {
+      "check_id": "JOB-REQUEST-COUNT-CHANGED",
+      "status": "pass",
+      "message": "仿真 job request 记录新增后的校准输入数量。",
+      "evidence": 15
+    },
+    {
+      "check_id": "REPORT-GENERATED",
+      "status": "pass",
+      "message": "报告接口可基于新增输入重新生成。",
+      "evidence": 200
+    },
+    {
+      "check_id": "REPORT-JSON-SUPPLEMENT",
+      "status": "pass",
+      "message": "报告 JSON 包含更新后的补充校准输入。",
+      "evidence": [
+        {
+          "calibration_id": "ORCI-S001",
+          "dimension": "income_spending_power",
+          "indicator_name": "周边收入与消费能力补充",
+          "segment": "奥森周边 1-3 公里目标人群",
+          "period": "用户补充 / 待复核",
+          "value": "月可支配收入 14800 元/人；休闲餐饮客单 55-85 元",
+          "unit": "待复核",
+          "source_strength": "local_user_supplement",
+          "simulation_use": "用于约束目标人群支付能力、客单价上限、套餐组合和高低价格带配比。",
+          "cannot_claim": "不能写成已核验街道收入或真实成交客单。",
+          "next_data_needed": "补社区/街道收入来源、样本口径、竞品真实客单、支付笔数和分人群消费结构。"
+        },
+        {
+          "calibration_id": "ORCI-001",
+          "dimension": "macro_income",
+          "indicator_name": "北京市居民人均可支配收入",
+          "segment": "全市居民",
+          "period": "2025",
+          "value": "89090",
+          "unit": "元/人/年",
+          "source_strength": "official_macro_boundary",
+          "simulation_use": "约束价格带和支付能力讨论的上位边界。",
+          "cannot_claim": "不能当作奥森周边街道级收入，也不能证明某节点高客单成立。",
+          "next_data_needed": "补奥森周边 1-3 公里街道/社区收入、居住办公结构和游客来源。"
+        },
+        {
+          "calibration_id": "ORCI-002",
+          "dimension": "macro_consumption",
+          "indicator_name": "北京市居民人均消费支出",
+          "segment": "全市居民",
+          "period": "2025",
+          "value": "50667",
+          "unit": "元/人/年",
+          "source_strength": "official_macro_boundary",
+          "simulation_use": "约束文娱、亲子、康养、轻餐等业态的价格带讨论。",
+          "cannot_claim": "不能替代项目周边真实消费结构和园内实际转化。",
+          "next_data_needed": "补竞品客单价、园内交易、支付笔数、分时段转化率。"
+        }
+      ]
+    },
+    {
+      "check_id": "REPORT-MD-SUPPLEMENT",
+      "status": "pass",
+      "message": "Markdown 报告包含补充校准输入。",
+      "evidence": "80_delivery\\site_selection_gap_report_latest.md"
+    },
+    {
+      "check_id": "REPORT-DOCX-SUPPLEMENT",
+      "status": "pass",
+      "message": "DOCX 报告包含补充校准输入。",
+      "evidence": {
+        "exists": true,
+        "bytes": 57594
+      }
+    },
+    {
+      "check_id": "BROWSER-SUPPLEMENT-VISIBLE",
+      "status": "pass",
+      "message": "浏览器报告页可见补充校准指标。",
+      "evidence": "AI 仿真决策系统\n公园商业选址场景\n01\n全局链路台\n先看整体状态\n02\n资料与空间底座\n策划、CAD、POI\n资料导入\n空间地图\n03\n人物仿真工坊\n人群、行为、选择\n对象池\n任务预检\n04\n节点与候选点\n只承接已闭合条件\n05\n决策解释与报告\n对话沉淀为工作稿\nAI 工作台\n分析报告\n当前边界\n所有 AI、仿真判断和报告只用于待复核工作稿，不是最终推荐。\nAI 仿真决策系统\n决策解释与报告：生成可复核的商业汇报工作稿\n待复核草案 · 2026-06-07T06:24:55\n资料池\n查看推进事项\n打开 AI 工作台\n奥森商业改造综合评估与修正建议工作稿\n\n报告来自策划书、CAD 图纸、证据台账、当前地图语境和节点讨论，仍需人工复核后进入正式汇报。\n\n下载 DOCX 工作稿\n导出资料备份\n沟通工作稿\n奥森商业改造综合评估与修正建议工作稿\n\n这页用于把策划书、CAD 图纸、资料台账、地图语境和节点讨论整理成可复核的业务工作稿。当前仍需人工确认，不把任何草案包装成最终结论。\n\n资料基础\n3 份资料已进入资料池\n缺口判断\n缺口计算等待客流、TGI、POI 资料闭合\n节点状态\n6 个节点可回看\n校准输入\n15 条校准输入已分层接入\n人物场景\n1 条采用/锁定场景进入报告\n摘要\n\n本稿按奥森重点项目策划书、南北园 CAD/DWG、北园图纸 PDF、已有客流/消费画像和高德 POI 线索生成，定位为“可讨论的综合工作稿”，不是最终投资或收益结论。；原计划不是单点方案，而是 6 个项目节点的组合：桃花源白房子、奥运廉洁主题展馆、12#西分区管理中心、南门地下预埋空间、南门露天剧场、10#2A03分区管理中心。报告按节点条件、业态逻辑和落地风险合并判断，不再用单一分数替代建议。\n\n关键依据\n专家评审底座\n\n已完成 80/80 组主题检索，筛出 6448 条高相关研究候选；这些只用于约束维度和证据门槛，不替代现场数据。\n\n收入边界\n国家统计局北京调查总队披露：2025 年北京居民人均可支配收入 89090 元，城镇居民 96292 元。\n消费支出\n同源资料披露：2025 年北京居民人均消费支出 50667 元，城镇居民 54122 元。\n服务消费\n服务性消费支出 30052 元，占居民消费支出 59.3%；教育文化娱乐支出 4838 元，同比增长 6.5%。\n使用边界\n这些是全市上位消费能力边界，不能替代奥森周边街道、社区、办公和游客来源的收入分层。\n政策与公园适配\n目标人群\n周边人口与收入\n时间节律\n天气与季节\n地理与可达\n空间与工程\n消防与安全\n真实校准输入与使用边界\n\n报告必须区分宏观收入/消费边界、本地画像与代理变量、竞品价格线索和待复核方案假设；任何一层都不能单独推出收益、排名或投资定案。\n\n官方宏观边界\n3 条输入\n本地大数据画像\n3 条输入\n设备价格代理\n2 条输入\n竞品价格线索\n2 条输入\n本地需求热度线索\n1 条输入\n方案假设待复核\n3 条输入\n用户补充校准输入\n1 条输入\nORCI-S001 · 周边收入与消费能力补充\n用户补充校准输入 · 奥森周边 1-3 公里目标人群 · 用户补充 / 待复核\n数值：月可支配收入 14800 元/人；休闲餐饮客单 55-85 元待复核\n用法：用于约束目标人群支付能力、客单价上限、套餐组合和高低价格带配比。\n不能写成已核验街道收入或真实成交客单。\nORCI-001 · 北京市居民人均可支配收入\n官方宏观边界 · 全市居民 · 2025\n数值：89090元/人/年\n用法：约束价格带和支付能力讨论的上位边界。\n不能当作奥森周边街道级收入，也不能证明某节点高客单成立。\nORCI-002 · 北京市居民人均消费支出\n官方宏观边界 · 全市居民 · 2025\n数值：50667元/人/年\n用法：约束文娱、亲子、康养"
+    },
+    {
+      "check_id": "BROWSER-PATCHED-VALUE-VISIBLE",
+      "status": "pass",
+      "message": "浏览器报告页可见更新后的补充数值。",
+      "evidence": "月可支配收入 14800 元/人"
+    },
+    {
+      "check_id": "BROWSER-CONSOLE-CLEAN",
+      "status": "pass",
+      "message": "浏览器报告页无控制台错误。",
+      "evidence": []
+    },
+    {
+      "check_id": "BROWSER-SCREENSHOT-WRITTEN",
+      "status": "pass",
+      "message": "浏览器截图已保存。",
+      "evidence": {
+        "path": "40_quality_evidence\\real_calibration_supplement_loop_validation_20260607\\report_with_supplement.png",
+        "bytes": 568627
+      }
+    }
+  ],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "scope": "验证新增/更新真实校准补充输入会改变输入包、预检、仿真 job request、报告 JSON/MD/DOCX 和浏览器页；测试后恢复原始补充文件。"
+}

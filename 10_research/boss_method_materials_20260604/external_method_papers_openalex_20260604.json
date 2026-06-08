@@ -1,0 +1,3062 @@
+[
+  {
+    "query": "Generative Agents Interactive Simulacra of Human Behavior",
+    "works": [
+      {
+        "id": "https://openalex.org/W4387835442",
+        "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+        "year": 2023,
+        "doi": "https://doi.org/10.1145/3586183.3606763",
+        "cited_by_count": 1400,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1145/3586183.3606763",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1145/3586183.3606763",
+          "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606763",
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology",
+          "raw_type": "proceedings-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606763",
+          "any_repository_has_fulltext": null
+        }
+      },
+      {
+        "id": "https://openalex.org/W4363671832",
+        "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2304.03442",
+        "cited_by_count": 169,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2304.03442",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2304.03442",
+          "pdf_url": "https://arxiv.org/pdf/2304.03442",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2304.03442",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4388235105",
+        "title": "Harnessing Large Language Models to Simulate Realistic Human Responses to Social Engineering Attacks: A Case Study",
+        "year": 2023,
+        "doi": "https://doi.org/10.52306/2578-3289.1172",
+        "cited_by_count": 16,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.52306/2578-3289.1172",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.52306/2578-3289.1172",
+          "pdf_url": "https://vc.bridgew.edu/cgi/viewcontent.cgi?article=1172&context=ijcic",
+          "source": {
+            "id": "https://openalex.org/S4210205197",
+            "display_name": "International Journal of Cybersecurity Intelligence and Cybercrime",
+            "issn_l": "2578-3289",
+            "issn": [
+              "2578-3289",
+              "2578-3297"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315793",
+            "host_organization_name": "Bridgewater State University",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315793"
+            ],
+            "host_organization_lineage_names": [
+              "Bridgewater State University"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "International Journal of Cybersecurity Intelligence &amp; Cybercrime",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://vc.bridgew.edu/cgi/viewcontent.cgi?article=1172&context=ijcic",
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "Using large language models to simulate multiple humans and replicate human subject studies",
+    "works": [
+      {
+        "id": "https://openalex.org/W4292947474",
+        "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+        "year": 2022,
+        "doi": "https://doi.org/10.48550/arxiv.2208.10264",
+        "cited_by_count": 124,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2208.10264",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2208.10264",
+          "pdf_url": "https://arxiv.org/pdf/2208.10264",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": null
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2208.10264",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2954996726",
+        "title": "A survey on Image Data Augmentation for Deep Learning",
+        "year": 2019,
+        "doi": "https://doi.org/10.1186/s40537-019-0197-0",
+        "cited_by_count": 12282,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1186/s40537-019-0197-0",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1186/s40537-019-0197-0",
+          "pdf_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-019-0197-0",
+          "source": {
+            "id": "https://openalex.org/S2737955091",
+            "display_name": "Journal Of Big Data",
+            "issn_l": "2196-1115",
+            "issn": [
+              "2196-1115"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Big Data",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-019-0197-0",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2132262459",
+        "title": "CHARMM: The biomolecular simulation program",
+        "year": 2009,
+        "doi": "https://doi.org/10.1002/jcc.21287",
+        "cited_by_count": 9098,
+        "type": "review",
+        "primary_location": {
+          "id": "doi:10.1002/jcc.21287",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1002/jcc.21287",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcc.21287",
+          "source": {
+            "id": "https://openalex.org/S21117631",
+            "display_name": "Journal of Computational Chemistry",
+            "issn_l": "0192-8651",
+            "issn": [
+              "0192-8651",
+              "1096-987X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Computational Chemistry",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcc.21287",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Generative Agent Simulations of 1,000 People",
+    "works": [
+      {
+        "id": "https://openalex.org/W2000196122",
+        "title": "The myth of language universals: Language diversity and its importance for cognitive science",
+        "year": 2009,
+        "doi": "https://doi.org/10.1017/s0140525x0999094x",
+        "cited_by_count": 2621,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1017/s0140525x0999094x",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1017/s0140525x0999094x",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/25D362A6566FCA4F51054D1C41104654/S0140525X0999094Xa.pdf/div-class-title-the-myth-of-language-universals-language-diversity-and-its-importance-for-cognitive-science-div.pdf",
+          "source": {
+            "id": "https://openalex.org/S59628311",
+            "display_name": "Behavioral and Brain Sciences",
+            "issn_l": "0140-525X",
+            "issn": [
+              "0140-525X",
+              "1469-1825"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310311721",
+            "host_organization_name": "Cambridge University Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311721",
+              "https://openalex.org/P4310311702"
+            ],
+            "host_organization_lineage_names": [
+              "Cambridge University Press",
+              "University of Cambridge"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Behavioral and Brain Sciences",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/25D362A6566FCA4F51054D1C41104654/S0140525X0999094Xa.pdf/div-class-title-the-myth-of-language-universals-language-diversity-and-its-importance-for-cognitive-science-div.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3176923149",
+        "title": "Text Data Augmentation for Deep Learning",
+        "year": 2021,
+        "doi": "https://doi.org/10.1186/s40537-021-00492-0",
+        "cited_by_count": 1672,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1186/s40537-021-00492-0",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1186/s40537-021-00492-0",
+          "pdf_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-021-00492-0",
+          "source": {
+            "id": "https://openalex.org/S2737955091",
+            "display_name": "Journal Of Big Data",
+            "issn_l": "2196-1115",
+            "issn": [
+              "2196-1115"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Big Data",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://journalofbigdata.springeropen.com/track/pdf/10.1186/s40537-021-00492-0",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3100366369",
+        "title": "An Introduction to Deep Reinforcement Learning",
+        "year": 2018,
+        "doi": "https://doi.org/10.1561/2200000071",
+        "cited_by_count": 1243,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1561/2200000071",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1561/2200000071",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210188176",
+            "display_name": "Foundations and Trends® in Machine Learning",
+            "issn_l": "1935-8237",
+            "issn": [
+              "1935-8237",
+              "1935-8245"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310318575",
+            "host_organization_name": "Now Publishers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310318575"
+            ],
+            "host_organization_lineage_names": [
+              "Now Publishers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Foundations and Trends® in Machine Learning",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/1811.12560",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Large Language Models for Market Research A Data-Augmentation Approach",
+    "works": [
+      {
+        "id": "https://openalex.org/W4406089307",
+        "title": "Large Language Models for Market Research: A Data-augmentation Approach",
+        "year": 2025,
+        "doi": "https://doi.org/10.2139/ssrn.5057769",
+        "cited_by_count": 9,
+        "type": "preprint",
+        "primary_location": {
+          "id": "doi:10.2139/ssrn.5057769",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.5057769",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.2139/ssrn.5057769",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4405902809",
+        "title": "Large Language Models for Market Research: A Data-augmentation Approach",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2412.19363",
+        "cited_by_count": 1,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2412.19363",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2412.19363",
+          "pdf_url": "https://arxiv.org/pdf/2412.19363",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2412.19363",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7138125846",
+        "title": "Large Language Models for Market Research: A Data-Augmentation Approach",
+        "year": 2026,
+        "doi": "https://doi.org/10.1287/mksc.2025.0009",
+        "cited_by_count": 0,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1287/mksc.2025.0009",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1287/mksc.2025.0009",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S163534328",
+            "display_name": "Marketing Science",
+            "issn_l": "0732-2399",
+            "issn": [
+              "0732-2399",
+              "1526-548X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315699",
+            "host_organization_name": "Institute for Operations Research and the Management Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315699"
+            ],
+            "host_organization_lineage_names": [
+              "Institute for Operations Research and the Management Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Marketing Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "The Challenge of Using LLMs to Simulate Human Behavior A Causal Inference Perspective",
+    "works": [
+      {
+        "id": "https://openalex.org/W4389494455",
+        "title": "The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective",
+        "year": 2023,
+        "doi": "https://doi.org/10.2139/ssrn.4650172",
+        "cited_by_count": 33,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.2139/ssrn.4650172",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.4650172",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "SSRN Electronic Journal",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.2139/ssrn.4650172",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4362515116",
+        "title": "A Survey of Large Language Models",
+        "year": 2026,
+        "doi": "https://doi.org/10.1007/s11704-026-60308-3",
+        "cited_by_count": 1401,
+        "type": "preprint",
+        "primary_location": {
+          "id": "doi:10.1007/s11704-026-60308-3",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s11704-026-60308-3",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11704-026-60308-3.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210231404",
+            "display_name": "Frontiers of Computer Science",
+            "issn_l": "2095-2228",
+            "issn": [
+              "2095-2228",
+              "2095-2236"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310311889",
+            "host_organization_name": "Higher Education Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311889"
+            ],
+            "host_organization_lineage_names": [
+              "Higher Education Press"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers of Computer Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s11704-026-60308-3.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4360836968",
+        "title": "Sparks of Artificial General Intelligence: Early experiments with GPT-4",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2303.12712",
+        "cited_by_count": 1547,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2303.12712",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2303.12712",
+          "pdf_url": "https://arxiv.org/pdf/2303.12712",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": null
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2303.12712",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Out of One, Many Using Language Models to Simulate Human Samples",
+    "works": [
+      {
+        "id": "https://openalex.org/W4321455981",
+        "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+        "year": 2023,
+        "doi": "https://doi.org/10.1017/pan.2023.2",
+        "cited_by_count": 545,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1017/pan.2023.2",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1017/pan.2023.2",
+          "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/035D7C8A55B237942FB6DBAD7CAA4E49/S1047198723000025a.pdf/div-class-title-out-of-one-many-using-language-models-to-simulate-human-samples-div.pdf",
+          "source": {
+            "id": "https://openalex.org/S29331042",
+            "display_name": "Political Analysis",
+            "issn_l": "1047-1987",
+            "issn": [
+              "1047-1987",
+              "1476-4989"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310311721",
+            "host_organization_name": "Cambridge University Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311721",
+              "https://openalex.org/P4310311702"
+            ],
+            "host_organization_lineage_names": [
+              "Cambridge University Press",
+              "University of Cambridge"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Political Analysis",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/035D7C8A55B237942FB6DBAD7CAA4E49/S1047198723000025a.pdf/div-class-title-out-of-one-many-using-language-models-to-simulate-human-samples-div.pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W4296154596",
+        "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+        "year": 2022,
+        "doi": "https://doi.org/10.48550/arxiv.2209.06899",
+        "cited_by_count": 92,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2209.06899",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2209.06899",
+          "pdf_url": "https://arxiv.org/pdf/2209.06899",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2209.06899",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4398633239",
+        "title": "Replication Data for: \"Out of One, Many: Using Language Models to Simulate Human Samples\"",
+        "year": 2022,
+        "doi": "https://doi.org/10.7910/dvn/jpv20k",
+        "cited_by_count": 1,
+        "type": "dataset",
+        "primary_location": {
+          "id": "doi:10.7910/dvn/jpv20k",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.7910/dvn/jpv20k",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4377196806",
+            "display_name": "Harvard Dataverse",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I136199984",
+            "host_organization_name": "Harvard University",
+            "host_organization_lineage": [
+              "https://openalex.org/I136199984"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "public-domain",
+          "license_id": "https://openalex.org/licenses/public-domain",
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "dataset"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.7910/dvn/jpv20k",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Can Large Language Models Transform Computational Social Science",
+    "works": [
+      {
+        "id": "https://openalex.org/W4389636360",
+        "title": "Can Large Language Models Transform Computational Social Science?",
+        "year": 2023,
+        "doi": "https://doi.org/10.1162/coli_a_00502",
+        "cited_by_count": 420,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1162/coli_a_00502",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1162/coli_a_00502",
+          "pdf_url": "https://direct.mit.edu/coli/article-pdf/doi/10.1162/coli_a_00502/2191886/coli_a_00502.pdf",
+          "source": {
+            "id": "https://openalex.org/S155526855",
+            "display_name": "Computational Linguistics",
+            "issn_l": "0891-2017",
+            "issn": [
+              "0891-2017",
+              "1530-9312"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320244",
+            "host_organization_name": "Association for Computational Linguistics",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320244"
+            ],
+            "host_organization_lineage_names": [
+              "Association for Computational Linguistics"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Computational Linguistics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "diamond",
+          "oa_url": "https://direct.mit.edu/coli/article-pdf/doi/10.1162/coli_a_00502/2191886/coli_a_00502.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4375870056",
+        "title": "Can Large Language Models Transform Computational Social Science?",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2305.03514",
+        "cited_by_count": 62,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2305.03514",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2305.03514",
+          "pdf_url": "https://arxiv.org/pdf/2305.03514",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2305.03514",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3003257820",
+        "title": "SciPy 1.0: fundamental algorithms for scientific computing in Python",
+        "year": 2020,
+        "doi": "https://doi.org/10.1038/s41592-019-0686-2",
+        "cited_by_count": 37363,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1038/s41592-019-0686-2",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1038/s41592-019-0686-2",
+          "pdf_url": "https://www.nature.com/articles/s41592-019-0686-2.pdf",
+          "source": {
+            "id": "https://openalex.org/S127827428",
+            "display_name": "Nature Methods",
+            "issn_l": "1548-7091",
+            "issn": [
+              "1548-7091",
+              "1548-7105"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319908",
+            "host_organization_name": "Nature Portfolio",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319908",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Nature Portfolio",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Nature Methods",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://www.nature.com/articles/s41592-019-0686-2.pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Homo Silicus Artificial Intelligence and the Science of Human Behavior",
+    "works": [
+      {
+        "id": "https://openalex.org/W4393065402",
+        "title": "A survey on large language model based autonomous agents",
+        "year": 2024,
+        "doi": "https://doi.org/10.1007/s11704-024-40231-1",
+        "cited_by_count": 1093,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1007/s11704-024-40231-1",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s11704-024-40231-1",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf",
+          "source": {
+            "id": "https://openalex.org/S4210231404",
+            "display_name": "Frontiers of Computer Science",
+            "issn_l": "2095-2228",
+            "issn": [
+              "2095-2228",
+              "2095-2236"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310311889",
+            "host_organization_name": "Higher Education Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310311889"
+            ],
+            "host_organization_lineage_names": [
+              "Higher Education Press"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers of Computer Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s11704-024-40231-1.pdf",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W4363624465",
+        "title": "Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?",
+        "year": 2023,
+        "doi": "https://doi.org/10.3386/w31122",
+        "cited_by_count": 264,
+        "type": "report",
+        "primary_location": {
+          "id": "doi:10.3386/w31122",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3386/w31122",
+          "pdf_url": "https://doi.org/10.3386/w31122",
+          "source": {
+            "id": "https://openalex.org/S2809516038",
+            "display_name": "National Bureau of Economic Research",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [
+              "https://openalex.org/P4322614461"
+            ],
+            "host_organization_lineage_names": [
+              "National Bureau of Economic Research"
+            ],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "National Bureau of Economic Research",
+          "raw_type": "report"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.3386/w31122",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4330336443",
+        "title": "GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models",
+        "year": 2023,
+        "doi": "https://doi.org/10.48550/arxiv.2303.10130",
+        "cited_by_count": 542,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2303.10130",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2303.10130",
+          "pdf_url": "https://arxiv.org/pdf/2303.10130",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-sa",
+          "license_id": "https://openalex.org/licenses/cc-by-sa",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2303.10130",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Do Large Language Models Solve Agent-Based Modeling Problems",
+    "works": [
+      {
+        "id": "https://openalex.org/W4415979340",
+        "title": "Do Large Language Models Solve the Problems of Agent-Based Modeling? A Critical Review of Generative Social Simulations",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2504.03274",
+        "cited_by_count": 1,
+        "type": "review",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2504.03274",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2504.03274",
+          "pdf_url": "https://arxiv.org/pdf/2504.03274",
+          "source": {
+            "id": "https://openalex.org/S4393918464",
+            "display_name": "ArXiv.org",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2504.03274",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3022903699",
+        "title": "The PRISMA Statement for Reporting Systematic Reviews and Meta-Analyses of Studies That Evaluate Health Care Interventions: Explanation and Elaboration",
+        "year": 2009,
+        "doi": "https://doi.org/10.1371/journal.pmed.1000100",
+        "cited_by_count": 27847,
+        "type": "review",
+        "primary_location": {
+          "id": "doi:10.1371/journal.pmed.1000100",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1371/journal.pmed.1000100",
+          "pdf_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1000100&type=printable",
+          "source": {
+            "id": "https://openalex.org/S197939330",
+            "display_name": "PLoS Medicine",
+            "issn_l": "1549-1277",
+            "issn": [
+              "1549-1277",
+              "1549-1676"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315706",
+            "host_organization_name": "Public Library of Science",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315706"
+            ],
+            "host_organization_lineage_names": [
+              "Public Library of Science"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "PLoS Medicine",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1000100&type=printable",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2903010511",
+        "title": "The promise of artificial intelligence in chemical engineering: Is it here, finally?",
+        "year": 2018,
+        "doi": "https://doi.org/10.1002/aic.16489",
+        "cited_by_count": 628,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1002/aic.16489",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/aic.16489",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S147177414",
+            "display_name": "AIChE Journal",
+            "issn_l": "0001-1541",
+            "issn": [
+              "0001-1541",
+              "1547-5905"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "AIChE Journal",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "AgentSociety Large-scale simulation of LLM-driven generative agents advances understanding of human behaviors and society",
+    "works": [
+      {
+        "id": "https://openalex.org/W7116746165",
+        "title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "year": 2025,
+        "doi": "https://doi.org/10.2139/ssrn.5954414",
+        "cited_by_count": 11,
+        "type": "preprint",
+        "primary_location": {
+          "id": "doi:10.2139/ssrn.5954414",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.5954414",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://doi.org/10.2139/ssrn.5954414",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4407570917",
+        "title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents Advances Understanding of Human Behaviors and Society",
+        "year": 2025,
+        "doi": "https://doi.org/10.48550/arxiv.2502.08691",
+        "cited_by_count": 3,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2502.08691",
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2502.08691",
+          "pdf_url": "https://arxiv.org/pdf/2502.08691",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2502.08691",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4392972000",
+        "title": "Depression Detection on Social Media with Large Language Models",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2403.10750",
+        "cited_by_count": 13,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2403.10750",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2403.10750",
+          "pdf_url": "https://arxiv.org/pdf/2403.10750",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2403.10750",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "GenSim A General Social Simulation Platform with Large Language Model based Agents",
+    "works": [
+      {
+        "id": "https://openalex.org/W4411120470",
+        "title": "GenSim: A General Social Simulation Platform with Large Language Model based Agents",
+        "year": 2025,
+        "doi": "https://doi.org/10.18653/v1/2025.naacl-demo.15",
+        "cited_by_count": 2,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.18653/v1/2025.naacl-demo.15",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.18653/v1/2025.naacl-demo.15",
+          "pdf_url": "https://aclanthology.org/2025.naacl-demo.15.pdf",
+          "source": null,
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (System Demonstrations)",
+          "raw_type": "proceedings-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://aclanthology.org/2025.naacl-demo.15.pdf",
+          "any_repository_has_fulltext": null
+        }
+      },
+      {
+        "id": "https://openalex.org/W4403346085",
+        "title": "GenSim: A General Social Simulation Platform with Large Language Model based Agents",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2410.04360",
+        "cited_by_count": 1,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2410.04360",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2410.04360",
+          "pdf_url": "https://arxiv.org/pdf/2410.04360",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2410.04360",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4404783774",
+        "title": "Large Language Models for Data Annotation and Synthesis: A Survey",
+        "year": 2024,
+        "doi": "https://doi.org/10.18653/v1/2024.emnlp-main.54",
+        "cited_by_count": 122,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.18653/v1/2024.emnlp-main.54",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.18653/v1/2024.emnlp-main.54",
+          "pdf_url": "https://aclanthology.org/2024.emnlp-main.54.pdf",
+          "source": null,
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+          "raw_type": "proceedings-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://aclanthology.org/2024.emnlp-main.54.pdf",
+          "any_repository_has_fulltext": null
+        }
+      }
+    ]
+  },
+  {
+    "query": "LLM-augmented agent-based modelling for social simulations challenges and opportunities",
+    "works": [
+      {
+        "id": "https://openalex.org/W4399391136",
+        "title": "LLM-Augmented Agent-Based Modelling for Social Simulations: Challenges and Opportunities",
+        "year": 2024,
+        "doi": "https://doi.org/10.3233/faia240190",
+        "cited_by_count": 16,
+        "type": "book-chapter",
+        "primary_location": {
+          "id": "doi:10.3233/faia240190",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3233/faia240190",
+          "pdf_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240190",
+          "source": {
+            "id": "https://openalex.org/S4210201731",
+            "display_name": "Frontiers in artificial intelligence and applications",
+            "issn_l": "0922-6389",
+            "issn": [
+              "0922-6389",
+              "1879-8314"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": "cc-by-nc",
+          "license_id": "https://openalex.org/licenses/cc-by-nc",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Frontiers in Artificial Intelligence and Applications",
+          "raw_type": "book-chapter"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240190",
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W4396912899",
+        "title": "LLM-Augmented Agent-Based Modelling for Social Simulations: Challenges and Opportunities",
+        "year": 2024,
+        "doi": "https://doi.org/10.48550/arxiv.2405.06700",
+        "cited_by_count": 4,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2405.06700",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2405.06700",
+          "pdf_url": "https://arxiv.org/pdf/2405.06700",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2405.06700",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W4327810158",
+        "title": "GPT-4 Technical Report",
+        "year": 2023,
+        "doi": "https://doi.org/10.4230/lipics.cosit.2024.11",
+        "cited_by_count": 2339,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2303.08774",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2303.08774",
+          "pdf_url": "https://arxiv.org/pdf/2303.08774",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "",
+          "raw_type": null
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2303.08774",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Representing Others Trajectories as Executables ROTE",
+    "works": [
+      {
+        "id": "https://openalex.org/W2058543238",
+        "title": "Augmented visual, auditory, haptic, and multimodal feedback in motor learning: A review",
+        "year": 2012,
+        "doi": "https://doi.org/10.3758/s13423-012-0333-8",
+        "cited_by_count": 1336,
+        "type": "review",
+        "primary_location": {
+          "id": "doi:10.3758/s13423-012-0333-8",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3758/s13423-012-0333-8",
+          "pdf_url": "https://link.springer.com/content/pdf/10.3758%2Fs13423-012-0333-8.pdf",
+          "source": {
+            "id": "https://openalex.org/S138679565",
+            "display_name": "Psychonomic Bulletin & Review",
+            "issn_l": "1069-9384",
+            "issn": [
+              "1069-9384",
+              "1531-5320"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Psychonomic Bulletin &amp; Review",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://link.springer.com/content/pdf/10.3758%2Fs13423-012-0333-8.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2046937901",
+        "title": "Directing attention to movement effects enhances learning: A review",
+        "year": 2001,
+        "doi": "https://doi.org/10.3758/bf03196201",
+        "cited_by_count": 711,
+        "type": "review",
+        "primary_location": {
+          "id": "doi:10.3758/bf03196201",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.3758/bf03196201",
+          "pdf_url": "https://link.springer.com/content/pdf/10.3758/BF03196201.pdf",
+          "source": {
+            "id": "https://openalex.org/S138679565",
+            "display_name": "Psychonomic Bulletin & Review",
+            "issn_l": "1069-9384",
+            "issn": [
+              "1069-9384",
+              "1531-5320"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Psychonomic Bulletin &amp; Review",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://link.springer.com/content/pdf/10.3758/BF03196201.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2293545866",
+        "title": "Spacetime constraints",
+        "year": 1988,
+        "doi": "https://doi.org/10.1145/378456.378507",
+        "cited_by_count": 714,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1145/378456.378507",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1145/378456.378507",
+          "pdf_url": "https://dl.acm.org/doi/pdf/10.1145/378456.378507",
+          "source": {
+            "id": "https://openalex.org/S131921510",
+            "display_name": "ACM SIGGRAPH Computer Graphics",
+            "issn_l": "0097-8930",
+            "issn": [
+              "0097-8930",
+              "1558-4569"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310316775",
+            "host_organization_name": "ACM SIGGRAPH",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310316775"
+            ],
+            "host_organization_lineage_names": [
+              "ACM SIGGRAPH"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "ACM SIGGRAPH Computer Graphics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://dl.acm.org/doi/pdf/10.1145/378456.378507",
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "HUMANLM Simulating Users with State Alignment Beats Response Imitation",
+    "works": [
+      {
+        "id": "https://openalex.org/W7133811887",
+        "title": "HumanLM: Simulating Users with State Alignment Beats Response Imitation",
+        "year": 2026,
+        "doi": "https://doi.org/10.48550/arxiv.2603.03303",
+        "cited_by_count": 0,
+        "type": "preprint",
+        "primary_location": {
+          "id": "pmh:doi:10.48550/arxiv.2603.03303",
+          "is_oa": true,
+          "landing_page_url": null,
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4406922384",
+            "display_name": "Open MIND",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": null,
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7134016407",
+        "title": "HumanLM: Simulating Users with State Alignment Beats Response Imitation",
+        "year": 2026,
+        "doi": null,
+        "cited_by_count": 0,
+        "type": "article",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2603.03303",
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2603.03303",
+          "pdf_url": "https://arxiv.org/pdf/2603.03303",
+          "source": {
+            "id": "https://openalex.org/S4393918464",
+            "display_name": "ArXiv.org",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2603.03303",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W7160968774",
+        "title": "Post-training makes large language models less human-like",
+        "year": 2026,
+        "doi": null,
+        "cited_by_count": 0,
+        "type": "article",
+        "primary_location": {
+          "id": "pmh:oai:arXiv.org:2605.07632",
+          "is_oa": true,
+          "landing_page_url": "https://arxiv.org/abs/2605.07632",
+          "pdf_url": "https://arxiv.org/pdf/2605.07632",
+          "source": {
+            "id": "https://openalex.org/S4393918464",
+            "display_name": "ArXiv.org",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://arxiv.org/pdf/2605.07632",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Real world community oriented high-definition social simulation combining reinforcement learning and large language models",
+    "works": [
+      {
+        "id": "https://openalex.org/W3140854437",
+        "title": "Review of deep learning: concepts, CNN architectures, challenges, applications, future directions",
+        "year": 2021,
+        "doi": "https://doi.org/10.1186/s40537-021-00444-8",
+        "cited_by_count": 7473,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1186/s40537-021-00444-8",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1186/s40537-021-00444-8",
+          "pdf_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-021-00444-8",
+          "source": {
+            "id": "https://openalex.org/S2737955091",
+            "display_name": "Journal Of Big Data",
+            "issn_l": "2196-1115",
+            "issn": [
+              "2196-1115"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Big Data",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-021-00444-8",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W3017131514",
+        "title": "Artificial Intelligence in Education: A Review",
+        "year": 2020,
+        "doi": "https://doi.org/10.1109/access.2020.2988510",
+        "cited_by_count": 3400,
+        "type": "review",
+        "primary_location": {
+          "id": "doi:10.1109/access.2020.2988510",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1109/access.2020.2988510",
+          "pdf_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09069875.pdf",
+          "source": {
+            "id": "https://openalex.org/S2485537415",
+            "display_name": "IEEE Access",
+            "issn_l": "2169-3536",
+            "issn": [
+              "2169-3536"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319808",
+            "host_organization_name": "Institute of Electrical and Electronics Engineers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Access",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09069875.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2099019320",
+        "title": "A survey of socially interactive robots",
+        "year": 2003,
+        "doi": "https://doi.org/10.1016/s0921-8890(02)00372-x",
+        "cited_by_count": 3107,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1016/s0921-8890(02)00372-x",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/s0921-8890(02)00372-x",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S092188900200372X",
+          "source": {
+            "id": "https://openalex.org/S133768115",
+            "display_name": "Robotics and Autonomous Systems",
+            "issn_l": "0921-8890",
+            "issn": [
+              "0921-8890",
+              "1872-793X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Robotics and Autonomous Systems",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "bronze",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S092188900200372X",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Social force model for pedestrian dynamics Helbing Molnar 1995",
+    "works": [
+      {
+        "id": "https://openalex.org/W2767906581",
+        "title": "Social force models for pedestrian traffic – state of the art",
+        "year": 2017,
+        "doi": "https://doi.org/10.1080/01441647.2017.1396265",
+        "cited_by_count": 164,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1080/01441647.2017.1396265",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1080/01441647.2017.1396265",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S194388667",
+            "display_name": "Transport Reviews",
+            "issn_l": "0144-1647",
+            "issn": [
+              "0144-1647",
+              "1464-5327"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320547",
+            "host_organization_name": "Taylor & Francis",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320547"
+            ],
+            "host_organization_lineage_names": [
+              "Taylor & Francis"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Transport Reviews",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2089584121",
+        "title": "The Walking Behaviour of Pedestrian Social Groups and Its Impact on Crowd Dynamics",
+        "year": 2010,
+        "doi": "https://doi.org/10.1371/journal.pone.0010047",
+        "cited_by_count": 1095,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1371/journal.pone.0010047",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1371/journal.pone.0010047",
+          "pdf_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0010047&type=printable",
+          "source": {
+            "id": "https://openalex.org/S202381698",
+            "display_name": "PLoS ONE",
+            "issn_l": "1932-6203",
+            "issn": [
+              "1932-6203"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315706",
+            "host_organization_name": "Public Library of Science",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315706"
+            ],
+            "host_organization_lineage_names": [
+              "Public Library of Science"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "PLoS ONE",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "gold",
+          "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0010047&type=printable",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2138890315",
+        "title": "Saving Human Lives: What Complexity Science and Information Systems can Contribute",
+        "year": 2014,
+        "doi": "https://doi.org/10.1007/s10955-014-1024-9",
+        "cited_by_count": 618,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1007/s10955-014-1024-9",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1007/s10955-014-1024-9",
+          "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10955-014-1024-9.pdf",
+          "source": {
+            "id": "https://openalex.org/S185067381",
+            "display_name": "Journal of Statistical Physics",
+            "issn_l": "0022-4715",
+            "issn": [
+              "0022-4715",
+              "1572-9613"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319900",
+            "host_organization_name": "Springer Science+Business Media",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319900",
+              "https://openalex.org/P4310319965"
+            ],
+            "host_organization_lineage_names": [
+              "Springer Science+Business Media",
+              "Springer Nature"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Statistical Physics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://link.springer.com/content/pdf/10.1007/s10955-014-1024-9.pdf",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Reciprocal Velocity Obstacles for real-time multi-agent navigation",
+    "works": [
+      {
+        "id": "https://openalex.org/W2142943472",
+        "title": "Reciprocal Velocity Obstacles for real-time multi-agent navigation",
+        "year": 2008,
+        "doi": "https://doi.org/10.1109/robot.2008.4543489",
+        "cited_by_count": 1689,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1109/robot.2008.4543489",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/robot.2008.4543489",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "2008 IEEE International Conference on Robotics and Automation",
+          "raw_type": "proceedings-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2414434006",
+        "title": "Real-time reciprocal collision avoidance with elliptical agents",
+        "year": 2016,
+        "doi": "https://doi.org/10.1109/icra.2016.7487148",
+        "cited_by_count": 63,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1109/icra.2016.7487148",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/icra.2016.7487148",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "2016 IEEE International Conference on Robotics and Automation (ICRA)",
+          "raw_type": "proceedings-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2790268363",
+        "title": "Cooperative Collision Avoidance for Nonholonomic Robots",
+        "year": 2018,
+        "doi": "https://doi.org/10.1109/tro.2018.2793890",
+        "cited_by_count": 173,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1109/tro.2018.2793890",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1109/tro.2018.2793890",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S144620930",
+            "display_name": "IEEE Transactions on Robotics",
+            "issn_l": "1552-3098",
+            "issn": [
+              "1552-3098",
+              "1941-0468"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310319808",
+            "host_organization_name": "Institute of Electrical and Electronics Engineers",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310319808"
+            ],
+            "host_organization_lineage_names": [
+              "Institute of Electrical and Electronics Engineers"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "IEEE Transactions on Robotics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "http://resolver.tudelft.nl/uuid:d051f702-a7f7-4d62-bc99-9a5d92df1ef6",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "MATSim Multi-Agent Transport Simulation",
+    "works": [
+      {
+        "id": "https://openalex.org/W4214928630",
+        "title": "The Multi-Agent Transport Simulation MATSim",
+        "year": 2016,
+        "doi": "https://doi.org/10.5334/baw",
+        "cited_by_count": 1035,
+        "type": "book",
+        "primary_location": {
+          "id": "doi:10.5334/baw",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.5334/baw",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306464033",
+            "display_name": "Ubiquity Press eBooks",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/P4310320511",
+            "host_organization_name": "Ubiquity Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320511"
+            ],
+            "host_organization_lineage_names": [
+              "Ubiquity Press"
+            ],
+            "type": "ebook platform"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "edited-book"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://doi.org/10.5334/baw",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2276056662",
+        "title": "The Multi-Agent Transport Simulation MATSim",
+        "year": 2016,
+        "doi": "https://doi.org/10.3929/ethz-b-000113280",
+        "cited_by_count": 361,
+        "type": "book",
+        "primary_location": {
+          "id": "pmh:oai:www.research-collection.ethz.ch:20.500.11850/113280",
+          "is_oa": true,
+          "landing_page_url": "http://hdl.handle.net/20.500.11850/113280",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306402302",
+            "display_name": "Repository for Publications and Research Data (ETH Zurich)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": "https://openalex.org/I35440088",
+            "host_organization_name": "ETH Zurich",
+            "host_organization_lineage": [
+              "https://openalex.org/I35440088"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": null,
+          "raw_type": "info:eu-repo/semantics/publishedVersion"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "http://hdl.handle.net/20.500.11850/113280",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W2475569566",
+        "title": "MATSim-T",
+        "year": 2009,
+        "doi": "https://doi.org/10.4018/978-1-60566-226-8.ch003",
+        "cited_by_count": 218,
+        "type": "book-chapter",
+        "primary_location": {
+          "id": "doi:10.4018/978-1-60566-226-8.ch003",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.4018/978-1-60566-226-8.ch003",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210171191",
+            "display_name": "Advances in mechatronics and mechanical engineering (AMME) book series",
+            "issn_l": "2328-8205",
+            "issn": [
+              "2328-8205",
+              "2328-823X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320584",
+            "host_organization_name": "CRC Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320584",
+              "https://openalex.org/P4310320547"
+            ],
+            "host_organization_lineage_names": [
+              "CRC Press",
+              "Taylor & Francis"
+            ],
+            "type": "book series"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Advances in Mechatronics and Mechanical Engineering",
+          "raw_type": "book-chapter"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "Discrete Choice Analysis Theory and Application to Travel Demand McFadden",
+    "works": [
+      {
+        "id": "https://openalex.org/W2137344397",
+        "title": "Mixed MNL models for discrete response",
+        "year": 2000,
+        "doi": "https://doi.org/10.1002/1099-1255(200009/10)15:5<447::aid-jae570>3.0.co;2-1",
+        "cited_by_count": 4096,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1002/1099-1255(200009/10)15:5<447::aid-jae570>3.0.co;2-1",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1002/1099-1255(200009/10)15:5<447::aid-jae570>3.0.co;2-1",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S85739584",
+            "display_name": "Journal of Applied Econometrics",
+            "issn_l": "0883-7252",
+            "issn": [
+              "0883-7252",
+              "1099-1255"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Journal of Applied Econometrics",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2083833236",
+        "title": "A Logit Model of Brand Choice Calibrated on Scanner Data",
+        "year": 1983,
+        "doi": "https://doi.org/10.1287/mksc.2.3.203",
+        "cited_by_count": 1855,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1287/mksc.2.3.203",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1287/mksc.2.3.203",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S163534328",
+            "display_name": "Marketing Science",
+            "issn_l": "0732-2399",
+            "issn": [
+              "0732-2399",
+              "1526-548X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315699",
+            "host_organization_name": "Institute for Operations Research and the Management Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315699"
+            ],
+            "host_organization_lineage_names": [
+              "Institute for Operations Research and the Management Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Marketing Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://dspace.mit.edu/bitstream/1721.1/48307/1/logitmodelofbran00guad.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W1645343793",
+        "title": "Network Dynamics and Field Evolution: The Growth of Interorganizational Collaboration in the Life Sciences",
+        "year": 2005,
+        "doi": "https://doi.org/10.1086/421508",
+        "cited_by_count": 2009,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1086/421508",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1086/421508",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S122471516",
+            "display_name": "American Journal of Sociology",
+            "issn_l": "0002-9602",
+            "issn": [
+              "0002-9602",
+              "1537-5390"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315672",
+            "host_organization_name": "University of Chicago Press",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315672",
+              "https://openalex.org/P4310315690"
+            ],
+            "host_organization_lineage_names": [
+              "University of Chicago Press",
+              "University of Chicago"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "American Journal of Sociology",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://escholarship.org/uc/item/52w52868",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Gravity Models and Spatial Interaction Models retail location",
+    "works": [
+      {
+        "id": "https://openalex.org/W2015560304",
+        "title": "Spatial interaction modelling",
+        "year": 2003,
+        "doi": "https://doi.org/10.1007/s10110-003-0189-4",
+        "cited_by_count": 221,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1007/s10110-003-0189-4",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/s10110-003-0189-4",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S101788309",
+            "display_name": "Papers of the Regional Science Association",
+            "issn_l": "1056-8190",
+            "issn": [
+              "1056-8190",
+              "1435-5957"
+            ],
+            "is_oa": false,
+            "is_in_doaj": true,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Papers in Regional Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2073807182",
+        "title": "The Calibration of Gravity, Entropy, and Related Models of Spatial Interaction",
+        "year": 1972,
+        "doi": "https://doi.org/10.1068/a040205",
+        "cited_by_count": 152,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1068/a040205",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1068/a040205",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S87933477",
+            "display_name": "Environment and Planning A Economy and Space",
+            "issn_l": "0308-518X",
+            "issn": [
+              "0308-518X",
+              "1472-3409"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320017",
+            "host_organization_name": "SAGE Publishing",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320017"
+            ],
+            "host_organization_lineage_names": [
+              "SAGE Publishing"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Environment and Planning A: Economy and Space",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2158319633",
+        "title": "From Big Noise to Big Data: Toward the Verification of Large Data sets for Understanding Regional Retail Flows",
+        "year": 2015,
+        "doi": "https://doi.org/10.1111/gean.12081",
+        "cited_by_count": 72,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1111/gean.12081",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1111/gean.12081",
+          "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gean.12081",
+          "source": {
+            "id": "https://openalex.org/S159894308",
+            "display_name": "Geographical Analysis",
+            "issn_l": "0016-7363",
+            "issn": [
+              "0016-7363",
+              "1538-4632"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320595",
+            "host_organization_name": "Wiley",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320595"
+            ],
+            "host_organization_lineage_names": [
+              "Wiley"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Geographical Analysis",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/gean.12081",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "Retail location choice with complementary goods an agent-based model",
+    "works": [
+      {
+        "id": "https://openalex.org/W2101416164",
+        "title": "Retail Location Choice with Complementary Goods: An Agent-Based Model",
+        "year": 2009,
+        "doi": "https://doi.org/10.1007/978-3-642-02466-5_15",
+        "cited_by_count": 9,
+        "type": "book-chapter",
+        "primary_location": {
+          "id": "doi:10.1007/978-3-642-02466-5_15",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1007/978-3-642-02466-5_15",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4393917809",
+            "display_name": "Lecture notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+            "issn_l": "1867-8211",
+            "issn": [
+              "1867-8211",
+              "1867-822X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "host_organization": null,
+            "host_organization_name": null,
+            "host_organization_lineage": [],
+            "host_organization_lineage_names": [],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering",
+          "raw_type": "book-chapter"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2289784726",
+        "title": "Retail Location Choice with Complementary Goods: An Agent-Based Model",
+        "year": 2009,
+        "doi": null,
+        "cited_by_count": 1,
+        "type": "article",
+        "primary_location": {
+          "id": "pmh:oai:CiteSeerX.psu:10.1.1.613.441",
+          "is_oa": false,
+          "landing_page_url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.613.441",
+          "pdf_url": null,
+          "source": null,
+          "license": null,
+          "license_id": null,
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "http://nexus.umn.edu/papers/clustercomplements.pdf",
+          "raw_type": "text"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W2969625533",
+        "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+        "year": 2019,
+        "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+        "cited_by_count": 3989,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1016/j.ijinfomgt.2019.08.002",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+          "pdf_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X",
+          "source": {
+            "id": "https://openalex.org/S189354248",
+            "display_name": "International Journal of Information Management",
+            "issn_l": "0268-4012",
+            "issn": [
+              "0268-4012",
+              "1873-4707"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310320990",
+            "host_organization_name": "Elsevier BV",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310320990"
+            ],
+            "host_organization_lineage_names": [
+              "Elsevier BV"
+            ],
+            "type": "journal"
+          },
+          "license": "public-domain",
+          "license_id": "https://openalex.org/licenses/public-domain",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "International Journal of Information Management",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "hybrid",
+          "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X",
+          "any_repository_has_fulltext": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "A Logit Model of Brand Choice calibrated on scanner data",
+    "works": [
+      {
+        "id": "https://openalex.org/W2083833236",
+        "title": "A Logit Model of Brand Choice Calibrated on Scanner Data",
+        "year": 1983,
+        "doi": "https://doi.org/10.1287/mksc.2.3.203",
+        "cited_by_count": 1855,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1287/mksc.2.3.203",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1287/mksc.2.3.203",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S163534328",
+            "display_name": "Marketing Science",
+            "issn_l": "0732-2399",
+            "issn": [
+              "0732-2399",
+              "1526-548X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315699",
+            "host_organization_name": "Institute for Operations Research and the Management Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315699"
+            ],
+            "host_organization_lineage_names": [
+              "Institute for Operations Research and the Management Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Marketing Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": true,
+          "oa_status": "green",
+          "oa_url": "https://dspace.mit.edu/bitstream/1721.1/48307/1/logitmodelofbran00guad.pdf",
+          "any_repository_has_fulltext": true
+        }
+      },
+      {
+        "id": "https://openalex.org/W30786637",
+        "title": "A Logit Model of Brand Choice Calibrated on Scanner Data (Логистическая модель выбора бренда, откалиброванная на панельных данных сканированных штрих-кодов покупок)",
+        "year": 1983,
+        "doi": "https://doi.org/10.1094/pd-89-1010a",
+        "cited_by_count": 549,
+        "type": "article",
+        "primary_location": {
+          "id": "mag:30786637",
+          "is_oa": false,
+          "landing_page_url": "https://ecsocman.hse.ru/text/17733407/",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S163534328",
+            "display_name": "Marketing Science",
+            "issn_l": "0732-2399",
+            "issn": [
+              "0732-2399",
+              "1526-548X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315699",
+            "host_organization_name": "Institute for Operations Research and the Management Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315699"
+            ],
+            "host_organization_lineage_names": [
+              "Institute for Operations Research and the Management Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Marketing Science",
+          "raw_type": null
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      },
+      {
+        "id": "https://openalex.org/W4293247429",
+        "title": "A Logit Model of Brand Choice Calibrated on Scanner Data",
+        "year": 2008,
+        "doi": "https://doi.org/10.1287/mksc.1070.0331",
+        "cited_by_count": 105,
+        "type": "article",
+        "primary_location": {
+          "id": "doi:10.1287/mksc.1070.0331",
+          "is_oa": false,
+          "landing_page_url": "https://doi.org/10.1287/mksc.1070.0331",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S163534328",
+            "display_name": "Marketing Science",
+            "issn_l": "0732-2399",
+            "issn": [
+              "0732-2399",
+              "1526-548X"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310315699",
+            "host_organization_name": "Institute for Operations Research and the Management Sciences",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315699"
+            ],
+            "host_organization_lineage_names": [
+              "Institute for Operations Research and the Management Sciences"
+            ],
+            "type": "journal"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Marketing Science",
+          "raw_type": "journal-article"
+        },
+        "open_access": {
+          "is_oa": false,
+          "oa_status": "closed",
+          "oa_url": null,
+          "any_repository_has_fulltext": false
+        }
+      }
+    ]
+  }
+]

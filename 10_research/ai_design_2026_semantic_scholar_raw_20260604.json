@@ -1,0 +1,420 @@
+[
+  {
+    "query": "human AI interaction agent user interface",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "agentic AI user interface workflow control",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "generative AI UX design human centered",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "1b7a5a7773a9a8d43c3928b4140a972aa14b2bff",
+    "externalIds": {
+      "ArXiv": "2601.00121",
+      "DBLP": "journals/corr/abs-2601-00121",
+      "DOI": "10.48550/arXiv.2601.00121",
+      "CorpusId": 284475254
+    },
+    "url": "https://www.semanticscholar.org/paper/1b7a5a7773a9a8d43c3928b4140a972aa14b2bff",
+    "title": "Ask, Clarify, Optimize: Human-LLM Agent Collaboration for Smarter Inventory Control",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 2,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2601.00121, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationDate": "2025-12-31",
+    "authors": [
+      {
+        "authorId": "2347487346",
+        "name": "Yaqi Duan"
+      },
+      {
+        "authorId": "1409975928",
+        "name": "Yichun Hu"
+      },
+      {
+        "authorId": "2342475974",
+        "name": "Jiashuo Jiang"
+      }
+    ],
+    "abstract": "Inventory management remains a challenge for many small and medium-sized businesses that lack the expertise to deploy advanced optimization methods. This paper investigates whether Large Language Models (LLMs) can help bridge this gap. We show that employing LLMs as direct, end-to-end solvers incurs a significant\"hallucination tax\": a performance gap arising from the model's inability to perform grounded stochastic reasoning. To address this, we propose a hybrid agentic framework that strictly decouples semantic reasoning from mathematical calculation. In this architecture, the LLM functions as an intelligent interface, eliciting parameters from natural language and interpreting results while automatically calling rigorous algorithms to build the optimization engine. To evaluate this interactive system against the ambiguity and inconsistency of real-world managerial dialogue, we introduce the Human Imitator, a fine-tuned\"digital twin\"of a boundedly rational manager that enables scalable, reproducible stress-testing. Our empirical analysis reveals that the hybrid agentic framework reduces total inventory costs by 32.1% relative to an interactive baseline using GPT-4o as an end-to-end solver. Moreover, we find that providing perfect ground-truth information alone is insufficient to improve GPT-4o's performance, confirming that the bottleneck is fundamentally computational rather than informational. Our results position LLMs not as replacements for operations research, but as natural-language interfaces that make rigorous, solver-based policies accessible to non-experts."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "2034941745dea3fb9c35d17c89acf391ee57dfde",
+    "externalIds": {
+      "ArXiv": "2509.10723",
+      "DBLP": "journals/corr/abs-2509-10723",
+      "DOI": "10.1145/3772318.3791568",
+      "CorpusId": 281315520
+    },
+    "url": "https://www.semanticscholar.org/paper/2034941745dea3fb9c35d17c89acf391ee57dfde",
+    "title": "Dark Patterns Meet GUI Agents: LLM Agent Susceptibility to Manipulative Interfaces and the Role of Human Oversight",
+    "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems",
+    "year": 2025,
+    "citationCount": 8,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2509.10723, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "Book",
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationDate": "2025-09-12",
+    "authors": [
+      {
+        "authorId": "2277225262",
+        "name": "Jingyu Tang"
+      },
+      {
+        "authorId": "2246862905",
+        "name": "Chaoran Chen"
+      },
+      {
+        "authorId": "2385485667",
+        "name": "Jiawen Li"
+      },
+      {
+        "authorId": "2243371752",
+        "name": "Zhiping Zhang"
+      },
+      {
+        "authorId": "2329177017",
+        "name": "Bingcan Guo"
+      },
+      {
+        "authorId": "2355423040",
+        "name": "Ibrahim Khalilov"
+      },
+      {
+        "authorId": "2214755899",
+        "name": "S. Gebreegziabher"
+      },
+      {
+        "authorId": "1490485182",
+        "name": "Bingsheng Yao"
+      },
+      {
+        "authorId": "2243367965",
+        "name": "Dakuo Wang"
+      },
+      {
+        "authorId": "2292682609",
+        "name": "Yanfang Ye"
+      },
+      {
+        "authorId": "2294216797",
+        "name": "Tianshi Li"
+      },
+      {
+        "authorId": "2356504024",
+        "name": "Ziang Xiao"
+      },
+      {
+        "authorId": "2324833884",
+        "name": "Yaxing Yao"
+      },
+      {
+        "authorId": "2327048239",
+        "name": "T. Li"
+      }
+    ],
+    "abstract": "The dark patterns, deceptive interface designs manipulating user behaviors, have been extensively studied for their effects on human decision-making and autonomy. Yet, with the rising prominence of LLM-powered GUI agents that automate tasks from high-level intents, understanding how dark patterns affect agents is increasingly important. We present a two-phase empirical study examining how agents, human participants, and human-AI teams respond to 16 types of dark patterns across diverse scenarios. Phase 1 highlights that agents often fail to recognize dark patterns, and even when aware, prioritize task completion over protective action. Phase 2 revealed divergent failure modes: humans succumb due to cognitive shortcuts and habitual compliance, while agents falter from procedural blind spots. Human oversight improved avoidance but introduced costs such as attentional tunneling and cognitive load. Our findings show neither humans nor agents are uniformly resilient, and collaboration introduces new vulnerabilities, suggesting design needs for transparency, adjustable autonomy, and oversight."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "12f3c9f905797ee17c9f4aba84c1c69d8b3f0542",
+    "externalIds": {
+      "DBLP": "journals/aaiml/Jeong25",
+      "DOI": "10.54364/aaiml.2025.53240",
+      "CorpusId": 281570602
+    },
+    "url": "https://www.semanticscholar.org/paper/12f3c9f905797ee17c9f4aba84c1c69d8b3f0542",
+    "title": "Design and Evaluation Methods for LLM-Based Explainable AI (XAI)-Based Human-AI Collaboration Systems",
+    "venue": "Advances in Artificial Intelligence and Machine Learning",
+    "year": 2025,
+    "citationCount": 2,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.54364/aaiml.2025.53240?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.54364/aaiml.2025.53240, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationDate": null,
+    "authors": [
+      {
+        "authorId": "98037302",
+        "name": "Cheonsu Jeong"
+      }
+    ],
+    "abstract": "This study re-examines the role of Explainable AI (XAI) within human-AI collaborative environments and proposes a design and evaluation framework for a human-AI collaboration system that integrates Large Language Models (LLMs) and state-of-the-art AI agent technology. The proposed methodology, which consists of an AI model, an explanation generation module, and a human-AI interface, enhances the adaptability and reliability of explanations. A key contribution of this research is the introduction of an LLM-XAI collaborative architecture that integrates personalized, adaptive explanations with a feedbackdriven improvement mechanism. Notably, the system presents a novel paradigm for explanations that distinguishes it from conventional XAI methods by utilizing Chain-of-Thought reasoning traces, natural language explanations, and a multi-stage verification mechanism provided by Deep Research and LLM-based agents. The system defines core quality metrics such as explainability, transparency, reliability, interactivity, and adaptability, and concurrently develops a multi-dimensional evaluation framework to assess these metrics using both quantitative and qualitative data. This system is structured with a feedback loop that enables continuous learning and improvement while transparently explaining the AI’s decisionmaking process. The quality of explanations is also assessed with quantitative metrics, and the system improves continuously through user feedback. This study also presents quantitative and qualitative evaluation metrics and user research methodologies to validate the system’s effectiveness, which is expected to contribute to achieving trust-based human-AI collaboration. Furthermore, to demonstrate its practical applicability, a pilot implementation in a medical diagnosis support scenario is presented, offering an ideal model where humans and AI collaborate complementarily, thereby playing a crucial role in promoting the ethical use and social acceptance of AI systems."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "852f0a86b44aadf3b8bb52e4873d3faf6d07a48b",
+    "externalIds": {
+      "ArXiv": "2505.09875",
+      "DBLP": "journals/corr/abs-2505-09875",
+      "DOI": "10.48550/arXiv.2505.09875",
+      "CorpusId": 278636611
+    },
+    "url": "https://www.semanticscholar.org/paper/852f0a86b44aadf3b8bb52e4873d3faf6d07a48b",
+    "title": "Characterizing Unintended Consequences in Human-GUI Agent Collaboration for Web Browsing",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 13,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.09875, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationDate": "2025-05-15",
+    "authors": [
+      {
+        "authorId": "2214812586",
+        "name": "Shuning Zhang"
+      },
+      {
+        "authorId": "2325894092",
+        "name": "Jingruo Chen"
+      },
+      {
+        "authorId": "2326107084",
+        "name": "Zhiqi Gao"
+      },
+      {
+        "authorId": "2370601113",
+        "name": "Jiajing Gao"
+      },
+      {
+        "authorId": "2303802245",
+        "name": "Xin Yi"
+      },
+      {
+        "authorId": "2304266882",
+        "name": "Hewu Li"
+      }
+    ],
+    "abstract": "The proliferation of Large Language Model (LLM)-based Graphical User Interface (GUI) agents in web browsing scenarios present complex unintended consequences (UCs). This paper characterizes three UCs from three perspectives: phenomena, influence and mitigation, drawing on social media analysis (N=221 posts) and semi-structured interviews (N=14). Key phenomenon for UCs include agents' deficiencies in comprehending instructions and planning tasks, challenges in executing accurate GUI interactions and adapting to dynamic interfaces, the generation of unreliable or misaligned outputs, and shortcomings in error handling and feedback processing. These phenomena manifest as influences from unanticipated actions and user frustration, to privacy violations and security vulnerabilities, and further to eroded trust and wider ethical concerns. Our analysis also identifies user-initiated mitigation, such as technical adjustments and manual oversight, and provides implications for designing future LLM-based GUI agents that are robust, user-centric, and transparent, fostering a crucial balance between automation and human oversight."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "f18b6564594bc3f3326ba174416e7e7d9e61f2db",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2503-02692",
+      "ArXiv": "2503.02692",
+      "DOI": "10.48550/arXiv.2503.02692",
+      "CorpusId": 276776379
+    },
+    "url": "https://www.semanticscholar.org/paper/f18b6564594bc3f3326ba174416e7e7d9e61f2db",
+    "title": "FinArena: A Human-Agent Collaboration Framework for Financial Market Analysis and Forecasting",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 8,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.02692, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationDate": "2025-03-04",
+    "authors": [
+      {
+        "authorId": "2354593693",
+        "name": "Congluo Xu"
+      },
+      {
+        "authorId": "2303698788",
+        "name": "Zhaobin Liu"
+      },
+      {
+        "authorId": "2307866711",
+        "name": "Ziyang Li"
+      }
+    ],
+    "abstract": "To improve stock trend predictions and support personalized investment decisions, this paper proposes FinArena, a novel Human-Agent collaboration framework. Inspired by the mixture of experts (MoE) approach, FinArena combines multimodal financial data analysis with user interaction. The human module features an interactive interface that captures individual risk preferences, allowing personalized investment strategies. The machine module utilizes a Large Language Model-based (LLM-based) multi-agent system to integrate diverse data sources, such as stock prices, news articles, and financial statements. To address hallucinations in LLMs, FinArena employs the adaptive Retrieval-Augmented Generative (RAG) method for processing unstructured news data. Finally, a universal expert agent makes investment decisions based on the features extracted from multimodal data and investors' individual risk preferences. Extensive experiments show that FinArena surpasses both traditional and state-of-the-art benchmarks in stock trend prediction and yields promising results in trading simulations across various risk profiles. These findings highlight FinArena's potential to enhance investment outcomes by aligning strategic insights with personalized risk considerations."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "efde8940a0b924e93d35184c4a1e8f9670b94fe7",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2410-02958",
+      "ArXiv": "2410.02958",
+      "DOI": "10.48550/arXiv.2410.02958",
+      "CorpusId": 273162376
+    },
+    "url": "https://www.semanticscholar.org/paper/efde8940a0b924e93d35184c4a1e8f9670b94fe7",
+    "title": "AutoML-Agent: A Multi-Agent LLM Framework for Full-Pipeline AutoML",
+    "venue": "International Conference on Machine Learning",
+    "year": 2024,
+    "citationCount": 81,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2410.02958, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationDate": "2024-10-03",
+    "authors": [
+      {
+        "authorId": "134607506",
+        "name": "Patara Trirat"
+      },
+      {
+        "authorId": "148346757",
+        "name": "Wonyong Jeong"
+      },
+      {
+        "authorId": "2324683739",
+        "name": "S. Hwang"
+      }
+    ],
+    "abstract": "Automated machine learning (AutoML) accelerates AI development by automating tasks in the development pipeline, such as optimal model search and hyperparameter tuning. Existing AutoML systems often require technical expertise to set up complex tools, which is in general time-consuming and requires a large amount of human effort. Therefore, recent works have started exploiting large language models (LLM) to lessen such burden and increase the usability of AutoML frameworks via a natural language interface, allowing non-expert users to build their data-driven solutions. These methods, however, are usually designed only for a particular process in the AI development pipeline and do not efficiently use the inherent capacity of the LLMs. This paper proposes AutoML-Agent, a novel multi-agent framework tailored for full-pipeline AutoML, i.e., from data retrieval to model deployment. AutoML-Agent takes user's task descriptions, facilitates collaboration between specialized LLM agents, and delivers deployment-ready models. Unlike existing work, instead of devising a single plan, we introduce a retrieval-augmented planning strategy to enhance exploration to search for more optimal plans. We also decompose each plan into sub-tasks (e.g., data preprocessing and neural network design) each of which is solved by a specialized agent we build via prompting executing in parallel, making the search process more efficient. Moreover, we propose a multi-stage verification to verify executed results and guide the code generation LLM in implementing successful solutions. Extensive experiments on seven downstream tasks using fourteen datasets show that AutoML-Agent achieves a higher success rate in automating the full AutoML process, yielding systems with good performance throughout the diverse domains."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "602d80ff6103cf3b46bbbfce658985bb3dbb50f4",
+    "externalIds": {
+      "DBLP": "conf/sigsoft/LiI25",
+      "DOI": "10.1145/3696630.3728721",
+      "CorpusId": 280336949
+    },
+    "url": "https://www.semanticscholar.org/paper/602d80ff6103cf3b46bbbfce658985bb3dbb50f4",
+    "title": "Enhancing Human-IDE Interaction in the SDLC using LLM-based Mediator Agents",
+    "venue": "SIGSOFT FSE Companion",
+    "year": 2025,
+    "citationCount": 2,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3696630.3728721?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3696630.3728721, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Book"
+    ],
+    "publicationDate": "2025-06-23",
+    "authors": [
+      {
+        "authorId": "2374337968",
+        "name": "Ziyou Li"
+      },
+      {
+        "authorId": "2304217859",
+        "name": "Maliheh Izadi"
+      }
+    ],
+    "abstract": "Large Language Model (LLM)-based autonomous agents provide state-of-the-art performance in various tasks throughout the Software Development Lifecycle (SDLC). Although these agents can be integrated into Integrated Development Environments (IDEs), standalone applications impose cognitive burdens on programmers due to fragmented tool usage across the SDLC. This paper proposes a framework for a mediator agent that serves as the unified interface between the programmer, IDE tools, agentic tools, and external multi-agent systems. The framework aims to simplify interaction, reduce context switching, and automate the orchestration of the IDE tools. By aligning with proposed levels of SE automation, the mediator agent sets the stage for next-generation human-computer collaboration, enhancing productivity, and advancing software engineering automation."
+  },
+  {
+    "query": "LLM agent interface human collaboration",
+    "paperId": "f6c12138189d0c9b949233e9d61417f2551049d0",
+    "externalIds": {
+      "ArXiv": "2602.12953",
+      "DBLP": "journals/corr/abs-2602-12953",
+      "DOI": "10.48550/arXiv.2602.12953",
+      "CorpusId": 285607217
+    },
+    "url": "https://www.semanticscholar.org/paper/f6c12138189d0c9b949233e9d61417f2551049d0",
+    "title": "Human Tool: An MCP-Style Framework for Human-Agent Collaboration",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "citationCount": 0,
+    "isOpenAccess": false,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.12953, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationDate": "2026-02-13",
+    "authors": [
+      {
+        "authorId": "2292124586",
+        "name": "Yuanrong Tang"
+      },
+      {
+        "authorId": "2246419276",
+        "name": "Huiling Peng"
+      },
+      {
+        "authorId": "2268726496",
+        "name": "Bing Zhao"
+      },
+      {
+        "authorId": "2411889279",
+        "name": "Hengyang Ding"
+      },
+      {
+        "authorId": "2412003785",
+        "name": "Hanchao Song"
+      },
+      {
+        "authorId": "2328422232",
+        "name": "Tianhong Wang"
+      },
+      {
+        "authorId": "2292021671",
+        "name": "Chen Zhong"
+      },
+      {
+        "authorId": "2292077443",
+        "name": "Jiangtao Gong"
+      }
+    ],
+    "abstract": "Human-AI collaboration faces growing challenges as AI systems increasingly outperform humans on complex tasks, while humans remain responsible for orchestration, validation, and decision oversight. To address this imbalance, we introduce Human Tool, an MCP-style interface abstraction, building on recent Model Context Protocol designs, that exposes humans as callable tools within AI-led, proactive workflows. Here,\"tool\"denotes a coordination abstraction, not a reduction of human authority or responsibility. Building on LLM-based agent architectures, we operationalize Human Tool by modeling human contributions through structured tool schemas of capabilities, information, and authority. These schemas enable agents to dynamically invoke human input based on relative strengths and reintegrate it through efficient, natural interaction protocols. We validate the framework through controlled studies in both decision-making and creative tasks, demonstrating improved task performance, reduced human workload, and more balanced collaboration dynamics compared to baseline systems. Finally, we discuss implications for human-centered AI design, highlighting how MCP-style human tools enable strong AI leadership while amplifying uniquely human strengths."
+  },
+  {
+    "query": "AI decision support interface explainable human AI",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "GUI agents user experience human control",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "human AI collaboration design patterns",
+    "error": "HTTPError: HTTP Error 429: "
+  }
+]

@@ -1,0 +1,487 @@
+{
+  "task_id": "SIMULATION-VALIDATION-TARGET-ADAPTER-20260604",
+  "task_type": "simulation_validation_target",
+  "output_status": "needs_review",
+  "source_refs": [
+    {
+      "source_file": "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+      "page_or_slide": "csv",
+      "quote_or_table_ref": "P2 simulation validation target rows"
+    },
+    {
+      "source_file": "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+      "page_or_slide": "method",
+      "quote_or_table_ref": "modern hybrid simulation and calibration route"
+    }
+  ],
+  "assumptions": [
+    "This adapter converts current P2/P4 draft rows into schema-bound needs_review candidates.",
+    "The generated items are not final simulation results and do not contain checked business conclusions."
+  ],
+  "uncertainties": [
+    "P3 real geometry, visitor flow, route, queue, conversion, revenue/cost, and authorization inputs remain incomplete.",
+    "DeepSeek or legacy drafts may only be used after schema validation and human review."
+  ],
+  "needs_human_review": true,
+  "items": [
+    {
+      "target_id": "VAL-001",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "入口/节点/时段客流曲线是否能复现真实峰谷",
+      "validation_level": "time_series",
+      "metric_family": [
+        "peak_shift",
+        "correlation",
+        "dtw_r2",
+        "sarima_consistency"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "闸机数据、客流传感器、连续现场观察记录",
+        "required_fields": [
+          "按入口与小时粒度的客流或现场计数"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「按入口与小时粒度的客流或现场计数」并完成业务复核后，才能把「入口/节点/时段客流曲线是否能复现真实峰谷」从草稿升级。 可接受证据包括：闸机数据、客流传感器、连续现场观察记录。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "按入口与小时粒度的客流或现场计数"
+      ],
+      "review_notes": [
+        "HumanLM与社区仿真强调宏观曲线对齐",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-002",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "不同人群从入口到节点的路径选择是否合理",
+      "validation_level": "route_access",
+      "metric_family": [
+        "route_reachability",
+        "field_check",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "available_needs_review",
+        "description": "匿名化轨迹、观察表、地图标注",
+        "required_fields": [
+          "路径观察",
+          "热力图",
+          "GPS/蓝牙/WiFi探针或人工路线记录"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "needs_review",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「路径观察、热力图、GPS/蓝牙/WiFi探针或人工路线记录」并完成业务复核后，才能把「不同人群从入口到节点的路径选择是否合理」从草稿升级。 可接受证据包括：匿名化轨迹、观察表、地图标注。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "路径观察",
+        "热力图",
+        "GPS/蓝牙/WiFi探针或人工路线记录"
+      ],
+      "review_notes": [
+        "社会力/空间交互模型与老板材料的高精度场景方法",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-003",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "各类节点的停留时长是否落在可信范围",
+      "validation_level": "state_behavior_chain",
+      "metric_family": [
+        "state_behavior_consistency",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "现场计时、摄像统计、问卷或运营记录",
+        "required_fields": [
+          "按人群/节点/时段的停留观察或访谈"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「按人群/节点/时段的停留观察或访谈」并完成业务复核后，才能把「各类节点的停留时长是否落在可信范围」从草稿升级。 可接受证据包括：现场计时、摄像统计、问卷或运营记录。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "按人群/节点/时段的停留观察或访谈"
+      ],
+      "review_notes": [
+        "HumanLM状态对齐需要行为状态而非只看回答",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-004",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "到访转化为消费的概率是否可信",
+      "validation_level": "choice_probability",
+      "metric_family": [
+        "field_check",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "POS记录、运营方表格、试运营数据",
+        "required_fields": [
+          "业态转化率",
+          "交易记录",
+          "快闪测试",
+          "同类项目基准"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「业态转化率、交易记录、快闪测试、同类项目基准」并完成业务复核后，才能把「到访转化为消费的概率是否可信」从草稿升级。 可接受证据包括：POS记录、运营方表格、试运营数据。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "业态转化率",
+        "交易记录",
+        "快闪测试",
+        "同类项目基准"
+      ],
+      "review_notes": [
+        "商业选址决策必须区分需求与真实交易",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-005",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "不同人群的客单价区间是否可信",
+      "validation_level": "choice_probability",
+      "metric_family": [
+        "field_check",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "POS表、问卷、第三方商业基准",
+        "required_fields": [
+          "客单价",
+          "支付结构",
+          "价格带接受度"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「客单价、支付结构、价格带接受度」并完成业务复核后，才能把「不同人群的客单价区间是否可信」从草稿升级。 可接受证据包括：POS表、问卷、第三方商业基准。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "客单价",
+        "支付结构",
+        "价格带接受度"
+      ],
+      "review_notes": [
+        "市场研究论文强调自然语言意向需再映射到量表/概率",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-006",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "园内与周边供给是否完整且分类正确",
+      "validation_level": "business_decision",
+      "metric_family": [
+        "field_check",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "available_needs_review",
+        "description": "POI清单、照片、营业状态、距离",
+        "required_fields": [
+          "高德POI抓取 + 现场复核 + 经营字段"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "needs_review",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「高德POI抓取 + 现场复核 + 经营字段」并完成业务复核后，才能把「园内与周边供给是否完整且分类正确」从草稿升级。 可接受证据包括：POI清单、照片、营业状态、距离。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "高德POI抓取 + 现场复核 + 经营字段"
+      ],
+      "review_notes": [
+        "同事POI/TGI仓库可吸收供需结构但需本地复核",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-007",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "空间边界、面积和可达性是否可靠",
+      "validation_level": "route_access",
+      "metric_family": [
+        "route_reachability",
+        "field_check"
+      ],
+      "reference_data": {
+        "data_status": "available_needs_review",
+        "description": "转换后的图层、坐标系说明、人工复核记录",
+        "required_fields": [
+          "DWG/DXF/GeoJSON或可验证图纸"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "needs_review",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「DWG/DXF/GeoJSON或可验证图纸」并完成业务复核后，才能把「空间边界、面积和可达性是否可靠」从草稿升级。 可接受证据包括：转换后的图层、坐标系说明、人工复核记录。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "DWG/DXF/GeoJSON或可验证图纸"
+      ],
+      "review_notes": [
+        "AGENTS真实性规则和P3门禁",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-008",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "商业经营和改造是否被允许",
+      "validation_level": "business_decision",
+      "metric_family": [
+        "field_check",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "批复、合同、管理方确认函",
+        "required_fields": [
+          "运营授权",
+          "消防/结构/业态限制文件"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "blocked",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「运营授权、消防/结构/业态限制文件」并完成业务复核后，才能把「商业经营和改造是否被允许」从草稿升级。 可接受证据包括：批复、合同、管理方确认函。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "blocked",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "运营授权",
+        "消防/结构/业态限制文件"
+      ],
+      "review_notes": [
+        "没有授权时仿真结果无落地意义",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-009",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "关键假设变动时结论是否稳定",
+      "validation_level": "macro_distribution",
+      "metric_family": [
+        "correlation",
+        "kl_divergence",
+        "ssim",
+        "manual_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "本地Monte Carlo结果、参数日志、差异表",
+        "required_fields": [
+          "多组参数",
+          "敏感性范围",
+          "缺口上下界"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「多组参数、敏感性范围、缺口上下界」并完成业务复核后，才能把「关键假设变动时结论是否稳定」从草稿升级。 可接受证据包括：本地Monte Carlo结果、参数日志、差异表。",
+        "thresholds": {
+          "blocks_full_simulation": "yes",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "多组参数",
+        "敏感性范围",
+        "缺口上下界"
+      ],
+      "review_notes": [
+        "ABM/LLM仿真论文均要求校准和敏感性检查",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    },
+    {
+      "target_id": "VAL-010",
+      "project_id": "park-commercial-site-selection-simulation",
+      "target_name": "AI输出是否被业务人员理解并能执行",
+      "validation_level": "business_decision",
+      "metric_family": [
+        "manual_review",
+        "llm_draft_consistency_review"
+      ],
+      "reference_data": {
+        "data_status": "missing",
+        "description": "AI工作台记录、Selenium记录、人工视觉备注",
+        "required_fields": [
+          "专家反馈",
+          "客服端可用性测试",
+          "可读报告"
+        ]
+      },
+      "candidate_output": {
+        "output_status": "not_run",
+        "description": "当前只登记验证目标，不代表模型已经跑出可信结果。"
+      },
+      "acceptance_rule": {
+        "rule_status": "needs_review",
+        "plain_language_rule": "只有补齐「专家反馈、客服端可用性测试、可读报告」并完成业务复核后，才能把「AI输出是否被业务人员理解并能执行」从草稿升级。 可接受证据包括：AI工作台记录、Selenium记录、人工视觉备注。",
+        "thresholds": {
+          "blocks_full_simulation": "no",
+          "numeric_threshold_pending": null
+        }
+      },
+      "status": "needs_review",
+      "source_refs": [
+        "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"
+      ],
+      "missing_inputs": [
+        "专家反馈",
+        "客服端可用性测试",
+        "可读报告"
+      ],
+      "review_notes": [
+        "用户对“人类可读解析和建议”的要求",
+        "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。"
+      ],
+      "user_locked": false
+    }
+  ]
+}

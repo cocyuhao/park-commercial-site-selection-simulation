@@ -1,0 +1,9 @@
+﻿dwg2dxf.exe : ERROR: buffer underflow at pos 268435463.0, size 268451840, advance by 8
+At line:2 char:462
++ ... nversion_20260605.log'; & $exe -y --as r2004 -o $out $in *>&1 | Tee-O ...
++                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR: buffer u...0, advance by 8:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Assertion failed: (long)pos >= (long)comp_offset, file decode.c, line 1309
+Reading DWG file C:\Users\Yy199\Desktop\�������\CADͼ����ƻ�\��ɭ��԰������Ŵ�-���콨��ʾ��_t5.dwg

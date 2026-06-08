@@ -1,0 +1,40 @@
+{
+  "source_file": "CAD图及其计划/奥森重点项目策划思路20260521.docx",
+  "output_status": "extracted_local",
+  "text_output": "30_extraction/p2_real_site/osen_project_plan_text.txt",
+  "bytes": 33860,
+  "character_count": 4046,
+  "nonempty_line_count": 183,
+  "paragraph_count": 136,
+  "table_count": 7,
+  "heading_count": 0,
+  "headings_sample": [],
+  "keyword_counts": {
+    "商业": 1,
+    "业态": 0,
+    "节点": 0,
+    "北园": 0,
+    "南园": 0,
+    "改造": 4,
+    "游客": 1,
+    "运营": 10,
+    "服务": 7,
+    "场景": 3,
+    "入口": 0,
+    "停车": 0,
+    "体育": 0,
+    "咖啡": 8,
+    "餐饮": 1
+  },
+  "p2_use": [
+    "project_objective",
+    "planning_scope",
+    "business_format_assumptions",
+    "node_or_scene_assumptions",
+    "input_gap_check"
+  ],
+  "limitations": [
+    "DOCX text is planning material, not final measured operation data.",
+    "Numbers or claims still need evidence catalog linkage before final recommendations."
+  ]
+}

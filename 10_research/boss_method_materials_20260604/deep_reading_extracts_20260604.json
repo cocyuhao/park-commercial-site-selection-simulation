@@ -1,0 +1,902 @@
+[
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "state",
+    "excerpt": "g models to predict low-level actions or infer latent reward functions Abbeel & Ng (2004); Ng et al. (2000); Torabi et al. (2018); Wulfmeier et al. (2016). However, these methods are often data-hungry and brittle because they try to learn what an agent might do in every possible state, frequently overfitting to specific environments or overcomplicating behaviors that are surprisingly routine for humans (Skalse & Abate, 2024; Yildirim et al., 2024). Alternatively, probabilistic methods for goal inference (Fuchs et al., 2023; Zhi- Xuan et al., 2020; 2024) are more sample efficient but demand computationally intensive online reasoning about potential intentions and beliefs, alongside human-specified priors and hypothesis spaces. Thus, conventional methods for modeling others present a trade- "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "behavioral program",
+    "excerpt": "ly demanding to adapt rapidly. Our key insight is that many everyday social interactions may follow predictable patterns; efficient “scripts” that minimize cogni- tive load for actors and observers, e.g., “wait for the green light, then go.” We propose modeling these routines as behavioral programs instan- tiated in computer code rather than policies conditioned on beliefs and desires. We introduce ROTE, a novel algorithm that leverages both large language models (LLMs) for synthesizing a hypothesis space of behavioral programs, and probabilistic inference for reasoning about uncertainty over that space. We test ROTE in a suite of gridworld tasks and a large-scale embodied household simulator. ROTE predicts human and AI behaviors from sparse observations, outperforming competitive baseline"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "program synthesis",
+    "excerpt": "simulator. ROTE predicts human and AI behaviors from sparse observations, outperforming competitive baselines—including behavior cloning and LLM-based methods—by as much as 50% in terms of in-sample accuracy and out-of-sample generalization. By treating action understanding as a program synthesis problem, ROTE opens a path for AI systems to efficiently and effectively predict human behavior in the real-world. Code for environments, algorithms, evalution scripts and more can be found at https://github.com/KJha02/mindsAsCode. 1 Introduction Predicting the behavior of others (Theory of Mind) is a core challenge for building intelligent social agents. Whether anticipating a pedestrian’s movements, coordinating with teammates, or interacting safely in public spaces, machines must infer what oth"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "probabilistic inference",
+    "excerpt": "ng these routines as behavioral programs instan- tiated in computer code rather than policies conditioned on beliefs and desires. We introduce ROTE, a novel algorithm that leverages both large language models (LLMs) for synthesizing a hypothesis space of behavioral programs, and probabilistic inference for reasoning about uncertainty over that space. We test ROTE in a suite of gridworld tasks and a large-scale embodied household simulator. ROTE predicts human and AI behaviors from sparse observations, outperforming competitive baselines—including behavior cloning and LLM-based methods—by as much as 50% in terms of in-sample accuracy and out-of-sample generalization. By treating action understanding as a program synthesis problem, ROTE opens a path for AI systems to efficiently and effectiv"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "reward",
+    "excerpt": "dinating with teammates, or interacting safely in public spaces, machines must infer what others are likely to do next. Existing approaches such as behavior cloning (BC) and inverse reinforcement learning (IRL) rely on learning models to predict low-level actions or infer latent reward functions Abbeel & Ng (2004); Ng et al. (2000); Torabi et al. (2018); Wulfmeier et al. (2016). However, these methods are often data-hungry and brittle because they try to learn what an agent might do in every possible state, frequently overfitting to specific environments or overcomplicating behaviors that are surprisingly routine for humans (Skalse & Abate, 2024; Yildirim et al., 2024). Alternatively, probabilistic methods for goal inference (Fuchs et al., 2023; Zhi- Xuan et al., 2020; 2024) are more sampl"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "reinforcement learning",
+    "excerpt": "llenge for building intelligent social agents. Whether anticipating a pedestrian’s movements, coordinating with teammates, or interacting safely in public spaces, machines must infer what others are likely to do next. Existing approaches such as behavior cloning (BC) and inverse reinforcement learning (IRL) rely on learning models to predict low-level actions or infer latent reward functions Abbeel & Ng (2004); Ng et al. (2000); Torabi et al. (2018); Wulfmeier et al. (2016). However, these methods are often data-hungry and brittle because they try to learn what an agent might do in every possible state, frequently overfitting to specific environments or overcomplicating behaviors that are surprisingly routine for humans (Skalse & Abate, 2024; Yildirim et al., 2024). Alternatively, probabil"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "agent",
+    "excerpt": "ly predict human behavior in the real-world. Code for environments, algorithms, evalution scripts and more can be found at https://github.com/KJha02/mindsAsCode. 1 Introduction Predicting the behavior of others (Theory of Mind) is a core challenge for building intelligent social agents. Whether anticipating a pedestrian’s movements, coordinating with teammates, or interacting safely in public spaces, machines must infer what others are likely to do next. Existing approaches such as behavior cloning (BC) and inverse reinforcement learning (IRL) rely on learning models to predict low-level actions or infer latent reward functions Abbeel & Ng (2004); Ng et al. (2000); Torabi et al. (2018); Wulfmeier et al. (2016). However, these methods are often data-hungry and brittle because they try to le"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=1",
+    "keyword": "accuracy",
+    "excerpt": " We test ROTE in a suite of gridworld tasks and a large-scale embodied household simulator. ROTE predicts human and AI behaviors from sparse observations, outperforming competitive baselines—including behavior cloning and LLM-based methods—by as much as 50% in terms of in-sample accuracy and out-of-sample generalization. By treating action understanding as a program synthesis problem, ROTE opens a path for AI systems to efficiently and effectively predict human behavior in the real-world. Code for environments, algorithms, evalution scripts and more can be found at https://github.com/KJha02/mindsAsCode. 1 Introduction Predicting the behavior of others (Theory of Mind) is a core challenge for building intelligent social agents. Whether anticipating a pedestrian’s movements, coordinating wit"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=2",
+    "keyword": "state",
+    "excerpt": "al rules and predetermined decision-making processes is a foundational idea in computer science (Newell & Simon, 1956; Schank & Abelson, 2013; Newell & Simon, 1976), influencing fields from planning (Campbell et al., 2002; Zhu et al., 2025) to game theory (Axelrod, 1980). Finite State Machines (FSMs), for instance, are still used in video games to efficiently simulate large numbers of agents. By defining a sequence of states and transitions (e.g., patrol border →find agents →chase agents), code can flexibly model the causal behaviors underpinning social norms and routines. Here we develop ROTE — Representing Others’ Trajectories as Executables — a novel algorithm that leverages LLMs as code synthesis tools to predict others’ actions. We prompt LLMs to generate computer programs explaining "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=2",
+    "keyword": "program synthesis",
+    "excerpt": "ethod achieves human-level accuracy in predicting human actions, outperforming all baselines. This offers a promising new path for creating scalable, adaptable, and interpretable socially intelligent AI systems. Concretely, our contributions are: 1. Modeling Agentic Behavior via Program Synthesis: We develop ROTE, a novel algorithm that combines LLMs with Sequential Monte Carlo to model other agents’ behavior as programs from sparse observations. 2. Superior, Scalable Action Prediction: Across two embodied domains, we show that ROTE offers superior generalization for predicting others’ behaviors, outperforming alternative methods by as much as 50%. Our method generates executable code that is reusable across environments, bypassing costly reasoning over goals and beliefs. These code-based "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=2",
+    "keyword": "agent",
+    "excerpt": "prescribe agency to others (Dennett, 1972; Field, 1978; Dennett & Gorey, 1981; Dennett, 1987; 2017; Jara-Ettinger & Dunham, 2024), to the best of our knowledge, there are currently no computational models that adequately describe how machines can represent and reason about other agents acting in a script-like manner. The notion of representing an intelligent agent through logical rules and predetermined decision-making processes is a foundational idea in computer science (Newell & Simon, 1956; Schank & Abelson, 2013; Newell & Simon, 1976), influencing fields from planning (Campbell et al., 2002; Zhu et al., 2025) to game theory (Axelrod, 1980). Finite State Machines (FSMs), for instance, are still used in video games to efficiently simulate large numbers of agents. By defining a sequence o"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=2",
+    "keyword": "causal",
+    "excerpt": " game theory (Axelrod, 1980). Finite State Machines (FSMs), for instance, are still used in video games to efficiently simulate large numbers of agents. By defining a sequence of states and transitions (e.g., patrol border →find agents →chase agents), code can flexibly model the causal behaviors underpinning social norms and routines. Here we develop ROTE — Representing Others’ Trajectories as Executables — a novel algorithm that leverages LLMs as code synthesis tools to predict others’ actions. We prompt LLMs to generate computer programs explaining observed behavioral traces, then perform Bayesian inference to reason about which programs are most likely. This gives us a dynamic representation that can be analyzed, modified, and composed across agents and environments. ROTE significantly "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=2",
+    "keyword": "accuracy",
+    "excerpt": "quires large datasets and has limited generalization, while inverse planning is computationally expensive at test time. Our approach, ROTE, uses LLMs to generate efficient and interpretable code representations of observed behavior, providing a superior balance of efficiency and accuracy. pineapple on pizza. It is enough to apply a commonly understood “crosswalk script” shaped by social convention. While there are perspectives on how people adopt roles in societies or prescribe agency to others (Dennett, 1972; Field, 1978; Dennett & Gorey, 1981; Dennett, 1987; 2017; Jara-Ettinger & Dunham, 2024), to the best of our knowledge, there are currently no computational models that adequately describe how machines can represent and reason about other agents acting in a script-like manner. The noti"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "state",
+    "excerpt": "ls to directly mimic actions (Torabi et al., 2018; Ng et al., 2000; Abbeel & Ng, 2004; Wulfmeier et al., 2016; Wang et al., 2021; Christiano et al., 2023), but are often data-intensive, fragile, and prone to overfitting. Recent work has tried modeling reward functions as finite- state automatons, a concept known as “reward machines” (Icarte et al., 2018; Toro Icarte et al., 2022; Li et al., 2025). This method, which does not use LLMs, allows for structured representation of reward and can provide non-Markovian feedback to agents. While primarily used for training agents to solve compositional tasks, there has been work on inferring reward machines from expert demonstrations (Zhou & Li, 2022) or learning safety constraints (Malik et al., 2021; Lindner et al., 2024; Liu et al., 2025). Despit"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "program synthesis",
+    "excerpt": "e of culturally shaped conventions and behaviors performed without deep cognitive processing (Bargh, 1994; Wood, 2024). By learning a code-based agent representation, ROTE avoids the high computational cost that BIP must incur to enumerate every possible goal. Program Induction. Program synthesis has proven effective for world modeling (Guan et al., 2023; Wong et al., 2023b;a; Zhu & Simmons, 2024), action selection (Verma et al., 2021; Wang et al., 2023; Yao et al., 2023), and has even achieved near-expert performance on mathematical reasoning tasks such as International Math Olympiad problems (Trinh et al., 2024). Neurosymbolic approaches, which combine LLMs or domain-specific neural networks with probabilistic program inference, have enabled agents to learn environment dynamics (Das et a"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "validation",
+    "excerpt": "3. Human Studies Validation: We recruit real human participants to generate behavior and predict others’ actions. We find that ROTE outperforms baselines and achieves human- level performance in predicting human behaviors, even for noisy and sparse trajectories. 2 Related Work Action Prediction. Prior work developing AI for action prediction follows two dominant categories: symbolic methods and neural networks. Symbolic methods, such as Bayesian Inverse Planning (BIP), infer an agent’s goals and beliefs by calculating their probabi"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "reward",
+    "excerpt": "nt learning (IRL) train models to directly mimic actions (Torabi et al., 2018; Ng et al., 2000; Abbeel & Ng, 2004; Wulfmeier et al., 2016; Wang et al., 2021; Christiano et al., 2023), but are often data-intensive, fragile, and prone to overfitting. Recent work has tried modeling reward functions as finite- state automatons, a concept known as “reward machines” (Icarte et al., 2018; Toro Icarte et al., 2022; Li et al., 2025). This method, which does not use LLMs, allows for structured representation of reward and can provide non-Markovian feedback to agents. While primarily used for training agents to solve compositional tasks, there has been work on inferring reward machines from expert demonstrations (Zhou & Li, 2022) or learning safety constraints (Malik et al., 2021; Lindner et al., 202"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "reinforcement learning",
+    "excerpt": "er et al., 2025). While robust, these methods are not scalable due to the exponential complexity of a multi-agent environment (Rathnasabapathy et al., 2006; Doshi & Gmytrasiewicz, 2009; Seaman et al., 2018). In contrast, neural approaches like behavioral cloning (BC) and inverse reinforcement learning (IRL) train models to directly mimic actions (Torabi et al., 2018; Ng et al., 2000; Abbeel & Ng, 2004; Wulfmeier et al., 2016; Wang et al., 2021; Christiano et al., 2023), but are often data-intensive, fragile, and prone to overfitting. Recent work has tried modeling reward functions as finite- state automatons, a concept known as “reward machines” (Icarte et al., 2018; Toro Icarte et al., 2022; Li et al., 2025). This method, which does not use LLMs, allows for structured representation of re"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "agent",
+    "excerpt": "ng human behaviors, even for noisy and sparse trajectories. 2 Related Work Action Prediction. Prior work developing AI for action prediction follows two dominant categories: symbolic methods and neural networks. Symbolic methods, such as Bayesian Inverse Planning (BIP), infer an agent’s goals and beliefs by calculating their probabilities based on observed actions (Ullman et al., 2009; Baker et al., 2017; Shum et al., 2019; Netanyahu et al., 2021; Kleiman-Weiner et al., 2016; Wang et al., 2020; Kleiman-Weiner et al., 2020; Serrino et al., 2019; Kleiman-Weiner et al., 2025). While robust, these methods are not scalable due to the exponential complexity of a multi-agent environment (Rathnasabapathy et al., 2006; Doshi & Gmytrasiewicz, 2009; Seaman et al., 2018). In contrast, neural approache"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=3",
+    "keyword": "causal",
+    "excerpt": "from expert demonstrations (Zhou & Li, 2022) or learning safety constraints (Malik et al., 2021; Lindner et al., 2024; Liu et al., 2025). Despite these advances, neural models still struggle with generalization, particularly in social reasoning, as they often fail to capture the causal structure of behavior (de Haan et al., 2019; Codevilla et al., 2019; Bain & Sammut, 1995). This brittleness persists even with advanced techniques that learn contextual representations (Rabinowitz et al., 2018; Chuang et al., 2020; Jha et al., 2024) and does not disappear at scale under an assumption of imperfect rationality (Poddar et al., 2024). In contrast, our approach, which uses an LLM to generate open-ended code describing observed behavior, makes fewer assumptions about the nature of the agents being"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "state",
+    "excerpt": "toy(obs) class CleanKitchen: def act(self, obs): if in_kitchen(obs): scrub_dishes(obs) else: go_kitchen(obs) class WanderHouse: def act(self, obs): t = obs.timestep rID = t % len(rooms) visitRoom(rID, obs) 1) Generate Candidate Agent Programs with LLMs given History Ground Truth State t=1 t=3 t=5 a. Toys to the Chairs b. Toys to the Bedroom c. Clean dishes d. Wander Between Rooms Figure 2: Overview of ROTE. ROTE predicts an agent’s next action by generating and weighting Python programs that explain its observed behavior. From t = 0 to t = 7, ROTE observes a blue robot’s trajectory. Initially, at t = 1, programs related to moving to the dining room are up-weighted. However, at t = 3, the robot picks up a toy, and ROTE remains uncertain if the goal is to clean up toys in the bedroom or plac"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "program synthesis",
+    "excerpt": "monstrate how we can search for the minimal program in the space of agents λ ∈Λ that best explains observed history of (observation o ∈O, action a ∈A) pairs, h ∈H. For the rest of this section, we use the notation h0:t to indicate the history of pairs from time 0 to t. 3.1 Agent Program Synthesis with Large Language Models Given a finite length history h0:t−1 ∈H, from time 0 to t −1, our objective is to find an agent ˆλ ∈Λ that both (1) takes the same action at as the ground truth agent λ∗when presented with observation ot, and (2) minimizes its program size |ˆλ|. Encouraging concise program synthesis is not just a matter of engineering preference but is theoretically grounded in the foundations of algorithmic probability and inductive inference. Solomonoff’s theory of inductive inference "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "reward",
+    "excerpt": " 5, ROTE confidently updates its program weights to reflect the “bringing toys to chairs” script. By t = 7, ROTE can use this inferred script to rapidly and accurately predict future actions. causal decision-making process directly from observed behavior and assumes no access to reward signals or domain-specific structure. 3 Representing Others’ Trajectories as Executables Drawing upon recent conceptualizations of “agents” in reinforcement learning and theoretical computer science Abel et al. (2023a); Dong et al. (2021); Lu et al. (2023); Leike (2016); Lattimore et al. (2013); Majeed & Hutter (2018); Majeed (2021); Cohen et al. (2019), we represent computationally bounded agents as programs with internal states, which can be conceptualized as Finite State Machines. This is formally represe"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "reinforcement learning",
+    "excerpt": "ly and accurately predict future actions. causal decision-making process directly from observed behavior and assumes no access to reward signals or domain-specific structure. 3 Representing Others’ Trajectories as Executables Drawing upon recent conceptualizations of “agents” in reinforcement learning and theoretical computer science Abel et al. (2023a); Dong et al. (2021); Lu et al. (2023); Leike (2016); Lattimore et al. (2013); Majeed & Hutter (2018); Majeed (2021); Cohen et al. (2019), we represent computationally bounded agents as programs with internal states, which can be conceptualized as Finite State Machines. This is formally represented using the notation λ = (S, s0, π, u) from Abel et al. (2023b), where finite internal states st ∈S used for decision- making in the policy π : S →"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "agent",
+    "excerpt": "What will the Agent do next? Representing Others’ Trajectories as Executables (ROTE) 2) Refine Program Likelihood via Bayesian Inference class ToyChair: def act(self, obs): if found_toy(obs): move_to_chair(obs) else: find_toy(obs) class ToyBedroom: def act(self, obs): if found_toy(obs): move_to_room(obs) else: find_toy(obs) class CleanKitchen: def act(self, obs): if in_kitchen(obs): scrub_dishes(obs) else: go_kitchen(obs) class WanderHouse: def act(self, obs): t = obs.timestep rID = t % len(rooms) visitRoom(rID, obs) 1) Generate"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "causal",
+    "excerpt": "lace them on chairs in the living room. After the robot places the toy on a chair at t = 5, ROTE confidently updates its program weights to reflect the “bringing toys to chairs” script. By t = 7, ROTE can use this inferred script to rapidly and accurately predict future actions. causal decision-making process directly from observed behavior and assumes no access to reward signals or domain-specific structure. 3 Representing Others’ Trajectories as Executables Drawing upon recent conceptualizations of “agents” in reinforcement learning and theoretical computer science Abel et al. (2023a); Dong et al. (2021); Lu et al. (2023); Leike (2016); Lattimore et al. (2013); Majeed & Hutter (2018); Majeed (2021); Cohen et al. (2019), we represent computationally bounded agents as programs with interna"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=4",
+    "keyword": "bias",
+    "excerpt": " expected cumulative prediction error is bounded by the Kolmogorov complexity of the true data-generating process Solomonoff (1978; 1996). Thus, searching for minimal agent representations is not only computationally desirable but also theoretically optimal for generalization, a bias also observed in human programmatic reasoning (Bigelow & Ullman, 2025). We operationalize our search through the space of agents Λ through a two-stage approach: First, we optionally prompt an LLM to transform raw perceptual inputs into a natural 4 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=5",
+    "keyword": "state",
+    "excerpt": " language, enabling the representation of arbitrarily complex decision-making logic in the worst case where |S| = |O| for the ground-truth agent λ∗. Our prompting strategy makes two key assumptions: (1) the observed agent follows deterministic transitions between finite internal states S contingent on environmental/historical cues rather than executing complex adaptive policies, and (2) generated code should produce deterministic actions a ∈A. Importantly, we ask the LLM to assume these properties of the observed trajectories even if the ground truth agent generating the behavior is probabilistic and following sophisticated, goal-directed plans. While this assumes a deterministic agent, we account for potential stochasticity in behavior with a noise model, allowing our approach to best app"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=5",
+    "keyword": "program synthesis",
+    "excerpt": "elect the k most likely agent programs, and execute the corresponding Python code for each from the current observation ot. Then, ROTE performs a weighted combination of agent programs to form our approximation λ∗≈ˆλ = P λ∈∆(Λ) p(λ|h0:t−1) · λ(·|ot). The combination of LLM-based program synthesis with Bayesian Inference results in our method for inferring others’ behaviors, ROTE. Pseudocode for our approach can be found in Algorithm 1, and in Figure 2, we provide an overview of ROTE on an intuitive example in the Partnr environment, an embodied robotics simulator where an agent tries to help a human complete a variety of household chores (Chang et al., 2025). We additionally include examples of agent code inferred by ROTE in Construction and Partnr in Appendix A.10.2. 4 Experiments Environ"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=5",
+    "keyword": "agent",
+    "excerpt": "language description of an agent’s path. These percepts can be low-level observations like object coordinates in gridworlds, or even natural language scene-graphs from datasets like Partnr (Chang et al., 2025). Next, we have the LLM generate many possible Python programs to obtain a distribution over possible code-based agent models which explain the observed behavior, ∆(Λ). Python is chosen for its readability, widespread use in AI research, and its power as a Turing-complete language, enabling the representation of arbitrarily complex deci"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=6",
+    "keyword": "state",
+    "excerpt": "g et al., 2025). AutoToM is a neuro-symbolic approach which uses LLMs to generate open-ended hypotheses about an agent’s beliefs, goals, and desires, then applies Bayesian Inverse Planning to find the most likely action. Naive LLM (NLLM). NLLM simply prompts an LLM with observed states and environment dynamics to predict the next action directly. Our evaluation for all methods except for BC uses a suite of LLMs: Llama-3.1- 8b Instruct, DeepSeek-V2-Lite (16b), DeepSeek-Coder-V2-Lite-Instruct (16b), and we report the highest accuracy achieved for each baseline to ensure the most competitive comparison. All results for ROTE were obtained using DeepSeek-Coder-V2-Lite-Instruct, while other baselines show the highest-performing model for each environment. Appendix A.7 provides a detailed breakdo"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=6",
+    "keyword": "validation",
+    "excerpt": "list of behaviors in Appendix A.1. For the partially observable Partnr environment, we used the LLM agents defined in (Chang et al., 2025) to generate state-action pairs for a robot assistant completing diverse tasks (i.e. “clean all toys in the bedroom”) from their “train” and “validation” datasets. In these datasets, states are represented as natural language scene graphs, and actions are high-level tools. Evaluation Protocol. We evaluate using two protocols: (1) single-step prediction, where given observations from timesteps 0 to t, the task is to predict the action at; and (2) multi-step prediction, where we iteratively predict actions ˆat, . . . , ˆat+10 conditioned on the ground-truth observed states o0, . . . , ot. For the BC model in Construction, we hold out 100 trajectories for e"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=6",
+    "keyword": "agent",
+    "excerpt": "Baselines. We compare ROTE against three baselines: Behavior Cloning (BC). In the Construction environment, the BC model is a neural network with an LSTM trained on pixel-based observations of agent trajectories (Rabinowitz et al., 2018); for Partnr, we fine-tuned Llama-3.1-8b to imitate a ground-truth LLM agent’s behaviors using a training set of (scene-graph, action) pairs (Chang et al., 2025). Automated Theory of Mind (AutoToM) (Zhang et al., 2025). AutoToM is a neuro-symbolic approach which uses LLMs to generate open-ended hypotheses about an agent’s beliefs, goals, and desires, then applies Bayesian Inverse Planning to find the most likely action. Naive LLM (NLLM). NLLM simply prompts an LLM with ob"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=6",
+    "keyword": "accuracy",
+    "excerpt": "y prompts an LLM with observed states and environment dynamics to predict the next action directly. Our evaluation for all methods except for BC uses a suite of LLMs: Llama-3.1- 8b Instruct, DeepSeek-V2-Lite (16b), DeepSeek-Coder-V2-Lite-Instruct (16b), and we report the highest accuracy achieved for each baseline to ensure the most competitive comparison. All results for ROTE were obtained using DeepSeek-Coder-V2-Lite-Instruct, while other baselines show the highest-performing model for each environment. Appendix A.7 provides a detailed breakdown of per-task and per-LLM accuracy for all methods, demonstrating our approach’s consistent success across different LLM model types. Dataset Generation. For the fully observable Construction environment, we hand- designed 10 distinct Finite State "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=7",
+    "keyword": "state",
+    "excerpt": "s more effectively than all other baselines (p < 0.001 in a two-sided t-test). against human predictions. For the first study, 10 participants were recruited to perform their interpretation of each of the 10 handcrafted FSMs without observing the ground-truth code, generating 30 state-action pairs/person/script. In a separate study, we recruited 25 humans to act as predictors. They were shown a human’s trajectory from t = 0 to t = 19 and the state at t = 20, and asked to predict its next five actions, from t = 20 to t = 24. We use the same setup for a third study to explore how well people predict the behavior of the ground-truth FSM’s next actions instead. We compared peoples’ prediction accuracy to ROTE and the other baselines to benchmark different behavior modeling algorithms. All stud"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=7",
+    "keyword": "correlation",
+    "excerpt": "e initial results were promising, a potential concern was that ROTE might simply be exploiting repetitive patterns, rather than learning the underlying policy. We investigated this by measuring how often an agent revisited a state or repeated an action. We found an extremely low correlation between ROTE’s accuracy and either of these metrics (0.303 for matching states, 0.064 for matching actions), confirms that ROTE is not exploiting simple data regularities. This finding, paired with ROTE’s strong multi-step performance, suggests that code-based representations can be effective for learning the underlying policies that enable robust, long-term predictions. How well does ROTE model and predict human behavior? Having established that ROTE’s code-based representations are effective in contro"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=7",
+    "keyword": "agent",
+    "excerpt": "BC AutoToM NLLM ROTE 0.00 0.22 0.44 0.66 Accuracy Generalization Accuracy Figure 4: ROTE demonstrates superior zero- shot generalization to novel environments in Construction. Without any additional condi- tioning on an agent’s behavior, the programs ROTE infers from one environment transfer to novel settings more effectively than all other baselines (p < 0.001 in a two-sided t-test). against human predictions. For the first study, 10 participants were recruited to perform their interpretation of each of the 10 handcrafted FSMs without observing the ground-truth code, generating 30 state-action pairs/person/script. In a separate study, we recruited 25 humans to act as predictors. They were shown a human’s trajectory from t = 0 to "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=7",
+    "keyword": "accuracy",
+    "excerpt": "BC AutoToM NLLM ROTE 0.00 0.22 0.44 0.66 Accuracy Generalization Accuracy Figure 4: ROTE demonstrates superior zero- shot generalization to novel environments in Construction. Without any additional condi- tioning on an agent’s behavior, the programs ROTE infers from one environment transfer to novel settings more effectively than all other baselines (p < 0.001 in a two-sided t-test). against human predictions. For the first study, 10 participants were recruited to perform their interpretation of each of the 10 handcrafted FSMs without observing the groun"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=8",
+    "keyword": "agent",
+    "excerpt": "on case, ROTE’s programmatic rep- resentations enable its multi-step compute cost to scale orders of magnitude more ef- ficiently than other approaches, making it better suited for long-horizon settings than other approaches for predicting individual behavior. ROTE against human agents performing 10 tasks in the Construction environment. As illustrated in Figure 3b, ROTE outperforms all baseline algorithms and achieves human- level predictive accuracy of next-step human actions. A deeper per-task accuracy analysis, shown in Figure 9, reveals that ROTE has greater accuracy than humans on some tasks with repetitive patterns, such as “move up if possible, otherwise down” or “move in an L-shape.” However, humans are still much better at anticipating scripts for tasks such as “patrol the grid c"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=8",
+    "keyword": "accuracy",
+    "excerpt": "er suited for long-horizon settings than other approaches for predicting individual behavior. ROTE against human agents performing 10 tasks in the Construction environment. As illustrated in Figure 3b, ROTE outperforms all baseline algorithms and achieves human- level predictive accuracy of next-step human actions. A deeper per-task accuracy analysis, shown in Figure 9, reveals that ROTE has greater accuracy than humans on some tasks with repetitive patterns, such as “move up if possible, otherwise down” or “move in an L-shape.” However, humans are still much better at anticipating scripts for tasks such as “patrol the grid clockwise” and goal-directed tasks such as “move all pink blocks to the corner of the grid.” This gap highlights that while the code produced by ROTE is expressive enou"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "state",
+    "excerpt": "impact of imposing different degrees of structural constraints on ROTE’s program generation, inspired by methods for inferring reward functions (Yu et al., 2023). We evaluated three variants: “Light” (assuming agents are FSMs without providing examples), “Moderate” (defining FSM states explicitly but allowing open-ended code), and “Severe” (a two-stage process converting natural language predictions of FSMs into code). Our previous results were based on the “Light” condition. The optimal level of structure, however, varied by environment, as shown in Figure 13. In the Construction environment, where agents followed predictable FSMs, the Severe approach performed as well as others. This suggests that for predictable, rote behaviors, an explicitly structured representation can be just as eff"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "program synthesis",
+    "excerpt": "-directed, which allows for flexible prediction across different scenarios. Future work could use meta-reinforcement learning to dynamically select the appropriate level of representational structure based on the task. 6 Discussion In this work, we framed behavior inference as a program synthesis problem, showing that our approach, ROTE, can accurately and efficiently predict the actions of machines and real people in complex environments. ROTE offers a scalable alternative to traditional methods that require extensive datasets or significant computational resources. This has immediate implications for domains where real-time adaptability and interpretability are crucial, such as with caregiver robots that could use ROTE’s representations to anticipate daily routines. Limitations: While ou"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "reward",
+    "excerpt": "he initial set of candidate hypotheses increased, suggesting that the initial diversity provided by the LLM is often sufficient. Lastly, we analyzed the impact of imposing different degrees of structural constraints on ROTE’s program generation, inspired by methods for inferring reward functions (Yu et al., 2023). We evaluated three variants: “Light” (assuming agents are FSMs without providing examples), “Moderate” (defining FSM states explicitly but allowing open-ended code), and “Severe” (a two-stage process converting natural language predictions of FSMs into code). Our previous results were based on the “Light” condition. The optimal level of structure, however, varied by environment, as shown in Figure 13. In the Construction environment, where agents followed predictable FSMs, the Se"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "reinforcement learning",
+    "excerpt": "d for traditional Inverse Planning methods that can handle a wider range of states and tasks. These findings reveal a gradient of agentic representations, from automatic to goal-directed, which allows for flexible prediction across different scenarios. Future work could use meta-reinforcement learning to dynamically select the appropriate level of representational structure based on the task. 6 Discussion In this work, we framed behavior inference as a program synthesis problem, showing that our approach, ROTE, can accurately and efficiently predict the actions of machines and real people in complex environments. ROTE offers a scalable alternative to traditional methods that require extensive datasets or significant computational resources. This has immediate implications for domains where"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "agent",
+    "excerpt": "sity provided by the LLM is often sufficient. Lastly, we analyzed the impact of imposing different degrees of structural constraints on ROTE’s program generation, inspired by methods for inferring reward functions (Yu et al., 2023). We evaluated three variants: “Light” (assuming agents are FSMs without providing examples), “Moderate” (defining FSM states explicitly but allowing open-ended code), and “Severe” (a two-stage process converting natural language predictions of FSMs into code). Our previous results were based on the “Light” condition. The optimal level of structure, however, varied by environment, as shown in Figure 13. In the Construction environment, where agents followed predictable FSMs, the Severe approach performed as well as others. This suggests that for predictable, rote"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=9",
+    "keyword": "accuracy",
+    "excerpt": ", and 5, this illustrates that code-based representations can balance predictive power with prediction efficiency. What is the relationship between ROTE’s core components and its predictive performance? To understand how ROTE achieves its superior generalization and human- level accuracy, we conducted a series of ablation studies on its core components. We found that ROTE’s two-stage observation parsing, which converts observations into a natural language description before generating code, had a minimal effect on accuracy for the FSM and human gameplay datasets in Construction (Figure 11). However, this process significantly hurt performance in Partnr. This is likely because Partnr’s observations are already rich scene graphs (Chang et al., 2025), and the abstraction step removes crucial "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=10",
+    "keyword": "state",
+    "excerpt": "ms. Lastly, unlike traditional Theory of Mind approaches that predict beliefs and goals, our work focuses solely on action prediction. If we view beliefs as dispositions to act (Ramsey & Moore, 1927; Ryle, 1949), predicting a distribution over an agent’s internal decision-making states and logic for transitioning between them is functionally equivalent to belief inference. That said, further research is needed to empirically validate whether the structure of ROTE’s inferred programs aligns with how humans intuitively reason about others’ mental states. 7 Acknowledgements We would like to thank the Cooperative AI Foundation, the Foresight Institute, the UW- Amazon Science Gift Hub, the Sony Research Award Program, UW-Tsukuba Amazon NVIDIA Cross Pacific AI Initiative (XPAI), the Microsoft Ac"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=10",
+    "keyword": "behavioral program",
+    "excerpt": "for behavioral program inference impacts prediction quality in more sophisticated scenarios, such as modeling team coordination in workplaces or norm enforcement on social platforms. Lastly, unlike traditional Theory of Mind approaches that predict beliefs and goals, our work focuses solely on action prediction. If we view beliefs as dispositions to act (Ramsey & Moore, 1927; Ryle, 1949), predicting a distribution over an agent’s internal decision-making states and logic for transitioning between them is functionally e"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=10",
+    "keyword": "reinforcement learning",
+    "excerpt": "ocial Reinforcement Lab and the Computational Minds and Machines Lab, as well as Guy Davidson, Tan Zhi-Xuan, and Tomer Ullman for inspiring conversations and insights during the course of this project. References Pieter Abbeel and Andrew Y Ng. Apprenticeship learning via inverse reinforcement learning. In Proceedings of the twenty-first international conference on Machine learning, pp. 1, 2004. David Abel, André Barreto, Benjamin Van Roy, Doina Precup, Hado van Hasselt, and Satinder Singh. A definition of continual reinforcement learning, 2023a. URL https: //arxiv.org/abs/2307.11046. David Abel, André Barreto, Hado van Hasselt, Benjamin Van Roy, Doina Precup, and Satinder Singh. On the convergence of bounded agents, 2023b. URL https://arxiv. org/abs/2307.11044. Robert Axelrod. Effective Ch"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=10",
+    "keyword": "agent",
+    "excerpt": "orm enforcement on social platforms. Lastly, unlike traditional Theory of Mind approaches that predict beliefs and goals, our work focuses solely on action prediction. If we view beliefs as dispositions to act (Ramsey & Moore, 1927; Ryle, 1949), predicting a distribution over an agent’s internal decision-making states and logic for transitioning between them is functionally equivalent to belief inference. That said, further research is needed to empirically validate whether the structure of ROTE’s inferred programs aligns with how humans intuitively reason about others’ mental states. 7 Acknowledgements We would like to thank the Cooperative AI Foundation, the Foresight Institute, the UW- Amazon Science Gift Hub, the Sony Research Award Program, UW-Tsukuba Amazon NVIDIA Cross Pacific AI In"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=11",
+    "keyword": "reward",
+    "excerpt": "bining functional and automata synthesis to discover causal reactive programs. Proc. ACM Program. Lang., 7(POPL), January 2023. doi: 10.1145/3571249. URL https://doi.org/ 10.1145/3571249. Guy Davidson, Graham Todd, Julian Togelius, Todd M. Gureckis, and Brenden M. Lake. Goals as reward-producing programs. Nature Machine Intelligence, 7(2):205–220, February 2025. ISSN 2522-5839. doi: 10.1038/s42256-025-00981-4. URL https://doi.org/10. 1038/s42256-025-00981-4. Pim de Haan, Dinesh Jayaraman, and Sergey Levine. Causal confusion in imitation learning, 2019. URL https://arxiv.org/abs/1905.11979. D. C. Dennett. Content and consciousness. International library of philosophy and scientific method. Routledge & Kegan Paul [u.a.], London, reprinted edition, 1972. ISBN 978-0- 7100-6512-4. D. C. Dennett"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=11",
+    "keyword": "reinforcement learning",
+    "excerpt": "(1-2):57–83, January 2002. ISSN 00043702. doi: 10.1016/S0004-3702(01)00129-1. URL https://linkinghub.elsevier.com/retrieve/pii/S0004370201001291. Wilka Carvalho, Vikram Goddla, Ishaan Sinha, Hoon Shin, and Kunal Jha. Nicewebrl: a python library for human subject experiments with reinforcement learning environments, 2025. URL https://arxiv.org/abs/2508.15693. Matthew Chang, Gunjan Chhablani, Alexander Clegg, Mikael Dallaire Cote, Ruta Desai, Michal Hlavac, Vladimir Karashchuk, Jacob Krantz, Roozbeh Mottaghi, Priyam Parashar, Siddharth Patki, Ishita Prasad, Xavier Puig, Akshara Rai, Ram Ramrakhya, Daniel Tran, Joanne Truong, John M. Turner, Eric Undersander, and Tsung-Yen Yang. Partnr: A benchmark for planning and reasoning in embodied multi-agent tasks. In International Conference on Learni"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=11",
+    "keyword": "agent",
+    "excerpt": "arashchuk, Jacob Krantz, Roozbeh Mottaghi, Priyam Parashar, Siddharth Patki, Ishita Prasad, Xavier Puig, Akshara Rai, Ram Ramrakhya, Daniel Tran, Joanne Truong, John M. Turner, Eric Undersander, and Tsung-Yen Yang. Partnr: A benchmark for planning and reasoning in embodied multi-agent tasks. In International Conference on Learning Representations (ICLR), 2025. alphabetical author order. Paul Christiano, Jan Leike, Tom B. Brown, Miljan Martic, Shane Legg, and Dario Amodei. Deep reinforcement learning from human preferences, 2023. URL https://arxiv.org/ abs/1706.03741. Yun-Shiuan Chuang, Hsin-Yi Hung, Edwinn Gamborino, Joshua Oon Soo Goh, Tsung-Ren Huang, Yu-Ling Chang, Su-Ling Yeh, and Li-Chen Fu. Using machine theory of mind to learn agent social network structures from observed interactiv"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=11",
+    "keyword": "causal",
+    "excerpt": "l K. Cohen, Elliot Catt, and Marcus Hutter. A strongly asymptotically optimal agent in general environments, 2019. URL https://arxiv.org/abs/1903.01021. Ria Das, Joshua B. Tenenbaum, Armando Solar-Lezama, and Zenna Tavares. Combining functional and automata synthesis to discover causal reactive programs. Proc. ACM Program. Lang., 7(POPL), January 2023. doi: 10.1145/3571249. URL https://doi.org/ 10.1145/3571249. Guy Davidson, Graham Todd, Julian Togelius, Todd M. Gureckis, and Brenden M. Lake. Goals as reward-producing programs. Nature Machine Intelligence, 7(2):205–220, February 2025. ISSN 2522-5839. doi: 10.1038/s42256-025-00981-4. URL https://doi.org/10. 1038/s42256-025-00981-4. Pim de Haan, Dinesh Jayaraman, and Sergey Levine. Causal confusion in imitation learning, 2019. URL https://ar"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=12",
+    "keyword": "state",
+    "excerpt": "Zhengrong Xue, and Jia Liu. Atom-bot: Embodied fulfillment of unspoken human needs with affective theory of mind. arXiv preprint arXiv:2406.08455, 2024. Shi Dong, Benjamin Van Roy, and Zhengyuan Zhou. Simple agent, complex environment: Efficient reinforcement learning with agent states, 2021. URL https://arxiv.org/abs/ 2102.05261. Prashant Doshi and Piotr J Gmytrasiewicz. Monte Carlo sampling methods for approximating interactive POMDPs. Journal of Artificial Intelligence Research, 34:297–337, 2009. Hartry H. Field. Mental representation. Erkenntnis, 13(1):9–61, January 1978. ISSN 0165-0106, 1572-8420. doi: 10.1007/BF00160888. URL http://link.springer.com/10. 1007/BF00160888. Andrew Fuchs, Andrea Passarella, and Marco Conti. Modeling, replicating, and predicting human behavior: A survey. A"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=12",
+    "keyword": "reward",
+    "excerpt": "Michael Wooldridge. A notion of complexity for theory of mind via discrete world models, 2024. URL https://arxiv.org/abs/2406.11911. Thomas Icard. Resource rationality. Book manuscript, 434, 2023. Rodrigo Toro Icarte, Toryn Klassen, Richard Valenzano, and Sheila McIlraith. Using reward machines for high-level task specification and decomposition in reinforcement learning. In Jennifer Dy and Andreas Krause (eds.), Proceedings of the 35th International Conference on Machine Learning, volume 80 of Proceedings of Machine Learning Research, pp. 2107–2116. PMLR, 10–15 Jul 2018. URL https://proceedings.mlr.press/v80/icarte18a.html. Julian Jara-Ettinger and Yarrow Dunham. The institutional stance, Apr 2024. URL osf.io/preprints/psyarxiv/pefsx_v1. Kunal Jha, Tuan Anh Le, Chuanyang Jin, Yen-Ling Kuo"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=12",
+    "keyword": "reinforcement learning",
+    "excerpt": " Wei Ding, Fanhong Li, Ziteng Ji, Zhengrong Xue, and Jia Liu. Atom-bot: Embodied fulfillment of unspoken human needs with affective theory of mind. arXiv preprint arXiv:2406.08455, 2024. Shi Dong, Benjamin Van Roy, and Zhengyuan Zhou. Simple agent, complex environment: Efficient reinforcement learning with agent states, 2021. URL https://arxiv.org/abs/ 2102.05261. Prashant Doshi and Piotr J Gmytrasiewicz. Monte Carlo sampling methods for approximating interactive POMDPs. Journal of Artificial Intelligence Research, 34:297–337, 2009. Hartry H. Field. Mental representation. Erkenntnis, 13(1):9–61, January 1978. ISSN 0165-0106, 1572-8420. doi: 10.1007/BF00160888. URL http://link.springer.com/10. 1007/BF00160888. Andrew Fuchs, Andrea Passarella, and Marco Conti. Modeling, replicating, and pred"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=12",
+    "keyword": "agent",
+    "excerpt": "e. The MIT Press, Cambridge, MA, 1987. Wei Ding, Fanhong Li, Ziteng Ji, Zhengrong Xue, and Jia Liu. Atom-bot: Embodied fulfillment of unspoken human needs with affective theory of mind. arXiv preprint arXiv:2406.08455, 2024. Shi Dong, Benjamin Van Roy, and Zhengyuan Zhou. Simple agent, complex environment: Efficient reinforcement learning with agent states, 2021. URL https://arxiv.org/abs/ 2102.05261. Prashant Doshi and Piotr J Gmytrasiewicz. Monte Carlo sampling methods for approximating interactive POMDPs. Journal of Artificial Intelligence Research, 34:297–337, 2009. Hartry H. Field. Mental representation. Erkenntnis, 13(1):9–61, January 1978. ISSN 0165-0106, 1572-8420. doi: 10.1007/BF00160888. URL http://link.springer.com/10. 1007/BF00160888. Andrew Fuchs, Andrea Passarella, and Marco "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=13",
+    "keyword": "reward",
+    "excerpt": "einforcement learning, 2013. URL https://arxiv.org/abs/1308.4828. Jan Leike. Nonparametric general reinforcement learning, 2016. URL https://arxiv.org/ abs/1611.08944. Andrew C. Li, Zizhao Chen, Toryn Q. Klassen, Pashootan Vaezipoor, Rodrigo Toro Icarte, and Sheila A. McIlraith. Reward machines for deep rl in noisy and uncertain environments, 2025. URL https://arxiv.org/abs/2406.00120. Jacky Liang, Wenlong Huang, Fei Xia, Peng Xu, Karol Hausman, Brian Ichter, Pete Florence, and Andy Zeng. Code as policies: Language model programs for embodied control, 2023. URL https://arxiv.org/abs/2209.07753. Falk Lieder and Thomas L Griffiths. Resource-rational analysis: Understanding human cognition as the optimal use of limited computational resources. Behavioral and brain sciences, 43:e1, 2020. David"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=13",
+    "keyword": "reinforcement learning",
+    "excerpt": "ion with a bayesian theory of mind. Proceedings of the National Academy of Sciences, 122(25), June 2025. ISSN 1091-6490. doi: 10.1073/pnas.2400993122. URL http://dx.doi.org/10.1073/pnas.2400993122. Tor Lattimore, Marcus Hutter, and Peter Sunehag. The sample-complexity of general reinforcement learning, 2013. URL https://arxiv.org/abs/1308.4828. Jan Leike. Nonparametric general reinforcement learning, 2016. URL https://arxiv.org/ abs/1611.08944. Andrew C. Li, Zizhao Chen, Toryn Q. Klassen, Pashootan Vaezipoor, Rodrigo Toro Icarte, and Sheila A. McIlraith. Reward machines for deep rl in noisy and uncertain environments, 2025. URL https://arxiv.org/abs/2406.00120. Jacky Liang, Wenlong Huang, Fei Xia, Peng Xu, Karol Hausman, Brian Ichter, Pete Florence, and Andy Zeng. Code as policies: Languag"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=13",
+    "keyword": "85",
+    "excerpt": "ngs. mlr.press/v139/malik21a.html. Aviv Netanyahu, Tianmin Shu, Boris Katz, Andrei Barbu, and Joshua B Tenenbaum. Phase: Physically-grounded abstract social events for machine social perception. In Proceedings of the aaai conference on artificial intelligence, volume 35, pp. 845–853, 2021. Allen Newell and Herbert Simon. The logic theory machine–a complex information processing system. IRE Transactions on information theory, 2(3):61–79, 1956. Allen Newell and Herbert A. Simon. Computer science as empirical inquiry: symbols and search. Commun. ACM, 19(3):113–126, March 1976. ISSN 0001-0782. doi: 10.1145/360018. 360022. URL https://doi.org/10.1145/360018.360022. Andrew Y Ng, Stuart Russell, et al. Algorithms for inverse reinforcement learning. In Icml, volume 1, pp. 2, 2000. 13 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=14",
+    "keyword": "reinforcement learning",
+    "excerpt": "Sriyash Poddar, Yanming Wan, Hamish Ivison, Abhishek Gupta, and Natasha Jaques. Personalizing reinforcement learning from human feedback with variational preference learning, 2024. URL https://arxiv.org/abs/2408.10075. Xavi Puig, Eric Undersander, Andrew Szot, Mikael Dallaire Cote, Ruslan Partsey, Jimmy Yang, Ruta Desai, Alexander William Clegg, Michal Hlavac, Tiffany Min, Theo Gervet, Vladimír Vondruš, Vincent-Pierre Berges, John Turner, Oleksandr Maksymets, Zsolt Kira, Mrinal Kalakrishnan, Jitendra Malik, Devendra Singh Chaplot, Unnat Jain, Dhruv Batra, Akshara Rai, and Roozbeh Mottaghi. Habitat 3.0: A co"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=14",
+    "keyword": "agent",
+    "excerpt": "tary Volume, 7(1):153–206, 1927. doi: 10.1093/aristoteliansupp/7.1.153. Bharanee Rathnasabapathy, Prashant Doshi, and Piotr Gmytrasiewicz. Exact solutions of interactive pomdps using behavioral equivalence. In Proceedings of the fifth international joint conference on Autonomous agents and multiagent systems, pp. 1025–1032, 2006. Gilbert Ryle. The concept of mind. British Journal for the Philosophy of Science, 1(4): 328–332, 1949. Roger C. Schank and Robert P. Abelson. Scripts, Plans, Goals, and Understanding. Psy- chology Press, 0 edition, May 2013. ISBN 978-1-134-91966-6. doi: 10.4324/9780203781036. URL https://www.taylorfrancis.com/books/9781134919666. Iris Rubi Seaman, Jan-Willem van de Meent, and David Wingate. Nested reasoning about autonomous agents using probabilistic programs. arX"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=14",
+    "keyword": "85",
+    "excerpt": " in groups through inverse planning. In Proceedings of the AAAI conference on artificial intelligence, volume 33, pp. 6163–6170, 2019. Joar Skalse and Alessandro Abate. Quantifying the sensitivity of inverse reinforcement learning to misspecification. arXiv preprint arXiv:2403.06854, 2024. Ray Solomonoff. Complexity-based induction systems: comparisons and convergence theo- rems. IEEE transactions on Information Theory, 24(4):422–432, 1978. Ray Solomonoff. Does algorithmic probability solve the problem of induction. Oxbridge Research, POB, 391887, 1996. Ray J Solomonoff. A formal theory of inductive inference. part i. Information and control, 7 (1):1–22, 1964. Haotian Sun, Yuchen Zhuang, Lingkai Kong, Bo Dai, and Chao Zhang. Adaplanner: Adaptive planning from feedback with language models,"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=15",
+    "keyword": "reward",
+    "excerpt": " https://doi.org/10.1016/j.neuron.2023.01.023. Publisher: Elsevier. Faraz Torabi, Garrett Warnell, and Peter Stone. Behavioral cloning from observation, 2018. URL https://arxiv.org/abs/1805.01954. Rodrigo Toro Icarte, Toryn Q. Klassen, Richard Valenzano, and Sheila A. McIlraith. Reward machines: Exploiting reward function structure in reinforcement learning. Journal of Artificial Intelligence Research, 73:173–208, January 2022. ISSN 1076-9757. doi: 10.1613/ jair.1.12440. URL http://dx.doi.org/10.1613/jair.1.12440. Trieu H. Trinh, Yuhuai Wu, Quoc V. Le, He He, and Thang Luong. Solving olympiad geometry without human demonstrations. Nature, 625(7995):476–482, January 2024. ISSN 1476-4687. doi: 10.1038/s41586-023-06747-5. URL https://doi.org/10.1038/ s41586-023-06747-5. Dweep Trivedi, Jesse Z"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=15",
+    "keyword": "reinforcement learning",
+    "excerpt": "Momchil S. Tomov, Pedro A. Tsividis, Thomas Pouncy, Joshua B. Tenenbaum, and Samuel J. Gershman. The neural architecture of theory-based reinforcement learning. Neuron, 111 (8):1331–1344.e8, April 2023. ISSN 0896-6273. doi: 10.1016/j.neuron.2023.01.023. URL https://doi.org/10.1016/j.neuron.2023.01.023. Publisher: Elsevier. Faraz Torabi, Garrett Warnell, and Peter Stone. Behavioral cloning from observation, 2018. URL https://arxiv.org/abs/1805.01954. Rodrigo Toro Icarte, Toryn Q. Klassen, Richard Valenzano, and Sheila A. McIlraith. Reward machines: Exploiting reward function structure in reinforcement learning. Journal of Artificial Intelligence Rese"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=15",
+    "keyword": "agent",
+    "excerpt": "ta-adversarial inverse reinforcement learning for decision-making tasks, 2021. URL https://arxiv.org/abs/2103.12694. Rose E. Wang, Sarah A. Wu, James A. Evans, Joshua B. Tenenbaum, David C. Parkes, and Max Kleiman-Weiner. Too many cooks: Bayesian inference for coordinating multi-agent collaboration, 2020. URL https://arxiv.org/abs/2003.11778. Alex Wilf, Sihyun Shawn Lee, Paul Pu Liang, and Louis-Philippe Morency. Think twice: Perspective-taking improves large language models’ theory-of-mind capabilities, 2023. URL https://arxiv.org/abs/2311.10227. Lionel Wong, Gabriel Grand, Alexander K. Lew, Noah D. Goodman, Vikash K. Mansinghka, Jacob Andreas, and Joshua B. Tenenbaum. From word models to world models: Translating from natural language to the probabilistic language of thought, 2023a. URL "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=15",
+    "keyword": "85",
+    "excerpt": "L https: //arxiv.org/abs/2306.12672. Lionel Wong, Jiayuan Mao, Pratyusha Sharma, Zachary S. Siegel, Jiahai Feng, Noa Korneev, Joshua B. Tenenbaum, and Jacob Andreas. Learning adaptive planning representations with natural language guidance, 2023b. URL https://arxiv.org/abs/2312.08566. 15 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=16",
+    "keyword": "state",
+    "excerpt": "eiyu Zhu and Reid Simmons. Bootstrapping cognitive agents with a large language model, 2024. URL https://arxiv.org/abs/2403.00810. A Appendix A.1 Ground Truth Agent Behaviors for Construction For research question 1 in Section 5, we hand designed 10 agents, represented as Finite State Machines, to engage in diverse behaviors. The agents varied in complexity, with some using sophisticated A-star search to achieve a goal, and others using faster, less resource-intensive planning heuristics, namely the Manhattan distance as an approximation of how valuable an action is for an agent looking to move to a target location. We summarize the behaviors and internal decision making states for all agents below: 16 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=16",
+    "keyword": "alignment",
+    "excerpt": "hu. Siftom: Robust spoken instruction following through theory of mind. arXiv preprint arXiv:2409.10849, 2024. Lance Ying, Kunal Jha, Shivam Aarya, Joshua B. Tenenbaum, Antonio Torralba, and Tianmin Shu. Goma: Proactive embodied cooperative communication via goal-oriented mental alignment, 2025. URL https://arxiv.org/abs/2403.11075. Wenhao Yu, Nimrod Gileadi, Chuyuan Fu, Sean Kirmani, Kuang-Huei Lee, Montse Gonzalez Arenas, Hao-Tien Lewis Chiang, Tom Erez, Leonard Hasenclever, Jan Humplik, Brian Ichter, Ted Xiao, Peng Xu, Andy Zeng, Tingnan Zhang, Nicolas Heess, Dorsa Sadigh, Jie Tan, Yuval Tassa, and Fei Xia. Language to rewards for robotic skill synthesis, 2023. URL https://arxiv.org/abs/2306.08647. Zhining Zhang, Chuanyang Jin, Mung Yao Jia, and Tianmin Shu. Autotom: Automated bayesian "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=16",
+    "keyword": "reward",
+    "excerpt": "od Gileadi, Chuyuan Fu, Sean Kirmani, Kuang-Huei Lee, Montse Gonzalez Arenas, Hao-Tien Lewis Chiang, Tom Erez, Leonard Hasenclever, Jan Humplik, Brian Ichter, Ted Xiao, Peng Xu, Andy Zeng, Tingnan Zhang, Nicolas Heess, Dorsa Sadigh, Jie Tan, Yuval Tassa, and Fei Xia. Language to rewards for robotic skill synthesis, 2023. URL https://arxiv.org/abs/2306.08647. Zhining Zhang, Chuanyang Jin, Mung Yao Jia, and Tianmin Shu. Autotom: Automated bayesian inverse planning and model discovery for open-ended theory of mind, 2025. URL https://arxiv.org/abs/2502.15676. Tan Zhi-Xuan, Jordyn L. Mann, Tom Silver, Joshua B. Tenenbaum, and Vikash K. Mans- inghka. Online bayesian goal inference for boundedly-rational planning agents, 2020. URL https://arxiv.org/abs/2006.07532. Tan Zhi-Xuan, Lance Ying, Vikash"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=16",
+    "keyword": "reinforcement learning",
+    "excerpt": " Wood. Habits, goals, and effective behavior change. Current Directions in Psychological Science, 33(4):226–232, 2024. doi: 10.1177/09637214241246480. URL https://doi.org/10.1177/09637214241246480. Markus Wulfmeier, Peter Ondruska, and Ingmar Posner. Maximum entropy deep inverse reinforcement learning, 2016. URL https://arxiv.org/abs/1507.04888. Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. React: Synergizing reasoning and acting in language models, 2023. URL https://arxiv.org/abs/2210.03629. Mustafa Yildirim, Barkin Dagda, Vinal Asodia, and Saber Fallah. Behavioral cloning models reality check for autonomous driving, 2024. URL https://arxiv.org/abs/2409.07218. Lance Ying, Jason Xinyu Liu, Shivam Aarya, Yizirui Fang, Stefanie Tellex, Joshua B T"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=16",
+    "keyword": "agent",
+    "excerpt": "ated bayesian inverse planning and model discovery for open-ended theory of mind, 2025. URL https://arxiv.org/abs/2502.15676. Tan Zhi-Xuan, Jordyn L. Mann, Tom Silver, Joshua B. Tenenbaum, and Vikash K. Mans- inghka. Online bayesian goal inference for boundedly-rational planning agents, 2020. URL https://arxiv.org/abs/2006.07532. Tan Zhi-Xuan, Lance Ying, Vikash Mansinghka, and Joshua B Tenenbaum. Pragmatic instruction following and goal assistance via cooperative language-guided inverse planning. arXiv preprint arXiv:2402.17930, 2024. Weichao Zhou and Wenchao Li. A hierarchical bayesian approach to inverse reinforcement learning with symbolic reward machines, 2022. URL https://arxiv.org/abs/2204. 09772. Chuning Zhu, Raymond Yu, Siyuan Feng, Benjamin Burchfiel, Paarth Shah, and Abhishek Gu"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=17",
+    "keyword": "state",
+    "excerpt": " blocks in its inventory. 8. Transport Green: Here, the agent uses A-star search to move towards a green block and pick it up. Then, it uses A-star search to move the green block as close to an empty corner grid cell. 9. Snake Patrol: This agent has four internal decision-making states: 1) Moving down/right, where the agent moves right until it cannot any more, then moves down one step; 2) Moving down/left, where the agent moves left until it cannot any more, then moves down one step; 3) Moving up/right, where the agent moves right until it cannot any more, then moves up one step; 4) Moving up/left, where the agent moves left until it cannot any more, then moves up one step. The resulting pattern appears like a snake moving throughout the grid. 10. Up/Down Patrol: The agent will move up un"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=17",
+    "keyword": "agent",
+    "excerpt": "1. Block Cycle: Using the manhattan distance as the planning heuristic, move from the green block to the blue block to the purple block to the green block and so on. If the agent ever has a block in its inventory, it will immediately drop it and resume its cycling behavior. 2. Clockwise Patrol: If an agent is not along the outermost wall of the grid, it will repeatedly alternate between moving left and moving up until it hits a wall. Then, it will follow the wall clockwise: if there is a wall above it, the agent will move right repeatedly until it hits a wall, then repeats this process for going down, left, up and right again. If the agent ever has a block in its inventory, it will im"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=17",
+    "keyword": "accuracy",
+    "excerpt": "l: The agent will move up until it hits a wall, then will move down until it hits a wall, and repeat this process. If the agent ever has a block in its inventory, it will immediately drop it and resume its patrolling behavior. A.2 Human Results Breakdown In Figure 8, we show the accuracy for ROTE compared to humans when predicting FSM behavior in Construction. An example of some of the task are shown in Figure 7. In Figure 9, we show the accuracy for ROTE compared to humans when predicting Human behavior in Construction. We find that humans excel at predicting goal-directed tasks while our method performs better with repetitive tasks, although all of the variance in predictive accuracy cannot be captured by this distinction. In subsequent followups, we plan to do a greater 17 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=18",
+    "keyword": "agent",
+    "excerpt": "Cycle Between Purple à Green à Blue Move in an ‘L’-shape Snake through the environment Figure 7: Example scripts from Construction. We designed a suite of goal-directed (planner- based) and automatic (heuristic-based) agentic behaviors, from patrolling to transporting spe- cific blocks to a location. 0.0 0.2 0.4 0.6 0.8 1.0 Accuracy block_cycle clockwise_patrol counter_patrol left_right pair_blue patrol_with_a_star pattern_l pickup_green_a_star snake up_down FSM ID Accuracy by FSM ID and Model Human ROTE NLLM AutoToM BC Figure 8: Per-task accuracy comparison between different methods predicting ground truth FSM gameplay. 18 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=18",
+    "keyword": "accuracy",
+    "excerpt": " ‘L’-shape Snake through the environment Figure 7: Example scripts from Construction. We designed a suite of goal-directed (planner- based) and automatic (heuristic-based) agentic behaviors, from patrolling to transporting spe- cific blocks to a location. 0.0 0.2 0.4 0.6 0.8 1.0 Accuracy block_cycle clockwise_patrol counter_patrol left_right pair_blue patrol_with_a_star pattern_l pickup_green_a_star snake up_down FSM ID Accuracy by FSM ID and Model Human ROTE NLLM AutoToM BC Figure 8: Per-task accuracy comparison between different methods predicting ground truth FSM gameplay. 18 "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=19",
+    "keyword": "accuracy",
+    "excerpt": "0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 Accuracy Repeat green-->blue-->purple Patrol Clockwise Patrol Counter-clockwise Left to right Pair blue blocks L-shape Green to corner Pink to corner Snake up and down Up and down FSM ID Accuracy by FSM ID and Model Human ROTE NLLM AutoToM BC Figure 9: Per-task accuracy comparison between different methods predicting human game- play. While ROTE succeeds at more routine tasks, humans excel in predicting more goal directed behaviors. exploration of the different error modes of humans and other models, as well as sca"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=20",
+    "keyword": "state",
+    "excerpt": " to be a more effective strategy, since this effectively augments the number of programs considered. Figure 13 reveals an interesting gradient along which different degrees of structure influence ROTE’s ability to predict behaviors. In controlled settings where agents are Finite State Machines following deterministic transitions between behaviors, increasing the amount of structure used to predict what they will do next does not significantly harm performance. This can be a useful inductive bias that reduces cognitive load for agents interacting with systems that require prediction in order to effectively interact with, such as a thermostat, but are nevertheless simple enough to represent as a series of rules. In the human-behavior setting, this does not hold as well. We find a moderate am"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=20",
+    "keyword": "probabilistic inference",
+    "excerpt": "rvations, which are already in natural language, contain critical information on the data structures they are represented as that abstraction removes. Figure 12 demonstrates the benefits of different inference algorithms in ROTE. While ROTE is not very sensitive to the choice of probabilistic inference method used as it has more candidate agent programs, if agents are constrained by the number of hypotheses they can maintain, performing SMC with rejuvenation proves to be a more effective strategy, since this effectively augments the number of programs considered. Figure 13 reveals an interesting gradient along which different degrees of structure influence ROTE’s ability to predict behaviors. In controlled settings where agents are Finite State Machines following deterministic transitions "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=20",
+    "keyword": "agent",
+    "excerpt": "ical information on the data structures they are represented as that abstraction removes. Figure 12 demonstrates the benefits of different inference algorithms in ROTE. While ROTE is not very sensitive to the choice of probabilistic inference method used as it has more candidate agent programs, if agents are constrained by the number of hypotheses they can maintain, performing SMC with rejuvenation proves to be a more effective strategy, since this effectively augments the number of programs considered. Figure 13 reveals an interesting gradient along which different degrees of structure influence ROTE’s ability to predict behaviors. In controlled settings where agents are Finite State Machines following deterministic transitions between behaviors, increasing the amount of structure used to"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=20",
+    "keyword": "bias",
+    "excerpt": "edict behaviors. In controlled settings where agents are Finite State Machines following deterministic transitions between behaviors, increasing the amount of structure used to predict what they will do next does not significantly harm performance. This can be a useful inductive bias that reduces cognitive load for agents interacting with systems that require prediction in order to effectively interact with, such as a thermostat, but are nevertheless simple enough to represent as a series of rules. In the human-behavior setting, this does not hold as well. We find a moderate amount of structure, where providing more detailed examples about what the internal mechanisms of the observed agent look like without forcing ROTE to generate code following that structure, performs the best. These se"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=20",
+    "keyword": "accuracy",
+    "excerpt": "Organizing Items Moving Objects Across Rooms Interacting With Objects Cluster 0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 Accuracy Model BC AutoToM NLLM ROTE Figure 10: Task-specific generalization in Partnr. We used Llama-3.1-8B-Instruct to cluster our prediction tasks into three distinct categories. We report the mean accuracy and standard error (SE bars) for each algorithm. While baselines like AutoToM and Behavior Cloning perform adequately on tasks involving object manipulation, they struggle with more complex interactions. ROTE, however, maintains performance on these more intricate problems. A.4 Model Component Analysis We show"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=21",
+    "keyword": "accuracy",
+    "excerpt": "0 10 20 30 # of Hypotheses 0.2 0.4 Accuracy Construction Dataset 0 10 20 30 # of Hypotheses 0.2 0.3 Accuracy Human Dataset 0 10 20 30 # of Hypotheses 0.25 0.50 Accuracy Partnr Dataset ROTE w/ 2-stage ROTE w/o 2-stage Figure 11: Ablating Observation Parsing 0 10 20 30 # of Hypotheses 0.2 0.4 Accuracy Construction Dataset 0 10 20 30 # of Hypotheses 0.2 0.3 Accuracy Human Dataset 0 10 20 30 # of Hypotheses 0.1 0.2 0.3 Accuracy Partnr Dataset ROTE w/ Rejuvenation ROTE w/ Importance Sampling Figure 12: Ablating Inference Algorithm 0 10 20 30 # of Hypothe"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=22",
+    "keyword": "agent",
+    "excerpt": "ngth 3800 4000 Program Length Accuracy Program Length Figure 14: Average program length (in characters) versus prediction accuracy as a function of the number of generated hypotheses for Construction and Partnr. Shorter programs yield higher accuracy for scripted, human, and LLM agents. 0 10 20 30 # of Hypotheses 0.2 0.4 Accuracy Construction Dataset 0 10 20 30 # of Hypotheses 0.2 0.3 Accuracy Human Dataset 0 10 20 30 # of Hypotheses 0.2 0.3 Accuracy Partnr Dataset ROTE (K=1) ROTE (K=10) ROTE (K=30) Figure 15: Top-k parameter analysis in Construction. No appreciable difference in accuracy as a result of different parameters, suggesting the choice between uncertainty preservation (maintaining a larger set of hypotheses from a larger k) and prediction speed (by executing less programs with a"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=22",
+    "keyword": "accuracy",
+    "excerpt": "0 20 # of Hypotheses 0.25 0.30 0.35 Accuracy Construction Dataset 0 20 # of Hypotheses 0.175 0.200 0.225 Accuracy Human Dataset 0 20 # of Hypotheses 0.10 0.15 0.20 Accuracy Partnr Dataset 4200 4300 4400 Program Length 4200 4400 Program Length 3800 4000 Program Length Accuracy Program Length Figure 14: Average program length (in characters) versus prediction accuracy as a function of the number of generated hypotheses for Construction and Partnr. Shorter programs yield higher accuracy for scripted, human, and LLM agents. 0 10 20 30 # of Hypotheses 0.2"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=23",
+    "keyword": "agent",
+    "excerpt": "ROTE (severe) 0.304 ± 0.022 0.230 ± 0.018 0.245 ± 0.026 ROTE (two-stage) 0.329 ± 0.031 0.209 ± 0.014 0.327 ± 0.026 Table 2: Multi-step LLM results (with standard error) for Human Gameplay Data Prediction in Construction. data, and the third was having humans predict scripted FSM agent behavior. We will open-source all of the code and stimuli used for conducting all three human experiments. For the gameplay collection, we gave participants a tutorial stage to learn the controls, and randomized the order of the tasks they played to control for ordering effects. For the behavior prediction experiments, the setup was virtually identical to that of the AI, albeit with two small modifications. The first is that we only had humans predict five timesteps into the future. This was done to make the "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=24",
+    "keyword": "agent",
+    "excerpt": ".170 ± 0.022 ROTE (light) 0.537 ± 0.029 – 0.439 ± 0.066 ROTE (moderate) 0.472 ± 0.029 0.026 ± 0.026 0.426 ± 0.051 ROTE (severe) 0.440 ± 0.029 – 0.510 ± 0.072 ROTE (two-stage) 0.160 ± 0.021 0.114 ± 0.055 0.112 ± 0.034 Table 3: Single-step LLM results (with standard error) for LLM Agent Gameplay Data Prediction in Partnr. The features extracted by the ResNet are then passed through a recurrent neural network. The model uses an LSTM with a hidden size of 128. The output of the LSTM is processed by several fully connected layers with ReLU activations. The final output is passed through a softmax layer to produce a probability distribution over the possible actions. This probability distribution represents the model’s prediction of the next action an agent will take. The action space has a size"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=25",
+    "keyword": "agent",
+    "excerpt": "bability The minimum probability an ac- tion can have. 1e-8 For our execution speed comparisons in Figure 6, all models ran on a single Nvidia GPU-L40. Handling Errors in Program Generation. Given that we are generating programs from smaller LLMs trying to adhere to a consistent Agent API, and that the observation space can be challenging to operate on, there are several cases where the LLMs generate semantically meaningful programs to describe observed behaviors that fail to compile or predict actions given an observation. As such, we explored two different methods for dealing with erroneous programs. The first was revision, where we prompted an LLM to fix the code it generated given the full error trace for a program’s prediction. We also gave it the original prompt and observations. The"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=26",
+    "keyword": "state",
+    "excerpt": ". A.10.2 Examples of Programs Generated By ROTE In Listings 1 and 2, we show sample agent programs inferred by ROTE for the Construction and Partnr tasks, respectively. Using the same prompts and hyperparameters for both settings, our approach can flexibly model agents as Finite State Machines when the underlying agents are following scripts (Construction, Listing 1) or more open-ended decision makers trying to accomplish goals such as move an item from one room to another (Partnr, Listing 2). 1 2 import numpy as np 3 4 class FSMAgent: 5 def __init__(self , num_agents: int , num_blocks: int , num_actions: int =6): 6 self.num_agents = num_agents 7 self.num_blocks = num_blocks 8 self.num_actions = num_actions 9 self.actions = [0, 1, 2, 3, 4, 5] # stay , right , left , down , up , interact 10"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=26",
+    "keyword": "agent",
+    "excerpt": "oss the rejuvenation and error corrections steps. This increased the likelihood of a good program which is executable being generated, without significantly slowing our single-step inference speed. A.10.2 Examples of Programs Generated By ROTE In Listings 1 and 2, we show sample agent programs inferred by ROTE for the Construction and Partnr tasks, respectively. Using the same prompts and hyperparameters for both settings, our approach can flexibly model agents as Finite State Machines when the underlying agents are following scripts (Construction, Listing 1) or more open-ended decision makers trying to accomplish goals such as move an item from one room to another (Partnr, Listing 2). 1 2 import numpy as np 3 4 class FSMAgent: 5 def __init__(self , num_agents: int , num_blocks: int , num_"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=27",
+    "keyword": "state",
+    "excerpt": "39 40 if self.state == \"INTERACT\": 41 self.state = \"IDLE\" # Transition back to IDLE after interacting 42 return 5 # Interact action 43 44 def apply_action(self , location , action): 45 if action == 1: # right 46 return [location [0], location [1] + 1] 47 elif action == 2: # left 48 return [location [0], location [1] - 1] 49 elif action == 3: # down 50 return [location [0] + 1, location [1]] 51 elif action == 4: # up 52 return [location [0] - 1, location [1]] 53 else: 54 return location # stay 55 56 def is_wall(self , location , "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=27",
+    "keyword": "agent",
+    "excerpt": " 51 elif action == 4: # up 52 return [location [0] - 1, location [1]] 53 else: 54 return location # stay 55 56 def is_wall(self , location , wall_locations ): 57 for wall in wall_locations : 58 if np.array_equal(wall , location): 59 return True 60 return False 61 62 def is_other_agent(self , location , agent_locations , agent_id): 63 for i, agent_loc in enumerate( agent_locations ): 64 if i != agent_id and np.array_equal(agent_loc , location): 65 return True 66 return False Listing 1: Sample Agent Codes Inferred by ROTE for Construction prediction task 1 2 import numpy as np 3 4 class FSMAgent: 5 def __init__(self , num_agents: int=1, num_blocks: int =1): 6 self.num_agents = num_agents 7 self.num_blocks = num_blocks # irrelevant , can ignore 8 9 def parse_scene_graph (self , observation): "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=28",
+    "keyword": "state",
+    "excerpt": "h maps to a dictionary of 34 - object_id string (i.e. keys could be \" plate_container_2 \", \"vase_1\" etc.) to list of 35 - object_base string (i.e \"table_14\", \"table_21 \") 36 if type(observation[’scene_graph ’][’objects ’]) == list , then you do not observe any objects 37 - agent_state: Dictionary mapping to 38 - string of agent id (i.e. \"0\") maps to string describing what agent is doing 39 ’’’ 40 agent_id = list(observation[’agent_state ’]. keys ())[0] 41 agent_state = observation[’agent_state ’][ agent_id] 42 tool_list = observation[’tool_list ’] 43 44 if ’Explore ’ in tool_list: 45 tool = ’Explore ’ 46 target = list(observation[’scene_graph ’][’furniture ’]. keys ())[0] 47 elif ’Pick ’ in tool_list and ’Standing ’ in agent_state: 48 tool = ’Pick ’ 49 targets = [] 50 for key in observatio"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=28",
+    "keyword": "agent",
+    "excerpt": "\" which maps to a dictionary of 34 - object_id string (i.e. keys could be \" plate_container_2 \", \"vase_1\" etc.) to list of 35 - object_base string (i.e \"table_14\", \"table_21 \") 36 if type(observation[’scene_graph ’][’objects ’]) == list , then you do not observe any objects 37 - agent_state: Dictionary mapping to 38 - string of agent id (i.e. \"0\") maps to string describing what agent is doing 39 ’’’ 40 agent_id = list(observation[’agent_state ’]. keys ())[0] 41 agent_state = observation[’agent_state ’][ agent_id] 42 tool_list = observation[’tool_list ’] 43 44 if ’Explore ’ in tool_list: 45 tool = ’Explore ’ 46 target = list(observation[’scene_graph ’][’furniture ’]. keys ())[0] 47 elif ’Pick ’ in tool_list and ’Standing ’ in agent_state: 48 tool = ’Pick ’ 49 targets = [] 50 for key in obse"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=29",
+    "keyword": "agent",
+    "excerpt": "A.10.3 Examples of High Level Trajectory Summaries Generated by ROTE In Listings 3 and 4, we show sample high-level trajectory summarizations from the optional two-stage observation parsing step. While in 3 the model attributes the movements of the ground truth patrolling agent as “exploring randomly,” it still is able to capture some aspects of its movement, such as not interacting with blocks. In 4, ROTE can better summarize the behavior of agents in Partnr, but without a clear guess as to which objects the agent is trying to rearrange, it can be difficult to make a program which concisely narrows down the hypothesis space. 1 2 1. The agent ’s overall goal or strategy: The agent appears to be exploring its environment , possibly looking for a specific block or blocks. 3 It is not "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=30",
+    "keyword": "state",
+    "excerpt": "by an LLM as an intermediate step during the “Severe” structure condition, where ROTE tries to generate agent programs implementing these high-level behavioral abstractions. As indicated by Listing 6, sometimes the models will hallucinate internal states and actions which are not within an agent’s capabilities (i.e. introducing a “charge” state). As a result, the “Severe” condition is not always beneficial for model performance, especially when predicting the behaviors of goal-directed agents in partially observable settings (Figure 13). 1 2 ‘‘‘python 3 class AgentFSM: 4 def __init__(self): 5 self.state = ’explore ’ 6 7 def transition(self , state , action , info): 8 if state == ’explore ’: 9 if action == ’up ’: 10 return ’move_up ’, info 11 elif action == ’"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=30",
+    "keyword": "agent",
+    "excerpt": "by an LLM as an intermediate step during the “Severe” structure condition, where ROTE tries to generate agent programs implementing these high-level behavioral abstractions. As indicated by Listing 6, sometimes the models will hallucinate internal states and actions which are not within an agent’s capabilities (i.e. introducing a “charge” state). As a result, the “Severe” condition is not always beneficial for model performance, especially when predicting the behaviors of goal-directed agents in partially observable settings (Figure 13). 1 2 ‘‘‘python 3 class AgentFSM: 4 def __init__(self): 5 self.state = ’explore ’ "
+  },
+  {
+    "source": "2510.01272v1.pdf#page=31",
+    "keyword": "state",
+    "excerpt": "53 It repeatedly moves left and right and up and down , indicating a lack of Listing 5: Sample FSM Transition Logic Generated by ROTE for Construction prediction task (“Severe” Structure Condition) 1 To model the behavior of the agent in this environment , we can define a finite state machine (FSM) with the following states and transitions: 2 3 ** States :** 4 1. ** IDLE **: The agent is waiting or resting , possibly exploring its surroundings to identify potential tasks or resources. 5 2. ** SEARCH **: The agent is actively searching for specific objects or locations of interest , such as a target object to collect or a specific location to navigate to. 6 3. ** COLLECT **: The agent is moving towards and collecting the target object. 7 4. ** TRANSIT **: The agent is on its way to a design"
+  },
+  {
+    "source": "2510.01272v1.pdf#page=31",
+    "keyword": "agent",
+    "excerpt": "52 2. How the agent responds to different environmental features (blocks , walls): The agent moves around the environment , avoiding walls and seemingly indifferent to blocks. 53 It repeatedly moves left and right and up and down , indicating a lack of Listing 5: Sample FSM Transition Logic Generated by ROTE for Construction prediction task (“Severe” Structure Condition) 1 To model the behavior of the agent in this environment , we can define a finite state machine (FSM) with the following states and transitions: 2 3 ** States :"
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Shirley Wu * 1 Evelyn Choi * 1 Arpandeep Khatua * 1 Zhanghan Wang 2 Joy He-Yueya 1 Tharindu Cyril Weerasooriya 3 Wei Wei 3 Diyi Yang 1 Jure Leskovec∗∗1 James Zou∗∗1 ∗Equal Contribution ∗∗Equal Senior Supervision http://humanlm.stanford.edu/ (during training only) HumanLM User profile Context Ground-truth response Reasoning trace on latent states ②Latent states disagree with policy directly criticize … ③Alignment scores misalign with “brilliant” (sarcasm) align with user's qu"
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "latent state",
+    "excerpt": "anghan Wang 2 Joy He-Yueya 1 Tharindu Cyril Weerasooriya 3 Wei Wei 3 Diyi Yang 1 Jure Leskovec∗∗1 James Zou∗∗1 ∗Equal Contribution ∗∗Equal Senior Supervision http://humanlm.stanford.edu/ (during training only) HumanLM User profile Context Ground-truth response Reasoning trace on latent states ②Latent states disagree with policy directly criticize … ③Alignment scores misalign with “brilliant” (sarcasm) align with user's questioning ①State dimensions <stance> <communication> ④Simulated Response aligns with ground truth <response> Omg this is a disaster. How is this supposed to make any sense??? Amazing leaders, really. heartbreaking, people are losing their homes. and the “plan” is to cut the fire service funding 😢Yeah, brilliant. LLM Judge … empathy disagreement irritation sarcasm ✓ ✓ ✓ syn"
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Shirley Wu * 1 Evelyn Choi * 1 Arpandeep Khatua * 1 Zhanghan Wang 2 Joy He-Yueya 1 Tharindu Cyril Weerasooriya 3 Wei Wei 3 Diyi Yang 1 Jure Leskovec∗∗1 James Zou∗∗1 ∗Equal Contribution ∗∗Equal Senior Supervision http://humanlm.stanford.edu/ (during training only) HumanLM User profile Context Ground-truth response Reasoning trace on latent states ②Latent states disagree with policy directly criticize … ③Alignment scores misalign with “brilliant” (sarcasm) align with user's question"
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Shirley Wu * 1 Evelyn Choi * 1 Arpandeep Khatua * 1 Zhanghan Wang 2 Joy He-Yueya 1 Tharindu Cyril Weerasooriya 3 Wei Wei 3 Diyi Yang 1 Jure Leskovec∗∗1 James Zou∗∗1 ∗Equal Contribution ∗∗Equal Senior Supervision http://humanlm.stanford.edu/ (during training only) HumanLM User profile Context Ground-truth response Reasoning trace on latent states ②Latent states disagree with policy directly criticize … ③Alignment scores misalign with “brilliant” (sarcasm) align with user's questioning ①State dimen"
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "reinforcement learning",
+    "excerpt": "y grounded 1 state dimensions (e.g., stance, emotion), that lead to how users respond. For each state dimension, the model generates the corresponding 2 latent state (e.g., “empathy toward victims”), 3 scored by an LLM judge for consistency with the ground-truth response. During reinforcement learning, the model maximizes alignment scores on latent states to accurately reflect real users, in addition to directly improving the responses. When generating responses, the model generates reasoning traces with aligned latent states to synthesize 4 accurate responses. Abstract Large Language Models (LLMs) are increasingly used to simulate how specific users respond to any context, enabling more user-centric applications that rely on user feedback. However, existing user simulators mostly imitate "
+  },
+  {
+    "source": "2603.03303.pdf#page=1",
+    "keyword": "simulation",
+    "excerpt": " user responses to daily life issues, political blogs, and chat sessions with LLM assistants. Across the datasets, HUMANLM significantly outperforms the best alternative approaches by an average rel- ative improvement of 16.3% on alignment score from an LLM judge. In a real-time simulation study with 111 participants, HUMANLM achieves the highest scores on similarity with real user re- sponses and humanlikeness. 1. Introduction Simulating users using Large Language Models (LLMs) helps to understand how a target user group will respond to any input context, providing a scalable way to build human- 1Stanford University 2New York University 3Accenture. Correspondence to: <{shirwu,jure,jamesz}@cs.stanford.edu>. Preprint. March 5, 2026. 1 arXiv:2603.03303v1 [cs.CL] 7 Feb 2026 "
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Figure 2. Comparison between HUMANLM and Supervised Fine-Tuning (SFT). Given a training dataset, SFT learns to capture the frequent use of emojis of the user, resulting in an inaccurate response that misses the key points in the ground-truth response (cf. Figure 1) during evaluation. In contrast, HUMANLM explicitly learns to align along different state dimensions, generating latent states that reflect the user in the reasoning trace, which leads to a more accurate response. "
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "latent state",
+    "excerpt": "FT learns to capture the frequent use of emojis of the user, resulting in an inaccurate response that misses the key points in the ground-truth response (cf. Figure 1) during evaluation. In contrast, HUMANLM explicitly learns to align along different state dimensions, generating latent states that reflect the user in the reasoning trace, which leads to a more accurate response. We apply GRPO (Shao et al., 2024) for reinforcement learning, where an LLM judge is prompted to compare a batch of generated latent states under each state dimension (aka. rollouts) and give alignment scores for them at once, providing more precise rewards under fair comparisons. centric services and applications (Binz et al., 2025; Naous et al., 2025; Kolluri et al., 2025; Park et al., 2022). For ex- ample, policym"
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Figure 2. Comparison between HUMANLM and Supervised Fine-Tuning (SFT). Given a training dataset, SFT learns to capture the frequent use of emojis of the user, resulting in an inaccurate response that misses the key points in the ground-truth response (cf. Figure 1) during evaluation. In contrast, HUMANLM explicitly learns to align along different state dimensions, generating latent states that reflect the user in the reasoning trace, which leads to a more accurate response. We app"
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Figure 2. Comparison between HUMANLM and Supervised Fine-Tuning (SFT). Given a training dataset, SFT learns to capture the frequent use of emojis of the user, resulting in an inaccurate response that misses the key points in the ground-truth response (cf. Figure 1) during evaluation. In contrast, HUMANLM explicitly learns to align along different state dimensions, generating latent states that reflect the user in the reasoning trace, which leads to a more accurate response. We apply GRPO (Shao et"
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "reward",
+    "excerpt": "s to a more accurate response. We apply GRPO (Shao et al., 2024) for reinforcement learning, where an LLM judge is prompted to compare a batch of generated latent states under each state dimension (aka. rollouts) and give alignment scores for them at once, providing more precise rewards under fair comparisons. centric services and applications (Binz et al., 2025; Naous et al., 2025; Kolluri et al., 2025; Park et al., 2022). For ex- ample, policymakers, writers, and AI model developers can leverage responses from user simulators to improve policies, articles, and AI features to receive target outcomes (Wu et al., 2025; Hwang et al., 2025; Qian et al., 2025b; He- Yueya et al., 2024). However, existing LLM-based user simulators are primarily trained to imitate surface-level lan- guage use in "
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "reinforcement learning",
+    "excerpt": "ruth response (cf. Figure 1) during evaluation. In contrast, HUMANLM explicitly learns to align along different state dimensions, generating latent states that reflect the user in the reasoning trace, which leads to a more accurate response. We apply GRPO (Shao et al., 2024) for reinforcement learning, where an LLM judge is prompted to compare a batch of generated latent states under each state dimension (aka. rollouts) and give alignment scores for them at once, providing more precise rewards under fair comparisons. centric services and applications (Binz et al., 2025; Naous et al., 2025; Kolluri et al., 2025; Park et al., 2022). For ex- ample, policymakers, writers, and AI model developers can leverage responses from user simulators to improve policies, articles, and AI features to recei"
+  },
+  {
+    "source": "2603.03303.pdf#page=2",
+    "keyword": "simulation",
+    "excerpt": "ately captures multiple states. Compared to text imitation, HUMANLM’s response contains more similar key points expressed in the ground truth. To evaluate user simulators, we introduce HUMANUAL (Fig- ure 3), a comprehensive benchmark in simulating user re- sponses. Existing user simulation benchmarks usually rely on simplified or synthetic user profiles (Castricato et al., 2025; Kirk et al., 2024; Kumar et al., 2025) and limited context scopes (Binz et al., 2025; Santurkar et al., 2023). In contrast, HUMANUAL comprises six datasets from pub- licly available sources with rich, real user profiles, including Reddit users discussing life issues, Medium users giving blog feedback, and Amazon users reviewing books (He & McAuley, 2016). In total, HUMANUAL spans over 26k users worldwide and 216k d"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation user simulators, HUMANLM achieves the highest win rate of 41.4% on overall similarity: 55.9% of participants rate HUMANLM responses as “mostly similar” or “nearly iden- tical” to their own, compared to only 45.0% for the best baseline. HUMANLM also generates more natural-sounding responses, with 76.6% of responses above “quite natural”. 2. Problem Formulation We consider a generic dataset {(p(i), x(i), y(i))}N i=1. Here, p represents a user persona created from any user iden"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "latent state",
+    "excerpt": "ews reports, blogs) or multi-turn (e.g., a back-and-forth conversation between user and an LLM as- sistant, social media posts along with other users’ follow-up comments). y is the ground-truth response from the user (p) to the input context. For any input context x, we define a latent state space S(x) = {s1, s2, . . .} with a finite number of latent states. Each latent state represents a distinct high-level attribute that a response may express or reflect, such as “deep heartbreak for the wildfire victims”, “irritation about the government’s untimely rescue”, and “provide claims with evidence”. 1 For an arbitrary response y, we define a mapping M : y → {sj1, sj2, . . .}, where each index ji ∈[|S(x)|]. For any in- put context x, our goal is to generate response ˆy such that the latent stat"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation user simulators, HUMANLM achieves the highest win rate of 41.4% on overall similarity: 55.9% of participants rate HUMANLM responses as “mostly similar” or “nearly iden- tical” to their own, compared to only 45.0% for the best baseline. HUMANLM also generates more natural-sounding responses, with 76.6% of responses above “quite natural”. 2. Problem Formulation We consider a generic dataset {(p(i), x(i), y(i))}N i=1. Here, p represents a user persona created from any user identi- fi"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation user simulators, HUMANLM achieves the highest win rate of 41.4% on overall similarity: 55.9% of participants rate HUMANLM responses as “mostly similar” or “nearly iden- tical” to their own, compared to only 45.0% for the best baseline. HUMANLM also generates more natural-sounding responses, with 76.6% of responses above “quite natural”. 2. Problem Formulation We consider a generic dataset {(p(i), x(i), y(i))}N i=1. Here, p represents a user persona created from any user identi- fiers such as user"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "reward",
+    "excerpt": "ntexts. Therefore, instead of imitating ground- truth responses, our focus is to align model generations with latent states inferred from ground-truth user responses. 3.1. From Post-hoc to Ad-hoc Alignment Challenges. A straightforward solution for latent state align- ment is to reward a generated response by how much it aligns with the ground truth in terms of the latent states, re- ferred to as response alignment scores. For a given context, we can prompt an LLM judge to 1) extract the key latent states for a generated response and ground-truth response separately and 2) compute the match score between these two sets of latent states. We can then apply reinforcement learning (RL) algorithms such as GRPO (Shao et al., 2024) to optimize the model for higher response alignment scores. Howev"
+  },
+  {
+    "source": "2603.03303.pdf#page=3",
+    "keyword": "reinforcement learning",
+    "excerpt": "re- ferred to as response alignment scores. For a given context, we can prompt an LLM judge to 1) extract the key latent states for a generated response and ground-truth response separately and 2) compute the match score between these two sets of latent states. We can then apply reinforcement learning (RL) algorithms such as GRPO (Shao et al., 2024) to optimize the model for higher response alignment scores. However, since we aggregate all latent state matches, it is unclear which underlying latent states were correct or in- correct during reward assignment. For example, consider a real user response in Figure 1, which conveys multiple latent states: empathy towards victims, disagreement with the policy, and use of sarcastic criticism. In this example, generated responses that match any on"
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation To help you get started, here are a few points：… Humanual-Politics Small Town: A Novel by Lawrence Block, 2003 Humanual-Book Humanual-News Humanual-Chat Not only did I think it was slow moving, but I felt that he wasn't writing some of the women characters well… Hundreds injured in deadly Colombia bullfight stand collapse —BBC News It's almost like Karma said watching a animal get poked with swords was a bad thing... im working on a journal paper about sales prediction of wa"
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "latent state",
+    "excerpt": "answers or ask questions, etc. Responses that differ in communication can lead to distinct interactions. While some state dimensions may be weakly expressed in responses, they are generally present in the underlying response generation process (Levelt, 1989). Alignment scores on latent states. The state dimensions provide basis for latent state alignment. In each training batch, we randomly sample one state dimension and prompt the user simulator to generate the multiple corresponding latent states. We then use an LLM judge to score (from 0-1) on how consistent the generated latent states are with the ground truth response along that state dimension. Yet, assigning a score one at a time with an LLM judge introduces significant bias due to the lack of comparison. For example, the LLM judge "
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation To help you get started, here are a few points：… Humanual-Politics Small Town: A Novel by Lawrence Block, 2003 Humanual-Book Humanual-News Humanual-Chat Not only did I think it was slow moving, but I felt that he wasn't writing some of the women characters well… Hundreds injured in deadly Colombia bullfight stand collapse —BBC News It's almost like Karma said watching a animal get poked with swords was a bad thing... im working on a journal paper about sales prediction of walmart "
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation To help you get started, here are a few points：… Humanual-Politics Small Town: A Novel by Lawrence Block, 2003 Humanual-Book Humanual-News Humanual-Chat Not only did I think it was slow moving, but I felt that he wasn't writing some of the women characters well… Hundreds injured in deadly Colombia bullfight stand collapse —BBC News It's almost like Karma said watching a animal get poked with swords was a bad thing... im working on a journal paper about sales prediction of walmart stores i am goin"
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "reward",
+    "excerpt": "uated separately, even though the latter is more comprehensive and accurate. To avoid bias score assignment, in Figure 2 we sample a batch of latent states for the same context (i.e., rollouts) and prompt the LLM judge to score them comparatively. Later, these scores are used as rewards in the model’s training process (Section 3.4), reinforcing the model to generate aligned latent states under the state dimensions. 3.3. Synthesizing Responses from Aligned Latent States Each latent state may not contribute equally to a response. In fact, some latent states may overlap in content. As a result, simply summarizing all of the generated latent states can introduce redundancy or even inconsistency. Both cases undermine the objective in Eq. 1. Moreover, human lan- guage production integrates multi"
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "bias",
+    "excerpt": "erate the multiple corresponding latent states. We then use an LLM judge to score (from 0-1) on how consistent the generated latent states are with the ground truth response along that state dimension. Yet, assigning a score one at a time with an LLM judge introduces significant bias due to the lack of comparison. For example, the LLM judge may assign the same score of 1.0 to two latent states about communication, “direct, without explanation” and “directly mock politicians with sarcasm,” when evaluated separately, even though the latter is more comprehensive and accurate. To avoid bias score assignment, in Figure 2 we sample a batch of latent states for the same context (i.e., rollouts) and prompt the LLM judge to score them comparatively. Later, these scores are used as rewards in the mo"
+  },
+  {
+    "source": "2603.03303.pdf#page=4",
+    "keyword": "accuracy",
+    "excerpt": "… Hundreds injured in deadly Colombia bullfight stand collapse —BBC News It's almost like Karma said watching a animal get poked with swords was a bad thing... im working on a journal paper about sales prediction of walmart stores i am going to use stacking technique to increase accuracy, find some papers 39 mass shootings in 24 days in US Other countries have instituted changes that have made HUGE reductions… Massive changes were made to our gun laws in Australia 1996… the changes were well-received … Things seem to be escalating a little more lately, however. Humanual-Opinion NTA, you aren't neglecting them, you're taking a breather when you're overwhelmed. AITA for leaving my babies inside by themselves? Humanual-Email <from michael.bodnar> In analyzing shipper imbalance statements, Lau"
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Moreover, in the reasoning traces, the model also analyzes how these latent states impact the final response, such as how to organize it (e.g., “start with deep empathy”), which latent states to emphasize, and which to make more concise, etc. Based on these intermediate rationales, the model gener- ates responses consistent with the latent states. We compute response alignment scores (cf. Section 3.1) on the generated responses using an LLM judge. 3.4. Training and Inference"
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "latent state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Moreover, in the reasoning traces, the model also analyzes how these latent states impact the final response, such as how to organize it (e.g., “start with deep empathy”), which latent states to emphasize, and which to make more concise, etc. Based on these intermediate rationales, the model gener- ates responses consistent with the latent states. We compute response alignment scores (cf. Section 3.1) on the generated responses using an LLM judge. 3.4. Training and Inference In Figure 1, given the 1 state dimensions, we train a user simulator to generate the corresponding 2 latent s"
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Moreover, in the reasoning traces, the model also analyzes how these latent states impact the final response, such as how to organize it (e.g., “start with deep empathy”), which latent states to emphasize, and which to make more concise, etc. Based on these intermediate rationales, the model gener- ates responses consistent with the latent states. We compute response alignment scores (cf. Section 3.1) on the generated responses using an LLM judge. 3.4. Training and Inference In Fi"
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Moreover, in the reasoning traces, the model also analyzes how these latent states impact the final response, such as how to organize it (e.g., “start with deep empathy”), which latent states to emphasize, and which to make more concise, etc. Based on these intermediate rationales, the model gener- ates responses consistent with the latent states. We compute response alignment scores (cf. Section 3.1) on the generated responses using an LLM judge. 3.4. Training and Inference In Figure 1, given th"
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "reward",
+    "excerpt": "d then synthesizes 3 the final response. We use an LLM judge to compute 4 alignment scores for both the gen- erated latent states and the generated responses in a batch (Figure 2), where outputs/rollouts with the same inputs are evaluated under comparison. We use these scores as rewards for reinforcement learning (RL), such as GRPO (Shao et al., 2024). In training, we prompt the user simulator to generate a batch of outputs with mixed latent states and responses. In testing, we only prompt the user simulator to generate responses with reasoning traces and evaluate using the gen- erated responses. 4. Benchmark and Experiment Setup Benchmark (Figure 3)2 We create HUMANUAL, a bench- mark for user simulators, consisting of six diverse datasets from real and publicly available data sources. We "
+  },
+  {
+    "source": "2603.03303.pdf#page=5",
+    "keyword": "reinforcement learning",
+    "excerpt": "esizes 3 the final response. We use an LLM judge to compute 4 alignment scores for both the gen- erated latent states and the generated responses in a batch (Figure 2), where outputs/rollouts with the same inputs are evaluated under comparison. We use these scores as rewards for reinforcement learning (RL), such as GRPO (Shao et al., 2024). In training, we prompt the user simulator to generate a batch of outputs with mixed latent states and responses. In testing, we only prompt the user simulator to generate responses with reasoning traces and evaluate using the gen- erated responses. 4. Benchmark and Experiment Setup Benchmark (Figure 3)2 We create HUMANUAL, a bench- mark for user simulators, consisting of six diverse datasets from real and publicly available data sources. We have in- clu"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Table 1. Response alignment scores (↑) on HUMANUAL. Last row shows HUMANLM’s relative improvements to the best baselines. News Book Opinion Politics Chat Email Avg. Qwen3-8b 5.68 13.6 18.7 10.1 3.90 4.76 9.5 Qwen3-8b-think 4.83 12.8 20.4 7.0 2.16 3.22 8.4 SFT 3.10 9.3 11.3 6.3 4.57 4.30 6.5 SFT-think 6.00 13.4 16.7 9.2 2.50 3.94 8.6 UserLM - - - - 2.47 - - GRPO 7.92 13.3 18.2 10.9 5.83 5.90 10.3 GRPO-think 7.04 12.8 23.8 10.6 3.16 4.78 10.4 HUMANLM 9.55 18.5 25.6 12.6 6.08 6"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "latent state",
+    "excerpt": "achieves the best response alignment scores with an average relative improvement of 16.3%. Specifically, HUMANLM achieves relative improvements of 38% and 17% over base-think and GRPO-think, respectively. In Figure 4, our model achieves the highest alignment scores on 80% of the latent states. Embedding similarity (Appendix Table 3). Despite not using this metric as the reward, HUMANLM improves em- bedding similarity between generated responses and the ground truth by 7.5% compared to Qwen3-8b-think. Evaluation reliability check (Figure 6). To validate that alignment scores are not biased towards a specific judge model, we use another judge, gemini-3-pro to evalu- ate models on Humanual-Politics. Figure 6 shows consistent model rankings across judges, with HUMANLM ranked first by both judg"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Table 1. Response alignment scores (↑) on HUMANUAL. Last row shows HUMANLM’s relative improvements to the best baselines. News Book Opinion Politics Chat Email Avg. Qwen3-8b 5.68 13.6 18.7 10.1 3.90 4.76 9.5 Qwen3-8b-think 4.83 12.8 20.4 7.0 2.16 3.22 8.4 SFT 3.10 9.3 11.3 6.3 4.57 4.30 6.5 SFT-think 6.00 13.4 16.7 9.2 2.50 3.94 8.6 UserLM - - - - 2.47 - - GRPO 7.92 13.3 18.2 10.9 5.83 5.90 10.3 GRPO-think 7.04 12.8 23.8 10.6 3.16 4.78 10.4 HUMANLM 9.55 18.5 25.6 12.6 6.08 6.71 13"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Table 1. Response alignment scores (↑) on HUMANUAL. Last row shows HUMANLM’s relative improvements to the best baselines. News Book Opinion Politics Chat Email Avg. Qwen3-8b 5.68 13.6 18.7 10.1 3.90 4.76 9.5 Qwen3-8b-think 4.83 12.8 20.4 7.0 2.16 3.22 8.4 SFT 3.10 9.3 11.3 6.3 4.57 4.30 6.5 SFT-think 6.00 13.4 16.7 9.2 2.50 3.94 8.6 UserLM - - - - 2.47 - - GRPO 7.92 13.3 18.2 10.9 5.83 5.90 10.3 GRPO-think 7.04 12.8 23.8 10.6 3.16 4.78 10.4 HUMANLM 9.55 18.5 25.6 12.6 6.08 6.71 13.2 Rel. Improvem"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "reward",
+    "excerpt": "nd two baselines on four HUMANUAL datasets. Full results in Appendix D. • (Standard) GRPO, and (standard) GRPO-think (Shao et al., 2024): RL-trained models using Group Relative Pol- icy Optimization (GRPO). We directly use the response alignment scores by a judge, gpt-5-mini, as rewards; GRPO-think generates reasoning traces before responses. HUMANLM Implementation (Appendix C). We train mod- els on the training sets using the same hyperparameters. Note that we use gpt-5-mini as the LLM judge in training, different from the judge (claude-4.5-haiku) in testing, to ensure a more reliable and unbiased evaluation. 5. Results on Benchmark We report the main results in Table 1 and Figure 4, with the following conclusions: 1) Simulating real-world user responses is still an ex- tremely challengin"
+  },
+  {
+    "source": "2603.03303.pdf#page=6",
+    "keyword": "bias",
+    "excerpt": " traces before responses. HUMANLM Implementation (Appendix C). We train mod- els on the training sets using the same hyperparameters. Note that we use gpt-5-mini as the LLM judge in training, different from the judge (claude-4.5-haiku) in testing, to ensure a more reliable and unbiased evaluation. 5. Results on Benchmark We report the main results in Table 1 and Figure 4, with the following conclusions: 1) Simulating real-world user responses is still an ex- tremely challenging task. The Qwen3-8b model’s average score across the datasets is around 10%, showing that real user responses are hard to simulate due to highly complex user profiles and diverse contexts. As a result, enabling reasoning or learning on high-quality reasoning traces (e.g., SFT v.s. SFT-think) lead to improvements on s"
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation 0.28 0.32 0.36 Belief Score 0.22 0.24 0.26 0.28 Response Score (a) 0.40 0.44 0.48 0.52 Value Score 0.22 0.24 0.26 0.28 Response Score (b) 0.45 0.48 0.51 0.54 Stance Score 0.22 0.24 0.26 0.28 Response Score (c) 25 75 125 175 225 GRPO-think 25 75 125 175 225 HumanLM Training Step: Figure 5. Training dynamics comparison between HUMANLM and GRPO-think. Each dot represents a model checkpoint saved every 25 steps when training on Humanual-Opinion. Each x value is the checkpoint’s "
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "latent state",
+    "excerpt": "e alignment scores during training, indicating that the models are “stuck” and struggle to find consistent directions for exploring each state. This validates our earlier claim that models fail to consistently interpret responses with similar scores but different combinations of latent states. As a result, this leads to limited or inconsistent exploration of responses, undermining alignment quality. In contrast, HUMANLM yields higher response alignment scores from consistently exploring different states. Specif- ically, HUMANLM shows broader score coverage during training, where the average spans on state and response alignment scores are 23% and 104% higher than GRPO- think, respectively. By explicitly generating latent states, the model receives clear signals to align with latent states "
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation 0.28 0.32 0.36 Belief Score 0.22 0.24 0.26 0.28 Response Score (a) 0.40 0.44 0.48 0.52 Value Score 0.22 0.24 0.26 0.28 Response Score (b) 0.45 0.48 0.51 0.54 Stance Score 0.22 0.24 0.26 0.28 Response Score (c) 25 75 125 175 225 GRPO-think 25 75 125 175 225 HumanLM Training Step: Figure 5. Training dynamics comparison between HUMANLM and GRPO-think. Each dot represents a model checkpoint saved every 25 steps when training on Humanual-Opinion. Each x value is the checkpoint’s alignm"
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation 0.28 0.32 0.36 Belief Score 0.22 0.24 0.26 0.28 Response Score (a) 0.40 0.44 0.48 0.52 Value Score 0.22 0.24 0.26 0.28 Response Score (b) 0.45 0.48 0.51 0.54 Stance Score 0.22 0.24 0.26 0.28 Response Score (c) 25 75 125 175 225 GRPO-think 25 75 125 175 225 HumanLM Training Step: Figure 5. Training dynamics comparison between HUMANLM and GRPO-think. Each dot represents a model checkpoint saved every 25 steps when training on Humanual-Opinion. Each x value is the checkpoint’s alignment score along "
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "validation",
+    "excerpt": " Claude Haiku 4.5 7.2 8.1 10.8 14.1 Gemini-3-Pro Qwen3-8b- Think SFT- Think GRPO- Think HumanLM (Ours) Figure 6. Consistent rankings from different LLM judges for evaluating response alignment on Humanual-Politics. for multiple checkpoints saved during training, evaluated on 500 validation samples in Humanual-Opinion. We find that GRPO-think yields a highly limited range in state alignment scores during training, indicating that the models are “stuck” and struggle to find consistent directions for exploring each state. This validates our earlier claim that models fail to consistently interpret responses with similar scores but different combinations of latent states. As a result, this leads to limited or inconsistent exploration of responses, undermining alignment quality. In contrast, HUM"
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "correlation",
+    "excerpt": "tes local optima when relying only on response alignment scores. 5.2. Relations between States & Responses (Figure 7, 8) We study how different state dimensions contribute differ- ently to responses. To estimate the contribution, we define the dimension importance as the Pearson Correlation value between response alignment scores and the state alignment Belief Goal Value Stance Emotion Comm- unication 0.45 0.50 0.55 0.60 0.65 0.70 Pearson r 0.47 0.66 0.55 0.61 0.46 0.59 Figure 7. Dimension importance on Humanual-Opinion. Goal and stance scores are largely correlated with response scores. scores along a state dimension. Figure 7 reports the results based on 1k simulated responses for Humanual-Opinion, where goal and stance are among the first tier. This is con- sistent with the task propert"
+  },
+  {
+    "source": "2603.03303.pdf#page=7",
+    "keyword": "simulation",
+    "excerpt": "alue of “personal boundaries”, and a communication style of “concise and empathetic but firm”. These together lead to a final concise response that is supportive of the poster’s ac- tions, with reasons emphasizing that others should respect personal boundaries. 6. Real-time User Simulation Setup. To evaluate how well HUMANLM generalizes to users with different profiles, we asked 111 Amazon Me- chanical Turkers to write down their own responses to a Reddit post sampled from Humanual-Opinion test set 7 "
+  },
+  {
+    "source": "2603.03303.pdf#page=8",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation <think> … might have a critical view towards the involved parties, possibly the Serbian forces, and might use a confrontational tone. Since the persona is critical of US military interventions and uses sarcasm, they might express skepticism or criticism towards those in power. Also, they might use a short, direct response with emotional expression, possibly … make sure the response is short, around 15–20 words, with informal language. ... references to similar historical eve"
+  },
+  {
+    "source": "2603.03303.pdf#page=8",
+    "keyword": "latent state",
+    "excerpt": "— but the elites? They're the ones profiting. It's a masterclass in reverse victimhood. And yes — solidarity is the only antidote. </response> (c) Humanual-Politics Figure 8. Reasoning traces and responses decomposed into six state dimensions. The examples show how the generated latent states in the reasoning traces jointly shape the final responses across real-world domains, such as news, daily-life, and political discussion. (79 posts) and compare their responses against three simu- lated responses from one of Qwen3-8b-think, GRPO-think, and HUMANLM. See Appendix F for details. To generate the user profiles for these user simulators, we ask them to first answer a few open-ended questions and summarize their values and communication styles. After the participants finish their responses, w"
+  },
+  {
+    "source": "2603.03303.pdf#page=8",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation <think> … might have a critical view towards the involved parties, possibly the Serbian forces, and might use a confrontational tone. Since the persona is critical of US military interventions and uses sarcasm, they might express skepticism or criticism towards those in power. Also, they might use a short, direct response with emotional expression, possibly … make sure the response is short, around 15–20 words, with informal language. ... references to similar historical events an"
+  },
+  {
+    "source": "2603.03303.pdf#page=8",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation <think> … might have a critical view towards the involved parties, possibly the Serbian forces, and might use a confrontational tone. Since the persona is critical of US military interventions and uses sarcasm, they might express skepticism or criticism towards those in power. Also, they might use a short, direct response with emotional expression, possibly … make sure the response is short, around 15–20 words, with informal language. ... references to similar historical events and modern paralle"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Qualitative analysis. In comparison, participants noted that HUMANLM is more likely to match their stance and the key considerations underpinning it, avoiding secondary points they did not find important. We also find that HUMANLM better matches users’ nuanced tone by calibrating emotional intensity (e.g., mild indignation) rather than sounding overly neutral or affective. This validates that HUMANLM accu- rately captures user stance and emotion through explicit alignment du"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Qualitative analysis. In comparison, participants noted that HUMANLM is more likely to match their stance and the key considerations underpinning it, avoiding secondary points they did not find important. We also find that HUMANLM better matches users’ nuanced tone by calibrating emotional intensity (e.g., mild indignation) rather than sounding overly neutral or affective. This validates that HUMANLM accu- rately captures user stance and emotion through explicit alignment during t"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Qualitative analysis. In comparison, participants noted that HUMANLM is more likely to match their stance and the key considerations underpinning it, avoiding secondary points they did not find important. We also find that HUMANLM better matches users’ nuanced tone by calibrating emotional intensity (e.g., mild indignation) rather than sounding overly neutral or affective. This validates that HUMANLM accu- rately captures user stance and emotion through explicit alignment during training and gene"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "reward",
+    "excerpt": "r, prompting techniques are rigid to simulate spe- cific users since they cannot adapt the model parameters with user data. Meanwhile, models trained with SFT tend to focus on surface-level language use which falls short in learning more important user aspects. Previous RL works reward persona consistency instead of deeper user state alignment. Here, HUMANLM generates aligned user re- sponses with a general reinforcement learning framework. Alternative approaches focus on different goals as ours, such as generating user profiles (Shaikh et al., 2025; Hu et al., 2025) and explaining user choices (Wang et al., 2025b). User simulation benchmarks and evaluation. Prevail- ing benchmarks are tasked with chatting with LLM assis- tants (Dou et al., 2025; Chang et al., 2025; Zhao et al., 2024; Kirk"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "reinforcement learning",
+    "excerpt": "ese works have heavily relied on prompt- ing LLMs (Park et al., 2024; 2023; Hwang et al., 2023; Kim & Yang, 2025), Supervised Fine-Tuning (SFT) LLMs on ground-truth responses (Chuang et al., 2025; Lu et al., 2025; Kolluri et al., 2025; Binz et al., 2025; Naous et al., 2025), and Reinforcement Learning (RL) to fine-tune models for persona consistent behavior (Abdulhai et al., 2025; Wang et al., 2025a; Mehri et al., 2025; Zhu et al., 2025) However, prompting techniques are rigid to simulate spe- cific users since they cannot adapt the model parameters with user data. Meanwhile, models trained with SFT tend to focus on surface-level language use which falls short in learning more important user aspects. Previous RL works reward persona consistency instead of deeper user state alignment. Here,"
+  },
+  {
+    "source": "2603.03303.pdf#page=9",
+    "keyword": "simulation",
+    "excerpt": "y key points clearly, whereas GRPO-think and Qwen3-8b sometimes repeat similar arguments. Participants also perceived HUMANLM as more casual and honest, with smoother sentence-to-sentence flow, while GRPO-think and Qwen3-8b were less human-like. 7. Related Work User modeling and simulation. Previous works understand cognition and simulate behaviors/responses of 1) a broad, general user (Binz et al., 2025; Naous et al., 2025; Stra- chan et al., 2024; Jones & Bergen, 2025), 2) specific users given demographics or profile information (Kolluri et al., 2025; Shi et al., 2025; Meister et al., 2025; Gordon et al., 2022), and, by further scaling up, 3) a group or society of users (Piao et al., 2025; Park et al., 2023; 2022; Anthis et al., 2025; Park et al., 2024) using language models. To build us"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Impact Statement This paper presents work that advances the field of human- centric AI, in which AI systems, especially machine learn- ing and large language models, are built to serve the best interests of humans. We hope this work calls for more representative and better-aligned user simulators, such that human-centric applications and models trained and tested with these user simulators can better generalize to real-world deployments. We also believe that training user si"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Impact Statement This paper presents work that advances the field of human- centric AI, in which AI systems, especially machine learn- ing and large language models, are built to serve the best interests of humans. We hope this work calls for more representative and better-aligned user simulators, such that human-centric applications and models trained and tested with these user simulators can better generalize to real-world deployments. We also believe that training user simulato"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Impact Statement This paper presents work that advances the field of human- centric AI, in which AI systems, especially machine learn- ing and large language models, are built to serve the best interests of humans. We hope this work calls for more representative and better-aligned user simulators, such that human-centric applications and models trained and tested with these user simulators can better generalize to real-world deployments. We also believe that training user simulators provides a pa"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "reinforcement learning",
+    "excerpt": "compensated $9 per task, with an average task dura- tion of 32.1 minutes. This corresponds to an average hourly wage of approximately $18. References Abdulhai, M., Cheng, R., Clay, D., Althoff, T., Levine, S., and Jaques, N. Consistently simulating human personas with multi-turn reinforcement learning. In Advances in Neural Information Processing Systems, 2025. Aher, G. V., Arriaga, R. I., and Kalai, A. T. Using large lan- guage models to simulate multiple humans and replicate human subject studies. In ICML, 2023. Anthis, J. R., Liu, R., Richardson, S. M., Kozlowski, A. C., Koch, B., Evans, J., Brynjolfsson, E., and Bernstein, M. Llm social simulations are a promising research method. In ICML, 2025. Binz, M., Akata, E., Bethge, M., Br¨andle, F., Callaway, F., Coda-Forno, J., Dayan, P., Dem"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "agent",
+    "excerpt": "on, A., and Hofman, J. M. Chatbench: From static benchmarks to human-ai evaluation. In ACL, 2025. Chuang, Y.-S., Tu, R., Dai, C., Vasani, S., Yao, B., Tessler, M. H., Yang, S., Shah, D., Hawkins, R., Hu, J., and Rogers, T. T. Debate: A large-scale benchmark for role- playing llm agents in multi-agent, long-form debates. arXiv, 2025. Cohen, W. W. and CALO Project. Enron email dataset. ://www.cs.cmu.edu/˜enron/, 2015. Davies, B. and Harr´e, R. Positioning: The discursive produc- tion of selves. Journal for the Theory of Social Behaviour, 20:43–63, 1990. doi: 10.1111/j.1468-5914.1990.tb00174. x. Introduces positioning theory in social interaction. Dou, Y., Galley, M., Peng, B., Kedzie, C., Cai, W., Ritter, A., Quirk, C., Xu, W., and Gao, J. Simulatorarena: Are user simulators reliable proxies"
+  },
+  {
+    "source": "2603.03303.pdf#page=10",
+    "keyword": "simulation",
+    "excerpt": " G. V., Arriaga, R. I., and Kalai, A. T. Using large lan- guage models to simulate multiple humans and replicate human subject studies. In ICML, 2023. Anthis, J. R., Liu, R., Richardson, S. M., Kozlowski, A. C., Koch, B., Evans, J., Brynjolfsson, E., and Bernstein, M. Llm social simulations are a promising research method. In ICML, 2025. Binz, M., Akata, E., Bethge, M., Br¨andle, F., Callaway, F., Coda-Forno, J., Dayan, P., Demircan, C., Eckstein, M. K., ´Eltet˝o, N., Griffiths, T. L., Haridi, S., Jagadish, A. K., Ji-An, L., Kipnis, A., Kumar, S., Ludwig, T., Mathony, M., Mattar, M., Modirshanechi, A., Nath, S. S., Peterson, J. C., Rmus, M., Russek, E. M., Saanum, T., Schubert, J. A., Buschoff, L. M. S., Singhi, N., Sui, X., Thalmann, M., Theis, F. J., Truong, V., Udandarao, V., Voudouris,"
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Hwang, A. H.-C., Bernstein, M. S., Sundar, S. S., Zhang, R., Ribeiro, M. H., Lu, Y., Chang, S., Wu, T., Yang, A., Williams, D., Park, J. S., Ognyanova, K., Xiao, Z., Shaw, A., and Shamma, D. A. Human subjects research in the age of generative ai: Opportunities and challenges of applying llm-simulated data to hci studies. In CHI EA, 2025. Hwang, E., Majumder, B., and Tandon, N. Aligning lan- guage models to user opinions. In Findings of EMNLP, 2023. Jones, C. R. and Bergen, B"
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Hwang, A. H.-C., Bernstein, M. S., Sundar, S. S., Zhang, R., Ribeiro, M. H., Lu, Y., Chang, S., Wu, T., Yang, A., Williams, D., Park, J. S., Ognyanova, K., Xiao, Z., Shaw, A., and Shamma, D. A. Human subjects research in the age of generative ai: Opportunities and challenges of applying llm-simulated data to hci studies. In CHI EA, 2025. Hwang, E., Majumder, B., and Tandon, N. Aligning lan- guage models to user opinions. In Findings of EMNLP, 2023. Jones, C. R. and Bergen, B. K. L"
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation Hwang, A. H.-C., Bernstein, M. S., Sundar, S. S., Zhang, R., Ribeiro, M. H., Lu, Y., Chang, S., Wu, T., Yang, A., Williams, D., Park, J. S., Ognyanova, K., Xiao, Z., Shaw, A., and Shamma, D. A. Human subjects research in the age of generative ai: Opportunities and challenges of applying llm-simulated data to hci studies. In CHI EA, 2025. Hwang, E., Majumder, B., and Tandon, N. Aligning lan- guage models to user opinions. In Findings of EMNLP, 2023. Jones, C. R. and Bergen, B. K. Large language mo"
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "reinforcement learning",
+    "excerpt": "d Wang, H. Userbench: An interactive gym environment for user-centric agents, 2025a. Qian, C., Liu, Z., Prabhakar, A., Qiu, J., Liu, Z., Chen, H., Kokane, S., Ji, H., Yao, W., Heinecke, S., Savarese, S., Xiong, C., and Wang, H. Userrl: Training interactive user-centric agent via reinforcement learning, 2025b. Rao, A. S. and Georgeff, M. P. Modeling rational agents within a bdi-architecture. In Proceedings of the Second 11 "
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "agent",
+    "excerpt": " production, including formulation. Li, R., Li, R., Wang, B., and Du, X. Iqa-eval: Automatic evaluation of human-model interactive question answer- ing. In NeurIPS, 2024. Lu, Y., Huang, J., Han, Y., Yao, B., Bei, S., Gesi, J., Xie, Y., Zheshen, Wang, He, Q., and Wang, D. Can llm agents simulate multi-turn human behavior? evidence from real online customer behavior data, 2025. Luo, X., Tang, Z., Wang, J., and Zhang, X. Duetsim: Build- ing user simulator with dual large language models for task-oriented dialogues. In LREC-COLING, 2024. Mehri, S., Yang, X., Kim, T., Tur, G., Mehri, S., and Hakkani-T¨ur, D. Goal alignment in LLM-based user simulators for conversational AI. In First Workshop on Multi-Turn Interactions in Large Language Models, 2025. Meister, N., Guestrin, C., and Hashimoto, T. "
+  },
+  {
+    "source": "2603.03303.pdf#page=11",
+    "keyword": "simulation",
+    "excerpt": "Brien, J., Cai, C. J., Morris, M. R., Liang, P., and Bernstein, M. S. Generative agents: Interactive simulacra of human behavior. In UIST, 2023. Park, J. S., Zou, C. Q., Shaw, A., Hill, B. M., Cai, C., Mor- ris, M. R., Willer, R., Liang, P., and Bernstein, M. S. Generative agent simulations of 1,000 people. arXiv, 2024. Pessoa, L. On the relationship between emotion and cogni- tion. Nature Reviews Neuroscience, 9:148–158, 2008. Piao, J., Yan, Y., Zhang, J., Li, N., Yan, J., Lan, X., Lu, Z., Zheng, Z., Wang, J. Y., Zhou, D., Gao, C., Xu, F., Zhang, F., Rong, K., Su, J., and Li, Y. Agentsociety: Large-scale simulation of llm-driven generative agents advances understanding of human behaviors and society. arXiv, 2025. Qian, C., Liu, Z., Prabhakar, A., Liu, Z., Zhang, J., Chen, H., Ji, H., Yao,"
+  },
+  {
+    "source": "2603.03303.pdf#page=12",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation International Conference on Principles of Knowledge Representation and Reasoning, KR’91, pp. 473–484, San Francisco, CA, USA, 1991. Morgan Kaufmann Publish- ers Inc. ISBN 1558601651. Distinguishes agents’ beliefs from goals and intentions. Ross, A. and Andreas, J. Learning to make mistakes: Mod- eling incorrect student thinking and key errors. arXiv, 2025. Sander, D., Grandjean, D., and Scherer, K. R. A systems approach to appraisal mechanisms in emotion. Neural Networks, 18"
+  },
+  {
+    "source": "2603.03303.pdf#page=12",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation International Conference on Principles of Knowledge Representation and Reasoning, KR’91, pp. 473–484, San Francisco, CA, USA, 1991. Morgan Kaufmann Publish- ers Inc. ISBN 1558601651. Distinguishes agents’ beliefs from goals and intentions. Ross, A. and Andreas, J. Learning to make mistakes: Mod- eling incorrect student thinking and key errors. arXiv, 2025. Sander, D., Grandjean, D., and Scherer, K. R. A systems approach to appraisal mechanisms in emotion. Neural Networks, 18(4):31"
+  },
+  {
+    "source": "2603.03303.pdf#page=12",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation International Conference on Principles of Knowledge Representation and Reasoning, KR’91, pp. 473–484, San Francisco, CA, USA, 1991. Morgan Kaufmann Publish- ers Inc. ISBN 1558601651. Distinguishes agents’ beliefs from goals and intentions. Ross, A. and Andreas, J. Learning to make mistakes: Mod- eling incorrect student thinking and key errors. arXiv, 2025. Sander, D., Grandjean, D., and Scherer, K. R. A systems approach to appraisal mechanisms in emotion. Neural Networks, 18(4):317–352, 2005. doi"
+  },
+  {
+    "source": "2603.03303.pdf#page=12",
+    "keyword": "agent",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation International Conference on Principles of Knowledge Representation and Reasoning, KR’91, pp. 473–484, San Francisco, CA, USA, 1991. Morgan Kaufmann Publish- ers Inc. ISBN 1558601651. Distinguishes agents’ beliefs from goals and intentions. Ross, A. and Andreas, J. Learning to make mistakes: Mod- eling incorrect student thinking and key errors. arXiv, 2025. Sander, D., Grandjean, D., and Scherer, K. R. A systems approach to appraisal mechanisms in emotion. Neural Networks, 18(4):317–352, 2005. doi: 10.1016/j.neunet. 2005.03.001. Describes neural networks underlying emo- tion appraisal. Santurkar, S., Durmus, E., Ladhak, F., Lee, C., Liang, P., and Hashimoto, T. Whose opinions do language models reflect? In IC"
+  },
+  {
+    "source": "2603.03303.pdf#page=13",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation R., Arora, R., Mullapudi, R. T., Gaon, R., Miyara, R., Song, R., Aggarwal, R., Marsan, R., Yemiru, R., Xiong, R., Kshirsagar, R., Nuttall, R., Tsiupa, R., Eldan, R., Wang, R., James, R., Ziv, R., Shu, R., Nigmatullin, R., Jain, S., Talaie, S., Altman, S., Arnesen, S., Toizer, S., Toyer, S., Miserendino, S., Agarwal, S., Yoo, S., Heon, S., Ethersmith, S., Grove, S., Taylor, S., Bubeck, S., Banesiu, S., Amdo, S., Zhao, S., Wu, S., Santurkar, S., Zhao, S., Chaudhuri, S. R., Kri"
+  },
+  {
+    "source": "2603.03303.pdf#page=13",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation R., Arora, R., Mullapudi, R. T., Gaon, R., Miyara, R., Song, R., Aggarwal, R., Marsan, R., Yemiru, R., Xiong, R., Kshirsagar, R., Nuttall, R., Tsiupa, R., Eldan, R., Wang, R., James, R., Ziv, R., Shu, R., Nigmatullin, R., Jain, S., Talaie, S., Altman, S., Arnesen, S., Toizer, S., Toyer, S., Miserendino, S., Agarwal, S., Yoo, S., Heon, S., Ethersmith, S., Grove, S., Taylor, S., Bubeck, S., Banesiu, S., Amdo, S., Zhao, S., Wu, S., Santurkar, S., Zhao, S., Chaudhuri, S. R., Krishnasw"
+  },
+  {
+    "source": "2603.03303.pdf#page=13",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation R., Arora, R., Mullapudi, R. T., Gaon, R., Miyara, R., Song, R., Aggarwal, R., Marsan, R., Yemiru, R., Xiong, R., Kshirsagar, R., Nuttall, R., Tsiupa, R., Eldan, R., Wang, R., James, R., Ziv, R., Shu, R., Nigmatullin, R., Jain, S., Talaie, S., Altman, S., Arnesen, S., Toizer, S., Toyer, S., Miserendino, S., Agarwal, S., Yoo, S., Heon, S., Ethersmith, S., Grove, S., Taylor, S., Bubeck, S., Banesiu, S., Amdo, S., Zhao, S., Wu, S., Santurkar, S., Zhao, S., Chaudhuri, S. R., Krishnaswamy, S., Shuaiqi"
+  },
+  {
+    "source": "2603.03303.pdf#page=13",
+    "keyword": "reinforcement learning",
+    "excerpt": "Jiang, P. Llm-powered user simu- lator for recommender system, 2024. Zhao, W., Ren, X., Hessel, J., Cardie, C., Choi, Y., and Deng, Y. Wildchat: 1m chatgpt interaction logs in the wild. In ICLR, 2024. Zhu, J.-Q., Xie, H., Arumugam, D., Wilson, R. C., and Grif- fiths, T. L. Using reinforcement learning to train large language models to explain human decisions, 2025. 13 "
+  },
+  {
+    "source": "2603.03303.pdf#page=13",
+    "keyword": "agent",
+    "excerpt": "s. In ACL, 2025b. Wu, S., Galley, M., Peng, B., Cheng, H., Li, G., Dou, Y., Cai, W., Zou, J., Leskovec, J., and Gao, J. Collabllm: From passive responders to active collaborators. In ICML, 2025. Yao, S., Shinn, N., Razavi, P., and Narasimhan, K. R. τ- bench: A benchmark for tool-agent-user interaction in real-world domains. In The Thirteenth International Con- ference on Learning Representations, 2025. Zajonc, R. B. Feeling and thinking: Preferences need no inferences. American Psychologist, 35:151–175, 1980. doi: 10.1037/0003-066X.35.2.151. Argues that affective responses can precede cognition. Zhang, Z., Liu, S., Liu, Z., Zhong, R., Cai, Q., Zhao, X., Zhang, C., Liu, Q., and Jiang, P. Llm-powered user simu- lator for recommender system, 2024. Zhao, W., Ren, X., Hessel, J., Cardie, C., Ch"
+  },
+  {
+    "source": "2603.03303.pdf#page=14",
+    "keyword": "state",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation A. HUMANUAL Details Table 2. Dataset Statistics Metric News Book Opinion Politics Chat Email Users 10,900 209 4,567 5,303 4,801 399 Posts 6,117 34,886 992 14,557 4,826 5,153 Avg Turns 1.36 1.00 3.55 1.76 7.56 1.68 Avg Comments/User 3.97 192.04 10.01 9.48 6.11 18.99 Total Comments 43,273 40,136 45,716 50,273 29,334 7,577 Input Tokens (Total) 6,396,441 137,459,810 35,493,306 84,528,124 55,966,145 2,881,198 Input Tokens (Avg) 147.73 3,424.85 776.73 1,680.98 1,907.24 380.16 Comm"
+  },
+  {
+    "source": "2603.03303.pdf#page=14",
+    "keyword": "alignment",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation A. HUMANUAL Details Table 2. Dataset Statistics Metric News Book Opinion Politics Chat Email Users 10,900 209 4,567 5,303 4,801 399 Posts 6,117 34,886 992 14,557 4,826 5,153 Avg Turns 1.36 1.00 3.55 1.76 7.56 1.68 Avg Comments/User 3.97 192.04 10.01 9.48 6.11 18.99 Total Comments 43,273 40,136 45,716 50,273 29,334 7,577 Input Tokens (Total) 6,396,441 137,459,810 35,493,306 84,528,124 55,966,145 2,881,198 Input Tokens (Avg) 147.73 3,424.85 776.73 1,680.98 1,907.24 380.16 Comment To"
+  },
+  {
+    "source": "2603.03303.pdf#page=14",
+    "keyword": "response imitation",
+    "excerpt": "HUMANLM: Simulating Users with State Alignment Beats Response Imitation A. HUMANUAL Details Table 2. Dataset Statistics Metric News Book Opinion Politics Chat Email Users 10,900 209 4,567 5,303 4,801 399 Posts 6,117 34,886 992 14,557 4,826 5,153 Avg Turns 1.36 1.00 3.55 1.76 7.56 1.68 Avg Comments/User 3.97 192.04 10.01 9.48 6.11 18.99 Total Comments 43,273 40,136 45,716 50,273 29,334 7,577 Input Tokens (Total) 6,396,441 137,459,810 35,493,306 84,528,124 55,966,145 2,881,198 Input Tokens (Avg) 147.73 3,424.85 776.73 1,680.98 1,907.24 380.16 Comment Tokens (Total) 1,5"
+  }
+]

@@ -1,0 +1,183 @@
+{
+  "validator": "validate_deepseek_contract_output.py",
+  "status": "pass",
+  "file_count": 35,
+  "failure_count": 0,
+  "results": [
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_entrance_node_semantic_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_entrance_node_semantic_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_evidence_candidates_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_evidence_candidates_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_detail_query_plan_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_detail_query_plan_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_field_verification_checklist_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_field_verification_checklist_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_verification_package_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p0_verification_package_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p1_quality_report_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p1_quality_report_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_completion_readiness_audit_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_completion_readiness_audit_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_geometry_proxy_audit_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_geometry_proxy_audit_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_input_schema_candidates_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_input_schema_candidates_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_real_site_semantic_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_real_site_semantic_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_source_coverage_audit_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p2_source_coverage_audit_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p3_calibration_execution_package_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p3_calibration_execution_package_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p3_prework_package_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p3_prework_package_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p4_feedback_draft_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p4_feedback_draft_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_p4_premature_audit_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_project_context_sync_latest.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_project_context_sync_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_project_context_sync_raw.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_smoke_test_latest.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_table_classification_progress.json",
+      "passed": true,
+      "failures": []
+    },
+    {
+      "file": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs\\contract_envelopes\\legacy_deepseek_table_classification_raw.json",
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

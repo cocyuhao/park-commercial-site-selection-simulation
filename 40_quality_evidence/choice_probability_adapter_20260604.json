@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-04T14:30:20",
+  "input_files": [
+    "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+    "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+    "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+    "70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv"
+  ],
+  "important_boundary": "All items remain needs_review; this is schema-bound candidate generation, not completed simulation.",
+  "adapter": "adapt_choice_probability_and_validation_targets.py",
+  "task_type": "choice_probability",
+  "status": "needs_review",
+  "item_count": 36,
+  "duckdb_csv_count": 36,
+  "schema_failure_count": 0,
+  "schema_failures": [],
+  "envelope_path": "60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json",
+  "csv_path": "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv"
+}

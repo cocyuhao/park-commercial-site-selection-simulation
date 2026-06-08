@@ -1,0 +1,117 @@
+{
+  "validator": "object_chain_rebaseline_validation_20260605.py",
+  "generated_at": "2026-06-06T21:06:46Z",
+  "status": "pass",
+  "check_count": 8,
+  "failure_count": 0,
+  "object_count": 11,
+  "object_keys": [
+    "ai_session",
+    "behavior_program",
+    "choice_probability",
+    "feature_derivative_scene",
+    "node_progress",
+    "persona_state",
+    "project_scope",
+    "report_draft",
+    "source_material",
+    "spatial_context",
+    "validation_target"
+  ],
+  "summary": {
+    "total_items": 11,
+    "usable_count": 4,
+    "draft_count": 6,
+    "needs_input_count": 0,
+    "blocked_count": 1
+  },
+  "checks": [
+    {
+      "name": "http_200",
+      "passed": true,
+      "evidence": 200
+    },
+    {
+      "name": "required_object_keys",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "summary_matches_items",
+      "passed": true,
+      "evidence": {
+        "total_items": 11,
+        "usable_count": 4,
+        "draft_count": 6,
+        "needs_input_count": 0,
+        "blocked_count": 1
+      }
+    },
+    {
+      "name": "has_state_behavior_choice_validation_chain",
+      "passed": true,
+      "evidence": [
+        "ai_session",
+        "behavior_program",
+        "choice_probability",
+        "feature_derivative_scene",
+        "node_progress",
+        "persona_state",
+        "project_scope",
+        "report_draft",
+        "source_material",
+        "spatial_context",
+        "validation_target"
+      ]
+    },
+    {
+      "name": "feature_scene_exposes_income_control",
+      "passed": true,
+      "evidence": [
+        {
+          "object_key": "feature_derivative_scene",
+          "label": "人物场景假设",
+          "count": 1200,
+          "adopted_count": 0,
+          "locked_count": 0,
+          "status_label": "覆盖池可用，待采用代表场景",
+          "readiness": "draft",
+          "next_action": "采用或锁定能代表真实人群的场景，并复核收入/价格带、天气、时段、空间和供给动作。",
+          "evidence_refs": [
+            "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+            "90_p6_expert_dashboard/cache/simulation_feature_derivative_controls.json"
+          ],
+          "view": "data",
+          "action_label": "看场景"
+        }
+      ]
+    },
+    {
+      "name": "has_blocked_or_draft_truth",
+      "passed": true,
+      "evidence": [
+        "usable",
+        "usable",
+        "draft",
+        "draft",
+        "draft",
+        "draft",
+        "usable",
+        "blocked",
+        "draft",
+        "usable",
+        "draft"
+      ]
+    },
+    {
+      "name": "visible_text_has_no_backend_words",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "source_points_to_direction_reset",
+      "passed": true,
+      "evidence": "evidence_based_direction_reset_20260605"
+    }
+  ]
+}

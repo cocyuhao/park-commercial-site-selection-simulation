@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-06-05T14:37:09",
+  "status": "requires_page_level_rebuild",
+  "answer_to_user_question": {
+    "full_website_redone": false,
+    "current_page_state": "旧 P6 壳上的过渡重基线，已接入对象链和预检，但不是最终页面级重做。",
+    "engineering_decision": "继续修旧壳会和新主线冲突；下一步应页面级重构，迁移已验证底座，废弃旧叙事。"
+  },
+  "checks": [
+    {
+      "id": "NEW-CHAIN-LANDED",
+      "passed": true,
+      "evidence": {
+        "全局仿真链路台": 1,
+        "对象链路矩阵": 1,
+        "当前推进事项": 1,
+        "仿真任务入口": 2,
+        "项目综合": 10,
+        "DeepSeek": 1
+      }
+    },
+    {
+      "id": "PAGE-VALIDATION-PASS",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "failure_count": 0
+      }
+    },
+    {
+      "id": "OBJECT-CHAIN-PASS",
+      "passed": true,
+      "evidence": {
+        "object_count": 10,
+        "summary": {
+          "total_items": 10,
+          "usable_count": 3,
+          "draft_count": 6,
+          "needs_input_count": 0,
+          "blocked_count": 1
+        }
+      }
+    },
+    {
+      "id": "PREFLIGHT-PASS-BUT-NOT-FINAL-SIMULATION",
+      "passed": true,
+      "evidence": {
+        "status": "pass",
+        "scope": "仿真任务入口只验证资料依据、对象组合和运行前预检；不证明完整人物仿真已经完成。"
+      }
+    },
+    {
+      "id": "OLD-SHELL-STILL-PRESENT",
+      "passed": true,
+      "evidence": {
+        "节点清单": 6,
+        "空间地图": 2,
+        "资料导入": 4,
+        "方法对象池": 0,
+        "分析报告": 1,
+        "专家 AI 工作台": 2,
+        "panel": 55,
+        "side-nav-item": 0
+      }
+    },
+    {
+      "id": "NO_FORBIDDEN_VISIBLE_LEAK_IN_STATIC_SURFACE",
+      "passed": true,
+      "evidence": {
+        "visible_static_text": {
+          "debug": 0,
+          "traceback": 0,
+          "ConnectError": 0,
+          "external_preview_only": 0
+        },
+        "internal_identifiers_allowed_but_must_not_render": {
+          "raw": 26,
+          "payload": 18
+        }
+      }
+    },
+    {
+      "id": "BOSS-REBASELINE-REQUIRES-SYSTEM-LAYER",
+      "passed": true,
+      "evidence": "full_system_rebaseline_20260604.md"
+    },
+    {
+      "id": "BLUEPRINT-SAYS-NOT-PATCHING",
+      "passed": true,
+      "evidence": "page_layer_rebuild_blueprint_20260605.md"
+    },
+    {
+      "id": "RECENT-SIMULATION-LEARNING-BOUNDARY",
+      "passed": true,
+      "evidence": "simulation_task_entry_evidence_reinforcement_20260605.md"
+    },
+    {
+      "id": "CSS-STILL-LEGACY-PANEL-DOMINANT",
+      "passed": true,
+      "evidence": {
+        "panel_reference_count": 55,
+        "object_chain_count": 21
+      }
+    },
+    {
+      "id": "UI_UX_PRO_MAX_DESIGN_SYSTEM_USED",
+      "passed": true,
+      "evidence": "10_research/ui_skill_design_system_audit_20260605.md"
+    }
+  ],
+  "migration_inventory": {
+    "keep_as_verified_backend_or_data_base": [
+      "FastAPI dashboard/object-chain payload",
+      "资料池上传、采用、放弃、删除的后端状态",
+      "人群状态、行为程序、选择概率、验证目标对象数据",
+      "仿真任务预检接口和完整仿真阻止边界",
+      "DeepSeek-only 生产端角色约束",
+      "Playwright/axe/Lighthouse/OTel/高级 QA 证据链"
+    ],
+    "refactor_into_new_workflow_surface": [
+      "左侧导航和旧 view 切换应重组为全局工作流步骤",
+      "全局推进台应成为任务编排首页，而不是多个 panel 的集合",
+      "资料池和方法对象池应合并为可采用/锁定/反驳的对象链工作区",
+      "AI 工作台应成为项目综合与节点分析的持续沟通区，而不是独立问答页",
+      "节点、地图、报告应作为对象链下游工作区，不再并列成旧页面栏目"
+    ],
+    "retire_or_hide_from_user_surface": [
+      "旧项目总览式死文案",
+      "裸分数、最终推荐、ROI 或完整仿真完成口径",
+      "raw/debug/payload/traceback/ConnectError 等后端词",
+      "把静态地图兜底误写成真实自由地图仿真",
+      "把旧 dry-run 或 DeepSeek 草稿写成最终业务判断"
+    ]
+  },
+  "next_information_architecture": [
+    {
+      "step": "01 全局链路台",
+      "purpose": "显示资料、状态、行为、选择、空间、验证、报告的整体进度和阻塞项。",
+      "source_basis": [
+        "Flowus 设计学习",
+        "page_layer_rebuild_blueprint",
+        "object_chain API"
+      ]
+    },
+    {
+      "step": "02 资料与空间底座",
+      "purpose": "集中处理老板资料、策划文案、CAD/图纸、PDF 表格、高德 POI 和用户上传资料。",
+      "source_basis": [
+        "老板资料 6/6",
+        "CAD/策划资料",
+        "evidence_ledger",
+        "AMap POI"
+      ]
+    },
+    {
+      "step": "03 人物仿真对象工坊",
+      "purpose": "让用户管理人群状态、行为程序、选择概率和验证目标，DeepSeek 只能生成候选。",
+      "source_basis": [
+        "ROTE",
+        "HumanLM",
+        "MobileCity",
+        "M2LSimu"
+      ]
+    },
+    {
+      "step": "04 仿真任务预检",
+      "purpose": "组合对象并检查真实校准、宏观验证、空间几何和运营数据缺口。",
+      "source_basis": [
+        "simulation_task_preflight",
+        "P3 gate",
+        "human oversight"
+      ]
+    },
+    {
+      "step": "05 决策解释与报告工作稿",
+      "purpose": "只在平台链路可回放后生成工作报告，明确已确认、待复核和禁止判断。",
+      "source_basis": [
+        "DeepSeek-only",
+        "checked evidence rules",
+        "商业报告语言规则"
+      ]
+    }
+  ],
+  "evidence_files": [
+    "00_control/page_layer_rebuild_blueprint_20260605.md",
+    "10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md",
+    "10_research/simulation_task_entry_evidence_reinforcement_20260605.md",
+    "40_quality_evidence/page_layer_rebuild_validation_20260605.json",
+    "40_quality_evidence/object_chain_rebaseline_validation_20260605.json",
+    "40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json"
+  ]
+}

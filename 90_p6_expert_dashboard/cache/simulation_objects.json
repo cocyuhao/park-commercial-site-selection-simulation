@@ -1,0 +1,2354 @@
+[
+  {
+    "object_id": "SIMOBJ-CP-001",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-001 的消费选择候选",
+    "summary": "亲子家庭在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-002",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-002 的消费选择候选",
+    "summary": "亲子家庭在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-003",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-003 的消费选择候选",
+    "summary": "亲子家庭在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-004",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-004 的消费选择候选",
+    "summary": "亲子家庭在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-005",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-005 的消费选择候选",
+    "summary": "亲子家庭在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-006",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-001 在 P2-NODE-006 的消费选择候选",
+    "summary": "亲子家庭在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：寻找座椅与饮品点；当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-01-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_visitor_mix_and_behavior_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-007",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-001 的消费选择候选",
+    "summary": "运动健身人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-008",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-002 的消费选择候选",
+    "summary": "运动健身人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-009",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-003 的消费选择候选",
+    "summary": "运动健身人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-010",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-004 的消费选择候选",
+    "summary": "运动健身人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-011",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-005 的消费选择候选",
+    "summary": "运动健身人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-012",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-002 在 P2-NODE-006 的消费选择候选",
+    "summary": "运动健身人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：补水；当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-02-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_route_and_dwell_time_observation",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-013",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-001 的消费选择候选",
+    "summary": "周边白领与社交人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-014",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-002 的消费选择候选",
+    "summary": "周边白领与社交人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-015",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-003 的消费选择候选",
+    "summary": "周边白领与社交人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-016",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-004 的消费选择候选",
+    "summary": "周边白领与社交人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-017",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-005 的消费选择候选",
+    "summary": "周边白领与社交人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-018",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-003 在 P2-NODE-006 的消费选择候选",
+    "summary": "周边白领与社交人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：搜索咖啡/简餐；当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-03-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_real_time_peak_and_conversion_rate",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-019",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-001 的消费选择候选",
+    "summary": "老人康养人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-020",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-002 的消费选择候选",
+    "summary": "老人康养人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-021",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-003 的消费选择候选",
+    "summary": "老人康养人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-022",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-004 的消费选择候选",
+    "summary": "老人康养人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-023",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-005 的消费选择候选",
+    "summary": "老人康养人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-024",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-004 在 P2-NODE-006 的消费选择候选",
+    "summary": "老人康养人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：晨练后寻找座椅；当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-04-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_age_mix_and_service_acceptance_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-025",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-001 的消费选择候选",
+    "summary": "外地游客与文化参观人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-026",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-002 的消费选择候选",
+    "summary": "外地游客与文化参观人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-027",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-003 的消费选择候选",
+    "summary": "外地游客与文化参观人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-028",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-004 的消费选择候选",
+    "summary": "外地游客与文化参观人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-029",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-005 的消费选择候选",
+    "summary": "外地游客与文化参观人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-030",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-005 在 P2-NODE-006 的消费选择候选",
+    "summary": "外地游客与文化参观人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：看导览；当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-05-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_origin_profile_and_route_choice_data",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-031",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-001 的消费选择候选",
+    "summary": "夜间活动与演艺人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-01",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「咖啡"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-032",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-002 的消费选择候选",
+    "summary": "夜间活动与演艺人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-02",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「接待大厅+健康展厅"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-033",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-003 的消费选择候选",
+    "summary": "夜间活动与演艺人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-03",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "客单价",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「西式简餐"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-034",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-004 的消费选择候选",
+    "summary": "夜间活动与演艺人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-04",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "租金/分成",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「运动户外品牌折扣"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-035",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-005 的消费选择候选",
+    "summary": "夜间活动与演艺人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-05",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "装修/人工/运营成本",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「现烤烘焙"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-CP-036",
+    "object_type": "choice_probability",
+    "type_label": "选择概率候选",
+    "title": "P2-PER-006 在 P2-NODE-006 的消费选择候选",
+    "summary": "夜间活动与演艺人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。；已有行为草稿提示：快速补给；当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。；缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
+    "linked_id": "CHOICE-06-06",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "补资料后判断",
+    "source_refs": [
+      "70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "真实客流",
+      "转化率",
+      "收益成本",
+      "运营授权",
+      "DWG几何",
+      "needs_event_flow_and_safety_constraints",
+      "按入口/节点/时段的真实客流",
+      "从到访到消费的转化率",
+      "路线距离、绕行、排队和营业时段",
+      "收益成本和运营授权"
+    ],
+    "specific_advice": [
+      "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+      "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+      "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+      "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+      "围绕「中医诊疗（诊室"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-001",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "入口/节点/时段客流曲线是否能复现真实峰谷",
+    "summary": "只有补齐「按入口与小时粒度的客流或现场计数」并完成业务复核后，才能把「入口/节点/时段客流曲线是否能复现真实峰谷」从草稿升级。 可接受证据包括：闸机数据、客流传感器、连续现场观察记录。",
+    "linked_id": "VAL-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "按入口与小时粒度的客流或现场计数"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-002",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "不同人群从入口到节点的路径选择是否合理",
+    "summary": "只有补齐「路径观察、热力图、GPS/蓝牙/WiFi探针或人工路线记录」并完成业务复核后，才能把「不同人群从入口到节点的路径选择是否合理」从草稿升级。 可接受证据包括：匿名化轨迹、观察表、地图标注。",
+    "linked_id": "VAL-002",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "路径观察",
+      "热力图",
+      "GPS/蓝牙/WiFi探针或人工路线记录"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-003",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "各类节点的停留时长是否落在可信范围",
+    "summary": "只有补齐「按人群/节点/时段的停留观察或访谈」并完成业务复核后，才能把「各类节点的停留时长是否落在可信范围」从草稿升级。 可接受证据包括：现场计时、摄像统计、问卷或运营记录。",
+    "linked_id": "VAL-003",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "按人群/节点/时段的停留观察或访谈"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-004",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "到访转化为消费的概率是否可信",
+    "summary": "只有补齐「业态转化率、交易记录、快闪测试、同类项目基准」并完成业务复核后，才能把「到访转化为消费的概率是否可信」从草稿升级。 可接受证据包括：POS记录、运营方表格、试运营数据。",
+    "linked_id": "VAL-004",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "业态转化率",
+      "交易记录",
+      "快闪测试",
+      "同类项目基准"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-005",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "不同人群的客单价区间是否可信",
+    "summary": "只有补齐「客单价、支付结构、价格带接受度」并完成业务复核后，才能把「不同人群的客单价区间是否可信」从草稿升级。 可接受证据包括：POS表、问卷、第三方商业基准。",
+    "linked_id": "VAL-005",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "客单价",
+      "支付结构",
+      "价格带接受度"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-006",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "园内与周边供给是否完整且分类正确",
+    "summary": "只有补齐「高德POI抓取 + 现场复核 + 经营字段」并完成业务复核后，才能把「园内与周边供给是否完整且分类正确」从草稿升级。 可接受证据包括：POI清单、照片、营业状态、距离。",
+    "linked_id": "VAL-006",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "高德POI抓取 + 现场复核 + 经营字段"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-007",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "空间边界、面积和可达性是否可靠",
+    "summary": "只有补齐「DWG/DXF/GeoJSON或可验证图纸」并完成业务复核后，才能把「空间边界、面积和可达性是否可靠」从草稿升级。 可接受证据包括：转换后的图层、坐标系说明、人工复核记录。",
+    "linked_id": "VAL-007",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "DWG/DXF/GeoJSON或可验证图纸"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-008",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "商业经营和改造是否被允许",
+    "summary": "只有补齐「运营授权、消防/结构/业态限制文件」并完成业务复核后，才能把「商业经营和改造是否被允许」从草稿升级。 可接受证据包括：批复、合同、管理方确认函。",
+    "linked_id": "VAL-008",
+    "status": "blocked",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "运营授权",
+      "消防/结构/业态限制文件"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-009",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "关键假设变动时结论是否稳定",
+    "summary": "只有补齐「多组参数、敏感性范围、缺口上下界」并完成业务复核后，才能把「关键假设变动时结论是否稳定」从草稿升级。 可接受证据包括：本地Monte Carlo结果、参数日志、差异表。",
+    "linked_id": "VAL-009",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "多组参数",
+      "敏感性范围",
+      "缺口上下界"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-VT-010",
+    "object_type": "simulation_validation_target",
+    "type_label": "仿真验证目标",
+    "title": "AI输出是否被业务人员理解并能执行",
+    "summary": "只有补齐「专家反馈、客服端可用性测试、可读报告」并完成业务复核后，才能把「AI输出是否被业务人员理解并能执行」从草稿升级。 可接受证据包括：AI工作台记录、Selenium记录、人工视觉备注。",
+    "linked_id": "VAL-010",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "校准前置条件",
+    "source_refs": [
+      "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv",
+      "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"
+    ],
+    "missing_inputs": [
+      "专家反馈",
+      "客服端可用性测试",
+      "可读报告"
+    ],
+    "specific_advice": [
+      "补齐参考数据后再运行校准",
+      "通过前不得宣称完整仿真",
+      "人工确认验收口径"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-04T15:10:54",
+    "updated_at": "2026-06-04T15:10:54",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-001",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "亲子家庭状态画像",
+    "summary": "陪伴儿童活动与短时休憩；主要需求：卫生间、遮阴座椅、儿童友好动线；消费线索：轻餐、饮品、亲子体验、儿童文创",
+    "linked_id": "STATE-FAMILY-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_real_visitor_mix_and_behavior_observation"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-002",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "运动健身人群状态画像",
+    "summary": "跑步骑行健身后的补给与恢复；主要需求：饮水、储物、淋浴线索、康复服务；消费线索：运动补给、轻食、装备小件、拉伸康复",
+    "linked_id": "STATE-SPORT-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_route_and_dwell_time_observation"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-003",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "周边白领与社交人群状态画像",
+    "summary": "午间/下班后的咖啡轻社交；主要需求：安静座位、充电、可快速取餐；消费线索：咖啡、烘焙、早午餐、轻社交空间",
+    "linked_id": "STATE-WORKER-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_real_time_peak_and_conversion_rate"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-004",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "老人康养人群状态画像",
+    "summary": "晨练康养与安静休憩；主要需求：无障碍、座椅、低噪空间、健康服务；消费线索：茶饮、康养理疗、轻食、文化课程",
+    "linked_id": "STATE-ELDER-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_age_mix_and_service_acceptance_data"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-005",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "外地游客与文化参观人群状态画像",
+    "summary": "打卡参观、文化体验与纪念消费；主要需求：导览、寄存、路线提示、休息点；消费线索：文创、纪念品、展陈体验、特色餐饮",
+    "linked_id": "STATE-VISITOR-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_origin_profile_and_route_choice_data"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-PS-006",
+    "object_type": "persona_state",
+    "type_label": "人群状态画像",
+    "title": "夜间活动与演艺人群状态画像",
+    "summary": "夜间活动前后餐饮与社交停留；主要需求：照明、安保、卫生间、返程指引；消费线索：夜间轻餐、饮品、活动周边、社交空间",
+    "linked_id": "STATE-NIGHT-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先确认状态",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_event_flow_and_safety_constraints"
+    ],
+    "specific_advice": [
+      "先确认真实人群占比",
+      "再校准时间压力、绕行容忍和排队容忍",
+      "未复核前不要把画像当最终客群结论"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-001",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "亲子家庭 · 亲子周末入园休息消费",
+    "summary": "周末/节假日 + 儿童疲劳：寻找座椅与饮品点; 若附近有儿童友好轻餐则停留; 记录等待时间；放弃/外溢条件：排队超过8分钟或绕行超过180米时放弃并向园外/线上替代转移",
+    "linked_id": "BEH-001",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_real_family_flow_and_queue_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-002",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "运动健身人群 · 运动后补给恢复",
+    "summary": "运动后30分钟：补水; 购买轻食或运动饮料; 若有康复/拉伸服务则评估停留；放弃/外溢条件：距离超过320米或看不到明确运动补给标识时跳过",
+    "linked_id": "BEH-002",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_route_sensor_or_observation_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-003",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "周边白领与社交人群 · 午间咖啡与快餐",
+    "summary": "午餐/下午茶时段：搜索咖啡/简餐; 选择等待短且可坐的位置; 可能与同事合并消费；放弃/外溢条件：等待超过10分钟或支付/排队不清晰时改去园外成熟商圈",
+    "linked_id": "BEH-003",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_time_peak_and_nearby_worker_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-004",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "周边白领与社交人群 · 社交会合后轻消费",
+    "summary": "朋友会合/轻社交：选择可坐可聊的位置; 购买低负担饮品; 形成二次停留；放弃/外溢条件：空间过吵、座位不足或距离主路过远时缩短停留",
+    "linked_id": "BEH-004",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_dwell_time_survey"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-005",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "老人康养人群 · 老人晨练康养服务",
+    "summary": "工作日晨练/低峰：晨练后寻找座椅; 关注茶饮/理疗/课程; 对价格和安全性更敏感；放弃/外溢条件：缺少明确安全/可信提示或价格不透明时不消费",
+    "linked_id": "BEH-005",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_age_mix_and_service_acceptance_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-006",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "外地游客与文化参观人群 · 文化参观顺路文创",
+    "summary": "经过展陈/历史文化点：看导览; 顺路进入文创/特色餐饮; 购买小额纪念品；放弃/外溢条件：看不到与公园文化相关的差异化内容时放弃",
+    "linked_id": "BEH-006",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_cultural_route_and_purchase_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-007",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "夜间活动与演艺人群 · 夜间演艺散场补给",
+    "summary": "夜间演出/活动散场：快速补给; 购买活动周边; 与同行短暂停留；放弃/外溢条件：灯光不足、动线拥堵或返程压力高时快速离开",
+    "linked_id": "BEH-007",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_event_flow_safety_and_authorization"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-008",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "运动健身人群 · 赛事活动短时补给",
+    "summary": "赛事/团体活动：赛前购买水和能量补给; 赛后拉伸/补餐; 团体集中消费；放弃/外溢条件：补给点容量不足或排队秩序差时转向自带/外部购买",
+    "linked_id": "BEH-008",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_event_operations_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-009",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "亲子家庭 · 雨热天气避让消费",
+    "summary": "高温/雨天/大风：寻找遮蔽; 延长室内停留; 顺带购买饮品轻食；放弃/外溢条件：无可避让空间或空间过挤时提前离园",
+    "linked_id": "BEH-009",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_weather_linked_observation"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-010",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "外地游客与文化参观人群 · 停车/入口到首个消费点",
+    "summary": "从停车场或地铁入口进入：决定路线; 若首个节点有清晰业态则先消费; 否则直接去景点；放弃/外溢条件：入口信息混乱或首个点距离过远时跳过首购",
+    "linked_id": "BEH-010",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_entrance_flow_and_signage_audit"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-011",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "周边白领与社交人群 · 排队放弃与外溢",
+    "summary": "高峰排队/座位不足：观察排队; 比较附近替代供给; 可能产生外溢到园外商业；放弃/外溢条件：等待超过个人容忍或替代点距离更近时外溢",
+    "linked_id": "BEH-011",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "needs_queue_and_spillover_data"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  },
+  {
+    "object_id": "SIMOBJ-BP-012",
+    "object_type": "behavior_program",
+    "type_label": "行为程序",
+    "title": "所有人群 · 资料不足时的保守决策",
+    "summary": "关键资料缺失或冲突：只输出待补数据和敏感性提醒; 不做收益结论; 不关闭门禁；放弃/外溢条件：存在geometry/visitor_flow/conversion_rate/revenue_cost/authorization任一阻塞时暂停正式仿真",
+    "linked_id": "BEH-012",
+    "status": "needs_review",
+    "status_label": "待复核",
+    "adoption_status": "暂未采用",
+    "priority_label": "先复核行为链",
+    "source_refs": [
+      "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+    ],
+    "missing_inputs": [
+      "active_as_safety_gate"
+    ],
+    "specific_advice": [
+      "把触发条件、动作序列、放弃条件和概率输入逐项复核",
+      "采用后再进入本地仿真预演"
+    ],
+    "review_notes": [],
+    "user_locked": false,
+    "created_at": "2026-06-05T10:09:57",
+    "updated_at": "2026-06-05T10:09:57",
+    "output_status": "needs_review",
+    "not_final": true
+  }
+]

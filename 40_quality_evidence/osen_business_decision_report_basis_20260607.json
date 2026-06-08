@@ -1,0 +1,542 @@
+{
+  "generated_at": "2026-06-07T09:23:23",
+  "status": "needs_review",
+  "source_files": {
+    "evidence_ledger": "40_quality_evidence\\evidence_ledger.csv",
+    "calibration_csv": "70_outputs\\processed_tables\\osen_real_calibration_inputs_20260607.csv",
+    "feature_derivatives": "70_outputs\\processed_tables\\person_simulation_feature_derivatives_1000_20260604.csv",
+    "poi_candidates": "70_outputs\\processed_tables\\poi_supply_candidates_amap_boundary_filter.csv",
+    "plan_docx": "CAD图及其计划\\奥森重点项目策划思路20260521.docx",
+    "cad_dxf_analysis": "40_quality_evidence\\cad_dxf_analysis_20260605.json",
+    "cad_pdf_proxy": "40_quality_evidence\\cad_pdf_proxy_analysis_20260605.json",
+    "method_basis": "40_quality_evidence\\osen_report_repair_evidence_basis_20260607.md"
+  },
+  "metrics": {
+    "selected_evidence": [
+      {
+        "metric_id": "MET-0004",
+        "metric_name": "奥森样例-全部人口日峰值到访人数",
+        "value": "109530",
+        "unit": "人次/日",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0005",
+        "metric_name": "奥森样例-流动人口日峰值到访人数",
+        "value": "106088",
+        "unit": "人次/日",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0006",
+        "metric_name": "奥森样例-到访人口日峰值到访人数",
+        "value": "102543",
+        "unit": "人次/日",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0007",
+        "metric_name": "奥森样例-全部人口时均峰值客流",
+        "value": "4847",
+        "unit": "人次/小时",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0008",
+        "metric_name": "奥森样例-流动人口时均峰值客流",
+        "value": "4049",
+        "unit": "人次/小时",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0019",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第一名指数",
+        "value": "2915",
+        "unit": "指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0020",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第一名人均消费",
+        "value": "92",
+        "unit": "元/人",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0021",
+        "metric_name": "奥森样例-餐饮消费水平51-100元占比",
+        "value": "48.49",
+        "unit": "%",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0022",
+        "metric_name": "奥森样例-餐饮消费水平101-150元TGI",
+        "value": "126",
+        "unit": "TGI指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0025",
+        "metric_name": "奥森样例-娱乐休闲咖啡厅人群覆盖度",
+        "value": "13.38",
+        "unit": "%",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0026",
+        "metric_name": "奥森样例-娱乐休闲咖啡厅TGI",
+        "value": "286",
+        "unit": "TGI指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0027",
+        "metric_name": "奥森样例-美食冷饮店人群覆盖度",
+        "value": "14.69",
+        "unit": "%",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0028",
+        "metric_name": "奥森样例-美食冷饮店TGI",
+        "value": "332",
+        "unit": "TGI指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0049",
+        "metric_name": "奥森样例-运动健身瑜伽人群覆盖度",
+        "value": "3.49",
+        "unit": "%",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0050",
+        "metric_name": "奥森样例-运动健身瑜伽TGI",
+        "value": "382",
+        "unit": "TGI指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0257",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第二名指数",
+        "value": "2733",
+        "unit": "指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0258",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第二名人均消费",
+        "value": "231",
+        "unit": "元/人",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0259",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第三名指数",
+        "value": "1944",
+        "unit": "指数",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      },
+      {
+        "metric_id": "MET-0260",
+        "metric_name": "奥森样例-区域内流动人口美食类热门到访POI第三名人均消费",
+        "value": "129",
+        "unit": "元/人",
+        "source_file": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf"
+      }
+    ],
+    "headline": {
+      "peak_daily_all": "奥森样例-全部人口日峰值到访人数：109530人次/日",
+      "peak_hour_all": "奥森样例-全部人口时均峰值客流：4847人次/小时",
+      "coffee": "奥森样例-娱乐休闲咖啡厅人群覆盖度：13.38%；奥森样例-娱乐休闲咖啡厅TGI：286TGI指数",
+      "cold_drink": "奥森样例-美食冷饮店人群覆盖度：14.69%；奥森样例-美食冷饮店TGI：332TGI指数",
+      "yoga": "奥森样例-运动健身瑜伽人群覆盖度：3.49%；奥森样例-运动健身瑜伽TGI：382TGI指数",
+      "food_price": "奥森样例-区域内流动人口美食类热门到访POI第一名人均消费：92元/人；奥森样例-区域内流动人口美食类热门到访POI第二名人均消费：231元/人；奥森样例-区域内流动人口美食类热门到访POI第三名人均消费：129元/人",
+      "food_visit": "奥森样例-区域内流动人口美食类热门到访POI第一名指数：2915指数；奥森样例-区域内流动人口美食类热门到访POI第二名指数：2733指数；奥森样例-区域内流动人口美食类热门到访POI第三名指数：1944指数"
+    }
+  },
+  "calibration": {
+    "count": 14,
+    "items": [
+      {
+        "calibration_id": "ORCI-001",
+        "indicator_name": "北京市居民人均可支配收入",
+        "value": "89090",
+        "unit": "元/人/年",
+        "simulation_use": "约束价格带和支付能力讨论的上位边界。"
+      },
+      {
+        "calibration_id": "ORCI-002",
+        "indicator_name": "北京市居民人均消费支出",
+        "value": "50667",
+        "unit": "元/人/年",
+        "simulation_use": "约束文娱、亲子、康养、轻餐等业态的价格带讨论。"
+      },
+      {
+        "calibration_id": "ORCI-003",
+        "indicator_name": "北京市居民人均服务性消费支出",
+        "value": "30052",
+        "unit": "元/人/年",
+        "simulation_use": "说明服务消费有宏观背景，可约束体验、活动、康养和文娱判断。"
+      },
+      {
+        "calibration_id": "ORCI-101",
+        "indicator_name": "美食/食材/票务生活偏好",
+        "value": "美食 TGI 118；食材 TGI 122；票务 TGI 152",
+        "unit": "TGI",
+        "simulation_use": "用于判断轻餐、票务活动、亲子/演艺和补给服务是否值得进入候选。"
+      },
+      {
+        "calibration_id": "ORCI-102",
+        "indicator_name": "运动健身与健康偏好",
+        "value": "运动健身 TGI 125；健康养生 TGI 123",
+        "unit": "TGI",
+        "simulation_use": "用于约束晨练、跑步、运动补给、拉伸康复、瑜伽/普拉提场景。"
+      },
+      {
+        "calibration_id": "ORCI-103",
+        "indicator_name": "教育与亲子偏好",
+        "value": "在线学堂 TGI 125；儿童教育 TGI 119；出国留学 TGI 145",
+        "unit": "TGI",
+        "simulation_use": "用于约束亲子活动、儿童文创、研学和家庭休憩场景。"
+      },
+      {
+        "calibration_id": "ORCI-106",
+        "indicator_name": "周边美食热门到访与客单",
+        "value": "新净雅 231 元；咿道南门涮肉 92 元；亲子家庭餐厅 129 元",
+        "unit": "人均消费",
+        "simulation_use": "作为竞品价格带线索，用来约束园内餐饮/亲子/轻餐价格设定。"
+      },
+      {
+        "calibration_id": "ORCI-107",
+        "indicator_name": "流动人口美食热门到访与客单",
+        "value": "咿道南门涮肉 92 元；新净雅 231 元；亲子家庭餐厅 129 元",
+        "unit": "人均消费",
+        "simulation_use": "用于交叉验证流动人口的餐饮外溢和价格带。"
+      }
+    ]
+  },
+  "feature_pool": {
+    "count": 1200,
+    "persona_count": 8,
+    "income_segment_count": 5,
+    "time_band_count": 6,
+    "weather_count": 5,
+    "examples": [
+      {
+        "persona_id": "runner",
+        "persona_name": "晨练/跑步人群",
+        "state": "目标是快速补水、低负担补给和路线不中断；收入敏感度中等，更在意距离、排队和运动后即时性。",
+        "income_price_band": "0-30元即时补给或免费基础服务",
+        "time_band_name": "清晨",
+        "weather_name": "舒适天气",
+        "node_context_name": "入口/闸口",
+        "action": "饮水机/直饮水点"
+      },
+      {
+        "persona_id": "parent_family",
+        "persona_name": "亲子家庭",
+        "state": "目标是安全停留、儿童照护、轻食和休息；收入跨度较大，价格透明、卫生和便利性比单价更重要。",
+        "income_price_band": "51-150元咖啡、茶饮、轻食与短停留服务",
+        "time_band_name": "上午",
+        "weather_name": "高温暴晒",
+        "node_context_name": "主环路/主路径",
+        "action": "咖啡/冷饮小站"
+      },
+      {
+        "persona_id": "office_lunch",
+        "persona_name": "周边白领/午间客群",
+        "state": "目标是在有限时间内完成咖啡、轻食、社交或短暂放松；收入水平相对稳定，时间成本高于小额价差。",
+        "income_price_band": "31-100元亲子轻食/饮品/休息配套",
+        "time_band_name": "下午",
+        "weather_name": "寒冷大风",
+        "node_context_name": "活动/展陈节点",
+        "action": "卫生间与排队改善"
+      },
+      {
+        "persona_id": "tourist_photo",
+        "persona_name": "外地游客/拍照客群",
+        "state": "目标是景观停留、路线指引、特色消费和纪念性体验；收入与旅游预算影响文创和特色产品接受度。",
+        "income_price_band": "101-300元精品咖啡、文创、夜间餐酒或运动健康体验",
+        "time_band_name": "傍晚",
+        "weather_name": "空气质量较差",
+        "node_context_name": "服务缺口节点",
+        "action": "儿童友好轻食"
+      },
+      {
+        "persona_id": "culture_visitor",
+        "persona_name": "文化研学/活动客群",
+        "state": "目标是活动前后聚集、讲解、文创、补给和秩序；团体预算、活动票务和组织方安排会改变消费决策。",
+        "income_price_band": "0-30元即时补给或免费基础服务",
+        "time_band_name": "周末/节假日高峰",
+        "weather_name": "舒适天气",
+        "node_context_name": "离园出口/换乘口",
+        "action": "电子提示屏"
+      },
+      {
+        "persona_id": "silver_senior",
+        "persona_name": "银发慢游人群",
+        "state": "目标是舒适步行、座椅、厕所、饮水和低风险消费；收入/养老金差异会影响价格容忍和消费频次。",
+        "income_price_band": "300元以上活动、包场、课程或联名产品",
+        "time_band_name": "午间",
+        "weather_name": "降雨",
+        "node_context_name": "湖边/景观停留区",
+        "action": "暂不新增，仅观察复核"
+      },
+      {
+        "persona_id": "cyclist",
+        "persona_name": "骑行/装备人群",
+        "state": "目标是路线衔接、快速补给、临时维修和安全停靠；收入敏感度不一，但对专业服务和时间效率有明确需求。",
+        "income_price_band": "51-150元咖啡、茶饮、轻食与短停留服务",
+        "time_band_name": "清晨",
+        "weather_name": "高温暴晒",
+        "node_context_name": "入口/闸口",
+        "action": "社交停留座椅"
+      },
+      {
+        "persona_id": "night_event",
+        "persona_name": "夜间活动/社交人群",
+        "state": "目标是照明安全、夜间补给、社交停留和离园便利；收入、同行关系和夜间营业时间共同影响消费。",
+        "income_price_band": "300元以上活动、包场、课程或联名产品",
+        "time_band_name": "上午",
+        "weather_name": "降雨",
+        "node_context_name": "主环路/主路径",
+        "action": "季节饮品轻食"
+      }
+    ]
+  },
+  "poi": {
+    "count": 211,
+    "top_categories": [
+      [
+        "yoga_pilates",
+        31
+      ],
+      [
+        "sports_supply",
+        25
+      ],
+      [
+        "convenience_retail",
+        25
+      ],
+      [
+        "fast_food",
+        25
+      ],
+      [
+        "restaurant",
+        24
+      ],
+      [
+        "night_dining_bar",
+        24
+      ],
+      [
+        "tea_drink",
+        19
+      ],
+      [
+        "coffee;cold_drink",
+        16
+      ],
+      [
+        "coffee",
+        7
+      ],
+      [
+        "cultural_creative",
+        5
+      ],
+      [
+        "tea_drink;cold_drink",
+        4
+      ],
+      [
+        "cold_drink",
+        3
+      ]
+    ],
+    "priced_examples": [
+      {
+        "poi_name": "马哥孛罗咖啡厅(安立路)",
+        "category": "coffee",
+        "cost_yuan": "176.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "星巴克(北辰世纪中心店)",
+        "category": "tea_drink",
+        "cost_yuan": "30.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "眉州小吃(国奥村店)",
+        "category": "fast_food",
+        "cost_yuan": "32.00",
+        "distance_band": "1001-1500m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "中奥凯富国际酒店咖啡厅",
+        "category": "coffee",
+        "cost_yuan": "145.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "加加游(奥森店)",
+        "category": "fast_food",
+        "cost_yuan": "20.00",
+        "distance_band": "501-1000m",
+        "boundary_filter_status": "inside_osm_polygon"
+      },
+      {
+        "poi_name": "星巴克(北京天畅园咖啡店)",
+        "category": "tea_drink",
+        "cost_yuan": "30.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "中国科学技术馆-观众餐厅",
+        "category": "restaurant",
+        "cost_yuan": "47.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "静馨瑜伽(北苑路北店)",
+        "category": "yoga_pilates",
+        "cost_yuan": "102.00",
+        "distance_band": "1001-1500m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "COSTA COFFEE(北投新奥购物中心店)",
+        "category": "coffee",
+        "cost_yuan": "34.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      },
+      {
+        "poi_name": "孔雀花园餐厅",
+        "category": "restaurant",
+        "cost_yuan": "366.00",
+        "distance_band": "1501-3000m",
+        "boundary_filter_status": "outside_osm_polygon"
+      }
+    ]
+  },
+  "plan_text_chars": 3751,
+  "cad": {
+    "dxf_result_count": 2,
+    "pdf_hits": [
+      {
+        "page": 1,
+        "text": "项目1：桃花源白房子（155㎡）",
+        "keywords": [
+          "桃花源",
+          "白房子"
+        ],
+        "bbox": [
+          466.4,
+          546.0713,
+          515.4359,
+          549.5739
+        ]
+      }
+    ],
+    "cad_boundary": "PDF is a readable drawing proxy. It helps locate labels and cross-check DWG conversion, but does not replace georeferenced CAD/GIS calibration."
+  },
+  "nodes": [
+    {
+      "node": "桃花源白房子",
+      "area": "155㎡",
+      "original": "活动+轻餐，多功能活动据点，承接婚礼/摄影、亲子/团建、咖啡茶饮和季节下午茶。",
+      "prediction": "需求成立，但应以轻餐、摄影预约、生日/团建小单和花季活动为主；高固定投入和重厨房不宜先上。",
+      "adjustment": "保留“白房子+花海+轻餐”定位，取消一开始重改阳光房的冲动，先做可移动外摆、预约活动、咖啡/冷饮和周末亲子小活动。",
+      "price": "日常 20-60 元；预约活动/冷餐会按 80-180 元/人做情景，不写成确定客单。",
+      "schedule": "春秋花期和周末为主；平日以咖啡、轻食、办公/活动公司后台支撑为辅。",
+      "priority": "第一批低改造试点",
+      "method": "HumanLM: 花海打卡/亲子/活动客的目标与情绪；ROTE: 到达-拍照-休息-轻餐-离开/预约；SSR: 由理由映射为优先推进。"
+    },
+    {
+      "node": "奥运廉洁主题展馆",
+      "area": "575.72㎡",
+      "original": "身心疗愈中心，引入检测设备、疗愈室、功法/瑜伽、营养咨询和茶吧。",
+      "prediction": "健康、瑜伽和康养需求有数据支持，但医疗化、检测化、疗程包风险高；更适合先做健康生活方式和轻康养体验。",
+      "adjustment": "把“德国精密检测+高端疗程”降级为二期，首期做健康展陈、八段锦/瑜伽、营养茶吧、公益讲座和企业健康活动。",
+      "price": "体验/课程 49-199 元；检测/疗程只在资质合作方确认后另行设计。",
+      "schedule": "全天候预约制，雨雪高温时作为室内替代空间。",
+      "priority": "第二批资质合作试点",
+      "method": "HumanLM: 银发/白领的健康焦虑与信任门槛；ROTE: 参观-咨询-体验-预约；双重奖励: 微观行为合理与宏观健康偏好一致。"
+    },
+    {
+      "node": "12#西分区管理中心",
+      "area": "1059.39㎡",
+      "original": "方案一 Live House；方案二北冰洋/义利国潮轻餐、文创和亲子体验。",
+      "prediction": "北冰洋/义利方案更稳；Live House 依赖夜间开放、噪声、演出审批和酒水，不适合做首期主假设。",
+      "adjustment": "主方案改成白天国潮轻餐+文创+亲子烘焙体验；Live House 降级为周末小演出、品牌日或节庆活动组件。",
+      "price": "饮品/面包 15-45 元；亲子 DIY/文创 39-129 元；演出活动另算。",
+      "schedule": "白天和周末为主；夜间仅在审批成立时做活动日。",
+      "priority": "第一批品牌联名试点",
+      "method": "SSR: 两方案先写理由再映射优先级；Logit/Huff: 白天稳定客群优于夜间不确定客群。"
+    },
+    {
+      "node": "南门地下预埋空间",
+      "area": "5417㎡",
+      "original": "方案一运动奥莱折扣仓；方案二大型古风/科幻实景 RPG。",
+      "prediction": "面积大但重资产风险最高；运动消费线索存在，但一次性做大型奥莱或 RPG 都容易被客流、消防、招商和运营复杂度拖垮。",
+      "adjustment": "首期不做满铺。拆成运动户外快闪仓、赛事补给、儿童托管/休息、轻体验和招商样板区；RPG 只保留为节假日预约活动或局部场景。",
+      "price": "零售折扣按品牌定价；体验/托管 29-99 元；大型沉浸式项目不进入首期收入预测。",
+      "schedule": "节假日、赛事日和暑期为主，平日做仓储/品牌快闪/课程预约。",
+      "priority": "先做分区样板，不进入一批满铺",
+      "method": "ROTE: 运动家庭-购物-儿童托管-离开；RL+LLM: 动作空间复杂，先用规则和小样本反馈约束。"
+    },
+    {
+      "node": "南门露天剧场",
+      "area": "草坪/湖畔空间",
+      "original": "湖畔阳光烘焙工坊 + 四季草坪生活场，含咖啡烘焙、市集、音乐、亲子工坊。",
+      "prediction": "与奥森数据最匹配：咖啡、冷饮、美食、亲子和草坪停留都能解释；适合作为第一批标杆试点。",
+      "adjustment": "做“烘焙+咖啡+草坪活动+移动补给”的组合，不先做高噪声演出；活动日历和天气预案要一起设计。",
+      "price": "咖啡/冷饮 20-45 元；烘焙轻餐 35-98 元；草坪套餐/亲子活动 68-168 元。",
+      "schedule": "周末、节假日、下午和活动前后最强；高温/雨天切换为室内烘焙和轻活动。",
+      "priority": "第一批主推试点",
+      "method": "HumanLM: 亲子/拍照/游客的停留状态；ROTE: 湖边停留-闻到烘焙-购买-草坪消费；宏观校准: 咖啡/冷饮 TGI 与峰值客流。"
+    },
+    {
+      "node": "10#2A03分区管理中心",
+      "area": "1804.5㎡",
+      "original": "国医国学文化中心，含中医诊疗、康复理疗、国学教育、茶道、文创。",
+      "prediction": "国医国学方向可成立，但诊疗、针灸、中药房属于高资质业务；首期应以文化体验和非医疗化康养课程切入。",
+      "adjustment": "改成国医文化展陈、茶道/书法/八段锦、艾草香囊/文创、轻理疗体验；医疗服务只与合规机构做二期专区。",
+      "price": "文化课程 39-199 元；文创/茶饮 20-150 元；诊疗类不进入首期预测。",
+      "schedule": "工作日可做团体课程，周末做亲子/银发体验。",
+      "priority": "第二批文化康养试点",
+      "method": "HumanLM: 银发/文化客的信任与低风险需求；ROTE: 参观-体验-购买/预约；许可边界作为动作 mask。"
+    }
+  ],
+  "method_landing": [
+    "HumanLM: 每个节点先判断人群潜在状态，而不是只写客群标签。",
+    "ROTE: 每个节点给出触发-行为-消费-放弃的行为程序。",
+    "SSR/FLR: 不直接给裸分，先写理由，再映射推进优先级。",
+    "RL+LLM 双重奖励: 当前不训练 PPO，但报告用微观行为合理性和宏观数据一致性做校验。",
+    "Agent Bank: 人物弱记忆来自 PDF/TGI/POI/策划资料，不凭空捏人。"
+  ],
+  "report_redesign_basis": {
+    "design_preset": "standard_business_brief",
+    "platform_route": "/api/reports/site-selection/download?format=docx",
+    "main_principle": "用户已给材料优先；外部资料约束写法和方法边界，不替代本地证据。",
+    "no_claims": [
+      "不宣称最终 ROI",
+      "不宣称完整仿真完成",
+      "不把宏观收入直接推导为节点收益",
+      "不把 CAD 坐标当作已校准 GIS 坐标"
+    ]
+  }
+}

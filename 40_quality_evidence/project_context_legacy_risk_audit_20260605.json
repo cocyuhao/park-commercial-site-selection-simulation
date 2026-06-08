@@ -1,0 +1,1157 @@
+{
+  "generated_at": "2026-06-05T09:23:17",
+  "purpose": "Full-project context and legacy risk audit before continuing simulation implementation.",
+  "file_inventory": {
+    "file_count": 949,
+    "text_like_file_count": 738,
+    "total_bytes": 373472960,
+    "by_top_directory": {
+      "40_quality_evidence": 327,
+      "60_model": 141,
+      "50_external_gis": 113,
+      "10_research": 98,
+      "90_p6_expert_dashboard": 91,
+      "70_outputs": 51,
+      "30_extraction": 41,
+      "80_delivery": 29,
+      "00_control": 15,
+      "老板资料": 6,
+      "20_raw_data": 5,
+      "CAD图及其计划": 4,
+      ".claude": 1,
+      ".env": 1,
+      ".env.example": 1,
+      ".gitattributes": 1,
+      ".gitignore": 1,
+      ".vscode": 1,
+      "_check_fill_rate.py": 1,
+      "_check_good_table_content.py": 1,
+      "_check_olympic_fill.py": 1,
+      "_check_ppt_and_ledger.py": 1,
+      "_finalize_p0_audit.py": 1,
+      "_fix_codex_behavior.py": 1,
+      "_update_audit_report.py": 1,
+      "_verify_ppt.py": 1,
+      "_verify_raw.py": 1,
+      "_write_agents_md.py": 1,
+      "AGENTS.md": 1,
+      "ARCHITECTURE.md": 1,
+      "CONTEXT.md": 1,
+      "findings.md": 1,
+      "handoff_next_chat.md": 1,
+      "KEYS.md": 1,
+      "next_chat_prompt.md": 1,
+      "progress.md": 1,
+      "README.md": 1,
+      "requirements.txt": 1,
+      "setup.sh": 1,
+      "task_plan.md": 1
+    },
+    "by_extension": {
+      ".json": 294,
+      ".md": 167,
+      ".png": 158,
+      ".csv": 128,
+      ".py": 104,
+      ".jsonl": 18,
+      ".txt": 17,
+      ".pdf": 16,
+      ".docx": 13,
+      ".log": 6,
+      ".jpg": 5,
+      ".html": 4,
+      "(none)": 3,
+      ".ps1": 2,
+      ".pptx": 2,
+      ".dwg": 2,
+      ".example": 1,
+      ".yml": 1,
+      ".zip": 1,
+      ".geojson": 1,
+      ".sql": 1,
+      ".sqlite3": 1,
+      ".svg": 1,
+      ".js": 1,
+      ".css": 1
+    },
+    "large_files": [
+      {
+        "path": "CAD图及其计划/奥森南园（字体放大）-改造建筑示意_t5.dwg",
+        "bytes": 153603928
+      },
+      {
+        "path": "20_raw_data/ppt/AI (1)(1).pptx",
+        "bytes": 34877227
+      },
+      {
+        "path": "CAD图及其计划/奥森北园(字体放大)-改造建筑示意_t5.dwg",
+        "bytes": 19044528
+      },
+      {
+        "path": "20_raw_data/ppt/奥森修改稿0306.pptx",
+        "bytes": 13128765
+      },
+      {
+        "path": "CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf",
+        "bytes": 6593215
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_1.png",
+        "bytes": 5859951
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_2.png",
+        "bytes": 5600646
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/0306_1.png",
+        "bytes": 5255253
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_3.png",
+        "bytes": 5215171
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_4.png",
+        "bytes": 5031242
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/0306_2.png",
+        "bytes": 4819346
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_5.png",
+        "bytes": 4735735
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw/BOSS-METHOD-PDF-003.pdf",
+        "bytes": 4108797
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_authoritative/BOSS-METHOD-003.pdf",
+        "bytes": 4108797
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_candidates/BOSS-METHOD-PDF-003.pdf",
+        "bytes": 4108797
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_selected_probe/BOSS-METHOD-PDF-003.pdf",
+        "bytes": 4108797
+      },
+      {
+        "path": "老板资料/2603.03303.pdf",
+        "bytes": 4108797
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/AI (1)(1)_6.png",
+        "bytes": 3786580
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_authoritative/BOSS-METHOD-006.docx",
+        "bytes": 3436046
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_candidates/BOSS-METHOD-DOCX-CAND-003.docx",
+        "bytes": 3436046
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/raw_selected_probe/BOSS-METHOD-DOCX-CAND-003.docx",
+        "bytes": 3436046
+      },
+      {
+        "path": "老板资料/已转换 - main-1.docx",
+        "bytes": 3436046
+      },
+      {
+        "path": "40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip",
+        "bytes": 2915416
+      },
+      {
+        "path": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+        "bytes": 2874276
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/assets/ppt_media/0306_3.png",
+        "bytes": 2823685
+      }
+    ]
+  },
+  "boss_materials": {
+    "raw_dir_exists": true,
+    "raw_expected_count": 6,
+    "raw_found_count": 6,
+    "raw_missing": [],
+    "raw_extra": [],
+    "extracted_file_count": 70,
+    "key_docs": [
+      {
+        "path": "10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md",
+        "exists": true,
+        "bytes": 13080
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md",
+        "exists": true,
+        "bytes": 11446
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md",
+        "exists": true,
+        "bytes": 6365
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+        "exists": true,
+        "bytes": 11173
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md",
+        "exists": true,
+        "bytes": 9182
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+        "exists": true,
+        "bytes": 3435
+      },
+      {
+        "path": "10_research/boss_method_materials_20260604/legacy_file_trust_audit_20260604.md",
+        "exists": true,
+        "bytes": 8120
+      }
+    ]
+  },
+  "authoritative_context": [
+    {
+      "path": "AGENTS.md",
+      "exists": true,
+      "bytes": 13784
+    },
+    {
+      "path": "00_control/codex_mainline_guardrails.md",
+      "exists": true,
+      "bytes": 3726
+    },
+    {
+      "path": "00_control/decisions.md",
+      "exists": true,
+      "bytes": 65657
+    },
+    {
+      "path": "progress.md",
+      "exists": true,
+      "bytes": 140340
+    },
+    {
+      "path": "findings.md",
+      "exists": true,
+      "bytes": 103386
+    },
+    {
+      "path": "handoff_next_chat.md",
+      "exists": true,
+      "bytes": 124085
+    },
+    {
+      "path": "next_chat_prompt.md",
+      "exists": true,
+      "bytes": 20055
+    },
+    {
+      "path": "10_research/method_tool_plugin_audit_20260604.md",
+      "exists": true,
+      "bytes": 11517
+    },
+    {
+      "path": "10_research/global_ai_simulation_design_rebaseline_20260604.md",
+      "exists": true,
+      "bytes": 11902
+    },
+    {
+      "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+      "exists": true,
+      "bytes": 12749
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md",
+      "exists": true,
+      "bytes": 13080
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md",
+      "exists": true,
+      "bytes": 11446
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md",
+      "exists": true,
+      "bytes": 6365
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+      "exists": true,
+      "bytes": 11173
+    },
+    {
+      "path": "10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md",
+      "exists": true,
+      "bytes": 3435
+    }
+  ],
+  "legacy_risk_scan": {
+    "counts": {
+      "complete_simulation_claim": 329,
+      "final_claim": 579,
+      "roi_revenue_claim": 341,
+      "legacy_dry_run": 224,
+      "raw_internal_ui": 4238,
+      "score_overclaim": 168,
+      "deepseek_boundary": 7059
+    },
+    "samples": {
+      "complete_simulation_claim": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 29,
+          "text": "7. 不允许旧 dry-run、旧分数、旧报告或旧 UI 文案被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 58,
+          "text": "- 不要把旧 `P4 完整仿真`、旧裸分数、旧 dry-run 当完成。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 80,
+          "text": "- 边界：所有选择概率候选保持 `probability_value=null` 和 `needs_review`；验证目标用于阻止旧 dry-run 或 LLM 草稿被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 117,
+          "text": "- 当前处理：旧证据底座可保留；P6 只视为产品壳；P2 persona/behavior/validation CSV 只视为草稿候选；旧 DeepSeek 输出必须 envelope 适配或降级；P4 完整仿真、ROI、最终排序、最终推荐和节点裸分数统一重审。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 127,
+          "text": "- 禁止：不得把旧 envelope 当 checked 证据、最终排名、ROI、完整仿真、运营决策或节点最终建议。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 226,
+          "text": "| DEC-037 | 2026-05-26 | P2 启动先限定为真实资料准备索引：DOCX/PDF 可抽取为待复核输入，DWG 在无可信转换产物前保持 `pending_conversion`，PPT 不进入 P2 主线 | 用户明确要求新对话开始 P2 准备但不要直接跑完整仿真；当前资料包能支持目标/策划/节点/场景假设拆解，但不能直接支撑几何、客流、收益和成本仿真 | 若把 PDF 标签或 DWG 文件存在性误读成几何解析，会污"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 228,
+          "text": "| DEC-039 | 2026-05-28 | P2 准备可把 DeepSeek 语义草稿转为结构化输入 schema 候选表，但关键缺口域和最终门禁必须由本地规则固定 | 用户要求继续进入 P2 操作并尽量多用 DeepSeek；项目节点、业态/场景假设、空间标签和输入缺口适合 DeepSeek 先整理为可复核候选表 | DeepSeek 可能把 `conversion_rate`、`revenue_cost`、`operation"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 229,
+          "text": "| DEC-040 | 2026-05-28 | P2 按方法原型口径闭环，P3 真实校准和 P4 完整 Agent/GIS 仿真仍未开始 | `task_plan.md` 对 P2 的定义是方法原型、概率选择原型、第一版公式、persona/场景参数和 API 契约草案；用户要求一口气推进 P2，但当前仍缺 DWG 几何、真实客流、转化率、收益/成本和运营授权 | 若把 P2 方法原型误写成完整仿真，会污染最终选址结论；若把候选评分当"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 231,
+          "text": "| DEC-042 | 2026-05-28 | P2 完成真实性必须有专项审计，不只依赖总门禁或聊天结论 | 用户要求仔细检查 P2 是否真的完成，以及 DOCX/PDF/DWG 这些真实资料是否已经写入；同时担心交接文件和乱码残留造成误会 | 若只看旧 gate 或只在聊天里回答，后续 agent 仍可能误解为资料未落实、P2 未完成或完整仿真已完成 | 新增 `review_p2_completion_reality.py` 和 "
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 233,
+          "text": "| DEC-044 | 2026-05-28 | P3 对 P4 完整仿真结论构成硬前置，但 P4 骨架/API/测试/配置可与 P3 并行准备 | P3 的 DWG 转换边界、真实客流、转化率、收益成本、运营授权和模型放行门禁会决定 P4 仿真可信度；用户要求先确认路线并执行 P3 前置，同时尽可能多用 DeepSeek | 若把 P4 并行准备误解为可提前运行完整仿真，会产生虚假排序、收益预测、坐标面积推断或最终推荐 | 新增 LL"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 235,
+          "text": "| DEC-046 | 2026-05-29 | 回滚其他 AI 生成的 P4 完整仿真产物，保留 P4 仅可做 skeleton/API/mock tests/config 的边界 | 外部 P4 在 P3 gate 未闭合时生成 ROI 排名、收益预测、推荐优先级和 P4 完成总结，违反 P3 是 P4 结论硬前置的项目规则 | 若保留这些产物，会污染后续报告、排序和财务判断；若无记录删除，后续 agent 可能重复生成 | 新增 "
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 236,
+          "text": "| DEC-047 | 2026-05-29 | 允许基于现有资料生成 P4 feedback draft，但不得写成 checked/final 完整仿真结论 | 用户澄清最开始提供的策划书/CAD/PDF 资料足以支撑反馈草案；缺失数据可以保留为空或占位，先让合作方看到草案并补数据 | 若继续禁止所有 P4，会阻塞反馈闭环；若把反馈草案写成最终结论，则污染正式选址判断 | 新增 LLM-025 和 P4 feedback draft"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 351,
+          "text": "老板新给的六份方法资料不是“补缺口参考”，而是本项目仿真路线的上层方法约束。它们会直接改变 P2/P3/P4 的判断边界，因此旧文件里的“已完成”“完整仿真”“可用排序”“打分结果”等结论必须重新审计；在重基线完成前，一律只能视为 draft / needs_review / dry-run。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 359,
+          "text": "- `60_model/simulation/engine.py` 当前仍是结构化 dry-run，不代表完整仿真。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "line": 226,
+          "text": "- 文档纠偏：旧的“P4 完整仿真已完成”不能再作为当前事实。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/deep_method_absorption_20260604.md",
+          "line": 140,
+          "text": "- 没有真实入口客流、转化率、收益成本、授权数据前，不能宣称 P4 完整仿真完成。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/deepseek_task_contracts_20260604.md",
+          "line": 38,
+          "text": "- 不得声称“完整仿真已完成”。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/external_paper_screening_20260604.md",
+          "line": 101,
+          "text": "| `persona_state_schema` | HumanLM、1000 agents、自述材料 | 先定义字段和 UI 展示，不急于跑完整仿真 |"
+        }
+      ],
+      "final_claim": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 57,
+          "text": "- 不要让 DeepSeek 决定最终仿真、最终排名、ROI 或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 15,
+          "text": "- 在 DeepSeek 任务契约和旧文件可信度审计完成前，不得继续把旧 P4、ROI、最终排名、最终推荐或节点分数写成已完成事实。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 89,
+          "text": "- 边界：DeepSeek 仍只能做低成本语义工人，生成 `draft/needs_review` 候选、解释、反例和报告草稿；不得做最终仿真、checked 证据、ROI、最终排名或最终商业结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 99,
+          "text": "- 边界：DeepSeek 可以生成 `choice_probability`、`simulation_validation_target`、`state_behavior_consistency` 候选，但必须 `draft/needs_review`，不得写 checked、final、ROI、最终排名、最终推荐或覆盖用户锁定对象。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 117,
+          "text": "- 当前处理：旧证据底座可保留；P6 只视为产品壳；P2 persona/behavior/validation CSV 只视为草稿候选；旧 DeepSeek 输出必须 envelope 适配或降级；P4 完整仿真、ROI、最终排序、最终推荐和节点裸分数统一重审。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 127,
+          "text": "- 禁止：不得把旧 envelope 当 checked 证据、最终排名、ROI、完整仿真、运营决策或节点最终建议。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 136,
+          "text": "- 边界：不得把 `discussion_score_draft` 写成最终选址分、ROI、收益预测或最终排名。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 163,
+          "text": "- 边界：DWG/DOCX/PDF 上传解析仍只是待复核候选；缺口和报告不得升级为最终推荐、最终排序、收益预测或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 171,
+          "text": "- 边界：该分数仍为 `needs_review / not_final`，不得转写为最终排序、收益预测、ROI 或推荐结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 179,
+          "text": "- 边界：后端草案分仅用于讨论，`score_status=external_preview_only` 时只能做地图预览；dry-run 仍不得输出 ROI、收益预测、最终排序或最终推荐。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 209,
+          "text": "| DEC-020 | 2026-05-25 | 最终仿真路线采用“本地 Python 计算 + DeepSeek 辅助判断”，先写入计划，暂不落实代码 | 用户希望接入 DeepSeek 判断，同时保留可复跑、可解释、可审计的仿真计算 | DeepSeek 可能把假设说成事实，或替代模型结果做最终判断 | P2 只让 Python 做概率原型；DeepSeek 只产出 `draft/needs_review` 场景和解释，最终排序、收"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 229,
+          "text": "| DEC-040 | 2026-05-28 | P2 按方法原型口径闭环，P3 真实校准和 P4 完整 Agent/GIS 仿真仍未开始 | `task_plan.md` 对 P2 的定义是方法原型、概率选择原型、第一版公式、persona/场景参数和 API 契约草案；用户要求一口气推进 P2，但当前仍缺 DWG 几何、真实客流、转化率、收益/成本和运营授权 | 若把 P2 方法原型误写成完整仿真，会污染最终选址结论；若把候选评分当"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 233,
+          "text": "| DEC-044 | 2026-05-28 | P3 对 P4 完整仿真结论构成硬前置，但 P4 骨架/API/测试/配置可与 P3 并行准备 | P3 的 DWG 转换边界、真实客流、转化率、收益成本、运营授权和模型放行门禁会决定 P4 仿真可信度；用户要求先确认路线并执行 P3 前置，同时尽可能多用 DeepSeek | 若把 P4 并行准备误解为可提前运行完整仿真，会产生虚假排序、收益预测、坐标面积推断或最终推荐 | 新增 LL"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 248,
+          "text": "- 边界：P4 feedback draft、DeepSeek 输出、AMap POI 示意仍为待复核草案，不得升级为最终推荐、最终排序、最终收益预测或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 314,
+          "text": "- 边界：页面必须标注“公开轮廓/讨论范围外包线 · 待复核”；不得据此输出 DWG 坐标、面积、图层、动线、最终推荐或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 322,
+          "text": "- 边界：实时草案分只在奥森项目上下文显示；外部地点搜索只作为地图预览，不套用奥森评分。dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测或最终排序。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 360,
+          "text": "- 旧 P4 完成口径、ROI/最终排名/最终推荐、裸分数展示必须降级或重写。"
+        },
+        {
+          "path": "00_control/methodology.md",
+          "line": 100,
+          "text": "仿真计算由本地 Python 执行；DeepSeek 只辅助生成场景解释、需求假设草稿和报告初稿。任何概率、收益、排序和最终推荐都必须能追溯到参数表、证据 ID 或明确人工假设。"
+        }
+      ],
+      "roi_revenue_claim": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 57,
+          "text": "- 不要让 DeepSeek 决定最终仿真、最终排名、ROI 或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 15,
+          "text": "- 在 DeepSeek 任务契约和旧文件可信度审计完成前，不得继续把旧 P4、ROI、最终排名、最终推荐或节点分数写成已完成事实。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 89,
+          "text": "- 边界：DeepSeek 仍只能做低成本语义工人，生成 `draft/needs_review` 候选、解释、反例和报告草稿；不得做最终仿真、checked 证据、ROI、最终排名或最终商业结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 99,
+          "text": "- 边界：DeepSeek 可以生成 `choice_probability`、`simulation_validation_target`、`state_behavior_consistency` 候选，但必须 `draft/needs_review`，不得写 checked、final、ROI、最终排名、最终推荐或覆盖用户锁定对象。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 117,
+          "text": "- 当前处理：旧证据底座可保留；P6 只视为产品壳；P2 persona/behavior/validation CSV 只视为草稿候选；旧 DeepSeek 输出必须 envelope 适配或降级；P4 完整仿真、ROI、最终排序、最终推荐和节点裸分数统一重审。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 127,
+          "text": "- 禁止：不得把旧 envelope 当 checked 证据、最终排名、ROI、完整仿真、运营决策或节点最终建议。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 136,
+          "text": "- 边界：不得把 `discussion_score_draft` 写成最终选址分、ROI、收益预测或最终排名。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 163,
+          "text": "- 边界：DWG/DOCX/PDF 上传解析仍只是待复核候选；缺口和报告不得升级为最终推荐、最终排序、收益预测或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 171,
+          "text": "- 边界：该分数仍为 `needs_review / not_final`，不得转写为最终排序、收益预测、ROI 或推荐结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 179,
+          "text": "- 边界：后端草案分仅用于讨论，`score_status=external_preview_only` 时只能做地图预览；dry-run 仍不得输出 ROI、收益预测、最终排序或最终推荐。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 233,
+          "text": "| DEC-044 | 2026-05-28 | P3 对 P4 完整仿真结论构成硬前置，但 P4 骨架/API/测试/配置可与 P3 并行准备 | P3 的 DWG 转换边界、真实客流、转化率、收益成本、运营授权和模型放行门禁会决定 P4 仿真可信度；用户要求先确认路线并执行 P3 前置，同时尽可能多用 DeepSeek | 若把 P4 并行准备误解为可提前运行完整仿真，会产生虚假排序、收益预测、坐标面积推断或最终推荐 | 新增 LL"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 234,
+          "text": "| DEC-045 | 2026-05-28 | P3 当前闭合到“校准执行包准备完成、等待真实来源”的稳态，而不是宣称真实校准完成 | 用户希望一口气推进 P3，但当前没有新增真实客流、转化率、收益成本、运营授权或可信 DWG 转换产物；继续伪推进会污染 P4 | 若把执行包误写成校准完成，会导致 P4 提前输出虚假排序、收益预测或空间结论 | 新增 LLM-023、P3 证据请求/验收标准/假设边界/阻塞项/gate 状态表和本地复"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 235,
+          "text": "| DEC-046 | 2026-05-29 | 回滚其他 AI 生成的 P4 完整仿真产物，保留 P4 仅可做 skeleton/API/mock tests/config 的边界 | 外部 P4 在 P3 gate 未闭合时生成 ROI 排名、收益预测、推荐优先级和 P4 完成总结，违反 P3 是 P4 结论硬前置的项目规则 | 若保留这些产物，会污染后续报告、排序和财务判断；若无记录删除，后续 agent 可能重复生成 | 新增 "
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 248,
+          "text": "- 边界：P4 feedback draft、DeepSeek 输出、AMap POI 示意仍为待复核草案，不得升级为最终推荐、最终排序、最终收益预测或 checked 证据。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 322,
+          "text": "- 边界：实时草案分只在奥森项目上下文显示；外部地点搜索只作为地图预览，不套用奥森评分。dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测或最终排序。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 360,
+          "text": "- 旧 P4 完成口径、ROI/最终排名/最终推荐、裸分数展示必须降级或重写。"
+        },
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "line": 192,
+          "text": "5. 建立旧产物信任地图：全仓库扫描旧完成声明、旧 P4、旧 ROI、旧最终推荐、旧裸分数、旧端口和旧 UI 口径。"
+        },
+        {
+          "path": "10_research/advanced_ai_validation_rebaseline_20260604.md",
+          "line": 67,
+          "text": "- 检查页面和报告是否出现旧 P4、旧 ROI、旧最终排名、旧裸分数和旧端口。"
+        }
+      ],
+      "legacy_dry_run": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 29,
+          "text": "7. 不允许旧 dry-run、旧分数、旧报告或旧 UI 文案被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 58,
+          "text": "- 不要把旧 `P4 完整仿真`、旧裸分数、旧 dry-run 当完成。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 80,
+          "text": "- 边界：所有选择概率候选保持 `probability_value=null` 和 `needs_review`；验证目标用于阻止旧 dry-run 或 LLM 草稿被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 118,
+          "text": "- 禁止：不得跳过全盘吸收直接补 UI、直接推 GitHub、直接把 DeepSeek 草稿或旧 dry-run 写成仿真完成。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 173,
+          "text": "# DEC-063 P6 后端契约统一与 dry-run 解释字段"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 176,
+          "text": "- 决策：员工A后端接口统一返回 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`，并把节点草案评分和 dry-run 阻塞解释放到后端生成；前端可继续保留旧字段，后续逐步切换到后端字段。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 177,
+          "text": "- 原因：前端自行猜字段和计算分数会导致 A/B 职责冲突；dry-run 只返回数量不能解释为什么不能最终化；外部地图搜索地点不能套用奥森训练节点评分。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 179,
+          "text": "- 边界：后端草案分仅用于讨论，`score_status=external_preview_only` 时只能做地图预览；dry-run 仍不得输出 ROI、收益预测、最终排序或最终推荐。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 320,
+          "text": "- 原因：伙伴已新增数据库层和 simulation dry-run API，P6 不能继续只展示固定 CSV 分数；同时用户要求团队内部通过 GitHub 协作。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 321,
+          "text": "- 实现：保留伙伴 `60_model/db`、`60_model/simulation` 和 `/api/simulation/jobs` 能力；P6 前端显示“实时草案分”，结合 P3 gate、dry-run 缺口、POI 数量和边界状态扣分。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 322,
+          "text": "- 边界：实时草案分只在奥森项目上下文显示；外部地点搜索只作为地图预览，不套用奥森评分。dry-run 仍为 `needs_review / not_final`，不输出 ROI、收益预测或最终排序。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 351,
+          "text": "老板新给的六份方法资料不是“补缺口参考”，而是本项目仿真路线的上层方法约束。它们会直接改变 P2/P3/P4 的判断边界，因此旧文件里的“已完成”“完整仿真”“可用排序”“打分结果”等结论必须重新审计；在重基线完成前，一律只能视为 draft / needs_review / dry-run。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 359,
+          "text": "- `60_model/simulation/engine.py` 当前仍是结构化 dry-run，不代表完整仿真。"
+        },
+        {
+          "path": "00_control/team_codex_division.md",
+          "line": 16,
+          "text": "| A. 数据与后端契约 | 同事优先 | SQLite schema、FastAPI API、simulation dry-run、上传解析入池、字段状态解释 | 不改前端视觉和交互布局，除非只为接口自测加极小入口 |"
+        },
+        {
+          "path": "00_control/team_codex_division.md",
+          "line": 67,
+          "text": "- `simulation dry-run` 不是正式 P4 仿真。"
+        },
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "line": 41,
+          "text": "- 仿真不是一次 dry-run，而是可复跑的对象链：人群状态 -> 行为程序 -> 空间路径 -> 选择概率 -> 校准目标 -> 对照指标 -> 工作报告。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/external_paper_screening_20260604.md",
+          "line": 42,
+          "text": "| LIT-017 | MATSim | 活动链/交通 ABM | 大规模出行仿真要有日程、网络、选择、校准 | 当前 dashboard dry-run 不是 MATSim 级仿真 |"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md",
+          "line": 25,
+          "text": "- 不让页面把 dry-run 写成完整仿真。"
+        }
+      ],
+      "raw_internal_ui": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 26,
+          "text": "4. 保持 `choice_probability` 和 `simulation_validation_target` 均为 `needs_review`。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 80,
+          "text": "- 边界：所有选择概率候选保持 `probability_value=null` 和 `needs_review`；验证目标用于阻止旧 dry-run 或 LLM 草稿被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 89,
+          "text": "- 边界：DeepSeek 仍只能做低成本语义工人，生成 `draft/needs_review` 候选、解释、反例和报告草稿；不得做最终仿真、checked 证据、ROI、最终排名或最终商业结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 99,
+          "text": "- 边界：DeepSeek 可以生成 `choice_probability`、`simulation_validation_target`、`state_behavior_consistency` 候选，但必须 `draft/needs_review`，不得写 checked、final、ROI、最终排名、最终推荐或覆盖用户锁定对象。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 124,
+          "text": "- 决策：`60_model/llm_runs` 中 35 个旧 DeepSeek 输出统一通过 `60_model/scripts/adapt_deepseek_legacy_outputs.py` 包装为 `source_summary` envelope，状态固定为 `needs_review`，并写入 `60_model/llm_runs/contract_envelopes/legacy_*.json`。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 170,
+          "text": "- 影响：外部地点统一显示为 `external_preview_only` / 地图预览；节点详情和仿真面板优先展示 `missing_required_fields`、`why_blocked`、`next_data_needed`。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 171,
+          "text": "- 边界：该分数仍为 `needs_review / not_final`，不得转写为最终排序、收益预测、ROI 或推荐结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 176,
+          "text": "- 决策：员工A后端接口统一返回 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`，并把节点草案评分和 dry-run 阻塞解释放到后端生成；前端可继续保留旧字段，后续逐步切换到后端字段。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 179,
+          "text": "- 边界：后端草案分仅用于讨论，`score_status=external_preview_only` 时只能做地图预览；dry-run 仍不得输出 ROI、收益预测、最终排序或最终推荐。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 197,
+          "text": "| DEC-012 | 2026-05-23 | 接入 DeepSeek 作为低成本批处理辅助模型，Key 只读 `DEEPSEEK_API_KEY` 环境变量 | 用户希望降低 GPT-5.5 成本，把简单或量大的任务交给 DeepSeek | 模型输出可能幻觉或污染证据链 | DeepSeek 输出只允许为 `draft/needs_review`，正式入账必须本地脚本和 Codex 复核 |"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 202,
+          "text": "| DEC-017 | 2026-05-25 | 本地 `.env` 保存运行凭据，主 agent 管理、DeepSeek Pro 执行低风险批量任务 | 用户明确希望 GPT-5.5 作为管理者，把简单或量大任务交给 DeepSeek；同时要求 Key 交接可用 | `.env` 泄露会造成凭据风险，DeepSeek 输出可能被误用 | `.env` 已加入 `.gitignore`；验证脚本允许 `.env` 有 Key 但禁止其他"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 206,
+          "text": "| DEC-020 | 2026-05-25 | DeepSeek 可承担 P1 表格分类和证据候选抽取的慢速批处理，但只产出 `draft/needs_review`，不直接入账 | 用户明确允许 DeepSeek 长时间运行；329 张表和 P0 表格候选适合低风险重复抽取 | DeepSeek 可能误抽、漏抽或把热门到访误当完整供给 | 用本地复核队列、PDF 原表回查和 `verify_project_implementatio"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 209,
+          "text": "| DEC-020 | 2026-05-25 | 最终仿真路线采用“本地 Python 计算 + DeepSeek 辅助判断”，先写入计划，暂不落实代码 | 用户希望接入 DeepSeek 判断，同时保留可复跑、可解释、可审计的仿真计算 | DeepSeek 可能把假设说成事实，或替代模型结果做最终判断 | P2 只让 Python 做概率原型；DeepSeek 只产出 `draft/needs_review` 场景和解释，最终排序、收"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 217,
+          "text": "| DEC-028 | 2026-05-26 | 为节约主模型用量，DeepSeek 可接收更完整的项目上下文并承担 P0 核验包等繁琐整理任务，但凭据仍由本地脚本读取和封装 | 用户明确希望把大量简单功能交给 DeepSeek，并允许其了解项目上下文；P0 工作单、入口节点和现场问题整理适合低风险批处理 | 若直接投喂真实 `.env` 内容或让模型自由处理 Key，raw 输出和交接文件可能被凭据污染 | DeepSeek 可读取交"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 227,
+          "text": "| DEC-038 | 2026-05-28 | P2 准备继续推进到 DeepSeek 语义拆解：DOCX 形成项目/业态/场景假设草稿，PDF 形成空间标签草稿，但全部保持 `needs_review` | 用户明确指出 P2 准备不能停在索引层，需要开始操作并落实方案和图纸内容；DOCX/PDF 文本适合低风险语义拆解 | DeepSeek 可能把方案假设写成事实，或把 PDF 文本标签误当几何；若不设门禁会污染 P2 输入 sc"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 228,
+          "text": "| DEC-039 | 2026-05-28 | P2 准备可把 DeepSeek 语义草稿转为结构化输入 schema 候选表，但关键缺口域和最终门禁必须由本地规则固定 | 用户要求继续进入 P2 操作并尽量多用 DeepSeek；项目节点、业态/场景假设、空间标签和输入缺口适合 DeepSeek 先整理为可复核候选表 | DeepSeek 可能把 `conversion_rate`、`revenue_cost`、`operation"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 229,
+          "text": "| DEC-040 | 2026-05-28 | P2 按方法原型口径闭环，P3 真实校准和 P4 完整 Agent/GIS 仿真仍未开始 | `task_plan.md` 对 P2 的定义是方法原型、概率选择原型、第一版公式、persona/场景参数和 API 契约草案；用户要求一口气推进 P2，但当前仍缺 DWG 几何、真实客流、转化率、收益/成本和运营授权 | 若把 P2 方法原型误写成完整仿真，会污染最终选址结论；若把候选评分当"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 233,
+          "text": "| DEC-044 | 2026-05-28 | P3 对 P4 完整仿真结论构成硬前置，但 P4 骨架/API/测试/配置可与 P3 并行准备 | P3 的 DWG 转换边界、真实客流、转化率、收益成本、运营授权和模型放行门禁会决定 P4 仿真可信度；用户要求先确认路线并执行 P3 前置，同时尽可能多用 DeepSeek | 若把 P4 并行准备误解为可提前运行完整仿真，会产生虚假排序、收益预测、坐标面积推断或最终推荐 | 新增 LL"
+        }
+      ],
+      "score_overclaim": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 58,
+          "text": "- 不要把旧 `P4 完整仿真`、旧裸分数、旧 dry-run 当完成。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 7,
+          "text": "- 先看 DEC-079：全局 AI 仿真决策系统设计重基线；旧界面需要按“目标 -> 对象 -> 依据 -> 动作 -> 复核 -> 报告”重组，不再围绕页面、裸分数或技术门禁堆叠。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 14,
+          "text": "- 先看 DEC-070 / DEC-071：老板六份方法资料触发全项目方法重基线；仿真输出从裸分数转向优先级、依据、建议和缺口。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 61,
+          "text": "- 当前实现：已用 Selenium 真实抽取 3 份 Flowus AI 设计资料；新增 `ai_design_2026_openalex_raw_20260604.json`、`ai_design_2026_semantic_scholar_raw_20260604.json`、`global_ai_simulation_design_rebaseline_20260604.md`；P6 已开始把 `choice_probabili"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 117,
+          "text": "- 当前处理：旧证据底座可保留；P6 只视为产品壳；P2 persona/behavior/validation CSV 只视为草稿候选；旧 DeepSeek 输出必须 envelope 适配或降级；P4 完整仿真、ROI、最终排序、最终推荐和节点裸分数统一重审。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 133,
+          "text": "- 决策：节点清单和详情主视觉不再突出裸分数，改为显示“推进优先级 + 具体建议”；分数只保留在“优先级解析与建议”中，解释当前资料条件下为什么先推、先补证或暂缓推荐。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 134,
+          "text": "- 原因：裸分数会让用户误以为系统已经给出精确定量排名；当前 P3 门禁未闭合，分数只能表示讨论优先级，最重要的是告诉业务方下一步该补什么、怎么推进。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 136,
+          "text": "- 边界：不得把 `discussion_score_draft` 写成最终选址分、ROI、收益预测或最终排名。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 168,
+          "text": "- 决策：P6 专家驾驶舱前端不再自行根据 gate、POI、边界和仿真结果重算草案分；前端只展示后端返回的 `discussion_score_draft`、`score_status`、`score_label`、`score_explanation`。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 360,
+          "text": "- 旧 P4 完成口径、ROI/最终排名/最终推荐、裸分数展示必须降级或重写。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 368,
+          "text": "节点和项目判断的主视觉不再以裸分数为核心。界面和报告应优先呈现：推进优先级、为什么这样判断、需要补什么证据、下一步具体怎么做，以及哪些判断仍待复核。分数如保留，只能作为内部辅助指标，并必须解释口径、证据来源和不确定性。"
+        },
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "line": 9,
+          "text": "上一版重基线已经做对了几件事：全局定位、对象池、裸分数降级、Flowus 资料证据化、2026 文献初筛、浏览器验证和总门禁。"
+        },
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "line": 161,
+          "text": "- 节点主视觉已从裸分数转成推进优先级、依据和具体建议。"
+        },
+        {
+          "path": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+          "line": 192,
+          "text": "5. 建立旧产物信任地图：全仓库扫描旧完成声明、旧 P4、旧 ROI、旧最终推荐、旧裸分数、旧端口和旧 UI 口径。"
+        },
+        {
+          "path": "10_research/advanced_ai_validation_rebaseline_20260604.md",
+          "line": 67,
+          "text": "- 检查页面和报告是否出现旧 P4、旧 ROI、旧最终排名、旧裸分数和旧端口。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+          "line": 30,
+          "text": "- 节点页面主视觉不显示裸分数。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/deepseek_task_contracts_20260604.md",
+          "line": 40,
+          "text": "- 不得直接给用户展示裸分数或神秘综合分。"
+        },
+        {
+          "path": "10_research/boss_method_materials_20260604/deepseek_task_contracts_20260604.md",
+          "line": 199,
+          "text": "| 输出裸分数但无解释 | 丢弃分数，只保留文本草稿待复核 |"
+        }
+      ],
+      "deepseek_boundary": [
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 7,
+          "text": "本项目已经进入长上下文、多 agent、多轮同步状态。风险不是“少写一个总结”，而是新对话或新 agent 容易把旧完成度、旧分数、旧 DeepSeek 草稿、同事辅助代码和老板方法资料混成一团，导致主线重新跑歪。"
+        },
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 25,
+          "text": "3. 保持 DeepSeek 低成本语义工人定位。"
+        },
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 26,
+          "text": "4. 保持 `choice_probability` 和 `simulation_validation_target` 均为 `needs_review`。"
+        },
+        {
+          "path": "00_control/codex_mainline_guardrails.md",
+          "line": 57,
+          "text": "- 不要让 DeepSeek 决定最终仿真、最终排名、ROI 或 checked 证据。"
+        },
+        {
+          "path": "00_control/credential_handoff.md",
+          "line": 19,
+          "text": "- DeepSeek 脚本只从 `DEEPSEEK_API_KEY` 读取 Key。"
+        },
+        {
+          "path": "00_control/credential_handoff.md",
+          "line": 27,
+          "text": "- 本地 `.env` 已保存高德和 DeepSeek 凭据；"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 13,
+          "text": "- 旧 DeepSeek 输出已按 DEC-073 纳入 metadata-only envelope；通过验证不代表旧内容可用。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 15,
+          "text": "- 在 DeepSeek 任务契约和旧文件可信度审计完成前，不得继续把旧 P4、ROI、最终排名、最终推荐或节点分数写成已完成事实。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 24,
+          "text": "- 关键判断：昨天资料不是白读，但大量模型仍是 partial。ROTE/behavior program、HumanLM/persona state、RL+LLM 宏观/微观验证、DeepSeek 队列与 trace 都还没充分落成产品能力。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 25,
+          "text": "- DeepSeek 并发边界：新增 `10_research/deepseek_api_concurrency_capacity_20260605.md`，记录官方账号级并发口径。不得用多 API Key 作为架构方案，也不得逐游客实时调用 DeepSeek。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 26,
+          "text": "- 下一步：优先把 partial 模型落成系统能力：人群状态对象池、行为程序对象池、DeepSeek 队列/缓存/trace、验证目标前置条件和旧风险词用户可见清理。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 33,
+          "text": "- 当前实现：审计清单已覆盖 Playwright、OpenTelemetry、Selenium、Chrome/Browser/DevTools、DuckDB/Polars、SimPy、SALib/Optuna、Mesa/Mesa-Geo、OSMnx/MovingPandas、DeepSeek、AgentSociety、MobiVerse、CAMS、POI_TGI_Calculator、Product Design/Figma、Docu"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 52,
+          "text": "- 当前实现：台账已明确旧方向和新方向差异；吸收 Agentic information systems、When Should Users Check、Dark Patterns Meet GUI Agents、SCSimulator、MCP-SIM、RESPOND、ToolSmith 等资料；把先进性落到 `project_scope/source_material/method_object/persona_state/behav"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 71,
+          "text": "- 边界：防偏航层不能变成泛泛学习、插件堆叠或配置折腾；不得覆盖老板资料重基线、DeepSeek 低能力边界、P6 对象池下一步。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 80,
+          "text": "- 边界：所有选择概率候选保持 `probability_value=null` 和 `needs_review`；验证目标用于阻止旧 dry-run 或 LLM 草稿被误写成完整仿真。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 89,
+          "text": "- 边界：DeepSeek 仍只能做低成本语义工人，生成 `draft/needs_review` 候选、解释、反例和报告草稿；不得做最终仿真、checked 证据、ROI、最终排名或最终商业结论。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 96,
+          "text": "- 决策：老板六份资料和外部论文不得只写成“参考过/读过”。每个可采用方法必须至少落成一种工程资产：系统对象、schema 字段、DeepSeek 契约、adapter、验证指标、UI 可编辑对象或禁用边界。"
+        },
+        {
+          "path": "00_control/decisions.md",
+          "line": 99,
+          "text": "- 边界：DeepSeek 可以生成 `choice_probability`、`simulation_validation_target`、`state_behavior_consistency` 候选，但必须 `draft/needs_review`，不得写 checked、final、ROI、最终排名、最终推荐或覆盖用户锁定对象。"
+        }
+      ]
+    },
+    "user_visible_samples": [
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 85,
+        "text": "nodeDraftReview: statusToken(\"node\", \"draft\", \"review\", \"required\"),"
+      },
+      {
+        "risk": "score_overclaim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 122,
+        "text": "const direct = Number(node?.discussion_score_draft);"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 122,
+        "text": "const direct = Number(node?.discussion_score_draft);"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 132,
+        "text": "if (node?.score_status === \"node_draft_review_required\") return \"待复核草案\";"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 139,
+        "text": "if (node?.score_status === \"node_draft_review_required\") return \"资料未闭合，先作为讨论草案\";"
+      },
+      {
+        "risk": "final_claim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 142,
+        "text": "return \"仅表示当前资料条件下的推进优先级，不是最终推荐\";"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 147,
+        "text": "if (node?.score_status === \"node_draft_review_required\") return \"资料未闭合\";"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 281,
+        "text": "const payload = await response.json();"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 282,
+        "text": "state.simulationJobs = payload.items || [];"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 622,
+        "text": "const isEditable = node?.source === \"manual_node_draft\" || node?.source === \"project_plan_import\";"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 632,
+        "text": "<label class=\"node-enabled\"><input id=\"nodeEnabledInput\" type=\"checkbox\" ${!isEditable || node.enabled !== false ? \"checked\" : \"\"} /> 启用节点</label>"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1321,
+        "text": "const payload = state.data?.demand_supply || {};"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1322,
+        "text": "const tgi = payload.tgi || {};"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1323,
+        "text": "const supply = payload.supply || {};"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1324,
+        "text": "const gap = payload.gap || {};"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1331,
+        "text": "<span>客流资料：${payload.visitor_sources?.count || 0} 份</span>"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1341,
+        "text": "<span><b>${esc(payload.visitor_sources?.count || 0)}</b><em>客流资料</em></span>"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1597,
+        "text": "const payload = await response.json();"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1598,
+        "text": "if (!response.ok) throw new Error(payload.detail || `仿真对象保存失败：${response.status}`);"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1612,
+        "text": "const payload = await response.json();"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1613,
+        "text": "if (!response.ok) throw new Error(payload.detail || `仿真对象操作失败：${response.status}`);"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1695,
+        "text": "const payload = await response.json();"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1696,
+        "text": "if (!response.ok) throw new Error(payload.detail || `仿真检查未能启动：${response.status}`);"
+      },
+      {
+        "risk": "raw_internal_ui",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1697,
+        "text": "state.lastAction = `已生成 ${payload.result_count || 0} 行待复核检查结果`;"
+      },
+      {
+        "risk": "deepseek_boundary",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 1765,
+        "text": "enabled: Boolean($(\"#nodeEnabledInput\")?.checked),"
+      },
+      {
+        "risk": "final_claim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 2007,
+        "text": "return `请从全局看这个项目：当前有 ${uploadCount} 份上传资料、${nodeCount} 个待复核节点。先综合判断资料缺口、地图位置、POI 供给和下一步工作，不要直接给最终推荐。`;"
+      },
+      {
+        "risk": "score_overclaim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 2158,
+        "text": "<span>项目综合分析</span>"
+      },
+      {
+        "risk": "final_claim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 2167,
+        "text": "<span>写给人看：先说判断，再说依据和下一步；不输出最终排名、收益预测或 ROI。</span>"
+      },
+      {
+        "risk": "roi_revenue_claim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 2167,
+        "text": "<span>写给人看：先说判断，再说依据和下一步；不输出最终排名、收益预测或 ROI。</span>"
+      },
+      {
+        "risk": "final_claim",
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "line": 2182,
+        "text": "<span>只生成待复核草案，不输出最终推荐。</span>"
+      }
+    ]
+  },
+  "pending_work": {
+    "status_line_count": 199,
+    "by_marker": {
+      "??": 167,
+      "M": 32
+    },
+    "untracked_src_files": [
+      "60_model/src/telemetry.py"
+    ],
+    "telemetry_pending": true
+  },
+  "interpretation": [
+    "This audit reads text-like project files for risk patterns and treats PDFs/DOCX/images by manifest unless they already have extracted knowledge artifacts.",
+    "Risk hits are not automatically bugs; many are legitimate guardrails or historical notes. User-visible hits and old completion claims need deeper review first.",
+    "OpenTelemetry telemetry.py is currently an unintegrated draft from the interrupted implementation path and must either be integrated or explicitly documented before final validation."
+  ]
+}

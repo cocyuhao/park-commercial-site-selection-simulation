@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "has_project_scope": true,
+    "has_project_comprehensive_chat": true,
+    "no_default_n001_phrase": true,
+    "no_taohuayuan_current_node": true,
+    "has_generate_report": true,
+    "has_new_chat": true,
+    "has_material_pool": true,
+    "does_not_show_external_preview": true,
+    "does_not_show_debug_words": true
+  },
+  "console_errors": [],
+  "url": "http://127.0.0.1:8000/#ai",
+  "title": "公园商业选址仿真决策系统"
+}

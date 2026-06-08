@@ -1,0 +1,123 @@
+{
+  "validator": "page_layer_rebuild_validation_20260605.py",
+  "generated_at": "2026-06-05T03:56:57Z",
+  "status": "pass",
+  "check_count": 18,
+  "failure_count": 0,
+  "base_url": "http://127.0.0.1:52877",
+  "screenshots": {
+    "overview": "40_quality_evidence/page_layer_rebuild_validation_20260605/overview_chain_command.png",
+    "ai_workspace": "40_quality_evidence/page_layer_rebuild_validation_20260605/ai_workspace_reading_width.png"
+  },
+  "console_errors": [],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "checks": [
+    {
+      "name": "overview_visible_全局仿真链路台",
+      "passed": true,
+      "evidence": "全局仿真链路台"
+    },
+    {
+      "name": "overview_visible_全局对象链",
+      "passed": true,
+      "evidence": "全局对象链"
+    },
+    {
+      "name": "overview_visible_当前推进事项",
+      "passed": true,
+      "evidence": "当前推进事项"
+    },
+    {
+      "name": "overview_visible_对象链路矩阵",
+      "passed": true,
+      "evidence": "对象链路矩阵"
+    },
+    {
+      "name": "overview_visible_系统链路状态",
+      "passed": true,
+      "evidence": "系统链路状态"
+    },
+    {
+      "name": "primary_actions_present",
+      "passed": true,
+      "evidence": 4
+    },
+    {
+      "name": "object_chain_cards_present",
+      "passed": true,
+      "evidence": 10
+    },
+    {
+      "name": "object_chain_evidence_folded",
+      "passed": true,
+      "evidence": 0
+    },
+    {
+      "name": "overview_no_backend_words",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "overview_not_default_taohuayuan",
+      "passed": true,
+      "evidence": false
+    },
+    {
+      "name": "ai_default_project_scope",
+      "passed": true,
+      "evidence": "项目综合"
+    },
+    {
+      "name": "ai_not_default_first_node",
+      "passed": true,
+      "evidence": {
+        "has_n001": false,
+        "has_taohuayuan": false
+      }
+    },
+    {
+      "name": "ai_no_backend_words",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "assistant_message_width_desktop",
+      "passed": true,
+      "evidence": {
+        "x": 340,
+        "y": 244.046875,
+        "width": 1062,
+        "height": 378.390625
+      }
+    },
+    {
+      "name": "composer_width_desktop",
+      "passed": true,
+      "evidence": {
+        "x": 310,
+        "y": 845.4375,
+        "width": 1122,
+        "height": 124
+      }
+    },
+    {
+      "name": "ai_rail_toggle_changes_state",
+      "passed": true,
+      "evidence": {
+        "before": true,
+        "after": false
+      }
+    },
+    {
+      "name": "new_chat_visible",
+      "passed": true,
+      "evidence": "newAiSessionBtn"
+    },
+    {
+      "name": "report_button_stateful",
+      "passed": true,
+      "evidence": "generateChatReportBtn"
+    }
+  ]
+}

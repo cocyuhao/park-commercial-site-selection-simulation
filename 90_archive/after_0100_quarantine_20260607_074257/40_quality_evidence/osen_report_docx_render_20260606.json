@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-06-07T03:00:48",
+  "status": "pass",
+  "docx": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\osen_integrated_site_selection_report_20260606.docx",
+  "output_dir": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606",
+  "pdf": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\osen_integrated_site_selection_report_20260606.pdf",
+  "pdf_bytes": 1088566,
+  "page_count": 18,
+  "render_zoom": 2.0,
+  "conversion": {
+    "returncode": 0,
+    "stdout": "convert C:\\Users\\Yy199\\AppData\\Local\\Temp\\codex_docx_render_590kh9ft\\report.docx as a Writer document -> C:\\Users\\Yy199\\AppData\\Local\\Temp\\codex_docx_render_590kh9ft\\report.pdf using filter : writer_pdf_Export",
+    "stderr": "Could not find platform independent libraries <prefix>",
+    "profile_mode": "isolated_temp_user_installation"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_01.png",
+      "bytes": 298152,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 2,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_02.png",
+      "bytes": 231456,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 3,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_03.png",
+      "bytes": 262718,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 4,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_04.png",
+      "bytes": 260283,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 5,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_05.png",
+      "bytes": 287238,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 6,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_06.png",
+      "bytes": 267075,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 7,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_07.png",
+      "bytes": 268625,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 8,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_08.png",
+      "bytes": 249122,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 9,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_09.png",
+      "bytes": 269716,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 10,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_10.png",
+      "bytes": 256847,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 11,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_11.png",
+      "bytes": 249348,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 12,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_12.png",
+      "bytes": 260802,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 13,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_13.png",
+      "bytes": 257435,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 14,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_14.png",
+      "bytes": 261375,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 15,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_15.png",
+      "bytes": 251293,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 16,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_16.png",
+      "bytes": 253109,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 17,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_17.png",
+      "bytes": 285535,
+      "width": 1191,
+      "height": 1684
+    },
+    {
+      "page": 18,
+      "png": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606\\page_18.png",
+      "bytes": 247054,
+      "width": 1191,
+      "height": 1684
+    }
+  ],
+  "failures": [],
+  "method": "LibreOffice soffice.com with isolated UserInstallation, then PyMuPDF page rasterization"
+}

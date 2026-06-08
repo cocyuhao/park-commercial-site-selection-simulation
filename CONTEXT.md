@@ -1,3 +1,12 @@
+# 2026-06-03 同事地图/资料/节点链路已局部吸收，准备提交 GitHub
+- 当前正在做：用户已确认需要把同事负责的地图/资料/节点成果和本地 AI 工作台/报告/视觉成果合并后推送 GitHub；仍禁止整仓覆盖式同步。
+- 上次停在：远端 main 只读源码包已下载并比对，最新远端提交为 `9815493c16e0e5bf3536cf73c22828328b61e8f4`；本地已吸收同事核心链路，并保留本地 AI 工作台、节点优先级解析、地图空白兜底和 Selenium 证据。
+- 已导入同事证据：`40_quality_evidence/地图_资料_节点_验证报告_20260603.md`、`40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md`、`40_quality_evidence/selenium_map_material_node_overview_20260603.json`。
+- 关键决定：同事报告中的旧端口、本机路径、动态 DOM 失败和高德授权失败只作为历史证据；当前最终结论以本地 `40_quality_evidence/remote_integration_execution_report_20260603.md` 和 `selenium_visual_integration_20260603` 证据为准。
+- 当前实现：地图 POI/节点列表、loading 竞态保护、搜索错误人话提示、节点新增/编辑/删除/计划生成、项目总览状态、AI 默认项目综合、报告生成、节点优先级建议均已接入；地图主路径仍是高德 JS 交互地图，静态高德底图只在 JS Key/security code 不完整导致空白时兜底。
+- 当前验证：`node --check` 通过；`py_compile` 通过；Selenium 10 轮完整回归 `round_count=10 failure_count=0`。
+- 当前边界：P3 未闭合前，所有输出仍为 `needs_review / not_final`；节点分数只表示讨论优先级，不是最终推荐。
+
 # 2026-06-02 TGI/POI 供需缺口改动已恢复
 - 当前正在做：已把丢失的 TGI/POI 供需缺口和分析报告功能重新写回磁盘，并重启 `http://127.0.0.1:8765/`。
 - 上次停在：用户发现页面还能看，但磁盘文件不在；原因是旧 uvicorn 进程仍在内存里跑旧代码，磁盘工作区没有保存这些改动。

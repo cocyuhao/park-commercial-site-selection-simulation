@@ -1,12 +1,12 @@
 {
-  "keyword": "青年湖公园",
-  "matched_name": "青年湖全龄友好公园",
-  "address": "安德里北街",
-  "longitude": "116.403153",
-  "latitude": "39.954271",
+  "keyword": "奥森",
+  "matched_name": "奥林匹克森林公园南园",
+  "address": "北五环辅路奥林匹克森林公园",
+  "longitude": "116.391365",
+  "latitude": "40.016194",
   "radius_m": 1200,
   "source": "amap_web_service_place_text",
   "output_status": "needs_review",
   "not_final": true,
-  "updated_at": "2026-06-02T17:08:48"
+  "updated_at": "2026-06-03T12:34:16"
 }

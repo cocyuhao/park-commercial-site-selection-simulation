@@ -1,0 +1,478 @@
+{
+  "rounds": [
+    {
+      "actions_count": 12,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "select_node",
+          "reason": "[encoding-placeholder-cleared]"
+        },
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 1
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 2
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 3
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 4
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 5
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 6
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 7
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 8
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 9
+    },
+    {
+      "actions_count": 13,
+      "failed": [],
+      "metrics": {
+        "chat": {
+          "h": 778.046875,
+          "w": 1033,
+          "x": 336,
+          "y": 96
+        },
+        "composer": {
+          "h": 132,
+          "w": 961,
+          "x": 372,
+          "y": 700
+        },
+        "inputHeight": 50,
+        "messages": {
+          "h": 504,
+          "w": 1033,
+          "x": 336,
+          "y": 220.046875
+        },
+        "modeBadge": "项目综合",
+        "rail": {
+          "h": 778.046875,
+          "w": 64,
+          "x": 272,
+          "y": 96
+        },
+        "railCollapsed": true,
+        "visibleHasFixedNode": false,
+        "visibleHasMachineWords": false
+      },
+      "skipped": [
+        {
+          "action": "back_project",
+          "reason": "missing #aiUseProjectBtn"
+        }
+      ],
+      "round": 10
+    }
+  ],
+  "total_failures": 0,
+  "total_skipped": 11,
+  "errors": [],
+  "skipped": [
+    {
+      "action": "select_node",
+      "reason": "[encoding-placeholder-cleared]"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    },
+    {
+      "action": "back_project",
+      "reason": "missing #aiUseProjectBtn"
+    }
+  ],
+  "screenshot": "C:/Users/Yy199/Desktop/仿真设计/40_quality_evidence/selenium_ai_visual_10rounds_pass_final_20260603.png"
+}

@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-06-07T03:34:47",
+  "status": "pass",
+  "scope": "验证资料与空间底座切片已从旧资料导入页升级为仿真输入工作区；不证明完整仿真已经完成。",
+  "checks": [
+    {
+      "id": "SOURCE_FOUNDATION_UI_EXISTS",
+      "passed": true,
+      "missing": [],
+      "terms": [
+        "sourceFoundationSummary",
+        "localDataAssets",
+        "资料与空间底座",
+        "先把真实资料放到同一张工作台",
+        "查看预检"
+      ]
+    },
+    {
+      "id": "SOURCE_FOUNDATION_RENDERER_EXISTS",
+      "passed": true,
+      "missing": [],
+      "terms": [
+        "function renderSourceFoundation",
+        "local_data_assets",
+        "map_context",
+        "进入对象",
+        "使用边界",
+        "DeepSeek 只能生成候选"
+      ]
+    },
+    {
+      "id": "MAP_ENGINE_LAZY_ON_NON_MAP_VIEWS",
+      "passed": true,
+      "evidence": {
+        "render_all_map_guard_count": 1,
+        "set_view_map_guard_count": 1
+      }
+    },
+    {
+      "id": "SOURCE_FOUNDATION_VISUAL_SYSTEM_EXISTS",
+      "passed": true,
+      "missing": [],
+      "terms": [
+        ".source-foundation-panel",
+        ".source-foundation-summary",
+        ".local-data-assets-head",
+        ".local-data-asset-grid",
+        ".local-data-asset-card",
+        ".foundation-next-steps"
+      ]
+    },
+    {
+      "id": "LOCAL_ASSETS_BACKEND_PRESENT",
+      "passed": true,
+      "evidence": {
+        "asset_count": 9,
+        "required": [
+          "CAD / 图纸资料",
+          "PDF 原生表格",
+          "人物仿真覆盖池",
+          "老板方法资料",
+          "证据台账",
+          "高德 POI 候选"
+        ],
+        "found": [
+          "CAD / 图纸资料",
+          "PDF 原生表格",
+          "人物仿真覆盖池",
+          "园内复核工单",
+          "奥森策划资料",
+          "数据目录",
+          "老板方法资料",
+          "证据台账",
+          "高德 POI 候选"
+        ]
+      }
+    },
+    {
+      "id": "SPACE_CONTEXT_PRESENT_BUT_REVIEW_BOUNDARY_VISIBLE",
+      "passed": true,
+      "evidence": {
+        "has_map_context": true,
+        "poi_count": 32,
+        "boundary_phrase_in_renderer": true
+      }
+    },
+    {
+      "id": "UPLOAD_POOL_STILL_AVAILABLE",
+      "passed": true,
+      "evidence": {
+        "upload_count": 3
+      }
+    },
+    {
+      "id": "NO_INTERNAL_TOKENS_IN_VISIBLE_FOUNDATION_SURFACE",
+      "passed": true,
+      "evidence": {
+        "banned_tokens_found": []
+      }
+    },
+    {
+      "id": "CACHE_BUSTER_UPDATED_FOR_FOUNDATION_SLICE",
+      "passed": true,
+      "evidence": {
+        "foundation_version_count": 2,
+        "old_workflow_version_count": 0
+      }
+    }
+  ],
+  "failure_count": 0,
+  "backend_asset_count": 9,
+  "backend_upload_count": 3,
+  "backend_poi_count": 32,
+  "source_files": [
+    "90_p6_expert_dashboard/static/index.html",
+    "90_p6_expert_dashboard/static/app.js",
+    "90_p6_expert_dashboard/static/styles.css",
+    "90_p6_expert_dashboard/app.py"
+  ]
+}

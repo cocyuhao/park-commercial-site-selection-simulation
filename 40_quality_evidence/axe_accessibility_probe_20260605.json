@@ -1,0 +1,49 @@
+{
+  "validator": "axe_accessibility_probe.mjs",
+  "generated_at": "2026-06-05T03:57:25.844Z",
+  "status": "pass",
+  "check_count": 3,
+  "failure_count": 0,
+  "base_url": "http://127.0.0.1:64471",
+  "views": [
+    {
+      "view": "overview",
+      "required_text": "全局仿真链路台",
+      "violation_count": 0,
+      "violations": [],
+      "screenshot": "40_quality_evidence/axe_accessibility_probe_20260605/overview.png"
+    },
+    {
+      "view": "ai",
+      "required_text": "专家 AI 工作台",
+      "violation_count": 0,
+      "violations": [],
+      "screenshot": "40_quality_evidence/axe_accessibility_probe_20260605/ai.png"
+    },
+    {
+      "view": "data",
+      "required_text": "人物仿真对象池",
+      "violation_count": 0,
+      "violations": [],
+      "screenshot": "40_quality_evidence/axe_accessibility_probe_20260605/data.png"
+    }
+  ],
+  "checks": [
+    {
+      "name": "axe_overview_no_serious_or_critical",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "axe_ai_no_serious_or_critical",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "axe_data_no_serious_or_critical",
+      "passed": true,
+      "evidence": []
+    }
+  ],
+  "server_stderr_tail": ""
+}

@@ -1,0 +1,616 @@
+{
+  "generated_at": "2026-06-04T17:32:07",
+  "status": "pass",
+  "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation",
+  "tool_versions": {
+    "playwright": "1.60.0",
+    "chrome_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "selenium_retained": "4.44.0",
+    "opentelemetry_sdk": "1.42.1"
+  },
+  "method": [
+    "Playwright trace with screenshots/snapshots/sources",
+    "ARIA snapshot for agent-readable structure",
+    "visible text internal-term scan",
+    "stable hook scan for agentic validation",
+    "human visual layout bounds for AI workbench",
+    "oversight checkpoint text checks",
+    "hidden-risk taxonomy: scope integrity, legacy leakage, state coupling, evidence traceability, AI output risk"
+  ],
+  "risk_taxonomy": {
+    "human_visual": "阅读宽度、信息密度、折叠、第一屏负担和输入/输出框比例。",
+    "agent_readability": "关键控件是否有稳定 id、aria-label 或 data-* hook，避免自动化只能靠文案猜。",
+    "ai_scope_integrity": "默认是否是项目综合，是否误塞第一个节点或旧固定节点。",
+    "oversight_checkpoint": "采用、删除、生成报告、运行检查等动作是否留有监督点和后果提示。",
+    "legacy_leakage": "旧状态词、旧裸分、旧报告、debug/API 语言是否泄露到客服界面。",
+    "state_coupling": "地图/资料/节点/AI/报告之间切换时是否保留上下文，不被异步加载抹掉。",
+    "evidence_traceability": "报告和节点说明是否区分依据、缺口、待复核和下一步动作。",
+    "observability": "是否留下 trace、ARIA、console、network、截图和结构化 JSON 证据。",
+    "ai_output_risk": "AI 文案是否像日志、是否过度自信、是否缺少反例/不能判断边界。",
+    "accessibility_semantics": "控件语义、可访问名称和焦点路径是否足够让人和 agent 都读懂。"
+  },
+  "views": [
+    {
+      "view": "overview",
+      "label": "全局推进台",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation",
+      "text_len": 1451,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_overview_20260604.png"
+    },
+    {
+      "view": "upload",
+      "label": "资料导入",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#upload",
+      "text_len": 1223,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_upload_20260604.png"
+    },
+    {
+      "view": "data",
+      "label": "方法对象池",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#data",
+      "text_len": 4364,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_data_20260604.png"
+    },
+    {
+      "view": "nodes",
+      "label": "节点清单",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#nodes",
+      "text_len": 1951,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_nodes_20260604.png"
+    },
+    {
+      "view": "map",
+      "label": "空间地图",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#map",
+      "text_len": 1530,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_map_20260604.png"
+    },
+    {
+      "view": "ai",
+      "label": "专家 AI 工作台",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#ai",
+      "text_len": 355,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_ai_20260604.png"
+    },
+    {
+      "view": "report",
+      "label": "分析报告",
+      "title": "AI 仿真决策系统",
+      "url": "http://127.0.0.1:8000/?qa=advanced-agentic-validation#report",
+      "text_len": 584,
+      "visible_text_issues": [],
+      "screenshot": "40_quality_evidence/advanced_agentic_workflow_report_20260604.png"
+    }
+  ],
+  "control_scan": {
+    "count": 232,
+    "button_count": 214,
+    "missing_hook_count": 0,
+    "missing_hook_samples": [],
+    "duplicate_ambiguous_labels": [],
+    "dangerous_controls": [
+      {
+        "label": "1\n导入并采用资料\n上传 DWG、PDF、图片、表格，确认哪些资料进入当前项目",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "upload"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "2\n整理方法对象\n把选择候选、验证目标和资料缺口变成可采用的仿真输入",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "data"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "资料采用\n3 份入池\n2 份解析候选，需人工确认用途。\n打开资料",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "upload"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "方法对象\n46 个对象\n选择概率和验证目标已生成候选，仍需人工采用或锁定。\n对象池",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "data"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "采用关键资料\n3 份资料已入池；仍需确认哪些资料进入当前仿真链路。\n查看资料",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "upload"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "锁定方法对象\n46 个候选对象等待采用，先别让模型自己决定。\n打开对象池",
+        "id": "",
+        "ariaLabel": "",
+        "dataset": {
+          "view": "data"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "采用 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "id": "",
+        "ariaLabel": "采用 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "use",
+          "simObjectId": "SIMOBJ-CP-001"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "放弃 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "id": "",
+        "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "discard",
+          "simObjectId": "SIMOBJ-CP-001"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "删除 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "id": "",
+        "ariaLabel": "删除 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "delete",
+          "simObjectId": "SIMOBJ-CP-001"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "采用 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "id": "",
+        "ariaLabel": "采用 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "use",
+          "simObjectId": "SIMOBJ-CP-002"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "放弃 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "id": "",
+        "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "discard",
+          "simObjectId": "SIMOBJ-CP-002"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "删除 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "id": "",
+        "ariaLabel": "删除 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "delete",
+          "simObjectId": "SIMOBJ-CP-002"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "采用 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "id": "",
+        "ariaLabel": "采用 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "use",
+          "simObjectId": "SIMOBJ-CP-003"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "放弃 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "id": "",
+        "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "discard",
+          "simObjectId": "SIMOBJ-CP-003"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "删除 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "id": "",
+        "ariaLabel": "删除 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "delete",
+          "simObjectId": "SIMOBJ-CP-003"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "采用 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "id": "",
+        "ariaLabel": "采用 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "use",
+          "simObjectId": "SIMOBJ-CP-004"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "放弃 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "id": "",
+        "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "discard",
+          "simObjectId": "SIMOBJ-CP-004"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "删除 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "id": "",
+        "ariaLabel": "删除 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+        "dataset": {
+          "simObjectAction": "delete",
+          "simObjectId": "SIMOBJ-CP-004"
+        },
+        "has_hook": true
+      },
+      {
+        "label": "运行检查",
+        "id": "runSimulationBtn",
+        "ariaLabel": "",
+        "dataset": {},
+        "has_hook": true
+      },
+      {
+        "label": "生成报告",
+        "id": "generateChatReportBtn",
+        "ariaLabel": "",
+        "dataset": {},
+        "has_hook": true
+      },
+      {
+        "label": "生成报告",
+        "id": "composerReportBtn",
+        "ariaLabel": "",
+        "dataset": {},
+        "has_hook": true
+      }
+    ],
+    "by_view": {
+      "overview": {
+        "count": 36,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [
+          {
+            "label": "1\n导入并采用资料\n上传 DWG、PDF、图片、表格，确认哪些资料进入当前项目",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "upload"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "2\n整理方法对象\n把选择候选、验证目标和资料缺口变成可采用的仿真输入",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "data"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "资料采用\n3 份入池\n2 份解析候选，需人工确认用途。\n打开资料",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "upload"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "方法对象\n46 个对象\n选择概率和验证目标已生成候选，仍需人工采用或锁定。\n对象池",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "data"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "采用关键资料\n3 份资料已入池；仍需确认哪些资料进入当前仿真链路。\n查看资料",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "upload"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "锁定方法对象\n46 个候选对象等待采用，先别让模型自己决定。\n打开对象池",
+            "id": "",
+            "ariaLabel": "",
+            "dataset": {
+              "view": "data"
+            },
+            "has_hook": true
+          }
+        ],
+        "button_count": 36
+      },
+      "upload": {
+        "count": 29,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [],
+        "button_count": 25
+      },
+      "data": {
+        "count": 57,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [
+          {
+            "label": "采用 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "id": "",
+            "ariaLabel": "采用 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "use",
+              "simObjectId": "SIMOBJ-CP-001"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "放弃 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "id": "",
+            "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "discard",
+              "simObjectId": "SIMOBJ-CP-001"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "删除 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "id": "",
+            "ariaLabel": "删除 P2-PER-001 在 P2-NODE-001 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "delete",
+              "simObjectId": "SIMOBJ-CP-001"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "采用 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "id": "",
+            "ariaLabel": "采用 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "use",
+              "simObjectId": "SIMOBJ-CP-002"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "放弃 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "id": "",
+            "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "discard",
+              "simObjectId": "SIMOBJ-CP-002"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "删除 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "id": "",
+            "ariaLabel": "删除 P2-PER-001 在 P2-NODE-002 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "delete",
+              "simObjectId": "SIMOBJ-CP-002"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "采用 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "id": "",
+            "ariaLabel": "采用 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "use",
+              "simObjectId": "SIMOBJ-CP-003"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "放弃 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "id": "",
+            "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "discard",
+              "simObjectId": "SIMOBJ-CP-003"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "删除 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "id": "",
+            "ariaLabel": "删除 P2-PER-001 在 P2-NODE-003 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "delete",
+              "simObjectId": "SIMOBJ-CP-003"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "采用 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "id": "",
+            "ariaLabel": "采用 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "use",
+              "simObjectId": "SIMOBJ-CP-004"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "放弃 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "id": "",
+            "ariaLabel": "放弃 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "discard",
+              "simObjectId": "SIMOBJ-CP-004"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "删除 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "id": "",
+            "ariaLabel": "删除 P2-PER-001 在 P2-NODE-004 的消费选择候选",
+            "dataset": {
+              "simObjectAction": "delete",
+              "simObjectId": "SIMOBJ-CP-004"
+            },
+            "has_hook": true
+          },
+          {
+            "label": "运行检查",
+            "id": "runSimulationBtn",
+            "ariaLabel": "",
+            "dataset": {},
+            "has_hook": true
+          }
+        ],
+        "button_count": 55
+      },
+      "nodes": {
+        "count": 30,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [],
+        "button_count": 23
+      },
+      "map": {
+        "count": 46,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [],
+        "button_count": 44
+      },
+      "ai": {
+        "count": 22,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [
+          {
+            "label": "生成报告",
+            "id": "generateChatReportBtn",
+            "ariaLabel": "",
+            "dataset": {},
+            "has_hook": true
+          },
+          {
+            "label": "生成报告",
+            "id": "composerReportBtn",
+            "ariaLabel": "",
+            "dataset": {},
+            "has_hook": true
+          }
+        ],
+        "button_count": 21
+      },
+      "report": {
+        "count": 12,
+        "missing_hook_count": 0,
+        "missing_hook_samples": [],
+        "duplicate_ambiguous_labels": [],
+        "dangerous_controls": [],
+        "button_count": 10
+      }
+    }
+  },
+  "ai_layout": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "chat_messages": {
+      "x": 336,
+      "y": 220.046875,
+      "width": 1070,
+      "height": 619.953125
+    },
+    "ai_composer": {
+      "x": 372,
+      "y": 840,
+      "width": 998,
+      "height": 124
+    },
+    "overview_status_cards": null,
+    "simulation_object_pool": null,
+    "map_canvas": null,
+    "report_body": null
+  },
+  "static_frontend_scan": {
+    "files": [
+      "90_p6_expert_dashboard/static/index.html",
+      "90_p6_expert_dashboard/static/app.js",
+      "90_p6_expert_dashboard/static/styles.css"
+    ],
+    "banned_term_hits": [],
+    "allowed_mapping_hits": [],
+    "note": "Internal status terms are allowed only in mapping/prompt boundary code. User-visible text is checked separately through browser snapshots."
+  },
+  "console": [
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    }
+  ],
+  "external_console_warnings": [
+    {
+      "type": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    }
+  ],
+  "page_errors": [],
+  "network_errors": [],
+  "findings": [],
+  "trace": "40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip",
+  "aria_snapshot": "40_quality_evidence/advanced_agentic_workflow_aria_overview_20260604.yml",
+  "screenshots": [
+    "40_quality_evidence/advanced_agentic_workflow_overview_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_upload_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_data_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_nodes_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_map_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_ai_20260604.png",
+    "40_quality_evidence/advanced_agentic_workflow_report_20260604.png"
+  ],
+  "interpretation": "needs_work is a productive status: advanced validation found follow-up issues that older smoke tests would miss."
+}

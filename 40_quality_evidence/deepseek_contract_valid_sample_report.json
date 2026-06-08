@@ -1,0 +1,13 @@
+{
+  "validator": "validate_deepseek_contract_output.py",
+  "status": "pass",
+  "file_count": 1,
+  "failure_count": 0,
+  "results": [
+    {
+      "file": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\deepseek_contract_valid_sample.json",
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

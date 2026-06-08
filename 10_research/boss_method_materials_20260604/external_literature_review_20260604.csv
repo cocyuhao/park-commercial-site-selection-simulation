@@ -1,0 +1,22 @@
+paper_id,title,year,topic,verified_source,use_level,project_takeaway
+LIT-001,Modeling Others Minds as Code,2025/2026,LLM 行为程序 / ROTE,老板 PDF / arXiv 2510.01272,核心,把日常路线/行为写成可编辑脚本，不让 LLM 直接给最终行动。
+LIT-002,HumanLM: Simulating Users with State Alignment Beats Response Imitation,2026,用户模拟 / 状态对齐,老板 PDF / arXiv 2603.03303 / OpenAlex,核心,人物画像必须有潜在状态，不能只有年龄收入和一句 persona。
+LIT-003,Real world community oriented high-definition social simulation,2026,社区社会模拟 / RL+LLM,老板 DOCX / Cities,核心,采用微观 + 宏观双验证；真实数据缺口要保持显式。
+LIT-004,Generative Agents: Interactive Simulacra of Human Behavior,2023,生成式智能体,arXiv 2304.03442 / OpenAlex,核心,记忆、反思、计划可借鉴；但 25 人小镇不是商业选址验证。
+LIT-005,"Out of One, Many: Using Language Models to Simulate Human Samples",2023,LLM 模拟人群样本,OpenAlex DOI 10.1017/pan.2023.2,核心旁证,提醒按真实样本/群体分布模拟，而非一个平均人。
+LIT-006,Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies,2022/2023,多人模拟 / 实验复现,Semantic Scholar / arXiv 2208.10264,核心旁证,可用于设计“AI 被试”验证，但结果须和真人/真实数据比较。
+LIT-007,"Generative Agent Simulations of 1,000 People",2024/2025,长访谈生成智能体,老板长图线索 / 需进一步核验,核心旁证,重点是丰富记忆素材与专家反思，不是裸人设。
+LIT-008,Large Language Models for Market Research: A Data-augmentation Approach,2024/2025,市场研究 / 数据增强,OpenAlex DOI 10.2139/ssrn.5057769 / arXiv 2412.19363,核心旁证,AI 可补样本和辅助早期方向，但不能替代正式调研。
+LIT-009,The Challenge of Using LLMs to Simulate Human Behavior: A Causal Inference Perspective,2023,因果推断 / 偏差,OpenAlex DOI 10.2139/ssrn.4650172,风险控制,不能把相关性/TGI 直接当因果；需要干预前后验证。
+LIT-010,Do Large Language Models Solve the Problems of Agent-Based Modeling?,2025,ABM 批判综述,OpenAlex / arXiv 2504.03274,风险控制,LLM 不自动解决 ABM 的校准、验证、可复现问题。
+LIT-011,Can Large Language Models Transform Computational Social Science?,2023,计算社会科学 / LLM,OpenAlex DOI 10.1162/coli_a_00502,旁证,LLM 可扩展解释与文本任务，但要和计算模型分工。
+LIT-012,Large Language Models as Simulated Economic Agents: What Can We Learn from Homo Silicus?,2023,经济实验 / 模拟主体,OpenAlex DOI 10.3386/w31122,旁证,经济选择模拟可参考，但需警惕模型偏见和身份扁平化。
+LIT-013,Large language models that replace human participants can harmfully misportray and flatten identity groups,2025,身份扁平化风险,OpenAlex DOI 10.1038/s42256-025-00986-z,风险控制,禁止把“平均游客”写成全部人群；要保留差异和不确定性。
+LIT-014,Diminished diversity-of-thought in a standard large language model,2024,思维多样性风险,Semantic Scholar/OpenAlex 线索,风险控制,多智能体不等于多样性，需从真实数据和参数层增加差异。
+LIT-015,Social Force Model for Pedestrian Dynamics,1995,行人动力学,经典论文 DOI 10.1103/PhysRevE.51.4282,方法旁证,路线/拥挤/避让不能纯靠 LLM；后续可接入人流/路径模型。
+LIT-016,Reciprocal Velocity Obstacles for Real-Time Multi-Agent Navigation,2008,多智能体避障,经典 RVO 论文,方法旁证,若做可视化仿真轨迹，需要基础运动约束和碰撞/避让逻辑。
+LIT-017,The Multi-Agent Transport Simulation MATSim,2016,多智能体交通仿真,OpenAlex DOI 10.5334/baw,方法旁证,大规模出行仿真要有日程、网络、选择与校准，不是页面动画。
+LIT-018,Gravity and Spatial Interaction Models,1984,空间交互 / 重力模型,OpenAlex / WVU repository,方法旁证,业态吸引力、距离衰减和外溢可用作可解释基础。
+LIT-019,A Logit Model of Brand Choice Calibrated on Scanner Data,1983,离散选择 / 品牌选择,OpenAlex DOI 10.1287/mksc.2.3.203,方法旁证,消费选择概率可用离散选择思想，而非 LLM 一句话决定。
+LIT-020,Retail Location Choice with Complementary Goods: An Agent-Based Model,2009,零售选址 / 互补品 ABM,OpenAlex DOI 10.1007/978-3-642-02466-5_15,方法旁证,候选业态之间有互补/替代关系，不能单点孤立评估。
+LIT-021,A survey on large language model based autonomous agents,2024,LLM Agent 综述,OpenAlex DOI 10.1007/s11704-024-40231-1,旁证,用于梳理记忆、规划、工具调用，但不替代领域模型。

@@ -1,0 +1,53 @@
+{
+  "remote_commit": "9815493c16e0e5bf3536cf73c22828328b61e8f4",
+  "local_head": "4e5cb7b8712572211e74f0296e29fac44a947372",
+  "remote_root": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\park_remote_main_readonly_latest\\park-commercial-site-selection-simulation-main",
+  "counts": {
+    "remote_files": 548,
+    "work_files": 807,
+    "remote_changed_vs_head": 16,
+    "local_changed_vs_head": 635,
+    "overlap": 13,
+    "remote_only": 3,
+    "remote_deleted_vs_head": 0
+  },
+  "overlap": [
+    "00_control/decisions.md",
+    "90_p6_expert_dashboard/app.py",
+    "90_p6_expert_dashboard/static/app.js",
+    "90_p6_expert_dashboard/static/index.html",
+    "90_p6_expert_dashboard/static/styles.css",
+    "ARCHITECTURE.md",
+    "CONTEXT.md",
+    "README.md",
+    "findings.md",
+    "handoff_next_chat.md",
+    "next_chat_prompt.md",
+    "progress.md",
+    "requirements.txt"
+  ],
+  "remote_changed": [
+    "00_control/decisions.md",
+    "40_quality_evidence/selenium_map_material_node_overview_20260603.json",
+    "40_quality_evidence/地图_资料_节点_验证报告_20260603.md",
+    "40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md",
+    "90_p6_expert_dashboard/app.py",
+    "90_p6_expert_dashboard/static/app.js",
+    "90_p6_expert_dashboard/static/index.html",
+    "90_p6_expert_dashboard/static/styles.css",
+    "ARCHITECTURE.md",
+    "CONTEXT.md",
+    "README.md",
+    "findings.md",
+    "handoff_next_chat.md",
+    "next_chat_prompt.md",
+    "progress.md",
+    "requirements.txt"
+  ],
+  "remote_only": [
+    "40_quality_evidence/selenium_map_material_node_overview_20260603.json",
+    "40_quality_evidence/地图_资料_节点_验证报告_20260603.md",
+    "40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md"
+  ],
+  "remote_deleted_vs_head": []
+}

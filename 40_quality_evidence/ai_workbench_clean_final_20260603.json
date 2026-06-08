@@ -1,0 +1,30 @@
+{
+  "chat": {
+    "h": 770.046875,
+    "w": 1033,
+    "x": 336,
+    "y": 96
+  },
+  "composer": {
+    "h": 124,
+    "w": 961,
+    "x": 372,
+    "y": 708
+  },
+  "messages": {
+    "h": 504,
+    "w": 1033,
+    "x": 336,
+    "y": 220.046875
+  },
+  "rail": {
+    "h": 770.046875,
+    "w": 64,
+    "x": 272,
+    "y": 96
+  },
+  "railCollapsed": true,
+  "visibleHasFixedNode": false,
+  "visibleHasMachineWords": false,
+  "visibleHasQuestionMarks": false
+}

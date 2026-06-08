@@ -1,0 +1,88 @@
+[
+  {
+    "name": "doubao",
+    "url": "https://www.doubao.com/chat/",
+    "title": "",
+    "visible_excerpt": "豆包\n新对话\nCtrl K\nAI 创作\n你好，我是豆包\n快速\nPPT 生成\n图像生成\n帮我写作\n翻译\n编程\n更多",
+    "screenshot": "40_quality_evidence\\ai_workbench_reference_sites_20260603\\doubao.png",
+    "console_errors": [
+      {
+        "level": "SEVERE",
+        "message": "https://www.doubao.com/chat/ - The Content Security Policy directive 'upgrade-insecure-requests' is ignored when delivered in a report-only policy.",
+        "source": "security",
+        "timestamp": 1780460315292
+      }
+    ],
+    "usable_learning_notes": [
+      "left history/navigation is quiet and collapsible-feeling; main reading area stays wide",
+      "composer is large, centered, with tool chips attached to the input surface",
+      "actions are named by user intent, not backend capability"
+    ]
+  },
+  {
+    "name": "chatgpt",
+    "url": "https://chatgpt.com/",
+    "title": "请稍候…",
+    "visible_excerpt": "",
+    "screenshot": "40_quality_evidence\\ai_workbench_reference_sites_20260603\\chatgpt.png",
+    "console_errors": [
+      {
+        "level": "SEVERE",
+        "message": "https://chatgpt.com/ - Failed to load resource: the server responded with a status of 403 ()",
+        "source": "network",
+        "timestamp": 1780460327980
+      },
+      {
+        "level": "SEVERE",
+        "message": "https://chatgpt.com/favicon.ico - Failed to load resource: the server responded with a status of 403 ()",
+        "source": "network",
+        "timestamp": 1780460334003
+      }
+    ],
+    "usable_learning_notes": [
+      "conversation is the primary object; sidebar/history is secondary",
+      "bottom composer is visually stable and not glued to the edge",
+      "new chat and history are always recoverable without becoming the page focus"
+    ]
+  },
+  {
+    "name": "claude",
+    "url": "https://claude.ai/",
+    "title": "请稍候…",
+    "visible_excerpt": "claude.ai\n正在进行安全验证\n本网站使用安全服务防护恶意自动程序。在验证您不是自动程序期间，将显示此页面。\n为什么验证时间较长？\n电脑配置较旧或网络连接较慢可能导致验证时间延长。\n下一步操作：\n请稍等片刻。刷新页面将重新开始安全验证，可能需要更长时间。\n如验证仍未完成，请刷新此页面。\n如刷新后仍停留在此页面，请参阅 Cloudflare 故障排除文档获取更多帮助。\nRay ID: a05be5972ce54a62\n由 Cloudflare 提供的性能和安全服务\n隐私",
+    "screenshot": "40_quality_evidence\\ai_workbench_reference_sites_20260603\\claude.png",
+    "console_errors": [
+      {
+        "level": "SEVERE",
+        "message": "https://claude.ai/ - Failed to load resource: the server responded with a status of 403 ()",
+        "source": "network",
+        "timestamp": 1780460335498
+      }
+    ],
+    "usable_learning_notes": [
+      "reading area uses restrained width and generous line height",
+      "project/chat distinction is surfaced through simple product language",
+      "empty or login states avoid showing technical diagnostics"
+    ]
+  },
+  {
+    "name": "perplexity",
+    "url": "https://www.perplexity.ai/",
+    "title": "请稍候…",
+    "visible_excerpt": "www.perplexity.ai\n正在进行安全验证\n本网站使用安全服务防护恶意自动程序。在验证您不是自动程序期间，将显示此页面。\nRay ID: a05be5ed0d87ae64\n由 Cloudflare 提供的性能和安全服务\n隐私",
+    "screenshot": "40_quality_evidence\\ai_workbench_reference_sites_20260603\\perplexity.png",
+    "console_errors": [
+      {
+        "level": "SEVERE",
+        "message": "https://www.perplexity.ai/ - Failed to load resource: the server responded with a status of 403 ()",
+        "source": "network",
+        "timestamp": 1780460349232
+      }
+    ],
+    "usable_learning_notes": [
+      "answer pages emphasize sources, follow-up actions, and concise sections",
+      "search/workbench UI keeps query input dominant but not cramped",
+      "status is translated to user-facing language"
+    ]
+  }
+]

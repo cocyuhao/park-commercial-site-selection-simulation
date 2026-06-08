@@ -1,0 +1,11 @@
+target_id,validation_domain,what_to_validate,current_status,needed_data,acceptable_evidence,blocks_full_simulation,method_source,output_status
+VAL-001,visitor_flow_time,入口/节点/时段客流曲线是否能复现真实峰谷,not_provided,按入口与小时粒度的客流或现场计数,闸机数据、客流传感器、连续现场观察记录,yes,HumanLM与社区仿真强调宏观曲线对齐,needs_review
+VAL-002,route_choice,不同人群从入口到节点的路径选择是否合理,pending_collection,路径观察、热力图、GPS/蓝牙/WiFi探针或人工路线记录,匿名化轨迹、观察表、地图标注,yes,社会力/空间交互模型与老板材料的高精度场景方法,needs_review
+VAL-003,dwell_time,各类节点的停留时长是否落在可信范围,not_provided,按人群/节点/时段的停留观察或访谈,现场计时、摄像统计、问卷或运营记录,yes,HumanLM状态对齐需要行为状态而非只看回答,needs_review
+VAL-004,conversion_rate,到访转化为消费的概率是否可信,not_provided,业态转化率、交易记录、快闪测试、同类项目基准,POS记录、运营方表格、试运营数据,yes,商业选址决策必须区分需求与真实交易,needs_review
+VAL-005,spending_band,不同人群的客单价区间是否可信,not_provided,客单价、支付结构、价格带接受度,POS表、问卷、第三方商业基准,yes,市场研究论文强调自然语言意向需再映射到量表/概率,needs_review
+VAL-006,supply_poi,园内与周边供给是否完整且分类正确,pending_collection,高德POI抓取 + 现场复核 + 经营字段,POI清单、照片、营业状态、距离,yes,同事POI/TGI仓库可吸收供需结构但需本地复核,needs_review
+VAL-007,geometry,空间边界、面积和可达性是否可靠,pending_conversion,DWG/DXF/GeoJSON或可验证图纸,转换后的图层、坐标系说明、人工复核记录,yes,AGENTS真实性规则和P3门禁,needs_review
+VAL-008,authorization,商业经营和改造是否被允许,blocked_until_source_received,运营授权、消防/结构/业态限制文件,批复、合同、管理方确认函,yes,没有授权时仿真结果无落地意义,needs_review
+VAL-009,scenario_sensitivity,关键假设变动时结论是否稳定,not_started,多组参数、敏感性范围、缺口上下界,本地Monte Carlo结果、参数日志、差异表,yes,ABM/LLM仿真论文均要求校准和敏感性检查,needs_review
+VAL-010,human_review,AI输出是否被业务人员理解并能执行,not_started,专家反馈、客服端可用性测试、可读报告,AI工作台记录、Selenium记录、人工视觉备注,no,用户对“人类可读解析和建议”的要求,needs_review

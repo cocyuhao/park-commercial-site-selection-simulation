@@ -1,0 +1,1441 @@
+{
+  "generated_at": "2026-06-07T01:15:15",
+  "queries": [
+    "LLM agent urban mobility simulation 2026",
+    "large language model agent city simulation human mobility 2025",
+    "urban park visitor experience commercial concession planning",
+    "retail location choice multi criteria decision analysis site selection 2025",
+    "public park food beverage concession visitor services planning",
+    "agent based model retail location choice complementary goods",
+    "discrete choice model retail location consumer behavior",
+    "business case options appraisal recommendations evidence report"
+  ],
+  "official_and_practical_sources": [
+    {
+      "title": "HM Treasury The Green Book 2026",
+      "url": "https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026",
+      "use": "把节点判断拆成战略、经济/价值、商业、财务、管理五类问题；报告必须提供可选方案和推荐理由。"
+    },
+    {
+      "title": "GOV.UK business case guidance for projects and programmes",
+      "url": "https://www.gov.uk/government/publications/business-case-guidance-for-projects-and-programmes",
+      "use": "把当前报告定位成可迭代 business case，不把工作稿写成最终投资结论。"
+    },
+    {
+      "title": "US National Park Service Commercial Services",
+      "url": "https://www.nps.gov/subjects/concessions/index.htm",
+      "use": "公园商业服务必须服务游客体验和公共使用边界，不只追求商业收入。"
+    },
+    {
+      "title": "Purdue OWL Abstracts and Executive Summaries",
+      "url": "https://owl.purdue.edu/owl/subject_specific_writing/writing_in_engineering/handbook_on_report_formats/abstracts_and_executive_summaries.html",
+      "use": "执行摘要应自足、简洁、具体，不能把结论埋进机器式长段落。"
+    },
+    {
+      "title": "University of Nottingham Business reports",
+      "url": "https://www.nottingham.ac.uk/studyingeffectively/assessment/types/business.aspx",
+      "use": "商业报告应解释建议如何得出，帮助决策者快速找到信息。"
+    }
+  ],
+  "raw_count": 64,
+  "screened_count": 17,
+  "raw_rows": [
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Artificial Intelligence-Enabled Metaverse for Sustainable Smart Cities: Technologies, Applications, Challenges, and Future Directions",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/electronics13244874",
+      "openalex_id": "https://openalex.org/W4405235079",
+      "cited_by_count": 65,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/electronics13244874",
+      "concepts": [
+        "Metaverse",
+        "Computer science",
+        "Smart city",
+        "Transformative learning",
+        "Interoperability"
+      ]
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Generative spatial artificial intelligence for sustainable smart cities: A pioneering large flow model for urban digital twin",
+      "year": 2025,
+      "doi": "https://doi.org/10.1016/j.ese.2025.100526",
+      "openalex_id": "https://openalex.org/W4406411754",
+      "cited_by_count": 51,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.ese.2025.100526",
+      "concepts": [
+        "Generative grammar",
+        "Artificial intelligence",
+        "Computer science",
+        "Smart city",
+        "Internet of Things"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Large Language Models for Intelligent Transportation: A Review of the State of the Art and Challenges",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/app14177455",
+      "openalex_id": "https://openalex.org/W4401895018",
+      "cited_by_count": 42,
+      "type": "review",
+      "primary_location": "https://doi.org/10.3390/app14177455",
+      "concepts": [
+        "Computer science"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "The Impact of Artificial Intelligence on the Sustainability of Regional Ecosystems: Current Challenges and Future Prospects",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/su17114795",
+      "openalex_id": "https://openalex.org/W4410694874",
+      "cited_by_count": 37,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/su17114795",
+      "concepts": [
+        "Sustainability",
+        "Current (fluid)",
+        "Ecosystem",
+        "Environmental resource management",
+        "Environmental science"
+      ]
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "The power of artificial intelligence for managing pandemics: A primer for public health professionals",
+      "year": 2024,
+      "doi": "https://doi.org/10.1002/hpm.3864",
+      "openalex_id": "https://openalex.org/W4403807883",
+      "cited_by_count": 20,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1002/hpm.3864",
+      "concepts": [
+        "Primer (cosmetics)",
+        "Pandemic",
+        "Power (physics)",
+        "Public health",
+        "Coronavirus disease 2019 (COVID-19)"
+      ]
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Emerging Technologies and Future Trends in <scp>Cyber‐Physical</scp> Power Systems: Toward a New Era of Innovations",
+      "year": 2025,
+      "doi": "https://doi.org/10.1002/9781394334599.ch19",
+      "openalex_id": "https://openalex.org/W4408383747",
+      "cited_by_count": 11,
+      "type": "other",
+      "primary_location": "https://doi.org/10.1002/9781394334599.ch19",
+      "concepts": [
+        "Cyber-physical system",
+        "Power (physics)",
+        "Data science",
+        "Computer science",
+        "Physics"
+      ]
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "6G autonomous radio access network empowered by artificial intelligence and network digital twin",
+      "year": 2024,
+      "doi": "https://doi.org/10.1631/fitee.2400569",
+      "openalex_id": "https://openalex.org/W4405854614",
+      "cited_by_count": 9,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1631/fitee.2400569",
+      "concepts": [
+        "Computer science",
+        "Radio access network",
+        "Network architecture",
+        "Cloud computing",
+        "Service (business)"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Cybersecurity Challenges and Solutions in Unmanned Aerial Vehicles (UAVs)",
+      "year": 2025,
+      "doi": "https://doi.org/10.1002/rob.70040",
+      "openalex_id": "https://openalex.org/W4413167306",
+      "cited_by_count": 9,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1002/rob.70040",
+      "concepts": [
+        "Aeronautics",
+        "Drone",
+        "Computer science",
+        "Computer security",
+        "Aerospace engineering"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Trust in scientists and their role in society across 68 countries",
+      "year": 2025,
+      "doi": "https://doi.org/10.1038/s41562-024-02090-5",
+      "openalex_id": "https://openalex.org/W4406633044",
+      "cited_by_count": 214,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1038/s41562-024-02090-5",
+      "concepts": [
+        "Politics",
+        "Political science",
+        "Affect (linguistics)",
+        "Biology and political orientation",
+        "Public trust"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Explainable artificial intelligence: A survey of needs, techniques, applications, and future direction",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.neucom.2024.128111",
+      "openalex_id": "https://openalex.org/W4399919514",
+      "cited_by_count": 152,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.neucom.2024.128111",
+      "concepts": [
+        "Transparency (behavior)",
+        "Scope (computer science)",
+        "Computer science",
+        "Accountability",
+        "Taxonomy (biology)"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Electric Vehicle Adoption: A Comprehensive Systematic Review of Technological, Environmental, Organizational and Policy Impacts",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/wevj15080375",
+      "openalex_id": "https://openalex.org/W4401702248",
+      "cited_by_count": 150,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/wevj15080375",
+      "concepts": [
+        "Business",
+        "Environmental policy",
+        "Electric vehicle",
+        "Environmental economics",
+        "Industrial organization"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Overview of AI and communication for 6G network: fundamentals, challenges, and future research opportunities",
+      "year": 2025,
+      "doi": "https://doi.org/10.1007/s11432-024-4337-1",
+      "openalex_id": "https://openalex.org/W4409190069",
+      "cited_by_count": 123,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s11432-024-4337-1",
+      "concepts": [
+        "Telecommunications",
+        "Data science",
+        "Engineering",
+        "Computer science"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "A comprehensive survey on digital twin for future networks and emerging Internet of Things industry",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.comnet.2024.110350",
+      "openalex_id": "https://openalex.org/W4393087172",
+      "cited_by_count": 111,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.comnet.2024.110350",
+      "concepts": [
+        "Computer science",
+        "Flexibility (engineering)",
+        "Digital transformation",
+        "Scalability",
+        "Emerging technologies"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Future Trends in Smart Green IoV: Vehicle-to-Everything in the Era of Electric Vehicles",
+      "year": 2024,
+      "doi": "https://doi.org/10.1109/ojvt.2024.3358893",
+      "openalex_id": "https://openalex.org/W4391248598",
+      "cited_by_count": 110,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1109/ojvt.2024.3358893",
+      "concepts": [
+        "Electrification",
+        "Renewable energy",
+        "Greenhouse gas",
+        "Computer science",
+        "Electric vehicle"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Artificial Intelligence in 6G Wireless Networks: Opportunities, Applications, and Challenges",
+      "year": 2024,
+      "doi": "https://doi.org/10.1155/2024/8845070",
+      "openalex_id": "https://openalex.org/W4393198079",
+      "cited_by_count": 105,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1155/2024/8845070",
+      "concepts": [
+        "Computer science",
+        "Artificial intelligence",
+        "Wireless",
+        "Wireless network",
+        "Telecommunications"
+      ]
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Industrial applications of large language models",
+      "year": 2025,
+      "doi": "https://doi.org/10.1038/s41598-025-98483-1",
+      "openalex_id": "https://openalex.org/W4409626943",
+      "cited_by_count": 104,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1038/s41598-025-98483-1",
+      "concepts": [
+        "Computer science",
+        "Data science",
+        "Natural language processing",
+        "Computational biology",
+        "Biology"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Coastal Restoration Challenges and Strategies for Small Island Developing States in the Face of Sea Level Rise and Climate Change",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/coasts4020014",
+      "openalex_id": "https://openalex.org/W4393442258",
+      "cited_by_count": 65,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/coasts4020014",
+      "concepts": [
+        "Climate change",
+        "Face (sociological concept)",
+        "Small Island Developing States",
+        "Sea level rise",
+        "Oceanography"
+      ]
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Meet Me at the Fair: A World's Fair Reader",
+      "year": 2024,
+      "doi": "https://doi.org/10.1184/r1/6686831.v1",
+      "openalex_id": "https://openalex.org/W2201047533",
+      "cited_by_count": 29,
+      "type": "book",
+      "primary_location": "http://repository.cmu.edu/cgi/viewcontent.cgi?article=1027&context=etcpress",
+      "concepts": [
+        "Scholarship",
+        "Art world",
+        "Politics",
+        "Media studies",
+        "Government (linguistics)"
+      ]
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "The Evolution of Digital Tourism Marketing: From Hashtags to AI-Immersive Journeys in the Metaverse Era",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/su17136016",
+      "openalex_id": "https://openalex.org/W4411895735",
+      "cited_by_count": 25,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/su17136016",
+      "concepts": [
+        "Metaverse",
+        "Tourism",
+        "Digital marketing",
+        "Digital era",
+        "Advertising"
+      ]
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Governance Networks in the Public Sector",
+      "year": 2025,
+      "doi": "https://doi.org/10.4324/9781003402138",
+      "openalex_id": "https://openalex.org/W4409328264",
+      "cited_by_count": 24,
+      "type": "book",
+      "primary_location": "https://doi.org/10.4324/9781003402138",
+      "concepts": [
+        "Corporate governance",
+        "Public sector",
+        "Business",
+        "Public administration",
+        "Political science"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Key Innovations in Financing Nature-Based Solutions for Coastal Adaptation",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/cli12040053",
+      "openalex_id": "https://openalex.org/W4394602628",
+      "cited_by_count": 22,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/cli12040053",
+      "concepts": [
+        "Adaptation (eye)",
+        "Finance",
+        "Climate Finance",
+        "Private finance initiative",
+        "Key (lock)"
+      ]
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Perceived Quality of Service in Tourist Transportation in the City of Baños de Agua Santa, Ecuador",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/su16177245",
+      "openalex_id": "https://openalex.org/W4401891396",
+      "cited_by_count": 20,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/su16177245",
+      "concepts": [
+        "SERVQUAL",
+        "Tourism",
+        "Service quality",
+        "Service (business)",
+        "Marketing"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Establishing wildflower meadows in anthropogenic landscapes",
+      "year": 2024,
+      "doi": "https://doi.org/10.3389/fhort.2023.1248785",
+      "openalex_id": "https://openalex.org/W4390744852",
+      "cited_by_count": 15,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3389/fhort.2023.1248785",
+      "concepts": [
+        "Wildflower",
+        "Forb",
+        "Herbaceous plant",
+        "Graminoid",
+        "Vegetation (pathology)"
+      ]
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Seeing Like a Platform",
+      "year": 2025,
+      "doi": "https://doi.org/10.4324/9781003326861",
+      "openalex_id": "https://openalex.org/W4406628718",
+      "cited_by_count": 13,
+      "type": "book",
+      "primary_location": "https://doi.org/10.4324/9781003326861",
+      "concepts": [
+        "Computer science"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Trends in Photovoltaic Applications 2024",
+      "year": 2024,
+      "doi": "https://doi.org/10.69766/jnew6916",
+      "openalex_id": "https://openalex.org/W4403971390",
+      "cited_by_count": 224,
+      "type": "report",
+      "primary_location": "https://doi.org/10.69766/jnew6916",
+      "concepts": [
+        "Photovoltaic system",
+        "Engineering physics",
+        "Materials science",
+        "Computer science",
+        "Environmental science"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Modern computing: Vision and challenges",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.teler.2024.100116",
+      "openalex_id": "https://openalex.org/W4390660438",
+      "cited_by_count": 162,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.teler.2024.100116",
+      "concepts": [
+        "Obsolescence",
+        "Computer science",
+        "Cloud computing",
+        "Transformational leadership",
+        "Field (mathematics)"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Understanding Psychosocial Barriers to Healthcare Technology Adoption: A Review of TAM Technology Acceptance Model and Unified Theory of Acceptance and Use of Technology and UTAUT Frameworks",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/healthcare13030250",
+      "openalex_id": "https://openalex.org/W4406873496",
+      "cited_by_count": 143,
+      "type": "review",
+      "primary_location": "https://doi.org/10.3390/healthcare13030250",
+      "concepts": [
+        "Unified theory of acceptance and use of technology",
+        "Technology acceptance model",
+        "Psychological intervention",
+        "Knowledge management",
+        "Context (archaeology)"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Cyber Shopping Beyond Boundaries: The Metaverse Revolution in e‐Commerce and Consumer Behavior",
+      "year": 2025,
+      "doi": "https://doi.org/10.1155/hbe2/5559234",
+      "openalex_id": "https://openalex.org/W4407382954",
+      "cited_by_count": 135,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1155/hbe2/5559234",
+      "concepts": [
+        "Metaverse",
+        "E-commerce",
+        "Consumer behaviour",
+        "Computer science",
+        "Advertising"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Revealing the true potential and prospects of augmented reality in education",
+      "year": 2024,
+      "doi": "https://doi.org/10.1186/s40561-023-00288-0",
+      "openalex_id": "https://openalex.org/W4390730774",
+      "cited_by_count": 126,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1186/s40561-023-00288-0",
+      "concepts": [
+        "Computer science",
+        "Augmented reality",
+        "Android (operating system)",
+        "Protocol (science)",
+        "Order (exchange)"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "From Food Industry 4.0 to Food Industry 5.0: Identifying technological enablers and potential future applications in the food sector",
+      "year": 2024,
+      "doi": "https://doi.org/10.1111/1541-4337.70040",
+      "openalex_id": "https://openalex.org/W4403632201",
+      "cited_by_count": 106,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1111/1541-4337.70040",
+      "concepts": [
+        "Food industry",
+        "Food engineering",
+        "Industry 4.0",
+        "Industrial Revolution",
+        "Emerging technologies"
+      ]
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "The digital transformation in pharmacy: embracing online platforms and the cosmeceutical paradigm shift",
+      "year": 2024,
+      "doi": "https://doi.org/10.1186/s41043-024-00550-2",
+      "openalex_id": "https://openalex.org/W4396733914",
+      "cited_by_count": 82,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1186/s41043-024-00550-2",
+      "concepts": [
+        "Pharmacy",
+        "Transformative learning",
+        "Digital transformation",
+        "Business",
+        "Telehealth"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "Heat pumps for all? Distributions of the costs and benefits of residential air-source heat pumps in the United States",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.joule.2024.01.022",
+      "openalex_id": "https://openalex.org/W4391744719",
+      "cited_by_count": 66,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.joule.2024.01.022",
+      "concepts": [
+        "Air source heat pumps",
+        "Environmental science",
+        "Waste management",
+        "Heat pump",
+        "Engineering"
+      ]
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Measuring the relationship between museum attributes and visitors: An application of topic model on museum online reviews",
+      "year": 2024,
+      "doi": "https://doi.org/10.1371/journal.pone.0304901",
+      "openalex_id": "https://openalex.org/W4400408248",
+      "cited_by_count": 16,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1371/journal.pone.0304901",
+      "concepts": [
+        "Visitor pattern",
+        "Structural equation modeling",
+        "Tourism",
+        "Cultural heritage",
+        "Social media"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "The Manta mystique: Destination image and its effect on tourist citizenship behavior and willingness to sacrifice",
+      "year": 2024,
+      "doi": "https://doi.org/10.1177/13567667241274548",
+      "openalex_id": "https://openalex.org/W4401890375",
+      "cited_by_count": 5,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1177/13567667241274548",
+      "concepts": [
+        "Tourism",
+        "Sacrifice",
+        "Destination image",
+        "Advertising",
+        "Citizenship"
+      ]
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Metaverse in Tourism and Hospitality: A Framework‐Based Systematic Review",
+      "year": 2025,
+      "doi": "https://doi.org/10.1155/hbe2/6662141",
+      "openalex_id": "https://openalex.org/W4413423156",
+      "cited_by_count": 5,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1155/hbe2/6662141",
+      "concepts": [
+        "Hospitality",
+        "Tourism",
+        "Systematic review",
+        "Data science",
+        "Sociology"
+      ]
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Hospitality Investment in the Afar Region, Ethiopia: Trends, Challenges, and Opportunities",
+      "year": 2025,
+      "doi": "https://doi.org/10.26650/jot.2025.10.1.1600275",
+      "openalex_id": "https://openalex.org/W4412755106",
+      "cited_by_count": 4,
+      "type": "article",
+      "primary_location": "https://doi.org/10.26650/jot.2025.10.1.1600275",
+      "concepts": [
+        "Hospitality",
+        "Investment (military)",
+        "Geography",
+        "Economic geography",
+        "Business"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Social Movements’ Impact on the Greek Economy During the Financial Crisis",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/economies13090269",
+      "openalex_id": "https://openalex.org/W4414128308",
+      "cited_by_count": 4,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/economies13090269",
+      "concepts": [
+        "Austerity",
+        "Conditionality",
+        "Economics",
+        "Solidarity",
+        "Financial crisis"
+      ]
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Gujjars of Jammu and Kashmir: Evidence from a Field Survey",
+      "year": 2025,
+      "doi": "https://doi.org/10.25003/ras.15.01.0005",
+      "openalex_id": "https://openalex.org/W4414027042",
+      "cited_by_count": 3,
+      "type": "article",
+      "primary_location": "https://doi.org/10.25003/ras.15.01.0005",
+      "concepts": [
+        "Field (mathematics)",
+        "Field survey",
+        "Geography",
+        "Mathematics",
+        "Cartography"
+      ]
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Tourism Management in National Parks: Development, Aspects, and Conceptual Framework",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/f16060970",
+      "openalex_id": "https://openalex.org/W4411151507",
+      "cited_by_count": 3,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/f16060970",
+      "concepts": [
+        "Tourism",
+        "Environmental resource management",
+        "Conceptual framework",
+        "Environmental planning",
+        "Process management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "The Chinese in Papua New Guinea: Past, Present and Future",
+      "year": 2024,
+      "doi": "https://doi.org/10.22459/cpng.2024",
+      "openalex_id": "https://openalex.org/W4392838781",
+      "cited_by_count": 3,
+      "type": "book",
+      "primary_location": "https://doi.org/10.22459/cpng.2024",
+      "concepts": [
+        "New guinea",
+        "Politics",
+        "Power (physics)",
+        "Sociology",
+        "Gender studies"
+      ]
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Index insurance and climate risk: prospects for development and disaster management",
+      "year": 2024,
+      "doi": "https://doi.org/10.7916/wp8p-v354",
+      "openalex_id": "https://openalex.org/W2249551567",
+      "cited_by_count": 188,
+      "type": "article",
+      "primary_location": "https://hdl.handle.net/10568/932",
+      "concepts": [
+        "Index (typography)",
+        "Risk management",
+        "Business",
+        "Actuarial science",
+        "Environmental resource management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Revolutionizing the food industry: The transformative power of artificial intelligence-a review",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.fochx.2024.101867",
+      "openalex_id": "https://openalex.org/W4403015911",
+      "cited_by_count": 120,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1016/j.fochx.2024.101867",
+      "concepts": [
+        "Transformative learning",
+        "Power (physics)",
+        "Business",
+        "Psychology",
+        "Developmental psychology"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Meta-analysis of Empirical Estimates of Loss Aversion",
+      "year": 2024,
+      "doi": "https://doi.org/10.1257/jel.20221698",
+      "openalex_id": "https://openalex.org/W3183109742",
+      "cited_by_count": 116,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1257/jel.20221698",
+      "concepts": [
+        "Econometrics",
+        "Loss aversion",
+        "Economics",
+        "Statistics",
+        "Mathematics"
+      ]
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Generative AI in innovation and marketing processes: A roadmap of research opportunities",
+      "year": 2024,
+      "doi": "https://doi.org/10.1007/s11747-024-01044-7",
+      "openalex_id": "https://openalex.org/W4401867536",
+      "cited_by_count": 104,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s11747-024-01044-7",
+      "concepts": [
+        "Business",
+        "Generative grammar",
+        "Marketing",
+        "Marketing research",
+        "Knowledge management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Artificial Intelligence and Big Data in Sustainable Entrepreneurship",
+      "year": 2024,
+      "doi": "https://doi.org/10.1111/joes.12611",
+      "openalex_id": "https://openalex.org/W3156012754",
+      "cited_by_count": 104,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1111/joes.12611",
+      "concepts": [
+        "Sustainability",
+        "Frontier",
+        "Entrepreneurship",
+        "Big data",
+        "Face (sociological concept)"
+      ]
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Impacts of Climate Change and Mitigation Strategies for Some Abiotic and Biotic Constraints Influencing Fruit Growth and Quality",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/plants13141942",
+      "openalex_id": "https://openalex.org/W4400642004",
+      "cited_by_count": 100,
+      "type": "review",
+      "primary_location": "https://doi.org/10.3390/plants13141942",
+      "concepts": [
+        "Abiotic component",
+        "Agriculture",
+        "Climate change",
+        "Quality (philosophy)",
+        "Biotic component"
+      ]
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Internet of Things: a comprehensive overview, architectures, applications, simulation tools, challenges and future directions",
+      "year": 2024,
+      "doi": "https://doi.org/10.1007/s43926-024-00084-3",
+      "openalex_id": "https://openalex.org/W4405576390",
+      "cited_by_count": 80,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s43926-024-00084-3",
+      "concepts": [
+        "Computer science",
+        "Internet of Things",
+        "Architecture",
+        "Data science",
+        "Emerging technologies"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Enhancing Food Integrity through Artificial Intelligence and Machine Learning: A Comprehensive Review",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/app14083421",
+      "openalex_id": "https://openalex.org/W4394931884",
+      "cited_by_count": 79,
+      "type": "review",
+      "primary_location": "https://doi.org/10.3390/app14083421",
+      "concepts": [
+        "Computer science",
+        "Artificial intelligence"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "GPT (Generative Pre-Trained Transformer)— A Comprehensive Review on Enabling Technologies, Potential Applications, Emerging Challenges, and Future Directions",
+      "year": 2024,
+      "doi": "https://doi.org/10.1109/access.2024.3389497",
+      "openalex_id": "https://openalex.org/W4394828356",
+      "cited_by_count": 534,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1109/access.2024.3389497",
+      "concepts": [
+        "Computer science",
+        "Transformer",
+        "Architecture",
+        "Natural language understanding",
+        "Emerging technologies"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "The Lancet Psychiatry Commission on youth mental health",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/s2215-0366(24)00163-9",
+      "openalex_id": "https://openalex.org/W4401528161",
+      "cited_by_count": 494,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1016/s2215-0366(24)00163-9",
+      "concepts": [
+        "Commission",
+        "Psychiatry",
+        "Mental health",
+        "MEDLINE",
+        "Psychology"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "Modern computing: Vision and challenges",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.teler.2024.100116",
+      "openalex_id": "https://openalex.org/W4390660438",
+      "cited_by_count": 162,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.teler.2024.100116",
+      "concepts": [
+        "Obsolescence",
+        "Computer science",
+        "Cloud computing",
+        "Transformational leadership",
+        "Field (mathematics)"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "A comprehensive survey on digital twin for future networks and emerging Internet of Things industry",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.comnet.2024.110350",
+      "openalex_id": "https://openalex.org/W4393087172",
+      "cited_by_count": 111,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.comnet.2024.110350",
+      "concepts": [
+        "Computer science",
+        "Flexibility (engineering)",
+        "Digital transformation",
+        "Scalability",
+        "Emerging technologies"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "Understanding food choice: A systematic review of reviews",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.heliyon.2024.e32492",
+      "openalex_id": "https://openalex.org/W4399368527",
+      "cited_by_count": 106,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1016/j.heliyon.2024.e32492",
+      "concepts": [
+        "Food choice",
+        "Context (archaeology)",
+        "Marketing",
+        "Perception",
+        "Order (exchange)"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "Edge deep learning in computer vision and medical diagnostics: a comprehensive survey",
+      "year": 2025,
+      "doi": "https://doi.org/10.1007/s10462-024-11033-5",
+      "openalex_id": "https://openalex.org/W4406488955",
+      "cited_by_count": 99,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s10462-024-11033-5",
+      "concepts": [
+        "Deep learning",
+        "Computer science",
+        "Artificial intelligence",
+        "Enhanced Data Rates for GSM Evolution",
+        "Edge device"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "Applications of artificial intelligence in closed-loop supply chains: Systematic literature review and future research agenda",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.tre.2024.103455",
+      "openalex_id": "https://openalex.org/W4392183072",
+      "cited_by_count": 86,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.tre.2024.103455",
+      "concepts": [
+        "Supply chain",
+        "Systematic review",
+        "Computer science",
+        "Applications of artificial intelligence",
+        "Management science"
+      ]
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "A Survey of Machine Learning in Edge Computing: Techniques, Frameworks, Applications, Issues, and Research Directions",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/technologies12060081",
+      "openalex_id": "https://openalex.org/W4399284420",
+      "cited_by_count": 83,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/technologies12060081",
+      "concepts": [
+        "Computer science",
+        "Enhanced Data Rates for GSM Evolution",
+        "Data science",
+        "Artificial intelligence",
+        "Management science"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Global, regional, and national burden of disorders affecting the nervous system, 1990–2021: a systematic analysis for the Global Burden of Disease Study 2021",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/s1474-4422(24)00038-3",
+      "openalex_id": "https://openalex.org/W4392791500",
+      "cited_by_count": 1659,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/s1474-4422(24)00038-3",
+      "concepts": [
+        "Burden of disease",
+        "Disease",
+        "Medicine",
+        "Environmental health",
+        "Pathology"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "RETRACTED: Sources, effects and present perspectives of heavy metals contamination: Soil, plants and human food chain",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.heliyon.2024.e28357",
+      "openalex_id": "https://openalex.org/W4393204259",
+      "cited_by_count": 750,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.heliyon.2024.e28357",
+      "concepts": [
+        "Food chain",
+        "Contamination",
+        "Heavy metals",
+        "Chain (unit)",
+        "Environmental science"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "A meta systematic review of artificial intelligence in higher education: a call for increased ethics, collaboration, and rigour",
+      "year": 2024,
+      "doi": "https://doi.org/10.1186/s41239-023-00436-z",
+      "openalex_id": "https://openalex.org/W4391006361",
+      "cited_by_count": 521,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1186/s41239-023-00436-z",
+      "concepts": [
+        "Systematic review",
+        "Rigour",
+        "Higher education",
+        "Profiling (computer programming)",
+        "Scopus"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Guidelines for Bibliometric‐Systematic Literature Reviews: 10 steps to combine analysis, synthesis and theory development",
+      "year": 2024,
+      "doi": "https://doi.org/10.1111/ijmr.12381",
+      "openalex_id": "https://openalex.org/W4403236901",
+      "cited_by_count": 393,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1111/ijmr.12381",
+      "concepts": [
+        "Epistemology",
+        "Sociology",
+        "Regional science",
+        "Management science",
+        "Economics"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Deep learning and computer vision in plant disease detection: a comprehensive review of techniques, models, and trends in precision agriculture",
+      "year": 2025,
+      "doi": "https://doi.org/10.1007/s10462-024-11100-x",
+      "openalex_id": "https://openalex.org/W4406488712",
+      "cited_by_count": 283,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1007/s10462-024-11100-x",
+      "concepts": [
+        "Computer science",
+        "Artificial intelligence",
+        "Deep learning",
+        "Precision agriculture",
+        "Machine learning"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Factors affecting performance expectancy and intentions to use ChatGPT: Using SmartPLS to advance an information technology acceptance framework",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.techfore.2024.123247",
+      "openalex_id": "https://openalex.org/W4391589803",
+      "cited_by_count": 214,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.techfore.2024.123247",
+      "concepts": [
+        "Expectancy theory",
+        "Computer science",
+        "Misinformation",
+        "Empirical evidence",
+        "Perception"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Determinants of behaviour and their efficacy as targets of behavioural change interventions",
+      "year": 2024,
+      "doi": "https://doi.org/10.1038/s44159-024-00305-0",
+      "openalex_id": "https://openalex.org/W4396610915",
+      "cited_by_count": 211,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1038/s44159-024-00305-0",
+      "concepts": [
+        "Psychological intervention",
+        "Psychology",
+        "Behavior change",
+        "Social norms approach",
+        "Behaviour change"
+      ]
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Urban heat mitigation by green and blue infrastructure: Drivers, effectiveness, and future needs",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.xinn.2024.100588",
+      "openalex_id": "https://openalex.org/W4391617520",
+      "cited_by_count": 208,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.xinn.2024.100588",
+      "concepts": [
+        "Urban heat island",
+        "Overheating (electricity)",
+        "Green infrastructure",
+        "Temperate climate",
+        "Climate change"
+      ],
+      "relevance_signal": 1
+    }
+  ],
+  "screened_rows": [
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Industrial applications of large language models",
+      "year": 2025,
+      "doi": "https://doi.org/10.1038/s41598-025-98483-1",
+      "openalex_id": "https://openalex.org/W4409626943",
+      "cited_by_count": 104,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1038/s41598-025-98483-1",
+      "concepts": [
+        "Computer science",
+        "Data science",
+        "Natural language processing",
+        "Computational biology",
+        "Biology"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Generative spatial artificial intelligence for sustainable smart cities: A pioneering large flow model for urban digital twin",
+      "year": 2025,
+      "doi": "https://doi.org/10.1016/j.ese.2025.100526",
+      "openalex_id": "https://openalex.org/W4406411754",
+      "cited_by_count": 51,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.ese.2025.100526",
+      "concepts": [
+        "Generative grammar",
+        "Artificial intelligence",
+        "Computer science",
+        "Smart city",
+        "Internet of Things"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Governance Networks in the Public Sector",
+      "year": 2025,
+      "doi": "https://doi.org/10.4324/9781003402138",
+      "openalex_id": "https://openalex.org/W4409328264",
+      "cited_by_count": 24,
+      "type": "book",
+      "primary_location": "https://doi.org/10.4324/9781003402138",
+      "concepts": [
+        "Corporate governance",
+        "Public sector",
+        "Business",
+        "Public administration",
+        "Political science"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Hospitality Investment in the Afar Region, Ethiopia: Trends, Challenges, and Opportunities",
+      "year": 2025,
+      "doi": "https://doi.org/10.26650/jot.2025.10.1.1600275",
+      "openalex_id": "https://openalex.org/W4412755106",
+      "cited_by_count": 4,
+      "type": "article",
+      "primary_location": "https://doi.org/10.26650/jot.2025.10.1.1600275",
+      "concepts": [
+        "Hospitality",
+        "Investment (military)",
+        "Geography",
+        "Economic geography",
+        "Business"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Tourism Management in National Parks: Development, Aspects, and Conceptual Framework",
+      "year": 2025,
+      "doi": "https://doi.org/10.3390/f16060970",
+      "openalex_id": "https://openalex.org/W4411151507",
+      "cited_by_count": 3,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/f16060970",
+      "concepts": [
+        "Tourism",
+        "Environmental resource management",
+        "Conceptual framework",
+        "Environmental planning",
+        "Process management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "business case options appraisal recommendations evidence report",
+      "title": "Urban heat mitigation by green and blue infrastructure: Drivers, effectiveness, and future needs",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.xinn.2024.100588",
+      "openalex_id": "https://openalex.org/W4391617520",
+      "cited_by_count": 208,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1016/j.xinn.2024.100588",
+      "concepts": [
+        "Urban heat island",
+        "Overheating (electricity)",
+        "Green infrastructure",
+        "Temperate climate",
+        "Climate change"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Index insurance and climate risk: prospects for development and disaster management",
+      "year": 2024,
+      "doi": "https://doi.org/10.7916/wp8p-v354",
+      "openalex_id": "https://openalex.org/W2249551567",
+      "cited_by_count": 188,
+      "type": "article",
+      "primary_location": "https://hdl.handle.net/10568/932",
+      "concepts": [
+        "Index (typography)",
+        "Risk management",
+        "Business",
+        "Actuarial science",
+        "Environmental resource management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "large language model agent city simulation human mobility 2025",
+      "title": "Electric Vehicle Adoption: A Comprehensive Systematic Review of Technological, Environmental, Organizational and Policy Impacts",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/wevj15080375",
+      "openalex_id": "https://openalex.org/W4401702248",
+      "cited_by_count": 150,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/wevj15080375",
+      "concepts": [
+        "Business",
+        "Environmental policy",
+        "Electric vehicle",
+        "Environmental economics",
+        "Industrial organization"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Revolutionizing the food industry: The transformative power of artificial intelligence-a review",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.fochx.2024.101867",
+      "openalex_id": "https://openalex.org/W4403015911",
+      "cited_by_count": 120,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1016/j.fochx.2024.101867",
+      "concepts": [
+        "Transformative learning",
+        "Power (physics)",
+        "Business",
+        "Psychology",
+        "Developmental psychology"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "discrete choice model retail location consumer behavior",
+      "title": "Understanding food choice: A systematic review of reviews",
+      "year": 2024,
+      "doi": "https://doi.org/10.1016/j.heliyon.2024.e32492",
+      "openalex_id": "https://openalex.org/W4399368527",
+      "cited_by_count": 106,
+      "type": "review",
+      "primary_location": "https://doi.org/10.1016/j.heliyon.2024.e32492",
+      "concepts": [
+        "Food choice",
+        "Context (archaeology)",
+        "Marketing",
+        "Perception",
+        "Order (exchange)"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Generative AI in innovation and marketing processes: A roadmap of research opportunities",
+      "year": 2024,
+      "doi": "https://doi.org/10.1007/s11747-024-01044-7",
+      "openalex_id": "https://openalex.org/W4401867536",
+      "cited_by_count": 104,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s11747-024-01044-7",
+      "concepts": [
+        "Business",
+        "Generative grammar",
+        "Marketing",
+        "Marketing research",
+        "Knowledge management"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "retail location choice multi criteria decision analysis site selection 2025",
+      "title": "The digital transformation in pharmacy: embracing online platforms and the cosmeceutical paradigm shift",
+      "year": 2024,
+      "doi": "https://doi.org/10.1186/s41043-024-00550-2",
+      "openalex_id": "https://openalex.org/W4396733914",
+      "cited_by_count": 82,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1186/s41043-024-00550-2",
+      "concepts": [
+        "Pharmacy",
+        "Transformative learning",
+        "Digital transformation",
+        "Business",
+        "Telehealth"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "agent based model retail location choice complementary goods",
+      "title": "Internet of Things: a comprehensive overview, architectures, applications, simulation tools, challenges and future directions",
+      "year": 2024,
+      "doi": "https://doi.org/10.1007/s43926-024-00084-3",
+      "openalex_id": "https://openalex.org/W4405576390",
+      "cited_by_count": 80,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1007/s43926-024-00084-3",
+      "concepts": [
+        "Computer science",
+        "Internet of Things",
+        "Architecture",
+        "Data science",
+        "Emerging technologies"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "Large Language Models for Intelligent Transportation: A Review of the State of the Art and Challenges",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/app14177455",
+      "openalex_id": "https://openalex.org/W4401895018",
+      "cited_by_count": 42,
+      "type": "review",
+      "primary_location": "https://doi.org/10.3390/app14177455",
+      "concepts": [
+        "Computer science"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "urban park visitor experience commercial concession planning",
+      "title": "Perceived Quality of Service in Tourist Transportation in the City of Baños de Agua Santa, Ecuador",
+      "year": 2024,
+      "doi": "https://doi.org/10.3390/su16177245",
+      "openalex_id": "https://openalex.org/W4401891396",
+      "cited_by_count": 20,
+      "type": "article",
+      "primary_location": "https://doi.org/10.3390/su16177245",
+      "concepts": [
+        "SERVQUAL",
+        "Tourism",
+        "Service quality",
+        "Service (business)",
+        "Marketing"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "public park food beverage concession visitor services planning",
+      "title": "Measuring the relationship between museum attributes and visitors: An application of topic model on museum online reviews",
+      "year": 2024,
+      "doi": "https://doi.org/10.1371/journal.pone.0304901",
+      "openalex_id": "https://openalex.org/W4400408248",
+      "cited_by_count": 16,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1371/journal.pone.0304901",
+      "concepts": [
+        "Visitor pattern",
+        "Structural equation modeling",
+        "Tourism",
+        "Cultural heritage",
+        "Social media"
+      ],
+      "relevance_signal": 1
+    },
+    {
+      "query": "LLM agent urban mobility simulation 2026",
+      "title": "6G autonomous radio access network empowered by artificial intelligence and network digital twin",
+      "year": 2024,
+      "doi": "https://doi.org/10.1631/fitee.2400569",
+      "openalex_id": "https://openalex.org/W4405854614",
+      "cited_by_count": 9,
+      "type": "article",
+      "primary_location": "https://doi.org/10.1631/fitee.2400569",
+      "concepts": [
+        "Computer science",
+        "Radio access network",
+        "Network architecture",
+        "Cloud computing",
+        "Service (business)"
+      ],
+      "relevance_signal": 1
+    }
+  ]
+}

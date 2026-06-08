@@ -1,0 +1,42 @@
+﻿check_id,status,severity,finding,evidence
+P2-REALITY-001,pass,error,source catalog rows=4,40_quality_evidence/p2_real_site_source_catalog.csv
+P2-REALITY-002,pass,error,all four user-provided source files registered,40_quality_evidence/p2_real_site_source_catalog.csv
+P2-REALITY-003,pass,error,"source status counts={'extracted_local': 2, 'pending_conversion': 2}",40_quality_evidence/p2_real_site_source_catalog.csv
+P2-REALITY-004,pass,error,"DWG headers=['AC1018', 'AC1018']",40_quality_evidence/p2_real_site_source_catalog.csv
+P2-REALITY-005,pass,error,DWG geometry is explicitly not claimed,40_quality_evidence/p2_real_site_source_catalog.csv
+P2-REALITY-006,pass,error,DOCX nonempty_line_count=183,30_extraction/p2_real_site/osen_project_plan_profile.json
+P2-REALITY-007,pass,error,DOCX table_count=7,30_extraction/p2_real_site/osen_project_plan_profile.json
+P2-REALITY-008,pass,error,DOCX text contains 奥森重点项目策划思路,30_extraction/p2_real_site/osen_project_plan_text.txt
+P2-REALITY-009,pass,error,DOCX text contains 桃花源,30_extraction/p2_real_site/osen_project_plan_text.txt
+P2-REALITY-010,pass,error,DOCX text contains 奥运廉洁主题展馆,30_extraction/p2_real_site/osen_project_plan_text.txt
+P2-REALITY-011,pass,error,DOCX text contains 南门地下预埋,30_extraction/p2_real_site/osen_project_plan_text.txt
+P2-REALITY-012,pass,error,DOCX text contains 保底租金+营业额抽成,30_extraction/p2_real_site/osen_project_plan_text.txt
+P2-REALITY-013,pass,error,PDF text contains 林萃 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-014,pass,error,PDF text contains 北五环辅路 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-015,pass,error,PDF text contains 停车场 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-016,pass,error,PDF text contains 足球场 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-017,pass,error,PDF text contains 篮球场 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-018,pass,error,PDF text contains 花海 after whitespace normalization,30_extraction/p2_real_site/osen_north_cad_pdf_text.txt
+P2-REALITY-019,pass,error,worklist rows=7,70_outputs/processed_tables/p2_real_site_input_worklist.csv
+P2-REALITY-020,pass,error,input requirement rows=6,70_outputs/processed_tables/p2_simulation_input_requirements.csv
+P2-REALITY-021,pass,error,DOCX semantic DeepSeek rows=21,70_outputs/processed_tables/p2_docx_project_semantic_draft_deepseek.csv
+P2-REALITY-022,pass,error,project node rows=6,70_outputs/processed_tables/p2_project_node_candidates.csv
+P2-REALITY-023,pass,error,"project nodes=['10#2A03分区管理中心', '12#西分区管理中心', '南门地下预埋空间', '南门露天剧场', '奥运廉洁主题展馆', '桃花源白房子']",70_outputs/processed_tables/p2_project_node_candidates.csv
+P2-REALITY-024,pass,error,business scene assumptions rows=12,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-025,pass,error,assumption coverage contains 婚礼,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-026,pass,error,assumption coverage contains 咖啡,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-027,pass,error,assumption coverage contains 疗愈,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-028,pass,error,assumption coverage contains Live House,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-029,pass,error,assumption coverage contains 折扣,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-030,pass,error,assumption coverage contains 草坪市集,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-031,pass,error,assumption coverage contains 中医诊疗,70_outputs/processed_tables/p2_business_scene_assumption_pool.csv
+P2-REALITY-032,pass,error,spatial label rows=22,70_outputs/processed_tables/p2_spatial_label_candidates.csv
+P2-REALITY-033,pass,error,PDF labels are not treated as geometry,70_outputs/processed_tables/p2_spatial_label_candidates.csv
+P2-REALITY-034,pass,error,gap register rows=10,70_outputs/processed_tables/p2_input_gap_register.csv
+P2-REALITY-035,pass,error,blocking P3/P4 gaps remain explicit,70_outputs/processed_tables/p2_input_gap_register.csv
+P2-REALITY-036,pass,error,P2 derived outputs remain needs_review,70_outputs/processed_tables
+P2-REALITY-037,pass,error,method scores preserve geometry and visitor-flow blockers,70_outputs/processed_tables/p2_candidate_method_readiness_scores.csv
+P2-REALITY-038,pass,error,AGENTS phase is P2 method prototype closed,AGENTS.md
+P2-REALITY-039,pass,error,AGENTS keeps P3 not started,AGENTS.md
+P2-REALITY-040,pass,error,handoff records source-study boundary,handoff_next_chat.md
+P2-REALITY-041,pass,error,handoff records latest full gate,handoff_next_chat.md

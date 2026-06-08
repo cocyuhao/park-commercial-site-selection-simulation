@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-07T04:01:25",
+  "status": "generated",
+  "output_csv": "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+  "row_count": 1200,
+  "coverage": {
+    "persona_id": 8,
+    "income_segment_id": 5,
+    "time_band_id": 6,
+    "weather_id": 5,
+    "node_context_id": 6,
+    "demand_trigger_id": 10,
+    "candidate_supply_action_id": 21
+  },
+  "design_boundary": "This is a deterministic coverage pool for person-simulation scenarios. It is not a final simulation result and does not claim ROI or final ranking."
+}

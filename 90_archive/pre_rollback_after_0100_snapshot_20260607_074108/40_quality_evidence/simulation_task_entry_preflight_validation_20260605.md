@@ -1,0 +1,67 @@
+# 仿真任务入口预检验证报告（2026-06-05）
+
+- 状态：pass
+- 失败数：0
+- 结论：本验证只证明入口有本地资料依据、能组合四类对象、能阻止完整仿真误声明；不证明完整仿真完成。
+
+## 本地依据计数
+- evidence_ledger: 260
+- pdf_native_tables: 329
+- amap_poi_candidates: 227
+- in_park_followup: 7
+- persona_state: 6
+- behavior_program: 12
+- choice_probability: 36
+- validation_target: 10
+- feature_derivatives: 1200
+- real_calibration_inputs: 14
+- boss_sources: 6
+- cad_plan_files: 4
+- boss_folder_files: 6
+
+## 检查项
+- `DATA-EVIDENCE-LEDGER` pass: 证据台账可读取且数量足以支撑预检入口。 260
+- `DATA-PDF-TABLES` pass: PDF 表格抽取结果可读取。 329
+- `DATA-AMAP-POI` pass: 高德 POI 候选表可读取。 227
+- `DATA-BOSS-MATERIALS` pass: 老板六份方法资料原件和归档清单一致。 {"manifest": 6, "folder": 6}
+- `DATA-CAD-PLAN` pass: 策划文案和 CAD/PDF 图纸资料已在项目目录。 4
+- `OBJECT-PERSONA-BEHAVIOR` pass: 人群状态和行为程序候选已落盘。 {"persona": 6, "behavior": 12}
+- `OBJECT-CHOICE-VALIDATION` pass: 选择概率和验证目标候选已落盘。 {"choice": 36, "validation": 10}
+- `DATA-FEATURE-DERIVATIVES` pass: 人物仿真衍生场景覆盖池可读取。 1200
+- `DATA-OSEN-REAL-CALIBRATION` pass: 奥森真实校准输入包可读取。 14
+- `API-GET-PREFLIGHT` pass: 仿真任务预检 GET 接口可用。 200
+- `API-ASSET-CAD-PLAN` pass: 预检入口显示策划文案与 CAD/图纸资料用途。 ["CAD / 图纸资料", "PDF 原生表格", "人物仿真覆盖池", "园内复核工单", "奥森真实校准输入", "奥森策划资料", "数据目录", "老板方法资料", "证据台账", "高德 POI 候选"]
+- `API-ASSET-FEATURE-DERIVATIVES` pass: 预检入口显示人物仿真覆盖池，避免 1000+ 衍生特征只藏在后台。 ["CAD / 图纸资料", "PDF 原生表格", "人物仿真覆盖池", "园内复核工单", "奥森真实校准输入", "奥森策划资料", "数据目录", "老板方法资料", "证据台账", "高德 POI 候选"]
+- `API-ASSET-REAL-CALIBRATION` pass: 预检入口显示奥森真实校准输入，避免收入/竞品/转化只停在报告里。 ["CAD / 图纸资料", "PDF 原生表格", "人物仿真覆盖池", "园内复核工单", "奥森真实校准输入", "奥森策划资料", "数据目录", "老板方法资料", "证据台账", "高德 POI 候选"]
+- `API-CHECK-CAD-PLAN` pass: 预检包含策划文案与 CAD 结合检查项。 ["adopted_uploads", "controlled_feature_scenes", "discarded_object_guard", "local_evidence_assets", "macro_validation_data", "map_poi_context", "osen_real_calibration_inputs", "p3_gate_closure", "person_simulation_feature_derivatives", "planning_and_cad_integration", "production_ai_boundary", "project_location", "selected_behavior_program", "selected_choice_probability", "selected_persona_state", "selected_simulation_validation_target"]
+- `API-CHECK-FEATURE-DERIVATIVES` pass: 预检包含人物仿真覆盖池检查项。 ["adopted_uploads", "controlled_feature_scenes", "discarded_object_guard", "local_evidence_assets", "macro_validation_data", "map_poi_context", "osen_real_calibration_inputs", "p3_gate_closure", "person_simulation_feature_derivatives", "planning_and_cad_integration", "production_ai_boundary", "project_location", "selected_behavior_program", "selected_choice_probability", "selected_persona_state", "selected_simulation_validation_target"]
+- `API-CHECK-CONTROLLED-FEATURE-SCENES` pass: 预检包含已采用/锁定人物场景检查项。 ["adopted_uploads", "controlled_feature_scenes", "discarded_object_guard", "local_evidence_assets", "macro_validation_data", "map_poi_context", "osen_real_calibration_inputs", "p3_gate_closure", "person_simulation_feature_derivatives", "planning_and_cad_integration", "production_ai_boundary", "project_location", "selected_behavior_program", "selected_choice_probability", "selected_persona_state", "selected_simulation_validation_target"]
+- `API-CHECK-REAL-CALIBRATION` pass: 预检包含奥森真实校准输入检查项。 ["adopted_uploads", "controlled_feature_scenes", "discarded_object_guard", "local_evidence_assets", "macro_validation_data", "map_poi_context", "osen_real_calibration_inputs", "p3_gate_closure", "person_simulation_feature_derivatives", "planning_and_cad_integration", "production_ai_boundary", "project_location", "selected_behavior_program", "selected_choice_probability", "selected_persona_state", "selected_simulation_validation_target"]
+- `API-FEATURE-POOL-IN-PREFLIGHT` pass: 预检 payload 带出可操作代表场景，而不只是后台文件。 {"total": 1200, "visible": 8}
+- `API-FEATURE-INCOME-COVERAGE` pass: 预检覆盖池显式包含收入/消费价格带维度。 {"personas": 8, "income_segments": 5, "time_bands": 6, "weathers": 5, "node_contexts": 6, "demand_triggers": 10, "supply_actions": 21}
+- `API-REAL-CALIBRATION-LAYERED` pass: 预检 payload 带出分层真实校准输入：官方宏观、本地画像/代理、竞品价格和方案假设不混用。 {"count": 14, "strengths": {"official_macro_boundary": 3, "local_bigdata_profile": 3, "local_device_price_proxy": 2, "local_poi_price_signal": 2, "local_poi_demand_signal": 1, "plan_assumption_needs_review": 3}}
+- `API-CHECK-DEEPSEEK-ONLY` pass: 预检包含生产 DeepSeek-only 边界检查项。 ["adopted_uploads", "controlled_feature_scenes", "discarded_object_guard", "local_evidence_assets", "macro_validation_data", "map_poi_context", "osen_real_calibration_inputs", "p3_gate_closure", "person_simulation_feature_derivatives", "planning_and_cad_integration", "production_ai_boundary", "project_location", "selected_behavior_program", "selected_choice_probability", "selected_persona_state", "selected_simulation_validation_target"]
+- `API-FULL-SIM-BLOCKED` pass: 缺真实校准和 P3 门禁时，接口阻止完整仿真声明。 blocked_for_full_simulation
+- `API-OBJECTS-FIRST` pass: 对象未选择齐时，接口要求先选择对象。 select_objects_first
+- `API-GET-FEATURE-DERIVATIVES` pass: 人物场景覆盖池 API 可读取。 200
+- `API-FEATURE-FIRST-ID` pass: 覆盖池代表场景带有稳定场景编号。 PSD-0001
+- `API-FEATURE-INCOME-FIELDS` pass: 覆盖池代表场景带出收入段和消费价格带字段。 {"income_segment_name": "基础预算/公共服务优先", "income_price_band": "0-30元即时补给或免费基础服务"}
+- `API-FEATURE-USE` pass: 代表场景可以被用户采用。 {"derivative_id": "PSD-0001", "title": "晨练/跑步人群 · 清晨 · 口渴/补水", "persona_id": "runner", "persona_name": "晨练/跑步人群", "persona_core_need": "目标是快速补水、低负担补给和路线不中断；收入敏感度中等，更在意距离、排队和运动后即时性。", "income_segment_id": "public_basic", "income_segment_name": "基础预算/公共服务优先", "income_price_band": "0-30元即时补给或免费基础服务", "income_sensitivity_note": "价格敏感度高，优先判断是否应做公益性饮水、座椅、卫生间、导视和低价透明补给。", "income_evidence_hint": "本地资料含餐饮消费水平、城市/全国消费水平和居住社区房价表；基础预算段不可被高消费均值覆盖。", "time_band_name": "清晨", "time_range": "05:30-08:30", "weat
+- `API-FEATURE-LOCK` pass: 代表场景可以被用户锁定。 {"derivative_id": "PSD-0001", "title": "晨练/跑步人群 · 清晨 · 口渴/补水", "persona_id": "runner", "persona_name": "晨练/跑步人群", "persona_core_need": "目标是快速补水、低负担补给和路线不中断；收入敏感度中等，更在意距离、排队和运动后即时性。", "income_segment_id": "public_basic", "income_segment_name": "基础预算/公共服务优先", "income_price_band": "0-30元即时补给或免费基础服务", "income_sensitivity_note": "价格敏感度高，优先判断是否应做公益性饮水、座椅、卫生间、导视和低价透明补给。", "income_evidence_hint": "本地资料含餐饮消费水平、城市/全国消费水平和居住社区房价表；基础预算段不可被高消费均值覆盖。", "time_band_name": "清晨", "time_range": "05:30-08:30", "weat
+- `API-FEATURE-INPUT-IMPACT` pass: 采用/锁定后代表场景进入预检输入。 {"count": 1, "ids": ["PSD-0001"]}
+- `API-FEATURE-CHECK-PASS-AFTER-CONTROL` pass: 采用/锁定后已采用人物场景检查项变为已满足。 {"check_id": "controlled_feature_scenes", "label": "已采用人物场景", "status": "pass", "detail": "已有 1 条采用或锁定的人物场景进入本次预检输入，其中包含收入/消费价格带、时段、天气、节点、需求触发和供给动作。", "next_action": "至少采用或锁定 1 条代表场景，或明确保持覆盖池为资料参考；收入/价格带需要和真实消费数据复核。", "blocks_full_simulation": false, "evidence_refs": ["70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv", "90_p6_expert_dashboard/cache/simulation_feature_derivative_controls.json"]}
+- `API-FEATURE-RESTORE` pass: 代表场景可以恢复为暂未采用。 200
+- `API-POST-PREFLIGHT` pass: 仿真任务预检 POST 接口可保存选择。 200
+- `API-SELECT-ALL-TYPES` pass: 预检可组合人群、行为、选择概率和验证目标四类对象。 {"persona_state": 1, "behavior_program": 1, "choice_probability": 1, "simulation_validation_target": 1}
+- `API-DRY-RUN-READY` pass: 四类对象选择后只放行结构化预检，不放行完整仿真。 ready_for_structural_precheck
+- `API-POST-FULL-STILL-BLOCKED` pass: 对象齐备后仍因真实校准/P3 门禁阻止完整仿真。 blocked_for_full_simulation
+- `API-DASHBOARD` pass: dashboard 仍可加载，并包含预检 payload。 200
+- `API-DASHBOARD-PREFLIGHT` pass: dashboard 已带出仿真任务预检数据。 
+- `UI-PREFLIGHT-SECTION` pass: 前端存在仿真任务入口区域。 
+- `UI-PREFLIGHT-ACTIONS` pass: 前端存在保存预检、使用已采用对象等操作。 
+- `UI-FEATURE-POOL-ACTIONS` pass: 前端存在人物场景采用、放弃、锁定操作。 
+- `UI-FEATURE-INCOME-FIELDS` pass: 前端人物场景显示收入段和消费价格带。 
+- `UI-PREFLIGHT-LAYOUT` pass: 仿真任务入口有独立全宽面板和对象选择布局。 
+- `UI-FEATURE-POOL-LAYOUT` pass: 人物场景控制区有独立视觉层。 
+- `TEXT-AI-BOUNDARY-HUMANIZED` pass: 用户可见预检文案明确生产 AI 边界，且不暴露内部状态词。 
+- `TEXT-NO-FINAL-CLAIM` pass: 预检文案明确完整仿真仍被阻止，不写成最终结论。 

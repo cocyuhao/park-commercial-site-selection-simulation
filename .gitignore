@@ -9,6 +9,8 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .venv/
+node_modules/
+90_p6_expert_dashboard/qa/node_modules/
 
 # Generated heavy/intermediate outputs
 30_extraction/extraction_logs/*.tmp

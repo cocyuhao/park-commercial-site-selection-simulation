@@ -1,0 +1,273 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "rounds": 10,
+  "total_actions": 150,
+  "failed_rounds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "visible_issue_rounds": [],
+  "console_error_rounds": [],
+  "created_sessions": [
+    "CHAT-20260603115614-0008",
+    "CHAT-20260603115710-0009",
+    "CHAT-20260603115819-0010",
+    "CHAT-20260603115920-0011",
+    "CHAT-20260603120028-0012",
+    "CHAT-20260603120120-0013",
+    "CHAT-20260603120226-0014",
+    "CHAT-20260603120313-0015",
+    "CHAT-20260603120411-0016",
+    "CHAT-20260603120523-0017"
+  ],
+  "results": [
+    {
+      "round": 1,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_01.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603115614-0008",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 2,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_02.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603115710-0009",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 3,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_03.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603115819-0010",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 4,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_04.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603115920-0011",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 5,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_05.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120028-0012",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 6,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_06.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120120-0013",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 7,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_07.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120226-0014",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 8,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_08.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120313-0015",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 9,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_09.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120411-0016",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    },
+    {
+      "round": 10,
+      "action_count": 15,
+      "failures": [
+        "project_mode_not_restored:项目综合",
+        "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+      ],
+      "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_10.png",
+      "visible_text_issues": [],
+      "console_errors": [],
+      "human_visual_notes": [
+        "ai_workbench_opened",
+        "rail_toggle_ok",
+        "new_session=CHAT-20260603120523-0017",
+        "project_question_answered",
+        "node_mode=当前节点 N-001",
+        "long_input_height=160",
+        "report_view_opened",
+        "asset_drawer_open=True",
+        "overview_jump_triggered",
+        "collapsible_toggle_count=8"
+      ],
+      "current_url": "http://127.0.0.1:8000/#nodes"
+    }
+  ]
+}

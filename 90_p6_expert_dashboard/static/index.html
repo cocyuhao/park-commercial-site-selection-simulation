@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>公园商业选址仿真决策系统</title>
-    <link rel="stylesheet" href="/static/styles.css?v=20260602n" />
+    <title>AI 仿真决策系统</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/static/styles.css?v=20260605-foundation" />
   </head>
   <body>
     <div class="platform-shell">
@@ -12,37 +13,77 @@
         <div class="platform-brand">
           <span class="brand-mark" aria-hidden="true"></span>
           <div>
-            <b>园区商业选址决策平台</b>
-            <small>反馈草案</small>
+            <b>AI 仿真决策系统</b>
+            <small>公园商业选址场景</small>
           </div>
         </div>
 
-        <nav class="side-nav" aria-label="主导航">
-          <button class="side-nav-item active" data-view="overview">项目总览</button>
-          <button class="side-nav-item" data-view="nodes">节点清单</button>
-          <button class="side-nav-item" data-view="map">空间地图</button>
-          <button class="side-nav-item" data-view="upload">资料导入</button>
-          <button class="side-nav-item" data-view="data">资料闭合中心</button>
-          <button class="side-nav-item" data-view="report">分析报告</button>
-          <button class="side-nav-item" data-view="ai">专家 AI 工作台</button>
+        <nav class="workflow-nav" aria-label="仿真工作流">
+          <section class="workflow-stage active" data-workflow-stage data-workflow-views="overview">
+            <button class="workflow-main active" type="button" data-view="overview">
+              <span>01</span>
+              <b>全局链路台</b>
+              <em>先看整体状态</em>
+            </button>
+          </section>
+          <section class="workflow-stage" data-workflow-stage data-workflow-views="upload,map">
+            <button class="workflow-main" type="button" data-view="upload">
+              <span>02</span>
+              <b>资料与空间底座</b>
+              <em>策划、CAD、POI</em>
+            </button>
+            <div class="workflow-subnav">
+              <button type="button" data-view="upload">资料导入</button>
+              <button type="button" data-view="map">空间地图</button>
+            </div>
+          </section>
+          <section class="workflow-stage" data-workflow-stage data-workflow-views="data">
+            <button class="workflow-main" type="button" data-view="data" data-scroll-target="simulationObjectPool">
+              <span>03</span>
+              <b>人物仿真工坊</b>
+              <em>人群、行为、选择</em>
+            </button>
+            <div class="workflow-subnav">
+              <button type="button" data-view="data" data-scroll-target="simulationObjectPool">对象池</button>
+              <button type="button" data-view="data" data-scroll-target="simulationTaskPreflight">任务预检</button>
+            </div>
+          </section>
+          <section class="workflow-stage" data-workflow-stage data-workflow-views="nodes">
+            <button class="workflow-main" type="button" data-view="nodes">
+              <span>04</span>
+              <b>节点与候选点</b>
+              <em>只承接已闭合条件</em>
+            </button>
+          </section>
+          <section class="workflow-stage" data-workflow-stage data-workflow-views="ai,report">
+            <button class="workflow-main" type="button" data-view="ai">
+              <span>05</span>
+              <b>决策解释与报告</b>
+              <em>对话沉淀为工作稿</em>
+            </button>
+            <div class="workflow-subnav">
+              <button type="button" data-view="ai">AI 工作台</button>
+              <button type="button" data-view="report">分析报告</button>
+            </div>
+          </section>
         </nav>
 
         <div class="side-tip">
           <b>当前边界</b>
-          <span>所有 AI 与评分只用于待复核草案，不是最终推荐。</span>
+          <span>所有 AI、仿真判断和报告只用于待复核工作稿，不是最终推荐。</span>
         </div>
       </aside>
 
       <main class="decision-page">
         <header class="project-header">
           <div class="project-title">
-            <h1>公园商业选址仿真决策系统</h1>
-            <span id="pageSubtitle">先选任务，再进入地图、节点或 AI 工作台</span>
+            <h1>AI 仿真决策系统</h1>
+              <span id="pageSubtitle">当前场景：公园商业选址。按“资料与空间底座 → 人物仿真工坊 → 节点与报告”推进</span>
           </div>
           <div class="header-actions">
             <span id="dataVersion" class="status-pill">loading</span>
             <button id="assetDrawerBtn" class="secondary-btn" type="button">资料池</button>
-            <button id="headerDataBtn" class="secondary-btn">查看待补数据</button>
+            <button id="headerDataBtn" class="secondary-btn">查看推进事项</button>
             <button id="headerAiBtn" class="primary-btn">打开 AI 工作台</button>
           </div>
         </header>
@@ -58,53 +99,57 @@
         </aside>
 
         <section id="overviewView" class="view active">
-          <section class="home-grid">
-            <div class="home-intro">
-              <h2>请选择现在要做的事</h2>
-              <p>这个原型按“鼠标点击 + 打字反馈”设计。首页不放复杂闸门，把任务拆开，让专家按步骤看节点、看地图、补数据、问 AI。</p>
-              <div class="home-alert">
-                <b>请先按草案使用</b>
-                <span>当前只能用于讨论和补数。DWG 未完成可信转换，AI 只生成待复核意见。</span>
+          <section class="chain-command">
+            <div class="chain-command-copy">
+              <span class="section-eyebrow">全局对象链</span>
+              <h2>全局仿真链路台</h2>
+              <p>先判断资料、人群状态、行为程序、选择概率、空间语境和验证目标是否能支撑下一步，再进入地图、节点、AI 或报告工作区。这里不是旧项目说明页，而是整个仿真系统的调度入口。</p>
+              <div id="chainSummaryBar" class="chain-summary-bar"></div>
+            </div>
+            <div id="methodCommitments" class="method-commitments"></div>
+          </section>
+
+          <section class="action-rail-section">
+            <div class="panel-head compact">
+              <div>
+                <h2>当前推进事项</h2>
+                <p>每个动作都对应一个对象和一个人工检查点，避免 AI 一键替用户做完判断。</p>
               </div>
             </div>
-            <button class="task-card" data-view="nodes">
-              <span>1</span>
-              <b>看节点方案</b>
-              <em>查看 6 个节点、业态方向、场景假设和待补数据</em>
-            </button>
-            <button class="task-card" data-view="map">
-              <span>2</span>
-              <b>看空间地图</b>
-              <em>查看位置关系、POI 分布和地图接入状态</em>
-            </button>
-            <button class="task-card" data-view="ai">
-              <span>3</span>
-              <b>问 AI / 写专家意见</b>
-              <em>像网页 AI 一样对话，记录专家意见</em>
-            </button>
-            <button class="task-card" data-view="data">
-              <span>4</span>
-              <b>闭合资料缺口</b>
-              <em>把缺什么、谁来补、为什么补看清楚</em>
-            </button>
-            <button class="task-card" data-view="upload">
-              <span>5</span>
-              <b>上传方案资料</b>
-              <em>上传 DWG、PDF、图片、表格后再让 AI 解析成节点和待复核数据</em>
-            </button>
+            <div id="overviewPrimaryActions" class="primary-action-grid"></div>
+          </section>
+
+          <section class="overview-status-section">
+            <div class="panel-head">
+              <div>
+                <h2>系统链路状态</h2>
+                <p>状态会随资料采用、对象锁定、节点推进、地图上下文、AI 对话和报告生成变化；不再使用固定死文案。</p>
+              </div>
+            </div>
+            <div id="overviewStatusCards" class="overview-status-grid"></div>
+          </section>
+
+          <section class="object-chain-section panel">
+            <div class="panel-head">
+              <div>
+                <h2>对象链路矩阵</h2>
+                <p>把资料、人群状态、行为程序、选择概率、验证目标、节点、AI 会话和报告串成一条可复核链路；证据默认折叠。</p>
+              </div>
+            </div>
+            <div id="objectChainMatrix" class="object-chain-matrix"></div>
           </section>
 
           <section class="overview-panels">
             <section class="panel">
               <div class="panel-head">
-                <h2>当前节点</h2>
+                <h2>节点推进池</h2>
                 <button class="text-btn" data-view="nodes">进入节点清单</button>
               </div>
               <div id="overviewNodeList" class="overview-node-list"></div>
             </section>
             <section class="panel">
               <div class="panel-head">
-                <h2>下一步建议</h2>
+                <h2>待补资料与决策动作</h2>
                 <button class="text-btn" data-view="data">看补数清单</button>
               </div>
               <div id="overviewNextSteps" class="next-step-list"></div>
@@ -113,6 +158,18 @@
         </section>
 
         <section id="uploadView" class="view">
+          <section class="panel source-foundation-panel">
+            <div class="panel-head">
+              <div>
+                <span class="section-eyebrow">资料与空间底座</span>
+                <h2>先把真实资料放到同一张工作台</h2>
+                <p>这里承接老板方法资料、策划文案、CAD/图纸、PDF 表格、高德 POI 和网页上传资料；它们先进入对象链，再服务人群状态、行为程序、选择概率和验证目标。</p>
+              </div>
+              <button class="secondary-btn" type="button" data-view="data" data-scroll-target="simulationTaskPreflight">查看预检</button>
+            </div>
+            <div id="sourceFoundationSummary" class="source-foundation-summary"></div>
+            <div id="localDataAssets" class="local-data-assets"></div>
+          </section>
           <section class="upload-page">
             <section class="panel upload-panel">
               <div class="panel-head">
@@ -122,6 +179,10 @@
                 </div>
               </div>
               <form id="uploadForm" class="upload-form">
+                <div class="import-actions">
+                  <button id="oneClickPlanImportBtn" class="primary-btn" type="button">一键导入项目计划</button>
+                  <span>先上传或采用项目计划，再生成节点草案。</span>
+                </div>
                 <label class="drop-zone">
                   <input id="sourceFile" name="file" type="file" />
                   <b>点击选择文件</b>
@@ -150,7 +211,7 @@
                   </label>
                 </div>
                 <textarea id="uploadNote" placeholder="给 AI 的说明，例如：这是南园 DWG、这张图标了入口、这个表是周末客流……"></textarea>
-                <button class="primary-btn" type="submit">上传并进入待解析</button>
+                <button id="uploadSubmitBtn" class="primary-btn" type="submit" data-action="upload-source" aria-label="上传资料并进入待解析">上传并进入待解析</button>
               </form>
             </section>
             <section class="panel upload-list-panel">
@@ -172,7 +233,11 @@
               <div class="panel-head">
                 <div>
                   <h2>节点清单</h2>
-                  <p>来自 P2/P4 feedback draft 的 6 个节点</p>
+                  <p>可以手动新增，也可以从项目计划生成待复核草案。</p>
+                </div>
+                <div class="node-toolbar">
+                  <button id="quickNewNodeBtn" class="secondary-btn" type="button">新增节点</button>
+                  <button id="quickGeneratePlanNodesBtn" class="secondary-btn" type="button">从项目计划生成</button>
                 </div>
                 <input id="nodeSearch" type="search" placeholder="搜索节点名称或编号" />
               </div>
@@ -185,7 +250,7 @@
                   <h2 id="detailTitle">节点详情</h2>
                   <p id="detailSubtitle">面积、业态、场景假设、合作模式、待补数据</p>
                 </div>
-                <span id="statusTag" class="status-pill danger">待复核 / 非最终</span>
+                <span id="statusTag" class="status-pill danger">待人工确认</span>
               </div>
               <div id="detailBody" class="detail-body"></div>
             </section>
@@ -231,6 +296,7 @@
                   <button id="mapSelectedOnly" type="button">只看选中</button>
                 </div>
                 <div class="map-note">底图文字来自高德，仅作位置参考；系统判断以当前搜索目标和上传资料为准，不代表 DWG 坐标、面积或真实动线。</div>
+                <div id="mapErrorPanel" class="map-error-panel" aria-live="polite"></div>
               </div>
             </section>
 
@@ -242,6 +308,7 @@
                 </div>
               </div>
               <div id="mapSideDetail" class="map-side-detail"></div>
+              <div id="mapResultList" class="map-result-list"></div>
               <button id="mapAskAiBtn" class="primary-wide">拿这个节点问 AI</button>
             </aside>
           </section>
@@ -270,18 +337,82 @@
             <details class="panel integration-panel">
               <summary>
                 <span>
-                  <b>系统接入状态</b>
-                  <em>查看数据、地图和 AI 是否真实接入</em>
+                  <b>工作能力状态</b>
+                  <em>只显示会影响客服使用的问题</em>
                 </span>
-                <button id="refreshIntegrationBtn" class="secondary-btn" type="button">刷新状态</button>
               </summary>
+              <div class="integration-actions">
+                <button id="refreshIntegrationBtn" class="secondary-btn" type="button">刷新状态</button>
+              </div>
               <div id="integrationStatus" class="integration-list"></div>
             </details>
+            <section class="panel sim-object-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>人物仿真对象池</h2>
+                  <p>把人群状态、行为程序、选择概率和验证目标变成可采用、可锁定、可编辑的仿真输入。</p>
+                </div>
+                <div class="sim-object-head-actions">
+                  <button id="addPersonaStateObjectBtn" class="secondary-btn" type="button">新增人群状态</button>
+                  <button id="addBehaviorProgramObjectBtn" class="secondary-btn" type="button">新增行为程序</button>
+                  <button id="addChoiceObjectBtn" class="secondary-btn" type="button">新增选择候选</button>
+                  <button id="addValidationObjectBtn" class="primary-btn" type="button">新增验证目标</button>
+                </div>
+              </div>
+              <div id="simulationObjectStats" class="sim-object-stats"></div>
+              <form id="simulationObjectForm" class="sim-object-form" hidden>
+                <input type="hidden" id="simObjectEditId" value="">
+                <label>
+                  对象类型
+                  <select id="simObjectType">
+                    <option value="persona_state">人群状态画像</option>
+                    <option value="behavior_program">行为程序</option>
+                    <option value="choice_probability">选择概率候选</option>
+                    <option value="simulation_validation_target">仿真验证目标</option>
+                  </select>
+                </label>
+                <label>
+                  标题
+                  <input id="simObjectTitle" type="text" placeholder="例如：晨跑人群补水选择候选">
+                </label>
+                <label>
+                  关联编号
+                  <input id="simObjectLinkedId" type="text" placeholder="可填节点、人群或验证目标编号">
+                </label>
+                <label class="wide">
+                  业务说明
+                  <textarea id="simObjectSummary" placeholder="写给业务方看的判断说明：为什么要纳入仿真、目前依据是什么、还要补什么。"></textarea>
+                </label>
+                <label class="wide">
+                  缺失资料
+                  <textarea id="simObjectMissing" placeholder="用分号分隔，例如：晨跑时段客流；补水转化率"></textarea>
+                </label>
+                <label class="wide">
+                  具体建议
+                  <textarea id="simObjectAdvice" placeholder="用分号分隔，例如：先观察动线；再决定是否采用"></textarea>
+                </label>
+                <div class="sim-object-form-actions">
+                  <button class="primary-btn" type="submit">保存对象</button>
+                  <button id="cancelSimObjectBtn" class="secondary-btn" type="button">取消</button>
+                </div>
+              </form>
+              <div id="simulationObjectPool" class="sim-object-pool"></div>
+            </section>
+            <section class="panel simulation-task-panel">
+              <div class="panel-head">
+                <div>
+                  <h2>仿真任务入口</h2>
+                  <p>先组合人群、行为、选择和验证目标，再判断能否进入结构化预检；缺真实校准时不宣称完整仿真。</p>
+                </div>
+                <button id="saveSimulationTaskBtn" class="primary-btn" type="button">保存并预检</button>
+              </div>
+              <div id="simulationTaskPreflight" class="simulation-task-preflight"></div>
+            </section>
             <section class="panel simulation-panel">
               <div class="panel-head">
                 <div>
                   <h2>仿真检查</h2>
-                  <p>检查 POI、资料门禁和经营字段缺口，不输出最终排序或收益预测。</p>
+                  <p>只在预检对象齐备后运行结构化检查；检查 POI、资料门禁和经营字段缺口，不输出最终排序或收益预测。</p>
                 </div>
                 <button id="runSimulationBtn" class="primary-btn">运行检查</button>
               </div>
@@ -305,12 +436,12 @@
             <section class="panel report-panel">
               <div class="panel-head">
                 <div>
-                  <h2>供需缺口与节点改进报告</h2>
-                  <p>报告来自外部上传资料、当前高德 POI 和待复核缺口计算。</p>
+                  <h2>奥森商业改造预测与调整方案报告</h2>
+                  <p>报告基于已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型生成，主文用于预测与调整，不再让补资料成为主线。</p>
                 </div>
                 <div class="report-actions">
-                  <a class="secondary-btn" href="/api/reports/site-selection/download?format=md">下载 Markdown</a>
-                  <a class="secondary-btn" href="/api/reports/site-selection/download?format=json">下载 JSON</a>
+                  <a id="downloadReportDraftBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=docx" data-action="download-report-draft" aria-label="下载 DOCX 预测调整报告">下载 DOCX 报告</a>
+                  <a id="exportReportBackupBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=json" data-action="export-report-backup" aria-label="导出报告依据链">导出依据链</a>
                 </div>
               </div>
               <div id="reportBody" class="report-body"></div>
@@ -320,9 +451,10 @@
 
         <section id="aiWorkspaceView" class="view ai-workspace">
           <section class="ai-workspace-layout">
-            <aside class="ai-session-rail">
+            <section class="ai-session-rail" aria-label="项目与历史会话">
               <div class="ai-rail-head">
                 <button id="newAiSessionBtn" type="button" class="new-chat-btn">新对话</button>
+                <button id="aiRailToggle" type="button" class="rail-toggle-btn" aria-label="折叠对话栏">收起</button>
               </div>
               <div class="ai-rail-section">
                 <h3>项目</h3>
@@ -332,7 +464,7 @@
                 <h3>历史记录</h3>
                 <div id="aiSessionList" class="ai-session-list"></div>
               </div>
-            </aside>
+            </section>
             <section class="ai-chat-card">
               <div class="chat-head">
                 <div>
@@ -340,8 +472,9 @@
                   <p>项目资料、地图位置、节点问题放在同一个回聊里处理。</p>
                 </div>
                 <div class="chat-head-actions">
+                  <span id="aiModeBadge" class="mode-badge">项目综合</span>
                   <button id="generateChatReportBtn" type="button" class="secondary-btn">生成报告</button>
-                  <span class="status-pill danger">待复核 / 非最终</span>
+                  <span class="status-pill danger">待人工确认</span>
                 </div>
               </div>
               <div id="aiContext" class="ai-context-strip"></div>
@@ -361,6 +494,7 @@
                     <button type="button" data-ai-prompt="请综合当前上传资料、地图 POI 和节点缺口，先给出三条最应该处理的问题。">快速分析</button>
                     <button type="button" data-ai-prompt="请把我上传的资料拆成节点、证据、待补数据三类，并说明哪些能直接用于本项目。">资料解析</button>
                     <button type="button" data-ai-prompt="请按给客户看的语气，重写当前报告摘要：先判断，再依据，最后下一步。">报告润色</button>
+                    <button type="button" id="composerReportBtn">生成报告</button>
                     <button type="button" data-ai-prompt="请核对当前地图目标、POI 和节点之间的关系，指出不该强行套用的地方。">地图核对</button>
                   </div>
                   <button id="sendChatBtn" class="composer-send" type="submit" aria-label="发送">↑</button>
@@ -371,6 +505,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260602n"></script>
+    <script src="/static/app.js?v=20260605-foundation"></script>
   </body>
 </html>

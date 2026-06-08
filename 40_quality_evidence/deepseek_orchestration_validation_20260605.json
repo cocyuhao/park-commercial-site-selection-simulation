@@ -1,0 +1,54 @@
+{
+  "validator": "verify_deepseek_orchestration.py",
+  "generated_at": "2026-06-05T02:01:41Z",
+  "status": "pass",
+  "check_count": 8,
+  "failure_count": 0,
+  "checks": [
+    {
+      "name": "stable_fingerprint",
+      "passed": true,
+      "evidence": "fp1=3b4f69202d90 fp3=37399ab46d22"
+    },
+    {
+      "name": "batch_cache_default",
+      "passed": true,
+      "evidence": "LLM-001 should default to local cache because it is low-risk batch work."
+    },
+    {
+      "name": "runtime_chat_cache_disabled",
+      "passed": true,
+      "evidence": "LLM-026 runtime chat should not silently reuse answers across contexts."
+    },
+    {
+      "name": "final_decision_not_deepseek",
+      "passed": true,
+      "evidence": "LLM-006 executor=codex risk=high"
+    },
+    {
+      "name": "per_visitor_call_blocked",
+      "passed": true,
+      "evidence": "DeepSeek cannot be used as a real-time model call inside each virtual visitor loop."
+    },
+    {
+      "name": "router_has_retry_cache_trace_terms",
+      "passed": true,
+      "evidence": "missing=[]"
+    },
+    {
+      "name": "telemetry_import_ok",
+      "passed": true,
+      "evidence": "telemetry module import ok"
+    },
+    {
+      "name": "contract_forces_review_required",
+      "passed": true,
+      "evidence": "required=['assumptions', 'items', 'needs_human_review', 'output_status', 'review_required', 'source_refs', 'task_id', 'task_type', 'uncertainties']"
+    }
+  ],
+  "boundary": {
+    "deepseek_role": "constrained_semantic_worker",
+    "main_simulation_role": "local_python_schema_rules_spatial_operational_constraints",
+    "forbidden_pattern": "per_virtual_visitor_realtime_llm_call"
+  }
+}

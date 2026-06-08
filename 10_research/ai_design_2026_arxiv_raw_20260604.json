@@ -1,0 +1,22 @@
+[
+  {
+    "query": "all:\"human-AI\" AND all:\"interface\" AND submittedDate:[202601010000 TO 202612312359]",
+    "error": "TimeoutError: The read operation timed out"
+  },
+  {
+    "query": "all:\"agentic\" AND all:\"interface\" AND submittedDate:[202601010000 TO 202612312359]",
+    "error": "HTTPError: HTTP Error 429: Unknown Error"
+  },
+  {
+    "query": "all:\"LLM agents\" AND all:\"user interface\" AND submittedDate:[202601010000 TO 202612312359]",
+    "error": "HTTPError: HTTP Error 429: Too Many Requests"
+  },
+  {
+    "query": "all:\"human-AI collaboration\" AND all:\"design\" AND submittedDate:[202601010000 TO 202612312359]",
+    "error": "HTTPError: HTTP Error 429: Unknown Error"
+  },
+  {
+    "query": "all:\"GUI agents\" AND submittedDate:[202601010000 TO 202612312359]",
+    "error": "TimeoutError: The read operation timed out"
+  }
+]

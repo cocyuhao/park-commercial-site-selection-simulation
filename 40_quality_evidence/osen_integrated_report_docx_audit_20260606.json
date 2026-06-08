@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-06-07T09:06:32",
+  "docx_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\osen_integrated_site_selection_report_20260606.docx",
+  "writing_format_research": "10_research/report_docx_writing_format_research_20260606.md",
+  "design_preset": "standard_business_brief with Chinese A4 delivery override",
+  "status": "fail",
+  "structural_audit": {
+    "bytes": 55845,
+    "text_length": 15506,
+    "forbidden": [],
+    "required": {
+      "执行摘要": true,
+      "关键依据": true,
+      "专家评审底座": true,
+      "真实校准输入": true,
+      "官方宏观边界": true,
+      "人物场景输入": true,
+      "收入/价格带": false,
+      "六个节点判断与修改建议": true,
+      "综合修改意见": true,
+      "当前推进事项": true,
+      "控制点校准": true,
+      "周边人口与收入": true,
+      "桃花源白房子": true,
+      "南门地下预埋空间": true
+    }
+  }
+}

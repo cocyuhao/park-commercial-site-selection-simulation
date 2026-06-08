@@ -1,0 +1,296 @@
+{
+  "created_at": "2026-06-03",
+  "selection_rule": "[encoding-placeholder-cleared]/??/[encoding-placeholder-cleared]HCI/[encoding-placeholder-cleared]/HAI[encoding-placeholder-cleared]",
+  "papers": [
+    {
+      "title": "Guidelines for Human-AI Interaction",
+      "authors": "Amershi et al.",
+      "year": 2019,
+      "venue": "CHI",
+      "url": "https://www.microsoft.com/en-us/research/publication/guidelines-for-human-ai-interaction/",
+      "theme": "Human-AI guidelines",
+      "lesson": "AI[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Re-examining Whether, Why, and How Human-AI Interaction Is Uniquely Difficult to Design",
+      "authors": "Yang et al.",
+      "year": 2020,
+      "venue": "CHI",
+      "url": "https://dl.acm.org/doi/10.1145/3313831.3376301",
+      "theme": "HAI design difficulty",
+      "lesson": "AI[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Principles of Mixed-Initiative User Interfaces",
+      "authors": "Horvitz",
+      "year": 1999,
+      "venue": "CHI",
+      "url": "https://dl.acm.org/doi/10.1145/302979.303030",
+      "theme": "Mixed initiative",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Human-AI Interaction: A Review and Design Principles",
+      "authors": "Xu",
+      "year": 2019,
+      "venue": "International Journal of Human-Computer Interaction",
+      "url": "https://doi.org/10.1080/10447318.2018.1561783",
+      "theme": "HAI review",
+      "lesson": "[encoding-placeholder-cleared]AI[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Human-Centered Artificial Intelligence: Reliable, Safe & Trustworthy",
+      "authors": "Shneiderman",
+      "year": 2020,
+      "venue": "International Journal of Human-Computer Interaction",
+      "url": "https://doi.org/10.1080/10447318.2020.1741118",
+      "theme": "Human-centered AI",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Trust in Automation: Designing for Appropriate Reliance",
+      "authors": "Lee and See",
+      "year": 2004,
+      "venue": "Human Factors",
+      "url": "https://doi.org/10.1518/hfes.46.1.50_30392",
+      "theme": "Trust and automation",
+      "lesson": "[encoding-placeholder-cleared]AI[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "An Overview of Clinical Decision Support Systems: Benefits, Risks, and Strategies for Success",
+      "authors": "Sutton et al.",
+      "year": 2020,
+      "venue": "npj Digital Medicine",
+      "url": "https://www.nature.com/articles/s41746-020-0221-y",
+      "theme": "Decision support",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges toward Responsible AI",
+      "authors": "Arrieta et al.",
+      "year": 2020,
+      "venue": "Information Fusion",
+      "url": "https://doi.org/10.1016/j.inffus.2019.12.012",
+      "theme": "XAI survey",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Trends and Trajectories for Explainable, Accountable and Intelligible Systems",
+      "authors": "Abdul et al.",
+      "year": 2018,
+      "venue": "CHI",
+      "url": "https://dl.acm.org/doi/10.1145/3173574.3174156",
+      "theme": "XAI + HCI",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Questioning the AI: Informing Design Practices for Explainable AI User Experiences",
+      "authors": "Liao, Gruen and Miller",
+      "year": 2020,
+      "venue": "CHI",
+      "url": "https://dl.acm.org/doi/10.1145/3313831.3376590",
+      "theme": "XAI UX questions",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Why Should I Trust You? Explaining the Predictions of Any Classifier",
+      "authors": "Ribeiro, Singh and Guestrin",
+      "year": 2016,
+      "venue": "KDD",
+      "url": "https://dl.acm.org/doi/10.1145/2939672.2939778",
+      "theme": "Local explanations",
+      "lesson": "[encoding-placeholder-cleared]/[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "A Survey of Methods for Explaining Black Box Models",
+      "authors": "Guidotti et al.",
+      "year": 2018,
+      "venue": "ACM Computing Surveys",
+      "url": "https://dl.acm.org/doi/10.1145/3236009",
+      "theme": "Explainability methods",
+      "lesson": "[encoding-placeholder-cleared]/[encoding-placeholder-cleared]/[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations",
+      "authors": "Shneiderman",
+      "year": 1996,
+      "venue": "IEEE VL",
+      "url": "https://doi.org/10.1109/VL.1996.545307",
+      "theme": "Visual information seeking",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Interactive Dynamics for Visual Analysis",
+      "authors": "Heer and Shneiderman",
+      "year": 2012,
+      "venue": "Communications of the ACM",
+      "url": "https://doi.org/10.1145/2133806.2133821",
+      "theme": "Visual analytics interaction",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "A Nested Model for Visualization Design and Validation",
+      "authors": "Munzner",
+      "year": 2009,
+      "venue": "IEEE TVCG",
+      "url": "https://doi.org/10.1109/TVCG.2009.111",
+      "theme": "Visualization validation",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "A Multi-Level Typology of Abstract Visualization Tasks",
+      "authors": "Brehmer and Munzner",
+      "year": 2013,
+      "venue": "IEEE TVCG",
+      "url": "https://doi.org/10.1109/TVCG.2013.124",
+      "theme": "Visualization tasks",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Design Study Methodology: Reflections from the Trenches and the Stacks",
+      "authors": "Sedlmair, Meyer and Munzner",
+      "year": 2012,
+      "venue": "IEEE TVCG",
+      "url": "https://doi.org/10.1109/TVCG.2012.213",
+      "theme": "Design study",
+      "lesson": "[encoding-placeholder-cleared]Selenium[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "The Sensemaking Process and Leverage Points for Analyst Technology",
+      "authors": "Pirolli and Card",
+      "year": 2005,
+      "venue": "International Conference on Intelligence Analysis",
+      "url": "https://www.e-education.psu.edu/geog885/sites/www.e-education.psu.edu.geog885/files/file/Lesson_02/Sense_Making_206_Camera_Ready_Paper.pdf",
+      "theme": "Sensemaking",
+      "lesson": "[encoding-placeholder-cleared]AI[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Cost Structure of Sensemaking",
+      "authors": "Russell, Stefik, Pirolli and Card",
+      "year": 1993,
+      "venue": "INTERCHI",
+      "url": "https://dl.acm.org/doi/10.1145/169059.169209",
+      "theme": "Sensemaking cost",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Illuminating the Path: The Research and Development Agenda for Visual Analytics",
+      "authors": "Thomas and Cook",
+      "year": 2005,
+      "venue": "National Visualization and Analytics Center",
+      "url": "https://vis.pnnl.gov/pdf/RD_Agenda_VisualAnalytics.pdf",
+      "theme": "Visual analytics",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Design Factors for Summary Visualization in Visual Analytics",
+      "authors": "Sarikaya, Correll, Bartram, Tory and Fisher",
+      "year": 2019,
+      "venue": "Computer Graphics Forum",
+      "url": "https://doi.org/10.1111/cgf.13570",
+      "theme": "Summary visualization",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "The State of the Art in Interactive Dashboards",
+      "authors": "Bach et al.",
+      "year": 2023,
+      "venue": "Computer Graphics Forum",
+      "url": "https://doi.org/10.1111/cgf.14791",
+      "theme": "Dashboards",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "What Makes a Visualization Memorable?",
+      "authors": "Borkin et al.",
+      "year": 2013,
+      "venue": "IEEE TVCG",
+      "url": "https://doi.org/10.1109/TVCG.2013.234",
+      "theme": "Visual memory",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Storytelling: The Next Step for Visualization",
+      "authors": "Kosara and Mackinlay",
+      "year": 2013,
+      "venue": "Computer",
+      "url": "https://doi.org/10.1109/MC.2013.36",
+      "theme": "Visualization storytelling",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Narrative Visualization: Telling Stories with Data",
+      "authors": "Segel and Heer",
+      "year": 2010,
+      "venue": "IEEE TVCG",
+      "url": "https://doi.org/10.1109/TVCG.2010.179",
+      "theme": "Narrative visualization",
+      "lesson": "[encoding-placeholder-cleared]"
+    },
+    {
+      "title": "Designing for Complementarity: Teacher and Student Needs for Orchestration Support in AI-Enhanced Classrooms",
+      "authors": "Holstein et al.",
+      "year": 2019,
+      "venue": "AIED/CHI-related HAI",
+      "url": "https://doi.org/10.1007/978-3-030-23204-7_16",
+      "theme": "Human-AI complementarity",
+      "lesson": "AI[encoding-placeholder-cleared]AI[encoding-placeholder-cleared]"
+    }
+  ],
+  "principles": [
+    {
+      "principle": "[encoding-placeholder-cleared]",
+      "sources": [
+        "Shneiderman 1996",
+        "Heer and Shneiderman 2012",
+        "Bach et al. 2023"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]+[encoding-placeholder-cleared]"
+    },
+    {
+      "principle": "AI[encoding-placeholder-cleared]",
+      "sources": [
+        "Amershi et al. 2019",
+        "Lee and See 2004",
+        "Shneiderman 2020"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]needs_review/debug/API??"
+    },
+    {
+      "principle": "[encoding-placeholder-cleared]",
+      "sources": [
+        "Horvitz 1999",
+        "Yang et al. 2020",
+        "Holstein et al. 2019"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]"
+    },
+    {
+      "principle": "??sensemaking??",
+      "sources": [
+        "Pirolli and Card 2005",
+        "Russell et al. 1993",
+        "Thomas and Cook 2005"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]AI[encoding-placeholder-cleared]-??-??-[encoding-placeholder-cleared]"
+    },
+    {
+      "principle": "[encoding-placeholder-cleared]",
+      "sources": [
+        "Liao et al. 2020",
+        "Abdul et al. 2018",
+        "Ribeiro et al. 2016"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]"
+    },
+    {
+      "principle": "[encoding-placeholder-cleared]",
+      "sources": [
+        "Kosara and Mackinlay 2013",
+        "Segel and Heer 2010",
+        "Sarikaya et al. 2019"
+      ],
+      "ui_application": "[encoding-placeholder-cleared]"
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+[
+  {
+    "query": "Modeling Others Minds as Code ROTE behavioral programs",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "HumanLM Simulating Users with State Alignment Beats Response Imitation",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Real world community oriented high-definition social simulation combining reinforcement learning and large language models",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Generative Agents Interactive Simulacra of Human Behavior",
+    "data": [
+      {
+        "paperId": "5278a8eb2ba2429d4029745caf4e661080073c81",
+        "externalIds": {
+          "DBLP": "conf/uist/ParkOCMLB23",
+          "ArXiv": "2304.03442",
+          "DOI": "10.1145/3586183.3606763",
+          "CorpusId": 258040990
+        },
+        "url": "https://www.semanticscholar.org/paper/5278a8eb2ba2429d4029745caf4e661080073c81",
+        "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+        "venue": "ACM Symposium on User Interface Software and Technology",
+        "year": 2023,
+        "citationCount": 4287,
+        "openAccessPdf": {
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606763",
+          "status": "BRONZE",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2304.03442, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": [
+          "Book",
+          "JournalArticle",
+          "Conference"
+        ],
+        "authors": [
+          {
+            "authorId": "2116649486",
+            "name": "J. Park"
+          },
+          {
+            "authorId": "2213764034",
+            "name": "Joseph O'Brien"
+          },
+          {
+            "authorId": "145941081",
+            "name": "Carrie J. Cai"
+          },
+          {
+            "authorId": "144844426",
+            "name": "M. Morris"
+          },
+          {
+            "authorId": "145419642",
+            "name": "Percy Liang"
+          },
+          {
+            "authorId": "145879842",
+            "name": "Michael S. Bernstein"
+          }
+        ],
+        "abstract": "Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents: computational software agents that simulate believable human behavior. Generative agents wake up, cook breakfast, and head to work; artists paint, while authors write; they form opinions, notice each other, and initiate conversations; they remember and reflect on days past as they plan the next day. To enable generative agents, we describe an architecture that extends a large language model to store a complete record of the agent’s experiences using natural language, synthesize those memories over time into higher-level reflections, and retrieve them dynamically to plan behavior. We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims, where end users can interact with a small town of twenty-five agents using natural language. In an evaluation, these generative agents produce believable individual and emergent social behaviors. For example, starting with only a single user-specified notion that one agent wants to throw a Valentine’s Day party, the agents autonomously spread invitations to the party over the next two days, make new acquaintances, ask each other out on dates to the party, and coordinate to show up for the party together at the right time. We demonstrate through ablation that the components of our agent architecture—observation, planning, and reflection—each contribute critically to the believability of agent behavior. By fusing large language models with computational interactive agents, this work introduces architectural and interaction patterns for enabling believable simulations of human behavior."
+      },
+      {
+        "paperId": "6ba64238fbe712bd9c95e572fe2a463e66c7cb28",
+        "externalIds": {
+          "CorpusId": 268892926
+        },
+        "url": "https://www.semanticscholar.org/paper/6ba64238fbe712bd9c95e572fe2a463e66c7cb28",
+        "title": "Leveraging Generative Agents: Autonomous AI with Simulated Leveraging Generative Agents: Autonomous AI with Simulated Personas for Interactive Simulacra and Collaborative Research Personas for Interactive Simulacra and Collaborative Research",
+        "venue": "",
+        "year": null,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://digitalcommons.lindenwood.edu/cgi/viewcontent.cgi?article=1534&context=faculty-research-papers, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": null,
+        "authors": [
+          {
+            "authorId": "2239956355",
+            "name": "J. Hutson"
+          },
+          {
+            "authorId": "2204895495",
+            "name": "J. Ratican"
+          }
+        ],
+        "abstract": null
+      },
+      {
+        "paperId": "f29bbbe5d3e719383fd74accd19f99986d431202",
+        "externalIds": {
+          "CorpusId": 281711943
+        },
+        "url": "https://www.semanticscholar.org/paper/f29bbbe5d3e719383fd74accd19f99986d431202",
+        "title": "Wargames: SIM-1 for Realistic Conflict & Competition in Multi-Agent Simulations",
+        "venue": "",
+        "year": null,
+        "citationCount": 0,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://fablestudio.github.io/openai-wargames/static/pdfs/wargames-simulation-v4.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": null,
+        "authors": [
+          {
+            "authorId": "2383421537",
+            "name": "Joshua Johnson"
+          },
+          {
+            "authorId": "2271093774",
+            "name": "Edward Saatchi"
+          },
+          {
+            "authorId": "2270589365",
+            "name": "P. Maas"
+          },
+          {
+            "authorId": "2270589881",
+            "name": "Chris Wheeler"
+          },
+          {
+            "authorId": "2383199778",
+            "name": "J. Shamash"
+          }
+        ],
+        "abstract": null
+      }
+    ]
+  },
+  {
+    "query": "Out of One Many Using Language Models to Simulate Human Samples",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Generative Agent Simulations of 1000 People American Voices",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "LLM Agents Grounded in Self-Reports Enable General-Purpose Computer Simulations of Human Subject Studies",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Large Language Models for Market Research Data Augmentation",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Semantic Similarity Rating Likert scale purchase intention LLM",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
+  },
+  {
+    "query": "Challenges of using LLMs to simulate human behavior causal inference",
+    "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)>"
+  },
+  {
+    "query": "Do Large Language Models Solve the Problems of Agent-Based Modeling",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "From Individual to Society LLM-based Agent Social Simulation Survey",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Can Large Language Models Transform Computational Social Science",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Homo Silicus economic experiments large language models",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Using Large Language Models to Simulate Human Participants",
+    "data": [
+      {
+        "paperId": "683540b8437fcf64587df4ddf3453b3f7a116502",
+        "externalIds": {
+          "ArXiv": "2506.05555",
+          "DBLP": "journals/corr/abs-2506-05555",
+          "DOI": "10.48550/arXiv.2506.05555",
+          "CorpusId": 279243625
+        },
+        "url": "https://www.semanticscholar.org/paper/683540b8437fcf64587df4ddf3453b3f7a116502",
+        "title": "Using Large Language Models to Simulate Human Behavioural Experiments: Port of Mars",
+        "venue": "arXiv.org",
+        "year": 2025,
+        "citationCount": 6,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2506.05555, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "authors": [
+          {
+            "authorId": "2362604732",
+            "name": "Oliver Slumbers"
+          },
+          {
+            "authorId": "1700356",
+            "name": "Joel Z. Leibo"
+          },
+          {
+            "authorId": "2331419571",
+            "name": "Marco Janssen"
+          }
+        ],
+        "abstract": "Collective risk social dilemmas (CRSD) highlight a trade-off between individual preferences and the need for all to contribute toward achieving a group objective. Problems such as climate change are in this category, and so it is critical to understand their social underpinnings. However, rigorous CRSD methodology often demands large-scale human experiments but it is difficult to guarantee sufficient power and heterogeneity over socio-demographic factors. Generative AI offers a potential complementary approach to address thisproblem. By replacing human participants with large language models (LLM), it allows for a scalable empirical framework. This paper focuses on the validity of this approach and whether it is feasible to represent a large-scale human-like experiment with sufficient diversity using LLM. In particular, where previous literature has focused on political surveys, virtual towns and classical game-theoretic examples, we focus on a complex CRSD used in the institutional economics and sustainability literature known as Port of Mars"
+      },
+      {
+        "paperId": "59b3fbf146b29b581b677ec4384f14cee87997a4",
+        "externalIds": {
+          "DBLP": "conf/icml/AherAK23",
+          "ArXiv": "2208.10264",
+          "CorpusId": 251719353
+        },
+        "url": "https://www.semanticscholar.org/paper/59b3fbf146b29b581b677ec4384f14cee87997a4",
+        "title": "Using Large Language Models to Simulate Multiple Humans and Replicate Human Subject Studies",
+        "venue": "International Conference on Machine Learning",
+        "year": 2022,
+        "citationCount": 690,
+        "openAccessPdf": {
+          "url": "",
+          "status": null,
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2208.10264, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": [
+          "JournalArticle",
+          "Conference"
+        ],
+        "authors": [
+          {
+            "authorId": "2182291706",
+            "name": "Gati Aher"
+          },
+          {
+            "authorId": "115040410",
+            "name": "RosaI. Arriaga"
+          },
+          {
+            "authorId": "2186481",
+            "name": "A. Kalai"
+          }
+        ],
+        "abstract": "We introduce a new type of test, called a Turing Experiment (TE), for evaluating to what extent a given language model, such as GPT models, can simulate different aspects of human behavior. A TE can also reveal consistent distortions in a language model's simulation of a specific human behavior. Unlike the Turing Test, which involves simulating a single arbitrary individual, a TE requires simulating a representative sample of participants in human subject research. We carry out TEs that attempt to replicate well-established findings from prior studies. We design a methodology for simulating TEs and illustrate its use to compare how well different language models are able to reproduce classic economic, psycholinguistic, and social psychology experiments: Ultimatum Game, Garden Path Sentences, Milgram Shock Experiment, and Wisdom of Crowds. In the first three TEs, the existing findings were replicated using recent models, while the last TE reveals a\"hyper-accuracy distortion\"present in some language models (including ChatGPT and GPT-4), which could affect downstream applications in education and the arts."
+      },
+      {
+        "paperId": "f4e612658bde9db88abfd455b99f181fdc536996",
+        "externalIds": {
+          "DBLP": "journals/corr/abs-2209-06899",
+          "ArXiv": "2209.06899",
+          "DOI": "10.1017/pan.2023.2",
+          "CorpusId": 252280474
+        },
+        "url": "https://www.semanticscholar.org/paper/f4e612658bde9db88abfd455b99f181fdc536996",
+        "title": "Out of One, Many: Using Language Models to Simulate Human Samples",
+        "venue": "Political Analysis",
+        "year": 2022,
+        "citationCount": 1066,
+        "openAccessPdf": {
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/035D7C8A55B237942FB6DBAD7CAA4E49/S1047198723000025a.pdf/div-class-title-out-of-one-many-using-language-models-to-simulate-human-samples-div.pdf",
+          "status": "BRONZE",
+          "license": null,
+          "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2209.06899, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "authors": [
+          {
+            "authorId": "51291213",
+            "name": "Lisa P. Argyle"
+          },
+          {
+            "authorId": "116344560",
+            "name": "E. Busby"
+          },
+          {
+            "authorId": "1834105",
+            "name": "Nancy Fulda"
+          },
+          {
+            "authorId": "114329930",
+            "name": "Joshua R Gubler"
+          },
+          {
+            "authorId": "2131041347",
+            "name": "Christopher Rytting"
+          },
+          {
+            "authorId": "30585164",
+            "name": "David Wingate"
+          }
+        ],
+        "abstract": "Abstract We propose and explore the possibility that language models can be studied as effective proxies for specific human subpopulations in social science research. Practical and research applications of artificial intelligence tools have sometimes been limited by problematic biases (such as racism or sexism), which are often treated as uniform properties of the models. We show that the “algorithmic bias” within one such tool—the GPT-3 language model—is instead both fine-grained and demographically correlated, meaning that proper conditioning will cause it to accurately emulate response distributions from a wide variety of human subgroups. We term this property algorithmic fidelity and explore its extent in GPT-3. We create “silicon samples” by conditioning the model on thousands of sociodemographic backstories from real human participants in multiple large surveys conducted in the United States. We then compare the silicon and human samples to demonstrate that the information contained in GPT-3 goes far beyond surface similarity. It is nuanced, multifaceted, and reflects the complex interplay between ideas, attitudes, and sociocultural context that characterize human attitudes. We suggest that language models with sufficient algorithmic fidelity thus constitute a novel and powerful tool to advance understanding of humans and society across a variety of disciplines."
+      }
+    ]
+  },
+  {
+    "query": "Social Force Model pedestrian dynamics Helbing Molnar",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Reciprocal Velocity Obstacles for real-time multi-agent navigation",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "MATSim multi-agent transport simulation",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "agent-based pedestrian simulation built environment review",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "Huff model retail location consumer spatial behavior",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "discrete choice model retail location consumer behavior",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "gravity model retail trade area Huff site selection",
+    "error": "HTTPError: HTTP Error 429: "
+  },
+  {
+    "query": "agent based model retail location choice",
+    "error": "HTTPError: HTTP Error 429: "
+  }
+]

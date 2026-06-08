@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "url": "http://127.0.0.1:8079/?_v=20260607featurecontrol#data:simulationTaskPreflight",
+  "derivative_id": "PSD-0001",
+  "feature_pool_visible": true,
+  "use_visible_after_action": true,
+  "lock_visible_after_action": true,
+  "restore_visible_after_action": true,
+  "console_error_count": 0,
+  "console_errors": [],
+  "screenshot": "40_quality_evidence/feature_derivative_user_control_browser_20260607.png"
+}

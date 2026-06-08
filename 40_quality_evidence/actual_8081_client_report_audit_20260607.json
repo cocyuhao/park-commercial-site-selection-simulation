@@ -1,0 +1,29 @@
+{
+  "url": "http://127.0.0.1:8081/api/reports/site-selection/download?format=docx",
+  "status": 200,
+  "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "content_disposition": "attachment; filename=\"osen_business_decision_report_20260607.docx\"",
+  "bytes": 45822,
+  "docx": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\actual_8081_downloaded_osen_business_decision_report_20260607.docx",
+  "chars": 5171,
+  "heading_count": 14,
+  "headings": [
+    "1. 执行摘要",
+    "2. 已有材料支撑的判断",
+    "3. 推荐商业组合",
+    "4. 六个节点的预测与调整",
+    "4.1 南门露天剧场 | 第一批主推试点",
+    "4.2 桃花源白房子 | 第一批低改造试点",
+    "4.3 12#西分区管理中心 | 第一批品牌联名试点",
+    "4.4 南门地下预埋空间 | 先做分区样板",
+    "4.5 奥运廉洁主题展馆 | 第二批资质合作试点",
+    "4.6 10#2A03分区管理中心 | 第二批文化康养试点",
+    "5. 人群行为预测如何进入建议",
+    "6. 90 天推进节奏",
+    "附录 A. 数据口径与实施边界",
+    "附录 B. 本轮建议的使用方式"
+  ],
+  "banned_hit_count": 0,
+  "banned_hits": [],
+  "missing_required_sections": []
+}

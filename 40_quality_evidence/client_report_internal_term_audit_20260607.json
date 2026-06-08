@@ -1,0 +1,133 @@
+{
+  "docx": "40_quality_evidence\\platform_downloaded_osen_business_decision_report_20260607.docx",
+  "hit_count": 17,
+  "hits": [
+    {
+      "loc": "p",
+      "terms": [
+        "人物行为特征池"
+      ],
+      "text": "基于已给大数据 PDF、策划 DOCX、CAD/图纸、POI/TGI 与人物行为特征池"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "用户已给",
+        "用户"
+      ],
+      "text": "这份报告的主线不是资料缺口，而是基于用户已给材料做预测、调整和落地排序。奥森当前最大机会是把既有高峰客流转化为可停留、可购买、可预约的轻消费场景；最大的误区是把大空间、高客流和宏观消费能力直接翻译成重资产项目。"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "方法与依据边界"
+      ],
+      "text": "附录 A. 方法与依据边界"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "附录 B. 关键来源"
+      ],
+      "text": "附录 B. 关键来源"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "本地",
+        "40_quality"
+      ],
+      "text": "本地 PDF 指标：40_quality_evidence/evidence_ledger.csv"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "40_quality"
+      ],
+      "text": "CAD/图纸解析：40_quality_evidence/cad_dxf_analysis_20260605.md；cad_pdf_proxy_analysis_20260605.md"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "70_outputs"
+      ],
+      "text": "人物行为池：70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "10_research"
+      ],
+      "text": "方法吸收：10_research/boss_method_materials_20260604/*.md"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "10_research"
+      ],
+      "text": "报告写法：10_research/report_docx_writing_format_research_20260606.md"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "10_research"
+      ],
+      "text": "近年资料护栏：10_research/osen_prediction_recent_literature_guard_20260607.md"
+    },
+    {
+      "loc": "p",
+      "terms": [
+        "生成时间"
+      ],
+      "text": "平台生成时间：2026-06-07T08:59:23"
+    },
+    {
+      "loc": "t0-0-1",
+      "terms": [
+        "网页平台",
+        "API",
+        "生成链路"
+      ],
+      "text": "生成链路 网页平台 / API 下载"
+    },
+    {
+      "loc": "t0-0-2",
+      "terms": [
+        "生成时间"
+      ],
+      "text": "生成时间 2026-06-07 08:59"
+    },
+    {
+      "loc": "t4-0-0",
+      "terms": [
+        "本地"
+      ],
+      "text": "预测判断 与现有客流和偏好最匹配。咖啡、冷饮、美食、亲子和草坪停留都能被本地数据解释，适合作为首个样板。"
+    },
+    {
+      "loc": "t12-0-0",
+      "terms": [
+        "PPT"
+      ],
+      "text": "执行口径 先用小样本试运营校准价格带、排队、停留、复购和天气敏感性；不把宏观收入、PPT 收益假设或外部竞品客单直接写成奥森节点收益。"
+    },
+    {
+      "loc": "t13-1-0",
+      "terms": [
+        "老板",
+        "HumanLM",
+        "ROTE",
+        "SSR",
+        "LLM"
+      ],
+      "text": "老板方法资料：HumanLM / ROTE / SSR / RL+LLM"
+    },
+    {
+      "loc": "t13-1-2",
+      "terms": [
+        "LLM"
+      ],
+      "text": "不让 LLM 直接打分、直接排名或直接宣称完整仿真。"
+    }
+  ]
+}

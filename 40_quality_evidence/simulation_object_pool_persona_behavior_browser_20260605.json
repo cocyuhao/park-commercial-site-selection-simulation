@@ -1,0 +1,67 @@
+{
+  "validator": "simulation_object_pool_persona_behavior_browser_20260605.py",
+  "generated_at": "2026-06-05T03:04:40Z",
+  "status": "pass",
+  "check_count": 10,
+  "failure_count": 0,
+  "console_errors": [],
+  "console_warnings": [
+    "warning: Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+  ],
+  "base_url": "http://127.0.0.1:57769",
+  "screenshot": "40_quality_evidence/simulation_object_pool_persona_behavior_browser_20260605/object_pool_persona_behavior.png",
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "checks": [
+    {
+      "name": "visible_人群状态画像",
+      "passed": true,
+      "evidence": "人群状态画像"
+    },
+    {
+      "name": "visible_行为程序",
+      "passed": true,
+      "evidence": "行为程序"
+    },
+    {
+      "name": "visible_选择概率候选",
+      "passed": true,
+      "evidence": "选择概率候选"
+    },
+    {
+      "name": "visible_仿真验证目标",
+      "passed": true,
+      "evidence": "仿真验证目标"
+    },
+    {
+      "name": "button_addPersonaStateObjectBtn",
+      "passed": true,
+      "evidence": "addPersonaStateObjectBtn"
+    },
+    {
+      "name": "button_addBehaviorProgramObjectBtn",
+      "passed": true,
+      "evidence": "addBehaviorProgramObjectBtn"
+    },
+    {
+      "name": "button_addChoiceObjectBtn",
+      "passed": true,
+      "evidence": "addChoiceObjectBtn"
+    },
+    {
+      "name": "button_addValidationObjectBtn",
+      "passed": true,
+      "evidence": "addValidationObjectBtn"
+    },
+    {
+      "name": "persona_button_sets_type",
+      "passed": true,
+      "evidence": "persona_state"
+    },
+    {
+      "name": "behavior_button_sets_type",
+      "passed": true,
+      "evidence": "behavior_program"
+    }
+  ]
+}

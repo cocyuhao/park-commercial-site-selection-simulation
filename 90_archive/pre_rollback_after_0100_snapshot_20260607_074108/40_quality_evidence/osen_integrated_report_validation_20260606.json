@@ -1,0 +1,187 @@
+{
+  "generated_at": "2026-06-06",
+  "report_paths": {
+    "json": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\site_selection_gap_report_latest.json",
+    "md": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\site_selection_gap_report_latest.md"
+  },
+  "summary": {
+    "pass": 14
+  },
+  "checks": [
+    {
+      "name": "report_files_written",
+      "status": "pass",
+      "evidence": {
+        "md": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\site_selection_gap_report_latest.md",
+        "json": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\site_selection_gap_report_latest.json"
+      }
+    },
+    {
+      "name": "report_length",
+      "status": "pass",
+      "evidence": 37434
+    },
+    {
+      "name": "node_count",
+      "status": "pass",
+      "evidence": 6
+    },
+    {
+      "name": "all_nodes_named",
+      "status": "pass",
+      "evidence": [
+        "桃花源白房子",
+        "奥运廉洁主题展馆",
+        "12#西分区",
+        "南门地下预埋空间",
+        "南门露天剧场",
+        "10#2A03"
+      ]
+    },
+    {
+      "name": "business_advice_present",
+      "status": "pass",
+      "evidence": [
+        "修正建议",
+        "当前推进事项",
+        "CAD / 图纸处理",
+        "不能声明最终节点排序",
+        "控制点校准",
+        "资质"
+      ]
+    },
+    {
+      "name": "human_text_clean",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "evidence_highlights",
+      "status": "pass",
+      "evidence": 18
+    },
+    {
+      "name": "cad_converted_two_drawings",
+      "status": "pass",
+      "evidence": [
+        "osen_north_t5",
+        "osen_south_t5"
+      ]
+    },
+    {
+      "name": "cad_anchor_terms",
+      "status": "pass",
+      "evidence": [
+        "南入口",
+        "2A03",
+        "露天剧场",
+        "廉洁馆",
+        "公园南门"
+      ]
+    },
+    {
+      "name": "north_pdf_proxy_hit",
+      "status": "pass",
+      "evidence": {
+        "generated_at": "2026-06-05T17:40:18",
+        "source_file": "CAD图及其计划\\奥森北园(字体放大)-改造建筑示意-Model(1).pdf",
+        "method": "PyMuPDF text + vector drawing scan; used as readable proxy for north CAD drawing.",
+        "page_summaries": [
+          {
+            "page": 1,
+            "text_length": 1766,
+            "text_line_count": 492,
+            "vector_drawing_count": 249061
+          }
+        ],
+        "hits": [
+          {
+            "page": 1,
+            "text": "项目1：桃花源白房子（155㎡）",
+            "keywords": [
+              "桃花源",
+              "白房子"
+            ],
+            "bbox": [
+              466.4,
+              546.0713,
+              515.4359,
+              549.5739
+            ]
+          }
+        ],
+        "use_boundary": "PDF is a readable drawing proxy. It helps locate labels and cross-check DWG conversion, but does not replace georeferenced CAD/GIS calibration."
+      }
+    },
+    {
+      "name": "deepseek_runtime_ok",
+      "status": "pass",
+      "evidence": {
+        "PASS": 4,
+        "WARN": 0,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "pdf_table_runtime_ok",
+      "status": "pass",
+      "evidence": {
+        "PASS": 4,
+        "WARN": 0,
+        "FAIL": 0,
+        "SKIP": 0
+      }
+    },
+    {
+      "name": "amap_runtime_ok",
+      "status": "pass",
+      "evidence": {
+        "run_at": "2026-06-06T14:49:37Z",
+        "endpoint": "v5/place/text",
+        "status": "ok",
+        "query_summary": {
+          "keywords": "奥林匹克森林公园",
+          "region": "北京",
+          "city_limit": "true",
+          "page_size": "1"
+        },
+        "amap_status": "1",
+        "amap_info": "OK",
+        "result_count": 1,
+        "notes": "Real Amap API call succeeded if status is ok. Key is not stored."
+      }
+    },
+    {
+      "name": "json_method_trace_internal_only",
+      "status": "pass",
+      "evidence": [
+        "report_id",
+        "title",
+        "generated_at",
+        "output_status",
+        "not_final",
+        "source_upload_count",
+        "gap_status",
+        "summary",
+        "executive_summary",
+        "method_basis",
+        "method_trace",
+        "expert_review_basis",
+        "source_foundation",
+        "original_plan_reading",
+        "current_judgements",
+        "revision_advice",
+        "simulation_readiness",
+        "top_gaps",
+        "nodes",
+        "next_actions"
+      ]
+    }
+  ],
+  "human_readable_constraints": {
+    "final_report_boundary": "work draft, not final ROI or final ranking",
+    "cad_boundary": "DXF anchors available; GIS control point calibration still required",
+    "llm_boundary": "DeepSeek is a production draft worker, not the final reviewer"
+  }
+}

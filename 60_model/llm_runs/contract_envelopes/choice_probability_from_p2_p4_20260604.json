@@ -1,0 +1,2211 @@
+{
+  "task_id": "CHOICE-PROBABILITY-ADAPTER-20260604",
+  "task_type": "choice_probability",
+  "output_status": "needs_review",
+  "source_refs": [
+    {
+      "source_file": "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+      "page_or_slide": "csv",
+      "quote_or_table_ref": "persona state profile rows"
+    },
+    {
+      "source_file": "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+      "page_or_slide": "csv",
+      "quote_or_table_ref": "behavior program template rows"
+    },
+    {
+      "source_file": "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+      "page_or_slide": "csv",
+      "quote_or_table_ref": "P4 node explanation rows"
+    }
+  ],
+  "assumptions": [
+    "This adapter converts current P2/P4 draft rows into schema-bound needs_review candidates.",
+    "The generated items are not final simulation results and do not contain checked business conclusions."
+  ],
+  "uncertainties": [
+    "P3 real geometry, visitor flow, route, queue, conversion, revenue/cost, and authorization inputs remain incomplete.",
+    "DeepSeek or legacy drafts may only be used after schema validation and human review."
+  ],
+  "needs_human_review": true,
+  "items": [
+    {
+      "choice_id": "CHOICE-01-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-01-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-01-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-01-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-01-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-01-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-001",
+      "program_id": "BEH-001",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-001",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "亲子家庭在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：寻找座椅与饮品点",
+        "当前可讨论的需求方向是：轻餐、饮品、亲子体验、儿童文创。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕亲子家庭补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_visitor_mix_and_behavior_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-02-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-002",
+      "program_id": "BEH-002",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-002",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "运动健身人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：补水",
+        "当前可讨论的需求方向是：运动补给、轻食、装备小件、拉伸康复。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕运动健身人群补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_route_and_dwell_time_observation",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-03-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-003",
+      "program_id": "BEH-003",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-003",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "周边白领与社交人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：搜索咖啡/简餐",
+        "当前可讨论的需求方向是：咖啡、烘焙、早午餐、轻社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕周边白领与社交人群补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_real_time_peak_and_conversion_rate",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-04-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-004",
+      "program_id": "BEH-005",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-004",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "老人康养人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：晨练后寻找座椅",
+        "当前可讨论的需求方向是：茶饮、康养理疗、轻食、文化课程。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕老人康养人群补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_age_mix_and_service_acceptance_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-05-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-005",
+      "program_id": "BEH-006",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-005",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "外地游客与文化参观人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：看导览",
+        "当前可讨论的需求方向是：文创、纪念品、展陈体验、特色餐饮。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕外地游客与文化参观人群补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_origin_profile_and_route_choice_data",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-01",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-001",
+      "offer_id": "OFFER-P2-NODE-001-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在桃花源白房子的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把桃花源白房子的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「咖啡"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-02",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-002",
+      "offer_id": "OFFER-P2-NODE-002-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在奥运廉洁主题展馆的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把奥运廉洁主题展馆的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「接待大厅+健康展厅"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-03",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-003",
+      "offer_id": "OFFER-P2-NODE-003-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在12#西分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把12#西分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「西式简餐"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "客单价",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-04",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-004",
+      "offer_id": "OFFER-P2-NODE-004-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在南门地下预埋空间的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门地下预埋空间的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「运动户外品牌折扣"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "租金/分成",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-05",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-005",
+      "offer_id": "OFFER-P2-NODE-005-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在南门露天剧场的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把南门露天剧场的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「现烤烘焙"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "装修/人工/运营成本",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    },
+    {
+      "choice_id": "CHOICE-06-06",
+      "project_id": "park-commercial-site-selection-simulation",
+      "persona_id": "P2-PER-006",
+      "program_id": "BEH-007",
+      "node_id": "P2-NODE-006",
+      "offer_id": "OFFER-P2-NODE-006-P2-PER-006",
+      "scenario_id": "SCENARIO-P2-P4-NEEDS-REVIEW-20260604",
+      "method_family": [
+        "behavior_program",
+        "poi_tgi_gap",
+        "placeholder"
+      ],
+      "probability_status": "needs_review",
+      "probability_value": null,
+      "priority_label": "补资料后判断",
+      "factor_inputs": {
+        "segment_weight": null,
+        "time_weight": null,
+        "distance_decay": null,
+        "queue_penalty": null,
+        "price_budget_match": null,
+        "opening_hours_match": null,
+        "poi_supply_capacity": null,
+        "evidence_confidence": null
+      },
+      "plain_language_explanation": [
+        "夜间活动与演艺人群在10#2A03分区管理中心的消费选择目前只能做候选判断，不能给真实概率。",
+        "已有行为草稿提示：快速补给",
+        "当前可讨论的需求方向是：夜间轻餐、饮品、活动周边、社交空间。",
+        "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。"
+      ],
+      "specific_advice": [
+        "先围绕夜间活动与演艺人群补齐触发时段、路线、停留和放弃条件。",
+        "把10#2A03分区管理中心的业态假设拆成可验证的小服务项，再决定是否采用。",
+        "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "围绕「中医诊疗（诊室"
+      ],
+      "source_refs": [
+        "70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv",
+        "70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv",
+        "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+        "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "missing_inputs": [
+        "真实客流",
+        "转化率",
+        "收益成本",
+        "运营授权",
+        "DWG几何",
+        "needs_event_flow_and_safety_constraints",
+        "按入口/节点/时段的真实客流",
+        "从到访到消费的转化率",
+        "路线距离、绕行、排队和营业时段",
+        "收益成本和运营授权"
+      ],
+      "user_locked": false
+    }
+  ]
+}

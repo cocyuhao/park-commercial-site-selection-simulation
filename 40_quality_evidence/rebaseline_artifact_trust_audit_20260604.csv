@@ -1,0 +1,88 @@
+﻿artifact,exists,bytes,category,trust_level,reason,allowed_use,required_action
+40_quality_evidence/evidence_ledger.csv,true,174488,evidence,A_底座可信,证据台账仍是可追溯资料底座。,仅使用有来源、状态和可回查字段的行；checked 行仍需来源一致。,后续新增证据继续按 evidence_id 和 verification_status 入账。
+30_extraction/tables/pdf_native_tables.jsonl,true,221402,extraction,A_底座可信,PDF 原生表格抽取结果可复跑、可回查。,用于证据候选和表格回查，不直接推出商业结论。,继续用 verify_pdf_tables.py 作为抽取门禁。
+90_p6_expert_dashboard,true,,product_shell,B_产品壳可用,AI 工作台、资料池、项目总览和报告入口可作为业务人员操作界面。,用于可用性、复核和交互原型，不证明人物仿真准确。,接入人群状态和行为程序 CRUD，并隐藏旧测试/后端文案。
+60_model/simulation/engine.py,true,5045,simulation,B_需改口径,当前是结构化 dry-run，不是老板资料意义上的完整仿真。,可保留为门禁、阻塞原因和缺口整理模块。,不得输出完整仿真、最终排序、ROI 或最终推荐。
+60_model/llm_runs/deepseek_entrance_node_semantic_progress.json,true,190,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl,true,20680,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_evidence_candidates_progress.json,true,222,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl,true,300288,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json,true,198,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl,true,4625,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json,true,201,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl,true,10320,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_verification_package_progress.json,true,165,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl,true,8146,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p1_quality_report_progress.json,true,258,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p1_quality_report_raw.jsonl,true,5373,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json,true,211,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_completion_readiness_audit_raw.jsonl,true,3929,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_geometry_proxy_audit_progress.json,true,148,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_geometry_proxy_audit_raw.jsonl,true,5745,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json,true,202,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_input_schema_candidates_raw.jsonl,true,8312,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json,true,177,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_real_site_semantic_raw.jsonl,true,9703,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json,true,268,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p2_source_coverage_audit_raw.jsonl,true,2092,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p3_calibration_execution_package_progress.json,true,177,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p3_calibration_execution_package_raw.jsonl,true,27331,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p3_prework_package_progress.json,true,580,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p3_prework_package_raw.jsonl,true,6666,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p4_feedback_draft_progress.json,true,130,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p4_feedback_draft_raw.jsonl,true,16582,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_p4_premature_audit_raw.jsonl,true,921,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_project_context_sync_latest.json,true,7684,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_project_context_sync_progress.json,true,215,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_project_context_sync_raw.jsonl,true,7996,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_smoke_test_latest.json,true,564,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_table_classification_progress.json,true,172,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+60_model/llm_runs/deepseek_table_classification_raw.jsonl,true,142104,deepseek_legacy,C_历史草稿,旧 DeepSeek 输出未使用新 envelope，不能直接进入新主线。,仅用于追踪历史、复核和重新抽取。,通过 adapt_deepseek_legacy_outputs.py 包装为审计 envelope 或标记不可适配。
+70_outputs/processed_tables/p2_docx_project_semantic_draft_deepseek.csv,true,13643,p2_deepseek_draft,C_历史草稿,DeepSeek 草稿只能提供语义线索。,用于复核队列和候选解释。,进入 envelope 后重新抽样检查，不得入 checked。
+70_outputs/processed_tables/p2_dwg_conversion_worklist_deepseek.csv,true,2287,p2_deepseek_draft,C_历史草稿,DeepSeek 草稿只能提供语义线索。,用于复核队列和候选解释。,进入 envelope 后重新抽样检查，不得入 checked。
+70_outputs/processed_tables/p2_geometry_proxy_limitations_deepseek.csv,true,2211,p2_deepseek_draft,C_历史草稿,DeepSeek 草稿只能提供语义线索。,用于复核队列和候选解释。,进入 envelope 后重新抽样检查，不得入 checked。
+70_outputs/processed_tables/p2_pdf_proxy_zone_candidates_deepseek.csv,true,2915,p2_deepseek_draft,C_历史草稿,DeepSeek 草稿只能提供语义线索。,用于复核队列和候选解释。,进入 envelope 后重新抽样检查，不得入 checked。
+70_outputs/processed_tables/p2_pdf_spatial_label_draft_deepseek.csv,true,6533,p2_deepseek_draft,C_历史草稿,DeepSeek 草稿只能提供语义线索。,用于复核队列和候选解释。,进入 envelope 后重新抽样检查，不得入 checked。
+70_outputs/processed_tables/p3_calibration_acceptance_criteria_deepseek.csv,true,3174,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_calibration_blocker_register_deepseek.csv,true,2784,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv,true,3349,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_calibration_evidence_request_worklist_deepseek.csv,true,5359,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv,true,2421,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv,true,3213,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv,true,1512,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+70_outputs/processed_tables/p3_scenario_assumption_limits_deepseek.csv,true,3321,p3_deepseek_draft,C_历史草稿,P3 校准相关文件是待补资料工作包，不代表门禁已闭合。,用于向合作方索要资料和记录阻塞。,保持 gate pending，直到真实资料或现场复核闭合。
+80_delivery/ai_chat_reports/CHAT-20260602175743-0001.md,true,8063,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603094810-0004.md,true,15301,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603114927-0004.md,true,7068,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115010-0005.md,true,6882,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115039-0007.md,true,11938,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115614-0008.md,true,12094,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115710-0009.md,true,11960,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115819-0010.md,true,12796,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603115920-0011.md,true,15094,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120028-0012.md,true,9890,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120120-0013.md,true,12134,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120226-0014.md,true,8574,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120313-0015.md,true,10560,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120411-0016.md,true,13870,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120523-0017.md,true,11033,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120804-0018.md,true,10464,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120858-0019.md,true,9762,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603120951-0020.md,true,9482,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121046-0021.md,true,10746,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121145-0022.md,true,10358,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121236-0023.md,true,11362,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121336-0024.md,true,11130,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121429-0025.md,true,11594,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121528-0026.md,true,10662,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+80_delivery/ai_chat_reports/CHAT-20260603121638-0027.md,true,12195,delivery_draft,C_测试痕迹,多数由 Selenium/AI 工作台验证生成，不是客户正式报告。,用于报告格式回归和交互验证证据。,正式报告生成时要重新按商业报告结构和证据状态输出。
+70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv,true,6224,p2_method_draft,C_草稿候选,按老板资料补出的 persona/behavior/validation 表仍未被真实资料校准。,用于 schema、UI 和测试样例，不作为最终模型。,逐行映射到 schema，补 source_refs、missing_inputs 和 adoption_state。
+70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv,true,2755,p2_method_draft,C_草稿候选,按老板资料补出的 persona/behavior/validation 表仍未被真实资料校准。,用于 schema、UI 和测试样例，不作为最终模型。,逐行映射到 schema，补 source_refs、missing_inputs 和 adoption_state。
+70_outputs/processed_tables/p2_simulation_validation_targets_20260604.csv,true,2701,p2_method_draft,C_草稿候选,按老板资料补出的 persona/behavior/validation 表仍未被真实资料校准。,用于 schema、UI 和测试样例，不作为最终模型。,逐行映射到 schema，补 source_refs、missing_inputs 和 adoption_state。
+60_model/simulation/persona_behavior.py,true,6614,simulation,C_草稿候选,可作为状态/行为 schema 思路，但未完成真实校准。,用于候选字段和测试样例。,映射到 persona_state / behavior_program schema 后再进入 UI。
+70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv,true,2602,p4_deepseek_draft,D_必须降级,P4 反馈草稿容易被误读为完整仿真或最终排序。,只用于合作方反馈和补资料请求。,移除或折叠裸排名/裸分数，重写为优先级、依据、建议和缺口。
+70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv,true,3141,p4_deepseek_draft,D_必须降级,P4 反馈草稿容易被误读为完整仿真或最终排序。,只用于合作方反馈和补资料请求。,移除或折叠裸排名/裸分数，重写为优先级、依据、建议和缺口。
+70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv,true,1058,p4_deepseek_draft,D_必须降级,P4 反馈草稿容易被误读为完整仿真或最终排序。,只用于合作方反馈和补资料请求。,移除或折叠裸排名/裸分数，重写为优先级、依据、建议和缺口。
+70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv,true,4069,p4_deepseek_draft,D_必须降级,P4 反馈草稿容易被误读为完整仿真或最终排序。,只用于合作方反馈和补资料请求。,移除或折叠裸排名/裸分数，重写为优先级、依据、建议和缺口。
+choice_probability.schema.json,false,,missing_object,E_需新增,消费选择不能继续靠 LLM 直接判断或裸分数。,尚无。,新增选择概率 schema，连接状态、行为、空间成本、排队、价格、竞品和证据。
+macro_validation_plan.md,false,,missing_object,E_需新增,老板资料要求微观合理性和宏观一致性双门禁。,尚无。,定义 SARIMA/SSIM/KL/DTW/峰谷/现场复核等验证目标与数据缺口。

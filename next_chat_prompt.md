@@ -1,913 +1,827 @@
-# 下一轮启动提示：B/C/D 验收已完成，先读主报告
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前本地已同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，并已完成一轮 B/C/D 验收。
-
-启动后先读：
-1. `AGENTS.md`
-2. `80_delivery/codex_bcd_validation_and_tool_report_20260602.md`
-3. `00_control/team_codex_division.md`
-4. `CONTEXT.md`
-5. `progress.md`
-6. `handoff_next_chat.md`
-7. `00_control/decisions.md`
-
-最新验证结论：
-```powershell
-py -3.12 30_extraction\scripts\verify_project_implementation.py
-# checks=725 failures=0
-
-py -3.12 30_extraction\scripts\verify_pdf_tables.py
-# 总体 PASS
-
-py -3.12 50_external_gis\scripts\run_amap_smoke_test.py
-# status=ok
-```
-
-浏览器验证也已完成：Codex Browser 窄屏、Chrome 1440x1000 宽屏、地图搜索、前端仿真检查、AI 工作台提问均通过。桌面截图在：
-`90_p6_expert_dashboard/qa/browser_desktop_map_20260602.png`
-
-注意：DeepSeek 综合验证为 WARN，只有 `/v1/models` 出现一次 SSL EOF；业务 chat 和 JSON 重现通过。所有输出仍必须保持 `needs_review / not_final`，P3 未闭合前不能给最终排序、ROI、收益预测或推荐结论。
-
-# 下一轮启动提示：已同步 d43db1c，使用双人 Codex 泳道分工
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前本地已同步到 GitHub `main` 最新提交 `d43db1c60f9976f04399de43058d1ee36378a65f`，提交信息 `Polish park simulation UI workflow`。
-
-启动后先读：
-1. `AGENTS.md`
-2. `00_control/team_codex_division.md`
-3. `CONTEXT.md`
-4. `progress.md`
-5. `handoff_next_chat.md`
-6. `00_control/decisions.md`
-
-本轮新增协作/同步文件：
-- `00_control/team_codex_division.md`
-- `00_control/sync_from_github_main.ps1`
-
-如果这些文件已经提交到远端，下轮可直接运行：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\sync_from_github_main.ps1
-```
-
-当前验证已通过：
-
-```powershell
-node --check 90_p6_expert_dashboard\static\app.js
-py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
-py -3.12 30_extraction\scripts\verify_project_implementation.py
-```
-
-总门禁结果：`checks=725 failures=0`。
-
-注意：如果本轮新增文件尚未提交，不要先运行同步脚本，因为它会按设计重置到 `origin/main`。
-
-# 下一轮启动提示：P6 前端已消费后端契约
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家驾驶舱项目。最新状态是：员工A后端契约统一已完成，员工B前端显示接入也已完成一轮。
-
-启动后先读：
-1. `AGENTS.md`
-2. `progress.md`
-3. `findings.md`
-4. `handoff_next_chat.md`
-5. `00_control/decisions.md`
-
-最新前端状态：
-- `90_p6_expert_dashboard/static/app.js` 已停止前端本地重算草案分。
-- 节点分数读取后端 `discussion_score_draft`。
-- 节点状态和解释读取后端 `score_status`、`score_label`、`score_explanation`。
-- 外部地点读取 `external_preview_only` 后只展示地图预览，不套用奥森节点评分。
-- 节点详情展示 `missing_required_fields`、`next_data_needed`。
-- 仿真面板展示 `why_blocked`、`next_data_needed`。
-- `index.html` 静态资源版本为 `app.js?v=20260602b`、`styles.css?v=20260602b`。
-
-最新验证：
-```powershell
-node --check 90_p6_expert_dashboard\static\app.js
-py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
-py -3.12 60_model\scripts\import_existing_outputs.py
-```
-已通过；本地 API 契约断言和 FastAPI TestClient dry-run 也已通过。
-
-注意：
-- `py -3.12 30_extraction\scripts\verify_project_implementation.py` 当前唯一失败是外部 GitHub CLI 检查 `gh repo list cocyuhao`，本机 `gh` keyring token 已失效且 GitHub API 连接失败。用户重新 `gh auth login` 后再复跑项目总门禁。
-- 普通 Git 远端是 `https://github.com/cocyuhao/park-commercial-site-selection-simulation.git`，上传优先用 `git push`。
-- dry-run 始终保持 `needs_review / not_final`，不要输出 ROI、收益预测、最终排序或最终推荐。
-
-# 下一轮启动提示：P6 员工A后端契约已统一
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家驾驶舱项目。当前员工A后端改进已完成一轮，前端静态文件未改。
-
-启动后先读：
-1. `AGENTS.md`
-2. `progress.md`
-3. `findings.md`
-4. `handoff_next_chat.md`
-5. `00_control/decisions.md`
-
-最新后端状态：
-- `/api/dashboard` 已增加 `api_contract`。
-- 节点对象新增：`discussion_score_draft`、`score_status`、`score_label`、`score_explanation`、`score_inputs`、`missing_required_fields`、`next_data_needed`。
-- `/api/data/poi-candidates`、`/api/data/gates`、`/api/uploads`、`/api/upload-candidates`、`/api/simulation/jobs*` 已统一补充 `output_status`、`not_final`、`status_label`、`source_hint`、`evidence_hint`。
-- dry-run 结果新增：`group_context`、`boundary_filter_status`、`source_hint`、`why_blocked`、`missing_required_fields`、`next_data_needed`。
-- SQLite 已新增 `runtime_uploads`、`upload_candidates`、`gate_inputs`，并为 `simulation_results` 自动迁移解释字段。
-
-最新验证：
-```powershell
-py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 60_model\db\store.py 60_model\simulation\engine.py 60_model\simulation\validators.py
-py -3.12 60_model\scripts\import_existing_outputs.py
-py -3.12 30_extraction\scripts\verify_project_implementation.py
-```
-最后一次结果：`poi_candidates=227`、`calibration_gates=6`、`checks=725 failures=0`。
-
-接口 smoke 已确认：
-- `/api/dashboard` 200，节点 6 个。
-- 创建 `/api/simulation/jobs` 返回 22 行 dry-run 结果，且包含解释字段。
-- `/api/amap/tips?q=aosen` 第一项是“奥林匹克森林公园”；`dongba` 第一项“东坝公园”；`cygy` 第一项“朝阳公园”。
-
-给员工B的下一步建议：
-- 前端可逐步从本地 `computeDraftScore` 切换到后端 `discussion_score_draft` 与 `score_explanation`。
-- 外部搜索地点看到 `score_status=external_preview_only` 时，只展示地图预览，不展示奥森节点评分。
-
-硬边界：
-- dry-run 仍不是最终仿真，不输出 ROI、收益预测、最终排序或最终推荐。
-- 所有 AI、地图、上传解析、仿真输出都保持 `needs_review / not_final`。
-- 真实 Key 只允许在 `.env` 或环境变量中，由后端读取。
-
-# 下一轮对话启动提示
-
-员工A前后端改进第一阶段已完成：SQLite 数据库、现有 POI/P3 gate 导入、仿真任务 API、资料闭合中心前端入口、结构化干跑和结果导出已打通。当前结果只能是 `needs_review / not_final`，不得写成最终排序、收益预测或推荐结论。
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 里的公园商业选址仿真项目。
-
-启动后先按顺序读取：
-
-1. `AGENTS.md`
-2. `progress.md`
-3. `handoff_next_chat.md`
-4. `task_plan.md`
-5. `findings.md`
-6. `00_control/decisions.md`
-7. `00_control/plugin_routing.md`
-8. `40_quality_evidence/verification/implementation_verification_20260526.md`
-9. `40_quality_evidence/p2_real_site_preparation_report.md`
-10. `40_quality_evidence/deepseek_p2_real_site_semantic_review.md`
-
-当前状态：
-
-- P0 已完成。
-- P1 已收口/阶段完成。
-- 当前已进入 `P2 准备`，并已完成真实资料索引和 DOCX/PDF 语义拆解草稿。
-- 最新项目级落实性验证为 `checks=422 failures=0`，新对话第一步仍需复跑确认。
-- 当前不是继续追补 P1 缺失字段；没有的数据保留为空，以现有数据为准。
-- PPT 质量较弱，P2 主线不要使用 PPT；只在未来明确需要时作为弱假设/待核验线索。
-- DeepSeek-first 可继续用于简单、繁琐、量大、可复核的草稿任务；但 P2 输入 schema、关键代码和最终门禁由 Codex/高能力主 agent 主导。
-
-当前 P2 真实资料目录：
-
-`C:\Users\Yy199\Desktop\仿真设计\CAD图及其计划`
-
-已索引文件：
-
-- `奥森重点项目策划思路20260521.docx`
-- `奥森北园(字体放大)-改造建筑示意-Model(1).pdf`
-- `奥森北园(字体放大)-改造建筑示意_t5.dwg`
-- `奥森南园（字体放大）-改造建筑示意_t5.dwg`
-
-已生成 P2 准备产物：
-
-- `30_extraction/scripts/build_p2_real_site_input_index.py`
-- `30_extraction/p2_real_site/osen_project_plan_text.txt`
-- `30_extraction/p2_real_site/osen_project_plan_profile.json`
-- `30_extraction/p2_real_site/osen_north_cad_pdf_text.txt`
-- `30_extraction/p2_real_site/osen_north_cad_pdf_pages.csv`
-- `40_quality_evidence/p2_real_site_source_catalog.csv`
-- `70_outputs/processed_tables/p2_real_site_input_worklist.csv`
-- `70_outputs/processed_tables/p2_simulation_input_requirements.csv`
-- `40_quality_evidence/p2_real_site_preparation_report.md`
-
-已生成 P2 语义拆解产物：
-
-- `60_model/scripts/run_deepseek_p2_real_site_semantic_breakdown.py`
-- `60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py`
-- `70_outputs/processed_tables/p2_docx_project_semantic_draft_deepseek.csv`，21 行。
-- `70_outputs/processed_tables/p2_pdf_spatial_label_draft_deepseek.csv`，22 行。
-- `40_quality_evidence/deepseek_p2_real_site_semantic_report.md`
-- `40_quality_evidence/deepseek_p2_real_site_semantic_review.csv`
-- `40_quality_evidence/deepseek_p2_real_site_semantic_review.md`
-- `60_model/llm_runs/deepseek_p2_real_site_semantic_raw.jsonl`
-- `60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json`
-
-关键边界：
-
-- DOCX 语义拆解仍是 `needs_review` 假设池，不是 checked 证据。
-- 北园 PDF 标签只是 CAD 可读代理线索，不能当作 DWG 几何解析。
-- 两个 DWG 只完成文件级登记和版本头识别，header 均为 `AC1018`，状态必须保持 `pending_conversion`。
-- 没有可信 DWG 转换产物前，不得生成面积、图层、坐标、动线或南北园几何对比结论。
-- 当前资料包没有提供真实客流、转化率、收益、成本等仿真校准参数；这些值不得用 PPT 默认回填。
-
-非常重要的避坑：
-
-- 不要在 PowerShell 中使用 `py - <<'PY'`；这是 Bash heredoc。
-- 内联 Python 用 `@' ... '@ | py -`，更推荐写成可复跑脚本后运行。
-- 中文路径尽量不要直接写进 shell 命令字符串；从项目根目录用相对路径、`Path.cwd()`、`Path.iterdir()` 或目录扫描定位。
-- 真实 Key 不要写入代码、CSV、JSON、Markdown、日志或 DeepSeek prompt；只从 `.env` 或环境变量读取。
-
-下一步建议：
-
-1. 先运行：
-
-   ```powershell
-   py .\30_extraction\scripts\verify_project_implementation.py
-   ```
-
-   确认仍为 `failures=0`。
-
-2. 建立 P2 结构化输入 schema 和本地生成脚本：
-
-   - `p2_project_node_candidates.csv`
-   - `p2_business_scene_assumption_pool.csv`
-   - `p2_spatial_label_candidates.csv`
-   - `p2_input_gap_register.csv`
-
-3. 从 DeepSeek 草稿转为本地可门禁候选输入表，所有记录继续保留 `needs_review` 或 `pending_conversion`，不要进入完整仿真建模。
-
-4. 任何新 P2 产物生成后，都要更新 `progress.md`、`findings.md`、`handoff_next_chat.md`、`next_chat_prompt.md`，并复跑项目级验证。
-
----
-
-## 最新更新：2026-05-28 P2 输入 schema 候选已完成
-
-请以上方内容为历史背景，但以本节为最新状态。
-
-新增已完成产物：
-
-- `60_model/scripts/run_deepseek_p2_input_schema_candidates.py`
-- `60_model/scripts/review_deepseek_p2_input_schema_candidates.py`
-- `70_outputs/processed_tables/p2_project_node_candidates.csv`，6 行。
-- `70_outputs/processed_tables/p2_business_scene_assumption_pool.csv`，12 行。
-- `70_outputs/processed_tables/p2_spatial_label_candidates.csv`，22 行。
-- `70_outputs/processed_tables/p2_input_gap_register.csv`，10 行。
-- `40_quality_evidence/deepseek_p2_input_schema_candidates_report.md`
-- `40_quality_evidence/deepseek_p2_input_schema_candidates_review.csv`
-- `40_quality_evidence/deepseek_p2_input_schema_candidates_review.md`
-- `60_model/llm_runs/deepseek_p2_input_schema_candidates_raw.jsonl`
-- `60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json`
-
-新增路由与门禁：
-
-- `LLM-018` 已加入 `60_model/configs/llm_task_routing.csv`，任务为 `P2输入schema候选表草稿`，执行者 DeepSeek，输出状态 `needs_review`。
-- `30_extraction/scripts/verify_project_implementation.py` 已纳入 LLM-018 路由、脚本、4 张输出表、raw/progress 和复核报告。
-- 该轮 P2 准备门禁曾通过；当前最新全量门禁已更新为 `checks=589 failures=0`。
-
-关键边界：
-
-- 当前仍是 `P2 准备`，不是完整 P2 仿真建模。
-- 6 条项目节点、12 条业态/场景假设、22 条空间标签和 10 条输入缺口全部仍是 `needs_review` 候选。
-- 空间标签来自北园 PDF 可读代理，全部保留 `geometry_status=pdf_text_label_only_pending_dwg_conversion`。
-- 两个 DWG 仍为 `pending_conversion`；没有 DXF/GeoJSON/可信转换产物前，不得生成面积、坐标、图层、路径、动线或南北园几何对比。
-- `p2_input_gap_register.csv` 已固定保留 `geometry`、`visitor_flow`、`conversion_rate`、`revenue_cost`、`operation_authorization`、`model_gate` 等关键缺口域。
-- PPT 继续不进入 P2 主线，不得用来默认回填真实客流、收益、成本或仿真校准参数。
-
-下一步建议：
-
-1. 先运行：
-
-   ```powershell
-   py .\30_extraction\scripts\verify_project_implementation.py
-   ```
-
-   确认仍为 `failures=0`。
-
-2. 下一步进入 P2 schema 候选审查和仿真输入映射，不要直接跑完整仿真。
-3. 可以继续多用 DeepSeek 生成候选假设解释、字段映射说明、输入缺口处理建议，但最终 schema、关键代码和完整仿真门禁仍由 Codex/本地脚本主导。
-
----
-
-## 最新更新：2026-05-28 P2 方法原型已闭环
-
-请以上方内容为历史背景，但以本节为最新状态。
-
-当前状态：
-
-- P2 已按 `方法原型` 口径闭环。
-- P3 真实校准未开始。
-- P4 完整 Agent/GIS 仿真未开始。
-- 最新项目级门禁：`checks=589 failures=0`。
-
-已修复交接/Agent/乱码风险：
-
-- `AGENTS.md` 和 `task_plan.md` 已改为当前口径，不再写“P2 暂不启动/当前不进入 P2”。
-- 已新增 `30_extraction/scripts/review_handoff_and_encoding_health.py`。
-- 已生成 `40_quality_evidence/handoff_encoding_health_review.csv/md`，当前全部 `pass`。
-- 已新增 `30_extraction/scripts/review_p2_completion_reality.py` 和 `40_quality_evidence/p2_completion_reality_audit.csv/md`，41 项全部 `pass`。
-- 已修复 `60_model/scripts/review_deepseek_p2_completion_readiness_audit.py` 中的历史乱码报告模板。
-- 已新增 `LLM-020`、`run_deepseek_p2_source_coverage_audit.py` 和 `review_deepseek_p2_source_coverage_audit.py`；DeepSeek 覆盖细审矩阵 60 行，本地复核 33 项全部 `pass`。
-- LLM-020 结论为 partial：P2 结构化资料覆盖成立，但 DWG 几何、南园空间代理、真实客流/转化/收益成本/授权仍是 P3/P4 前置缺口。
-- 已新增 `LLM-021`、`run_deepseek_p2_geometry_proxy_audit.py` 和 `review_deepseek_p2_geometry_proxy_audit.py`；DeepSeek 图纸代理输出包括 10 行 PDF 代理分区、8 行 DWG 转换工作单、8 行几何代理限制，本地复核 23 项全部 `pass`。
-- LLM-021 不做 DWG 几何解析；所有 DWG 工作项保持 `pending_conversion`。
-- 历史事故描述中的问号占位符已清理，避免后续误判为乱码或误导新 agent。
-
-新增 DeepSeek 审计：
-
-- `LLM-019`：P2 完成度与资料理解审计草稿。
-- `60_model/scripts/run_deepseek_p2_completion_readiness_audit.py`
-- `60_model/scripts/review_deepseek_p2_completion_readiness_audit.py`
-- `40_quality_evidence/deepseek_p2_completion_readiness_audit.json`
-- `40_quality_evidence/deepseek_p2_completion_readiness_audit_checks.csv`
-- `40_quality_evidence/deepseek_p2_completion_readiness_audit.md`
-- `40_quality_evidence/deepseek_p2_completion_readiness_audit_review.csv`
-- `40_quality_evidence/deepseek_p2_completion_readiness_audit_review.md`
-
-新增 P2 方法原型产物：
-
-- `60_model/scripts/build_p2_method_prototype.py`
-- `60_model/scripts/review_p2_method_prototype.py`
-- `70_outputs/processed_tables/p2_persona_parameter_prototype.csv`，6 行。
-- `70_outputs/processed_tables/p2_demand_trigger_matrix.csv`，12 行。
-- `70_outputs/processed_tables/p2_supply_gap_scoring_formula.csv`，8 行。
-- `70_outputs/processed_tables/p2_candidate_method_readiness_scores.csv`，6 行。
-- `70_outputs/processed_tables/p2_postman_api_contract_draft.csv`，8 行。
-- `40_quality_evidence/p2_method_prototype_report.md`
-- `40_quality_evidence/p2_method_prototype_review.csv`
-- `40_quality_evidence/p2_method_prototype_review.md`
-
-关键边界：
-
-- DOCX 计划书和北园 PDF/CAD 可读代理已研究并进入结构化表；DWG 仍只完成文件登记和 header 识别，没有几何解析。
-- `p2_candidate_method_readiness_scores.csv` 只是方法原型评分预览，不是最终选址排序。
-- 所有 P2 方法原型输出仍为 `needs_review`。
-- 真实客流、转化率、收益/成本、运营授权、DWG 几何和真实路径权重仍是 P3/P4 前置缺口。
-- PPT 不进入主线，不得默认回填仿真校准参数。
-
-下一步建议：
-
-1. 先运行：
-
-   ```powershell
-   py .\30_extraction\scripts\verify_project_implementation.py
-   ```
-
-   确认仍为 `failures=0`。
-
-2. 若继续推进，进入 P3 前置：DWG 转换、真实客流/转化率/收益成本/运营授权校准计划。
-3. 若需要对外说明，使用 P2 方法原型报告和 5 张原型表，但必须说明它们不是真实校准结论。
-
-## 下一轮可直接复制提示词：P3/P4 路线确认
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 里的公园商业选址仿真项目。  
-这是新一轮对话，目标是从 `P2 方法原型已闭环` 进入 `P3/P4 路线确认与P3前置执行`，不要回到 P1，也不要把 P2 方法原型误写成完整仿真。
-
-启动后先按顺序读取：
-
-1. `AGENTS.md`
-2. `progress.md`
-3. `handoff_next_chat.md`
-4. `task_plan.md`
-5. `findings.md`
-6. `00_control/decisions.md`
-7. `00_control/plugin_routing.md`
-8. `40_quality_evidence/verification/implementation_verification_20260526.md`
-
-第一步必须运行：
-
-```powershell
-py .\30_extraction\scripts\verify_project_implementation.py
-```
-
-确认仍为 `failures=0`。最新已知结果是 `checks=589 failures=0`。
-
-当前状态：
-
-- P0 已完成。
-- P1 已收口/阶段完成。
-- P2 已按 `方法原型` 口径闭环。
-- P3 真实校准未开始。
-- P4 完整 Agent/GIS 仿真未开始。
-- 不要继续追补 P1 缺失字段；没有的数据保留为空，以现有数据为准。
-- PPT 不进入主线；未来只在明确需要时作为弱假设/待核验线索。
-- DeepSeek-first 继续适用：尽可能让 DeepSeek 做 PDF 代理解释、字段映射、缺口拆解、工作单草稿、场景假设说明等低/中风险可复核任务；Codex/本地脚本只做调度、关键代码、schema 固化、门禁和最终判断。
-
-P2 已完成的重要产物包括：
-
-- `40_quality_evidence/p2_real_site_source_catalog.csv`
-- `70_outputs/processed_tables/p2_project_node_candidates.csv`
-- `70_outputs/processed_tables/p2_business_scene_assumption_pool.csv`
-- `70_outputs/processed_tables/p2_spatial_label_candidates.csv`
-- `70_outputs/processed_tables/p2_input_gap_register.csv`
-- `70_outputs/processed_tables/p2_persona_parameter_prototype.csv`
-- `70_outputs/processed_tables/p2_demand_trigger_matrix.csv`
-- `70_outputs/processed_tables/p2_supply_gap_scoring_formula.csv`
-- `70_outputs/processed_tables/p2_candidate_method_readiness_scores.csv`
-- `70_outputs/processed_tables/p2_postman_api_contract_draft.csv`
-- `70_outputs/processed_tables/p2_pdf_proxy_zone_candidates_deepseek.csv`
-- `70_outputs/processed_tables/p2_dwg_conversion_worklist_deepseek.csv`
-- `70_outputs/processed_tables/p2_geometry_proxy_limitations_deepseek.csv`
-
-真实资料目录为：
-
-`C:\Users\Yy199\Desktop\仿真设计\CAD图及其计划`
-
-其中四个重要源文件均已登记：
-
-- `奥森重点项目策划思路20260521.docx`
-- `奥森北园(字体放大)-改造建筑示意-Model(1).pdf`
-- `奥森北园(字体放大)-改造建筑示意_t5.dwg`
-- `奥森南园（字体放大）-改造建筑示意_t5.dwg`
-
-关键边界：
-
-- DOCX 计划书和北园 PDF/CAD 可读代理已进入结构化表。
-- 北园 PDF 只能作为图纸可读代理，不是 DWG 几何解析。
-- 两个 DWG 只完成文件登记和 header 识别，header 均为 `AC1018`。
-- 所有 DWG 工作项必须保持 `pending_conversion`，没有可信 DXF/GeoJSON/SVG/PDF 导出前，不得生成坐标、面积、图层、路径、动线或南北园几何对比结论。
-- 所有 DeepSeek 输出均为 `needs_review`，不能直接作为 checked 证据或最终选址排序。
-
-下一步请先回答并落实路线问题：
-
-**P3 与 P4 应该严格先后执行，还是可以拆成并行子线推进，最后再总和？**
-
-建议默认判断：
-
-- P3 是 P4 的硬前置，因为真实校准参数、DWG 转换边界、客流/转化率/收益成本/运营授权会决定 P4 仿真是否可信。
-- 但 P4 的代码骨架、API 契约、Postman 回归集合、仿真接口占位、场景配置模板可以和 P3 并行准备。
-- 不允许在 P3 关键输入未闭合前运行或宣称 P4 完整仿真结论。
-
-如果继续执行，优先做 `P3前置工作包`：
-
-1. DWG 转换/替代导出方案工作单。
-2. 真实客流、转化率、收益成本、运营授权的校准数据需求表。
-3. P2 原型参数到 P3 校准字段的映射表。
-4. P4 可并行准备但不可出结论的代码/API/测试骨架清单。
-5. 把新增产物纳入 `verify_project_implementation.py` 并复跑，要求 `failures=0`。
-## 最新入口：P3 前置继续推进
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 里的公园商业选址仿真项目。
-
-当前最新状态：
-- P0 已完成。
-- P1 已收口/阶段完成。
-- P2 已按“方法原型”口径闭环。
-- P3 真实校准尚未闭合，当前只完成 P3 前置工作包。
-- P4 完整 Agent/GIS 仿真未开始，只允许并行准备骨架/API/测试/配置，不允许出结论。
-
-启动后第一步仍必须运行：
-
-```powershell
-py .\30_extraction\scripts\verify_project_implementation.py
-```
-
-最新已知总门禁结果是 `checks=635 failures=0`。
-
-本轮新增 P3/P4 路线结论：
-- P3 是 P4 完整仿真结论的硬前置。
-- P4 的代码骨架、API 契约、Postman 回归集合、仿真接口占位、场景配置模板可以与 P3 并行准备。
-- P3 关键输入未闭合前，不得运行或宣称 P4 完整仿真结论，不得输出最终选址排序、收益预测、坐标面积推断或最终推荐。
-
-本轮新增产物：
-- `70_outputs/processed_tables/p3_p4_route_decision_deepseek.csv`
-- `70_outputs/processed_tables/p3_dwg_conversion_work_order_deepseek.csv`
-- `70_outputs/processed_tables/p3_calibration_data_requirements_deepseek.csv`
-- `70_outputs/processed_tables/p3_p2_to_calibration_field_mapping_deepseek.csv`
-- `70_outputs/processed_tables/p4_parallel_skeleton_backlog_deepseek.csv`
-- `40_quality_evidence/deepseek_p3_prework_package.json`
-- `40_quality_evidence/deepseek_p3_prework_package.md`
-- `40_quality_evidence/deepseek_p3_prework_package_review.csv`
-- `40_quality_evidence/deepseek_p3_prework_package_review.md`
-
-继续执行时优先做：
-1. 根据 `p3_dwg_conversion_work_order_deepseek.csv` 推进 DWG 转换/替代导出方案，但所有 DWG 项在可信导出前保持 `pending_conversion`。
-2. 根据 `p3_calibration_data_requirements_deepseek.csv` 收集真实客流、转化率、收益成本、运营授权和模型放行门禁数据。
-3. 用 `p3_p2_to_calibration_field_mapping_deepseek.csv` 核对 P2 原型参数如何进入 P3 校准字段。
-4. P4 只处理 `p4_parallel_skeleton_backlog_deepseek.csv` 中可提前做的骨架/API/测试/配置项，不出仿真结论。
-
-继续保持 DeepSeek-first：DeepSeek 负责草稿、映射、缺口拆解、工作单、场景说明等 `needs_review` 任务；Codex/本地脚本只负责调度、关键代码、schema 固化、门禁和最终判断。若 DeepSeek/本地脚本处理不了本地复杂工作，可考虑调用 VS Code 里的 Claude Code 协助，但不能绕过本项目门禁。
-## 最新入口：P4 完整仿真已完成！
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的公园商业选址仿真项目。
-
-**重大突破：已完成P4完整仿真！**
-
-启动后第一步必须运行：
-
-```powershell
-py .\30_extraction\scripts\verify_project_implementation.py
-```
-
-最新验证结果：**checks=681 failures=0**
-
-### 什么是已完成的
-
-1. **P4完整仿真** - 非骨架/测试准备，是实际72,000次蒙特卡洛模拟！
-   - 6项目节点 × 12场景 × 1000次 = 72,000 次运行
-   - 基于真实PDF客流峰值 (3130, 4847 人次/小时)
-
-2. **P4产物**：
-   - `p4_simulation_detail_results.csv` - 详细模拟结果
-   - `p4_node_scoring_ranking.csv` - 节点ROI排名
-   - `p4_candidate_scoring_summary.csv` - 候选评分
-   - `p4_stress_test_results.csv` - 压力测试（保守-30%/压力-50%）
-
-3. **12个场景**：覆盖节假日高峰、周末亲子、晨练、午休、下午茶、夜间演艺、赛事、暑期、银发族康养、文化参观、跑步健身、日常便利
-
-### 需要注意的已知问题
-
-- CSV输出中node_id字段名为空（导致只有一行数据）
-- ROI计算值异常高（约27000%），可能是假设参数/单位问题
-- 未保存随机种子，无法完全复现同样结果
-
-### 仍然不变的原则
-
-- DWG几何仍为pending_conversion，不得声称完成几何解析
-- PDF标签只是CAD可读代理
-- 所有simulation结果仅为参考估值，非决定性结论
-- 建议与现场考察数据核对后修正假设
-
-### 下一步建议
-
-1. 验证运行确认失败为0
-2. 修正P4脚本中CSV字段命名问题
-3. 修正ROI计算参数（与实际场地数据核对）
-4. 准备P5交付报告和推荐排序
-## 最新补充：P4 外部完整仿真已回滚
-
-上一轮用户让 Codex 审查其他 AI 完成的 P4。审查结论：该 P4 不合格，已定向回滚。
-
-已回滚的不合格 P4 文件：
-- `60_model/scripts/build_p4_full_simulation.py`
-- `70_outputs/processed_tables/p4_node_scoring_ranking.csv`
-- `70_outputs/processed_tables/p4_simulation_detail_results.csv`
-- `70_outputs/processed_tables/p4_stress_test_results.csv`
-- `70_outputs/processed_tables/p4_candidate_scoring_summary.csv`
-- `p4_completion_summary.md`
-
-新增审计文件：
-- `60_model/scripts/run_deepseek_p4_premature_audit.py`
-- `40_quality_evidence/deepseek_p4_premature_audit.json`
-- `40_quality_evidence/deepseek_p4_premature_audit.md`
-
-最新总门禁：`checks=690 failures=0`。
-
-下一轮继续时必须保持：
-- P3 gate 未闭合前，不得恢复完整 P4 仿真、候选排序、收益预测、坐标面积推断或最终推荐。
-- P4 只允许 skeleton/API/mock tests/config 准备。
-- DeepSeek 可以继续做审计、草稿、边界拆解；最终门禁仍由本地脚本确认。
-## 最新补充：P4 feedback draft 已允许并生成
-
-用户已澄清：最开始提供的策划书/CAD/PDF 资料可以作为 P4 反馈草案依据；没有的数据保留为空或假设，先生成一版给合作方反馈，以便对方开始补数据。
-
-因此下一轮不要再简单说“P4不能做”。正确口径是：
-- 可以做：P4 feedback draft / mock / assumption pack。
-- 不可以做：checked/final 完整仿真结论、最终排序、收益预测、最终推荐。
-
-新增 P4 feedback draft 产物：
-- `70_outputs/processed_tables/p4_feedback_node_priority_draft_deepseek.csv`
-- `70_outputs/processed_tables/p4_feedback_scenario_matrix_draft_deepseek.csv`
-- `70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv`
-- `40_quality_evidence/deepseek_p4_feedback_draft_review.csv`
-
-专项复核命令：
-
-```powershell
-py .\60_model\scripts\review_deepseek_p4_feedback_draft.py
-```
-
-最新专项复核结果：`failures=0`。
-
-注意：全量 `verify_project_implementation.py` 当前会重跑很多 DeepSeek 脚本，耗时过长；上一轮在 1000 秒超时。下一轮若要全量门禁，建议先优化为“默认检查既有产物，必要时才重跑 DeepSeek”。
-# 最新启动提示：继续 P6 专家决策驾驶舱
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 里的公园商业选址仿真项目。
-
-当前重点：P6 本地网页模型 / 专家决策驾驶舱原型。
-
-先读取：
-1. `AGENTS.md`
-2. `progress.md`
-3. `handoff_next_chat.md`
-4. `task_plan.md`
-5. `findings.md`
-6. `next_chat_prompt.md`
-7. `00_control/decisions.md`
-8. `00_control/p6_expert_website_design_brief.md`
-
-当前可运行地址：
-
-```powershell
-cd "C:\Users\Yy199\Desktop\仿真设计"
-py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
-```
-
-浏览器打开：
-
-```text
-http://127.0.0.1:8765/
-```
-
-当前已完成：
-- `90_p6_expert_dashboard/` 已建立。
-- 页面读取真实 CSV 驱动，不硬编码节点假数据。
-- 已包含 6 个节点列表、节点详情、P4 feedback draft、P3 gate、DeepSeek AI 判断区。
-- DeepSeek 后端接口为 `/api/ai/review`，路由任务 `LLM-026`，输出必须保持 `needs_review / not_final`。
-- 当前 DeepSeek 已真实返回过 `P2-NODE-001` 的解释草稿。
-- 最新总门禁：`checks=725 failures=0`。
-
-边界：
-- P4 只能是 `feedback draft / mock / assumption pack`，不得写成 checked/final 完整仿真结论。
-- 不得输出最终排序、最终收益预测或最终推荐。
-- 不得伪造 DWG 坐标、面积、图层、动线。
-- DWG 仍为 `pending_conversion`，除非有可信 DXF/GeoJSON/SVG/PDF 导出。
-- 真实 Key 只能从 `.env` 或环境变量读取。
-
-门禁策略：
-- `verify_project_implementation.py` 已优化，默认不重跑 `run_deepseek_*` 生成脚本。
-- 如果确实需要重跑 DeepSeek 生成链，设置 `VERIFY_RERUN_DEEPSEEK=1`。
-
-## 最新补充：AI 入口已改为独立对话栏
-
-用户明确要求：AI 入口要像 DeepSeek/豆包网页版一样，有一栏连续对话口，而不是右侧摘要面板。
-
-当前页面已改为四栏：
-1. 节点列表
-2. 节点详情
-3. DeepSeek 对话工作台
-4. 证据与 AI 摘要
-
-新增能力：
-- 专家可以在对话栏输入意见。
-- 可以输入位置/图片说明，后续用户给图时可先把图里的关键信息转成文字进入对话。
-- 可以登记专家意见，后续 DeepSeek 对话会把它作为上下文。
-- DeepSeek 会输出模型修改建议、追问缺失数据和待补字段，但仍只能是 `needs_review / not_final`。
+# 当前最高优先级启动提示（2026-06-07）：客户版奥森 DOCX 已接入网页下载链路
+
+新对话启动后先读本段，并以本段覆盖下方旧提示。当前用户最关心的不是继续同步同事、不是继续扩网页逻辑，而是：基于本文件夹已经给出的全部数据、策划案、图纸和方法资料，输出一份可给客户看的奥森商业决策 `.docx`。不要再让报告出现“请补资料/训练资料/内部证据链/API/网页平台/本地路径”等内容。
+
+当前权威交付：
+
+- 客户版 DOCX：`80_delivery/osen_business_decision_report_20260607.docx`
+- 客户版 Markdown：`80_delivery/osen_business_decision_report_20260607.md`
+- 内部依据 JSON：`40_quality_evidence/osen_business_decision_report_basis_20260607.json`
+- 内部证据映射：`40_quality_evidence/osen_platform_report_evidence_map_20260607.json`
+- 实际 8081 下载审计：`40_quality_evidence/actual_8081_client_report_audit_20260607.json`
+- 渲染总览：`40_quality_evidence/osen_business_report_docx_render_20260607/contact_sheet.png`
+- 本地网页首页：`http://127.0.0.1:8081/`
+- 网页 DOCX 下载：`http://127.0.0.1:8081/api/reports/site-selection/download?format=docx`
 
 已验证：
-- `POST /api/ai/chat` 可用，DeepSeek 返回 `needs_review` 草稿。
-- 截图：`90_p6_expert_dashboard/qa_chat_column_after.png`。
-- 总门禁：`checks=725 failures=0`。
-# 最新启动提示：继续 P6 参考图风格专家驾驶舱
 
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 里的公园商业选址仿真项目。当前重点是 P6：本地可运行、可操作的网页模型 / 专家决策驾驶舱原型。
+- 真实 8081 下载返回 HTTP 200。
+- 下载 DOCX 大小 45,822 字节。
+- 客户禁用词审计 `banned_hit_count=0`。
+- 章节完整性通过：Word 标题 14 个，缺失章节为空。
+- LibreOffice 转 PDF 与 PyMuPDF 渲染已产出 7 页 PNG 和 contact sheet；此前提示块孤页问题已修复。
 
-启动后先读取：
+继续工作硬规则：
 
-1. `AGENTS.md`
-2. `progress.md`
-3. `handoff_next_chat.md`
-4. `task_plan.md`
-5. `findings.md`
-6. `next_chat_prompt.md`
-7. `00_control/decisions.md`
-8. `00_control/p6_expert_website_design_brief.md`
+- 客户报告只写“基于现有资料的判断、预测、调整、落地顺序和执行边界”。
+- 不写“让客户补充资料/训练资料/内部方法/模型调试/文件路径/API 链路”。
+- 若确有不确定性，只能表达为“实施校准、现场复核、试运营监测、许可边界”，并给出可执行动作。
+- 网站 UI 和逻辑问题周一再系统改；本段只锁定 DOCX 生成、网页下载和客户版内容口径。
 
-当前页面地址：
+# 当前最高优先级启动提示（2026-06-07）：奥森 DOCX 与网页报告已交付，先核验再继续
 
-```text
-http://127.0.0.1:8765/
-```
+新对话启动后先读本段。当前用户最关心的是：可打开网页和可拿走 `.docx` 是否已经完成。当前权威交付已生成并验证：
 
-如果服务未运行，可从项目根目录启动：
+- DOCX：`80_delivery/osen_prediction_adjustment_report_20260607.docx`
+- 网页报告：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_20260607.html`
+- 网页下载 DOCX：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_20260607.docx`
+- 网页依据链：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_basis_20260607.json`
+- 本地 URL：`http://127.0.0.1:8081/static/osen_prediction_adjustment_report_20260607.html`
+- 工作台首页：`http://127.0.0.1:8081/`
 
-```powershell
-py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
-```
+当前报告已做两项文档可读性修复：第一页生成时间不重复；人群行为预测由密集表格改成角色卡。网页报告顶部有“下载 DOCX 报告”和“查看依据链”。
 
-当前状态：
-- P6 已有 FastAPI + 静态前端原型，目录为 `90_p6_expert_dashboard/`。
-- 页面已按用户参考图重构为专家决策平台风格：深色左侧导航、顶部项目栏、横向 gate、节点表、示意地图、节点详情、AI 评审、专家对话栏、底部方案矩阵和数据需求。
-- 专家对话栏应像 DeepSeek/豆包网页版一样可持续输入专家意见、位置/图片说明和真实反馈数据，再由 DeepSeek 生成待复核模型修改建议。
-- 当前浏览器验证截图：`90_p6_expert_dashboard/qa_reference_style.png`。
-- 上一张概念图来自生成式图片工具，不是项目既有页面；后续不要再把概念图当成交付结果。
+验证证据：
 
-最新验证结果：
-- `/api/dashboard`：`status=200 nodes=6 gates=6`。
-- `/api/ai/chat`：真实调用 DeepSeek，返回 `generated_by=deepseek output_status=needs_review`。
-- 项目级总门禁：`checks=725 failures=0`。
+- `40_quality_evidence/osen_prediction_adjustment_delivery_validation_20260607.json`
+- `40_quality_evidence/osen_prediction_web_report_browser_20260607.png`
+- `40_quality_evidence/osen_prediction_adjustment_docx_render_20260607/contact_sheet.png`
+- `40_quality_evidence/libreoffice_bootstrap_repair_20260607.json`
 
-硬边界：
-- P4 feedback draft 不能写成最终排序、最终推荐或最终收益预测。
-- DWG 仍为 `pending_conversion`，除非有可信 DXF/GeoJSON/SVG/PDF 导出。
-- 页面中的地图只是示意布局，不代表 DWG 坐标、面积、图层或动线。
-- DeepSeek 输出只能作为 `needs_review / not_final` 草稿。
-- 真实 Key 只能从 `.env` 或环境变量读取，不能写进前端、JSON、Markdown、日志或交接文件。
+LibreOffice 说明：`C:\Program Files\LibreOffice\program\bootstrap.ini` 文件本身未被改动；默认用户 profile 损坏导致启动失败。旧 profile 已备份为 `%APPDATA%\LibreOffice\4_backup_codex_bootstrap_repair_20260607_081444`，新 profile 已生成，转换验证通过。
 
-下一步建议：
-1. 继续用浏览器验证交互，特别是节点切换、专家意见登记、DeepSeek 对话响应和不同窗口宽度下的排版。
-2. 如用户提供位置图片或专家意见，先通过专家对话栏登记为 `needs_review`，再由 DeepSeek 生成模型修改建议。
-3. 如果继续美化界面，优先保持参考图那种密集、专业、可操作的驾驶舱，不要改成营销页。
-# 最新启动提示：继续 P6 高德接入版专家驾驶舱
+继续任何非小修改前，必须先读 `10_research/osen_prediction_recent_literature_guard_20260607.md`，并补足“本地材料依据 + 近年外部依据 + 采用/拒用理由 + 项目落点 + 验证方法”，不要空想式修改。
 
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的公园商业选址仿真项目，当前重点是 P6：本地可运行、可操作的网页模型 / 专家决策驾驶舱原型。
+# 当前最高优先级启动提示覆盖（2026-06-07）：先做已给材料驱动的奥森预测调整报告
 
-先读取：
+进入新对话后先继承这一条，而不是下方旧的“人物仿真准确性上下文”提示：用户要求彻底回到本地已给材料驱动的奥森商业改造预测与调整报告。不要再围绕同事同步、补资料主线或旧准确性补丁打转。用户能给的资料已经给了，必须用本文件夹里的 PDF 数据、策划 DOCX、CAD/DWG/PDF 图纸、老板方法资料、证据台账、人物仿真特征池和 POI/TGI 数据进行仿真推演、节点调整、组合推进和试运营设计。
 
-1. `AGENTS.md`
-2. `progress.md`
-3. `handoff_next_chat.md`
-4. `task_plan.md`
-5. `findings.md`
-6. `next_chat_prompt.md`
-7. `00_control/decisions.md`
-8. `00_control/p6_expert_website_design_brief.md`
+每次非小修改前必须有依据链：本地资料依据、今年或最近年份外部网页/论文/官方文档依据、为什么这样改适合本项目、改完如何验证。优先 2026 年，其次 2025 年；不能只说“学过/参考过/理解了”，不能空想式补丁。先读 `10_research/osen_prediction_recent_literature_guard_20260607.md`，缺资料就继续检索并补进该文件。
 
-当前页面地址：
+当前交付路径：
 
-```text
-http://127.0.0.1:8765/
-```
+- `80_delivery/osen_prediction_adjustment_report_20260607.docx`
+- `90_p6_expert_dashboard/static/osen_prediction_adjustment_report_20260607.html`
+- `40_quality_evidence/osen_report_repair_evidence_basis_20260607.md`
+- `10_research/osen_prediction_recent_literature_guard_20260607.md`
+- `40_quality_evidence/osen_prediction_adjustment_delivery_validation_20260607.json`
+- 本地 URL：`http://127.0.0.1:8081/static/osen_prediction_adjustment_report_20260607.html`
 
-如果服务未运行：
+# 当前最高优先级启动提示补充（2026-06-07）：先继承人物仿真准确性上下文
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“人物仿真准确性升级”
+2. `findings.md` 顶部“人物仿真干跑结果已带准确性上下文”
+3. `handoff_next_chat.md` 顶部同名交接
+4. `00_control/decisions.md` 中 DEC-099
+5. `40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json`
+6. `40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json`
+
+当前新事实：
+
+- 人物仿真 dry-run 结果行已经新增 `accuracy_context` 和 `calibration_constraints`。
+- 准确性约束覆盖收入与消费能力、竞品价格与供给、时段与天气转化、空间边界与可达、经营字段与运维。
+- 结果行引用 ORCI 真实校准输入，并保留 DeepSeek 只能做候选解释、不能做最终判断的边界。
+- 网页“仿真检查”表有“准确性”列，人物场景压力摘要有“准确性约束”。
+- 最新总门禁：`checks=1168 failures=0`。
+
+启动后先运行：
 
 ```powershell
-cd "C:\Users\Yy199\Desktop\仿真设计"
-py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
+py -3.12 30_extraction\scripts\verify_project_implementation.py
 ```
-
-当前已完成：
-
-- 页面按用户参考图方向重构为专家决策平台：左侧深色导航、顶部项目栏、P3 gate 流程、节点表、地图概览、节点详情、AI 评审意见、方案矩阵和合作方数据需求。
-- “专家 AI 工作台”已放在左侧导航中，像 DeepSeek/豆包网页版一样有持续对话框，可输入专家意见、位置/图片说明并发送给 DeepSeek。
-- 高德 API 已由后端代理接入，前端不暴露 Key；页面读取既有 AMap POI CSV 的 60 条点位。
-- 高德静态图不可达时，后端返回本地 SVG POI 坐标示意图，避免页面空白。
-- PPTX 中已抽取 9 张图片素材候选到 `90_p6_expert_dashboard/static/assets/ppt_media/`；这些只作视觉参考，不是 checked 证据。
-- 当前验证：`checks=725 failures=0`。
-
-下一步建议：
-
-1. 继续用浏览器验证交互细节，尤其是节点切换、专家意见保存、DeepSeek 对话、窄屏布局。
-2. 如果用户提供新的位置图或专家意见，先通过“专家 AI 工作台”登记为 `needs_review`，再调用 DeepSeek 生成模型修改草稿。
-3. 若继续接入真实地图能力，保持后端代理方式，不要把 AMap Key 放到前端。
-
-硬边界：
-
-- P4 feedback draft 不能写成最终排序、最终推荐或最终收益预测。
-- DWG 仍为 `pending_conversion`，没有可信 DXF/GeoJSON/SVG/PDF 导出前，不得伪造坐标、面积、图层或动线。
-- DeepSeek 输出只能是 `needs_review / not_final`。
-- 真实 Key 只能从 `.env` 或环境变量读取，不能写进前端、JSON、Markdown、日志或交接文件。
-# 下一轮启动提示：P6 员工 B 可操作驾驶舱
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 本地网页原型。先读 `AGENTS.md`、`progress.md`、`findings.md`、`handoff_next_chat.md`、`00_control/decisions.md` 和 `00_control/p6_expert_website_design_brief.md`。
-
-当前重点不是堆更多页面，而是把 P6 做成策划专家/公园专家能用的工具：
-- 首页只保留可点击任务入口和可点击下一步行动卡。
-- 节点、地图、补数据、AI 工作台分页面展示，避免拥挤。
-- 所有跳转必须真实可点，不要做静态提示。
-- 专家主流程尽量用中文，不要把 `needs_review/not_final/pending_conversion` 大面积暴露给非技术用户。
-- DeepSeek 可以多用，但输出只能是待复核草案。
-- AMap Key 只能后端读取；当前静态图返回 `USER_KEY_RECYCLED`，页面用本地兜底底图 + AMap POI 表，不得假装真实底图已成功。
-- 员工 B 先保证可操作和可理解；员工 A 可后续接正式地图底图、图片上传、导出报告、Figma 视觉细化等接口。
-
-当前服务地址：`http://127.0.0.1:8765/`。
-
-# 下一轮启动提示：P6 上传优先专家工具
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 网页原型。当前用户最关心的不是再画一个静态驾驶舱，而是把它做成真实可用的专家工具：上传资料、AI 解析、专家追问、P3 资料闭合、地图交互、后续可部署。
-
-当前服务地址：`http://127.0.0.1:8765/`。
-
-最新状态：
-
-- 已新增 `资料导入` 页面，支持上传方案、图纸、图片和数据表。
-- 已把 `CAD图及其计划` 中的既有 PDF/DWG/DOCX 列入待解析资料池。
-- 已新增 `/api/uploads` 和 `/api/gate-inputs`。
-- `资料闭合中心` 已将 P3 gate 改成可执行动作：上传资料、填写说明、问 AI 怎么补。
-- AI 工作台已有“正在思考”状态；DeepSeek 输出仍必须是待复核草案。
-- 高德 Key 只在 `.env`/后端读取；当前 `/api/amap/static-map` 仍返回 `USER_KEY_RECYCLED`，不能声称真实高德底图已渲染。
 
 下一步优先做：
 
-1. 上传资料后的完整闭环：AI 解析文件 -> 生成节点/点位/缺口候选 -> 人工复核 -> 写回页面状态。
-2. 真交互地图：拖拽、缩放、点位选择、图层切换。若用高德 JS API，需要浏览器端受限 Key 和安全密钥代理，不得把 Web Service Key 直接放前端。
-3. 为多人使用做架构准备：数据库、对象存储、权限、异步任务、部署配置。
+1. 把准确性上下文推进到 DOCX 报告的仿真结果章节。
+2. 按用户真实 CAD/策划资料跑一版成熟 DOCX 工作稿；收入、人口、天气、竞品、客流、支付、许可消防必须分层标注证据和缺口。
+3. 保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核。
+4. 不要 push GitHub，除非用户明确要求。
 
-硬边界：
+# 当前最高优先级启动提示补充（2026-06-07）：先继承真实校准补充输入闭环
 
-- P4 feedback draft 不得写成最终排序、最终推荐或收益预测。
-- DWG 仍为 `pending_conversion`，DWG 文件存在不等于可信几何转换完成。
-- DeepSeek 输出只能是 `needs_review / not_final`。
-- 真实 Key 不得进入前端、JSON、Markdown、日志或交接文件。
+继续本项目时先读：
 
-# 下一轮启动提示：P6 上传解析和动态地图已可用
+1. `progress.md` 顶部“真实校准补充输入闭环”
+2. `findings.md` 顶部“真实校准补充输入闭环已跑通”
+3. `handoff_next_chat.md` 顶部同名交接
+4. `00_control/decisions.md` 中 DEC-097 与 DEC-098
+5. `40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json`
+6. `40_quality_evidence/real_calibration_supplement_loop_validation_20260607/report_with_supplement.png`
 
-当前服务：`http://127.0.0.1:8765/`。
+当前新事实：
+
+- 新增/替换真实校准资料已可端到端影响校准输入包、预检、仿真 job request、报告 JSON/Markdown/DOCX 和 Chrome 报告页。
+- QA 专门验证了“周边收入与消费能力补充”，更新后的“月可支配收入 14800 元/人；休闲餐饮客单 55-85 元”在报告页可见。
+- 用户补充资料会优先展示，并用“用户补充校准输入”这种人话标签，不得给客户显示 `local_user_supplement`。
+- QA 后基线恢复干净：正式校准包 14 条、无 QA 收入样本残留。
+- 最新总门禁：`checks=1168 failures=0`。
+- 本机本地 HTTP 验证要绕过系统代理：`httpx.Client(trust_env=False)`。否则访问 `127.0.0.1:8081` 可能出现假 502。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 按用户真实 CAD/策划资料跑出一版成熟 DOCX 工作稿；不要空想，所有收入、人口、天气、竞品、客流、支付、许可消防都要分层标注证据和缺口。
+2. 继续把真实校准输入推进到结构化仿真结果字段，形成可解释的“建议 / 缺口 / 待复核 / 修改动作”。
+3. 保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核。
+4. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承真实校准输入报告链路
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“报告链路升级”
+2. `findings.md` 顶部“真实校准输入已进入报告 JSON、Markdown、DOCX 和浏览器报告页”
+3. `handoff_next_chat.md` 顶部同名交接
+4. `00_control/decisions.md` 中 DEC-096
+5. `40_quality_evidence/report_feature_scene_context_validation_20260607.json`
+6. `40_quality_evidence/osen_report_browser_validation_20260606.json`
+7. `40_quality_evidence/osen_report_browser_validation_20260606/report_view.png`
+
+当前新事实：
+
+- 14 条真实校准输入已经进入报告 JSON、Markdown、DOCX 和浏览器报告页。
+- 报告页可见“真实校准输入与使用边界”，并用人话显示官方宏观边界、设备价格代理、竞品价格线索和方案假设待复核。
+- 最新总门禁：`checks=1162 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 做新增资料闭环验证：改/增一条真实校准资料，确认输入包、预检、干跑、报告 JSON/MD/DOCX、浏览器页都变化。
+2. 把真实校准输入继续推进到结构化仿真结果字段，而不只停留在报告和 request。
+3. 继续保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核。
+4. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承真实校准输入层
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“真实校准输入升级”
+2. `findings.md` 顶部“真实校准输入已分层入库”
+3. `handoff_next_chat.md` 顶部同名交接
+4. `00_control/decisions.md` 中 DEC-095
+5. `40_quality_evidence/osen_real_calibration_inputs_20260607.md`
+6. `40_quality_evidence/osen_real_calibration_inputs_20260607.json`
+7. `90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py`
+
+当前新事实：
+
+- 真实校准输入已经有 14 条，并进入资料资产、仿真任务预检、DeepSeek prompt 和仿真 job request。
+- 收入水平必须分层处理：官方宏观收入/消费是上位边界，本地设备价格是弱代理，PPT 转化率和高峰日是待复核方案假设。
+- 预检顶部已经显示“校准输入”，当前为 14。
+- 最新总门禁：`checks=1161 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 把真实校准输入继续推进到结构化仿真结果与 DOCX 报告正文，不只停留在 preflight/request/prompt。
+2. 做“新增资料 -> 校准输入包 -> 预检 -> 干跑 -> 报告”的闭环验证。
+3. 补真实世界数据：奥森周边 1-3 公里人口/收入/办公/居住/学校/游客来源、竞品价格、分时段客流、天气转化、交易/转化、许可消防、CAD/GIS 控制点。
+4. 继续保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核。
+5. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承结构化仿真干跑中的人物场景与收入价格带
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“仿真干跑升级”
+2. `findings.md` 顶部“采用/锁定人物场景已进入结构化仿真干跑”
+3. `handoff_next_chat.md` 顶部同名交接
+4. `00_control/decisions.md` 中 DEC-094
+5. `40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md`
+6. `40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json`
+7. `40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png`
+
+当前新事实：
+
+- 用户采用/锁定的人物场景已经进入结构化仿真干跑，不只是报告、prompt、按钮状态或预检计数。
+- 结果行包含 `feature_scene_context`、`scenario_pressure`、`feature_scene_count`、`matched_feature_scene_count`。
+- `scenario_pressure` 必须继续保留收入段、消费价格带、时段、天气、空间节点、需求触发和场景动作。
+- 网页结果页已显示“人物场景压力摘要”和“场景命中 / 场景动作”。
+- 客服端不应显示 `needs_review/not_final`、`sample_city_green_heart`、英文业态、`P3-GATE` 等内部字段；总门禁已经要求用户可见 AI 边界人话化。
+- 最新总门禁：`checks=1155 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 补真实数据闭环：奥森周边 1-3 公里收入/人口/居住办公/游客来源、竞品价格、分时段客流、天气转化、交易/转化、审批许可、消防与 CAD/GIS 控制点。
+2. 做“新增资料 -> 抽取/对象链 -> 预检 -> 仿真干跑 -> 报告变化”的闭环验证。
+3. 继续把收入水平从“场景压力”推进到真实价格敏感度、客单价、转化率和收益成本校准，但不能在缺数据时写成最终结论。
+4. 继续保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核。
+5. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承采用场景进入报告与 DeepSeek prompt
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“报告输入链路升级”
+2. `findings.md` 顶部“采用/锁定人物场景已进入报告、DOCX、Markdown 和 DeepSeek prompt”
+3. `00_control/decisions.md` 中 DEC-093
+4. `40_quality_evidence/report_feature_scene_context_validation_20260607.md`
+5. `40_quality_evidence/report_feature_scene_context_browser_20260607.json`
+6. `90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py`
+
+当前新事实：
+
+- 用户采用/锁定的人物场景已经进入 `demand_supply.report.controlled_feature_scene_context`。
+- 报告会展示场景编号、收入/价格带、时段/天气/空间、建议动作和待补证据。
+- DOCX 与 Markdown 均新增“人物场景输入与收入价格带”章节。
+- DeepSeek prompt 已带入“用户采用/锁定的人物场景输入”，并要求把收入水平、消费价格带、时段、天气、空间节点和需求触发作为约束变量。
+- 报告页 Browser 证据确认：人物场景区域可见、1 条采用/锁定场景进入报告、收入/价格带可见、console error=0。
+- 最新总门禁：`checks=1143 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 补真实数据闭环：奥森周边 1-3 公里收入/人口/居住办公/游客来源、竞品价格、分时段客流、天气转化、交易/转化数据。
+2. 做“新增资料 -> 抽取/对象链 -> 预检 -> 报告变化”的闭环验证，确认上传资料会改变报告和场景输入。
+3. 继续保持生产端 DeepSeek-only；Codex 只作为开发期主设计、验证和复核，不得成为最终网站内置 AI。
+4. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承收入/消费价格带结构化接入
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“人物场景控制升级”
+2. `findings.md` 中“收入/消费价格带已从文本提示升级为人物场景结构化变量”
+3. `40_quality_evidence/feature_derivative_income_control_browser_20260607.json`
+4. `40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md`
+5. `90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py`
+
+当前新事实：
+
+- 人物场景覆盖池已新增结构化收入/消费价格带字段：`income_segment_id/name`、`income_price_band`、`income_sensitivity_note`、`income_evidence_hint`。
+- 覆盖池验证新增 `income_segment_id=5`，当前 `status=pass failure_count=0`。
+- `/api/simulation/task-preflight` 已带出 `feature_scene_inputs` 和 `controlled_feature_scene_count`；采用/锁定场景会影响预检，不再只是按钮状态。
+- 全局对象链新增 `feature_derivative_scene`。
+- 浏览器证据 `feature_derivative_income_control_browser_20260607.json/png` 已确认：收入/价格可见、采用/锁定后计数变 1、预检项已满足、console error=0。
+- 最新总门禁：`checks=1132 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 让采用/锁定的人物场景进一步影响报告草稿解释和 DeepSeek 任务输入摘要。
+2. 补奥森周边 1-3 公里收入/人口/居住办公/游客来源、竞品价格、真实交易和天气/时段转化数据。
+3. 做“新增资料 -> 覆盖池/对象链 -> 预检 -> 报告变化”的闭环验证。
+4. 继续保持生产端 DeepSeek-only；不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承人物仿真覆盖池修复和 DEC-091
+
+继续本项目时先读：
+
+1. `00_control/decisions.md` 中 DEC-091
+2. `40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md`
+3. `30_extraction/scripts/build_person_simulation_feature_derivatives.py`
+4. `30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py`
+5. `40_quality_evidence/person_simulation_accuracy_requirements_20260605.md`
+
+当前新事实：
+
+- `person_simulation_feature_derivatives_1000_20260604.csv` 曾经中文损坏为 `??`，旧门禁只看 1200 行所以漏检。
+- 现在已重新生成 1200 条 UTF-8 中文场景，覆盖收入/预算、天气/节假日、时段、空间节点、需求触发、供给动作、DeepSeek 边界、用户采用/放弃/锁定和具体建议。
+- 新验证报告 `person_simulation_feature_derivatives_validation_20260607.json/md` 当前 `status=pass failure_count=0`。
+- 网页链路已接入：资料底座可见“人物仿真覆盖池”，仿真任务预检包含 `person_simulation_feature_derivatives` 检查项。
+- 浏览器可见性证据：`40_quality_evidence/person_feature_pool_browser_visible_20260607.json`，上传页和任务预检均可见，console error=0。
+- 用户控制链路已接入：`/api/simulation/feature-derivatives` 和 PATCH 接口支持代表场景采用、放弃、恢复、锁定、解锁；浏览器证据 `40_quality_evidence/feature_derivative_user_control_browser_20260607.json` 已通过。
+- 总门禁最新：`checks=1128 failures=0`。
+- 边界：这是人物仿真覆盖池，不是最终仿真结论；不能写成 ROI、最终收益、最终排名或完整 P4 已完成。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+若继续主线，优先做：
+
+1. 继续把“已采用/已锁定人物场景”推进到仿真任务输入组合，让它真正影响对象链、预检和报告解释。
+2. 补奥森周边 1-3 公里人口、收入、客流、竞品价格和天气/时段转化数据。
+3. 做“新增资料 -> 覆盖池/对象链 -> 报告变化”的闭环验证。
+4. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-07）：先继承奥森 DOCX 工作稿和收入/真实世界门禁
+
+继续本项目时先读：
+
+1. `progress.md` 顶部“奥森综合报告工作稿已跑通”
+2. `findings.md` 顶部“奥森 DOCX 工作稿已跑通”
+3. `10_research/osen_real_world_context_sources_20260607.md`
+4. `10_research/expert_implementation_review_framework_20260607.md`
+5. `10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json`
+6. `40_quality_evidence/osen_docx_delivery_validation_20260606.md`
+7. `40_quality_evidence/osen_report_browser_validation_20260606.json`
+8. `00_control/decisions.md` 中最新 DEC-090
+
+当前新事实：
+
+- 奥森综合报告已能由平台生成 DOCX 工作稿：`80_delivery/osen_integrated_site_selection_report_20260606.docx`。
+- 报告已纳入收入、消费、服务消费、周边人口与收入、目标人群、时间天气、地理可达、消防许可、财务招商和舆情社区接受等真实世界维度。
+- 每个节点已有三套实施方案和“哪些证据会改变判断”，不再以裸分数作为用户主结论。
+- 网页报告页可下载 DOCX，浏览器验证和截图已通过。
+- 当前仍是待复核工作稿，不是最终投资结论。北京市收入/消费数据只能作为上位边界，不能替代奥森周边局部收入和客群数据。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+若继续主线，优先做：
+
+1. 补奥森周边 1-3 公里人口、收入、居住/办公/学校/游客来源、真实客流和竞品价格数据。
+2. 做“新增资料 -> 抽取/入账 -> 对象链变化 -> 报告变化”的闭环验证。
+3. 做 CAD 控制点/GIS 校准，让当前图纸锚点从工程坐标走向可量测空间路径。
+4. 继续保持生产端 DeepSeek-only；不要把 Codex 内置进最终网站。
+5. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-05）：先继承资料与空间底座新切片
+
+继续本项目时先读：
+
+1. `00_control/decisions.md` 中 DEC-089 / DEC-088 / DEC-087
+2. `40_quality_evidence/source_space_foundation_validation_20260605.md`
+3. `40_quality_evidence/source_space_foundation_browser_runtime_20260605.json`
+4. `40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png`
+5. `00_control/mainline_execution_map_20260605.md`
+
+当前新事实：
+
+- 用户纠偏成立：不能只处理旧东西，必须在蓝图中判断旧模块是否该保留/重构/隐藏/废弃。
+- `资料与空间底座` 已被判定为最终蓝图切片，不是旧上传页美化。
+- 前端新增底座工作区：4 个摘要 + 8 类底座资产卡，显示“进入对象”和“使用边界”。
+- 数字来自后端 `/api/dashboard` 的 `simulation_task_preflight.local_data_assets`，不是前端写死；但新增资料后的全链路变化检查排在完整报告跑通之后。
+- 非地图页不再后台加载高德 JS/静态地图/key；Chrome 验证 `#upload` 只有本地请求，`hasAmapScriptElement=false`，`hasAmapGlobal=false`。
+- 最新总门禁：`checks=1049 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 先让平台完整跑出一份报告。
+2. 然后验证新增资料是否能改变证据台账/PDF/对象链/报告。
+3. 不要继续修旧资料导入页边角；任何页面工作都要先说明它在最终蓝图里的位置。
+4. 不要 push GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-05）：旧产物只能选择性迁移
+
+继续时先读：
+
+1. `00_control/decisions.md` 中 DEC-088 / DEC-087 / DEC-086 / DEC-085
+2. `40_quality_evidence/workflow_navigation_validation_20260605.md`
+3. `40_quality_evidence/workflow_nav_node_detail_runtime_20260605.json`
+4. `40_quality_evidence/page_rebuild_strategy_audit_20260605.md`
+5. `progress.md` 顶部“旧产物选择性使用，不得默认继承”
+
+当前新事实：
+
+- 过去很多旧页面、旧检查、旧交互和旧文案可能来自旧方向或空想补丁，不能默认信任。
+- 节点详情重复“新增节点”是旧残留，已修复：顶部新增是唯一新增入口；详情区只在可编辑节点显示“编辑当前节点”；不可编辑节点不显示表单。
+- 静态版本已更新为 `20260605-workflow`，浏览器运行态证据已确认 `formCount=0` 且不保存高德 `key=` 参数。
+- 新门禁 `verify_workflow_navigation_20260605.py` 已接入总门禁。
+- 最新总门禁：`checks=1038 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步做页面/节点/资料池/AI 工作台时，先把相关旧产物标成 `保留 / 重构 / 隐藏 / 废弃`，再实现；不要继续把旧 P6 壳当最终设计。
+
+# 当前最高优先级启动提示补充（2026-06-05）：先继承人物仿真准确性矩阵
+
+继续本项目时先读：
+
+1. `40_quality_evidence/person_simulation_accuracy_requirements_20260605.md`
+2. `40_quality_evidence/method_model_landing_coverage_20260605.md`
+3. `10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md`
+4. `10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md`
+5. `10_research/deepseek_api_concurrency_capacity_20260605.md`
+
+当前新事实：
+
+- 人物仿真准确性不再只是口头方案，已落成 `person_simulation_accuracy_requirements_20260605.*`。
+- 该矩阵把老板资料和近期论文转成 9 条工程约束：人群状态、行为程序、活动链与路线、选择概率、运营动作、宏观校准、DeepSeek 调用、用户监督、高能力主控。
+- 2026-06-05 已补 DEC-086：开发期 Codex 可作为主 agent 做设计、约束、验证和复核；最终市场化网站不得内置 Codex，生产端 AI 只能使用 DeepSeek。
+- 旧模型覆盖审计已纠偏：最新 `covered=8 partial=1 missing=0`；不要再引用旧 `covered=4 partial=5` 作为当前状态。
+- persona_state / behavior_program 已进入对象池；下一步不是“再证明有对象”，而是让仿真任务入口能选择、组合、预检这些对象。
+- 最新总门禁：`py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=1014 failures=0`。
+
+启动后先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步优先做：
+
+1. 仿真任务入口：选择 persona_state / behavior_program / choice_probability / validation_target。
+2. 运行前预检：缺真实客流、路径、转化率、收益成本、运营授权时，只能 dry-run / needs_review。
+3. DeepSeek 队列与 trace：批处理、缓存、429 退避、任务级 OTel，不逐游客调用。
+
+# 当前最高优先级启动提示补充（2026-06-05）：先继承 DEC-085 和现代验证链
+
+继续时先读：
+
+1. `00_control/decisions.md` 中 DEC-085 / DEC-084 / DEC-083 / DEC-082 / DEC-081
+2. `00_control/page_layer_rebuild_blueprint_20260605.md`
+3. `40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.md`
+4. `40_quality_evidence/page_layer_rebuild_validation_20260605.json`
+5. `40_quality_evidence/axe_accessibility_probe_20260605.json`
+6. `40_quality_evidence/lighthouse_user_flow_20260605.json`
+7. `40_quality_evidence/otel_fastapi_trace_probe_20260605.json`
+
+当前新事实：
+
+- 用户要求“必要时大改，不再旧补丁化；安装/学习/插件必须真正使用”。该要求已写成 DEC-085。
+- 页面层首屏已改为“全局仿真链路台”，不是旧项目说明页；AI 工作台默认“项目综合”，不默认 N-001 / 桃花源白房子。
+- Node QA 栈已安装且使用：axe + Playwright + Lighthouse；Python OTel 栈已安装且使用。
+- 最新总门禁：`py -3.12 30_extraction\scripts\verify_project_implementation.py` 输出 `checks=1003 failures=0`。
+- 人工 Chrome 截图路径：`40_quality_evidence/manual_chrome_overview_20260605.png`、`40_quality_evidence/manual_chrome_ai_20260605.png`。
+
+启动后优先运行：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+做页面或工作台改动后至少运行：
+
+```powershell
+py -3.12 90_p6_expert_dashboard\qa\page_layer_rebuild_validation_20260605.py
+npm run qa:axe        # cwd=90_p6_expert_dashboard\qa
+npm run qa:lighthouse # cwd=90_p6_expert_dashboard\qa
+py -3.12 90_p6_expert_dashboard\qa\otel_fastapi_trace_probe_20260605.py
+py -3.12 30_extraction\scripts\audit_advanced_capability_and_legacy_methods_20260605.py
+```
+
+下一步继续主线时，不要重新证明“要不要先进”；直接把未完成的页面/资料池/节点/地图/报告/仿真任务入口按对象链和老板模型落点继续做，并为每个大改补证据和总门禁。
+
+# 当前最高优先级启动提示补充（2026-06-05）：先读全项目审计和模型落点覆盖
+
+继续时先读：
+
+1. `40_quality_evidence/project_context_legacy_risk_audit_20260605.md`
+2. `40_quality_evidence/method_model_landing_coverage_20260605.md`
+3. `10_research/deepseek_api_concurrency_capacity_20260605.md`
+4. `10_research/method_tool_plugin_audit_20260604.md`
+5. `00_control/decisions.md` 中 DEC-083 / DEC-082 / DEC-081
+
+当前新事实：
+
+- 项目文件 `943`，可文本扫描 `732`，老板资料 `6/6` 齐。
+- 旧风险词 `12323` 次，不等于全是 bug，但证明历史遗留必须脚本治理。
+- 老板模型/外部论文落点：`covered=4 partial=5 missing=0`。接下来不要再泛泛说“研究过”，要补 partial 的落地能力。
+- DeepSeek 并发按账号，不按 API Key；不得逐游客实时调用 DeepSeek。
+- `60_model/src/telemetry.py` 是未接入草稿，不能宣称完成。
+
+下一步优先级：
+
+1. 跑门禁确认 DEC-083 证据仍在。
+2. 处理模型落点 partial：人群状态对象池、行为程序对象池、DeepSeek 队列/缓存/trace、宏观验证目标 UI。
+3. 清理用户可见旧风险词，只保留人话状态，不暴露内部字段。
+
+# 明天启动第一优先级（2026-06-04 下班前保存）
+
+用户关机前的小闭环已经完成到“方法/工具/插件/论文审计清单”这一步。新对话不要从聊天记录猜，先读：
+
+1. `10_research/method_tool_plugin_audit_20260604.md`
+2. `handoff_next_chat.md` 顶部“不要丢失先进性审计这条线”
+3. `progress.md` 顶部“方法/工具/插件/论文审计已落地为门禁资产”
+4. `findings.md` 顶部“方法/工具/插件/论文审计清单已纳入门禁”
+5. `00_control/decisions.md` 中 DEC-082 / DEC-081 / DEC-080 / DEC-079
+
+先运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\start_codex_mainline.ps1
+```
+
+然后确认：
+
+```powershell
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步不要重新讨论“是否要先进”，直接继续把审计清单中的未完成项落地：OpenTelemetry span、人物仿真任务入口、POI/TGI 辅助因子接入、Product Design/Figma 或等价设计系统产物、全局 AI 工作台重构。不要 GitHub push，除非用户明说。
+
+# 当前最高优先级启动提示补充（2026-06-04）：先继承高级 AI/UX/逻辑风险门禁
+
+继续 `C:\Users\Yy199\Desktop\仿真设计` 时，先读：
+
+1. `10_research/advanced_ai_validation_rebaseline_20260604.md`
+2. `40_quality_evidence/advanced_agentic_workflow_validation_20260604.md`
+3. `40_quality_evidence/advanced_agentic_workflow_validation_20260604.json`
+4. `90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py`
+5. `00_control/decisions.md` 中 DEC-081 / DEC-080 / DEC-079
+
+用户最新担忧：不仅框架可能旧，检查方法、判断来源、论文/工具吸收方式也可能旧。不能再用一句“已学习/已参考/已测试”带过。每个工具、论文、插件和方法都要回答：为什么用、是否足够先进、在本项目落到哪里、还有什么风险。
+
+当前已落地：
+- Playwright 1.60 + Chrome trace + ARIA snapshot + 7 视图截图。
+- OpenTelemetry SDK 1.42 已安装，后续用于 AI/仿真链路 trace，不只看最终输出。
+- Selenium 4.44 保留兼容，不再作为高级可用性的唯一证据。
+- 高级 QA 风险 taxonomy 覆盖 10 类：human_visual、agent_readability、ai_scope_integrity、oversight_checkpoint、legacy_leakage、state_coupling、evidence_traceability、observability、ai_output_risk、accessibility_semantics。
+- 最新高级 QA：`status=pass findings=0`。
+- 总门禁已新增 `advanced_gate`，最新 `checks=917 failures=0`。
+
+启动后先运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\start_codex_mainline.ps1
+```
+
+重大 UI/AI/仿真任务改动后至少运行：
+
+```powershell
+py -3.12 90_p6_expert_dashboard\qa\advanced_agentic_workflow_validation_20260604.py
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+```
+
+下一步不是继续打磨旧页面审美，而是：
+1. 建立“方法/工具/论文/插件使用审计清单”，让先进性和取舍可追问、可替换、可门禁。
+2. 继续全局 AI 工作台、资料/方法对象池、仿真任务入口和报告链路落地。
+3. 每次改动都用高级 QA 拦截旧词泄露、agent 不可读、信息密度、AI 范围错绑和监督缺失。
+
+# 当前最高优先级启动提示补充（2026-06-04）：全局 AI 仿真决策系统重基线
+
+继续本项目时，优先读：
+
+1. `00_control/codex_mainline_guardrails.md`
+2. `40_quality_evidence/codex_mainline_context_20260604.md`
+3. `10_research/global_ai_simulation_design_rebaseline_20260604.md`
+4. `10_research/advanced_ai_learning_absorption_register_20260604.md`
+5. `40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json`
+6. `10_research/ai_design_2026_openalex_raw_20260604.json`
+7. `40_quality_evidence/simulation_object_pool_api_validation_20260604.json`
+8. `40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json`
+9. `00_control/decisions.md` 中 DEC-080 / DEC-079 / DEC-078 / DEC-077 / DEC-076 / DEC-074
+
+用户最新要求：系统不应只叫“公园商业决策工作台”。正确总定位是“AI 驱动仿真决策系统”；公园商业选址只是当前场景。Codex 自身强化可以插入主线，但只能作为“防偏航层”，用来防止旧完成度、旧 DeepSeek 草稿、旧分数、同事辅助成果和上下文压缩把系统带回旧方向。
+
+启动后先运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\start_codex_mainline.ps1
+```
+
+已验证完整入口：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\00_control\start_codex_mainline.ps1 -FullGate
+```
+
+当前主线状态：
+- 36 条 `choice_probability` 候选已生成，全部 `needs_review`，`probability_value=null`，不编造概率。
+- 10 条 `simulation_validation_target` 已生成，覆盖状态-行为链、路线可达、选择概率、时间序列、宏观分布和业务决策。
+- 两个 envelope 契约验证均通过。
+- `advanced_ai_learning_absorption_register_20260604.md` 已把先进性从“好看 UI”升级为对象能力层、agent 可读 UI、检查点调度、多 agent 角色分层、可反驳解释和旧产物信任地图。
+- 这两类对象已接入 UI/API 对象池，支持新增、编辑、采用、放弃、锁定、解锁、删除；验证见 `40_quality_evidence/simulation_object_pool_api_validation_20260604.json` 和 `40_quality_evidence/simulation_object_pool_browser_validation_20260604.json/png`。
+- 节点可见逻辑已从裸分数改为“推进优先级 + 依据 + 具体建议”。
+- 首页口径已从旧项目总览改为“全局推进台”，浏览器验证见 `40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json/png`。
+
+下一步：
+- 按 `10_research/global_ai_simulation_design_rebaseline_20260604.md` 继续重构专家 AI 工作台、资料池/方法对象池、仿真任务入口和报告链路。
+- 建立旧产物信任地图：仍可信、需降级、仅历史参考、应废弃，重点审计旧“完整仿真”“最终推荐”“ROI”“裸分数”“已完成”。
+- 页面展示时不能说“仿真完成”，只能说“候选/待复核/资料阻塞/推进动作/需要补证”。
+- 暂不推送 GitHub，除非用户明确要求。
+
+# 当前最高优先级启动提示补充（2026-06-04）：现代 AI 仿真方法已补强
+
+继续 `C:\Users\Yy199\Desktop\仿真设计` 时，先读：
+
+1. `10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md`
+2. `40_quality_evidence/modern_sim_stack_verification_20260604.md`
+3. `10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md`
+4. `00_control/decisions.md` 中 DEC-076 / DEC-074 / DEC-072
+
+最新用户纠偏：此前方法学习偏古早，不能只靠 Huff/Logit/Gravity/Social Force 这类经典方法。当前已改为现代混合仿真主线：轻量领域生成器 + 空间/运营约束 + LLM 个体修正/解释 + schema/校准/人工门禁。
+
+已安装并验证现代栈：DuckDB、Polars、jsonschema、Pydantic、GeoPandas、Shapely、NetworkX、OSMnx、MovingPandas、Mesa、Mesa-Geo、SimPy、SALib、Optuna。验证报告 `packages=14 failures=0`；总门禁 `checks=804 failures=0`。
+
+下一步不要再写泛泛学习总结，也不要回到裸分数。继续做：
+- `choice_probability` adapter：用人群、行为程序、节点、供给、时段、资料引用和现代数据栈生成优先级、解释、建议、缺口。
+- `simulation_validation_target` adapter：把路线可达、状态-行为一致性、时序/分布/业务决策验证变成可复核目标。
+- 后续 P6 接入这些对象时必须支持用户新增、编辑、采用、放弃、删除、锁定。
+
+# 当前最高优先级启动提示补充（2026-06-04）：方法落地与 PowerShell 乱码后续治理
+
+继续 `C:\Users\Yy199\Desktop\仿真设计` 时，先记住用户最新纠偏：
+
+- “模仿人类”是 UI/可用性测试方法，指 Selenium/Browser/智能体像真实业务用户一样反复操作网页；不是方法层判断“像不像真人”。
+- 方法层要先全盘吸收老板六份资料和外部论文，再落成系统对象、字段、门禁、adapter、验证指标和禁用边界。
+- 不要再只写“参考过论文”。每个可用方法必须进入对象、字段、门禁、adapter 或后续任务。
+
+必须先读新增文件：
+1. `10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md`
+2. `10_research/boss_method_materials_20260604/method_selection_evaluation_20260604.md`
+3. `60_model/schemas/choice_probability.schema.json`
+4. `60_model/schemas/simulation_validation_target.schema.json`
+5. `60_model/schemas/person_simulation_control.schema.json`
+6. `60_model/schemas/deepseek_task_contract.schema.json`
+7. `60_model/scripts/validate_deepseek_contract_output.py`
 
 最新状态：
+- `choice_probability` 和 `simulation_validation_target` schema 已新增。
+- DeepSeek contract 已允许 `choice_probability`、`simulation_validation_target`、`state_behavior_consistency`，但仍只能 `draft/needs_review`。
+- `verify_project_implementation.py` 已纳入这些 schema、方法落地台账和 P4 节点解释降级检查。
+- 最新验证：P4 契约 `status=pass failure_count=0`；handoff 编码健康 `failures=0`；总门禁 `checks=796 failures=0`。
 
-- 资料池已支持 `AI 解析`，生成待复核候选。
-- 候选可人工确认入池，写入 P3 gate 输入记录。
-- 已用真实 PDF 生成 1 条候选。
-- 地图页支持输入公园/地址，通过高德关键字查询更新地图中心。
-- 地图目标变化会同步刷新高德周边 POI。
-- 地图支持缩放、拖拽、复位。
+下一步：
+1. 写 `choice_probability` 任务 adapter，把旧 POI/TGI、节点、persona/program 草稿中可用内容转成选择概率候选。
+2. 写 `simulation_validation_target` 任务 adapter，把老板资料中的 SARIMA/SSIM/KL/DTW/宏观一致性和状态-行为-证据链检查转成验证目标候选。
+3. 接入 P6 用户可控对象池，支持新增、编辑、采用、放弃、删除、锁定。
+4. PowerShell/终端中文乱码已专项处理。根因是 Windows PowerShell 5.1 默认按 ANSI/GBK 读取无 BOM UTF-8 文件。已更新 `C:\Users\Yy199\Documents\WindowsPowerShell\profile.ps1`，设置 UTF-8 控制台/输出编码，并给 `Get-Content/Set-Content/Add-Content/Out-File/Export-Csv` 设置 UTF-8 默认参数。新会话验证 `chcp=65001`，普通 `Get-Content` 可直接显示中文。
 
-下一步如果继续打磨：
+# 当前最高优先级启动提示（2026-06-04）：老板方法重基线优先
 
-1. 把候选确认从 `prompt()` 改成更正式的侧边抽屉/弹窗。
-2. 增加完整文件解析队列和状态流：排队、解析中、待确认、已确认、退回。
-3. 若用户要求更接近高德本体，单独接高德 JS API 浏览器端受限 Key 和安全密钥代理。
-4. 继续提高专家文案可读性，减少内部字段名。
+请继续 `C:\Users\Yy199\Desktop\仿真设计`。第一任务不是同步 GitHub，不是推送，不是继续修 UI，也不是直接扩写仿真代码。用户最新纠正是：老板给的六份方法资料会改变整个仿真方向和工作量，旧文件里的很多“已完成”可能不再可信。
 
-硬边界：
+启动后先读并吸收：
 
-- AI 解析候选、地图 POI、P4 feedback draft 都是 `needs_review / not_final`。
-- DWG 仍为 `pending_conversion`。
-- 不得输出最终推荐、最终排序或收益预测。
-- 真实 Key 只能在 `.env` 或环境变量中。
+1. `AGENTS.md`
+2. `progress.md`
+3. `findings.md`
+4. `handoff_next_chat.md`
+5. `00_control/decisions.md`
+6. `10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md`
+7. `10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md`
+8. `10_research/boss_method_materials_20260604/rebaseline_audit_after_boss_models_20260604.md`
+9. `10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md`
+10. `10_research/boss_method_materials_20260604/external_paper_screening_20260604.md`
+11. `10_research/boss_method_materials_20260604/deepseek_task_contracts_20260604.md`
+12. `10_research/boss_method_materials_20260604/legacy_file_trust_audit_20260604.md`
 
-# 下一轮启动提示：P6 研究先行后的单 Composer 与地图任务
+必须坚持：
+- 老板资料不是“补缺口资料”，而是上层方法约束。
+- 当前主控口径以 `full_system_rebaseline_20260604.md` 为准：项目已经从“POI/TGI 缺口 + AI 工作台”重定性为“证据驱动的人群潜在状态与行为程序仿真系统”。
+- 论文不能只写“读过”；每篇都要转成系统对象、验证指标、禁用边界或风险控制。
+- 旧 P4 完整仿真、最终排名、ROI、最终推荐、裸分数展示必须降级或重审。
+- DeepSeek 只能做受限语义工人，不能做总设计师、最终裁判、checked 证据或最终商业结论。
+- DeepSeek 任务契约、旧文件可信度审计、4 个 schema 和本地校验脚本已经建立；`60_model/llm_runs` 35 个旧输出文件已通过 `adapt_deepseek_legacy_outputs.py` 包装成 metadata-only envelope，并通过 `validate_deepseek_contract_output.py` 验证。
+- 注意：旧 envelope 通过不代表旧内容可信，只代表纳入审计；如果要使用旧内容，必须继续写任务专用 adapter，重新抽取 `persona_state`、`behavior_program`、`node_explanation` 或 `report_draft`。
+- 最新落实性门禁是 `checks=750 failures=0`。
 
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 网页原型。先读：
+当前关键产物：
 
-- `00_control/p6_ai_map_interaction_research.md`
+- `10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md`
+- `40_quality_evidence/rebaseline_artifact_trust_audit_20260604.md`
+- `40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.md`
+- `40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json`
+
+下一步优先级：
+
+1. 不要重复做 metadata-only adapter；继续做任务专用 adapter。
+2. 优先从旧 P2/P4 草稿中抽取 `node_explanation`，把裸分数/排名降级成优先级、依据、具体建议、补证动作。
+3. 再从 1200 条衍生场景和 schema 做 P6 人物仿真配置 CRUD。
+
+# 下一轮启动提示：远端 b75396b 已选择性吸收，本地成果优先
+
+请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前任务不是完整同步 GitHub main，也不是把同事代码覆盖到本地；远端 `b75396b66c5988ba3640b8060660a8f2b7d7cdb8` 已经只读比较，并且只选择性吸收低冲突改进。
+
+启动后先读：
+
+1. `AGENTS.md`
+2. `progress.md`
+3. `findings.md`
+4. `handoff_next_chat.md`
+5. `00_control/decisions.md`
+6. `40_quality_evidence/remote_selective_sync_b75396b_20260604.md`
+7. `40_quality_evidence/remote_main_readonly_diff_b75396b_20260604.json`
+
+当前关键状态：
+
+- 远端 main 最新已确认：`b75396b66c5988ba3640b8060660a8f2b7d7cdb8`，提交信息 `Stabilize dashboard workflow gates`。
+- 本轮没有全量覆盖、没有 `git reset`、没有 force sync、没有推送 GitHub。
+- 已选择性吸收：
+  - 上传资料用途归一化。
+  - 节点草案去重。
+  - 生成报告按钮状态联动。
+- 必须保留本地胜出逻辑：
+  - 地图静态兜底和 fallback tiles，避免地图空白。
+  - 节点优先级解析、扣分来源和“现在建议怎么做”。
+  - 报告人类化文案，不把 `report_path` 作为主要 UI。
+  - 最新 47 行 handoff 编码门禁和 `checks=725 failures=0` 项目门禁。
+- AI 工作台默认项目综合，不默认绑定 `N-001` 或“桃花源白房子”。
+- 节点分数只能作为“当前资料条件下的讨论优先级”，不能当最终排名；视觉重点应是建议和补证动作。
+- 交接链路必须保留 `LLM-018` 和 `LLM-019` 两个编号，不能在后续文档中删掉。
+- 最新实现门禁是 `checks=725 failures=0`；旧门禁基线 `checks=589 failures=0` 只作为历史门禁记录保留。
+- DWG 仍是 `pending_conversion`，不能把未转换图纸当作已校准空间证据。
+
+当前验证命令：
+
+```powershell
+node --check 90_p6_expert_dashboard\static\app.js
+py -3.12 -m py_compile 90_p6_expert_dashboard\app.py 30_extraction\scripts\verify_project_implementation.py 30_extraction\scripts\review_handoff_and_encoding_health.py
+py -3.12 30_extraction\scripts\review_handoff_and_encoding_health.py
+py -3.12 30_extraction\scripts\verify_project_implementation.py
+py -3.12 30_extraction\scripts\verify_pdf_tables.py
+py -3.12 90_p6_expert_dashboard\qa\selenium_visual_integration_20260603.py
+```
+
+关键证据：
+
+- `40_quality_evidence/remote_selective_sync_b75396b_20260604.md`
+- `40_quality_evidence/remote_main_readonly_diff_b75396b_20260604.json`
+- `40_quality_evidence/selenium_visual_integration_20260603/selenium_visual_integration_20260603.json`
+- `40_quality_evidence/remote_selective_sync_b75396b_browser_checks_20260604/overview.png`
+- `40_quality_evidence/remote_selective_sync_b75396b_browser_checks_20260604/ai_workspace.png`
+
+注意：
+
+- 普通 `httpx` 可能受本机代理影响，对 `127.0.0.1:8000` 返回 `502`；本地服务验证使用 `httpx.Client(trust_env=False)` 或 Selenium/Chrome。
+- 当前本地 dashboard 服务可用：`http://127.0.0.1:8000`。
+- 若下一步要推送 GitHub，先做 secrets 检查和 `git status` 分拣，不要提交 `.env`、运行缓存、临时截图、测试会话报告或无关 QA 产物；不要 force push，除非用户明确再次确认。
+# 下一轮 Codex 启动提示：先做老板方法重基线，不要按旧完成度推进
+
+你正在接手 `C:\Users\Yy199\Desktop\仿真设计`。用户刚刚明确纠正：老板新给的六份方法资料不是“补缺口参考”，而是会改变整个仿真方向的上层方法材料。仿真工作量因此显著变大，旧文件里的很多“已完成”都可能只是旧标准下的阶段产物，不能继续当成可信结论。
+
+第一步不要同步 GitHub，不要推送，不要直接改 UI，不要继续实现仿真代码。先读并吸收：
+
+- `AGENTS.md`
 - `progress.md`
 - `findings.md`
 - `handoff_next_chat.md`
 - `00_control/decisions.md`
+- `10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md`
+- `10_research/boss_method_materials_20260604/rebaseline_audit_after_boss_models_20260604.md`
+- `10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md`
+- `10_research/boss_method_materials_20260604/external_paper_screening_20260604.md`
 
-最新重点：
+必须坚持的判断：
 
-- 不要继续凭感觉堆按钮或提示词；重要交互必须先按研究记录拆工作流。
-- AI 工作台已改成单 Composer：一个输入框支持文字、位置描述、专家意见和附件上传。
-- 发送消息会自动保存为待复核专家输入，并把附件上传到资料池后传给 DeepSeek 上下文。
-- 新高德 Web Service Key 已仅保存在 `.env`，`/api/amap/static-map` 当前返回真实 `image/png` 静态图；但还不是可拖拽缩放的高德 JS 地图。
+- 老板六份资料方向一致，但不能简单说已经合成一个完整系统；要把它们全盘吸收到同一条可解释、可复核、可校准的仿真路线里。
+- `60_model/simulation/engine.py` 当前只是结构化 dry-run，不是完整仿真。
+- 旧 P4 完成口径、ROI、最终排名、最终推荐、裸分数展示都需要降级、审计或重写。
+- DeepSeek 便宜但不够稳，只能做候选生成、语义整理、解释草稿、报告润色；不能做总设计师、最终裁判、checked 证据、最终排名或仿真完成声明。
+- 节点和报告要服务业务决策：推进优先级、依据、具体建议、待补资料、复核动作，比打分更重要。
+
+下一步具体做：
+
+1. 写出 DeepSeek 受限任务契约：输入、输出 schema、白名单字段、失败降级、人工复核、禁止事项。
+2. 审计旧 P2/P3/P4/P6 文件可信度，把“仍可信 / 需改文案 / 草稿保留 / 必须降级或重写”列清楚。
+3. 把老板资料里的模型落成工程对象：画像状态、行为程序、空间选择、供需转化、宏观校准、证据复核。
+4. 完成上述审计后，再决定哪些代码保留、哪些重写、哪些删除。
+# 下一轮优先提示：不要把旧网页补丁误认为整站重做
+
+你接手 `C:\Users\Yy199\Desktop\仿真设计`。先读：
+
+- `AGENTS.md`
+- `00_control/decisions.md`，尤其 DEC-087
+- `40_quality_evidence/page_rebuild_strategy_audit_20260605.md`
+- `10_research/ui_skill_design_system_audit_20260605.md`
+- `00_control/page_layer_rebuild_blueprint_20260605.md`
+- `progress.md`
+- `findings.md`
+- `handoff_next_chat.md`
+
+当前结论：
+
+- 网站还没有整站级重做完成。
+- 当前 `90_p6_expert_dashboard` 是旧 P6 壳上的过渡重基线。
+- 新链路已经接入：全局仿真链路台、对象链路矩阵、AI 项目综合、仿真任务入口、DeepSeek-only 生产边界和预检门禁。
+- 旧壳仍存在：节点清单、空间地图、资料导入、方法对象池、分析报告、专家 AI 工作台仍按旧 view 并列。
+- 所以下一步不是继续小修旧壳，而是页面级信息架构重构。
 
 下一步建议：
 
-1. 完成上传后 AI 解析和人工确认入池。
-2. 修复地图页底图加载时机，再做真正可拖拽/缩放交互地图。
-3. 继续用浏览器截图和项目门禁验证，不只看代码。
-
-硬边界不变：
-
-- P4 feedback draft 不得变成最终排序、最终推荐或收益预测。
-- DWG 文件存在不等于可信几何转换完成。
-- DeepSeek 输出只能是 `needs_review / not_final`。
-- 真实 Key 不得进入前端、JSON、Markdown、日志或交接文件。
-# 下一轮启动提示：P6 地图轮廓已通用化
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计` 的 P6 专家决策驾驶舱。当前服务为 `http://127.0.0.1:8765/`。
-
-最新地图状态：
-
-- 地图搜索支持任意关键词，不是只针对东坝或奥森。
-- 搜索后会走高德关键字查询更新 `map_context.json`，并刷新高德周边 POI。
-- 边界优先使用公开 polygon：既有 OSM 缓存或 Nominatim 实时获取；拿不到 polygon 时，使用当前高德周边 POI 生成“讨论范围外包线”。
-- 页面不再用圆形范围；公开轮廓与估算外包线会在前端区分显示。
-- 已实测东坝公园、朝阳公园、颐和园能取得公开 polygon；三里屯等非公园片区会回退为 POI 外包线。
-
-下一步如果继续做地图：
-
-1. 优先把搜索联想、加载状态、错误提示和“无 polygon 时的解释”做得更像高德地图的用户操作。
-2. 若要 1:1 高德拖拽/缩放/图层体验，需要单独接浏览器端受限 JS Key + 安全密钥代理；不要把当前 Web Service Key 暴露到前端。
-3. 可继续把“手动添加节点”做成正式侧边抽屉，而不是临时点击地图写入。
-
-硬边界：
-
-- 公开 polygon 不是官方红线；POI 外包线不是边界；DWG 仍为 `pending_conversion`。
-- 所有 AI 输出、地图点位、P4 feedback draft 都是 `needs_review / not_final`。
-- 真实 Key 只能在 `.env` 或环境变量中，由后端读取。
-
-# 下一轮补充：已同步伙伴 GitHub 更新
-
-- 本地已合并 `origin/main` 的伙伴更新：数据库层、结构化仿真 dry-run、仿真任务 API 和前端 dry-run 面板。
-- 地图修正已继续合并在新版本上：搜索实时提示、拼音别名、撤回、只看选中、后端按 zoom/center 重新取高德静态图。
-- 评分不要再当固定 CSV 数：页面当前用“实时草案分”，只在奥森上下文显示，外部地点搜索仅作为地图预览。
-- 若继续改地图，优先处理高德 JS API 正式接入方案；不要把 Web Service Key 放到前端。
-# 下一轮提示：TGI/POI 供需缺口恢复后继续
-
-先读 `CONTEXT.md`、`progress.md`、`handoff_next_chat.md`、`findings.md` 和 `AGENTS.md`。
-
-最新状态：
-- 本轮已恢复丢失的 TGI/POI 供需缺口和报告页改动。
-- 关键文件：`60_model/simulation/demand_gap.py`、`90_p6_expert_dashboard/app.py`、`90_p6_expert_dashboard/static/index.html`、`app.js`、`styles.css`。
-- 服务已重启到 `http://127.0.0.1:8765/#report`。
-- API 烟测通过：dashboard、supply-gap、visitor-simulation、report、report download。
-
-必须记住：
-- 浏览器能打开页面不等于磁盘文件还在；要同时看文件、`git status` 和重启后的接口。
-- 资料池只显示网页外部上传资料，不自动读取 `CAD图及其计划`。
-- 缺口计算缺少外部客流/TGI资料时必须阻塞，不可用奥森内置资料硬算。
-# 下一轮启动提示：AI 工作台已补项目会话、历史和生成报告
-
-请继续 `C:\Users\Yy199\Desktop\仿真设计`。当前重点是 P6 dashboard 的专家 AI 工作台已经从固定节点式问答，改成项目会话工作流：左侧项目/历史/新对话，右侧当前对话，标题区右侧有“生成报告”按钮。
-
-启动后先读：
-1. `AGENTS.md`
-2. `40_quality_evidence/tool_plugin_web_report_20260602.md`
-3. `progress.md`
-4. `findings.md`
-5. `handoff_next_chat.md`
-6. `90_p6_expert_dashboard/app.py`
-7. `90_p6_expert_dashboard/static/app.js`
-
-最新验证证据：
-```powershell
-node --check 90_p6_expert_dashboard\static\app.js
-py -3.12 -m py_compile 90_p6_expert_dashboard\app.py
-```
-
-会话/报告链路证据：
-- `40_quality_evidence/ai_session_report_api_test_20260602.json`
-- `40_quality_evidence/selenium_ai_sessions_report_20260602.json`
-- `40_quality_evidence/selenium_ai_sessions_report_20260602.png`
-
-注意：不要把一次 QA 会话缓存误当成正式业务数据。AI 生成报告仍是 `needs_review / not_final`，最终商业报告必须等真实证据链和 P3 输入闭合。
+1. 先跑 `py -3.12 30_extraction\scripts\verify_project_implementation.py`。
+2. 如果通过，按 DEC-087 开始重构第一屏或写页面级重构方案。
+3. 下一版页面顺序应是：`全局链路台 -> 资料与空间底座 -> 人物仿真对象工坊 -> 仿真任务预检 -> 决策解释与报告工作稿`。
+4. 必须保留 DeepSeek-only 生产边界、完整仿真阻止、老板资料/CAD/证据链入口、采用/放弃/锁定机制。
+5. 不要推 GitHub，除非用户明确要求。

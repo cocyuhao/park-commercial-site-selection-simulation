@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-06-02T09:10:15Z",
+  "run_at": "2026-06-06T14:48:18Z",
   "api_key_masked": "sk-57...5486",
   "overall_verdict": "PASS",
   "summary": {
@@ -22,20 +22,20 @@
         200
       ],
       "latency_ms": {
-        "min": 2904.6,
-        "max": 8084.8,
-        "mean": 4169.2,
-        "p50": 3063.1,
-        "p95": 8084.8
+        "min": 2709.8,
+        "max": 9191.5,
+        "mean": 5663.6,
+        "p50": 3973.2,
+        "p95": 9191.5
       },
       "verdict": "PASS",
-      "verdict_detail": "全部5次HTTP 2xx, 均值延迟4169.2ms"
+      "verdict_detail": "全部5次HTTP 2xx, 均值延迟5663.6ms"
     },
     {
       "method": "M2_models_endpoint",
       "description": "GET /v1/models 鉴权与可用模型验证",
       "http_status": 200,
-      "latency_ms": 2846.4,
+      "latency_ms": 2503.1,
       "model_count": 2,
       "model_ids": [
         "deepseek-v4-flash",
@@ -54,7 +54,7 @@
       "runs": [
         {
           "run": 1,
-          "latency_ms": 3874.6,
+          "latency_ms": 3578.7,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -66,7 +66,7 @@
         },
         {
           "run": 2,
-          "latency_ms": 4995.9,
+          "latency_ms": 5672.3,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -78,7 +78,7 @@
         },
         {
           "run": 3,
-          "latency_ms": 3989.8,
+          "latency_ms": 4784.3,
           "http_status": 200,
           "fields_ok": true,
           "missing_fields": [],
@@ -102,7 +102,7 @@
     {
       "method": "M4_historical_consistency",
       "description": "从历史JSONL抽取样本, 重新分类, 与历史结果对比",
-      "latency_ms": 5594.9,
+      "latency_ms": 12168.6,
       "http_status": 200,
       "comparisons": [
         {
@@ -140,7 +140,7 @@
       "match_count": 5,
       "total": 5,
       "verdict": "PASS",
-      "verdict_detail": "一致率 5/5 = 100.0%, 5595ms"
+      "verdict_detail": "一致率 5/5 = 100.0%, 12169ms"
     }
   ]
 }

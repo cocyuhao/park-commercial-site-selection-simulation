@@ -1,0 +1,13 @@
+{
+  "validator": "validate_deepseek_contract_output.py",
+  "status": "pass",
+  "file_count": 1,
+  "failure_count": 0,
+  "results": [
+    {
+      "file": "60_model\\llm_runs\\contract_envelopes\\p4_node_explanation_from_legacy_20260604.json",
+      "passed": true,
+      "failures": []
+    }
+  ]
+}

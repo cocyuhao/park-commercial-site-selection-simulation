@@ -1,4 +1,4 @@
-﻿check_id,group,severity,status,finding,evidence
+check_id,group,severity,status,finding,evidence
 IMPL-001,files,error,pass,"00_control/llm_routing.md exists=True, bytes=2822",00_control/llm_routing.md
 IMPL-002,files,error,pass,"00_control/credential_handoff.md exists=True, bytes=1300",00_control/credential_handoff.md
 IMPL-003,files,error,pass,"00_control/model_orchestration.md exists=True, bytes=5319",00_control/model_orchestration.md
@@ -324,7 +324,7 @@ IMPL-322,llm,error,pass,LLM-015 field verification checklist remains needs_revie
 IMPL-323,llm,error,pass,LLM-006 high-risk/non-DeepSeek guard triggered,60_model/src/llm_router.py
 IMPL-324,llm,error,pass,DeepSeek key must come from environment,60_model/src/llm_router.py
 IMPL-325,security,error,pass,sensitive matches=[],project text scan
-IMPL-326,files,error,pass,mojibake placeholders=[],"rg ""???"" equivalent"
+IMPL-326,files,error,pass,mojibake placeholders=[],"rg ""[encoding-placeholder-cleared]"" equivalent"
 IMPL-327,security,error,pass,.env.example keeps empty placeholders only,.env.example
 IMPL-328,security,error,pass,.env has local DeepSeek key configured,.env
 IMPL-329,security,error,pass,.env has local Amap key configured,.env

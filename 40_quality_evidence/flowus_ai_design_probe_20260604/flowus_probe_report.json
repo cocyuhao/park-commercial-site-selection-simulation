@@ -1,0 +1,110 @@
+[
+  {
+    "url": "https://teeth.flowus.cn/share/153eefbc-8c13-42da-857e-e3b6839e7426",
+    "title": "零代码开发，给你的 App 注入灵魂！（下）",
+    "text_len": 2728,
+    "html_len": 103064,
+    "screenshot": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_1.png",
+    "text_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_1.txt",
+    "html_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_1.html",
+    "text_excerpt": "进阶篇：Vibecoding 高效开发\n/\n零代码开发，给你的 App 注入灵魂！（下）\n零代码开发，给你的 App 注入灵魂！（下）\n告别枯燥的手写代码，这一章我们要用 Cursor 作为高效协作的驾驶舱，搭配 Pencil 这款灵感设计工具，带你完成从「0 到 1」的零代码实战。我们不再只是盯着屏幕敲代码，而是先通过 Pencil 快速敲定视觉风格与交互原型，再用 Cursor 精准生成逻辑与页面结构，把设计理念快速落地。整个过程全程融入 Animation（动效）思维，教你如何在零代码平台上，为你的 App 注入流畅的动态美感与细腻的交互反馈，真正实现高效开发与高级质感的双重落地。\n第一步：开发前准备\n这里，我会先去生成一个产品文档，那你这边只需要告诉ai基本的功能，然后让他生成产品文档就ok；这里我不多说，讲了很多次了，可以在其他视频中看到。我讲我的功能文档放在下面。\nPRD\n.md\n29.9KB\n首先，我们需要在cursor中安装pencil的插件（因为这样开发非常方便），按照图片上方的步骤\n为什么选择Pencil而不是figma？——我觉得pencil更加适合零基础小白。\n下载好后，我们会来到这么一个界面，我们大致了解一下就ok；你们也可以自己去探索。\n点击那个可以选择不同风格的按钮后，我们可以来到这里去选择不同的风格，点击它后，他会在有会在右侧的chat窗口出现，如这边下面的第二副图，我们接下去写提示词就ok。\n第二步：通过Pencil去生成对应的前端UI\n我当时是这样的\nUse style guide with name mobile-03-minimalvibrant_light 启动pencil进行自主的设计；按照@PRD.md 去设计\n给到他以上的提示词，这个过程时间会比较长，你只需要一直等待，一直点击run即可。下面这个提示词是我需要让他去生成一个手机桌面组件的提示词。具体生成效果可以在下面看到图片。\n提示词\n你现在是UI/UX设计师，需要为 CalPal 卡路里追踪App设计**手机桌面组件（Widget）**，请严格遵循以下要求：\n\n#### 1. 风格对齐\n-   继承App的 Minimal Vibrant Light 设计语言：\n    -   背景：纯白 #FFFFFF\n    -   主色：#8B5CF6（紫色）用于进度环和核心",
+    "browser_logs": [
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/flowus-9b6442d3.js 847:569458 \"VITE_OSS_PROVIDER: undefined\"",
+        "source": "console-api",
+        "timestamp": 1780559949822
+      },
+      {
+        "level": "WARNING",
+        "message": "https://cdn2.flowus.cn/assets/index-ad75c55e.js 40:415899 \"IPC API not available, ignoring listener\"",
+        "source": "console-api",
+        "timestamp": 1780559950475
+      },
+      {
+        "level": "SEVERE",
+        "message": "https://teeth.flowus.cn/api/users/me - Failed to load resource: the server responded with a status of 401 ()",
+        "source": "network",
+        "timestamp": 1780559950816
+      },
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/layout-fd09a164.js 0:62710 \"SIDEBAR_WIDTH:0\"",
+        "source": "console-api",
+        "timestamp": 1780559952455
+      }
+    ]
+  },
+  {
+    "url": "https://teeth.flowus.cn/share/6616d9c9-bc5a-4734-b23a-ddee95678736",
+    "title": "让你的网站告别AI味，充满高级感",
+    "text_len": 12077,
+    "html_len": 96729,
+    "screenshot": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_2.png",
+    "text_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_2.txt",
+    "html_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_2.html",
+    "text_excerpt": "进阶篇：Vibecoding 高效开发\n/\n让你的网站告别AI味，充满高级感\n让你的网站告别AI味，充满高级感\n想让网站摆脱生硬的 AI 生成感，关键在于细节质感与自然动态的结合：先通过 Pinterest 锁定优质网页设计，再用 Nana Banana 这类 AI 工具剥离文字、提纯背景质感，用精准提示词复刻原设计的色彩与结构；接着借助 Kling 3.0 将静态背景转化为微风拂动般的微动效视频，用固定镜头、极慢运镜的提示词让画面更具呼吸感。从灵感捕捉到动态赋能，一步步让界面从 “模板化” 走向 “有温度的高级感”，让视觉体验更贴近真实产品的精致与灵动。\n1. 寻找灵感与生成背景图 \n\n工具：Pinterest（找网页截图） www.pinterest.com  、Nana Banana（图像生成）这边我使用的好似TapNow TapNow｜Your AI-Native Creative Canvas。\n这边我们第一个网页中去搜索图片，这里可以搜索Hero Section；如果你喜欢什么风格的，你也可以自己去搜索，比如我喜欢科技感强的就可以加一个tech hero section。\n接着，去选择你喜欢的图片，截图复制放在tapnow的工作区中。我们将图片先变干净通透，然后变成动感的视频或者是GIF动画。这边我给到提示词，具体的演示可以看我的视频讲解。\n提示词1\n{{Image 1}} 重新生成此背景，去除所有文字，按钮；提高分辨率，达到电影级画质，保持完全一致的构图\n提示词2\n{{Image 1}} 固定机位，超慢镜头电影感运镜，微风拂动，4K 分辨率，可循环的背景视频\n2. 构建网站\n\n2.1我们去找一个ui设计的skills；\n什么是Agent Skill？我在这节课中有讲到。我用的是这个skills，你们也可以自己去找，都是没有问题的。 Website Layout Optimizer\n2.2去安装Next.js的框架，如果你有计算机基础，你也可以选择vue的框架什么的，问题也不大。\n基本的安装命令\nnpx create-next-app@latest\n运行项目\nnpm run dev\n你可以看到一个下面的页面。\n\n2.3创建你的基本项目\n提示词\n帮我生成一个官方网站，叫三颗门牙；有首页，AI工具，门牙课堂这几个板块，帮我生成大致的板块\n接着你就可以启动这个",
+    "browser_logs": [
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/flowus-9b6442d3.js 847:569458 \"VITE_OSS_PROVIDER: undefined\"",
+        "source": "console-api",
+        "timestamp": 1780559984631
+      },
+      {
+        "level": "WARNING",
+        "message": "https://cdn2.flowus.cn/assets/index-ad75c55e.js 40:415899 \"IPC API not available, ignoring listener\"",
+        "source": "console-api",
+        "timestamp": 1780559984842
+      },
+      {
+        "level": "SEVERE",
+        "message": "https://teeth.flowus.cn/api/users/me - Failed to load resource: the server responded with a status of 401 ()",
+        "source": "network",
+        "timestamp": 1780559995030
+      },
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/layout-fd09a164.js 0:62710 \"SIDEBAR_WIDTH:0\"",
+        "source": "console-api",
+        "timestamp": 1780559995031
+      }
+    ]
+  },
+  {
+    "url": "https://teeth.flowus.cn/share/780bf704-8bce-4a32-b150-22a18b8ab1b1",
+    "title": "零代码开发，给你的 App 注入灵魂！（上）",
+    "text_len": 2798,
+    "html_len": 126581,
+    "screenshot": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_3.png",
+    "text_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_3.txt",
+    "html_path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\flowus_ai_design_probe_20260604\\flowus_3.html",
+    "text_excerpt": "进阶篇：Vibecoding 高效开发\n/\n零代码开发，给你的 App 注入灵魂！（上）\n零代码开发，给你的 App 注入灵魂！（上）\n为什么你写的APP一股AI味，一看就是AI生成的，就好像小时候，我们的作业，老师一看就是抄的哈哈哈哈哈；在我看来，这样的APP是没有灵魂的；哪如何让APP活过来呢，如何让从一个AI味很强的APP到一个设计感非常的APP？下面是具体的步骤：\n第一步：生成基础功能原型 \n\n提示词\n1\n开发一个适配移动端的语音日记应用。用户可以查看首页、录制语音条目、查看录制内容的文字转录，并按日期浏览过往条目。要求界面简洁直观。\n2\n3\n代码结构：  \n4\n每个界面以独立 HTML 文件形式存储，例如 home.html、profile.html、settings.html 等。  \n5\n6\nindex.html 作为主入口，不直接包含所有界面的完整代码，而是通过 <iframe> 嵌入各界面文件，并在 index 页面中平铺展示所有页面，避免使用链接跳转。\n你将这个提示词给到AI，AI会生成一个APP的页面给你；我的大概是这样的。\n虽然看上去还是很好看的，但是给用户一眼看上去就像是AI，AI味道非常的重；那么我们应该要让他不那么有AI味。\n第二步：定义产品调性与品牌感觉（Claude或豆包）\n\n怎么用：不要急着画图。先告诉 Claude（建议用Claude作为“头脑风暴伙伴”）或者豆包 你的目标用户是谁，想让他们产生什么感觉（例如：想要模拟真实触感、拒绝科技焦虑）。\n深入品牌指南：\n\"Let's call our app cassette based on that write me brand guidelines\"\n(我们把这个应用叫做 cassette（磁带），基于之前的讨论，为我写一份品牌指南)\n提示词\n请扮演资深品牌设计师与产品策略专家。我正在设计一款语音日记应用，目前命名为 Cassette（卡带 / 盒式磁带）。我的目标用户是过度思考者，他们对数字生活感到疲惫、厌倦无休止的刷屏（doomscrolling），渴望一个平静、拟物化、私密的空间来「大声思考」。\n核心情感关键词（用户应获得怎样的感受？）\n视觉隐喻（哪些现实世界的模拟实物可以为 UI 提供灵感？）\n反目标（这款应用必须严格避免呈现出怎样的外观或感受？）\n第三步：收集灵感与搭建情",
+    "browser_logs": [
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/flowus-9b6442d3.js 847:569458 \"VITE_OSS_PROVIDER: undefined\"",
+        "source": "console-api",
+        "timestamp": 1780560008383
+      },
+      {
+        "level": "WARNING",
+        "message": "https://cdn2.flowus.cn/assets/index-ad75c55e.js 40:415899 \"IPC API not available, ignoring listener\"",
+        "source": "console-api",
+        "timestamp": 1780560008552
+      },
+      {
+        "level": "SEVERE",
+        "message": "https://teeth.flowus.cn/api/users/me - Failed to load resource: the server responded with a status of 401 ()",
+        "source": "network",
+        "timestamp": 1780560018564
+      },
+      {
+        "level": "INFO",
+        "message": "https://cdn2.flowus.cn/assets/layout-fd09a164.js 0:62710 \"SIDEBAR_WIDTH:0\"",
+        "source": "console-api",
+        "timestamp": 1780560018565
+      }
+    ]
+  }
+]

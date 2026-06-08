@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-06-07T09:23:23",
+  "purpose": "约束平台 DOCX 报告，防止无依据写作和模板化补资料主文。",
+  "local_evidence_used": [
+    {
+      "layer": "客流与消费",
+      "files": [
+        "40_quality_evidence/evidence_ledger.csv",
+        "70_outputs/processed_tables/osen_real_calibration_inputs_20260607.csv"
+      ],
+      "used_for": "确定首批应围绕高峰客流承接、轻餐饮、冷饮、咖啡、亲子、运动和康养，而不是直接做重资产满铺。"
+    },
+    {
+      "layer": "策划案与节点",
+      "files": [
+        "CAD图及其计划/奥森重点项目策划思路20260521.docx"
+      ],
+      "used_for": "保留用户给出的六个重点节点和原计划，但把每个节点转成预测、调整、运营动作和边界。"
+    },
+    {
+      "layer": "CAD/图纸",
+      "files": [
+        "40_quality_evidence/cad_dxf_analysis_20260605.md",
+        "40_quality_evidence/cad_pdf_proxy_analysis_20260605.md"
+      ],
+      "used_for": "识别白房子、南门露天剧场、廉洁馆、2A03 等图纸锚点；不把 CAD 坐标伪装成已完成 GIS 坐标。"
+    },
+    {
+      "layer": "人物与行为特征池",
+      "files": [
+        "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv"
+      ],
+      "used_for": "把游客从标签扩展为目标、预算、时段、天气、节点和动作链，形成 state -> behavior -> demand -> advice。"
+    },
+    {
+      "layer": "POI/供给",
+      "files": [
+        "70_outputs/processed_tables/poi_supply_candidates_amap_boundary_filter.csv"
+      ],
+      "used_for": "判断周边供给活跃品类和价格带，避免只凭策划案判断业态。"
+    }
+  ],
+  "method_basis_used": [
+    {
+      "source": "老板六份方法资料吸收台账",
+      "files": [
+        "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+        "10_research/boss_method_materials_20260604/unified_simulation_method_matrix_20260604.md",
+        "10_research/boss_method_materials_20260604/method_absorption_landing_register_20260604.md"
+      ],
+      "used_for": "禁用裸分数和 LLM 自由编故事，采用人群状态、行为程序、空间/消费约束和执行校核。"
+    },
+    {
+      "source": "近年商业选址与 Agent/UX 资料护栏",
+      "files": [
+        "10_research/osen_prediction_recent_literature_guard_20260607.md"
+      ],
+      "used_for": "把节点表达改为优先级、理由、动作和边界，不用单一分数或模板风险清单替代建议。"
+    },
+    {
+      "source": "DOCX 商业报告写作格式吸收记录",
+      "files": [
+        "10_research/report_docx_writing_format_research_20260606.md"
+      ],
+      "used_for": "执行摘要前置、主文服务决策、表格只放对比信息，避免机器日志和长表格。"
+    }
+  ],
+  "external_sources_for_frame_only": [
+    "GOV.UK The Green Book 2026: strategic/economic/commercial/financial/management perspectives",
+    "GOV.UK business case guidance: business case as decision support, not a data dump",
+    "Purdue OWL / Nottingham / Massey business report guides: executive summary, analysis, recommendations, appendices",
+    "2026/2025 retail site selection and agent simulation papers recorded in local guardrail files"
+  ],
+  "non_claims": [
+    "不宣称最终 ROI、最终收益、最终排名或完整仿真已完成。",
+    "不把宏观收入直接推导为奥森节点成交能力。",
+    "不让 DeepSeek 或任何 LLM 直接成为最终裁判。",
+    "不把 CAD 原始图纸坐标当成已校准 GIS 坐标。"
+  ]
+}

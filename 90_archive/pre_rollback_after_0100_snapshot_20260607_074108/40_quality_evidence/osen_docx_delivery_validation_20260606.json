@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-06-07",
+  "summary": {
+    "pass": 11
+  },
+  "checks": [
+    {
+      "name": "docx_exists_and_size",
+      "status": "pass",
+      "evidence": 54060
+    },
+    {
+      "name": "docx_audit_pass",
+      "status": "pass",
+      "evidence": {
+        "bytes": 54060,
+        "text_length": 14083,
+        "forbidden": [],
+        "required": {
+          "执行摘要": true,
+          "关键依据": true,
+          "专家评审底座": true,
+          "六个节点判断与修改建议": true,
+          "综合修改意见": true,
+          "当前推进事项": true,
+          "控制点校准": true,
+          "周边人口与收入": true,
+          "桃花源白房子": true,
+          "南门地下预埋空间": true
+        }
+      }
+    },
+    {
+      "name": "render_pass",
+      "status": "pass",
+      "evidence": {
+        "status": "pass",
+        "page_count": 18
+      }
+    },
+    {
+      "name": "web_docx_download",
+      "status": "pass",
+      "evidence": {
+        "status_code": 200,
+        "bytes": 54060
+      }
+    },
+    {
+      "name": "expert_research_volume",
+      "status": "pass",
+      "evidence": {
+        "completed": 80,
+        "screened": 6448
+      }
+    },
+    {
+      "name": "real_world_sources_recorded",
+      "status": "pass",
+      "evidence": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\osen_real_world_context_sources_20260607.md"
+    },
+    {
+      "name": "income_dimension_in_report",
+      "status": "pass",
+      "evidence": "income and price band present"
+    },
+    {
+      "name": "each_node_has_three_options",
+      "status": "pass",
+      "evidence": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "each_node_has_decision_changing_evidence",
+      "status": "pass",
+      "evidence": 6
+    },
+    {
+      "name": "no_forbidden_docx_terms",
+      "status": "pass",
+      "evidence": []
+    },
+    {
+      "name": "required_docx_terms",
+      "status": "pass",
+      "evidence": [
+        "专家评审底座",
+        "收入与消费上位边界",
+        "周边人口与收入",
+        "方案比较",
+        "时间、天气与季节",
+        "哪些证据会改变判断"
+      ]
+    }
+  ],
+  "paths": {
+    "docx": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\osen_integrated_site_selection_report_20260606.docx",
+    "report_json": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\site_selection_gap_report_latest.json",
+    "render_json": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_report_docx_render_20260606.json",
+    "audit_json": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence\\osen_integrated_report_docx_audit_20260606.json",
+    "real_world_sources": "C:\\Users\\Yy199\\Desktop\\仿真设计\\10_research\\osen_real_world_context_sources_20260607.md"
+  }
+}

@@ -1,0 +1,21 @@
+﻿check_id,status,severity,finding,evidence
+P2-SCHEMA-REVIEW-001,pass,error,node rows=6,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_project_node_candidates.csv
+P2-SCHEMA-REVIEW-002,pass,error,assumption rows=12,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_business_scene_assumption_pool.csv
+P2-SCHEMA-REVIEW-003,pass,error,spatial rows=22,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_spatial_label_candidates.csv
+P2-SCHEMA-REVIEW-004,pass,error,gap rows=10,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-005,pass,error,all nodes remain needs_review,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_project_node_candidates.csv
+P2-SCHEMA-REVIEW-006,pass,error,all assumptions remain needs_review,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_business_scene_assumption_pool.csv
+P2-SCHEMA-REVIEW-007,pass,error,all spatial labels remain needs_review,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_spatial_label_candidates.csv
+P2-SCHEMA-REVIEW-008,pass,error,all gaps remain needs_review,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-009,pass,error,spatial labels keep pending geometry status,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_spatial_label_candidates.csv
+P2-SCHEMA-REVIEW-010,pass,error,executor/task id preserved,all schema tables
+P2-SCHEMA-REVIEW-011,pass,error,required gap domain present: geometry,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-012,pass,error,required gap domain present: visitor_flow,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-013,pass,error,required gap domain present: conversion_rate,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-014,pass,error,required gap domain present: revenue_cost,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-015,pass,error,required gap domain present: operation_authorization,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-016,pass,error,required gap domain present: model_gate,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_input_gap_register.csv
+P2-SCHEMA-REVIEW-017,pass,error,桃花源 node present,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_project_node_candidates.csv
+P2-SCHEMA-REVIEW-018,pass,error,南门 node present,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_project_node_candidates.csv
+P2-SCHEMA-REVIEW-019,pass,error,10#2A03 node present,C:\Users\Yy199\Desktop\仿真设计\70_outputs\processed_tables\p2_project_node_candidates.csv
+P2-SCHEMA-REVIEW-020,pass,error,progress output_status=needs_review,C:\Users\Yy199\Desktop\仿真设计\60_model\llm_runs\deepseek_p2_input_schema_candidates_progress.json

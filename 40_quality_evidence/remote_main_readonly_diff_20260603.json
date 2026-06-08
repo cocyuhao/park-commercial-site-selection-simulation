@@ -1,0 +1,385 @@
+{
+  "remote_root": "C:\\Users\\Yy199\\AppData\\Local\\Temp\\park_remote_main_readonly_20260603\\park-commercial-site-selection-simulation-main",
+  "head": "4e5cb7b8712572211e74f0296e29fac44a947372",
+  "remote_file_count": 548,
+  "head_file_count": 545,
+  "remote_changed_vs_head_count": 36,
+  "local_changed_vs_head_count": 17,
+  "local_untracked_expanded_count": 138,
+  "overlap_count": 8,
+  "overlap": [
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/app.js",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/styles.css",
+      "status": "modified"
+    },
+    {
+      "path": "findings.md",
+      "status": "modified"
+    },
+    {
+      "path": "handoff_next_chat.md",
+      "status": "modified"
+    },
+    {
+      "path": "next_chat_prompt.md",
+      "status": "modified"
+    },
+    {
+      "path": "progress.md",
+      "status": "modified"
+    }
+  ],
+  "remote_changed_by_prefix": {
+    "90_p6_expert_dashboard/": [
+      {
+        "path": "90_p6_expert_dashboard/app.py",
+        "status": "modified"
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/app.js",
+        "status": "modified"
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/index.html",
+        "status": "modified"
+      },
+      {
+        "path": "90_p6_expert_dashboard/static/styles.css",
+        "status": "modified"
+      }
+    ],
+    "30_extraction/": [
+      {
+        "path": "30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json",
+        "status": "added"
+      },
+      {
+        "path": "30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json",
+        "status": "added"
+      },
+      {
+        "path": "30_extraction/ppt_text/奥森修改稿0306.json",
+        "status": "added"
+      }
+    ],
+    "40_quality_evidence/": [
+      {
+        "path": "40_quality_evidence/selenium_map_material_node_overview_20260603.json",
+        "status": "added"
+      },
+      {
+        "path": "40_quality_evidence/地图_资料_节点_验证报告_20260603.md",
+        "status": "added"
+      },
+      {
+        "path": "40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md",
+        "status": "added"
+      }
+    ],
+    "00_control/": [
+      {
+        "path": "00_control/decisions.md",
+        "status": "modified"
+      }
+    ]
+  },
+  "remote_changed_all": [
+    {
+      "path": "\"20_raw_data/pdf/\\345\\237\\216\\345\\270\\202\\347\\273\\277\\345\\277\\203\\345\\205\\254\\345\\233\\255\\345\\214\\272\\345\\237\\237\\345\\244\\247\\346\\225\\260\\346\\215\\256\\345\\210\\206\\346\\236\\220\\346\\212\\245\\345\\221\\212-20221023-20231022(1).pdf\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"20_raw_data/pdf/\\345\\245\\245\\346\\236\\227\\345\\214\\271\\345\\205\\213\\346\\243\\256\\346\\236\\227\\345\\205\\254\\345\\233\\255\\345\\214\\272\\345\\237\\237\\345\\244\\247\\346\\225\\260\\346\\215\\256\\345\\210\\206\\346\\236\\220\\346\\212\\245\\345\\221\\212-20241230-202512291772157987.pdf\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"20_raw_data/ppt/\\345\\245\\245\\346\\243\\256\\344\\277\\256\\346\\224\\271\\347\\250\\2770306.pptx\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"30_extraction/pdf_text/\\345\\237\\216\\345\\270\\202\\347\\273\\277\\345\\277\\203\\345\\205\\254\\345\\233\\255\\345\\214\\272\\345\\237\\237\\345\\244\\247\\346\\225\\260\\346\\215\\256\\345\\210\\206\\346\\236\\220\\346\\212\\245\\345\\221\\212-20221023-20231022(1).json\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"30_extraction/pdf_text/\\345\\245\\245\\346\\236\\227\\345\\214\\271\\345\\205\\213\\346\\243\\256\\346\\236\\227\\345\\205\\254\\345\\233\\255\\345\\214\\272\\345\\237\\237\\345\\244\\247\\346\\225\\260\\346\\215\\256\\345\\210\\206\\346\\236\\220\\346\\212\\245\\345\\221\\212-20241230-202512291772157987.json\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"30_extraction/ppt_text/\\345\\245\\245\\346\\243\\256\\344\\277\\256\\346\\224\\271\\347\\250\\2770306.json\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"CAD\\345\\233\\276\\345\\217\\212\\345\\205\\266\\350\\256\\241\\345\\210\\222/\\345\\245\\245\\346\\243\\256\\345\\214\\227\\345\\233\\255(\\345\\255\\227\\344\\275\\223\\346\\224\\276\\345\\244\\247)-\\346\\224\\271\\351\\200\\240\\345\\273\\272\\347\\255\\221\\347\\244\\272\\346\\204\\217-Model(1).pdf\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"CAD\\345\\233\\276\\345\\217\\212\\345\\205\\266\\350\\256\\241\\345\\210\\222/\\345\\245\\245\\346\\243\\256\\345\\214\\227\\345\\233\\255(\\345\\255\\227\\344\\275\\223\\346\\224\\276\\345\\244\\247)-\\346\\224\\271\\351\\200\\240\\345\\273\\272\\347\\255\\221\\347\\244\\272\\346\\204\\217_t5.dwg\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"CAD\\345\\233\\276\\345\\217\\212\\345\\205\\266\\350\\256\\241\\345\\210\\222/\\345\\245\\245\\346\\243\\256\\345\\215\\227\\345\\233\\255\\357\\274\\210\\345\\255\\227\\344\\275\\223\\346\\224\\276\\345\\244\\247\\357\\274\\211-\\346\\224\\271\\351\\200\\240\\345\\273\\272\\347\\255\\221\\347\\244\\272\\346\\204\\217_t5.dwg\"",
+      "status": "deleted"
+    },
+    {
+      "path": "\"CAD\\345\\233\\276\\345\\217\\212\\345\\205\\266\\350\\256\\241\\345\\210\\222/\\345\\245\\245\\346\\243\\256\\351\\207\\215\\347\\202\\271\\351\\241\\271\\347\\233\\256\\347\\255\\226\\345\\210\\222\\346\\200\\235\\350\\267\\25720260521.docx\"",
+      "status": "deleted"
+    },
+    {
+      "path": "00_control/decisions.md",
+      "status": "modified"
+    },
+    {
+      "path": "20_raw_data/pdf/城市绿心公园区域大数据分析报告-20221023-20231022(1).pdf",
+      "status": "added"
+    },
+    {
+      "path": "20_raw_data/pdf/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.pdf",
+      "status": "added"
+    },
+    {
+      "path": "20_raw_data/ppt/奥森修改稿0306.pptx",
+      "status": "added"
+    },
+    {
+      "path": "30_extraction/pdf_text/城市绿心公园区域大数据分析报告-20221023-20231022(1).json",
+      "status": "added"
+    },
+    {
+      "path": "30_extraction/pdf_text/奥林匹克森林公园区域大数据分析报告-20241230-202512291772157987.json",
+      "status": "added"
+    },
+    {
+      "path": "30_extraction/ppt_text/奥森修改稿0306.json",
+      "status": "added"
+    },
+    {
+      "path": "40_quality_evidence/selenium_map_material_node_overview_20260603.json",
+      "status": "added"
+    },
+    {
+      "path": "40_quality_evidence/地图_资料_节点_验证报告_20260603.md",
+      "status": "added"
+    },
+    {
+      "path": "40_quality_evidence/地图_资料_节点_验证报告_20260603_任务二至六.md",
+      "status": "added"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/app.js",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/index.html",
+      "status": "modified"
+    },
+    {
+      "path": "90_p6_expert_dashboard/static/styles.css",
+      "status": "modified"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "status": "modified"
+    },
+    {
+      "path": "CAD图及其计划/奥森北园(字体放大)-改造建筑示意-Model(1).pdf",
+      "status": "added"
+    },
+    {
+      "path": "CAD图及其计划/奥森北园(字体放大)-改造建筑示意_t5.dwg",
+      "status": "added"
+    },
+    {
+      "path": "CAD图及其计划/奥森南园（字体放大）-改造建筑示意_t5.dwg",
+      "status": "added"
+    },
+    {
+      "path": "CAD图及其计划/奥森重点项目策划思路20260521.docx",
+      "status": "added"
+    },
+    {
+      "path": "CONTEXT.md",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "findings.md",
+      "status": "modified"
+    },
+    {
+      "path": "handoff_next_chat.md",
+      "status": "modified"
+    },
+    {
+      "path": "next_chat_prompt.md",
+      "status": "modified"
+    },
+    {
+      "path": "progress.md",
+      "status": "modified"
+    },
+    {
+      "path": "requirements.txt",
+      "status": "modified"
+    }
+  ],
+  "local_changed": [
+    "40_quality_evidence/verify_deepseek_api_report.json",
+    "40_quality_evidence/verify_pdf_tables_report.json",
+    "50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json",
+    "90_p6_expert_dashboard/app.py",
+    "90_p6_expert_dashboard/cache/amap_static_map.png",
+    "90_p6_expert_dashboard/cache/amap_static_map_status.json",
+    "90_p6_expert_dashboard/cache/expert_feedback.json",
+    "90_p6_expert_dashboard/cache/map_context.json",
+    "90_p6_expert_dashboard/cache/map_context_pois.json",
+    "90_p6_expert_dashboard/cache/uploaded_sources.json",
+    "90_p6_expert_dashboard/static/app.js",
+    "90_p6_expert_dashboard/static/index.html",
+    "90_p6_expert_dashboard/static/styles.css",
+    "findings.md",
+    "handoff_next_chat.md",
+    "next_chat_prompt.md",
+    "progress.md"
+  ],
+  "local_untracked_sample": [
+    "\"40_quality_evidence/AI/345/267/245/344/275/234/345/217/260_/346/200/273/350/247/210/350/247/206/350/247/211_/346/212/230/345/217/240/344/275/223/347/263/273_10/350/275/256/351/252/214/350/257/201/346/212/245/345/221/212_20260603.md\"",
+    "\"40_quality_evidence/AI/345/267/245/344/275/234/345/217/260_/346/212/245/345/221/212_/350/247/206/350/247/211/351/252/214/350/257/201/346/212/245/345/221/212_20260603.md\"",
+    "40_quality_evidence/ai_chat_report_generation_validation_20260603.json",
+    "40_quality_evidence/ai_latest_clean_no_fixed_node_20260603.png",
+    "40_quality_evidence/ai_project_mode_no_fixed_node_validation_20260603.json",
+    "40_quality_evidence/ai_prompt_logic_real_sources_20260603.json",
+    "40_quality_evidence/ai_prompt_logic_real_sources_after_20260603.json",
+    "40_quality_evidence/ai_workbench_autoload_output_final_20260603.png",
+    "40_quality_evidence/ai_workbench_clean_final_20260603.json",
+    "40_quality_evidence/ai_workbench_clean_final_20260603.png",
+    "40_quality_evidence/ai_workbench_final_human_view_20260603.png",
+    "40_quality_evidence/ai_workbench_output_box_after_20260603.json",
+    "40_quality_evidence/ai_workbench_output_box_after_20260603.png",
+    "40_quality_evidence/ai_workbench_output_box_human_use_20260603.json",
+    "40_quality_evidence/ai_workbench_output_box_human_use_20260603.png",
+    "40_quality_evidence/ai_workbench_output_box_humanized_20260603.json",
+    "40_quality_evidence/ai_workbench_output_box_humanized_20260603.png",
+    "40_quality_evidence/ai_workbench_ppt_style_notes_20260603.json",
+    "40_quality_evidence/ai_workbench_ratio_after_20260603.json",
+    "40_quality_evidence/ai_workbench_ratio_after_20260603.png",
+    "40_quality_evidence/ai_workbench_ratio_before_20260603.json",
+    "40_quality_evidence/ai_workbench_ratio_before_20260603.png",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/chatgpt.png",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/claude.png",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/doubao.png",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/perplexity.png",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/reference_sites_report.json",
+    "40_quality_evidence/ai_workbench_reference_sites_20260603/reference_sites_report.md",
+    "40_quality_evidence/ai_workbench_research_20_papers_20260603.json",
+    "40_quality_evidence/ai_workbench_research_20_papers_20260603.md",
+    "40_quality_evidence/business_report_view_final_20260603.png",
+    "40_quality_evidence/business_report_view_final_after_ai_fix_20260603.png",
+    "40_quality_evidence/doubao_live_reference_20260603.json",
+    "40_quality_evidence/doubao_live_reference_20260603.png",
+    "40_quality_evidence/final_ai_report_visual_clean_validation_20260603.json",
+    "40_quality_evidence/human_visual_ai_autoload_final_20260603.json",
+    "40_quality_evidence/human_visual_click_5round_validation_20260603.json",
+    "40_quality_evidence/map_view_final_human_check_20260603.png",
+    "40_quality_evidence/openalex_ai_workbench_papers_raw_20260603.json",
+    "40_quality_evidence/overview_collapse_baseline_20260603/overview_baseline.json",
+    "40_quality_evidence/overview_collapse_baseline_20260603/overview_baseline.png",
+    "40_quality_evidence/overview_collapse_baseline_20260603/overview_baseline_after_grid_fix.json",
+    "40_quality_evidence/overview_collapse_baseline_20260603/overview_baseline_after_grid_fix.png",
+    "40_quality_evidence/ppt_report_style_learning_20260603.json",
+    "40_quality_evidence/ppt_report_style_learning_20260603.md",
+    "40_quality_evidence/report_latest_clean_20260603.png",
+    "40_quality_evidence/selenium_ai_visual_10rounds_20260603.json",
+    "40_quality_evidence/selenium_ai_visual_10rounds_final_20260603.png",
+    "40_quality_evidence/selenium_ai_visual_10rounds_pass_20260603.json",
+    "40_quality_evidence/selenium_ai_visual_10rounds_pass_final_20260603.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_01.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_02.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_03.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_04.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_05.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_06.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_07.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_08.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_09.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/round_10.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_01.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_02.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_03.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_04.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_05.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_06.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_07.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_08.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_09.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/screens/round_10.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603/selenium_strict_10rounds_summary.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_01.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_02.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_03.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_04.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_05.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_06.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_07.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_08.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_09.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/round_10.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_01.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_02.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_03.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_04.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_05.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_06.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_07.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_08.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_09.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/screens/round_10.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v2/selenium_strict_10rounds_summary.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_01.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_02.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_03.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_04.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_05.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_06.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_07.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_08.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_09.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/round_10.json",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_01.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_02.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_03.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_04.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_05.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_06.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_07.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_08.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_09.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/screens/round_10.png",
+    "40_quality_evidence/selenium_strict_10rounds_20260603_v3/selenium_strict_10rounds_summary.json",
+    "40_quality_evidence/semantic_scholar_ai_workbench_papers_raw_20260603.json",
+    "80_delivery/ai_chat_reports/CHAT-20260603094810-0004.md",
+    "80_delivery/ai_chat_reports/CHAT-20260603114927-0004.md",
+    "80_delivery/ai_chat_reports/CHAT-20260603115010-0005.md",
+    "80_delivery/ai_chat_reports/CHAT-20260603115039-0007.md",
+    "80_delivery/ai_chat_reports/CHAT-20260603115614-0008.md",
+    "80_delivery/ai_chat_reports/CHAT-20260603115710-0009.md"
+  ]
+}

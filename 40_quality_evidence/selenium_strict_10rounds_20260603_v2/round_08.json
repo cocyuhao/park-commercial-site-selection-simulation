@@ -1,0 +1,24 @@
+{
+  "round": 8,
+  "action_count": 15,
+  "failures": [
+    "project_mode_not_restored:项目综合",
+    "report_generation_no_feedback:项目综合报告已生成，可查看/下载"
+  ],
+  "screenshot": "40_quality_evidence\\selenium_strict_10rounds_20260603_v2\\screens\\round_08.png",
+  "visible_text_issues": [],
+  "console_errors": [],
+  "human_visual_notes": [
+    "ai_workbench_opened",
+    "rail_toggle_ok",
+    "new_session=CHAT-20260603120313-0015",
+    "project_question_answered",
+    "node_mode=当前节点 N-001",
+    "long_input_height=160",
+    "report_view_opened",
+    "asset_drawer_open=True",
+    "overview_jump_triggered",
+    "collapsible_toggle_count=8"
+  ],
+  "current_url": "http://127.0.0.1:8000/#nodes"
+}

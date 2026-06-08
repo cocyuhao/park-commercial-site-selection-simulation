@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "simulation_validation_target.schema.json",
+  "title": "Simulation validation target draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "target_id",
+    "project_id",
+    "target_name",
+    "validation_level",
+    "metric_family",
+    "reference_data",
+    "candidate_output",
+    "acceptance_rule",
+    "status",
+    "source_refs",
+    "missing_inputs",
+    "review_notes",
+    "user_locked"
+  ],
+  "properties": {
+    "target_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_level": {
+      "type": "string",
+      "enum": [
+        "state_behavior_chain",
+        "route_access",
+        "choice_probability",
+        "time_series",
+        "macro_distribution",
+        "business_decision"
+      ]
+    },
+    "metric_family": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "state_behavior_consistency",
+          "llm_draft_consistency_review",
+          "manual_review",
+          "route_reachability",
+          "peak_shift",
+          "ssim",
+          "kl_divergence",
+          "dtw_r2",
+          "correlation",
+          "sarima_consistency",
+          "field_check"
+        ]
+      }
+    },
+    "reference_data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_status",
+        "description",
+        "required_fields"
+      ],
+      "properties": {
+        "data_status": {
+          "type": "string",
+          "enum": [
+            "available_checked",
+            "available_needs_review",
+            "missing",
+            "placeholder"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "required_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "candidate_output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "output_status",
+        "description"
+      ],
+      "properties": {
+        "output_status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "needs_review",
+            "not_run",
+            "blocked"
+          ]
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "acceptance_rule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_status",
+        "plain_language_rule",
+        "thresholds"
+      ],
+      "properties": {
+        "rule_status": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "needs_review",
+            "user_confirmed"
+          ]
+        },
+        "plain_language_rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "number",
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "needs_review",
+        "user_confirmed",
+        "blocked"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_locked": {
+      "type": "boolean"
+    }
+  }
+}

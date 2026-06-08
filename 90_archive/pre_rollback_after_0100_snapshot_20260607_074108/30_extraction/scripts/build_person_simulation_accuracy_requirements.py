@@ -1,0 +1,383 @@
+from __future__ import annotations
+
+import csv
+import json
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[2]
+OUT_DIR = ROOT / "40_quality_evidence"
+OUT_JSON = OUT_DIR / "person_simulation_accuracy_requirements_20260605.json"
+OUT_CSV = ROOT / "70_outputs" / "processed_tables" / "person_simulation_accuracy_requirements_20260605.csv"
+OUT_MD = OUT_DIR / "person_simulation_accuracy_requirements_20260605.md"
+
+PROCESSED = ROOT / "70_outputs" / "processed_tables"
+
+
+SOURCE_REGISTER = [
+    {
+        "source_id": "BOSS-ROTE",
+        "title": "ROTE / Modeling Others' Minds as Code",
+        "year": "2025",
+        "url": "https://arxiv.org/abs/2510.01272",
+        "use": "把游客行为写成可编辑、可复核的行为程序；DeepSeek 只能生成候选脚本。",
+        "local_evidence": "10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md",
+    },
+    {
+        "source_id": "BOSS-HUMANLM",
+        "title": "HumanLM latent state alignment",
+        "year": "2026",
+        "url": "https://humanlm.stanford.edu/",
+        "use": "先建潜在状态，再解释行为和需求；不把回复像真人当准确性标准。",
+        "local_evidence": "60_model/schemas/persona_state.schema.json",
+    },
+    {
+        "source_id": "BOSS-RL-LLM",
+        "title": "Real-world community oriented high-definition social simulation",
+        "year": "2025",
+        "url": "https://doi.org/10.1016/j.cities.2025.106468",
+        "use": "形成微观状态-行为一致性和宏观统计一致性双门禁。",
+        "local_evidence": "60_model/schemas/simulation_validation_target.schema.json",
+    },
+    {
+        "source_id": "MOD-AGENTSOCIETY",
+        "title": "AgentSociety: Large-Scale Simulation of LLM-Driven Generative Agents",
+        "year": "2025/2026",
+        "url": "https://arxiv.org/abs/2502.08691",
+        "use": "大规模 generative agent 需要真实环境和仿真引擎，不应把聊天当仿真。",
+        "local_evidence": "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+    },
+    {
+        "source_id": "MOD-CAMS",
+        "title": "CAMS: A CityGPT-Powered Agentic Framework for Urban Human Mobility Simulation",
+        "year": "2025",
+        "url": "https://arxiv.org/abs/2506.13599",
+        "use": "移动仿真要同时处理个体移动模式和群体分布约束，不能只靠 LLM 常识。",
+        "local_evidence": "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
+    },
+    {
+        "source_id": "MOD-MOBIVERSE",
+        "title": "MobiVerse: Hybrid Lightweight Domain-Specific Generator and Large Language Models",
+        "year": "2025",
+        "url": "https://arxiv.org/abs/2506.21784",
+        "use": "本项目主线采用轻量领域生成器/本地仿真为主，LLM 做上下文修正和解释。",
+        "local_evidence": "60_model/simulation/persona_behavior.py",
+    },
+    {
+        "source_id": "MOD-GATSIM",
+        "title": "GATSim: Urban Mobility Simulation with Generative Agents",
+        "year": "2025/2026",
+        "url": "https://arxiv.org/abs/2506.23306",
+        "use": "生成式移动 agent 需要认知结构、记忆、规划和交通/空间环境耦合。",
+        "local_evidence": "10_research/advanced_ai_learning_absorption_register_20260604.md",
+    },
+    {
+        "source_id": "RISK-LLM-ABM",
+        "title": "Critical review of generative ABM and LLM simulated subjects",
+        "year": "2024/2025",
+        "url": "https://arxiv.org/abs/2504.03274",
+        "use": "防止把 believability、流畅解释或相关性当成 operational validity。",
+        "local_evidence": "10_research/boss_method_materials_20260604/external_paper_screening_20260604.md",
+    },
+    {
+        "source_id": "CTRL-CODEX-PRIMARY",
+        "title": "Development-time Codex governance and production DeepSeek-only boundary",
+        "year": "2026",
+        "url": "AGENTS.md#十一、高能力主-agent--Codex-专属职责",
+        "use": "Codex 只在开发期负责方法设计、约束、复核、门禁和最终判断；最终市场化网站内置 AI 只能使用 DeepSeek。",
+        "local_evidence": "AGENTS.md",
+    },
+]
+
+
+REQUIREMENT_TEMPLATES = [
+    {
+        "requirement_id": "ACC-001",
+        "layer": "人群状态",
+        "requirement": "每个人群必须从浅标签升级为潜在状态画像。",
+        "why_it_improves_accuracy": "目的、时间压力、疲劳、同行、预算和绕行容忍会直接改变路线、停留、消费和放弃行为。",
+        "landed_as": "persona_state.schema.json; p2_persona_state_profiles_20260604.csv; P6 对象池 persona_state",
+        "method_basis": "BOSS-HUMANLM; MOD-GATSIM",
+        "deepseek_allowed": "把资料和用户自然语言整理成 persona_state 草稿。",
+        "deepseek_forbidden": "不得决定最终人群分布、不得把缺失的真实比例补成事实。",
+        "user_control": "用户可新增、编辑、采用、放弃、删除、锁定人群状态。",
+        "data_needed": "真实人群构成、时段客流、现场观察、访谈或运营记录。",
+        "validation_method": "schema 校验 + 状态-行为一致性复核 + 真实资料回放。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "在仿真任务入口让用户选择 persona_state 组合和权重。",
+    },
+    {
+        "requirement_id": "ACC-002",
+        "layer": "行为程序",
+        "requirement": "行为必须以可编辑行为程序表达，而不是每次由 LLM 临场编故事。",
+        "why_it_improves_accuracy": "触发条件、动作、失败条件和外溢条件可复核，才有机会被真实轨迹和业务反馈校准。",
+        "landed_as": "behavior_program.schema.json; p2_behavior_program_templates_20260604.csv; P6 对象池 behavior_program",
+        "method_basis": "BOSS-ROTE; MOD-MOBIVERSE",
+        "deepseek_allowed": "生成候选行为程序、解释触发和失败条件。",
+        "deepseek_forbidden": "不得逐游客实时调用、不得直接输出最终路线或购买动作。",
+        "user_control": "用户可编辑触发、动作、放弃、外溢、来源和待复核项。",
+        "data_needed": "路径观察、停留时间、排队、天气、活动和真实服务使用记录。",
+        "validation_method": "行为程序 schema 校验 + 微观状态-行为链检查。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "新增仿真预检：未选择行为程序时不允许宣称完成仿真。",
+    },
+    {
+        "requirement_id": "ACC-003",
+        "layer": "活动链与路线",
+        "requirement": "路线仿真必须由活动链、入口、路径、距离、容量和可达约束驱动。",
+        "why_it_improves_accuracy": "公园消费不是点到点移动；绕行、排队、座位、照明和营业时间会改变是否停留和是否消费。",
+        "landed_as": "simulation_validation_target route_access; engine.py blocked gates",
+        "method_basis": "MOD-CAMS; MOD-GATSIM; BOSS-RL-LLM",
+        "deepseek_allowed": "解释路线选择的业务原因和缺失资料。",
+        "deepseek_forbidden": "不得凭常识生成最终路线距离、拥挤或可达结论。",
+        "user_control": "用户可维护空间节点、供给设施、营业时间、路径缺口和授权状态。",
+        "data_needed": "DWG/DXF/GeoJSON、入口/路径网络、节点容量、座椅/排队/照明/授权。",
+        "validation_method": "route_reachability + field_check + blocked gate。",
+        "implementation_status": "gated_design",
+        "next_engineering_action": "把 spatial_node/supply_facility 纳入同一对象池并接仿真预检。",
+    },
+    {
+        "requirement_id": "ACC-004",
+        "layer": "选择概率",
+        "requirement": "选择概率由状态、行为、空间成本、价格、排队、供给和证据置信度共同决定。",
+        "why_it_improves_accuracy": "只看 POI/TGI 或节点分数会忽略人为什么买、为什么不买、为什么换地方。",
+        "landed_as": "choice_probability.schema.json; choice_probability_from_p2_p4_20260604.csv",
+        "method_basis": "BOSS-HUMANLM; MOD-MOBIVERSE; RISK-LLM-ABM",
+        "deepseek_allowed": "生成概率因素说明和待补数据清单。",
+        "deepseek_forbidden": "不得输出 final probability、ROI 或最终排名。",
+        "user_control": "用户可采用/放弃/锁定选择概率候选和因子。",
+        "data_needed": "转化率、客单价、距离、排队、价格带、竞品、营业时间、供给承接能力。",
+        "validation_method": "因子完整性校验 + 敏感性分析 + 真实转化数据回放。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "建立 choice adapter，把 POI/TGI 降级为可开关辅助因子。",
+    },
+    {
+        "requirement_id": "ACC-005",
+        "layer": "供需与运营动作",
+        "requirement": "输出重点应是运营动作和补证动作，不是裸分或伪精确排名。",
+        "why_it_improves_accuracy": "业务人员需要知道该补什么数据、做什么试点、什么时候营业/补货/关闭，而不是只看分数。",
+        "landed_as": "node_explanation; discussion_score_draft 折叠；推进优先级文案",
+        "method_basis": "BOSS-ROTE; RISK-LLM-ABM",
+        "deepseek_allowed": "把本地结果写成业务建议草稿。",
+        "deepseek_forbidden": "不得把建议写成已验证结论，不得使用后端/debug 口吻。",
+        "user_control": "用户可采用、放弃、复核、生成报告或继续追问。",
+        "data_needed": "设施容量、补货/维护、营业时间、租金分成、授权、真实需求强度。",
+        "validation_method": "报告结构检查 + 用户可见文案禁词扫描 + 真实资料引用检查。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "把运营动作绑定到状态/行为/概率对象，不让报告孤立生成。",
+    },
+    {
+        "requirement_id": "ACC-006",
+        "layer": "宏观校准",
+        "requirement": "完整仿真前必须定义客流、热力、分布、时间序列和业务决策的验证目标。",
+        "why_it_improves_accuracy": "没有真实校准，模型只能是方法原型；真实准确性要看曲线、分布和行为链是否对齐。",
+        "landed_as": "simulation_validation_target.schema.json; p2_simulation_validation_targets_20260604.csv",
+        "method_basis": "BOSS-RL-LLM; MOD-AGENTSOCIETY",
+        "deepseek_allowed": "整理验证目标草稿和缺失数据说明。",
+        "deepseek_forbidden": "不得把 Selenium、截图或 AI 解释当仿真准确性验证。",
+        "user_control": "用户可新增、采用、放弃、锁定验证目标和真实数据来源。",
+        "data_needed": "按入口/节点/时段客流、停留时长、转化率、交易、现场观察、活动日记录。",
+        "validation_method": "SSIM/KL/DTW/correlation/field_check；当前缺数据时只可标 blocked/needs_review。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "新增验证目标预检面板，阻止未闭合数据时宣称完整仿真。",
+    },
+    {
+        "requirement_id": "ACC-007",
+        "layer": "DeepSeek 调用",
+        "requirement": "DeepSeek 是受限语义工人：批量、缓存、schema、队列、退避、可观测。",
+        "why_it_improves_accuracy": "便宜模型可扩大候选生成，但不稳定输出必须被本地校验和人工复核约束。",
+        "landed_as": "deepseek_task_contract.schema.json; llm_router.py; deepseek_api_concurrency_capacity_20260605.md",
+        "method_basis": "MOD-MOBIVERSE; RISK-LLM-ABM",
+        "deepseek_allowed": "摘要、草拟、解释、补缺口、报告润色。",
+        "deepseek_forbidden": "逐游客实时调用、最终排名、最终收益、checked 证据、覆盖用户锁定对象。",
+        "user_control": "用户可看到 AI 草稿状态并决定采用/放弃/锁定。",
+        "data_needed": "任务输入对象、缓存键、429/timeout 日志、输出状态和复核结果。",
+        "validation_method": "JSON schema + contract validator + OpenTelemetry span + 429/timeout 结构化记录。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "补 DeepSeek 队列、缓存、退避和任务级 trace。",
+    },
+    {
+        "requirement_id": "ACC-008",
+        "layer": "用户监督",
+        "requirement": "所有关键对象必须支持采用、放弃、删除、编辑、锁定和复核记录。",
+        "why_it_improves_accuracy": "用户纠错是系统可信度的一部分；AI 或同事产物不能覆盖本地严谨判断。",
+        "landed_as": "person_simulation_control.schema.json; P6 对象池 action controls",
+        "method_basis": "MOD-AGENTSOCIETY; MOD-GATSIM; RISK-LLM-ABM",
+        "deepseek_allowed": "解释用户改动的影响和提醒缺口。",
+        "deepseek_forbidden": "不得自动删除、自动确认、自动覆盖锁定对象。",
+        "user_control": "用户拥有对象生命周期控制权。",
+        "data_needed": "对象状态、锁定状态、采用状态、来源引用、变更记录。",
+        "validation_method": "API/Browser/Playwright/Selenium 动作后果验证。",
+        "implementation_status": "partial_landed",
+        "next_engineering_action": "把资料、persona、behavior、choice、validation 的关联关系显示出来。",
+    },
+    {
+        "requirement_id": "ACC-009",
+        "layer": "高能力主控",
+        "requirement": "Codex / 高能力主 agent 只负责开发期方法吸收、系统约束、验证门禁和最终复核；最终网站不得内置 Codex，生产 AI 只能使用 DeepSeek。",
+        "why_it_improves_accuracy": "DeepSeek 适合市场化产品内低成本批量语义工作，但其约束、schema、反例检查、模型边界和真实数据门禁必须在开发期由高能力主 agent 做扎实。",
+        "landed_as": "AGENTS.md high-capability duties; verify_project_implementation.py; person_simulation_accuracy_requirements_20260605",
+        "method_basis": "CTRL-CODEX-PRIMARY; BOSS-RL-LLM; RISK-LLM-ABM",
+        "deepseek_allowed": "在最终网站中承担唯一内置 AI：摘要、草拟、解释、补缺口、报告润色。",
+        "deepseek_forbidden": "不得替代开发期 Codex 的架构判断、方法筛选、门禁设计、最终复核和用户约束设计；不得在生产端声称 Codex 能力。",
+        "user_control": "用户可在开发期要求 Codex 放手做主线研究、设计和验证；最终网页端 DeepSeek 输出仍由用户采用/放弃/锁定。",
+        "data_needed": "老板资料、论文来源、本地对象、门禁结果、浏览器验证和用户纠偏记录。",
+        "validation_method": "DEC 记录 + 准确性矩阵 + 总门禁 + 交接文件共同约束新对话；生产代码不得出现 Codex 内置 AI 配置。",
+        "implementation_status": "covered_as_governance",
+        "next_engineering_action": "后续 DeepSeek 队列/网页接入时同步保留开发期 Codex 复核脚本和高风险禁用边界，但不要把 Codex 接入最终网站。",
+    },
+]
+
+
+def read_csv_rows(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig", newline="") as f:
+        return list(csv.DictReader(f))
+
+
+def count_rows(path: Path) -> int:
+    return len(read_csv_rows(path))
+
+
+def artifact(path_rel: str) -> dict[str, Any]:
+    path = ROOT / path_rel
+    return {
+        "path": path_rel,
+        "exists": path.exists(),
+        "bytes": path.stat().st_size if path.exists() else 0,
+    }
+
+
+def build_payload() -> dict[str, Any]:
+    artifacts = [
+        artifact("10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md"),
+        artifact("10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md"),
+        artifact("10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md"),
+        artifact("10_research/person_simulation_accuracy_knowledge_base_20260604.md"),
+        artifact("30_extraction/scripts/build_person_simulation_feature_derivatives.py"),
+        artifact("30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py"),
+        artifact("70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv"),
+        artifact("40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json"),
+        artifact("40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md"),
+        artifact("60_model/schemas/persona_state.schema.json"),
+        artifact("60_model/schemas/behavior_program.schema.json"),
+        artifact("60_model/schemas/choice_probability.schema.json"),
+        artifact("60_model/schemas/simulation_validation_target.schema.json"),
+        artifact("60_model/schemas/deepseek_task_contract.schema.json"),
+        artifact("40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json"),
+    ]
+    counts = {
+        "persona_state_profiles": count_rows(PROCESSED / "p2_persona_state_profiles_20260604.csv"),
+        "behavior_program_templates": count_rows(PROCESSED / "p2_behavior_program_templates_20260604.csv"),
+        "choice_probability_rows": count_rows(PROCESSED / "choice_probability_from_p2_p4_20260604.csv"),
+        "validation_targets": count_rows(PROCESSED / "p2_simulation_validation_targets_20260604.csv"),
+        "feature_derivatives": count_rows(PROCESSED / "person_simulation_feature_derivatives_1000_20260604.csv"),
+    }
+    return {
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "purpose": "Turn boss materials and recent literature into concrete constraints for improving person simulation accuracy.",
+        "status": "needs_review",
+        "counts": counts,
+        "source_register": SOURCE_REGISTER,
+        "requirements": REQUIREMENT_TEMPLATES,
+        "artifacts_checked": artifacts,
+        "completion_boundary": "This matrix is an implementation gate, not a claim that full simulation is complete. Formal accuracy still requires P3 real data closure.",
+    }
+
+
+def write_csv(payload: dict[str, Any]) -> None:
+    OUT_CSV.parent.mkdir(parents=True, exist_ok=True)
+    fieldnames = list(REQUIREMENT_TEMPLATES[0].keys())
+    with OUT_CSV.open("w", encoding="utf-8-sig", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(payload["requirements"])
+
+
+def write_markdown(payload: dict[str, Any]) -> None:
+    lines = [
+        "# 人物仿真准确性约束矩阵（2026-06-05）",
+        "",
+        f"- 生成时间：{payload['generated_at']}",
+        "- 状态：needs_review",
+        "- 用途：把老板六份资料、近期论文和当前工程对象转成可检查要求，防止“学了但不用”。",
+        "",
+        "## 当前对象基础",
+        "",
+    ]
+    for key, value in payload["counts"].items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(
+        [
+            "",
+            "## 方法来源与采用方式",
+            "",
+            "| ID | 年份 | 来源 | 本项目采用方式 | 链接 |",
+            "|---|---:|---|---|---|",
+        ]
+    )
+    for source in payload["source_register"]:
+        lines.append(
+            f"| {source['source_id']} | {source['year']} | {source['title']} | {source['use']} | {source['url']} |"
+        )
+    lines.extend(["", "## 准确性要求", ""])
+    for row in payload["requirements"]:
+        lines.extend(
+            [
+                f"### {row['requirement_id']} {row['layer']}",
+                "",
+                f"- 要求：{row['requirement']}",
+                f"- 为什么提高准确性：{row['why_it_improves_accuracy']}",
+                f"- 当前工程落点：{row['landed_as']}",
+                f"- 方法依据：{row['method_basis']}",
+                f"- DeepSeek 允许：{row['deepseek_allowed']}",
+                f"- DeepSeek 禁止：{row['deepseek_forbidden']}",
+                f"- 用户控制：{row['user_control']}",
+                f"- 仍需数据：{row['data_needed']}",
+                f"- 验证方式：{row['validation_method']}",
+                f"- 状态：{row['implementation_status']}",
+                f"- 下一步工程动作：{row['next_engineering_action']}",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## 产物完整性检查",
+            "",
+            "| 文件 | 存在 | 字节 |",
+            "|---|---:|---:|",
+        ]
+    )
+    for item in payload["artifacts_checked"]:
+        lines.append(f"| `{item['path']}` | {item['exists']} | {item['bytes']} |")
+    lines.extend(
+        [
+            "",
+            "## 边界",
+            "",
+            payload["completion_boundary"],
+        ]
+    )
+    OUT_MD.write_text("\n".join(lines), encoding="utf-8")
+
+
+def main() -> None:
+    payload = build_payload()
+    OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OUT_JSON.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_csv(payload)
+    write_markdown(payload)
+    print(f"wrote {OUT_JSON.relative_to(ROOT)}")
+    print(f"wrote {OUT_CSV.relative_to(ROOT)}")
+    print(f"wrote {OUT_MD.relative_to(ROOT)}")
+    print(
+        "requirements="
+        f"{len(payload['requirements'])} feature_derivatives={payload['counts']['feature_derivatives']}"
+    )
+
+
+if __name__ == "__main__":
+    main()

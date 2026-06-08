@@ -1,0 +1,22 @@
+﻿check_id,status,severity,finding,evidence
+P2-READY-REVIEW-001,pass,error,output_status=needs_review,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-002,pass,error,executor=deepseek,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-003,pass,error,llm_task_id=LLM-019,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-004,pass,error,P2 method prototype can close,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-005,pass,error,full simulation is not claimed,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-006,pass,error,docx_studied=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-007,pass,error,pdf_studied=True,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-008,pass,error,dwg_geometry_parsed=False,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-009,pass,error,"prototype_ready_items rows=8, expected=8",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-010,pass,error,"blocking_gaps_for_real_calibration rows=8, expected=8",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-011,pass,error,"recommended_p2_outputs rows=6, expected=6",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-012,pass,error,"handoff_risks rows=5, expected=5",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-013,pass,error,audit csv rows=27,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit_checks.csv
+P2-READY-REVIEW-014,pass,error,"blocking gap csv rows={'prototype_ready_items': 8, 'blocking_gaps_for_real_calibration': 8, 'recommended_p2_outputs': 6, 'handoff_risks': 5}",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit_checks.csv
+P2-READY-REVIEW-015,pass,error,keyword covered: DWG,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-016,pass,error,keyword covered: PPT,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-017,pass,error,keyword covered: 客流,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-018,pass,error,keyword covered: 转化率,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-019,pass,error,keyword covered: 收益,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-020,pass,error,keyword covered: 成本,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json
+P2-READY-REVIEW-021,pass,error,keyword covered: 运营授权,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\deepseek_p2_completion_readiness_audit.json

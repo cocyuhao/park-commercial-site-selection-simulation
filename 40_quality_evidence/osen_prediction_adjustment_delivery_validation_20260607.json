@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "files": {
+    "docx": "C:\\Users\\Yy199\\Desktop\\仿真设计\\80_delivery\\osen_prediction_adjustment_report_20260607.docx",
+    "docx_bytes": 44262,
+    "static_docx": "C:\\Users\\Yy199\\Desktop\\仿真设计\\90_p6_expert_dashboard\\static\\osen_prediction_adjustment_report_20260607.docx",
+    "static_docx_bytes": 44262,
+    "html": "C:\\Users\\Yy199\\Desktop\\仿真设计\\90_p6_expert_dashboard\\static\\osen_prediction_adjustment_report_20260607.html",
+    "html_bytes": 19038
+  },
+  "docx_text_chars": 5733,
+  "paragraph_count": 161,
+  "generated_time_paragraph_count": 1,
+  "required_checks": {
+    "奥森商业改造预测与调整方案报告": true,
+    "109530": true,
+    "4847": true,
+    "286TGI指数": true,
+    "332TGI指数": true,
+    "382TGI指数": true,
+    "桃花源白房子": true,
+    "南门地下预埋空间": true,
+    "南门露天剧场": true,
+    "预测与调整": true,
+    "试运营": true,
+    "状态与动机": true,
+    "当前动作线索": true,
+    "下载 DOCX 报告": true,
+    "查看依据链": true
+  },
+  "banned_counts": {
+    "同事": 0,
+    "请补资料": 0,
+    "补资料": 0,
+    "还缺什么资料": 0,
+    "不能宣称": 0,
+    "不能声明": 0,
+    "external_preview_only": 0,
+    "ConnectError": 0,
+    "traceback": 0,
+    "debug": 0,
+    "payload": 0,
+    "smoke test": 0
+  },
+  "missing": [],
+  "banned_nonzero": {}
+}

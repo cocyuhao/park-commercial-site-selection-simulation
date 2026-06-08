@@ -1,0 +1,229 @@
+[
+  [
+    [
+      "Approach",
+      "Agent Scale",
+      "Environment",
+      "Algorithm",
+      "Validation Method"
+    ],
+    [
+      "AI Town (Stanford)",
+      "25",
+      "Pixel-based 2D",
+      "Pure LLM",
+      "Qualitative observation"
+    ],
+    [
+      "Lyfe Agents",
+      "9",
+      "3D game engine",
+      "Pure LLM",
+      "Expert evaluation"
+    ],
+    [
+      "GenSim",
+      "1000+",
+      "Web interface",
+      "Pure LLM",
+      "Limited metrics"
+    ],
+    [
+      "AI Economist",
+      "10",
+      "2D grid world",
+      "Pure RL",
+      "Economic indicators"
+    ],
+    [
+      "Our Framework",
+      "3000",
+      "Photorealistic 3D",
+      "RL + LLM hybrid",
+      "Multi-level real data"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Time Series Validation"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "Four Levels Similarity Validation"
+    ]
+  ],
+  [
+    [
+      "Survey data",
+      "",
+      "",
+      "National census data in 2021",
+      ""
+    ],
+    [
+      "Gender",
+      "",
+      "",
+      "Career",
+      ""
+    ],
+    [
+      "Male",
+      "51.17 %",
+      "",
+      "Agriculture",
+      "0.47 %"
+    ],
+    [
+      "Female",
+      "48.83 %",
+      "",
+      "Mining",
+      "2.04 %"
+    ],
+    [
+      "",
+      "",
+      "",
+      "Manufacture",
+      "22.40 %"
+    ]
+  ],
+  [
+    [
+      "Single",
+      "27.28 %",
+      "Transportation",
+      "4.65 %"
+    ],
+    [
+      "",
+      "",
+      "Food and Accommodation",
+      "1.53 %"
+    ],
+    [
+      "Age",
+      "",
+      "Information Technology",
+      "3.17 %"
+    ],
+    [
+      "0–17",
+      "21.11 %",
+      "Finance",
+      "4.43 %"
+    ],
+    [
+      "18–24",
+      "7.34 %",
+      "Real Estate",
+      "3.07 %"
+    ],
+    [
+      "25–30",
+      "8.36 %",
+      "Rental Service",
+      "4.42 %"
+    ],
+    [
+      "31–35",
+      "8.36 %",
+      "Scientific Research",
+      "2.73 %"
+    ],
+    [
+      "36–40",
+      "6.87 %",
+      "Public Service Management",
+      "1.52 %"
+    ],
+    [
+      "41–45",
+      "6.79 %",
+      "Resident Service",
+      "0.54 %"
+    ],
+    [
+      "46–60",
+      "23.36 %",
+      "Education",
+      "11.69 %"
+    ],
+    [
+      ">61",
+      "17.81 %",
+      "Health Industry",
+      "6.68 %"
+    ],
+    [
+      "",
+      "",
+      "Entertainment",
+      "0.88 %"
+    ],
+    [
+      "Educational level",
+      "",
+      "Social Benefits",
+      "11.82 %"
+    ]
+  ],
+  [
+    [
+      "Primary school",
+      "12.78 %"
+    ],
+    [
+      "Middle school",
+      "17.80 %"
+    ],
+    [
+      "High school",
+      "7.75 %"
+    ],
+    [
+      "Community college",
+      "4.10 %"
+    ],
+    [
+      "Bachelor degree",
+      "3.44 %"
+    ],
+    [
+      "Master degree",
+      "0.35 %"
+    ]
+  ],
+  [
+    [
+      "Model",
+      "Avg difference"
+    ],
+    [
+      "llama3.1_8b_chinese_chat_q4_k_m",
+      "28.15"
+    ],
+    [
+      "qwen1_5-7b-chat-q8_0",
+      "62.70"
+    ],
+    [
+      "Yi-1.5-9B-Chat.Q8_0",
+      "31.22"
+    ],
+    [
+      "Mistral-7B-v0.3-Chinese-Chat-f16",
+      "34.35"
+    ],
+    [
+      "Fine-tuned llama3.1_8b_chinese_chat_q4_k_m",
+      "11.35"
+    ]
+  ]
+]

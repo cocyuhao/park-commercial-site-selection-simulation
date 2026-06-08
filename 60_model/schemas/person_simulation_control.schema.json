@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "person_simulation_control.schema.json",
+  "title": "User-editable person simulation control object",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "control_id",
+    "project_id",
+    "object_type",
+    "display_name",
+    "status",
+    "user_locked",
+    "adoption_state",
+    "source_refs",
+    "editable_fields",
+    "review_notes"
+  ],
+  "properties": {
+    "control_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_type": {
+      "type": "string",
+      "enum": [
+        "source_material",
+        "persona_state",
+        "behavior_program",
+        "choice_probability",
+        "time_scenario",
+        "spatial_node",
+        "supply_facility",
+        "calibration_target",
+        "simulation_validation_target",
+        "operation_plan"
+      ]
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "needs_review",
+        "user_confirmed",
+        "discarded",
+        "blocked"
+      ]
+    },
+    "user_locked": {
+      "type": "boolean"
+    },
+    "adoption_state": {
+      "type": "string",
+      "enum": [
+        "adopted",
+        "not_adopted",
+        "candidate",
+        "discarded"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "editable_fields": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deepseek_allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "summarize",
+          "draft",
+          "explain",
+          "suggest_missing_inputs",
+          "polish_report"
+        ]
+      }
+    },
+    "review_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "url": "http://127.0.0.1:8078/?_v=20260607feature#data:simulationTaskPreflight",
+  "upload_visible": true,
+  "preflight_visible": true,
+  "console_error_count": 0,
+  "console_errors": [],
+  "screenshots": [
+    "40_quality_evidence/person_feature_pool_upload_visible_20260607.png",
+    "40_quality_evidence/person_feature_pool_preflight_visible_20260607.png"
+  ]
+}

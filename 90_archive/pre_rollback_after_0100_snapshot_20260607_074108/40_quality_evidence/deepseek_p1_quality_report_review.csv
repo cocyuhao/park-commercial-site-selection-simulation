@@ -1,0 +1,14 @@
+﻿check_id,status,severity,finding,evidence
+P1-QUALITY-REVIEW-001,pass,error,"draft exists=True, chars=2095",C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p1_quality_report_draft_deepseek.md
+P1-QUALITY-REVIEW-002,pass,error,missing headings=[],headings
+P1-QUALITY-REVIEW-003,pass,error,draft states P1/not P2/needs_review,current phase statement
+P1-QUALITY-REVIEW-004,pass,error,draft keeps null fields as empty or pending review without further chase,null-field policy
+P1-QUALITY-REVIEW-005,pass,error,evidence total line expected=260,key numbers
+P1-QUALITY-REVIEW-006,pass,error,checked evidence line expected=245,key numbers
+P1-QUALITY-REVIEW-007,pass,error,presentation assumption line expected=15,key numbers
+P1-QUALITY-REVIEW-008,pass,error,business fill line expected=7,key numbers
+P1-QUALITY-REVIEW-009,pass,error,enriched worklist line expected=7,key numbers
+P1-QUALITY-REVIEW-010,pass,error,field checklist line expected=34,key numbers
+P1-QUALITY-REVIEW-011,pass,error,"verification line expected total=338, failures=0, warnings=0",key numbers
+P1-QUALITY-REVIEW-012,pass,error,unexpected final claims=[],draft text
+P1-QUALITY-REVIEW-013,pass,info,draft length=2095,C:\Users\Yy199\Desktop\仿真设计\40_quality_evidence\p1_quality_report_draft_deepseek.md

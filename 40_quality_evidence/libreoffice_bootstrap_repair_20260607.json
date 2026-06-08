@@ -1,0 +1,9 @@
+{
+  "status": "fixed",
+  "diagnosis": "Default LibreOffice profile failed before reset, while a fresh UserInstallation profile converted DOCX to PDF successfully. The program bootstrap.ini file exists, is 112 bytes, and was not modified.",
+  "bootstrap_ini": "C:/Program Files/LibreOffice/program/bootstrap.ini",
+  "bootstrap_sha256": "9BC1FFA0360ADACAD9666D1B9D5BE2B09E3F9FF1EB851A05F168393819CBABE0",
+  "action": "Backed up %APPDATA%/LibreOffice/4 and let LibreOffice generate a clean profile.",
+  "backup_pattern": "%APPDATA%/LibreOffice/4_backup_codex_bootstrap_repair_20260607_081444",
+  "post_check": "soffice.com --headless --terminate_after_init exited 0; DOCX to PDF conversion exited 0."
+}

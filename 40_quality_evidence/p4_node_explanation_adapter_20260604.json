@@ -1,0 +1,8 @@
+{
+  "adapter": "adapt_p4_node_explanations.py",
+  "status": "needs_review",
+  "item_count": 6,
+  "envelope_path": "60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json",
+  "csv_path": "70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv",
+  "boundary": "Old P4 scores are downgraded to hidden helper metadata; node UI/report should use priority, advice, evidence gaps, and review actions."
+}

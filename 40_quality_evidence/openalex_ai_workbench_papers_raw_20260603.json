@@ -1,0 +1,1179 @@
+[
+  {
+    "title": "DARPA's Explainable Artificial Intelligence Program",
+    "year": 2019,
+    "cited_by_count": 1191,
+    "doi": "https://doi.org/10.1609/aimag.v40i2.2850",
+    "openalex": "https://openalex.org/W2954503794",
+    "url": "https://doi.org/10.1609/aimag.v40i2.2850",
+    "venue": "AI Magazine",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Task (project management)",
+      "Artificial intelligence",
+      "Knowledge management",
+      "Management science",
+      "Engineering",
+      "Systems engineering"
+    ],
+    "authors": [
+      "David Gunning",
+      "David W. Aha"
+    ],
+    "abstract": "Dramatic success in machine learning has led to a new wave of AI applications (for example, transportation, security, medicine, finance, defense) that offer tremendous benefits but cannot explain their decisions and actions to human users. DARPA's explainable artificial intelligence (XAI) program endeavors to create AI systems whose learned models and decisions can be understood and appropriately trusted by end users. Realizing this goal requires methods for learning more explainable models, designing effective explanation interfaces, and understanding the psychologic requirements for effective explanations. The XAI developer teams are addressing the first two challenges by creating ML techniques and developing principles, strategies, and human‐computer interaction techniques for generating effective explanations. Another XAI team is addressing the third challenge by summarizing, extending, and applying psychologic theories of explanation to help the XAI evaluator define a suitable evaluation framework, which the developer teams will use to test their systems. The XAI teams completed the first of this 4‐year program in May 2018. In a series of ongoing evaluations, the developer tea"
+  },
+  {
+    "title": "Artificial Intelligence in Education: A Review",
+    "year": 2020,
+    "cited_by_count": 3398,
+    "doi": "https://doi.org/10.1109/access.2020.2988510",
+    "openalex": "https://openalex.org/W3017131514",
+    "url": "https://doi.org/10.1109/access.2020.2988510",
+    "venue": "IEEE Access",
+    "type": "review",
+    "concepts": [
+      "Computer science",
+      "Adaptability",
+      "Personalized learning",
+      "Artificial intelligence",
+      "Curriculum",
+      "Knowledge management",
+      "Multimedia",
+      "Teaching method"
+    ],
+    "authors": [
+      "Lijia Chen",
+      "Pingping Chen",
+      "Zhijian Lin"
+    ],
+    "abstract": "The purpose of this study was to assess the impact of Artificial Intelligence (AI) on education. Premised on a narrative and framework for assessing AI identified from a preliminary analysis, the scope of the study was limited to the application and effects of AI in administration, instruction, and learning. A qualitative research approach, leveraging the use of literature review as a research design and approach was used and effectively facilitated the realization of the study purpose. Artificial intelligence is a field of study and the resulting innovations and developments that have culminated in computers, machines, and other artifacts having human-like intelligence characterized by cognitive abilities, learning, adaptability, and decision-making capabilities. The study ascertained that AI has extensively been adopted and used in education, particularly by education institutions, in different forms. AI initially took the form of computer and computer related technologies, transitioning to web-based and online intelligent education systems, and ultimately with the use of embedded computer systems, together with other technologies, the use of humanoid robots and web-based chatbot"
+  },
+  {
+    "title": "Machine learning and deep learning",
+    "year": 2021,
+    "cited_by_count": 2444,
+    "doi": "https://doi.org/10.1007/s12525-021-00475-2",
+    "openalex": "https://openalex.org/W3153990350",
+    "url": "https://doi.org/10.1007/s12525-021-00475-2",
+    "venue": "Electronic Markets",
+    "type": "article",
+    "concepts": [
+      "Artificial intelligence",
+      "Machine learning",
+      "Deep learning",
+      "Computer science",
+      "Field (mathematics)",
+      "Process (computing)",
+      "Underpinning",
+      "Artificial neural network"
+    ],
+    "authors": [
+      "Christian Janiesch",
+      "Patrick Zschech",
+      "Kai Heinrich"
+    ],
+    "abstract": "Abstract Today, intelligent systems that offer artificial intelligence capabilities often rely on machine learning. Machine learning describes the capacity of systems to learn from problem-specific training data to automate the process of analytical model building and solve associated tasks. Deep learning is a machine learning concept based on artificial neural networks. For many applications, deep learning models outperform shallow machine learning models and traditional data analysis approaches. In this article, we summarize the fundamentals of machine learning and deep learning to generate a broader understanding of the methodical underpinning of current intelligent systems. In particular, we provide a conceptual distinction between relevant terms and concepts, explain the process of automated analytical model building through machine learning and deep learning, and discuss the challenges that arise when implementing such intelligent systems in the field of electronic markets and networked business. These naturally go beyond technological aspects and highlight issues in human-machine interaction and artificial intelligence servitization."
+  },
+  {
+    "title": "Internet of Things: A Survey on Enabling Technologies, Protocols, and Applications",
+    "year": 2015,
+    "cited_by_count": 8275,
+    "doi": "https://doi.org/10.1109/comst.2015.2444095",
+    "openalex": "https://openalex.org/W2134295053",
+    "url": "https://doi.org/10.1109/comst.2015.2444095",
+    "venue": "IEEE Communications Surveys & Tutorials",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Cloud computing",
+      "Internet of Things",
+      "Big data",
+      "Field (mathematics)",
+      "Bridge (graph theory)",
+      "Analytics",
+      "Emerging technologies"
+    ],
+    "authors": [
+      "Ala Al‐Fuqaha",
+      "Mohsen Guizani",
+      "Mehdi Mohammadi",
+      "Mohammed Aledhari",
+      "Moussa Ayyash"
+    ],
+    "abstract": "This paper provides an overview of the Internet of Things (IoT) with emphasis on enabling technologies, protocols, and application issues. The IoT is enabled by the latest developments in RFID, smart sensors, communication technologies, and Internet protocols. The basic premise is to have smart sensors collaborate directly without human involvement to deliver a new class of applications. The current revolution in Internet, mobile, and machine-to-machine (M2M) technologies can be seen as the first phase of the IoT. In the coming years, the IoT is expected to bridge diverse technologies to enable new applications by connecting physical objects together in support of intelligent decision making. This paper starts by providing a horizontal overview of the IoT. Then, we give an overview of some technical details that pertain to the IoT enabling technologies, protocols, and applications. Compared to other survey papers in the field, our objective is to provide a more thorough summary of the most relevant protocols and application issues to enable researchers and application developers to get up to speed quickly on how the different protocols fit together to deliver desired functionalitie"
+  },
+  {
+    "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+    "year": 2019,
+    "cited_by_count": 3988,
+    "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+    "openalex": "https://openalex.org/W2969625533",
+    "url": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+    "venue": "International Journal of Information Management",
+    "type": "article",
+    "concepts": [
+      "Pace",
+      "Transformative learning",
+      "Government (linguistics)",
+      "Multidisciplinary approach",
+      "Supply chain",
+      "Knowledge management",
+      "Business",
+      "Engineering"
+    ],
+    "authors": [
+      "Yogesh K. Dwivedi",
+      "Laurie Hughes",
+      "Elvira Ismagilova",
+      "Gert Aarts",
+      "Crispin Coombs",
+      "Tom Crick"
+    ],
+    "abstract": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities within a wide range of industrial, intellectual and social applications. The pace of change for this new AI technological age is staggering, with new breakthroughs in algorithmic machine learning and autonomous decision-making, engendering new opportunities for continued innovation. The impact of AI could be significant, with industries ranging from: finance, healthcare, manufacturing, retail, supply chain, logistics and utilities, all potentially disrupted by the onset of AI technologies. The study brings together the collective insight from a number of leading expert contributors to highlight the significant opportunities, realistic assessment of impact, challenges and potential research agenda posed by the rapid emergence of AI within a number of domains: business and management, gover"
+  },
+  {
+    "title": "The potential for artificial intelligence in healthcare",
+    "year": 2019,
+    "cited_by_count": 3596,
+    "doi": "https://doi.org/10.7861/futurehosp.6-2-94",
+    "openalex": "https://openalex.org/W2953532875",
+    "url": "https://doi.org/10.7861/futurehosp.6-2-94",
+    "venue": "Future Healthcare Journal",
+    "type": "article",
+    "concepts": [
+      "Health care",
+      "Key (lock)",
+      "Field (mathematics)",
+      "Automation",
+      "Scale (ratio)",
+      "Applications of artificial intelligence",
+      "Computer science",
+      "Data science"
+    ],
+    "authors": [
+      "Thomas H. Davenport",
+      "Ravi Kalakota"
+    ],
+    "abstract": "The complexity and rise of data in healthcare means that artificial intelligence (AI) will increasingly be applied within the field. Several types of AI are already being employed by payers and providers of care, and life sciences companies. The key categories of applications involve diagnosis and treatment recommendations, patient engagement and adherence, and administrative activities. Although there are many instances in which AI can perform healthcare tasks as well or better than humans, implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period. Ethical issues in the application of AI to healthcare are also discussed."
+  },
+  {
+    "title": "ChatGPT Utility in Healthcare Education, Research, and Practice: Systematic Review on the Promising Perspectives and Valid Concerns",
+    "year": 2023,
+    "cited_by_count": 2681,
+    "doi": "https://doi.org/10.3390/healthcare11060887",
+    "openalex": "https://openalex.org/W4327946446",
+    "url": "https://doi.org/10.3390/healthcare11060887",
+    "venue": "Healthcare",
+    "type": "review",
+    "concepts": [
+      "Health care",
+      "Documentation",
+      "MEDLINE",
+      "Context (archaeology)",
+      "Medical education",
+      "Grey literature",
+      "Systematic review",
+      "Transparency (behavior)"
+    ],
+    "authors": [
+      "Malik Sallam"
+    ],
+    "abstract": "ChatGPT is an artificial intelligence (AI)-based conversational large language model (LLM). The potential applications of LLMs in health care education, research, and practice could be promising if the associated valid concerns are proactively examined and addressed. The current systematic review aimed to investigate the utility of ChatGPT in health care education, research, and practice and to highlight its potential limitations. Using the PRIMSA guidelines, a systematic search was conducted to retrieve English records in PubMed/MEDLINE and Google Scholar (published research or preprints) that examined ChatGPT in the context of health care education, research, or practice. A total of 60 records were eligible for inclusion. Benefits of ChatGPT were cited in 51/60 (85.0%) records and included: (1) improved scientific writing and enhancing research equity and versatility; (2) utility in health care research (efficient analysis of datasets, code generation, literature reviews, saving time to focus on experimental design, and drug discovery and development); (3) benefits in health care practice (streamlining the workflow, cost saving, documentation, personalized medicine, and improved "
+  },
+  {
+    "title": "A Survey of Autonomous Driving: <i>Common Practices and Emerging Technologies</i>",
+    "year": 2020,
+    "cited_by_count": 1711,
+    "doi": "https://doi.org/10.1109/access.2020.2983149",
+    "openalex": "https://openalex.org/W2953303875",
+    "url": "https://doi.org/10.1109/access.2020.2983149",
+    "venue": "IEEE Access",
+    "type": "article",
+    "concepts": [
+      "Robustness (evolution)",
+      "Computer science",
+      "Perception",
+      "Emerging technologies",
+      "Data science",
+      "Systems engineering",
+      "Human–computer interaction",
+      "Artificial intelligence"
+    ],
+    "authors": [
+      "Ekim Yurtsever",
+      "Jacob Lambert",
+      "Alexander Carballo",
+      "Kazuya Takeda"
+    ],
+    "abstract": "Automated driving systems (ADSs) promise a safe, comfortable and efficient driving experience. However, fatalities involving vehicles equipped with ADSs are on the rise. The full potential of ADSs cannot be realized unless the robustness of state-of-the-art is improved further. This paper discusses unsolved problems and surveys the technical aspect of automated driving. Studies regarding present challenges, high-level system architectures, emerging methodologies and core functions including localization, mapping, perception, planning, and human machine interfaces, were thoroughly reviewed. Furthermore, many state-of-the-art algorithms were implemented and compared on our own platform in a real-world driving setting. The paper concludes with an overview of available datasets and tools for ADS development."
+  },
+  {
+    "title": "Interpreting Black-Box Models: A Review on Explainable Artificial Intelligence",
+    "year": 2023,
+    "cited_by_count": 1662,
+    "doi": "https://doi.org/10.1007/s12559-023-10179-8",
+    "openalex": "https://openalex.org/W4386142022",
+    "url": "https://doi.org/10.1007/s12559-023-10179-8",
+    "venue": "Cognitive Computation",
+    "type": "review",
+    "concepts": [
+      "Transparency (behavior)",
+      "Computer science",
+      "Black box",
+      "Process (computing)",
+      "Predictability",
+      "Artificial intelligence",
+      "Field (mathematics)",
+      "Data science"
+    ],
+    "authors": [
+      "Vikas Hassija",
+      "Vinay Chamola",
+      "Atmesh Mahapatra",
+      "Abhinandan Singal",
+      "Divyansh Goel",
+      "Kaizhu Huang"
+    ],
+    "abstract": "Abstract Recent years have seen a tremendous growth in Artificial Intelligence (AI)-based methodological development in a broad range of domains. In this rapidly evolving field, large number of methods are being reported using machine learning (ML) and Deep Learning (DL) models. Majority of these models are inherently complex and lacks explanations of the decision making process causing these models to be termed as 'Black-Box'. One of the major bottlenecks to adopt such models in mission-critical application domains, such as banking, e-commerce, healthcare, and public services and safety, is the difficulty in interpreting them. Due to the rapid proleferation of these AI models, explaining their learning and decision making process are getting harder which require transparency and easy predictability. Aiming to collate the current state-of-the-art in interpreting the black-box models, this study provides a comprehensive analysis of the explainable AI (XAI) models. To reduce false negative and false positive outcomes of these back-box models, finding flaws in them is still difficult and inefficient. In this paper, the development of XAI is reviewed meticulously through careful select"
+  },
+  {
+    "title": "Bias in data‐driven artificial intelligence systems—An introductory survey",
+    "year": 2020,
+    "cited_by_count": 976,
+    "doi": "https://doi.org/10.1002/widm.1356",
+    "openalex": "https://openalex.org/W3004493409",
+    "url": "https://doi.org/10.1002/widm.1356",
+    "venue": "Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Big data",
+      "Artificial intelligence",
+      "Software deployment",
+      "Ethical issues",
+      "Multidisciplinary approach",
+      "Data science",
+      "Engineering ethics"
+    ],
+    "authors": [
+      "Eirini Ntoutsi",
+      "Pavlos Fafalios",
+      "Ujwal Gadiraju",
+      "Vasileios Iosifidis",
+      "Wolfgang Nejdl",
+      "María-Esther Vidal"
+    ],
+    "abstract": "Abstract Artificial Intelligence (AI)‐based systems are widely employed nowadays to make decisions that have far‐reaching impact on individuals and society. Their decisions might affect everyone, everywhere, and anytime, entailing concerns about potential human rights issues. Therefore, it is necessary to move beyond traditional AI algorithms optimized for predictive performance and embed ethical and legal principles in their design, training, and deployment to ensure social good while still benefiting from the huge potential of the AI technology. The goal of this survey is to provide a broad multidisciplinary overview of the area of bias in AI systems, focusing on technical challenges and solutions as well as to suggest new research directions towards approaches well‐grounded in a legal frame. In this survey, we focus on data‐driven AI, as a large part of AI is powered nowadays by (big) data and powerful machine learning algorithms. If otherwise not specified, we use the general term bias to describe problems related to the gathering or processing of data that might result in prejudiced decisions on the bases of demographic features such as race, sex, and so forth. This article is"
+  },
+  {
+    "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+    "year": 2023,
+    "cited_by_count": 749,
+    "doi": "https://doi.org/10.1111/1748-8583.12524",
+    "openalex": "https://openalex.org/W4383913712",
+    "url": "https://doi.org/10.1111/1748-8583.12524",
+    "venue": "Human Resource Management Journal",
+    "type": "article",
+    "concepts": [
+      "Generative grammar",
+      "Context (archaeology)",
+      "Stakeholder",
+      "Scholarship",
+      "Realm",
+      "Knowledge management",
+      "Sociology",
+      "Engineering ethics"
+    ],
+    "authors": [
+      "Pawan Budhwar",
+      "Soumyadeb Chowdhury",
+      "Geoffrey Wood",
+      "Herman Aguinis",
+      "Greg J. Bamber",
+      "Jose R. Beltran"
+    ],
+    "abstract": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labour by generating new, potentially trivial or practically irrelevant, information and decisions. According to the CEO of ChatGPT, the potential impact of this new family of AI technology could be as big as “the printing press”, with significant implications for employment, stakeholder relationships, business models, and academic research, and its full consequences are largely undiscovered and uncertain. The introduction of more advanced and potent generative AI tools in the AI market, following the launch of ChatGPT, has ramped up the “AI arms race”, creating continuing uncertainty for workers, expanding their business applications, while heightening risks related to well‐being, bias, misinformation, context insensitivity, privacy issues, ethical dilemmas, and security. Given these developme"
+  },
+  {
+    "title": "Initial sequencing and analysis of the human genome",
+    "year": 2001,
+    "cited_by_count": 24553,
+    "doi": "https://doi.org/10.1038/35057062",
+    "openalex": "https://openalex.org/W2168909179",
+    "url": "https://doi.org/10.1038/35057062",
+    "venue": "Nature",
+    "type": "article",
+    "concepts": [
+      "Human genome",
+      "Genome",
+      "Sequence (biology)",
+      "Computational biology",
+      "Whole genome sequencing",
+      "Biology",
+      "DNA sequencing",
+      "Evolutionary biology"
+    ],
+    "authors": [
+      "Eric S. Lander",
+      "Lauren Linton",
+      "Bruce W. Birren",
+      "Chad Nusbaum",
+      "Michael C. Zody",
+      "Jennifer Baldwin"
+    ],
+    "abstract": "The human genome holds an extraordinary trove of information about human development, physiology, medicine and evolution. Here we report the results of an international collaboration to produce and make freely available a draft sequence of the human genome. We also present an initial analysis of the data, describing some of the insights that can be gleaned from the sequence."
+  },
+  {
+    "title": "Rayyan—a web and mobile app for systematic reviews",
+    "year": 2016,
+    "cited_by_count": 24233,
+    "doi": "https://doi.org/10.1186/s13643-016-0384-4",
+    "openalex": "https://openalex.org/W2560438049",
+    "url": "https://doi.org/10.1186/s13643-016-0384-4",
+    "venue": "Systematic Reviews",
+    "type": "article",
+    "concepts": [
+      "Usability",
+      "Medicine",
+      "Systematic review",
+      "Automation",
+      "Computer science",
+      "Upload",
+      "MEDLINE",
+      "World Wide Web"
+    ],
+    "authors": [
+      "Mourad Ouzzani",
+      "Hossam M. Hammady",
+      "Zbys Fedorowicz",
+      "Ahmed K. Elmagarmid"
+    ],
+    "abstract": "BACKGROUND: Synthesis of multiple randomized controlled trials (RCTs) in a systematic review can summarize the effects of individual outcomes and provide numerical answers about the effectiveness of interventions. Filtering of searches is time consuming, and no single method fulfills the principal requirements of speed with accuracy. Automation of systematic reviews is driven by a necessity to expedite the availability of current best evidence for policy and clinical decision-making. We developed Rayyan ( http://rayyan.qcri.org ), a free web and mobile app, that helps expedite the initial screening of abstracts and titles using a process of semi-automation while incorporating a high level of usability. For the beta testing phase, we used two published Cochrane reviews in which included studies had been selected manually. Their searches, with 1030 records and 273 records, were uploaded to Rayyan. Different features of Rayyan were tested using these two reviews. We also conducted a survey of Rayyan's users and collected feedback through a built-in feature. RESULTS: Pilot testing of Rayyan focused on usability, accuracy against manual methods, and the added value of the prediction fea"
+  },
+  {
+    "title": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
+    "year": 2021,
+    "cited_by_count": 10767,
+    "doi": "https://doi.org/10.1136/bmj.n160",
+    "openalex": "https://openalex.org/W3123893780",
+    "url": "https://doi.org/10.1136/bmj.n160",
+    "venue": "BMJ",
+    "type": "article",
+    "concepts": [
+      "Systematic review",
+      "Terminology",
+      "Guideline",
+      "Computer science",
+      "MEDLINE",
+      "Data science",
+      "Medicine",
+      "Management science"
+    ],
+    "authors": [
+      "Matthew J. Page",
+      "David Moher",
+      "Patrick M. Bossuyt",
+      "Isabelle Boutron",
+      "Tammy Hoffmann",
+      "Cynthia D. Mulrow"
+    ],
+    "abstract": "The PRISMA 2020 statement includes a checklist of 27 items to guide reporting of systematic reviews In this article we explain why reporting of each item is recommended, present bullet points that detail the reporting recommendations, and present examples from published reviews We hope that uptake of the PRISMA 2020 statement will lead to more transparent, complete, and accurate reporting of systematic reviews, thus facilitating evidence based decision making on 1 September"
+  },
+  {
+    "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+    "year": 2019,
+    "cited_by_count": 8825,
+    "doi": "https://doi.org/10.1016/j.inffus.2019.12.012",
+    "openalex": "https://openalex.org/W2981731882",
+    "url": "https://doi.org/10.1016/j.inffus.2019.12.012",
+    "venue": "Information Fusion",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Artificial intelligence",
+      "Taxonomy (biology)",
+      "Field (mathematics)",
+      "Software deployment",
+      "Data science",
+      "Deep learning",
+      "Machine learning"
+    ],
+    "authors": [
+      "Alejandro Barredo Arrieta",
+      "Natalia Díaz-Rodríguez",
+      "Javier Del Ser",
+      "Adrien Bennetot",
+      "Siham Tabik",
+      "Alberto Barbado"
+    ],
+    "abstract": ""
+  },
+  {
+    "title": "2015 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension",
+    "year": 2015,
+    "cited_by_count": 6976,
+    "doi": "https://doi.org/10.1093/eurheartj/ehv317",
+    "openalex": "https://openalex.org/W2161370807",
+    "url": "https://doi.org/10.1093/eurheartj/ehv317",
+    "venue": "European Heart Journal",
+    "type": "article",
+    "concepts": [
+      "Medicine",
+      "Bosentan",
+      "Balloon",
+      "Internal medicine",
+      "BMPR2",
+      "Pulmonary hypertension",
+      "Cardiology",
+      "Angioplasty"
+    ],
+    "authors": [
+      "Nazzareno Galiè",
+      "Marc Humbert",
+      "Jean-Luc Vachiéry",
+      "Simon Gibbs",
+      "Iréne Lang",
+      "Adam Torbicki"
+    ],
+    "abstract": "The ESC/ERS Guidelines represent the views of the ESC and ERS and were produced after careful consideration of the scientific and medical knowledge and the evidence available at the time of their publication. The ESC and ERS are not responsible in the event of any contradiction, discrepancy and/or ambiguity between the ESC/ERS Guidelines and any other official recommendations or guidelines issued by the relevant public health authorities, in particular in relation to good use of healthcare or therapeutic strategies. Health professionals are encouraged to take the ESC/ERS Guidelines fully into account when exercising their clinical judgment, as well as in the determination and the implementation of preventive, diagnostic or therapeutic medical strategies; however, the ESC/ERS Guidelines do not override, in any way whatsoever, the individual responsibility of health professionals to make appropriate and accurate decisions in consideration of each patient's health condition and in consultation with that patient and, where appropriate and/or necessary, the patient's caregiver. Nor do the ESC/ERS Guidelines exempt health professionals from taking into full and careful consideration the "
+  },
+  {
+    "title": "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)",
+    "year": 2014,
+    "cited_by_count": 6464,
+    "doi": "https://doi.org/10.1109/tmi.2014.2377694",
+    "openalex": "https://openalex.org/W1641498739",
+    "url": "https://doi.org/10.1109/tmi.2014.2377694",
+    "venue": "IEEE Transactions on Medical Imaging",
+    "type": "review",
+    "concepts": [
+      "Artificial intelligence",
+      "Image segmentation",
+      "Benchmark (surveying)",
+      "Computer science",
+      "Computer vision",
+      "Pattern recognition (psychology)",
+      "Image (mathematics)",
+      "Brain tumor"
+    ],
+    "authors": [
+      "Bjoern Menze",
+      "András Jakab",
+      "Stefan Bauer",
+      "Jayashree Kalpathy–Cramer",
+      "Keyvan Farahani",
+      "Justin Kirby"
+    ],
+    "abstract": "In this paper we report the set-up and results of the Multimodal Brain Tumor Image Segmentation Benchmark (BRATS) organized in conjunction with the MICCAI 2012 and 2013 conferences. Twenty state-of-the-art tumor segmentation algorithms were applied to a set of 65 multi-contrast MR scans of low- and high-grade glioma patients-manually annotated by up to four raters-and to 65 comparable scans generated using tumor image simulation software. Quantitative evaluations revealed considerable disagreement between the human raters in segmenting various tumor sub-regions (Dice scores in the range 74%-85%), illustrating the difficulty of this task. We found that different algorithms worked best for different sub-regions (reaching performance comparable to human inter-rater variability), but that no single algorithm ranked in the top for all sub-regions simultaneously. Fusing several good algorithms using a hierarchical majority vote yielded segmentations that consistently ranked above all individual algorithms, indicating remaining opportunities for further methodological improvements. The BRATS image data and manual annotations continue to be publicly available through an online evaluation s"
+  },
+  {
+    "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
+    "year": 2019,
+    "cited_by_count": 5063,
+    "doi": "https://doi.org/10.1186/s41239-019-0171-0",
+    "openalex": "https://openalex.org/W2981863007",
+    "url": "https://doi.org/10.1186/s41239-019-0171-0",
+    "venue": "International Journal of Educational Technology in Higher Education",
+    "type": "article",
+    "concepts": [
+      "Personalization",
+      "Profiling (computer programming)",
+      "Higher education",
+      "Scale (ratio)",
+      "Inclusion (mineral)",
+      "Critical reflection",
+      "Computer science",
+      "Psychology"
+    ],
+    "authors": [
+      "Olaf Zawacki‐Richter",
+      "Victoria I. Marín",
+      "Melissa Bond",
+      "Franziska Gouverneur"
+    ],
+    "abstract": "Abstract According to various international reports, Artificial Intelligence in Education (AIEd) is one of the currently emerging fields in educational technology. Whilst it has been around for about 30 years, it is still unclear for educators how to make pedagogical advantage of it on a broader scale, and how it can actually impact meaningfully on teaching and learning in higher education. This paper seeks to provide an overview of research on AI applications in higher education through a systematic review. Out of 2656 initially identified publications for the period between 2007 and 2018, 146 articles were included for final synthesis, according to explicit inclusion and exclusion criteria. The descriptive results show that most of the disciplines involved in AIEd papers come from Computer Science and STEM, and that quantitative methods were the most frequently used in empirical studies. The synthesis of results presents four areas of AIEd applications in academic support services, and institutional and administrative services: 1. profiling and prediction, 2. assessment and evaluation, 3. adaptive systems and personalisation, and 4. intelligent tutoring systems. The conclusions r"
+  },
+  {
+    "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+    "year": 2023,
+    "cited_by_count": 3613,
+    "doi": "https://doi.org/10.1016/j.ijinfomgt.2023.102642",
+    "openalex": "https://openalex.org/W4360620450",
+    "url": "https://doi.org/10.1016/j.ijinfomgt.2023.102642",
+    "venue": "International Journal of Information Management",
+    "type": "article",
+    "concepts": [
+      "Transformative learning",
+      "Generative grammar",
+      "Knowledge management",
+      "Hospitality",
+      "Engineering ethics",
+      "Sociology",
+      "Tourism",
+      "Public relations"
+    ],
+    "authors": [
+      "Yogesh K. Dwivedi",
+      "Nir Kshetri",
+      "Laurie Hughes",
+      "Emma Slade",
+      "Anand Jeyaraj",
+      "Arpan Kumar Kar"
+    ],
+    "abstract": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offering multi-disciplinary insight into some of these, this article brings together 43 contributions from experts in fields such as computer science, marketing, information systems, education, policy, hospitality and tourism, management, publishing, and nursing. The contributors acknowledge ChatGPT’s capabilities to enhance productivity and suggest that it is likely to offer significant gains in the banking, hospitality and tourism, and information technology industries, and enhance business activities, such as management and marketing. Nevertheless, they also consider its limitations, disruptions to practices, threats to privacy and security, and consequences of biases, misuse, and misinformation. However, opinion is split on whether ChatGPT’s use should be restricted or legislated. Drawing on"
+  },
+  {
+    "title": "An overview of clinical decision support systems: benefits, risks, and strategies for success",
+    "year": 2020,
+    "cited_by_count": 2774,
+    "doi": "https://doi.org/10.1038/s41746-020-0221-y",
+    "openalex": "https://openalex.org/W3004612364",
+    "url": "https://doi.org/10.1038/s41746-020-0221-y",
+    "venue": "npj Digital Medicine",
+    "type": "review",
+    "concepts": [
+      "Risk analysis (engineering)",
+      "Decision support system",
+      "Management science",
+      "Computer science",
+      "Business",
+      "Engineering",
+      "Artificial intelligence"
+    ],
+    "authors": [
+      "Reed T. Sutton",
+      "David Pincock",
+      "Daniel C. Baumgart",
+      "Daniel Sadowski",
+      "Richard N. Fedorak",
+      "Karen I. Kroeker"
+    ],
+    "abstract": "Computerized clinical decision support systems, or CDSS, represent a paradigm shift in healthcare today. CDSS are used to augment clinicians in their complex decision-making processes. Since their first use in the 1980s, CDSS have seen a rapid evolution. They are now commonly administered through electronic medical records and other computerized clinical workflows, which has been facilitated by increasing global adoption of electronic medical records with advanced capabilities. Despite these advances, there remain unknowns regarding the effect CDSS have on the providers who use them, patient outcomes, and costs. There have been numerous published examples in the past decade(s) of CDSS success stories, but notable setbacks have also shown us that CDSS are not without risks. In this paper, we provide a state-of-the-art overview on the use of clinical decision support systems in medicine, including the different types, current use cases with proven efficacy, common pitfalls, and potential harms. We conclude with evidence-based recommendations for minimizing risk in CDSS design, implementation, evaluation, and maintenance."
+  },
+  {
+    "title": "GPT-4 Technical Report",
+    "year": 2023,
+    "cited_by_count": 2338,
+    "doi": "https://doi.org/10.4230/lipics.cosit.2024.11",
+    "openalex": "https://openalex.org/W4327810158",
+    "url": "https://doi.org/10.4230/lipics.cosit.2024.11",
+    "venue": "arXiv (Cornell University)",
+    "type": "preprint",
+    "concepts": [
+      "Transformer",
+      "Computer science",
+      "Security token",
+      "Process (computing)",
+      "Scale (ratio)",
+      "Artificial intelligence",
+      "Machine learning",
+      "Cartography"
+    ],
+    "authors": [
+      "Wijegunarathna, Kalana",
+      "Stock, Kristin",
+      "Jones, Christopher B."
+    ],
+    "abstract": "Abstract—Large Language Models (LLMs) suffer from inherent stochasticity, limiting their utility in high-stakes enterprise environments where determinism and auditability are required. This paper introduces the MFOUR Vibe Framework (MVF), a platform-agnostic architectural standard that transforms probabilistic natural language intent into deterministic software artifacts. We define a five-layer topology, comprising the Kernel Identity, Synaptic Routing, Interface Contracts, Context Anchoring, and the Mirror Test. Furthermore, we introduce The Vibe Integrity Score (VIS), a quantitative metric for evaluating the structural adherence of generative outputs. This specification provides the foundational schema and logic protocols for building \"Glass Box\" AI systems that are observable, secure, and commercially viable."
+  },
+  {
+    "title": "Machine Learning Interpretability: A Survey on Methods and Metrics",
+    "year": 2019,
+    "cited_by_count": 1743,
+    "doi": "https://doi.org/10.3390/electronics8080832",
+    "openalex": "https://openalex.org/W2964303497",
+    "url": "https://doi.org/10.3390/electronics8080832",
+    "venue": "Electronics",
+    "type": "article",
+    "concepts": [
+      "Interpretability",
+      "Computer science",
+      "Meaning (existential)",
+      "Artificial intelligence",
+      "Field (mathematics)",
+      "Audit",
+      "Quality (philosophy)",
+      "Data science"
+    ],
+    "authors": [
+      "Diogo V. Carvalho",
+      "Eduardo M. Pereira",
+      "Jaime S. Cardoso"
+    ],
+    "abstract": "Machine learning systems are becoming increasingly ubiquitous. These systems’s adoption has been expanding, accelerating the shift towards a more algorithmic society, meaning that algorithmically informed decisions have greater potential for significant social impact. However, most of these accurate decision support systems remain complex black boxes, meaning their internal logic and inner workings are hidden to the user and even experts cannot fully understand the rationale behind their predictions. Moreover, new regulations and highly regulated domains have made the audit and verifiability of decisions mandatory, increasing the demand for the ability to question, understand, and trust machine learning systems, for which interpretability is indispensable. The research community has recognized this interpretability problem and focused on developing both interpretable models and explanation methods over the past few years. However, the emergence of these methods shows there is no consensus on how to assess the explanation quality. Which are the most suitable metrics to assess the quality of an explanation? The aim of this article is to provide a review of the current state of the re"
+  },
+  {
+    "title": "Evaluating Large Language Models Trained on Code",
+    "year": 2021,
+    "cited_by_count": 1423,
+    "doi": "https://doi.org/10.48550/arxiv.2107.03374",
+    "openalex": "https://openalex.org/W3177813494",
+    "url": "https://doi.org/10.48550/arxiv.2107.03374",
+    "venue": "arXiv (Cornell University)",
+    "type": "preprint",
+    "concepts": [
+      "Correctness",
+      "Python (programming language)",
+      "Computer science",
+      "Code (set theory)",
+      "Programming language",
+      "Set (abstract data type)",
+      "Measure (data warehouse)",
+      "Source code"
+    ],
+    "authors": [
+      "Mark Chen",
+      "Jerry Tworek",
+      "Heewoo Jun",
+      "Qiming Yuan",
+      "Henrique Pondé de Oliveira Pinto",
+      "Jared Kaplan"
+    ],
+    "abstract": "We introduce Codex, a GPT language model fine-tuned on publicly available code from GitHub, and study its Python code-writing capabilities. A distinct production version of Codex powers GitHub Copilot. On HumanEval, a new evaluation set we release to measure functional correctness for synthesizing programs from docstrings, our model solves 28.8% of the problems, while GPT-3 solves 0% and GPT-J solves 11.4%. Furthermore, we find that repeated sampling from the model is a surprisingly effective strategy for producing working solutions to difficult prompts. Using this method, we solve 70.2% of our problems with 100 samples per problem. Careful investigation of our model reveals its limitations, including difficulty with docstrings describing long chains of operations and with binding operations to variables. Finally, we discuss the potential broader impacts of deploying powerful code generation technologies, covering safety, security, and economics."
+  },
+  {
+    "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+    "year": 2023,
+    "cited_by_count": 1397,
+    "doi": "https://doi.org/10.1145/3586183.3606763",
+    "openalex": "https://openalex.org/W4387835442",
+    "url": "https://doi.org/10.1145/3586183.3606763",
+    "venue": null,
+    "type": "article",
+    "concepts": [
+      "Generative grammar",
+      "Computer science",
+      "Artificial intelligence",
+      "Human–computer interaction",
+      "Generative model"
+    ],
+    "authors": [
+      "Joon Sung Park",
+      "Joseph O’Brien",
+      "Carrie J. Cai",
+      "Meredith Ringel Morris",
+      "Percy Liang",
+      "Michael S. Bernstein"
+    ],
+    "abstract": "Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents: computational software agents that simulate believable human behavior. Generative agents wake up, cook breakfast, and head to work; artists paint, while authors write; they form opinions, notice each other, and initiate conversations; they remember and reflect on days past as they plan the next day. To enable generative agents, we describe an architecture that extends a large language model to store a complete record of the agent’s experiences using natural language, synthesize those memories over time into higher-level reflections, and retrieve them dynamically to plan behavior. We instantiate generative agents to populate an interactive sandbox environment inspired by The Sims, where end users can interact with a small town of twenty-five agents using natural language. In an evaluation, these generative agents produce believable individual and emergent social behaviors. For example, starting with only a single user-specified notion that one agent wants "
+  },
+  {
+    "title": "Developing a learning progression for scientific modeling: Making scientific modeling accessible and meaningful for learners",
+    "year": 2009,
+    "cited_by_count": 1131,
+    "doi": "https://doi.org/10.1002/tea.20311",
+    "openalex": "https://openalex.org/W2034341767",
+    "url": "https://doi.org/10.1002/tea.20311",
+    "venue": "Journal of Research in Science Teaching",
+    "type": "article",
+    "concepts": [
+      "Scientific modelling",
+      "Computer science",
+      "Scientific literacy",
+      "Sensemaking",
+      "Explanatory model",
+      "Science education",
+      "Data science",
+      "Management science"
+    ],
+    "authors": [
+      "Christina V. Schwarz",
+      "Brian J. Reiser",
+      "Elizabeth A. Davis",
+      "Lisa Kenyon",
+      "Andrés Acher",
+      "David Fortus"
+    ],
+    "abstract": "Abstract Modeling is a core practice in science and a central part of scientific literacy. We present theoretical and empirical motivation for a learning progression for scientific modeling that aims to make the practice accessible and meaningful for learners. We define scientific modeling as including the elements of the practice (constructing, using, evaluating, and revising scientific models) and the metaknowledge that guides and motivates the practice (e.g., understanding the nature and purpose of models). Our learning progression for scientific modeling includes two dimensions that combine metaknowledge and elements of practice— scientific models as tools for predicting and explaining , and models change as understanding improves . We describe levels of progress along these two dimensions of our progression and illustrate them with classroom examples from 5th and 6th graders engaged in modeling. Our illustrations indicate that both groups of learners productively engaged in constructing and revising increasingly accurate models that included powerful explanatory mechanisms, and applied these models to make predictions for closely related phenomena. Furthermore, we show how stu"
+  },
+  {
+    "title": "Power to the People: The Role of Humans in Interactive Machine Learning",
+    "year": 2014,
+    "cited_by_count": 1010,
+    "doi": "https://doi.org/10.1609/aimag.v35i4.2513",
+    "openalex": "https://openalex.org/W1501005121",
+    "url": "https://doi.org/10.1609/aimag.v35i4.2513",
+    "venue": "AI Magazine",
+    "type": "article",
+    "concepts": [
+      "Interactivity",
+      "Computer science",
+      "Human–computer interaction",
+      "Field (mathematics)",
+      "Interactive Learning",
+      "Face (sociological concept)",
+      "Artificial intelligence",
+      "Multimedia"
+    ],
+    "authors": [
+      "Saleema Amershi",
+      "Maya Çakmak",
+      "W. Bradley Knox",
+      "Todd Kulesza"
+    ],
+    "abstract": "Systems that can learn interactively from their end‐users are quickly becoming widespread. Until recently, this progress has been fueled mostly by advances in machine learning; however, more and more researchers are realizing the importance of studying users of these systems. In this article we promote this approach and demonstrate how it can result in better user experiences and more effective learning systems. We present a number of case studies that demonstrate how interactivity results in a tight coupling between the system and the user, exemplify ways in which some existing systems fail to account for the user, and explore new ways for learning systems to interact with their users. After giving a glimpse of the progress that has been made thus far, we discuss some of the challenges we face in moving the field forward."
+  },
+  {
+    "title": "Re-examining Whether, Why, and How Human-AI Interaction Is Uniquely Difficult to Design",
+    "year": 2020,
+    "cited_by_count": 560,
+    "doi": "https://doi.org/10.1145/3313831.3376301",
+    "openalex": "https://openalex.org/W3032875465",
+    "url": "https://doi.org/10.1145/3313831.3376301",
+    "venue": null,
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Unintended consequences",
+      "Human–computer interaction",
+      "Data science",
+      "Interaction design",
+      "Artificial intelligence",
+      "Human interaction",
+      "Knowledge management"
+    ],
+    "authors": [
+      "Qian Yang",
+      "Aaron Steinfeld",
+      "Carolyn Penstein Rosé",
+      "John Zimmerman"
+    ],
+    "abstract": "Artificial Intelligence (AI) plays an increasingly important role in improving HCI and user experience. Yet many challenges persist in designing and innovating valuable human-AI interactions. For example, AI systems can make unpredictable errors, and these errors damage UX and even lead to undesired societal impact. However, HCI routinely grapples with complex technologies and mitigates their unintended consequences. What makes AI different? What makes human-AI interaction appear particularly difficult to design? This paper investigates these questions. We synthesize prior research, our own design and research experience, and our observations when teaching human-AI interaction. We identify two sources of AI's distinctive design challenges: 1) uncertainty surrounding AI's capabilities, 2) AI's output complexity, spanning from simple to adaptive complex. We identify four levels of AI systems. On each level, designers encounter a different subset of the design challenges. We demonstrate how these findings reveal new insights for designers, researchers, and design tool makers in productively addressing the challenges of human-AI interaction going forward."
+  },
+  {
+    "title": "Probabilistic assessment of user's emotions in educational games",
+    "year": 2002,
+    "cited_by_count": 503,
+    "doi": "https://doi.org/10.1080/08839510290030390",
+    "openalex": "https://openalex.org/W2151562475",
+    "url": "https://doi.org/10.1080/08839510290030390",
+    "venue": "Applied Artificial Intelligence",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Probabilistic logic",
+      "Leverage (statistics)",
+      "Human–computer interaction",
+      "Task (project management)",
+      "Bayesian network",
+      "User modeling",
+      "Statistical model"
+    ],
+    "authors": [
+      "Cristina Conati"
+    ],
+    "abstract": "We present a probabilistic model to monitor a user's emotions and engagement during the interaction with educational games. We illustrate how our probabilistic model assesses affect by integrating evidence on both possible causes of the user's emotional arousal (i.e., the state of the interaction) and its effects (i.e., bodily expressions that are known to be influenced by emotional reactions). The probabilistic model relies on a Dynamic Decision Network to leverage any indirect evidence on the user's emotional state, in order to estimate this state and any other related variable in the model. This is crucial in a modeling task in which the available evidence usually varies with the user and with each particular interaction. The probabilistic model we present is to be used by decision theoretic pedagogical agents to generate interventions aimed at achieving the best tradeoff between a user's learning and engagement during the interaction with educational games."
+  },
+  {
+    "title": "3D Slicer as an image computing platform for the Quantitative Imaging Network",
+    "year": 2012,
+    "cited_by_count": 8762,
+    "doi": "https://doi.org/10.1016/j.mri.2012.05.001",
+    "openalex": "https://openalex.org/W2026616100",
+    "url": "https://doi.org/10.1016/j.mri.2012.05.001",
+    "venue": "Magnetic Resonance Imaging",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Visualization",
+      "Workstation",
+      "Software",
+      "Context (archaeology)",
+      "Interface (matter)",
+      "Rapid prototyping",
+      "Segmentation"
+    ],
+    "authors": [
+      "Andriy Fedorov",
+      "Reinhard Beichel",
+      "Jayashree Kalpathy–Cramer",
+      "Julien Finet",
+      "Jean‐Christophe Fillion‐Robin",
+      "Sonia Pujol"
+    ],
+    "abstract": ""
+  },
+  {
+    "title": "Toxicity, mechanism and health effects of some heavy metals",
+    "year": 2014,
+    "cited_by_count": 6202,
+    "doi": "https://doi.org/10.2478/intox-2014-0009",
+    "openalex": "https://openalex.org/W2159727241",
+    "url": "https://doi.org/10.2478/intox-2014-0009",
+    "venue": "Interdisciplinary Toxicology",
+    "type": "review",
+    "concepts": [
+      "Toxicity",
+      "Heavy metals",
+      "Metal toxicity",
+      "Mechanism (biology)",
+      "Toxicology",
+      "Medicine",
+      "Chronic toxicity",
+      "Metal poisoning"
+    ],
+    "authors": [
+      "Monisha Jaishankar",
+      "Tenzin Tseten",
+      "Naresh Anbalagan",
+      "Blessy Baby Mathew",
+      "Krishnamurthy Nideghatta Beeregowda"
+    ],
+    "abstract": "Heavy metal toxicity has proven to be a major threat and there are several health risks associated with it. The toxic effects of these metals, even though they do not have any biological role, remain present in some or the other form harmful for the human body and its proper functioning. They sometimes act as a pseudo element of the body while at certain times they may even interfere with metabolic processes. Few metals, such as aluminium, can be removed through elimination activities, while some metals get accumulated in the body and food chain, exhibiting a chronic nature. Various public health measures have been undertaken to control, prevent and treat metal toxicity occurring at various levels, such as occupational exposure, accidents and environmental factors. Metal toxicity depends upon the absorbed dose, the route of exposure and duration of exposure, i.e. acute or chronic. This can lead to various disorders and can also result in excessive damage due to oxidative stress induced by free radical formation. This review gives details about some heavy metals and their toxicity mechanisms, along with their health effects."
+  },
+  {
+    "title": "Whatever next? Predictive brains, situated agents, and the future of cognitive science",
+    "year": 2013,
+    "cited_by_count": 5820,
+    "doi": "https://doi.org/10.1017/s0140525x12000477",
+    "openalex": "https://openalex.org/W2153791616",
+    "url": "https://doi.org/10.1017/s0140525x12000477",
+    "venue": "Behavioral and Brain Sciences",
+    "type": "review",
+    "concepts": [
+      "Situated",
+      "Cognitive science",
+      "Cognition",
+      "Psychology",
+      "Computer science",
+      "Cognitive psychology",
+      "Neuroscience",
+      "Artificial intelligence"
+    ],
+    "authors": [
+      "Andy Clark"
+    ],
+    "abstract": "Brains, it has recently been argued, are essentially prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is achieved using a hierarchical generative model that aims to minimize prediction error within a bidirectional cascade of cortical processing. Such accounts offer a unifying model of perception and action, illuminate the functional role of attention, and may neatly capture the special contribution of cortical processing to adaptive success. This target article critically examines this \"hierarchical prediction machine\" approach, concluding that it offers the best clue yet to the shape of a unified science of mind and action. Sections 1 and 2 lay out the key elements and implications of the approach. Section 3 explores a variety of pitfalls and challenges, spanning the evidential, the methodological, and the more properly conceptual. The paper ends (sections 4 and 5) by asking how such approaches might impact our more general vision of mind, experience, and agency."
+  },
+  {
+    "title": "\"GrabCut\"",
+    "year": 2004,
+    "cited_by_count": 5783,
+    "doi": "https://doi.org/10.1145/1015706.1015720",
+    "openalex": "https://openalex.org/W2124351162",
+    "url": "https://doi.org/10.1145/1015706.1015720",
+    "venue": "ACM Transactions on Graphics",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Artificial intelligence",
+      "Segmentation",
+      "Cut",
+      "Computer vision",
+      "Image segmentation",
+      "Graph",
+      "Pixel"
+    ],
+    "authors": [
+      "Carsten Rother",
+      "Vladimir Kolmogorov",
+      "Andrew Blake"
+    ],
+    "abstract": "The problem of efficient, interactive foreground/background segmentation in still images is of great practical importance in image editing. Classical image segmentation tools use either texture (colour) information, e.g. Magic Wand, or edge (contrast) information, e.g. Intelligent Scissors. Recently, an approach based on optimization by graph-cut has been developed which successfully combines both types of information. In this paper we extend the graph-cut approach in three respects. First, we have developed a more powerful, iterative version of the optimisation. Secondly, the power of the iterative algorithm is used to simplify substantially the user interaction needed for a given quality of result. Thirdly, a robust algorithm for \"border matting\" has been developed to estimate simultaneously the alpha-matte around an object boundary and the colours of foreground pixels. We show that for moderately difficult examples the proposed method outperforms competitive tools."
+  },
+  {
+    "title": "Surviving Sepsis Campaign: International guidelines for management of severe sepsis and septic shock: 2008",
+    "year": 2007,
+    "cited_by_count": 4940,
+    "doi": "https://doi.org/10.1007/s00134-007-0934-2",
+    "openalex": "https://openalex.org/W2118858814",
+    "url": "https://doi.org/10.1007/s00134-007-0934-2",
+    "venue": "Intensive Care Medicine",
+    "type": "article",
+    "concepts": [
+      "Medicine",
+      "Surviving Sepsis Campaign",
+      "Sepsis",
+      "Septic shock",
+      "Intensive care medicine",
+      "Severe sepsis",
+      "Anesthesiology",
+      "Delphi method"
+    ],
+    "authors": [
+      "R. Phillip Dellinger",
+      "Mitchell M. Levy",
+      "Jean Carlet",
+      "Julian Bion",
+      "Margaret M. Parker",
+      "Roman Jaeschke"
+    ],
+    "abstract": "OBJECTIVE: To provide an update to the original Surviving Sepsis Campaign clinical management guidelines, \"Surviving Sepsis Campaign guidelines for management of severe sepsis and septic shock,\" published in 2004. DESIGN: Modified Delphi method with a consensus conference of 55 international experts, several subsequent meetings of subgroups and key individuals, teleconferences, and electronic-based discussion among subgroups and among the entire committee. This process was conducted independently of any industry funding. METHODS: We used the GRADE system to guide assessment of quality of evidence from high (A) to very low (D) and to determine the strength of recommendations. A strong recommendation indicates that an intervention's desirable effects clearly outweigh its undesirable effects (risk, burden, cost), or clearly do not. Weak recommendations indicate that the tradeoff between desirable and undesirable effects is less clear. The grade of strong or weak is considered of greater clinical importance than a difference in letter level of quality of evidence. In areas without complete agreement, a formal process of resolution was developed and applied. Recommendations are grouped "
+  },
+  {
+    "title": "The 2008 revision of the World Health Organization (WHO) classification of myeloid neoplasms and acute leukemia: rationale and important changes",
+    "year": 2009,
+    "cited_by_count": 4408,
+    "doi": "https://doi.org/10.1182/blood-2009-03-209262",
+    "openalex": "https://openalex.org/W2107398329",
+    "url": "https://doi.org/10.1182/blood-2009-03-209262",
+    "venue": "Blood",
+    "type": "review",
+    "concepts": [
+      "Hematopathology",
+      "Medicine",
+      "Myeloid",
+      "Internal medicine",
+      "Cytogenetics",
+      "Biology",
+      "Chromosome",
+      "Biochemistry"
+    ],
+    "authors": [
+      "James W. Vardiman",
+      "Jüergen Thiele",
+      "Daniel A. Arber",
+      "Richard D. Brunning",
+      "Michael J. Borowitz",
+      "Anna Porwit"
+    ],
+    "abstract": "Recently the World Health Organization (WHO), in collaboration with the European Association for Haematopathology and the Society for Hematopathology, published a revised and updated edition of the WHO Classification of Tumors of the Hematopoietic and Lymphoid Tissues. The 4th edition of the WHO classification incorporates new information that has emerged from scientific and clinical studies in the interval since the publication of the 3rd edition in 2001, and includes new criteria for the recognition of some previously described neoplasms as well as clarification and refinement of the defining criteria for others. It also adds entities-some defined principally by genetic features-that have only recently been characterized. In this paper, the classification of myeloid neoplasms and acute leukemia is highlighted with the aim of familiarizing hematologists, clinical scientists, and hematopathologists not only with the major changes in the classification but also with the rationale for those changes."
+  },
+  {
+    "title": "Clinical Practice Guidelines by the Infectious Diseases Society of America for the Treatment of Methicillin-Resistant Staphylococcus aureus Infections in Adults and Children",
+    "year": 2011,
+    "cited_by_count": 4167,
+    "doi": "https://doi.org/10.1093/cid/ciq146",
+    "openalex": "https://openalex.org/W2108433768",
+    "url": "https://doi.org/10.1093/cid/ciq146",
+    "venue": "Clinical Infectious Diseases",
+    "type": "article",
+    "concepts": [
+      "Medicine",
+      "Bacteremia",
+      "Vancomycin",
+      "Staphylococcus aureus",
+      "Intensive care medicine",
+      "Methicillin-resistant Staphylococcus aureus",
+      "Pneumonia",
+      "Endocarditis"
+    ],
+    "authors": [
+      "Catherine Liu",
+      "Arnold S. Bayer",
+      "Sara E. Cosgrove",
+      "Robert S. Daum",
+      "Scott K. Fridkin",
+      "Rachel Gorwitz"
+    ],
+    "abstract": "Evidence-based guidelines for the management of patients with methicillin-resistant Staphylococcus aureus (MRSA) infections were prepared by an Expert Panel of the Infectious Diseases Society of America (IDSA). The guidelines are intended for use by health care providers who care for adult and pediatric patients with MRSA infections. The guidelines discuss the management of a variety of clinical syndromes associated with MRSA disease, including skin and soft tissue infections (SSTI), bacteremia and endocarditis, pneumonia, bone and joint infections, and central nervous system (CNS) infections. Recommendations are provided regarding vancomycin dosing and monitoring, management of infections due to MRSA strains with reduced susceptibility to vancomycin, and vancomycin treatment failures."
+  },
+  {
+    "title": "Lexicon-Based Methods for Sentiment Analysis",
+    "year": 2011,
+    "cited_by_count": 3244,
+    "doi": "https://doi.org/10.1162/coli_a_00049",
+    "openalex": "https://openalex.org/W2084046180",
+    "url": "https://doi.org/10.1162/coli_a_00049",
+    "venue": "Computational Linguistics",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Sentiment analysis",
+      "Lexicon",
+      "Polarity (international relations)",
+      "Natural language processing",
+      "Artificial intelligence",
+      "Negation",
+      "Consistency (knowledge bases)"
+    ],
+    "authors": [
+      "Maite Taboada",
+      "Julian Brooke",
+      "Milan Tofiloski",
+      "Kimberly Voll",
+      "Manfred Stede"
+    ],
+    "abstract": "We present a lexicon-based approach to extracting sentiment from text. The Semantic Orientation CALculator (SO-CAL) uses dictionaries of words annotated with their semantic orientation (polarity and strength), and incorporates intensification and negation. SO-CAL is applied to the polarity classification task, the process of assigning a positive or negative label to a text that captures the text's opinion towards its main subject matter. We show that SO-CAL's performance is consistent across domains and in completely unseen data. Additionally, we describe the process of dictionary creation, and our use of Mechanical Turk to check dictionaries for consistency and reliability."
+  },
+  {
+    "title": "Setting the future of digital and social media marketing research: Perspectives and research propositions",
+    "year": 2020,
+    "cited_by_count": 2416,
+    "doi": "https://doi.org/10.1016/j.ijinfomgt.2020.102168",
+    "openalex": "https://openalex.org/W3035686316",
+    "url": "https://doi.org/10.1016/j.ijinfomgt.2020.102168",
+    "venue": "International Journal of Information Management",
+    "type": "article",
+    "concepts": [
+      "Social media",
+      "Social media marketing",
+      "Sociology",
+      "Digital media",
+      "Marketing research",
+      "Digital marketing",
+      "Marketing",
+      "Political science"
+    ],
+    "authors": [
+      "Yogesh K. Dwivedi",
+      "Elvira Ismagilova",
+      "David L. Hughes",
+      "Jamie Carlson",
+      "Raffaele Filieri",
+      "Jenna Jacobson"
+    ],
+    "abstract": "The use of the internet and social media have changed consumer behavior and the ways in which companies conduct their business. Social and digital marketing offers significant opportunities to organizations through lower costs, improved brand awareness and increased sales. However, significant challenges exist from negative electronic word-of-mouth as well as intrusive and irritating online brand presence. This article brings together the collective insight from several leading experts on issues relating to digital and social media marketing. The experts’ perspectives offer a detailed narrative on key aspects of this important topic as well as perspectives on more specific issues including artificial intelligence, augmented reality marketing, digital content management, mobile marketing and advertising, B2B marketing, electronic word of mouth and ethical issues therein. This research offers a significant and timely contribution to both researchers and practitioners in the form of challenges and opportunities where we highlight the limitations within the current research, outline the research gaps and develop the questions and propositions that can help advance knowledge within the "
+  },
+  {
+    "title": "Per- and Polyfluoroalkyl Substance Toxicity and Human Health Review: Current State of Knowledge and Strategies for Informing Future Research",
+    "year": 2020,
+    "cited_by_count": 2203,
+    "doi": "https://doi.org/10.1002/etc.4890",
+    "openalex": "https://openalex.org/W3091745167",
+    "url": "https://doi.org/10.1002/etc.4890",
+    "venue": "Environmental Toxicology and Chemistry",
+    "type": "review",
+    "concepts": [
+      "Perfluorooctanoic acid",
+      "Adverse Outcome Pathway",
+      "Perfluorooctane",
+      "Human health",
+      "Toxicity",
+      "Disease",
+      "Environmental health",
+      "Medicine"
+    ],
+    "authors": [
+      "Suzanne E. Fenton",
+      "Alan Ducatman",
+      "Alan R. Boobis",
+      "Jamie C. DeWitt",
+      "Christopher Lau",
+      "Carla A. Ng"
+    ],
+    "abstract": "Abstract Reports of environmental and human health impacts of per- and polyfluoroalkyl substances (PFAS) have greatly increased in the peer-reviewed literature. The goals of the present review are to assess the state of the science regarding toxicological effects of PFAS and to develop strategies for advancing knowledge on the health effects of this large family of chemicals. Currently, much of the toxicity data available for PFAS are for a handful of chemicals, primarily legacy PFAS such as perfluorooctanoic acid and perfluorooctane sulfonate. Epidemiological studies have revealed associations between exposure to specific PFAS and a variety of health effects, including altered immune and thyroid function, liver disease, lipid and insulin dysregulation, kidney disease, adverse reproductive and developmental outcomes, and cancer. Concordance with experimental animal data exists for many of these effects. However, information on modes of action and adverse outcome pathways must be expanded, and profound differences in PFAS toxicokinetic properties must be considered in understanding differences in responses between the sexes and among species and life stages. With many health effects"
+  },
+  {
+    "title": "Automation and New Tasks: How Technology Displaces and Reinstates Labor",
+    "year": 2019,
+    "cited_by_count": 2141,
+    "doi": "https://doi.org/10.1257/jep.33.2.3",
+    "openalex": "https://openalex.org/W2922903482",
+    "url": "https://doi.org/10.1257/jep.33.2.3",
+    "venue": "The Journal of Economic Perspectives",
+    "type": "article",
+    "concepts": [
+      "Productivity",
+      "Labour economics",
+      "Automation",
+      "Production (economics)",
+      "Economics",
+      "Task (project management)",
+      "Capital (architecture)",
+      "Technological change"
+    ],
+    "authors": [
+      "Daron Acemoğlu",
+      "Pascual Restrepo"
+    ],
+    "abstract": "We present a framework for understanding the effects of automation and other types of technological changes on labor demand, and use it to interpret changes in US employment over the recent past. At the center of our framework is the allocation of tasks to capital and labor—the task content of production. Automation, which enables capital to replace labor in tasks it was previously engaged in, shifts the task content of production against labor because of a displacement effect. As a result, automation always reduces the labor share in value added and may reduce labor demand even as it raises productivity. The effects of automation are counterbalanced by the creation of new tasks in which labor has a comparative advantage. The introduction of new tasks changes the task content of production in favor of labor because of a reinstatement effect, and always raises the labor share and labor demand. We show how the role of changes in the task content of production—due to automation and new tasks—can be inferred from industry-level data. Our empirical decomposition suggests that the slower growth of employment over the last three decades is accounted for by an acceleration in the displacem"
+  },
+  {
+    "title": "A Metaverse: Taxonomy, Components, Applications, and Open Challenges",
+    "year": 2022,
+    "cited_by_count": 1744,
+    "doi": "https://doi.org/10.1109/access.2021.3140175",
+    "openalex": "https://openalex.org/W4206484811",
+    "url": "https://doi.org/10.1109/access.2021.3140175",
+    "venue": "IEEE Access",
+    "type": "article",
+    "concepts": [
+      "Computer science",
+      "Taxonomy (biology)",
+      "Metaverse",
+      "Data science",
+      "World Wide Web",
+      "Human–computer interaction",
+      "Ecology",
+      "Virtual reality"
+    ],
+    "authors": [
+      "Sangmin Park",
+      "Young‐Gab Kim"
+    ],
+    "abstract": "Unlike previous studies on the Metaverse based on Second Life, the current Metaverse is based on the social value of Generation Z that online and offline selves are not different. With the technological development of deep learning-based high-precision recognition models and natural generation models, Metaverse is being strengthened with various factors, from mobile-based always-on access to connectivity with reality using virtual currency. The integration of enhanced social activities and neural-net methods requires a new definition of Metaverse suitable for the present, different from the previous Metaverse. This paper divides the concepts and essential techniques necessary for realizing the Metaverse into three components (i.e., hardware, software, and contents) and three approaches (i.e., user interaction, implementation, and application) rather than marketing or hardware approach to conduct a comprehensive analysis. Furthermore, we describe essential methods based on three components and techniques to Metaverse&#x2019;s representative Ready Player One, Roblox, and Facebook research in the domain of films, games, and studies. Finally, we summarize the limitations and directions"
+  },
+  {
+    "title": "Usability of mobile applications: literature review and rationale for a new usability model",
+    "year": 2013,
+    "cited_by_count": 732,
+    "doi": "https://doi.org/10.1186/2194-0827-1-1",
+    "openalex": "https://openalex.org/W2120571425",
+    "url": "https://doi.org/10.1186/2194-0827-1-1",
+    "venue": "Journal of Interaction Science",
+    "type": "article",
+    "concepts": [
+      "Usability",
+      "Computer science",
+      "Usability engineering",
+      "Human–computer interaction",
+      "Cognitive walkthrough",
+      "Web usability",
+      "Usability goals",
+      "Heuristic evaluation"
+    ],
+    "authors": [
+      "Rachel Harrison",
+      "Derek Flood",
+      "David Duce"
+    ],
+    "abstract": "The usefulness of mobile devices has increased greatly in recent years allowing users to perform more tasks in a mobile context. This increase in usefulness has come at the expense of the usability of these devices in some contexts. We conducted a small review of mobile usability models and found that usability is usually measured in terms of three attributes; effectiveness, efficiency and satisfaction. Other attributes, such as cognitive load, tend to be overlooked in the usability models that are most prominent despite their likely impact on the success or failure of an application. To remedy this we introduces the PACMAD (People At the Centre of Mobile Application Development) usability model which was designed to address the limitations of existing usability models when applied to mobile devices. PACMAD brings together significant attributes from different usability models in order to create a more comprehensive model. None of the attributes that it includes are new, but the existing prominent usability models ignore one or more of them. This could lead to an incomplete usability evaluation. We performed a literature search to compile a collection of studies that evaluate mobil"
+  },
+  {
+    "title": "Sensing techniques for mobile interaction",
+    "year": 2000,
+    "cited_by_count": 530,
+    "doi": "https://doi.org/10.1145/354401.354417",
+    "openalex": "https://openalex.org/W2169732913",
+    "url": "https://doi.org/10.1145/354401.354417",
+    "venue": null,
+    "type": "article",
+    "concepts": [
+      "Microsoft Office",
+      "Microsoft excel",
+      "Computer science",
+      "World Wide Web",
+      "Visual Basic for Applications",
+      "Microsoft Windows",
+      "Citation",
+      "Software"
+    ],
+    "authors": [
+      "Ken Hinckley",
+      "Jeff Pierce",
+      "Mike Sinclair",
+      "Eric Horvitz"
+    ],
+    "abstract": "We describe sensing techniques motivated by unique aspects of human-computer interaction with handheld devices in mobile settings. Special features of mobile interaction include changing orientation and position, changing venues, the use of computing as auxiliary to ongoing, real-world activities like talking to a colleague, and the general intimacy of use for such devices. We introduce and integrate a set of sensors into a handheld device, and demonstrate several new functionalities engendered by the sensors, such as recording memos when the device is held like a cell phone, switching between portrait and landscape display modes by holding the device in the desired orientation, automatically powering up the device when the user picks it up the device to start using it, and scrolling the display using tilt. We present an informal experiment, initial usability testing results, and user reactions to these techniques."
+  },
+  {
+    "title": "Capabilities of GPT-4 on Medical Challenge Problems",
+    "year": 2023,
+    "cited_by_count": 505,
+    "doi": "https://doi.org/10.48550/arxiv.2303.13375",
+    "openalex": "https://openalex.org/W4360891289",
+    "url": "https://doi.org/10.48550/arxiv.2303.13375",
+    "venue": "arXiv (Cornell University)",
+    "type": "preprint",
+    "concepts": [
+      "Benchmark (surveying)",
+      "Licensure",
+      "United States Medical Licensing Examination",
+      "Computer science",
+      "Calibration",
+      "Machine learning",
+      "Artificial intelligence",
+      "Counterfactual thinking"
+    ],
+    "authors": [
+      "Harsha Nori",
+      "Nicholas King",
+      "Scott Mayer McKinney",
+      "Dean Carignan",
+      "Eric Horvitz"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in natural language understanding and generation across various domains, including medicine. We present a comprehensive evaluation of GPT-4, a state-of-the-art LLM, on medical competency examinations and benchmark datasets. GPT-4 is a general-purpose model that is not specialized for medical problems through training or engineered to solve clinical tasks. Our analysis covers two sets of official practice materials for the USMLE, a three-step examination program used to assess clinical competency and grant licensure in the United States. We also evaluate performance on the MultiMedQA suite of benchmark datasets. Beyond measuring model performance, experiments were conducted to investigate the influence of test questions containing both text and images on model performance, probe for memorization of content during training, and study probability calibration, which is of critical importance in high-stakes applications like medicine. Our results show that GPT-4, without any specialized prompt crafting, exceeds the passing score on USMLE by over 20 points and outperforms earlier general-purpose models (GPT-3.5) as we"
+  }
+]

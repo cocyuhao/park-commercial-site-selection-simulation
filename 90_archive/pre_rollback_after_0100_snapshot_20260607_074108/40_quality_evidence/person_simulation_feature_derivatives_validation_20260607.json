@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-06-07T04:01:40",
+  "status": "pass",
+  "failure_count": 0,
+  "csv_path": "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+  "summary": {
+    "row_count": 1200,
+    "column_count": 27,
+    "file_bytes": 2275733
+  },
+  "coverage": {
+    "persona_id": 8,
+    "income_segment_id": 5,
+    "time_band_id": 6,
+    "weather_id": 5,
+    "node_context_id": 6,
+    "demand_trigger_id": 10,
+    "candidate_supply_action_id": 21
+  },
+  "checks": [
+    {
+      "name": "row_count_at_least_1000",
+      "passed": true,
+      "detail": "rows=1200"
+    },
+    {
+      "name": "required_columns_present",
+      "passed": true,
+      "detail": "columns=['derivative_id', 'persona_id', 'persona_name', 'persona_core_need', 'income_segment_id', 'income_segment_name', 'income_price_band', 'income_sensitivity_note', 'income_evidence_hint', 'time_band_id', 'time_band_name', 'time_range', 'weather_id', 'weather_name', 'weather_effect', 'node_context_id', 'node_context_name', 'node_role', 'demand_trigger_id', 'demand_trigger_name', 'candidate_supply_action_id', 'candidate_supply_action_name', 'priority_label', 'user_control_needed', 'data_needed', 'deepseek_role', 'why_it_matters']"
+    },
+    {
+      "name": "coverage_persona_id",
+      "passed": true,
+      "detail": "persona_id=8 minimum=8"
+    },
+    {
+      "name": "coverage_income_segment_id",
+      "passed": true,
+      "detail": "income_segment_id=5 minimum=5"
+    },
+    {
+      "name": "coverage_time_band_id",
+      "passed": true,
+      "detail": "time_band_id=6 minimum=6"
+    },
+    {
+      "name": "coverage_weather_id",
+      "passed": true,
+      "detail": "weather_id=5 minimum=5"
+    },
+    {
+      "name": "coverage_node_context_id",
+      "passed": true,
+      "detail": "node_context_id=6 minimum=6"
+    },
+    {
+      "name": "coverage_demand_trigger_id",
+      "passed": true,
+      "detail": "demand_trigger_id=10 minimum=10"
+    },
+    {
+      "name": "coverage_candidate_supply_action_id",
+      "passed": true,
+      "detail": "candidate_supply_action_id=21 minimum=14"
+    },
+    {
+      "name": "no_mojibake_markers",
+      "passed": true,
+      "detail": "bad_rows=[] total=0"
+    },
+    {
+      "name": "required_cells_non_empty",
+      "passed": true,
+      "detail": "empty_counts={}"
+    },
+    {
+      "name": "business_terms_covered",
+      "passed": true,
+      "detail": "missing_terms=[]"
+    },
+    {
+      "name": "deepseek_boundary_every_row",
+      "passed": true,
+      "detail": "bad_rows=[] total=0"
+    },
+    {
+      "name": "user_control_every_row",
+      "passed": true,
+      "detail": "bad_rows=[] total=0"
+    },
+    {
+      "name": "specific_recommendation_not_raw_score",
+      "passed": true,
+      "detail": "bad_rows=[] total=0"
+    }
+  ],
+  "boundary": "This validates a scenario/feature coverage pool, not final simulation accuracy."
+}

@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-06-06T20:34:19.856Z",
+  "status": "pass",
+  "url": "http://127.0.0.1:8082/?_v=20260607reportfeature#report",
+  "title": "AI 仿真决策系统",
+  "screenshot": "40_quality_evidence/report_feature_scene_context_browser_20260607.png",
+  "screenshot_bytes": 337441,
+  "derivative_id": "PSD-0001",
+  "reportState": {
+    "adoptedSceneVisible": true,
+    "featureCardCount": 1,
+    "featureSectionOpen": true,
+    "featureText": "人物场景输入与收入价格带 报告必须把收入水平、消费价格带、时段、天气、空间节点和需求触发共同用于建议强度判断。 晨练/跑步人群 · 清晨 · 口渴/补水 收入/价格带：基础预算/公共服务优先 · 0-30元即时补给或免费基础服务 时段/天气/空间：清晨 · 舒适天气 · 入口/闸口 需求触发：口渴/补水 建议动作：饮水机/直饮水点 已采用 / 已锁定",
+    "firstFeatureCardText": "晨练/跑步人群 · 清晨 · 口渴/补水 收入/价格带：基础预算/公共服务优先 · 0-30元即时补给或免费基础服务 时段/天气/空间：清晨 · 舒适天气 · 入口/闸口 需求触发：口渴/补水 建议动作：饮水机/直饮水点 已采用 / 已锁定",
+    "forbiddenVisible": [],
+    "hasFeatureSection": true,
+    "heroRect": {
+      "height": 159.3125,
+      "width": 861.3333740234375,
+      "x": 344.66668701171875,
+      "y": 229.33334350585938
+    },
+    "incomeVisible": true,
+    "priceBandVisible": true,
+    "reportVisible": true,
+    "summaryTexts": [
+      "资料基础3 份资料已进入资料池",
+      "缺口判断缺口计算等待客流、TGI、POI 资料闭合",
+      "节点状态6 个节点可回看",
+      "人物场景1 条采用/锁定场景进入报告"
+    ]
+  },
+  "consoleLogs": [],
+  "checks": [
+    {
+      "name": "report_visible",
+      "passed": true
+    },
+    {
+      "name": "feature_section_visible",
+      "passed": true
+    },
+    {
+      "name": "feature_section_open",
+      "passed": true
+    },
+    {
+      "name": "income_visible",
+      "passed": true
+    },
+    {
+      "name": "price_band_visible",
+      "passed": true
+    },
+    {
+      "name": "adopted_scene_visible",
+      "passed": true
+    },
+    {
+      "name": "no_forbidden_words",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "console_clean",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "hero_readable_width",
+      "passed": true,
+      "evidence": {
+        "height": 159.3125,
+        "width": 861.3333740234375,
+        "x": 344.66668701171875,
+        "y": 229.33334350585938
+      }
+    },
+    {
+      "name": "screenshot_written",
+      "passed": true,
+      "evidence": 337441
+    }
+  ]
+}

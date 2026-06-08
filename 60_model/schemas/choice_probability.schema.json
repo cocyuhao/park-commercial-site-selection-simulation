@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "choice_probability.schema.json",
+  "title": "User-reviewable choice probability draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "choice_id",
+    "project_id",
+    "persona_id",
+    "program_id",
+    "node_id",
+    "offer_id",
+    "scenario_id",
+    "method_family",
+    "probability_status",
+    "probability_value",
+    "priority_label",
+    "factor_inputs",
+    "plain_language_explanation",
+    "specific_advice",
+    "source_refs",
+    "missing_inputs",
+    "user_locked"
+  ],
+  "properties": {
+    "choice_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "persona_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "program_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "node_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "offer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method_family": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "huff",
+          "logit",
+          "gravity",
+          "poi_tgi_gap",
+          "behavior_program",
+          "manual_business_rule",
+          "placeholder"
+        ]
+      }
+    },
+    "probability_status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "needs_review",
+        "user_confirmed",
+        "blocked"
+      ]
+    },
+    "probability_value": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "priority_label": {
+      "type": "string",
+      "enum": [
+        "优先推进",
+        "补资料后判断",
+        "仅空间观察",
+        "暂缓"
+      ]
+    },
+    "factor_inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "segment_weight",
+        "time_weight",
+        "distance_decay",
+        "queue_penalty",
+        "price_budget_match",
+        "opening_hours_match",
+        "poi_supply_capacity",
+        "evidence_confidence"
+      ],
+      "properties": {
+        "segment_weight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "time_weight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "distance_decay": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "queue_penalty": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "price_budget_match": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "opening_hours_match": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "poi_supply_capacity": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "evidence_confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "plain_language_explanation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "specific_advice": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "user_locked": {
+      "type": "boolean"
+    }
+  }
+}

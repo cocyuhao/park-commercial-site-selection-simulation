@@ -1,0 +1,14 @@
+{
+  "name": "p6-expert-dashboard-qa",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "qa:axe": "node axe_accessibility_probe.mjs",
+    "qa:lighthouse": "node lighthouse_user_flow_probe.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.0",
+    "lighthouse": "^13.0.1"
+  }
+}
