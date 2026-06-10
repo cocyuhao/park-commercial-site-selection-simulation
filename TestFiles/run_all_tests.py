@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import sqlite3
 import socket
@@ -719,14 +720,168 @@ def ui_step(recorder: Recorder, page: Any, name: str, fn: Callable[[], Any]) -> 
 
 
 def click_unique(page: Any, selector: str, timeout: int = 6000) -> None:
-    locator = page.locator(selector)
-    try:
-        if locator.count() > 1:
-            locator = locator.first
-    except Exception:
-        pass
+    locator = page.locator(f"{selector}:visible")
+    count = locator.count()
+    if count == 0:
+        raise AssertionError(f"没有可见控件：{selector}")
+    if count > 1:
+        locator = locator.first
     locator.wait_for(state="visible", timeout=timeout)
     locator.click(timeout=timeout)
+
+
+VIEW_CONTRACTS = {
+    "overview": {"view_id": "overviewView", "words": ["全局", "整体", "总览", "首页"]},
+    "upload": {"view_id": "uploadView", "words": ["资料", "上传", "导入"]},
+    "data": {"view_id": "dataView", "words": ["资料", "对象", "状态", "行为", "选择", "验证", "预检", "分析", "复核"]},
+    "nodes": {"view_id": "nodesView", "words": ["节点", "候选"]},
+    "map": {"view_id": "mapView", "words": ["地图", "空间", "位置", "范围"]},
+    "ai": {"view_id": "aiWorkspaceView", "words": ["AI", "对话", "沟通", "分析"]},
+    "report": {"view_id": "reportView", "words": ["报告", "依据"]},
+}
+
+
+def active_view(page: Any) -> str:
+    return page.evaluate(
+        """() => {
+          const active = Array.from(document.querySelectorAll('.view.active'))[0];
+          return active ? active.id : '';
+        }"""
+    )
+
+
+def read_live_metrics(page: Any) -> dict[str, Any]:
+    return page.evaluate(
+        """() => {
+          const grouped = (container, itemSelector, labelSelector, valueSelector) => {
+            const root = document.querySelector(container);
+            if (!root) return {};
+            return Object.fromEntries(Array.from(root.querySelectorAll(itemSelector)).map((item) => {
+              const label = item.querySelector(labelSelector)?.textContent?.trim() || '';
+              const value = item.querySelector(valueSelector)?.textContent?.trim() || '';
+              return [label, value];
+            }).filter(([label]) => label));
+          };
+          return {
+            chain: grouped('#chainSummaryBar', '.chain-summary-chip', 'em', 'b'),
+            overview: grouped('#overviewStatusCards', '.overview-status-card', 'span', 'b'),
+            overview_body: grouped('#overviewStatusCards', '.overview-status-card', 'span', 'em'),
+            source: grouped('#sourceFoundationSummary', '.source-foundation-brief', 'span', 'b'),
+            source_note: grouped('#sourceFoundationSummary', '.source-foundation-brief', 'span', 'p'),
+            simulation: grouped('#simulationObjectStats', 'span', 'em', 'b'),
+            preflight: grouped('#simulationTaskPreflight', '.task-preflight-counts span', 'em', 'b'),
+            dom: {
+              uploads: document.querySelectorAll('#uploadList .upload-item').length,
+              asset_items: document.querySelectorAll('#assetDrawerList .asset-item').length,
+              candidates: document.querySelectorAll('#candidateList .candidate-item').length,
+              nodes: document.querySelectorAll('#nodeList .node-row').length,
+              simulation_objects: document.querySelectorAll('#simulationObjectPool .sim-object-card').length,
+              ai_sessions: document.querySelectorAll('#aiSessionList .ai-session-item, #aiSessionList [data-session-id]').length,
+              map_results: document.querySelectorAll('#mapResultList .map-result-card, #mapResultList [data-map-result]').length,
+            },
+            text: {
+              map_status: document.querySelector('#amapStatusText')?.textContent?.trim() || '',
+              node_summary: document.querySelector('#overviewNodeList')?.textContent?.replace(/\\s+/g, ' ').trim() || '',
+              ai_context: document.querySelector('#aiContext')?.textContent?.replace(/\\s+/g, ' ').trim() || '',
+              simulation_toolbar: document.querySelector('.sim-object-pool-toolbar p')?.textContent?.replace(/\\s+/g, ' ').trim() || '',
+            },
+          };
+        }"""
+    )
+
+
+def metric_value(snapshot: dict[str, Any], path: str) -> Any:
+    value: Any = snapshot
+    for key in path.split("."):
+        if not isinstance(value, dict):
+            return None
+        value = value.get(key)
+    return value
+
+
+def record_metric_change(
+    recorder: Recorder,
+    name: str,
+    before: dict[str, Any],
+    after: dict[str, Any],
+    expected_paths: list[str],
+    expected_deltas: dict[str, int] | None = None,
+) -> None:
+    expected_deltas = expected_deltas or {}
+    changes = {
+        path: {"before": metric_value(before, path), "after": metric_value(after, path)}
+        for path in expected_paths
+    }
+    failures: list[str] = []
+    for path, values in changes.items():
+        if path in expected_deltas:
+            before_match = re.search(r"-?\d+", str(values["before"]))
+            after_match = re.search(r"-?\d+", str(values["after"]))
+            actual_delta = None if not before_match or not after_match else int(after_match.group()) - int(before_match.group())
+            values["expected_delta"] = expected_deltas[path]
+            values["actual_delta"] = actual_delta
+            if actual_delta != expected_deltas[path]:
+                failures.append(path)
+        elif values["before"] == values["after"]:
+            failures.append(path)
+    if failures:
+        recorder.fail("ui-live-count", name, f"{len(failures)} 个实时显示未按预期变化", evidence=changes)
+    else:
+        recorder.pass_("ui-live-count", name, f"{len(changes)} 个相关显示已实时变化", evidence=changes)
+
+
+def test_navigation_contracts(recorder: Recorder, page: Any) -> dict[str, Any]:
+    entries = page.evaluate(
+        """() => Array.from(document.querySelectorAll('[data-view]')).map((el) => ({
+          view: el.dataset.view || '',
+          scroll_target: el.dataset.scrollTarget || '',
+          own_text: (el.innerText || el.getAttribute('aria-label') || '').replace(/\\s+/g, ' ').trim(),
+          context_text: (el.closest('button, article, section, .next-step, .overview-status-card, .primary-action-card')?.innerText || '').replace(/\\s+/g, ' ').trim(),
+        }))"""
+    )
+    unexpected_views = sorted({item["view"] for item in entries if item["view"] not in VIEW_CONTRACTS})
+    semantic_mismatches: list[dict[str, str]] = []
+    for item in entries:
+        contract = VIEW_CONTRACTS.get(item["view"])
+        if not contract:
+            continue
+        readable = f"{item['own_text']} {item['context_text']}".strip()
+        if readable and not any(word in readable for word in contract["words"]):
+            semantic_mismatches.append({"view": item["view"], "text": readable[:180]})
+    if unexpected_views:
+        recorder.fail("ui-navigation", "跳转目标合法性", f"发现未知页面目标：{unexpected_views}", evidence=entries)
+    else:
+        recorder.pass_("ui-navigation", "跳转目标合法性", f"检查 {len(entries)} 个跳转入口，目标均有效")
+    if semantic_mismatches:
+        recorder.fail("ui-navigation", "跳转文字与目标一致性", f"{len(semantic_mismatches)} 个入口文字与目标页面不一致", evidence=semantic_mismatches)
+    else:
+        recorder.pass_("ui-navigation", "跳转文字与目标一致性", f"检查 {len(entries)} 个跳转入口，文字与目标一致")
+
+    route_results: list[dict[str, str]] = []
+    unique_routes = sorted({(item["view"], item["scroll_target"]) for item in entries if item["view"] in VIEW_CONTRACTS})
+    for view, scroll_target in unique_routes:
+        selector = f"[data-view='{view}']"
+        if scroll_target:
+            selector += f"[data-scroll-target='{scroll_target}']"
+        click_unique(page, selector)
+        page.wait_for_timeout(150)
+        actual_view = active_view(page)
+        expected_view = VIEW_CONTRACTS[view]["view_id"]
+        hash_value = page.evaluate("() => location.hash")
+        route_results.append(
+            {
+                "target": view,
+                "scroll_target": scroll_target,
+                "expected_view": expected_view,
+                "actual_view": actual_view,
+                "hash": hash_value,
+            }
+        )
+        if actual_view != expected_view:
+            raise AssertionError(f"{selector} 应打开 {expected_view}，实际打开 {actual_view}")
+        if scroll_target and page.locator(f"#{scroll_target}").count() != 1:
+            raise AssertionError(f"{selector} 指向不存在的区域 #{scroll_target}")
+    return {"entry_count": len(entries), "unique_routes": route_results}
 
 
 def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
@@ -753,6 +908,8 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
             page.wait_for_selector("#overviewView", timeout=15000)
             page.screenshot(path=str(screenshot_dir / "overview.png"), full_page=True)
 
+            ui_step(recorder, page, "全量跳转入口与文字契约", lambda: test_navigation_contracts(recorder, page))
+
             views = ["overview", "upload", "data", "nodes", "map", "ai", "report"]
             for view in views:
                 def switch(view_name: str = view) -> dict[str, str]:
@@ -765,18 +922,34 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
 
             ui_step(recorder, page, "资料池抽屉打开关闭", lambda: (click_unique(page, "#assetDrawerBtn"), click_unique(page, "#assetDrawerClose"), "done"))
 
-            def upload_flow() -> str:
+            def upload_flow() -> dict[str, Any]:
+                before = read_live_metrics(page)
                 click_unique(page, "[data-view='upload']")
                 page.set_input_files("#sourceFile", str(FIXTURE_DIR / "qa_project_plan.txt"))
                 page.fill("#uploadNote", "TestFiles 自动化上传资料")
                 page.select_option("#uploadCategory", label="方案文件")
                 click_unique(page, "#uploadSubmitBtn")
                 page.wait_for_timeout(1500)
-                return page.locator("#uploadList").inner_text(timeout=8000)[:300]
+                after = read_live_metrics(page)
+                record_metric_change(
+                    recorder,
+                    "上传资料后的实时显示",
+                    before,
+                    after,
+                    ["dom.uploads", "dom.asset_items", "overview.资料采用", "source.网页资料池"],
+                    {
+                        "dom.uploads": 1,
+                        "dom.asset_items": 1,
+                        "overview.资料采用": 1,
+                        "source.网页资料池": 1,
+                    },
+                )
+                return {"before": before, "after": after, "upload_list": page.locator("#uploadList").inner_text(timeout=8000)[:300]}
 
             ui_step(recorder, page, "资料上传交互", upload_flow)
 
-            def node_flow() -> str:
+            def node_flow() -> dict[str, Any]:
+                before = read_live_metrics(page)
                 click_unique(page, "[data-view='nodes']")
                 click_unique(page, "#quickNewNodeBtn")
                 page.fill("#nodeNameInput", "QA UI 自动化节点")
@@ -786,13 +959,23 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 page.fill("#nodeNoteInput", "前端自动化测试后恢复")
                 click_unique(page, "[data-node-save='true']")
                 page.wait_for_timeout(1000)
+                after = read_live_metrics(page)
+                record_metric_change(
+                    recorder,
+                    "新增节点后的实时显示",
+                    before,
+                    after,
+                    ["dom.nodes", "overview.节点推进"],
+                    {"dom.nodes": 1, "overview.节点推进": 1},
+                )
                 page.fill("#nodeSearch", "QA UI")
                 page.wait_for_timeout(500)
-                return page.locator("#detailTitle").inner_text(timeout=8000)
+                return {"before": before, "after": after, "detail": page.locator("#detailTitle").inner_text(timeout=8000)}
 
             ui_step(recorder, page, "节点新增搜索交互", node_flow)
 
-            def map_flow() -> str:
+            def map_flow() -> dict[str, Any]:
+                before = read_live_metrics(page)
                 click_unique(page, "[data-view='map']")
                 page.fill("#mapSearchInput", "青年湖公园")
                 page.locator("#mapSearchForm").evaluate("(form) => form.requestSubmit()")
@@ -804,11 +987,14 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                     except Exception:
                         pass
                 visible = page.locator("#mapErrorPanel, #mapResultList, #mapSideDetail").first.inner_text(timeout=5000)
-                return visible[:300]
+                after = read_live_metrics(page)
+                record_metric_change(recorder, "地图搜索后的实时显示", before, after, ["overview_body.项目范围", "text.map_status"])
+                return {"before": before, "after": after, "visible": visible[:300]}
 
             ui_step(recorder, page, "地图搜索缩放选择交互", map_flow)
 
-            def data_flow() -> str:
+            def data_flow() -> dict[str, Any]:
+                before = read_live_metrics(page)
                 click_unique(page, "[data-view='data']")
                 for selector in ["#addPersonaStateObjectBtn", "#cancelSimObjectBtn", "#addBehaviorProgramObjectBtn", "#cancelSimObjectBtn", "#addChoiceObjectBtn"]:
                     click_unique(page, selector)
@@ -824,7 +1010,48 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 page.wait_for_timeout(1000)
                 click_unique(page, "#runSimulationBtn")
                 page.wait_for_timeout(2000)
-                return page.locator("#simulationStatus").inner_text(timeout=8000)[:300]
+                after = read_live_metrics(page)
+                record_metric_change(
+                    recorder,
+                    "新增分析对象后的实时显示",
+                    before,
+                    after,
+                    ["overview.方法对象", "simulation.选择概率候选", "text.simulation_toolbar"],
+                    {"overview.方法对象": 1, "simulation.选择概率候选": 1},
+                )
+                expand = page.locator("#toggleSimulationObjectPoolBtn")
+                if expand.count() == 1 and "展开" in expand.inner_text():
+                    expand.click()
+                    page.wait_for_timeout(300)
+                card = page.locator(".sim-object-card").filter(has_text="QA UI 对象")
+                if card.count() != 1:
+                    raise AssertionError(f"新增对象卡片数量异常：{card.count()}")
+                adoption_before = read_live_metrics(page)
+                card.locator("[data-sim-object-action='use']").click()
+                page.wait_for_timeout(800)
+                adoption_after = read_live_metrics(page)
+                record_metric_change(
+                    recorder,
+                    "采用分析对象后的实时显示",
+                    adoption_before,
+                    adoption_after,
+                    ["simulation.已采用", "overview_body.方法对象"],
+                    {"simulation.已采用": 1},
+                )
+                card = page.locator(".sim-object-card").filter(has_text="QA UI 对象")
+                lock_before = read_live_metrics(page)
+                card.locator("[data-sim-object-action='lock']").click()
+                page.wait_for_timeout(800)
+                lock_after = read_live_metrics(page)
+                record_metric_change(
+                    recorder,
+                    "锁定分析对象后的实时显示",
+                    lock_before,
+                    lock_after,
+                    ["simulation.已锁定", "overview_body.方法对象"],
+                    {"simulation.已锁定": 1},
+                )
+                return {"before": before, "after": lock_after, "status": page.locator("#simulationStatus").inner_text(timeout=8000)[:300]}
 
             ui_step(recorder, page, "资料闭合与仿真对象交互", data_flow)
 
@@ -842,7 +1069,8 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
 
             ui_step(recorder, page, "报告查看和导出交互", report_flow)
 
-            def ai_flow() -> str:
+            def ai_flow() -> dict[str, Any]:
+                before = read_live_metrics(page)
                 click_unique(page, "[data-view='ai']")
                 click_unique(page, "#newAiSessionBtn")
                 page.fill("#chatInput", "请说明当前项目还缺哪些资料。")
@@ -854,7 +1082,9 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                     page.wait_for_timeout(2000)
                 except Exception:
                     pass
-                return page.locator("#chatMessages").inner_text(timeout=10000)[-500:]
+                after = read_live_metrics(page)
+                record_metric_change(recorder, "新建 AI 对话后的实时显示", before, after, ["dom.ai_sessions", "overview_body.AI 共识"])
+                return {"before": before, "after": after, "messages": page.locator("#chatMessages").inner_text(timeout=10000)[-500:]}
 
             ui_step(recorder, page, "AI 新会话上传对话生成报告交互", ai_flow)
 
@@ -911,6 +1141,24 @@ def write_report(recorder: Recorder, metadata: dict[str, Any], backup_dir: Path)
     ]
     for key, value in metadata.items():
         lines.append(f"- {key}: `{value}`")
+    lines.extend(["", "## 前端跳转与实时显示专项结果", ""])
+    focused_checks = [
+        check
+        for check in recorder.checks
+        if check.area in {"ui-navigation", "ui-live-count"}
+    ]
+    if not focused_checks:
+        lines.append("- 本轮未运行前端专项检查。")
+    else:
+        for check in focused_checks:
+            lines.append(f"### {check.name}")
+            lines.append("")
+            lines.append(f"- 结果：`{check.status}`")
+            lines.append(f"- 说明：{check.detail}")
+            if check.evidence is not None:
+                evidence_text = json.dumps(make_json_safe(check.evidence), ensure_ascii=False, indent=2)
+                lines.extend(["- 变化记录：", "", "```json", evidence_text, "```"])
+            lines.append("")
     lines.extend(["", "## 失败和警告", ""])
     issues = [check for check in recorder.checks if check.status != "passed"]
     if not issues:
