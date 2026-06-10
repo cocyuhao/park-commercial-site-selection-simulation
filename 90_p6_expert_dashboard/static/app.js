@@ -26,6 +26,7 @@ const state = {
   mapSearchLoading: false,
   mapLayerLoading: false,
   mapError: "",
+  mapAttempt: null,
   pendingSearchKeyword: "",
   lastSuccessfulMapContext: null,
   amapConfig: null,
@@ -274,6 +275,37 @@ function userFacingCandidateSummary(value) {
 
 function mapContextPayload() {
   return state.data?.amap || state.lastSuccessfulMapContext?.amap || {};
+}
+
+function mergeMapContext(context) {
+  if (!context || !state.data?.amap) return;
+  state.data.amap.map_context = { ...(state.data.amap.map_context || {}), ...context };
+  state.lastSuccessfulMapContext = { amap: state.data.amap };
+  renderOverviewStatusCards();
+  renderMap();
+  renderMapSide();
+  renderMapResultList();
+}
+
+function mergeSimulationObject(updatedObject) {
+  if (!updatedObject || !Array.isArray(state.data?.simulation_objects)) return;
+  const index = state.data.simulation_objects.findIndex((item) => item.object_id === updatedObject.object_id);
+  if (index >= 0) state.data.simulation_objects[index] = updatedObject;
+  renderOverviewStatusCards();
+  renderSimulationObjectPool();
+  renderSimulationTaskPreflight();
+}
+
+function mergeAiSession(updatedSession) {
+  if (!updatedSession) return;
+  const sessions = state.aiSessions.sessions || [];
+  const index = sessions.findIndex((item) => item.session_id === updatedSession.session_id);
+  if (index >= 0) sessions[index] = { ...sessions[index], ...updatedSession };
+  else sessions.unshift(updatedSession);
+  const project = (state.aiSessions.projects || []).find((item) => item.project_id === updatedSession.project_id);
+  if (project) project.count = sessions.filter((item) => item.project_id === updatedSession.project_id).length;
+  renderAiSessions();
+  renderOverviewStatusCards();
 }
 
 async function loadDashboard() {
@@ -636,6 +668,7 @@ function renderOverviewStatusCards() {
   const amap = state.data.amap || {};
   const amapStatus = amap.status || {};
   const mapContext = amap.map_context || {};
+  const mapAttempt = state.mapAttempt;
   const feedbackCount = state.data.expert_feedback?.length || 0;
   const report = state.data.demand_supply?.report || {};
   const topGaps = report.top_gaps || [];
@@ -647,9 +680,9 @@ function renderOverviewStatusCards() {
   const cards = [
     {
       title: "项目范围",
-      status: mapContext.keyword || mapContext.matched_name ? "已定位" : "待确认",
-      tone: mapContext.keyword || mapContext.matched_name ? "good" : "warn",
-      body: mapContext.matched_name || mapContext.keyword || "尚未确认目标地点",
+      status: mapAttempt?.status === "failed" ? "定位未完成" : mapAttempt ? "定位中" : mapContext.keyword || mapContext.matched_name ? "已定位" : "待确认",
+      tone: mapAttempt?.status === "failed" ? "warn" : mapAttempt ? "warn" : mapContext.keyword || mapContext.matched_name ? "good" : "warn",
+      body: mapAttempt?.keyword || mapContext.matched_name || mapContext.keyword || "尚未确认目标地点",
       action: "核对地图",
       view: "map",
     },
@@ -1095,7 +1128,12 @@ function renderMap() {
   const status = amap.status || {};
   const context = amap.map_context || {};
   prepareStaticBasemap();
-  $("#amapStatusText").textContent = status.web_service_key_available
+  const labelMapBrand = () => $("#amapInteractiveMap")?.querySelector(".amap-logo")?.setAttribute("aria-label", "高德地图");
+  labelMapBrand();
+  window.setTimeout(labelMapBrand, 300);
+  $("#amapStatusText").textContent = state.mapAttempt
+    ? `${state.mapAttempt.status === "failed" ? "定位未完成" : "正在定位"}：${state.mapAttempt.keyword}`
+    : status.web_service_key_available
     ? `目标：${context.matched_name || context.keyword || "当前地点"}；已加载 ${status.point_count || 0} 条 POI`
     : "未检测到高德 Key；先显示本地示意层";
   const modeStatus = $("#mapModeStatus");
@@ -2118,6 +2156,7 @@ function simulationTaskObjectOptions(type, selectedIds) {
               type="checkbox"
               data-sim-task-object="${esc(item.object_id)}"
               data-sim-task-type="${esc(type)}"
+              aria-label="选择${esc(item.title || item.object_id)}"
               ${checked ? "checked" : ""}
             />
             <span>
@@ -2431,6 +2470,10 @@ async function updateSimulationObjectAction(objectId, action) {
   const response = await fetch(`/api/simulation/objects/${encodeURIComponent(objectId)}`, options);
   const payload = await response.json();
   if (!response.ok) throw new Error(payload.detail || `仿真对象操作失败：${response.status}`);
+  const updatedObject = {
+    ...payload,
+    user_locked: action === "lock" ? true : action === "unlock" ? false : payload.user_locked,
+  };
   const labels = {
     use: "已采用仿真对象",
     discard: "已放弃仿真对象",
@@ -2440,7 +2483,9 @@ async function updateSimulationObjectAction(objectId, action) {
     delete: "已删除仿真对象",
   };
   state.lastAction = labels[action] || "仿真对象已更新";
+  mergeSimulationObject(updatedObject);
   await loadDashboard();
+  mergeSimulationObject(updatedObject);
 }
 
 async function updateFeatureDerivativeAction(derivativeId, action) {
@@ -2701,12 +2746,15 @@ async function updateMapContext(event) {
   state.lastAction = `正在定位：${keyword}`;
   state.mapLoading = true;
   state.mapSearchLoading = true;
+  state.mapAttempt = { keyword, status: "loading" };
   state.pendingSearchKeyword = keyword;
   state.mapTipsSeq += 1;
   state.mapSuppressTipsUntil = Date.now() + 2500;
   if (!state.amapReady) $("#mapCanvas").classList.add("loading");
   $("#mapSuggest").innerHTML = "";
   renderMeta();
+  renderOverviewStatusCards();
+  renderMap();
   try {
     const response = await fetch("/api/amap/context", {
       method: "POST",
@@ -2720,13 +2768,17 @@ async function updateMapContext(event) {
     input.value = data.matched_name || data.keyword || keyword;
     $("#mapSuggest").innerHTML = "";
     state.mapError = "";
+    state.mapAttempt = null;
     await loadDashboard();
-    state.lastSuccessfulMapContext = { amap: state.data.amap };
+    mergeMapContext(data);
     if (state.amapMap) state.amapMap.setZoomAndCenter(15, [Number(data.longitude), Number(data.latitude)], false, 500);
     setView("map");
   } catch (error) {
     state.mapError = mapUserError(error);
+    state.mapAttempt = { keyword, status: "failed" };
     state.lastAction = state.mapError;
+    renderOverviewStatusCards();
+    renderMap();
     renderMapErrorPanel();
     renderMapResultList();
     renderMeta();
@@ -2745,11 +2797,14 @@ async function updateMapContextFromSuggestion(tip) {
   state.lastAction = `正在定位：${tip.name}`;
   state.mapLoading = true;
   state.mapSearchLoading = true;
+  state.mapAttempt = { keyword: tip.name, status: "loading" };
   state.pendingSearchKeyword = tip.name;
   state.mapTipsSeq += 1;
   state.mapSuppressTipsUntil = Date.now() + 2500;
   $("#mapCanvas").classList.add("loading");
   renderMeta();
+  renderOverviewStatusCards();
+  renderMap();
   try {
     const response = await fetch("/api/amap/context", {
       method: "POST",
@@ -2769,13 +2824,17 @@ async function updateMapContextFromSuggestion(tip) {
     $("#mapSearchInput").value = data.matched_name || data.keyword || tip.name;
     $("#mapSuggest").innerHTML = "";
     state.mapError = "";
+    state.mapAttempt = null;
     await loadDashboard();
-    state.lastSuccessfulMapContext = { amap: state.data.amap };
+    mergeMapContext(data);
     if (state.amapMap) state.amapMap.setZoomAndCenter(16, [Number(data.longitude), Number(data.latitude)], false, 500);
     setView("map");
   } catch (error) {
     state.mapError = mapUserError(error);
+    state.mapAttempt = { keyword: tip.name, status: "failed" };
     state.lastAction = state.mapError;
+    renderOverviewStatusCards();
+    renderMap();
     renderMapErrorPanel();
     renderMapResultList();
     renderMeta();
@@ -2988,6 +3047,7 @@ async function createAiSession() {
   if (!response.ok) throw new Error(`新建对话失败：${response.status}`);
   const data = await response.json();
   await loadAiSessions();
+  mergeAiSession(data.session);
   await openAiSession(data.session.session_id);
   state.lastAction = "已开启新对话";
   updateReportButtonState(0);
@@ -3018,6 +3078,8 @@ async function generateChatReport() {
   });
   if (!response.ok) throw new Error(`生成报告失败：${response.status}`);
   const data = await response.json();
+  await loadAiSessions();
+  mergeAiSession(data.session || currentAiSession());
   state.lastAction = `${reportScope}已生成，可查看/下载`;
   renderMeta();
   addChatMessage("assistant", `${reportScope}已生成。建议先按“摘要、依据、缺口、推进事项”检查一遍，再发给同事或客户确认。`, "待人工确认");
@@ -3188,8 +3250,9 @@ async function sendChat() {
     addChatMessage("assistant", data.message || "AI 暂时没有返回内容", `${data.generated_by || "AI"} · 待人工确认`);
     state.lastAction = "AI 对话已更新，专家输入已登记为待复核";
     await loadAiSessions();
-    renderAiSessions();
+    mergeAiSession(data.session);
     await loadDashboard();
+    mergeAiSession(data.session);
     setView("ai");
   } finally {
     state.aiBusy = false;

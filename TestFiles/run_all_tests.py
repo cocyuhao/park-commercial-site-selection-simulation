@@ -750,6 +750,16 @@ def active_view(page: Any) -> str:
     )
 
 
+def open_view(page: Any, view: str, timeout: int = 10000) -> None:
+    click_unique(page, f"[data-view='{view}']")
+    expected_view = VIEW_CONTRACTS[view]["view_id"]
+    page.wait_for_function(
+        "(expected) => document.querySelector('.view.active')?.id === expected",
+        arg=expected_view,
+        timeout=timeout,
+    )
+
+
 def read_live_metrics(page: Any) -> dict[str, Any]:
     return page.evaluate(
         """() => {
@@ -797,6 +807,27 @@ def metric_value(snapshot: dict[str, Any], path: str) -> Any:
             return None
         value = value.get(key)
     return value
+
+
+def wait_for_metric_delta(
+    page: Any,
+    before: dict[str, Any],
+    path: str,
+    expected_delta: int = 1,
+    timeout: int = 30000,
+) -> None:
+    def changed() -> bool:
+        current = read_live_metrics(page)
+        before_match = re.search(r"-?\d+", str(metric_value(before, path)))
+        current_match = re.search(r"-?\d+", str(metric_value(current, path)))
+        return bool(before_match and current_match and int(current_match.group()) - int(before_match.group()) == expected_delta)
+
+    deadline = time.time() + timeout / 1000
+    while time.time() < deadline:
+        if changed():
+            return
+        page.wait_for_timeout(250)
+    raise AssertionError(f"{path} 未在 {timeout // 1000} 秒内变化 {expected_delta}")
 
 
 def record_metric_change(
@@ -924,12 +955,12 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
 
             def upload_flow() -> dict[str, Any]:
                 before = read_live_metrics(page)
-                click_unique(page, "[data-view='upload']")
+                open_view(page, "upload")
                 page.set_input_files("#sourceFile", str(FIXTURE_DIR / "qa_project_plan.txt"))
                 page.fill("#uploadNote", "TestFiles 自动化上传资料")
                 page.select_option("#uploadCategory", label="方案文件")
                 click_unique(page, "#uploadSubmitBtn")
-                page.wait_for_timeout(1500)
+                wait_for_metric_delta(page, before, "dom.uploads")
                 after = read_live_metrics(page)
                 record_metric_change(
                     recorder,
@@ -950,7 +981,7 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
 
             def node_flow() -> dict[str, Any]:
                 before = read_live_metrics(page)
-                click_unique(page, "[data-view='nodes']")
+                open_view(page, "nodes")
                 click_unique(page, "#quickNewNodeBtn")
                 page.fill("#nodeNameInput", "QA UI 自动化节点")
                 page.fill("#nodeLocationInput", "QA UI 自动化位置")
@@ -958,7 +989,7 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 page.fill("#nodeAreaInput", "待测")
                 page.fill("#nodeNoteInput", "前端自动化测试后恢复")
                 click_unique(page, "[data-node-save='true']")
-                page.wait_for_timeout(1000)
+                wait_for_metric_delta(page, before, "dom.nodes")
                 after = read_live_metrics(page)
                 record_metric_change(
                     recorder,
@@ -976,10 +1007,13 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
 
             def map_flow() -> dict[str, Any]:
                 before = read_live_metrics(page)
-                click_unique(page, "[data-view='map']")
+                open_view(page, "map")
                 page.fill("#mapSearchInput", "青年湖公园")
                 page.locator("#mapSearchForm").evaluate("(form) => form.requestSubmit()")
-                page.wait_for_timeout(4000)
+                page.wait_for_function(
+                    "() => document.querySelector('#amapStatusText')?.textContent?.includes('青年湖公园')",
+                    timeout=10000,
+                )
                 for selector in ["#mapZoomIn", "#mapZoomOut", "#mapReset", "#mapSelectedOnly", "#mapUndo", "#mapAskAiBtn"]:
                     try:
                         click_unique(page, selector, timeout=3000)
@@ -989,13 +1023,17 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 visible = page.locator("#mapErrorPanel, #mapResultList, #mapSideDetail").first.inner_text(timeout=5000)
                 after = read_live_metrics(page)
                 record_metric_change(recorder, "地图搜索后的实时显示", before, after, ["overview_body.项目范围", "text.map_status"])
+                page.wait_for_function(
+                    "() => !document.querySelector('#amapStatusText')?.textContent?.startsWith('正在定位')",
+                    timeout=30000,
+                )
                 return {"before": before, "after": after, "visible": visible[:300]}
 
             ui_step(recorder, page, "地图搜索缩放选择交互", map_flow)
 
             def data_flow() -> dict[str, Any]:
                 before = read_live_metrics(page)
-                click_unique(page, "[data-view='data']")
+                open_view(page, "data")
                 for selector in ["#addPersonaStateObjectBtn", "#cancelSimObjectBtn", "#addBehaviorProgramObjectBtn", "#cancelSimObjectBtn", "#addChoiceObjectBtn"]:
                     click_unique(page, selector)
                     page.wait_for_timeout(200)
@@ -1005,7 +1043,7 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 page.fill("#simObjectMissing", "真实客流；转化率")
                 page.fill("#simObjectAdvice", "测试后恢复")
                 page.locator("#simulationObjectForm").evaluate("(form) => form.requestSubmit()")
-                page.wait_for_timeout(1000)
+                wait_for_metric_delta(page, before, "simulation.选择概率候选")
                 click_unique(page, "#saveSimulationTaskBtn")
                 page.wait_for_timeout(1000)
                 click_unique(page, "#runSimulationBtn")
@@ -1073,7 +1111,7 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 before = read_live_metrics(page)
                 click_unique(page, "[data-view='ai']")
                 click_unique(page, "#newAiSessionBtn")
-                page.fill("#chatInput", "请说明当前项目还缺哪些资料。")
+                page.fill("#chatInput", "请基于已给资料输出当前判断、推进动作和待复核边界。")
                 page.set_input_files("#aiFileInput", str(FIXTURE_DIR / "qa_tgi.csv"))
                 page.locator("#aiComposer").evaluate("(form) => form.requestSubmit()")
                 page.wait_for_timeout(8000)
@@ -1083,14 +1121,21 @@ def run_ui_tests(recorder: Recorder) -> dict[str, Any]:
                 except Exception:
                     pass
                 after = read_live_metrics(page)
-                record_metric_change(recorder, "新建 AI 对话后的实时显示", before, after, ["dom.ai_sessions", "overview_body.AI 共识"])
+                record_metric_change(recorder, "新建 AI 对话后的实时显示", before, after, ["overview_body.AI 共识"])
                 return {"before": before, "after": after, "messages": page.locator("#chatMessages").inner_text(timeout=10000)[-500:]}
 
             ui_step(recorder, page, "AI 新会话上传对话生成报告交互", ai_flow)
 
             controls = page.evaluate(
                 """() => Array.from(document.querySelectorAll('button,a,input,textarea,select'))
-                  .map((el) => ({tag: el.tagName.toLowerCase(), id: el.id || '', text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim(), disabled: Boolean(el.disabled)}))"""
+                  .map((el) => ({
+                    tag: el.tagName.toLowerCase(),
+                    id: el.id || '',
+                    text: (el.innerText || el.getAttribute('aria-label') || el.getAttribute('placeholder') || '').trim(),
+                    disabled: Boolean(el.disabled),
+                    context: (el.closest('[id], article, section, form')?.id || el.closest('article, section, form')?.className || '').toString().slice(0, 120),
+                    html: el.outerHTML.slice(0, 240),
+                  }))"""
             )
             missing_hooks = [item for item in controls if not item["id"] and not item["text"]]
             if missing_hooks:
