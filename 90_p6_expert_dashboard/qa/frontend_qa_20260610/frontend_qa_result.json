@@ -1,0 +1,33 @@
+{
+  "mobile": {
+    "actions": [
+      {
+        "clientWidth": 170,
+        "height": 38,
+        "scrollWidth": 170,
+        "testid": "download-report-docx",
+        "text": "下载 DOCX 报告",
+        "whiteSpace": "nowrap",
+        "width": 172
+      },
+      {
+        "clientWidth": 131,
+        "height": 38,
+        "scrollWidth": 131,
+        "testid": "export-report-basis",
+        "text": "导出依据链",
+        "whiteSpace": "nowrap",
+        "width": 133
+      }
+    ],
+    "docWidth": 375,
+    "headDirection": "column",
+    "viewport": 375
+  },
+  "desktop1920": {
+    "docWidth": 1905,
+    "headDirection": "row",
+    "viewport": 1905
+  },
+  "consoleErrors": []
+}

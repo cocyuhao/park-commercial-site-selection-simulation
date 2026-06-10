@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AI 仿真决策系统</title>
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="/static/styles.css?v=20260605-foundation" />
+    <link rel="stylesheet" href="/static/styles.css?v=20260610-frontend-qa" />
   </head>
   <body>
     <div class="platform-shell">
@@ -440,8 +440,8 @@
                   <p>报告基于已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型生成，主文聚焦预测、调整和可执行动作。</p>
                 </div>
                 <div class="report-actions">
-                  <a id="downloadReportDraftBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=docx" data-action="download-report-draft" aria-label="下载 DOCX 预测调整报告">下载 DOCX 报告</a>
-                  <a id="exportReportBackupBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=json" data-action="export-report-backup" aria-label="导出报告依据链">导出依据链</a>
+                  <a id="downloadReportDraftBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=docx" data-action="download-report-draft" data-testid="download-report-docx" aria-label="下载 DOCX 预测调整报告">下载 DOCX 报告</a>
+                  <a id="exportReportBackupBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=json" data-action="export-report-backup" data-testid="export-report-basis" aria-label="导出报告依据链">导出依据链</a>
                 </div>
               </div>
               <div id="reportBody" class="report-body"></div>

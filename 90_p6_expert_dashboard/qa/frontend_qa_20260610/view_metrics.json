@@ -1,0 +1,34 @@
+[
+  {
+    "name": "ai",
+    "active": "aiWorkspaceView",
+    "activeW": 1154,
+    "buttons": [],
+    "clientW": 1440,
+    "docW": 1440
+  },
+  {
+    "name": "report",
+    "active": "reportView",
+    "activeW": 1139,
+    "buttons": [],
+    "clientW": 1425,
+    "docW": 1425
+  },
+  {
+    "name": "nodes",
+    "active": "nodesView",
+    "activeW": 1139,
+    "buttons": [],
+    "clientW": 1425,
+    "docW": 1425
+  },
+  {
+    "name": "asset",
+    "clientW": 1425,
+    "open": true,
+    "right": 1403,
+    "width": 380,
+    "x": 1023
+  }
+]
