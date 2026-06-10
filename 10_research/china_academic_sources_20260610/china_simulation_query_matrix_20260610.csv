@@ -1,0 +1,41 @@
+﻿query_id,theme,query,priority,source_preference,usage_rule
+CN-Q-0001,公园商业与公共空间,城市公园 商业服务 游客需求,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0002,公园商业与公共空间,公园商业 业态组合 运营,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0003,公园商业与公共空间,公共空间 商业化 游客体验,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0004,公园商业与公共空间,城市绿地 配套服务 消费行为,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0005,公园商业与公共空间,公园 轻餐饮 咖啡亭 选址,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0006,客群画像与消费,公园游客 客群画像 消费意愿,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0007,客群画像与消费,居民休闲消费 公园 服务设施,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0008,客群画像与消费,游客消费 客单价 休闲空间,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0009,客群画像与消费,亲子客群 公园 活动需求,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0010,客群画像与消费,银发人群 城市公园 服务需求,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0011,人流仿真与 ABM,城市公园 人流仿真 Agent,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0012,人流仿真与 ABM,公共空间 行人仿真 多智能体,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0013,人流仿真与 ABM,游客行为 仿真 活动链,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0014,人流仿真与 ABM,行人轨迹 热力图 公园,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0015,人流仿真与 ABM,人群拥挤 瓶颈 仿真 公共空间,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0016,排队容量与运营,咖啡亭 排队模型 服务能力,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0017,排队容量与运营,餐饮服务 排队 仿真 公园,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0018,排队容量与运营,游客服务设施 容量规划,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0019,排队容量与运营,高峰客流 服务压力 仿真,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0020,排队容量与运营,零售服务 等待时间 运营优化,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0021,收益预测与不确定性,公园商业 收益预测 不确定性,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0022,收益预测与不确定性,休闲消费 转化率 客单价 模型,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0023,收益预测与不确定性,Monte Carlo 收益预测 商业选址,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0024,收益预测与不确定性,敏感性分析 商业选址 参数,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0025,收益预测与不确定性,情景分析 公园商业 经营,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0026,GIS/CAD/空间选址,GIS 商业选址 公园,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0027,GIS/CAD/空间选址,可达性 公园 服务设施 选址,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0028,GIS/CAD/空间选址,CAD GIS 空间数据 城市规划,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0029,GIS/CAD/空间选址,POI 商业供给 公园 周边,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0030,GIS/CAD/空间选址,多准则决策 商业选址 GIS,high,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0031,城市治理与合规,城市公园 商业经营 合规,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0032,城市治理与合规,公共空间 噪声投诉 夜间经济,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0033,城市治理与合规,食品经营许可 公园 商业,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0034,城市治理与合规,消防安全 临时商业设施,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0035,城市治理与合规,公园商业 公共性 治理,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0036,AI 工作台与报告,人工智能 决策支持 城市规划,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0037,AI 工作台与报告,大语言模型 智能体 仿真,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0038,AI 工作台与报告,AI 报告生成 可信度 证据链,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0039,AI 工作台与报告,人机协同 决策支持 界面,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。
+CN-Q-0040,AI 工作台与报告,知识库 检索增强 规划决策,medium,万方/AMiner first; CNKI/VIP authorized export; OpenAlex/Crossref as international supplement,仅作方法约束或中国语境补充；进入客户结论前必须连接本项目证据链。

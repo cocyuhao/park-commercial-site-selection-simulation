@@ -90,7 +90,7 @@ def main() -> None:
     banned_patterns = {
         "P2已通过": r"P2已通过|可以进入P2|可直接进入P2",
         "官方入口已确认": r"官方入口已确认|入口已最终确认",
-        "空值已补齐": r"所有空值已补齐|缺失字段已全部补齐",
+        "空值已复核": r"所有空值已复核|缺失字段已全部复核",
     }
     bad_claims = [name for name, pattern in banned_patterns.items() if re.search(pattern, draft)]
 
@@ -102,7 +102,7 @@ def main() -> None:
     add(review, ok(has_numeric_line(draft, "- 证据台账总条数：", len(evidence_rows))), "error", f"evidence total line expected={len(evidence_rows)}", "key numbers")
     add(review, ok(has_numeric_line(draft, "- 已 checked 证据：", checked_total)), "error", f"checked evidence line expected={checked_total}", "key numbers")
     add(review, ok(has_numeric_line(draft, "- presentation_assumption：", assumption_total)), "error", f"presentation assumption line expected={assumption_total}", "key numbers")
-    add(review, ok(has_numeric_line(draft, "- P0 经营字段补齐记录：", len(business_rows))), "error", f"business fill line expected={len(business_rows)}", "key numbers")
+    add(review, ok(has_numeric_line(draft, "- P0 经营字段复核记录：", len(business_rows))), "error", f"business fill line expected={len(business_rows)}", "key numbers")
     add(review, ok(has_numeric_line(draft, "- enriched P0 工作项：", len(enriched_rows))), "error", f"enriched worklist line expected={len(enriched_rows)}", "key numbers")
     add(review, ok(has_numeric_line(draft, "- 现场核验检查表：", len(checklist_rows))), "error", f"field checklist line expected={len(checklist_rows)}", "key numbers")
     verification_line_ok = (

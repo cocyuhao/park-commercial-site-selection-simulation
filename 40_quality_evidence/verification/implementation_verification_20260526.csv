@@ -29,8 +29,8 @@ IMPL-027,files,error,pass,"60_model/scripts/run_deepseek_p0_detail_query_plan.py
 IMPL-028,files,error,pass,"60_model/scripts/review_deepseek_p0_detail_query_plan.py exists=True, bytes=5125",60_model/scripts/review_deepseek_p0_detail_query_plan.py
 IMPL-029,files,error,pass,"60_model/scripts/run_deepseek_p0_field_verification_checklist.py exists=True, bytes=14265",60_model/scripts/run_deepseek_p0_field_verification_checklist.py
 IMPL-030,files,error,pass,"60_model/scripts/review_deepseek_p0_field_verification_checklist.py exists=True, bytes=6031",60_model/scripts/review_deepseek_p0_field_verification_checklist.py
-IMPL-031,files,error,pass,"60_model/scripts/run_deepseek_p1_quality_report.py exists=True, bytes=17000",60_model/scripts/run_deepseek_p1_quality_report.py
-IMPL-032,files,error,pass,"60_model/scripts/review_deepseek_p1_quality_report.py exists=True, bytes=7841",60_model/scripts/review_deepseek_p1_quality_report.py
+IMPL-031,files,error,pass,"60_model/scripts/run_deepseek_p1_quality_report.py exists=True, bytes=16998",60_model/scripts/run_deepseek_p1_quality_report.py
+IMPL-032,files,error,pass,"60_model/scripts/review_deepseek_p1_quality_report.py exists=True, bytes=7840",60_model/scripts/review_deepseek_p1_quality_report.py
 IMPL-033,files,error,pass,"60_model/scripts/run_deepseek_p2_real_site_semantic_breakdown.py exists=True, bytes=12842",60_model/scripts/run_deepseek_p2_real_site_semantic_breakdown.py
 IMPL-034,files,error,pass,"60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py exists=True, bytes=6108",60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py
 IMPL-035,files,error,pass,"60_model/scripts/run_deepseek_p2_input_schema_candidates.py exists=True, bytes=21282",60_model/scripts/run_deepseek_p2_input_schema_candidates.py
@@ -46,23 +46,23 @@ IMPL-044,files,error,pass,"60_model/scripts/review_deepseek_p3_prework_package.p
 IMPL-045,files,error,pass,"60_model/scripts/run_deepseek_p3_calibration_execution_package.py exists=True, bytes=15282",60_model/scripts/run_deepseek_p3_calibration_execution_package.py
 IMPL-046,files,error,pass,"60_model/scripts/review_deepseek_p3_calibration_execution_package.py exists=True, bytes=6637",60_model/scripts/review_deepseek_p3_calibration_execution_package.py
 IMPL-047,files,error,pass,"60_model/scripts/run_deepseek_p4_premature_audit.py exists=True, bytes=3891",60_model/scripts/run_deepseek_p4_premature_audit.py
-IMPL-048,files,error,pass,"60_model/scripts/run_deepseek_p4_feedback_draft.py exists=True, bytes=9780",60_model/scripts/run_deepseek_p4_feedback_draft.py
+IMPL-048,files,error,pass,"60_model/scripts/run_deepseek_p4_feedback_draft.py exists=True, bytes=9789",60_model/scripts/run_deepseek_p4_feedback_draft.py
 IMPL-049,files,error,pass,"60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730",60_model/scripts/review_deepseek_p4_feedback_draft.py
 IMPL-050,files,error,pass,"60_model/scripts/validate_deepseek_contract_output.py exists=True, bytes=9183",60_model/scripts/validate_deepseek_contract_output.py
 IMPL-051,files,error,pass,"60_model/scripts/verify_modern_sim_stack.py exists=True, bytes=7567",60_model/scripts/verify_modern_sim_stack.py
-IMPL-052,files,error,pass,"60_model/scripts/adapt_choice_probability_and_validation_targets.py exists=True, bytes=24753",60_model/scripts/adapt_choice_probability_and_validation_targets.py
+IMPL-052,files,error,pass,"60_model/scripts/adapt_choice_probability_and_validation_targets.py exists=True, bytes=24762",60_model/scripts/adapt_choice_probability_and_validation_targets.py
 IMPL-053,files,error,pass,"30_extraction/scripts/build_codex_mainline_context.py exists=True, bytes=9849",30_extraction/scripts/build_codex_mainline_context.py
-IMPL-054,files,error,pass,"60_model/scripts/audit_rebaseline_artifacts.py exists=True, bytes=10136",60_model/scripts/audit_rebaseline_artifacts.py
+IMPL-054,files,error,pass,"60_model/scripts/audit_rebaseline_artifacts.py exists=True, bytes=10139",60_model/scripts/audit_rebaseline_artifacts.py
 IMPL-055,files,error,pass,"60_model/scripts/adapt_deepseek_legacy_outputs.py exists=True, bytes=7750",60_model/scripts/adapt_deepseek_legacy_outputs.py
-IMPL-056,files,error,pass,"60_model/scripts/adapt_p4_node_explanations.py exists=True, bytes=10964",60_model/scripts/adapt_p4_node_explanations.py
+IMPL-056,files,error,pass,"60_model/scripts/adapt_p4_node_explanations.py exists=True, bytes=10958",60_model/scripts/adapt_p4_node_explanations.py
 IMPL-057,files,error,pass,"60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628",60_model/scripts/build_p2_method_prototype.py
 IMPL-058,files,error,pass,"60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838",60_model/scripts/review_p2_method_prototype.py
 IMPL-059,files,error,pass,"60_model/schemas/persona_state.schema.json exists=True, bytes=2117",60_model/schemas/persona_state.schema.json
 IMPL-060,files,error,pass,"60_model/schemas/behavior_program.schema.json exists=True, bytes=2834",60_model/schemas/behavior_program.schema.json
-IMPL-061,files,error,pass,"60_model/schemas/node_recommendation_explanation.schema.json exists=True, bytes=1834",60_model/schemas/node_recommendation_explanation.schema.json
+IMPL-061,files,error,pass,"60_model/schemas/node_recommendation_explanation.schema.json exists=True, bytes=1831",60_model/schemas/node_recommendation_explanation.schema.json
 IMPL-062,files,error,pass,"60_model/schemas/deepseek_task_contract.schema.json exists=True, bytes=2221",60_model/schemas/deepseek_task_contract.schema.json
 IMPL-063,files,error,pass,"60_model/schemas/person_simulation_control.schema.json exists=True, bytes=2094",60_model/schemas/person_simulation_control.schema.json
-IMPL-064,files,error,pass,"60_model/schemas/choice_probability.schema.json exists=True, bytes=3927",60_model/schemas/choice_probability.schema.json
+IMPL-064,files,error,pass,"60_model/schemas/choice_probability.schema.json exists=True, bytes=3924",60_model/schemas/choice_probability.schema.json
 IMPL-065,files,error,pass,"60_model/schemas/simulation_validation_target.schema.json exists=True, bytes=3763",60_model/schemas/simulation_validation_target.schema.json
 IMPL-066,files,error,pass,"10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md exists=True, bytes=13080",10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md
 IMPL-067,files,error,pass,"10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md exists=True, bytes=11173",10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md
@@ -90,21 +90,21 @@ IMPL-088,files,error,pass,"10_research/simulation_task_entry_evidence_reinforcem
 IMPL-089,files,error,pass,"10_research/ui_skill_design_system_audit_20260605.md exists=True, bytes=4065",10_research/ui_skill_design_system_audit_20260605.md
 IMPL-090,files,error,pass,"10_research/web_design_guidelines_audit_20260605.md exists=True, bytes=2219",10_research/web_design_guidelines_audit_20260605.md
 IMPL-091,files,error,pass,"00_control/page_layer_rebuild_blueprint_20260605.md exists=True, bytes=4917",00_control/page_layer_rebuild_blueprint_20260605.md
-IMPL-092,files,error,pass,"30_extraction/scripts/audit_page_rebuild_strategy_20260605.py exists=True, bytes=12239",30_extraction/scripts/audit_page_rebuild_strategy_20260605.py
+IMPL-092,files,error,pass,"30_extraction/scripts/audit_page_rebuild_strategy_20260605.py exists=True, bytes=12244",30_extraction/scripts/audit_page_rebuild_strategy_20260605.py
 IMPL-093,files,error,pass,"30_extraction/scripts/verify_workflow_navigation_20260605.py exists=True, bytes=5225",30_extraction/scripts/verify_workflow_navigation_20260605.py
-IMPL-094,files,error,pass,"30_extraction/scripts/verify_source_space_foundation_20260605.py exists=True, bytes=7505",30_extraction/scripts/verify_source_space_foundation_20260605.py
+IMPL-094,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_source_space_foundation_20260605.py exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.",30_extraction/scripts/verify_source_space_foundation_20260605.py
 IMPL-095,files,error,pass,"40_quality_evidence/page_rebuild_strategy_audit_20260605.json exists=True, bytes=6447",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
 IMPL-096,files,error,pass,"40_quality_evidence/page_rebuild_strategy_audit_20260605.md exists=True, bytes=4981",40_quality_evidence/page_rebuild_strategy_audit_20260605.md
 IMPL-097,files,error,pass,"40_quality_evidence/workflow_navigation_validation_20260605.json exists=True, bytes=2549",40_quality_evidence/workflow_navigation_validation_20260605.json
 IMPL-098,files,error,pass,"40_quality_evidence/workflow_navigation_validation_20260605.md exists=True, bytes=517",40_quality_evidence/workflow_navigation_validation_20260605.md
-IMPL-099,files,error,pass,"40_quality_evidence/source_space_foundation_validation_20260605.json exists=True, bytes=3167",40_quality_evidence/source_space_foundation_validation_20260605.json
-IMPL-100,files,error,pass,"40_quality_evidence/source_space_foundation_validation_20260605.md exists=True, bytes=745",40_quality_evidence/source_space_foundation_validation_20260605.md
+IMPL-099,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/source_space_foundation_validation_20260605.json exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.",40_quality_evidence/source_space_foundation_validation_20260605.json
+IMPL-100,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/source_space_foundation_validation_20260605.md exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.",40_quality_evidence/source_space_foundation_validation_20260605.md
 IMPL-101,files,error,pass,"40_quality_evidence/source_space_foundation_browser_runtime_20260605.json exists=True, bytes=250",40_quality_evidence/source_space_foundation_browser_runtime_20260605.json
 IMPL-102,files,error,pass,"40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png exists=True, bytes=735080",40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png
 IMPL-103,files,error,pass,"30_extraction/scripts/analyze_cad_dxf_20260605.py exists=True, bytes=11465",30_extraction/scripts/analyze_cad_dxf_20260605.py
 IMPL-104,files,error,pass,"30_extraction/scripts/analyze_cad_pdf_proxy_20260605.py exists=True, bytes=3647",30_extraction/scripts/analyze_cad_pdf_proxy_20260605.py
 IMPL-105,files,error,pass,"30_extraction/scripts/verify_session_recovery_20260606.py exists=True, bytes=5084",30_extraction/scripts/verify_session_recovery_20260606.py
-IMPL-106,files,error,pass,"30_extraction/scripts/verify_osen_integrated_report_20260606.py exists=True, bytes=6227",30_extraction/scripts/verify_osen_integrated_report_20260606.py
+IMPL-106,files,error,pass,"30_extraction/scripts/verify_osen_integrated_report_20260606.py exists=True, bytes=6232",30_extraction/scripts/verify_osen_integrated_report_20260606.py
 IMPL-107,files,error,pass,"40_quality_evidence/session_recovery_20260606.json exists=True, bytes=2920",40_quality_evidence/session_recovery_20260606.json
 IMPL-108,files,error,pass,"40_quality_evidence/session_recovery_20260606.md exists=True, bytes=1750",40_quality_evidence/session_recovery_20260606.md
 IMPL-109,files,error,pass,"40_quality_evidence/cad_dxf_analysis_20260605.json exists=True, bytes=34221",40_quality_evidence/cad_dxf_analysis_20260605.json
@@ -112,78 +112,78 @@ IMPL-110,files,error,pass,"40_quality_evidence/cad_dxf_analysis_20260605.md exis
 IMPL-111,files,error,pass,"40_quality_evidence/cad_dxf_keyword_hits_20260605.csv exists=True, bytes=635",40_quality_evidence/cad_dxf_keyword_hits_20260605.csv
 IMPL-112,files,error,pass,"40_quality_evidence/cad_pdf_proxy_analysis_20260605.json exists=True, bytes=849",40_quality_evidence/cad_pdf_proxy_analysis_20260605.json
 IMPL-113,files,error,pass,"40_quality_evidence/cad_pdf_proxy_analysis_20260605.md exists=True, bytes=648",40_quality_evidence/cad_pdf_proxy_analysis_20260605.md
-IMPL-114,files,error,pass,"40_quality_evidence/osen_integrated_report_validation_20260606.json exists=True, bytes=4991",40_quality_evidence/osen_integrated_report_validation_20260606.json
-IMPL-115,files,error,pass,"40_quality_evidence/osen_integrated_report_validation_20260606.md exists=True, bytes=3073",40_quality_evidence/osen_integrated_report_validation_20260606.md
-IMPL-116,files,error,pass,"90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py exists=True, bytes=6980",90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py
-IMPL-117,files,error,pass,"40_quality_evidence/osen_report_browser_validation_20260606.json exists=True, bytes=5797",40_quality_evidence/osen_report_browser_validation_20260606.json
-IMPL-118,files,error,pass,"40_quality_evidence/osen_report_browser_validation_20260606/report_view.png exists=True, bytes=554987",40_quality_evidence/osen_report_browser_validation_20260606/report_view.png
-IMPL-119,files,error,pass,"10_research/recommendation_review_framework_20260607.md exists=True, bytes=6782",10_research/recommendation_review_framework_20260607.md
-IMPL-120,files,error,pass,"10_research/recommendation_review_openalex_20260607.json exists=True, bytes=55120",10_research/recommendation_review_openalex_20260607.json
-IMPL-121,files,error,pass,"10_research/expert_implementation_review_framework_20260607.md exists=True, bytes=30987",10_research/expert_implementation_review_framework_20260607.md
-IMPL-122,files,error,pass,"10_research/osen_real_world_context_sources_20260607.md exists=True, bytes=2515",10_research/osen_real_world_context_sources_20260607.md
-IMPL-123,files,error,pass,"10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json exists=True, bytes=306850",10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
-IMPL-124,files,error,pass,"10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json exists=True, bytes=19625511",10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json
-IMPL-125,files,error,pass,"30_extraction/scripts/build_recommendation_review_research_20260607.py exists=True, bytes=9231",30_extraction/scripts/build_recommendation_review_research_20260607.py
-IMPL-126,files,error,pass,"30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py exists=True, bytes=24076",30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py
-IMPL-127,files,error,pass,"30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py exists=True, bytes=21608",30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py
+IMPL-114,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_integrated_report_validation_20260606.json exists=False, bytes=0. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.",40_quality_evidence/osen_integrated_report_validation_20260606.json
+IMPL-115,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_integrated_report_validation_20260606.md exists=False, bytes=0. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.",40_quality_evidence/osen_integrated_report_validation_20260606.md
+IMPL-116,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.",90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py
+IMPL-117,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_browser_validation_20260606.json exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.",40_quality_evidence/osen_report_browser_validation_20260606.json
+IMPL-118,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_browser_validation_20260606/report_view.png exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.",40_quality_evidence/osen_report_browser_validation_20260606/report_view.png
+IMPL-119,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/recommendation_review_framework_20260607.md exists=False, bytes=0. Reason: 0607 recommendation research package was folded into current method_basis/method_trace and report basis files.",10_research/recommendation_review_framework_20260607.md
+IMPL-120,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/recommendation_review_openalex_20260607.json exists=False, bytes=0. Reason: 0607 OpenAlex package was folded into current method_basis/method_trace and report basis files.",10_research/recommendation_review_openalex_20260607.json
+IMPL-121,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_review_framework_20260607.md exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.",10_research/expert_implementation_review_framework_20260607.md
+IMPL-122,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/osen_real_world_context_sources_20260607.md exists=False, bytes=0. Reason: 0607 real-world context note is superseded by current real_calibration_context and report basis.",10_research/osen_real_world_context_sources_20260607.md
+IMPL-123,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.",10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
+IMPL-124,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.",10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json
+IMPL-125,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_recommendation_review_research_20260607.py exists=False, bytes=0. Reason: superseded research builder; current report basis is generated through the dashboard report chain.",30_extraction/scripts/build_recommendation_review_research_20260607.py
+IMPL-126,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.",30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py
+IMPL-127,files,error,pass,"30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py exists=True, bytes=5364",30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py
 IMPL-128,files,error,pass,"70_outputs/processed_tables/osen_real_calibration_inputs_20260607.csv exists=True, bytes=12884",70_outputs/processed_tables/osen_real_calibration_inputs_20260607.csv
-IMPL-129,files,error,pass,"40_quality_evidence/osen_real_calibration_inputs_20260607.json exists=True, bytes=19773",40_quality_evidence/osen_real_calibration_inputs_20260607.json
-IMPL-130,files,error,pass,"40_quality_evidence/osen_real_calibration_inputs_20260607.md exists=True, bytes=4871",40_quality_evidence/osen_real_calibration_inputs_20260607.md
-IMPL-131,files,error,pass,"30_extraction/scripts/render_docx_with_isolated_libreoffice.py exists=True, bytes=6334",30_extraction/scripts/render_docx_with_isolated_libreoffice.py
-IMPL-132,files,error,pass,"30_extraction/scripts/verify_osen_docx_delivery_20260606.py exists=True, bytes=6085",30_extraction/scripts/verify_osen_docx_delivery_20260606.py
-IMPL-133,files,error,pass,"80_delivery/osen_integrated_site_selection_report_20260606.docx exists=True, bytes=57500",80_delivery/osen_integrated_site_selection_report_20260606.docx
-IMPL-134,files,error,pass,"40_quality_evidence/osen_integrated_report_docx_audit_20260606.json exists=True, bytes=990",40_quality_evidence/osen_integrated_report_docx_audit_20260606.json
-IMPL-135,files,error,pass,"40_quality_evidence/osen_report_docx_render_20260606.json exists=True, bytes=5166",40_quality_evidence/osen_report_docx_render_20260606.json
-IMPL-136,files,error,pass,"40_quality_evidence/osen_report_docx_render_20260606.md exists=True, bytes=3052",40_quality_evidence/osen_report_docx_render_20260606.md
-IMPL-137,files,error,pass,"40_quality_evidence/osen_report_docx_render_20260606/page_01.png exists=True, bytes=298152",40_quality_evidence/osen_report_docx_render_20260606/page_01.png
-IMPL-138,files,error,pass,"40_quality_evidence/osen_report_docx_render_20260606/page_06.png exists=True, bytes=267075",40_quality_evidence/osen_report_docx_render_20260606/page_06.png
-IMPL-139,files,error,pass,"40_quality_evidence/osen_report_docx_render_20260606/page_18.png exists=True, bytes=247054",40_quality_evidence/osen_report_docx_render_20260606/page_18.png
-IMPL-140,files,error,pass,"40_quality_evidence/osen_docx_delivery_validation_20260606.json exists=True, bytes=2998",40_quality_evidence/osen_docx_delivery_validation_20260606.json
-IMPL-141,files,error,pass,"40_quality_evidence/osen_docx_delivery_validation_20260606.md exists=True, bytes=1585",40_quality_evidence/osen_docx_delivery_validation_20260606.md
-IMPL-142,files,error,pass,"80_delivery/site_selection_gap_report_latest.json exists=True, bytes=90436",80_delivery/site_selection_gap_report_latest.json
-IMPL-143,files,error,pass,"80_delivery/site_selection_gap_report_latest.md exists=True, bytes=43854",80_delivery/site_selection_gap_report_latest.md
+IMPL-129,files,error,pass,"40_quality_evidence/osen_real_calibration_inputs_20260607.json exists=True, bytes=629",40_quality_evidence/osen_real_calibration_inputs_20260607.json
+IMPL-130,files,error,pass,"40_quality_evidence/osen_real_calibration_inputs_20260607.md exists=True, bytes=375",40_quality_evidence/osen_real_calibration_inputs_20260607.md
+IMPL-131,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/render_docx_with_isolated_libreoffice.py exists=False, bytes=0. Reason: 0606 isolated LibreOffice helper superseded by repaired LibreOffice profile and current DOCX validation artifacts.",30_extraction/scripts/render_docx_with_isolated_libreoffice.py
+IMPL-132,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_osen_docx_delivery_20260606.py exists=False, bytes=0. Reason: 0606 DOCX delivery gate superseded by current 0607 platform download and post-test report restore audit.",30_extraction/scripts/verify_osen_docx_delivery_20260606.py
+IMPL-133,files,error,pass,"80_delivery/osen_integrated_site_selection_report_20260606.docx exists=True, bytes=55845",80_delivery/osen_integrated_site_selection_report_20260606.docx
+IMPL-134,files,error,pass,"40_quality_evidence/osen_integrated_report_docx_audit_20260606.json exists=True, bytes=991",40_quality_evidence/osen_integrated_report_docx_audit_20260606.json
+IMPL-135,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606.json exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.",40_quality_evidence/osen_report_docx_render_20260606.json
+IMPL-136,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606.md exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.",40_quality_evidence/osen_report_docx_render_20260606.md
+IMPL-137,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_01.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.",40_quality_evidence/osen_report_docx_render_20260606/page_01.png
+IMPL-138,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_06.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.",40_quality_evidence/osen_report_docx_render_20260606/page_06.png
+IMPL-139,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_18.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.",40_quality_evidence/osen_report_docx_render_20260606/page_18.png
+IMPL-140,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_docx_delivery_validation_20260606.json exists=False, bytes=0. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.",40_quality_evidence/osen_docx_delivery_validation_20260606.json
+IMPL-141,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_docx_delivery_validation_20260606.md exists=False, bytes=0. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.",40_quality_evidence/osen_docx_delivery_validation_20260606.md
+IMPL-142,files,error,pass,"80_delivery/site_selection_gap_report_latest.json exists=True, bytes=83621",80_delivery/site_selection_gap_report_latest.json
+IMPL-143,files,error,pass,"80_delivery/site_selection_gap_report_latest.md exists=True, bytes=42374",80_delivery/site_selection_gap_report_latest.md
 IMPL-144,files,error,pass,"40_quality_evidence/deepseek_orchestration_validation_20260605.json exists=True, bytes=1720",40_quality_evidence/deepseek_orchestration_validation_20260605.json
 IMPL-145,files,error,pass,"40_quality_evidence/deepseek_orchestration_validation_20260605.md exists=True, bytes=1454",40_quality_evidence/deepseek_orchestration_validation_20260605.md
 IMPL-146,files,error,pass,"10_research/ai_design_2026_openalex_raw_20260604.json exists=True, bytes=144852",10_research/ai_design_2026_openalex_raw_20260604.json
 IMPL-147,files,error,pass,"10_research/ai_design_2026_semantic_scholar_raw_20260604.json exists=True, bytes=24393",10_research/ai_design_2026_semantic_scholar_raw_20260604.json
 IMPL-148,files,error,pass,"10_research/ai_design_2026_arxiv_raw_20260604.json exists=True, bytes=873",10_research/ai_design_2026_arxiv_raw_20260604.json
-IMPL-149,files,error,pass,"30_extraction/scripts/audit_project_context_and_legacy_risks.py exists=True, bytes=13477",30_extraction/scripts/audit_project_context_and_legacy_risks.py
+IMPL-149,files,error,pass,"30_extraction/scripts/audit_project_context_and_legacy_risks.py exists=True, bytes=13482",30_extraction/scripts/audit_project_context_and_legacy_risks.py
 IMPL-150,files,error,pass,"30_extraction/scripts/audit_method_model_landing_coverage.py exists=True, bytes=14257",30_extraction/scripts/audit_method_model_landing_coverage.py
 IMPL-151,files,error,pass,"40_quality_evidence/project_context_legacy_risk_audit_20260605.json exists=True, bytes=59218",40_quality_evidence/project_context_legacy_risk_audit_20260605.json
 IMPL-152,files,error,pass,"40_quality_evidence/project_context_legacy_risk_audit_20260605.md exists=True, bytes=18791",40_quality_evidence/project_context_legacy_risk_audit_20260605.md
 IMPL-153,files,error,pass,"40_quality_evidence/method_model_landing_coverage_20260605.json exists=True, bytes=17035",40_quality_evidence/method_model_landing_coverage_20260605.json
 IMPL-154,files,error,pass,"40_quality_evidence/method_model_landing_coverage_20260605.md exists=True, bytes=9506",40_quality_evidence/method_model_landing_coverage_20260605.md
-IMPL-155,files,error,pass,"30_extraction/scripts/build_person_simulation_accuracy_requirements.py exists=True, bytes=21919",30_extraction/scripts/build_person_simulation_accuracy_requirements.py
-IMPL-156,files,error,pass,"30_extraction/scripts/build_person_simulation_feature_derivatives.py exists=True, bytes=15954",30_extraction/scripts/build_person_simulation_feature_derivatives.py
-IMPL-157,files,error,pass,"30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py exists=True, bytes=6984",30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py
-IMPL-158,files,error,pass,"40_quality_evidence/person_simulation_accuracy_requirements_20260605.json exists=True, bytes=17616",40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-159,files,error,pass,"40_quality_evidence/person_simulation_accuracy_requirements_20260605.md exists=True, bytes=13812",40_quality_evidence/person_simulation_accuracy_requirements_20260605.md
-IMPL-160,files,error,pass,"70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv exists=True, bytes=7798",70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv
+IMPL-155,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_person_simulation_accuracy_requirements.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",30_extraction/scripts/build_person_simulation_accuracy_requirements.py
+IMPL-156,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_person_simulation_feature_derivatives.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",30_extraction/scripts/build_person_simulation_feature_derivatives.py
+IMPL-157,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py
+IMPL-158,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_accuracy_requirements_20260605.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
+IMPL-159,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_accuracy_requirements_20260605.md exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",40_quality_evidence/person_simulation_accuracy_requirements_20260605.md
+IMPL-160,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv
 IMPL-161,files,error,pass,"70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv exists=True, bytes=2275733",70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv
-IMPL-162,files,error,pass,"40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json exists=True, bytes=585",40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json
-IMPL-163,files,error,pass,"40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json exists=True, bytes=2994",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
-IMPL-164,files,error,pass,"40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md exists=True, bytes=2074",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md
-IMPL-165,files,error,pass,"40_quality_evidence/person_feature_pool_browser_visible_20260607.json exists=True, bytes=399",40_quality_evidence/person_feature_pool_browser_visible_20260607.json
-IMPL-166,files,error,pass,"40_quality_evidence/person_feature_pool_upload_visible_20260607.png exists=True, bytes=222938",40_quality_evidence/person_feature_pool_upload_visible_20260607.png
-IMPL-167,files,error,pass,"40_quality_evidence/person_feature_pool_preflight_visible_20260607.png exists=True, bytes=149853",40_quality_evidence/person_feature_pool_preflight_visible_20260607.png
-IMPL-168,files,error,pass,"40_quality_evidence/feature_derivative_user_control_browser_20260607.json exists=True, bytes=443",40_quality_evidence/feature_derivative_user_control_browser_20260607.json
-IMPL-169,files,error,pass,"40_quality_evidence/feature_derivative_user_control_browser_20260607.png exists=True, bytes=149937",40_quality_evidence/feature_derivative_user_control_browser_20260607.png
-IMPL-170,files,error,pass,"40_quality_evidence/feature_derivative_income_control_browser_20260607.json exists=True, bytes=5229",40_quality_evidence/feature_derivative_income_control_browser_20260607.json
-IMPL-171,files,error,pass,"40_quality_evidence/feature_derivative_income_control_browser_20260607.png exists=True, bytes=146342",40_quality_evidence/feature_derivative_income_control_browser_20260607.png
-IMPL-172,files,error,pass,"90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py exists=True, bytes=12200",90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py
-IMPL-173,files,error,pass,"40_quality_evidence/report_feature_scene_context_validation_20260607.json exists=True, bytes=12801",40_quality_evidence/report_feature_scene_context_validation_20260607.json
-IMPL-174,files,error,pass,"40_quality_evidence/report_feature_scene_context_validation_20260607.md exists=True, bytes=9010",40_quality_evidence/report_feature_scene_context_validation_20260607.md
-IMPL-175,files,error,pass,"90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py exists=True, bytes=13472",90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py
-IMPL-176,files,error,pass,"40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json exists=True, bytes=12365",40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json
-IMPL-177,files,error,pass,"40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md exists=True, bytes=1583",40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md
-IMPL-178,files,error,pass,"40_quality_evidence/report_feature_scene_context_browser_20260607.json exists=True, bytes=2745",40_quality_evidence/report_feature_scene_context_browser_20260607.json
-IMPL-179,files,error,pass,"40_quality_evidence/report_feature_scene_context_browser_20260607.png exists=True, bytes=337441",40_quality_evidence/report_feature_scene_context_browser_20260607.png
-IMPL-180,files,error,pass,"90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py exists=True, bytes=12396",90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py
-IMPL-181,files,error,pass,"40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json exists=True, bytes=11249",40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
-IMPL-182,files,error,pass,"40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md exists=True, bytes=7140",40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md
-IMPL-183,files,error,pass,"90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py exists=True, bytes=11099",90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py
-IMPL-184,files,error,pass,"40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json exists=True, bytes=13124",40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json
-IMPL-185,files,error,pass,"40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png exists=True, bytes=1094958",40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png
+IMPL-162,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json
+IMPL-163,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
+IMPL-164,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md
+IMPL-165,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_browser_visible_20260607.json exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/person_feature_pool_browser_visible_20260607.json
+IMPL-166,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_upload_visible_20260607.png exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/person_feature_pool_upload_visible_20260607.png
+IMPL-167,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_preflight_visible_20260607.png exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/person_feature_pool_preflight_visible_20260607.png
+IMPL-168,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_user_control_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/feature_derivative_user_control_browser_20260607.json
+IMPL-169,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_user_control_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/feature_derivative_user_control_browser_20260607.png
+IMPL-170,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_income_control_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/feature_derivative_income_control_browser_20260607.json
+IMPL-171,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_income_control_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.",40_quality_evidence/feature_derivative_income_control_browser_20260607.png
+IMPL-172,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.",90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py
+IMPL-173,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.",40_quality_evidence/report_feature_scene_context_validation_20260607.json
+IMPL-174,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_validation_20260607.md exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.",40_quality_evidence/report_feature_scene_context_validation_20260607.md
+IMPL-175,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.",90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py
+IMPL-176,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.",40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json
+IMPL-177,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.",40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md
+IMPL-178,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.",40_quality_evidence/report_feature_scene_context_browser_20260607.json
+IMPL-179,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.",40_quality_evidence/report_feature_scene_context_browser_20260607.png
+IMPL-180,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py
+IMPL-181,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
+IMPL-182,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md
+IMPL-183,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py
+IMPL-184,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json
+IMPL-185,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.",40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png
 IMPL-186,files,error,pass,"40_quality_evidence/modern_sim_stack_verification_20260604.json exists=True, bytes=4946",40_quality_evidence/modern_sim_stack_verification_20260604.json
 IMPL-187,files,error,pass,"40_quality_evidence/modern_sim_stack_verification_20260604.md exists=True, bytes=2420",40_quality_evidence/modern_sim_stack_verification_20260604.md
 IMPL-188,files,error,pass,"40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json exists=True, bytes=11897",40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
@@ -199,18 +199,18 @@ IMPL-197,files,error,pass,"40_quality_evidence/simulation_object_pool_browser_va
 IMPL-198,files,error,pass,"90_p6_expert_dashboard/qa/simulation_object_pool_persona_behavior_validation_20260605.py exists=True, bytes=4966",90_p6_expert_dashboard/qa/simulation_object_pool_persona_behavior_validation_20260605.py
 IMPL-199,files,error,pass,"40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json exists=True, bytes=1938",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
 IMPL-200,files,error,pass,"40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.md exists=True, bytes=1126",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.md
-IMPL-201,files,error,pass,"90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py exists=True, bytes=4655",90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py
-IMPL-202,files,error,pass,"40_quality_evidence/object_chain_rebaseline_validation_20260605.json exists=True, bytes=2986",40_quality_evidence/object_chain_rebaseline_validation_20260605.json
-IMPL-203,files,error,pass,"40_quality_evidence/object_chain_rebaseline_validation_20260605.md exists=True, bytes=1573",40_quality_evidence/object_chain_rebaseline_validation_20260605.md
+IMPL-201,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.",90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py
+IMPL-202,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/object_chain_rebaseline_validation_20260605.json exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.",40_quality_evidence/object_chain_rebaseline_validation_20260605.json
+IMPL-203,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/object_chain_rebaseline_validation_20260605.md exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.",40_quality_evidence/object_chain_rebaseline_validation_20260605.md
 IMPL-204,files,error,pass,"40_quality_evidence/object_chain_browser_validation_20260605.json exists=True, bytes=1552",40_quality_evidence/object_chain_browser_validation_20260605.json
 IMPL-205,files,error,pass,"40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png exists=True, bytes=515775",40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png
-IMPL-206,files,error,pass,"90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py exists=True, bytes=20198",90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py
-IMPL-207,files,error,pass,"40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json exists=True, bytes=15399",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
-IMPL-208,files,error,pass,"40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md exists=True, bytes=10748",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md
+IMPL-206,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.",90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py
+IMPL-207,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
+IMPL-208,files,warning,warn,"superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md
 IMPL-209,files,error,pass,"40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json exists=True, bytes=1616",40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json
 IMPL-210,files,error,pass,"40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json exists=True, bytes=590",40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
 IMPL-211,files,error,pass,"40_quality_evidence/global_ai_design_rebaseline_overview_final_20260604.png exists=True, bytes=103918",40_quality_evidence/global_ai_design_rebaseline_overview_final_20260604.png
-IMPL-212,files,error,pass,"90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py exists=True, bytes=23787",90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py
+IMPL-212,files,error,pass,"90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py exists=True, bytes=23885",90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py
 IMPL-213,files,error,pass,"40_quality_evidence/advanced_agentic_workflow_validation_20260604.json exists=True, bytes=21729",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
 IMPL-214,files,error,pass,"40_quality_evidence/advanced_agentic_workflow_validation_20260604.md exists=True, bytes=3668",40_quality_evidence/advanced_agentic_workflow_validation_20260604.md
 IMPL-215,files,error,pass,"40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip exists=True, bytes=2915416",40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip
@@ -224,7 +224,7 @@ IMPL-222,files,error,pass,"40_quality_evidence/advanced_agentic_workflow_ai_2026
 IMPL-223,files,error,pass,"40_quality_evidence/advanced_agentic_workflow_report_20260604.png exists=True, bytes=180347",40_quality_evidence/advanced_agentic_workflow_report_20260604.png
 IMPL-224,files,error,pass,"90_p6_expert_dashboard/qa/package.json exists=True, bytes=337",90_p6_expert_dashboard/qa/package.json
 IMPL-225,files,error,pass,"90_p6_expert_dashboard/qa/package-lock.json exists=True, bytes=97508",90_p6_expert_dashboard/qa/package-lock.json
-IMPL-226,files,error,pass,"90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py exists=True, bytes=8803",90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py
+IMPL-226,files,error,pass,"90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py exists=True, bytes=8866",90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py
 IMPL-227,files,error,pass,"40_quality_evidence/page_layer_rebuild_validation_20260605.json exists=True, bytes=2949",40_quality_evidence/page_layer_rebuild_validation_20260605.json
 IMPL-228,files,error,pass,"40_quality_evidence/page_layer_rebuild_validation_20260605/overview_chain_command.png exists=True, bytes=514414",40_quality_evidence/page_layer_rebuild_validation_20260605/overview_chain_command.png
 IMPL-229,files,error,pass,"40_quality_evidence/page_layer_rebuild_validation_20260605/ai_workspace_reading_width.png exists=True, bytes=119969",40_quality_evidence/page_layer_rebuild_validation_20260605/ai_workspace_reading_width.png
@@ -241,10 +241,10 @@ IMPL-239,files,error,pass,"40_quality_evidence/otel_fastapi_trace_probe_20260605
 IMPL-240,files,error,pass,"30_extraction/scripts/audit_advanced_capability_and_legacy_methods_20260605.py exists=True, bytes=16913",30_extraction/scripts/audit_advanced_capability_and_legacy_methods_20260605.py
 IMPL-241,files,error,pass,"40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json exists=True, bytes=9804",40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
 IMPL-242,files,error,pass,"40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.md exists=True, bytes=7094",40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.md
-IMPL-243,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=220187",90_p6_expert_dashboard/app.py
-IMPL-244,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=26974",90_p6_expert_dashboard/static/index.html
-IMPL-245,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=75972",90_p6_expert_dashboard/static/styles.css
-IMPL-246,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=160114",90_p6_expert_dashboard/static/app.js
+IMPL-243,files,error,pass,"90_p6_expert_dashboard/app.py exists=True, bytes=220700",90_p6_expert_dashboard/app.py
+IMPL-244,files,error,pass,"90_p6_expert_dashboard/static/index.html exists=True, bytes=26992",90_p6_expert_dashboard/static/index.html
+IMPL-245,files,error,pass,"90_p6_expert_dashboard/static/styles.css exists=True, bytes=76250",90_p6_expert_dashboard/static/styles.css
+IMPL-246,files,error,pass,"90_p6_expert_dashboard/static/app.js exists=True, bytes=161910",90_p6_expert_dashboard/static/app.js
 IMPL-247,files,error,pass,"60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104",60_model/llm_runs/deepseek_table_classification_raw.jsonl
 IMPL-248,files,error,pass,"60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172",60_model/llm_runs/deepseek_table_classification_progress.json
 IMPL-249,files,error,pass,"60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288",60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
@@ -319,7 +319,7 @@ IMPL-317,files,error,pass,"40_quality_evidence/p0_field_verification_checklist_l
 IMPL-318,files,error,pass,"40_quality_evidence/p0_field_verification_checklist_local_review.md exists=True, bytes=1566",40_quality_evidence/p0_field_verification_checklist_local_review.md
 IMPL-319,files,error,pass,"40_quality_evidence/handoff_encoding_health_review.csv exists=True, bytes=4238",40_quality_evidence/handoff_encoding_health_review.csv
 IMPL-320,files,error,pass,"40_quality_evidence/handoff_encoding_health_review.md exists=True, bytes=550",40_quality_evidence/handoff_encoding_health_review.md
-IMPL-321,files,error,pass,"40_quality_evidence/p1_quality_report_draft_deepseek.md exists=True, bytes=4722",40_quality_evidence/p1_quality_report_draft_deepseek.md
+IMPL-321,files,error,pass,"40_quality_evidence/p1_quality_report_draft_deepseek.md exists=True, bytes=4719",40_quality_evidence/p1_quality_report_draft_deepseek.md
 IMPL-322,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_generation_report.md exists=True, bytes=528",40_quality_evidence/deepseek_p1_quality_report_generation_report.md
 IMPL-323,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_review.csv exists=True, bytes=1292",40_quality_evidence/deepseek_p1_quality_report_review.csv
 IMPL-324,files,error,pass,"40_quality_evidence/deepseek_p1_quality_report_review.md exists=True, bytes=436",40_quality_evidence/deepseek_p1_quality_report_review.md
@@ -404,8 +404,8 @@ IMPL-402,files,error,pass,"40_quality_evidence/deepseek_legacy_envelope_adapter_
 IMPL-403,files,error,pass,"40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.csv exists=True, bytes=7727",40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.csv
 IMPL-404,files,error,pass,"40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.md exists=True, bytes=810",40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.md
 IMPL-405,files,error,pass,"40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json exists=True, bytes=7478",40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
-IMPL-406,files,error,pass,"60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json exists=True, bytes=17930",60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
-IMPL-407,files,error,pass,"70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv exists=True, bytes=10208",70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv
+IMPL-406,files,error,pass,"60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json exists=True, bytes=17894",60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
+IMPL-407,files,error,pass,"70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv exists=True, bytes=10172",70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv
 IMPL-408,files,error,pass,"40_quality_evidence/p4_node_explanation_adapter_20260604.json exists=True, bytes=449",40_quality_evidence/p4_node_explanation_adapter_20260604.json
 IMPL-409,files,error,pass,"40_quality_evidence/p4_node_explanation_adapter_20260604.md exists=True, bytes=876",40_quality_evidence/p4_node_explanation_adapter_20260604.md
 IMPL-410,files,error,pass,"40_quality_evidence/p4_node_explanation_contract_validation_20260604.json exists=True, bytes=308",40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
@@ -414,7 +414,7 @@ IMPL-412,files,error,pass,"60_model/llm_runs/contract_envelopes/simulation_valid
 IMPL-413,files,error,pass,"70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv exists=True, bytes=42969",70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv
 IMPL-414,files,error,pass,"70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv exists=True, bytes=4676",70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv
 IMPL-415,files,error,pass,"40_quality_evidence/choice_probability_adapter_20260604.json exists=True, bytes=947",40_quality_evidence/choice_probability_adapter_20260604.json
-IMPL-416,files,error,pass,"40_quality_evidence/choice_probability_adapter_20260604.md exists=True, bytes=793",40_quality_evidence/choice_probability_adapter_20260604.md
+IMPL-416,files,error,pass,"40_quality_evidence/choice_probability_adapter_20260604.md exists=True, bytes=799",40_quality_evidence/choice_probability_adapter_20260604.md
 IMPL-417,files,error,pass,"40_quality_evidence/simulation_validation_target_adapter_20260604.json exists=True, bytes=971",40_quality_evidence/simulation_validation_target_adapter_20260604.json
 IMPL-418,files,error,pass,"40_quality_evidence/simulation_validation_target_adapter_20260604.md exists=True, bytes=790",40_quality_evidence/simulation_validation_target_adapter_20260604.md
 IMPL-419,files,error,pass,"40_quality_evidence/choice_probability_contract_validation_20260604.json exists=True, bytes=306",40_quality_evidence/choice_probability_contract_validation_20260604.json
@@ -708,7 +708,7 @@ IMPL-706,p4,error,pass,P4 feedback nodes remain draft/not_final,70_outputs/proce
 IMPL-707,p4,error,pass,P4 feedback requests ask for core missing data,70_outputs/processed_tables/p4_feedback_data_request_to_partner_deepseek.csv
 IMPL-708,p4,error,pass,P4 feedback draft review statuses={'pass': 17},40_quality_evidence/deepseek_p4_feedback_draft_review.csv
 IMPL-709,p4,error,pass,P4 node explanation score_hidden={'true': 6},70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv
-IMPL-710,p4,error,pass,P4 node explanation priority_label={'补资料后判断': 6},70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv
+IMPL-710,p4,error,pass,P4 node explanation priority_label={'复核后判断': 6},70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv
 IMPL-711,data,error,pass,poi_supply_base pending verification rows=20/20,70_outputs/processed_tables/poi_supply_base.csv
 IMPL-712,data,error,pass,grid coffee name keeps English space,70_outputs/processed_tables/poi_supply_base.csv
 IMPL-713,data,error,pass,amap query categories=10,50_external_gis/amap_poi/amap_poi_query_plan.csv
@@ -840,30 +840,30 @@ IMPL-838,schema,error,pass,modern sim stack package_count=14,40_quality_evidence
 IMPL-839,schema,error,pass,"modern sim stack modules include required=['SALib', 'duckdb', 'geopandas', 'jsonschema', 'mesa', 'mesa_geo', 'movingpandas', 'networkx', 'optuna', 'osmnx', 'polars', 'pydantic', 'shapely', 'simpy']",40_quality_evidence/modern_sim_stack_verification_20260604.json
 IMPL-840,recovery,error,pass,"session recovery checks=8, summary={'pass': 8}",40_quality_evidence/session_recovery_20260606.json
 IMPL-841,recovery,error,pass,"session recovery names=['amap_smoke_pass', 'deepseek_api_pass', 'mainline_context_pass', 'pdf_table_gate_pass', 'plugins_enabled', 'qa_node_stack_available', 'skill_inventory_available', 'ui_ux_pro_max_available']",40_quality_evidence/session_recovery_20260606.json
-IMPL-842,delivery,error,pass,"Osen report checks=14, summary={'pass': 14}",40_quality_evidence/osen_integrated_report_validation_20260606.json
-IMPL-843,delivery,error,pass,"Osen report passed names=['all_nodes_named', 'amap_runtime_ok', 'business_advice_present', 'cad_anchor_terms', 'cad_converted_two_drawings', 'deepseek_runtime_ok', 'evidence_highlights', 'human_text_clean', 'json_method_trace_internal_only', 'node_count', 'north_pdf_proxy_hit', 'pdf_table_runtime_ok', 'report_files_written', 'report_length']",40_quality_evidence/osen_integrated_report_validation_20260606.json
-IMPL-844,delivery,error,pass,expert implementation research volume query=80 completed=80 raw=11282 screened=6448 groups=8,10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
-IMPL-845,delivery,error,pass,"expert implementation dimensions found=['目标人群', '周边人口与收入', '时间节律', '天气与季节', '地理与可达', '空间与工程', '消防与安全', '许可与合规', '财务与招商', '新闻舆情与社区接受', '仿真与数据校准']",10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
-IMPL-846,delivery,error,pass,"expert implementation topic_counts={'AI 与人群仿真': 1223, '空间地理与周边': 895, '维护可持续与风险': 569, '目标人群与消费': 1117, '时间天气与季节': 723, '工程消防安全与许可': 857, '服务运营与财务': 382, '公园商业与运营': 682}",10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
-IMPL-847,delivery,error,pass,expert implementation official/business-case sources are recorded,10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
-IMPL-848,delivery,error,pass,"Osen real-world income/consumption context terms found=['居民人均可支配收入', '居民人均消费支出', '服务性消费', '不能替代奥森周边', '周边街道级或商圈级收入水平', '收入与价格带必须']",10_research/osen_real_world_context_sources_20260607.md
-IMPL-849,delivery,error,pass,"Osen real calibration rows=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}",40_quality_evidence/osen_real_calibration_inputs_20260607.json
-IMPL-850,delivery,error,pass,Osen real calibration rows remain needs_review,40_quality_evidence/osen_real_calibration_inputs_20260607.json
-IMPL-851,delivery,error,pass,latest report expert basis query=80 screened=6448,80_delivery/site_selection_gap_report_latest.json
-IMPL-852,delivery,error,pass,"latest report node option_counts=[3, 3, 3, 3, 3, 3]",80_delivery/site_selection_gap_report_latest.json
-IMPL-853,delivery,error,pass,"latest report real calibration count=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}",80_delivery/site_selection_gap_report_latest.json
-IMPL-854,delivery,error,pass,"latest report nodes preserve income, weather, decision-changing evidence and simulation inputs",80_delivery/site_selection_gap_report_latest.json
-IMPL-855,delivery,error,pass,"Osen DOCX delivery checks=['docx_audit_pass', 'docx_exists_and_size', 'each_node_has_decision_changing_evidence', 'each_node_has_three_options', 'expert_research_volume', 'income_dimension_in_report', 'no_forbidden_docx_terms', 'real_world_sources_recorded', 'render_pass', 'required_docx_terms', 'web_docx_download'] summary={'pass': 11}",40_quality_evidence/osen_docx_delivery_validation_20260606.json
-IMPL-856,delivery,error,pass,Osen DOCX delivery required checks all pass,40_quality_evidence/osen_docx_delivery_validation_20260606.json
-IMPL-857,delivery,error,pass,Osen DOCX render status=pass page_count=18 pdf_bytes=1088566,40_quality_evidence/osen_report_docx_render_20260606.json
-IMPL-858,delivery,error,pass,"Osen DOCX rendered png_count=18 first_sizes=[298152, 231456, 262718]",40_quality_evidence/osen_report_docx_render_20260606
-IMPL-859,cad,error,pass,"converted CAD drawings=['osen_north_t5', 'osen_south_t5']",40_quality_evidence/cad_dxf_analysis_20260605.json
-IMPL-860,cad,error,pass,"CAD anchors found=['南入口', '2A03', '露天剧场', '廉洁馆', '公园南门']",40_quality_evidence/cad_dxf_analysis_20260605.json
-IMPL-861,delivery,error,pass,latest report bytes=43548,80_delivery/site_selection_gap_report_latest.md
-IMPL-862,delivery,error,pass,"latest report required terms found=['奥森商业改造综合评估', '桃花源白房子', '南门地下预埋空间', '当前推进事项', '控制点校准', '真实校准输入与使用边界', '官方宏观边界', '设备价格代理']",80_delivery/site_selection_gap_report_latest.md
-IMPL-863,delivery,error,pass,latest report forbidden terms=[],80_delivery/site_selection_gap_report_latest.md
-IMPL-864,browser,error,pass,"Osen report browser status=pass, failures=0",40_quality_evidence/osen_report_browser_validation_20260606.json
-IMPL-865,browser,error,pass,"Osen report browser passed names=['console_clean', 'docx_download_link', 'hero_readable_width', 'no_backend_words_visible', 'node_options_visible', 'old_report_title_removed', 'real_calibration_visible', 'report_sections_present', 'required_terms_visible', 'screenshot_written']",40_quality_evidence/osen_report_browser_validation_20260606.json
+IMPL-842,delivery,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen integrated report gate invalid: FileNotFoundError. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.,40_quality_evidence/osen_integrated_report_validation_20260606.json
+IMPL-843,delivery,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: expert implementation knowledge invalid: FileNotFoundError. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.,10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json
+IMPL-844,knowledge,error,pass,"current knowledge entry terms found=['23,091', '3,085', '4,405', '仿真栈通用 Mega', '计算与模型 Mega', 'needs_action', 'query_model_computation_knowledge_20260609.py']",00_control/current_knowledge_base.md
+IMPL-845,knowledge,error,pass,recent knowledge base status=pass query_count=9084,40_quality_evidence/recent_knowledge_base_verification_20260609.json
+IMPL-846,knowledge,error,pass,recent knowledge core status=pass input=23091 core=3085 method=17306,40_quality_evidence/recent_knowledge_core_verification_20260609.json
+IMPL-847,knowledge,error,pass,model computation pack status=pass pack=4405 layers=13,40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json
+IMPL-848,knowledge,error,pass,model computation query examples status=pass records=3,40_quality_evidence/model_computation_query_examples_20260609.json
+IMPL-849,knowledge,warn,warn,simulation stack Mega status=needs_action query=3264 screened=5821 classic=0,40_quality_evidence/simulation_stack_mega_supplement_verification_20260609.json
+IMPL-850,knowledge,warn,warn,computation model Mega status=needs_action query=5440 screened=3096 classic=936 merged=23091,40_quality_evidence/computation_model_mega_supplement_verification_20260609.json
+IMPL-851,delivery,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen real-world context note invalid: FileNotFoundError. Reason: 0607 real-world context note is superseded by current real_calibration_context and report basis.,10_research/osen_real_world_context_sources_20260607.md
+IMPL-852,delivery,error,pass,"Osen real calibration rows=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}",40_quality_evidence/osen_real_calibration_inputs_20260607.json
+IMPL-853,delivery,error,pass,Osen real calibration rows remain needs_review,40_quality_evidence/osen_real_calibration_inputs_20260607.json
+IMPL-854,delivery,error,pass,latest report expert basis query=0 screened=0 method_basis=4 method_trace=8,80_delivery/site_selection_gap_report_latest.json
+IMPL-855,delivery,error,pass,"latest report node option_counts=[3, 3, 3, 3, 3, 3]",80_delivery/site_selection_gap_report_latest.json
+IMPL-856,delivery,error,pass,"latest report real calibration count=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}",80_delivery/site_selection_gap_report_latest.json
+IMPL-857,delivery,error,pass,"latest report nodes preserve income, weather, decision-changing evidence and simulation inputs",80_delivery/site_selection_gap_report_latest.json
+IMPL-858,delivery,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen DOCX delivery validation invalid: FileNotFoundError. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.,40_quality_evidence/osen_docx_delivery_validation_20260606.json
+IMPL-859,delivery,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen DOCX render validation invalid: FileNotFoundError. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.,40_quality_evidence/osen_report_docx_render_20260606.json
+IMPL-860,cad,error,pass,"converted CAD drawings=['osen_north_t5', 'osen_south_t5']",40_quality_evidence/cad_dxf_analysis_20260605.json
+IMPL-861,cad,error,pass,"CAD anchors found=['南入口', '2A03', '露天剧场', '廉洁馆', '公园南门']",40_quality_evidence/cad_dxf_analysis_20260605.json
+IMPL-862,delivery,error,pass,latest report bytes=42079,80_delivery/site_selection_gap_report_latest.md
+IMPL-863,delivery,error,pass,"latest report required terms found=['奥森商业改造综合评估', '桃花源白房子', '南门地下预埋空间', '当前推进事项', '控制点校准', '真实校准输入与使用边界', '官方宏观边界', '设备价格代理']",80_delivery/site_selection_gap_report_latest.md
+IMPL-864,delivery,error,pass,latest report forbidden terms=[],80_delivery/site_selection_gap_report_latest.md
+IMPL-865,browser,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen report browser gate invalid: FileNotFoundError. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.,40_quality_evidence/osen_report_browser_validation_20260606.json
 IMPL-866,ux_rebaseline,error,pass,global AI simulation design rebaseline preserves scope/method/UX constraints,10_research/global_ai_simulation_design_rebaseline_20260604.md
 IMPL-867,ux_rebaseline,error,pass,global rebaseline explicitly rejects narrow P6-only framing,10_research/global_ai_simulation_design_rebaseline_20260604.md
 IMPL-868,ux_rebaseline,error,pass,advanced AI learning register preserves agentic/UI/simulation/legacy trust constraints,10_research/advanced_ai_learning_absorption_register_20260604.md
@@ -885,285 +885,266 @@ IMPL-883,advanced_gate,error,pass,"method model coverage counts={'covered': 8, '
 IMPL-884,advanced_gate,error,pass,"method model coverage ids=['AGENTIC_UI_HUMAN_OVERSIGHT', 'CHOICE_GAP_MODEL', 'DEEPSEEK_CONSTRAINED_WORKER', 'HUMANLM_LATENT_STATE', 'MACRO_VALIDATION_METRICS', 'RL_LLM_SOCIAL_SIM', 'ROTE_BEHAVIOR_PROGRAM', 'SPATIAL_ACTIVITY_CHAIN', 'SSR_DLR_FLR']",40_quality_evidence/method_model_landing_coverage_20260605.json
 IMPL-885,advanced_gate,error,pass,"method model covered ids=['AGENTIC_UI_HUMAN_OVERSIGHT', 'CHOICE_GAP_MODEL', 'DEEPSEEK_CONSTRAINED_WORKER', 'HUMANLM_LATENT_STATE', 'RL_LLM_SOCIAL_SIM', 'ROTE_BEHAVIOR_PROGRAM', 'SPATIAL_ACTIVITY_CHAIN', 'SSR_DLR_FLR']",40_quality_evidence/method_model_landing_coverage_20260605.json
 IMPL-886,advanced_gate,error,pass,method model partial gaps=['MACRO_VALIDATION_METRICS'],40_quality_evidence/method_model_landing_coverage_20260605.json
-IMPL-887,advanced_gate,error,pass,accuracy requirements status=needs_review,40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-888,advanced_gate,error,pass,accuracy requirements count=9,40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-889,advanced_gate,error,pass,"accuracy requirement sources=['BOSS-HUMANLM', 'BOSS-RL-LLM', 'BOSS-ROTE', 'CTRL-CODEX-PRIMARY', 'MOD-AGENTSOCIETY', 'MOD-CAMS', 'MOD-GATSIM', 'MOD-MOBIVERSE', 'RISK-LLM-ABM']",40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-890,advanced_gate,error,pass,"accuracy requirement layers=['DeepSeek 调用', '人群状态', '供需与运营动作', '宏观校准', '活动链与路线', '用户监督', '行为程序', '选择概率', '高能力主控']",40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-891,advanced_gate,error,pass,accuracy feature derivatives=1200,40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
-IMPL-892,advanced_gate,error,pass,feature derivative validation status=pass failures=0,40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
-IMPL-893,advanced_gate,error,pass,feature derivative rows=1200,70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv
-IMPL-894,advanced_gate,error,pass,"feature derivative checks=['business_terms_covered', 'coverage_candidate_supply_action_id', 'coverage_demand_trigger_id', 'coverage_income_segment_id', 'coverage_node_context_id', 'coverage_persona_id', 'coverage_time_band_id', 'coverage_weather_id', 'deepseek_boundary_every_row', 'no_mojibake_markers', 'required_cells_non_empty', 'required_columns_present', 'row_count_at_least_1000', 'specific_recommendation_not_raw_score', 'user_control_every_row']",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
-IMPL-895,advanced_gate,error,pass,"feature derivative coverage={'persona_id': 8, 'income_segment_id': 5, 'time_band_id': 6, 'weather_id': 5, 'node_context_id': 6, 'demand_trigger_id': 10, 'candidate_supply_action_id': 21}",40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
-IMPL-896,advanced_gate,error,pass,feature pool browser status=pass upload=True preflight=True console=0,40_quality_evidence/person_feature_pool_browser_visible_20260607.json
-IMPL-897,advanced_gate,error,pass,"feature pool screenshots=[('40_quality_evidence/person_feature_pool_upload_visible_20260607.png', 222938), ('40_quality_evidence/person_feature_pool_preflight_visible_20260607.png', 149853)]",40_quality_evidence/person_feature_pool_browser_visible_20260607.json
-IMPL-898,advanced_gate,error,pass,feature derivative user control status=pass id=PSD-0001 console=0,40_quality_evidence/feature_derivative_user_control_browser_20260607.json
-IMPL-899,advanced_gate,error,pass,feature derivative user control screenshot bytes=149937,40_quality_evidence/feature_derivative_user_control_browser_20260607.png
-IMPL-900,advanced_gate,error,pass,feature derivative income browser status=pass id=None console=0,40_quality_evidence/feature_derivative_income_control_browser_20260607.json
-IMPL-901,advanced_gate,error,pass,feature derivative income screenshot bytes=146342,40_quality_evidence/feature_derivative_income_control_browser_20260607.png
-IMPL-902,advanced_gate,error,pass,report feature context status=pass failures=0,40_quality_evidence/report_feature_scene_context_validation_20260607.json
-IMPL-903,advanced_gate,error,pass,"report feature context checks=['API-FEATURE-CONTROL', 'API-FEATURE-ID', 'API-FEATURE-INCOME-FIELDS', 'API-FEATURE-POOL', 'API-REPORT-CALIBRATION-NEXT-ACTION', 'API-REPORT-CALIBRATION-READINESS', 'API-REPORT-CONTEXT', 'API-REPORT-INCOME-PRICE', 'API-REPORT-NEXT-ACTION-IMPACT', 'API-REPORT-READINESS-IMPACT', 'API-REPORT-REAL-CALIBRATION', 'API-SITE-REPORT', 'API-SITE-REPORT-CONTEXT', 'API-SITE-REPORT-REAL-CALIBRATION', 'DOCX-FEATURE-ITEM', 'DOCX-FEATURE-SECTION', 'DOCX-INCOME-PRICE', 'DOCX-REAL-CALIBRATION-SECTION', 'DOCX-WRITTEN', 'MD-FEATURE-ID', 'MD-FEATURE-SECTION', 'MD-REAL-CALIBRATION-SECTION', 'PROMPT-FEATURE-CONTEXT', 'PROMPT-FEATURE-ID', 'PROMPT-INCOME-PRICE-RULE', 'UI-REPORT-FEATURE-CONTEXT', 'UI-REPORT-FEATURE-STYLE', 'UI-REPORT-REAL-CALIBRATION']",40_quality_evidence/report_feature_scene_context_validation_20260607.json
-IMPL-904,advanced_gate,error,pass,report DOCX bytes=57500,80_delivery/osen_integrated_site_selection_report_20260606.docx
-IMPL-905,advanced_gate,error,pass,real calibration supplement loop status=pass failures=0,40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json
-IMPL-906,advanced_gate,error,pass,"real calibration supplement loop checks=['API-SUPPLEMENT-CREATE', 'API-SUPPLEMENT-ID', 'API-SUPPLEMENT-PATCH', 'BROWSER-CONSOLE-CLEAN', 'BROWSER-PATCHED-VALUE-VISIBLE', 'BROWSER-SCREENSHOT-WRITTEN', 'BROWSER-SUPPLEMENT-VISIBLE', 'JOB-CREATED', 'JOB-REQUEST-COUNT-CHANGED', 'PREFLIGHT-COUNT-CHANGED', 'PREFLIGHT-PATCH-VISIBLE', 'PREFLIGHT-SUPPLEMENT-COUNT', 'PREFLIGHT-SUPPLEMENT-ITEM', 'REPORT-DOCX-SUPPLEMENT', 'REPORT-GENERATED', 'REPORT-JSON-SUPPLEMENT', 'REPORT-MD-SUPPLEMENT']",40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json
-IMPL-907,advanced_gate,error,pass,real calibration supplement loop screenshot bytes=568627,40_quality_evidence/real_calibration_supplement_loop_validation_20260607/report_with_supplement.png
-IMPL-908,advanced_gate,error,pass,report feature browser status=pass derivative=PSD-0001,40_quality_evidence/report_feature_scene_context_browser_20260607.json
-IMPL-909,advanced_gate,error,pass,"report feature browser checks=['adopted_scene_visible', 'console_clean', 'feature_section_open', 'feature_section_visible', 'hero_readable_width', 'income_visible', 'no_forbidden_words', 'price_band_visible', 'report_visible', 'screenshot_written']",40_quality_evidence/report_feature_scene_context_browser_20260607.json
-IMPL-910,advanced_gate,error,pass,report feature browser screenshot bytes=337441,40_quality_evidence/report_feature_scene_context_browser_20260607.png
-IMPL-911,advanced_gate,error,pass,simulation feature dry run status=pass failures=0 matches=7,40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
-IMPL-912,advanced_gate,error,pass,"simulation feature dry run checks=['API-FEATURE-CONTROL', 'API-FEATURE-ID', 'API-FEATURE-INCOME-PRICE', 'API-FEATURE-POOL', 'API-SIM-JOB-CREATE', 'API-SIM-JOB-ID', 'API-SIM-RESULTS', 'EXPORT-CSV', 'EXPORT-CSV-ACCURACY-FIELDS', 'EXPORT-CSV-FEATURE-FIELDS', 'JOB-REQUEST-FEATURE-COUNT', 'JOB-REQUEST-FEATURE-ID', 'JOB-REQUEST-REAL-CALIBRATION-COUNT', 'JOB-REQUEST-REAL-CALIBRATION-LAYERS', 'RESULT-ACCURACY-CONTEXT', 'RESULT-ACCURACY-LEVERS', 'RESULT-CALIBRATION-EVIDENCE', 'RESULT-DEEPSEEK-BOUNDARY', 'RESULT-FEATURE-CONTEXT', 'RESULT-FEATURE-MATCH', 'RESULT-INCOME-PRICE-PRESSURE', 'RESULT-NEXT-DATA-SCENE', 'RESULT-NO-ROI', 'RESULT-NOT-FINAL-WARNING', 'RESULT-OPERATION-RULES', 'RESULT-ROW-COUNT', 'RESULT-TIME-WEATHER-PRESSURE', 'UI-SIM-ACCURACY-FIELDS', 'UI-SIM-FEATURE-FIELDS', 'UI-SIM-PRESSURE-STYLE']",40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
-IMPL-913,advanced_gate,error,pass,simulation feature matched rows=7,40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
-IMPL-914,advanced_gate,error,pass,simulation feature browser status=pass failures=0 job=SIM-20260607064914-60601,40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json
-IMPL-915,advanced_gate,error,pass,"simulation feature browser checks=['accuracy_visible', 'adopted_scene_metric', 'console_clean', 'feature_scene_visible', 'income_price_visible', 'job_id_visible', 'no_forbidden_words', 'operation_visible', 'pressure_card_count', 'real_calibration_metric', 'screenshot_written', 'table_scene_columns']",40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json
-IMPL-916,advanced_gate,error,pass,simulation feature browser screenshot bytes=1094958,40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png
-IMPL-917,advanced_gate,error,pass,production AI must be DeepSeek-only; codex prod hits=[],90_p6_expert_dashboard
-IMPL-918,advanced_gate,error,pass,object chain status=pass failures=0,40_quality_evidence/object_chain_rebaseline_validation_20260605.json
-IMPL-919,advanced_gate,error,pass,"object chain keys=['ai_session', 'behavior_program', 'choice_probability', 'feature_derivative_scene', 'node_progress', 'persona_state', 'project_scope', 'report_draft', 'source_material', 'spatial_context', 'validation_target']",40_quality_evidence/object_chain_rebaseline_validation_20260605.json
-IMPL-920,advanced_gate,error,pass,"object chain summary={'total_items': 11, 'usable_count': 4, 'draft_count': 6, 'needs_input_count': 0, 'blocked_count': 1}",40_quality_evidence/object_chain_rebaseline_validation_20260605.json
-IMPL-921,advanced_gate,error,pass,object chain browser status=pass failures=0,40_quality_evidence/object_chain_browser_validation_20260605.json
-IMPL-922,advanced_gate,error,pass,"object chain browser checks=['console_no_errors', 'no_backend_words', 'visible_AI 沟通记录', 'visible_人群状态画像', 'visible_仿真验证目标', 'visible_对象链路矩阵', 'visible_报告工作稿', 'visible_节点推进对象', 'visible_行为程序', 'visible_选择概率候选']",40_quality_evidence/object_chain_browser_validation_20260605.json
-IMPL-923,advanced_gate,error,pass,object chain screenshot bytes=515775,40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png
-IMPL-924,advanced_gate,error,pass,simulation task preflight status=pass failures=0,40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
-IMPL-925,advanced_gate,error,pass,"simulation task preflight checks=['API-ASSET-CAD-PLAN', 'API-ASSET-FEATURE-DERIVATIVES', 'API-ASSET-REAL-CALIBRATION', 'API-CHECK-CAD-PLAN', 'API-CHECK-CONTROLLED-FEATURE-SCENES', 'API-CHECK-DEEPSEEK-ONLY', 'API-CHECK-FEATURE-DERIVATIVES', 'API-CHECK-REAL-CALIBRATION', 'API-DASHBOARD', 'API-DASHBOARD-PREFLIGHT', 'API-DRY-RUN-READY', 'API-FEATURE-CHECK-PASS-AFTER-CONTROL', 'API-FEATURE-FIRST-ID', 'API-FEATURE-INCOME-COVERAGE', 'API-FEATURE-INCOME-FIELDS', 'API-FEATURE-INPUT-IMPACT', 'API-FEATURE-LOCK', 'API-FEATURE-POOL-IN-PREFLIGHT', 'API-FEATURE-RESTORE', 'API-FEATURE-USE', 'API-FULL-SIM-BLOCKED', 'API-GET-FEATURE-DERIVATIVES', 'API-GET-PREFLIGHT', 'API-OBJECTS-FIRST', 'API-POST-FULL-STILL-BLOCKED', 'API-POST-PREFLIGHT', 'API-REAL-CALIBRATION-LAYERED', 'API-SELECT-ALL-TYPES', 'DATA-AMAP-POI', 'DATA-BOSS-MATERIALS', 'DATA-CAD-PLAN', 'DATA-EVIDENCE-LEDGER', 'DATA-FEATURE-DERIVATIVES', 'DATA-OSEN-REAL-CALIBRATION', 'DATA-PDF-TABLES', 'OBJECT-CHOICE-VALIDATION', 'OBJECT-PERSONA-BEHAVIOR', 'TEXT-AI-BOUNDARY-HUMANIZED', 'TEXT-NO-FINAL-CLAIM', 'UI-FEATURE-INCOME-FIELDS', 'UI-FEATURE-POOL-ACTIONS', 'UI-FEATURE-POOL-LAYOUT', 'UI-PREFLIGHT-ACTIONS', 'UI-PREFLIGHT-LAYOUT', 'UI-PREFLIGHT-SECTION']",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
-IMPL-926,advanced_gate,error,pass,"simulation task local counts={'evidence_ledger': 260, 'pdf_native_tables': 329, 'amap_poi_candidates': 227, 'in_park_followup': 7, 'persona_state': 6, 'behavior_program': 12, 'choice_probability': 36, 'validation_target': 10, 'feature_derivatives': 1200, 'real_calibration_inputs': 14, 'boss_sources': 6, 'cad_plan_files': 4, 'boss_folder_files': 6}",40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
-IMPL-927,advanced_gate,error,pass,advanced QA status=pass findings=0,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-928,advanced_gate,error,pass,"advanced QA taxonomy=['accessibility_semantics', 'agent_readability', 'ai_output_risk', 'ai_scope_integrity', 'evidence_traceability', 'human_visual', 'legacy_leakage', 'observability', 'oversight_checkpoint', 'state_coupling']",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-929,advanced_gate,error,pass,"advanced QA methods=['Playwright trace with screenshots/snapshots/sources', 'ARIA snapshot for agent-readable structure', 'visible text internal-term scan', 'stable hook scan for agentic validation', 'human visual layout bounds for AI workbench', 'oversight checkpoint text checks', 'hidden-risk taxonomy: scope integrity, legacy leakage, state coupling, evidence traceability, AI output risk']",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-930,advanced_gate,error,pass,advanced QA views=7 screenshots=7,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-931,advanced_gate,error,pass,advanced QA missing_hook_count=0,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-932,advanced_gate,error,pass,advanced QA data view text_len=4364,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-933,advanced_gate,error,pass,advanced QA trace bytes=2915416,40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip
-IMPL-934,advanced_gate,error,pass,advanced QA ARIA bytes=7062,40_quality_evidence/advanced_agentic_workflow_aria_overview_20260604.yml
-IMPL-935,advanced_gate,error,pass,"advanced QA tool_versions={'playwright': '1.60.0', 'chrome_executable': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'selenium_retained': '4.44.0', 'opentelemetry_sdk': '1.42.1'}",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
-IMPL-936,advanced_gate,error,pass,page layer rebuild blueprint preserves global object-chain and modern validation requirements,00_control/page_layer_rebuild_blueprint_20260605.md
-IMPL-937,advanced_gate,error,pass,mainline execution map prevents legacy-shell loop and names next valuable slices,00_control/mainline_execution_map_20260605.md
-IMPL-938,advanced_gate,error,pass,ui skill design system audit is persisted and mapped to the next page rebuild,10_research/ui_skill_design_system_audit_20260605.md
-IMPL-939,advanced_gate,error,pass,web design guidelines audit is persisted and mapped to the page rebuild decision,10_research/web_design_guidelines_audit_20260605.md
-IMPL-940,advanced_gate,error,pass,page rebuild strategy status=requires_page_level_rebuild,40_quality_evidence/page_rebuild_strategy_audit_20260605.json
-IMPL-941,advanced_gate,error,pass,"page rebuild answer={'full_website_redone': False, 'current_page_state': '旧 P6 壳上的过渡重基线，已接入对象链和预检，但不是最终页面级重做。', 'engineering_decision': '继续修旧壳会和新主线冲突；下一步应页面级重构，迁移已验证底座，废弃旧叙事。'}",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
-IMPL-942,advanced_gate,error,pass,"page rebuild checks=['BLUEPRINT-SAYS-NOT-PATCHING', 'BOSS-REBASELINE-REQUIRES-SYSTEM-LAYER', 'CSS-STILL-LEGACY-PANEL-DOMINANT', 'NEW-CHAIN-LANDED', 'NO_FORBIDDEN_VISIBLE_LEAK_IN_STATIC_SURFACE', 'OBJECT-CHAIN-PASS', 'OLD-SHELL-STILL-PRESENT', 'PAGE-VALIDATION-PASS', 'PREFLIGHT-PASS-BUT-NOT-FINAL-SIMULATION', 'RECENT-SIMULATION-LEARNING-BOUNDARY', 'UI_UX_PRO_MAX_DESIGN_SYSTEM_USED']",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
-IMPL-943,advanced_gate,error,pass,"page rebuild migration keys=['keep_as_verified_backend_or_data_base', 'refactor_into_new_workflow_surface', 'retire_or_hide_from_user_surface']",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
-IMPL-944,advanced_gate,error,pass,workflow navigation status=pass failures=0,40_quality_evidence/workflow_navigation_validation_20260605.json
-IMPL-945,advanced_gate,error,pass,"workflow navigation checks=['ACTIVE_STAGE_LOGIC_PRESENT', 'DEEP_LINK_AND_SCROLL_LOGIC_PRESENT', 'DESIGN_SKILL_EVIDENCE_EXISTS', 'DRILLDOWN_TARGETS_PRESENT', 'FIVE_STAGE_IA_PRESENT', 'NODE_DETAIL_DOES_NOT_DUPLICATE_CREATE_FORM', 'VISUAL_SYSTEM_PRESENT', 'WORKFLOW_NAV_REPLACES_FLAT_SIDE_NAV']",40_quality_evidence/workflow_navigation_validation_20260605.json
-IMPL-946,advanced_gate,error,pass,source/space foundation status=pass failures=0 assets=9 pois=32,40_quality_evidence/source_space_foundation_validation_20260605.json
-IMPL-947,advanced_gate,error,pass,"source/space foundation checks=['CACHE_BUSTER_UPDATED_FOR_FOUNDATION_SLICE', 'LOCAL_ASSETS_BACKEND_PRESENT', 'MAP_ENGINE_LAZY_ON_NON_MAP_VIEWS', 'NO_INTERNAL_TOKENS_IN_VISIBLE_FOUNDATION_SURFACE', 'SOURCE_FOUNDATION_RENDERER_EXISTS', 'SOURCE_FOUNDATION_UI_EXISTS', 'SOURCE_FOUNDATION_VISUAL_SYSTEM_EXISTS', 'SPACE_CONTEXT_PRESENT_BUT_REVIEW_BOUNDARY_VISIBLE', 'UPLOAD_POOL_STILL_AVAILABLE']",40_quality_evidence/source_space_foundation_validation_20260605.json
-IMPL-948,advanced_gate,error,pass,source foundation browser runtime active={'uploadView'} cards=8 lazy_map=True forbidden=[],40_quality_evidence/source_space_foundation_browser_runtime_20260605.json
-IMPL-949,advanced_gate,error,pass,source foundation screenshot bytes=735080,40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png
-IMPL-950,advanced_gate,error,pass,page layer validation status=pass failures=0,40_quality_evidence/page_layer_rebuild_validation_20260605.json
-IMPL-951,advanced_gate,error,pass,"page layer checks=['ai_default_project_scope', 'ai_no_backend_words', 'ai_not_default_first_node', 'ai_rail_toggle_changes_state', 'assistant_message_width_desktop', 'composer_width_desktop', 'new_chat_visible', 'object_chain_cards_present', 'object_chain_evidence_folded', 'overview_no_backend_words', 'overview_not_default_taohuayuan', 'overview_visible_全局仿真链路台', 'overview_visible_全局对象链', 'overview_visible_对象链路矩阵', 'overview_visible_当前推进事项', 'overview_visible_系统链路状态', 'primary_actions_present', 'report_button_stateful']",40_quality_evidence/page_layer_rebuild_validation_20260605.json
-IMPL-952,advanced_gate,error,pass,"page layer screenshot sizes={'overview': 514414, 'ai_workspace': 119969}",40_quality_evidence/page_layer_rebuild_validation_20260605.json
-IMPL-953,advanced_gate,error,pass,axe status=pass failures=0,40_quality_evidence/axe_accessibility_probe_20260605.json
-IMPL-954,advanced_gate,error,pass,"axe violation_counts={'overview': 0, 'ai': 0, 'data': 0}",40_quality_evidence/axe_accessibility_probe_20260605.json
-IMPL-955,advanced_gate,error,pass,Lighthouse user flow status=pass failures=0,40_quality_evidence/lighthouse_user_flow_20260605.json
-IMPL-956,advanced_gate,error,pass,"Lighthouse checks=['accessibility_minimum_090', 'accessibility_scores_present', 'best_practices_scores_present', 'flow_has_three_steps', 'flow_html_written', 'navigation_timespan_performance_minimum_080', 'performance_scores_recorded']",40_quality_evidence/lighthouse_user_flow_20260605.json
-IMPL-957,advanced_gate,error,pass,"Lighthouse step_names=['打开全局推进台', '切换 AI、资料池、节点与报告', '报告页与资料池状态快照']",40_quality_evidence/lighthouse_user_flow_20260605.json
-IMPL-958,advanced_gate,error,pass,Lighthouse flow html bytes=1328370,40_quality_evidence/lighthouse_user_flow_20260605/p6_dashboard_user_flow.html
-IMPL-959,advanced_gate,error,pass,OTel trace status=pass failures=0,40_quality_evidence/otel_fastapi_trace_probe_20260605.json
-IMPL-960,advanced_gate,error,pass,"OTel span_count=9 responses={'/api/dashboard': 200, '/api/object-chain': 200, '/api/ai/sessions': 200}",40_quality_evidence/otel_fastapi_trace_probe_20260605.json
-IMPL-961,advanced_gate,error,pass,advanced capability audit status=pass failures=0,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
-IMPL-962,advanced_gate,error,pass,advanced capability checks=9,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
-IMPL-963,advanced_gate,error,pass,legacy_matrix=6 official_refs=5,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
-IMPL-964,ux_rebaseline,error,pass,Flowus probe records=3,40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
-IMPL-965,ux_rebaseline,error,pass,"Flowus extracted text lengths=[2728, 12077, 2798]",40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
-IMPL-966,ux_rebaseline,error,pass,"Flowus titles=['零代码开发，给你的 App 注入灵魂！（下）', '让你的网站告别AI味，充满高级感', '零代码开发，给你的 App 注入灵魂！（上）']",40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
-IMPL-967,ux_rebaseline,error,pass,Flowus screenshots exist for real browser evidence,40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
-IMPL-968,ux_rebaseline,error,pass,OpenAlex 2026 AI design candidates=47,10_research/ai_design_2026_openalex_raw_20260604.json
-IMPL-969,ux_rebaseline,error,pass,"OpenAlex evidence includes 2026 agentic UI, oversight, and simulation references",10_research/ai_design_2026_openalex_raw_20260604.json
-IMPL-970,ux_rebaseline,warning,pass,"Semantic Scholar records=14, errors=6",10_research/ai_design_2026_semantic_scholar_raw_20260604.json
-IMPL-971,ux_rebaseline,error,pass,"Semantic Scholar useful titles=['', '', '', 'Ask, Clarify, Optimize: Human-LLM Agent Collaboration for Smarter Inventory Control', 'Dark Patterns Meet GUI Agents: LLM Agent Susceptibility to Manipulative Interfaces and the Role of Human Oversight']",10_research/ai_design_2026_semantic_scholar_raw_20260604.json
-IMPL-972,ux_rebaseline,info,pass,"arXiv 2026 search attempts=5, blocked_or_timeout=5",10_research/ai_design_2026_arxiv_raw_20260604.json
-IMPL-973,rebaseline,error,pass,legacy adapter status=metadata_wrapped_only,40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.json
-IMPL-974,rebaseline,error,pass,legacy adapter file_count=35,40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.json
-IMPL-975,rebaseline,error,pass,legacy envelope validation status=pass,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
-IMPL-976,rebaseline,error,pass,legacy envelope validation file_count=35,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
-IMPL-977,rebaseline,error,pass,legacy envelope validation failure_count=0,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
-IMPL-978,p4,error,pass,P4 node explanation adapter status=needs_review,40_quality_evidence/p4_node_explanation_adapter_20260604.json
-IMPL-979,p4,error,pass,P4 node explanation item_count=6,40_quality_evidence/p4_node_explanation_adapter_20260604.json
-IMPL-980,p4,error,pass,P4 node explanation contract status=pass,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
-IMPL-981,p4,error,pass,P4 node explanation contract file_count=1,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
-IMPL-982,p4,error,pass,P4 node explanation contract failure_count=0,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
-IMPL-983,p4,error,pass,P4 node envelope task_type=node_explanation,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
-IMPL-984,p4,error,pass,P4 node envelope items=6,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
-IMPL-985,p4,error,pass,P4 node old scores are hidden_by_default,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
-IMPL-986,p4,error,pass,P4 node priorities downgraded to 补资料后判断,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
-IMPL-987,simulation,error,pass,choice probability adapter status=needs_review,40_quality_evidence/choice_probability_adapter_20260604.json
-IMPL-988,simulation,error,pass,choice probability item_count=36,40_quality_evidence/choice_probability_adapter_20260604.json
-IMPL-989,simulation,error,pass,choice probability duckdb_csv_count=36,40_quality_evidence/choice_probability_adapter_20260604.json
-IMPL-990,simulation,error,pass,choice probability schema_failure_count=0,40_quality_evidence/choice_probability_adapter_20260604.json
-IMPL-991,simulation,error,pass,choice probability contract status=pass,40_quality_evidence/choice_probability_contract_validation_20260604.json
-IMPL-992,simulation,error,pass,choice probability contract file_count=1,40_quality_evidence/choice_probability_contract_validation_20260604.json
-IMPL-993,simulation,error,pass,choice probability contract failure_count=0,40_quality_evidence/choice_probability_contract_validation_20260604.json
-IMPL-994,simulation,error,pass,choice probability envelope task_type=choice_probability,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
-IMPL-995,simulation,error,pass,choice probability envelope items=36,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
-IMPL-996,simulation,error,pass,choice probability items remain needs_review,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
-IMPL-997,simulation,error,pass,choice probability does not invent numeric probability_value,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
-IMPL-998,simulation,error,pass,choice probability priorities downgraded to 补资料后判断,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
-IMPL-999,simulation,error,pass,simulation validation adapter status=needs_review,40_quality_evidence/simulation_validation_target_adapter_20260604.json
-IMPL-1000,simulation,error,pass,simulation validation item_count=10,40_quality_evidence/simulation_validation_target_adapter_20260604.json
-IMPL-1001,simulation,error,pass,simulation validation duckdb_csv_count=10,40_quality_evidence/simulation_validation_target_adapter_20260604.json
-IMPL-1002,simulation,error,pass,simulation validation schema_failure_count=0,40_quality_evidence/simulation_validation_target_adapter_20260604.json
-IMPL-1003,simulation,error,pass,simulation validation contract status=pass,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
-IMPL-1004,simulation,error,pass,simulation validation contract file_count=1,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
-IMPL-1005,simulation,error,pass,simulation validation contract failure_count=0,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
-IMPL-1006,simulation,error,pass,simulation validation envelope task_type=simulation_validation_target,60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
-IMPL-1007,simulation,error,pass,simulation validation envelope items=10,60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
-IMPL-1008,simulation,error,pass,"simulation validation levels=['business_decision', 'choice_probability', 'macro_distribution', 'route_access', 'state_behavior_chain', 'time_series']",60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
-IMPL-1009,simulation,error,pass,"simulation validation metrics include core=['correlation', 'dtw_r2', 'field_check', 'kl_divergence', 'llm_draft_consistency_review', 'manual_review', 'peak_shift', 'route_reachability', 'sarima_consistency', 'ssim', 'state_behavior_consistency']",60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
-IMPL-1010,simulation,error,pass,simulation object pool counts initial=46 final=46,40_quality_evidence/simulation_object_pool_api_validation_20260604.json
-IMPL-1011,simulation,error,pass,"simulation object type_counts={'choice_probability': 36, 'simulation_validation_target': 10}",40_quality_evidence/simulation_object_pool_api_validation_20260604.json
-IMPL-1012,simulation,error,pass,"simulation object API statuses={'list_status': 200, 'create_status': 200, 'update_status': 200, 'use_status': 200, 'lock_status': 200, 'unlock_status': 200, 'delete_status': 200}",40_quality_evidence/simulation_object_pool_api_validation_20260604.json
-IMPL-1013,simulation,error,pass,simulation object locked delete=409 final delete=200,40_quality_evidence/simulation_object_pool_api_validation_20260604.json
-IMPL-1014,simulation,error,pass,simulation object browser failures=[] textIssues=[] console=[],40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
-IMPL-1015,simulation,error,pass,simulation object browser actions=9,40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
-IMPL-1016,simulation,error,pass,"simulation object primary button style={'backgroundColor': 'rgb(15, 143, 134)', 'borderRadius': '6px', 'color': 'rgb(255, 255, 255)', 'fontWeight': '700', 'minHeight': '34px'}",40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
-IMPL-1017,simulation,error,pass,persona/behavior object pool status=pass failures=0,40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
-IMPL-1018,simulation,error,pass,"persona/behavior object pool type_counts={'choice_probability': 36, 'simulation_validation_target': 10, 'persona_state': 6, 'behavior_program': 12}",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
-IMPL-1019,simulation,error,pass,"persona/behavior object pool basis=['10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md', '40_quality_evidence/method_model_landing_coverage_20260605.md', '70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv', '70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv']",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
-IMPL-1020,ux_rebaseline,error,pass,global overview browser title=AI 仿真决策系统,40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
-IMPL-1021,ux_rebaseline,error,pass,global overview failures=[] textIssues=[] console=[],40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
-IMPL-1022,ux_rebaseline,error,pass,"global overview checks_ok=True, statusCount=7",40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
-IMPL-1023,ux_rebaseline,error,pass,global rebaseline browser failures=[] textIssues=[] console=[],40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json
-IMPL-1024,ux_rebaseline,error,pass,global rebaseline browser statusCount=7,40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json
-IMPL-1025,ux_rebaseline,error,pass,old visible UI terms still present=[],90_p6_expert_dashboard/static
-IMPL-1026,handoff,error,pass,mainline insert rule=Codex 自身强化只能作为主线防偏航层插入，不得替代仿真主线。,40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1027,handoff,error,pass,mainline purpose=Codex 主线防偏航上下文包：锁定全局 AI 仿真决策系统重基线，避免旧文件和旧 P6 口径误导后续判断。,40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1028,handoff,error,pass,next mainline step=按全局 AI 仿真决策系统重基线，继续重构 AI 工作台、资料池/方法对象池、仿真任务入口，并建立旧文件信任地图，避免历史产物被误判为新方向成果。,40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1029,handoff,error,pass,mainline context missing_files=[],40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1030,handoff,error,pass,mainline context stale_top_phrase_findings=[],40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1031,handoff,error,pass,"mainline startup commands=['powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1', 'powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1 -FullGate']",40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1032,handoff,error,pass,mainline context preserves DeepSeek boundary,40_quality_evidence/codex_mainline_context_20260604.json
-IMPL-1033,llm,error,pass,DeepSeek smoke test status=ok,60_model/llm_runs/deepseek_smoke_test_latest.json
-IMPL-1034,llm,error,pass,DeepSeek smoke test model=deepseek-v4-pro,60_model/llm_runs/deepseek_smoke_test_latest.json
-IMPL-1035,external_api,error,pass,Amap smoke test status=ok,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
-IMPL-1036,external_api,error,pass,Amap smoke test result_count=1,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
-IMPL-1037,llm,error,pass,DeepSeek table classification classified_rows=329,60_model/llm_runs/deepseek_table_classification_progress.json
-IMPL-1038,llm,error,pass,DeepSeek table classification remaining_rows=0,60_model/llm_runs/deepseek_table_classification_progress.json
-IMPL-1039,llm,error,pass,DeepSeek table classification raw chunks=44,60_model/llm_runs/deepseek_table_classification_raw.jsonl
-IMPL-1040,llm,error,pass,DeepSeek evidence candidates completed_tables=63,60_model/llm_runs/deepseek_evidence_candidates_progress.json
-IMPL-1041,llm,error,pass,DeepSeek evidence candidates remaining_tables=0,60_model/llm_runs/deepseek_evidence_candidates_progress.json
-IMPL-1042,llm,error,pass,DeepSeek evidence candidates rows=592,60_model/llm_runs/deepseek_evidence_candidates_progress.json
-IMPL-1043,llm,error,pass,DeepSeek evidence candidates raw chunks=63,60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
-IMPL-1044,llm,error,pass,DeepSeek entrance node semantic classified_rows=45,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
-IMPL-1045,llm,error,pass,DeepSeek entrance node semantic remaining_rows=0,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
-IMPL-1046,llm,error,pass,DeepSeek entrance node semantic raw_chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
-IMPL-1047,llm,error,pass,DeepSeek entrance node semantic raw chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl
-IMPL-1048,llm,error,pass,DeepSeek P0 package work_items=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
-IMPL-1049,llm,error,pass,DeepSeek P0 package rows=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
-IMPL-1050,llm,error,pass,DeepSeek P0 package remaining_rows=0,60_model/llm_runs/deepseek_p0_verification_package_progress.json
-IMPL-1051,llm,error,pass,DeepSeek P0 package raw_chunks=1,60_model/llm_runs/deepseek_p0_verification_package_progress.json
-IMPL-1052,llm,error,pass,DeepSeek P0 package raw chunks=1,60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl
-IMPL-1053,llm,error,pass,DeepSeek context sync text files=8,60_model/llm_runs/deepseek_project_context_sync_progress.json
-IMPL-1054,llm,error,pass,DeepSeek context sync csv files=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
-IMPL-1055,llm,error,pass,DeepSeek context sync task queue rows=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
-IMPL-1056,llm,error,pass,DeepSeek context sync raw_chunks=1,60_model/llm_runs/deepseek_project_context_sync_progress.json
-IMPL-1057,llm,error,pass,DeepSeek context sync output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_progress.json
-IMPL-1058,llm,error,pass,DeepSeek context sync raw chunks=1,60_model/llm_runs/deepseek_project_context_sync_raw.jsonl
-IMPL-1059,llm,error,pass,DeepSeek context sync latest output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_latest.json
-IMPL-1060,llm,error,pass,DeepSeek context sync latest task_queue rows=6,60_model/llm_runs/deepseek_project_context_sync_latest.json
-IMPL-1061,llm,error,pass,DeepSeek P0 detail plan work_items=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
-IMPL-1062,llm,error,pass,DeepSeek P0 detail plan rows=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
-IMPL-1063,llm,error,pass,DeepSeek P0 detail plan remaining_rows=0,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
-IMPL-1064,llm,error,pass,DeepSeek P0 detail plan raw_chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
-IMPL-1065,llm,error,pass,DeepSeek P0 detail plan output_status=needs_review,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
-IMPL-1066,llm,error,pass,DeepSeek P0 detail plan raw chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl
-IMPL-1067,llm,error,pass,DeepSeek P0 field checklist work_items=7,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
-IMPL-1068,llm,error,pass,DeepSeek P0 field checklist node_items=27,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
-IMPL-1069,llm,error,pass,DeepSeek P0 field checklist rows=34,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
-IMPL-1070,llm,error,pass,DeepSeek P0 field checklist raw_chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
-IMPL-1071,llm,error,pass,DeepSeek P0 field checklist output_status=needs_review,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
-IMPL-1072,llm,error,pass,DeepSeek P0 field checklist raw chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl
-IMPL-1073,llm,error,pass,DeepSeek P1 quality progress evidence_rows=260,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1074,llm,error,pass,DeepSeek P1 quality progress business_fill_rows=7,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1075,llm,error,pass,DeepSeek P1 quality progress enriched_work_rows=7,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1076,llm,error,pass,DeepSeek P1 quality progress field_checklist_rows=34,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1077,llm,error,pass,DeepSeek P1 quality progress verification_checks=338,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1078,llm,error,pass,DeepSeek P1 quality progress output_status=needs_review,60_model/llm_runs/deepseek_p1_quality_report_progress.json
-IMPL-1079,llm,error,pass,DeepSeek P1 quality raw chunks=1,60_model/llm_runs/deepseek_p1_quality_report_raw.jsonl
-IMPL-1080,llm,error,pass,DeepSeek P2 semantic docx rows=21,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
-IMPL-1081,llm,error,pass,DeepSeek P2 semantic pdf rows=22,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
-IMPL-1082,llm,error,pass,DeepSeek P2 semantic output_status=needs_review,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
-IMPL-1083,llm,error,pass,DeepSeek P2 semantic raw chunks=1,60_model/llm_runs/deepseek_p2_real_site_semantic_raw.jsonl
-IMPL-1084,llm,error,pass,DeepSeek P2 schema node rows=6,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
-IMPL-1085,llm,error,pass,DeepSeek P2 schema assumption rows=12,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
-IMPL-1086,llm,error,pass,DeepSeek P2 schema spatial rows=22,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
-IMPL-1087,llm,error,pass,DeepSeek P2 schema gap rows=10,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
-IMPL-1088,llm,error,pass,DeepSeek P2 schema output_status=needs_review,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
-IMPL-1089,llm,error,pass,DeepSeek P2 schema raw chunks=1,60_model/llm_runs/deepseek_p2_input_schema_candidates_raw.jsonl
-IMPL-1090,llm,error,pass,DeepSeek P2 readiness ready_items=8,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
-IMPL-1091,llm,error,pass,DeepSeek P2 readiness blocking_gaps=8,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
-IMPL-1092,llm,error,pass,DeepSeek P2 readiness recommended_outputs=6,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
-IMPL-1093,llm,error,pass,DeepSeek P2 readiness handoff_risks=5,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
-IMPL-1094,llm,error,pass,DeepSeek P2 readiness output_status=needs_review,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
-IMPL-1095,llm,error,pass,DeepSeek P2 readiness raw chunks=1,60_model/llm_runs/deepseek_p2_completion_readiness_audit_raw.jsonl
-IMPL-1096,llm,error,pass,DeepSeek P2 source coverage matrix_rows=60,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1097,llm,error,pass,DeepSeek P2 source coverage source_rows=4,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1098,llm,error,pass,DeepSeek P2 source coverage node_rows=6,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1099,llm,error,pass,DeepSeek P2 source coverage assumption_rows=12,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1100,llm,error,pass,DeepSeek P2 source coverage spatial_rows=22,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1101,llm,error,pass,DeepSeek P2 source coverage gap_rows=10,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1102,llm,error,pass,DeepSeek P2 source coverage boundary_rows=6,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1103,llm,error,pass,DeepSeek P2 source coverage output_status=needs_review,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
-IMPL-1104,llm,error,pass,DeepSeek P2 source coverage raw chunks=1,60_model/llm_runs/deepseek_p2_source_coverage_audit_raw.jsonl
-IMPL-1105,files,error,pass,osm boundary geojson features=2,50_external_gis/boundaries/osm_park_boundaries.geojson
-IMPL-1106,files,error,pass,"osm boundary park ids=['sample_city_green_heart', 'sample_olympic_forest']",50_external_gis/boundaries/osm_park_boundaries.geojson
-IMPL-1107,scripts,error,pass,python compile failures=[],python -m py_compile
-IMPL-1108,scripts,error,pass,"amap dry run: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/fetch_amap_poi.py --dry-run
-IMPL-1109,scripts,error,pass,poi supply review: exit=0,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_poi_supply_base.py
-IMPL-1110,scripts,error,pass,"amap spatial precheck rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_spatial_precheck.py
-IMPL-1111,scripts,error,pass,"amap boundary filter rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_boundary_filter.py
-IMPL-1112,scripts,error,pass,"in-park candidate review rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_in_park_candidate_review.py
-IMPL-1113,scripts,error,pass,"p1 quality report review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p1_quality_report.py
-IMPL-1114,scripts,error,pass,"p2 real-site input index rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/build_p2_real_site_input_index.py
-IMPL-1115,scripts,error,pass,"p2 semantic breakdown review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py
-IMPL-1116,scripts,error,pass,"p2 input schema candidate review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_input_schema_candidates.py
-IMPL-1117,scripts,error,pass,"p2 completion readiness review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_completion_readiness_audit.py
-IMPL-1118,scripts,info,pass,p2 source coverage DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p2_source_coverage_audit.py
-IMPL-1119,scripts,error,pass,"p2 source coverage review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_source_coverage_audit.py
-IMPL-1120,scripts,info,pass,p2 geometry proxy DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p2_geometry_proxy_audit.py
-IMPL-1121,scripts,error,pass,"p2 geometry proxy review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_geometry_proxy_audit.py
-IMPL-1122,scripts,info,pass,p3 prework DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p3_prework_package.py
-IMPL-1123,scripts,error,pass,"p3 prework package review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p3_prework_package.py
-IMPL-1124,scripts,info,pass,p3 calibration execution DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p3_calibration_execution_package.py
-IMPL-1125,scripts,error,pass,"p3 calibration execution package review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p3_calibration_execution_package.py
-IMPL-1126,scripts,info,pass,p4 premature simulation DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p4_premature_audit.py
-IMPL-1127,scripts,info,pass,p4 feedback draft DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p4_feedback_draft.py
-IMPL-1128,scripts,error,pass,"p4 feedback draft review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p4_feedback_draft.py
-IMPL-1129,scripts,error,pass,"p2 method prototype rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/build_p2_method_prototype.py
-IMPL-1130,scripts,error,pass,"p2 method prototype review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_p2_method_prototype.py
-IMPL-1131,scripts,error,pass,"p2 completion reality audit: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_p2_completion_reality.py
-IMPL-1132,scripts,error,pass,"handoff encoding health review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_handoff_and_encoding_health.py
-IMPL-1133,llm,error,pass,loaded routes=26,60_model/src/llm_router.py
-IMPL-1134,llm,error,pass,LLM-001 routes to DeepSeek,60_model/configs/llm_task_routing.csv
-IMPL-1135,llm,error,pass,LLM-006 remains high-risk final conclusion,60_model/configs/llm_task_routing.csv
-IMPL-1136,llm,error,pass,LLM-009 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1137,llm,error,pass,LLM-010 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1138,llm,error,pass,LLM-011 entrance node semantic screening remains draft,60_model/configs/llm_task_routing.csv
-IMPL-1139,llm,error,pass,LLM-012 P0 verification package remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1140,llm,error,pass,LLM-013 context sync remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1141,llm,error,pass,LLM-014 P0 Amap detail query plan remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1142,llm,error,pass,LLM-015 field verification checklist remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1143,llm,error,pass,LLM-016 P1 quality report remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1144,llm,error,pass,LLM-017 P2 real-site semantic breakdown remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1145,llm,error,pass,LLM-018 P2 input schema candidates remain needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1146,llm,error,pass,LLM-019 P2 readiness audit remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1147,llm,error,pass,LLM-020 P2 source coverage audit remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1148,llm,error,pass,LLM-021 P2 geometry proxy audit remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1149,llm,error,pass,LLM-022 P3 prework package remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1150,llm,error,pass,LLM-023 P3 calibration execution package remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1151,llm,error,pass,LLM-024 P4 premature audit remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1152,llm,error,pass,LLM-025 P4 feedback draft remains needs_review,60_model/configs/llm_task_routing.csv
-IMPL-1153,llm,error,pass,LLM-006 high-risk/non-DeepSeek guard triggered,60_model/src/llm_router.py
-IMPL-1154,llm,error,pass,DeepSeek key must come from environment,60_model/src/llm_router.py
-IMPL-1155,security,error,pass,sensitive matches=[],project text scan
-IMPL-1156,files,error,pass,mojibake placeholders=[],"rg ""???"" equivalent"
-IMPL-1157,security,error,pass,.env.example keeps empty placeholders only,.env.example
-IMPL-1158,security,error,pass,.env has local DeepSeek key configured,.env
-IMPL-1159,security,error,pass,.env has local Amap key configured,.env
-IMPL-1160,security,error,pass,.gitignore excludes .env,.gitignore
-IMPL-1161,github,error,pass,gh repo list cocyuhao: exit=0,"gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url"
-IMPL-1162,github,error,pass,fork parent verification failures=[],gh repo list cocyuhao
-IMPL-1163,github,error,pass,archive repo contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents
-IMPL-1164,github,error,pass,"archive root paths=['README.md', 'docs', 'manifests']",cocyuhao/tech-shrimp-open-source-archive
-IMPL-1165,github,error,pass,archive docs contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/docs
-IMPL-1166,github,error,pass,"archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']",cocyuhao/tech-shrimp-open-source-archive/docs
-IMPL-1167,github,error,pass,archive manifests contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/manifests
-IMPL-1168,github,error,pass,"archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']",cocyuhao/tech-shrimp-open-source-archive/manifests
+IMPL-887,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation accuracy requirements invalid: FileNotFoundError. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.,40_quality_evidence/person_simulation_accuracy_requirements_20260605.json
+IMPL-888,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative validation invalid: FileNotFoundError. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.,40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json
+IMPL-889,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature pool browser evidence invalid: FileNotFoundError. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.,40_quality_evidence/person_feature_pool_browser_visible_20260607.json
+IMPL-890,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative user-control evidence invalid: FileNotFoundError. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.,40_quality_evidence/feature_derivative_user_control_browser_20260607.json
+IMPL-891,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative income browser evidence invalid: FileNotFoundError. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.,40_quality_evidence/feature_derivative_income_control_browser_20260607.json
+IMPL-892,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: report feature scene context validation invalid: FileNotFoundError. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.,40_quality_evidence/report_feature_scene_context_validation_20260607.json
+IMPL-893,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: real calibration supplement loop validation invalid: FileNotFoundError. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.,40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json
+IMPL-894,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: report feature scene browser validation invalid: FileNotFoundError. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.,40_quality_evidence/report_feature_scene_context_browser_20260607.json
+IMPL-895,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation feature scene dry-run validation invalid: FileNotFoundError. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.,40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json
+IMPL-896,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation feature scene browser validation invalid: FileNotFoundError. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.,40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json
+IMPL-897,advanced_gate,error,pass,production AI must be DeepSeek-only; codex prod hits=[],90_p6_expert_dashboard
+IMPL-898,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: object chain rebaseline validation invalid: FileNotFoundError. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.,40_quality_evidence/object_chain_rebaseline_validation_20260605.json
+IMPL-899,advanced_gate,error,pass,object chain browser status=pass failures=0,40_quality_evidence/object_chain_browser_validation_20260605.json
+IMPL-900,advanced_gate,error,pass,"object chain browser checks=['console_no_errors', 'no_backend_words', 'visible_AI 沟通记录', 'visible_人群状态画像', 'visible_仿真验证目标', 'visible_对象链路矩阵', 'visible_报告工作稿', 'visible_节点推进对象', 'visible_行为程序', 'visible_选择概率候选']",40_quality_evidence/object_chain_browser_validation_20260605.json
+IMPL-901,advanced_gate,error,pass,object chain screenshot bytes=515775,40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png
+IMPL-902,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation task preflight validation invalid: FileNotFoundError. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.,40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json
+IMPL-903,advanced_gate,error,pass,advanced QA status=pass findings=0,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-904,advanced_gate,error,pass,"advanced QA taxonomy=['accessibility_semantics', 'agent_readability', 'ai_output_risk', 'ai_scope_integrity', 'evidence_traceability', 'human_visual', 'legacy_leakage', 'observability', 'oversight_checkpoint', 'state_coupling']",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-905,advanced_gate,error,pass,"advanced QA methods=['Playwright trace with screenshots/snapshots/sources', 'ARIA snapshot for agent-readable structure', 'visible text internal-term scan', 'stable hook scan for agentic validation', 'human visual layout bounds for AI workbench', 'oversight checkpoint text checks', 'hidden-risk taxonomy: scope integrity, legacy leakage, state coupling, evidence traceability, AI output risk']",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-906,advanced_gate,error,pass,advanced QA views=7 screenshots=7,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-907,advanced_gate,error,pass,advanced QA missing_hook_count=0,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-908,advanced_gate,error,pass,advanced QA data view text_len=4364,40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-909,advanced_gate,error,pass,advanced QA trace bytes=2915416,40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip
+IMPL-910,advanced_gate,error,pass,advanced QA ARIA bytes=7062,40_quality_evidence/advanced_agentic_workflow_aria_overview_20260604.yml
+IMPL-911,advanced_gate,error,pass,"advanced QA tool_versions={'playwright': '1.60.0', 'chrome_executable': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'selenium_retained': '4.44.0', 'opentelemetry_sdk': '1.42.1'}",40_quality_evidence/advanced_agentic_workflow_validation_20260604.json
+IMPL-912,advanced_gate,error,pass,page layer rebuild blueprint preserves global object-chain and modern validation requirements,00_control/page_layer_rebuild_blueprint_20260605.md
+IMPL-913,advanced_gate,error,pass,mainline execution map prevents legacy-shell loop and names next valuable slices,00_control/mainline_execution_map_20260605.md
+IMPL-914,advanced_gate,error,pass,ui skill design system audit is persisted and mapped to the next page rebuild,10_research/ui_skill_design_system_audit_20260605.md
+IMPL-915,advanced_gate,error,pass,web design guidelines audit is persisted and mapped to the page rebuild decision,10_research/web_design_guidelines_audit_20260605.md
+IMPL-916,advanced_gate,error,pass,page rebuild strategy status=requires_page_level_rebuild,40_quality_evidence/page_rebuild_strategy_audit_20260605.json
+IMPL-917,advanced_gate,error,pass,"page rebuild answer={'full_website_redone': False, 'current_page_state': '旧 P6 壳上的过渡重基线，已接入对象链和预检，但不是最终页面级重做。', 'engineering_decision': '继续修旧壳会和新主线冲突；下一步应页面级重构，迁移已验证底座，废弃旧叙事。'}",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
+IMPL-918,advanced_gate,error,pass,"page rebuild checks=['BLUEPRINT-SAYS-NOT-PATCHING', 'BOSS-REBASELINE-REQUIRES-SYSTEM-LAYER', 'CSS-STILL-LEGACY-PANEL-DOMINANT', 'NEW-CHAIN-LANDED', 'NO_FORBIDDEN_VISIBLE_LEAK_IN_STATIC_SURFACE', 'OBJECT-CHAIN-PASS', 'OLD-SHELL-STILL-PRESENT', 'PAGE-VALIDATION-PASS', 'PREFLIGHT-PASS-BUT-NOT-FINAL-SIMULATION', 'RECENT-SIMULATION-LEARNING-BOUNDARY', 'UI_UX_PRO_MAX_DESIGN_SYSTEM_USED']",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
+IMPL-919,advanced_gate,error,pass,"page rebuild migration keys=['keep_as_verified_backend_or_data_base', 'refactor_into_new_workflow_surface', 'retire_or_hide_from_user_surface']",40_quality_evidence/page_rebuild_strategy_audit_20260605.json
+IMPL-920,advanced_gate,error,pass,workflow navigation status=pass failures=0,40_quality_evidence/workflow_navigation_validation_20260605.json
+IMPL-921,advanced_gate,error,pass,"workflow navigation checks=['ACTIVE_STAGE_LOGIC_PRESENT', 'DEEP_LINK_AND_SCROLL_LOGIC_PRESENT', 'DESIGN_SKILL_EVIDENCE_EXISTS', 'DRILLDOWN_TARGETS_PRESENT', 'FIVE_STAGE_IA_PRESENT', 'NODE_DETAIL_DOES_NOT_DUPLICATE_CREATE_FORM', 'VISUAL_SYSTEM_PRESENT', 'WORKFLOW_NAV_REPLACES_FLAT_SIDE_NAV']",40_quality_evidence/workflow_navigation_validation_20260605.json
+IMPL-922,advanced_gate,warning,warn,superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: source/space foundation validation invalid: FileNotFoundError. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.,40_quality_evidence/source_space_foundation_validation_20260605.json
+IMPL-923,advanced_gate,error,pass,source foundation browser runtime active={'uploadView'} cards=8 lazy_map=True forbidden=[],40_quality_evidence/source_space_foundation_browser_runtime_20260605.json
+IMPL-924,advanced_gate,error,pass,source foundation screenshot bytes=735080,40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png
+IMPL-925,advanced_gate,error,pass,page layer validation status=pass failures=0,40_quality_evidence/page_layer_rebuild_validation_20260605.json
+IMPL-926,advanced_gate,error,pass,"page layer checks=['ai_default_project_scope', 'ai_no_backend_words', 'ai_not_default_first_node', 'ai_rail_toggle_changes_state', 'assistant_message_width_desktop', 'composer_width_desktop', 'new_chat_visible', 'object_chain_cards_present', 'object_chain_evidence_folded', 'overview_no_backend_words', 'overview_not_default_taohuayuan', 'overview_visible_全局仿真链路台', 'overview_visible_全局对象链', 'overview_visible_对象链路矩阵', 'overview_visible_当前推进事项', 'overview_visible_系统链路状态', 'primary_actions_present', 'report_button_stateful']",40_quality_evidence/page_layer_rebuild_validation_20260605.json
+IMPL-927,advanced_gate,error,pass,"page layer screenshot sizes={'overview': 514414, 'ai_workspace': 119969}",40_quality_evidence/page_layer_rebuild_validation_20260605.json
+IMPL-928,advanced_gate,error,pass,axe status=pass failures=0,40_quality_evidence/axe_accessibility_probe_20260605.json
+IMPL-929,advanced_gate,error,pass,"axe violation_counts={'overview': 0, 'ai': 0, 'data': 0}",40_quality_evidence/axe_accessibility_probe_20260605.json
+IMPL-930,advanced_gate,error,pass,Lighthouse user flow status=pass failures=0,40_quality_evidence/lighthouse_user_flow_20260605.json
+IMPL-931,advanced_gate,error,pass,"Lighthouse checks=['accessibility_minimum_090', 'accessibility_scores_present', 'best_practices_scores_present', 'flow_has_three_steps', 'flow_html_written', 'navigation_timespan_performance_minimum_080', 'performance_scores_recorded']",40_quality_evidence/lighthouse_user_flow_20260605.json
+IMPL-932,advanced_gate,error,pass,"Lighthouse step_names=['打开全局推进台', '切换 AI、资料池、节点与报告', '报告页与资料池状态快照']",40_quality_evidence/lighthouse_user_flow_20260605.json
+IMPL-933,advanced_gate,error,pass,Lighthouse flow html bytes=1328370,40_quality_evidence/lighthouse_user_flow_20260605/p6_dashboard_user_flow.html
+IMPL-934,advanced_gate,error,pass,OTel trace status=pass failures=0,40_quality_evidence/otel_fastapi_trace_probe_20260605.json
+IMPL-935,advanced_gate,error,pass,"OTel span_count=9 responses={'/api/dashboard': 200, '/api/object-chain': 200, '/api/ai/sessions': 200}",40_quality_evidence/otel_fastapi_trace_probe_20260605.json
+IMPL-936,advanced_gate,error,pass,advanced capability audit status=pass failures=0,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
+IMPL-937,advanced_gate,error,pass,advanced capability checks=9,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
+IMPL-938,advanced_gate,error,pass,legacy_matrix=6 official_refs=5,40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json
+IMPL-939,ux_rebaseline,error,pass,Flowus probe records=3,40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
+IMPL-940,ux_rebaseline,error,pass,"Flowus extracted text lengths=[2728, 12077, 2798]",40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
+IMPL-941,ux_rebaseline,error,pass,"Flowus titles=['零代码开发，给你的 App 注入灵魂！（下）', '让你的网站告别AI味，充满高级感', '零代码开发，给你的 App 注入灵魂！（上）']",40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
+IMPL-942,ux_rebaseline,error,pass,Flowus screenshots exist for real browser evidence,40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json
+IMPL-943,ux_rebaseline,error,pass,OpenAlex 2026 AI design candidates=47,10_research/ai_design_2026_openalex_raw_20260604.json
+IMPL-944,ux_rebaseline,error,pass,"OpenAlex evidence includes 2026 agentic UI, oversight, and simulation references",10_research/ai_design_2026_openalex_raw_20260604.json
+IMPL-945,ux_rebaseline,warning,pass,"Semantic Scholar records=14, errors=6",10_research/ai_design_2026_semantic_scholar_raw_20260604.json
+IMPL-946,ux_rebaseline,error,pass,"Semantic Scholar useful titles=['', '', '', 'Ask, Clarify, Optimize: Human-LLM Agent Collaboration for Smarter Inventory Control', 'Dark Patterns Meet GUI Agents: LLM Agent Susceptibility to Manipulative Interfaces and the Role of Human Oversight']",10_research/ai_design_2026_semantic_scholar_raw_20260604.json
+IMPL-947,ux_rebaseline,info,pass,"arXiv 2026 search attempts=5, blocked_or_timeout=5",10_research/ai_design_2026_arxiv_raw_20260604.json
+IMPL-948,rebaseline,error,pass,legacy adapter status=metadata_wrapped_only,40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.json
+IMPL-949,rebaseline,error,pass,legacy adapter file_count=35,40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.json
+IMPL-950,rebaseline,error,pass,legacy envelope validation status=pass,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
+IMPL-951,rebaseline,error,pass,legacy envelope validation file_count=35,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
+IMPL-952,rebaseline,error,pass,legacy envelope validation failure_count=0,40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json
+IMPL-953,p4,error,pass,P4 node explanation adapter status=needs_review,40_quality_evidence/p4_node_explanation_adapter_20260604.json
+IMPL-954,p4,error,pass,P4 node explanation item_count=6,40_quality_evidence/p4_node_explanation_adapter_20260604.json
+IMPL-955,p4,error,pass,P4 node explanation contract status=pass,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
+IMPL-956,p4,error,pass,P4 node explanation contract file_count=1,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
+IMPL-957,p4,error,pass,P4 node explanation contract failure_count=0,40_quality_evidence/p4_node_explanation_contract_validation_20260604.json
+IMPL-958,p4,error,pass,P4 node envelope task_type=node_explanation,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
+IMPL-959,p4,error,pass,P4 node envelope items=6,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
+IMPL-960,p4,error,pass,P4 node old scores are hidden_by_default,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
+IMPL-961,p4,error,pass,P4 node priorities downgraded to 复核后判断,60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json
+IMPL-962,simulation,error,pass,choice probability adapter status=needs_review,40_quality_evidence/choice_probability_adapter_20260604.json
+IMPL-963,simulation,error,pass,choice probability item_count=36,40_quality_evidence/choice_probability_adapter_20260604.json
+IMPL-964,simulation,error,pass,choice probability duckdb_csv_count=36,40_quality_evidence/choice_probability_adapter_20260604.json
+IMPL-965,simulation,error,pass,choice probability schema_failure_count=0,40_quality_evidence/choice_probability_adapter_20260604.json
+IMPL-966,simulation,error,pass,choice probability contract status=pass,40_quality_evidence/choice_probability_contract_validation_20260604.json
+IMPL-967,simulation,error,pass,choice probability contract file_count=1,40_quality_evidence/choice_probability_contract_validation_20260604.json
+IMPL-968,simulation,error,pass,choice probability contract failure_count=0,40_quality_evidence/choice_probability_contract_validation_20260604.json
+IMPL-969,simulation,error,pass,choice probability envelope task_type=choice_probability,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
+IMPL-970,simulation,error,pass,choice probability envelope items=36,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
+IMPL-971,simulation,error,pass,choice probability items remain needs_review,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
+IMPL-972,simulation,error,pass,choice probability does not invent numeric probability_value,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
+IMPL-973,simulation,error,pass,choice probability priorities downgraded to 复核后判断,60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json
+IMPL-974,simulation,error,pass,simulation validation adapter status=needs_review,40_quality_evidence/simulation_validation_target_adapter_20260604.json
+IMPL-975,simulation,error,pass,simulation validation item_count=10,40_quality_evidence/simulation_validation_target_adapter_20260604.json
+IMPL-976,simulation,error,pass,simulation validation duckdb_csv_count=10,40_quality_evidence/simulation_validation_target_adapter_20260604.json
+IMPL-977,simulation,error,pass,simulation validation schema_failure_count=0,40_quality_evidence/simulation_validation_target_adapter_20260604.json
+IMPL-978,simulation,error,pass,simulation validation contract status=pass,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
+IMPL-979,simulation,error,pass,simulation validation contract file_count=1,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
+IMPL-980,simulation,error,pass,simulation validation contract failure_count=0,40_quality_evidence/simulation_validation_target_contract_validation_20260604.json
+IMPL-981,simulation,error,pass,simulation validation envelope task_type=simulation_validation_target,60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
+IMPL-982,simulation,error,pass,simulation validation envelope items=10,60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
+IMPL-983,simulation,error,pass,"simulation validation levels=['business_decision', 'choice_probability', 'macro_distribution', 'route_access', 'state_behavior_chain', 'time_series']",60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
+IMPL-984,simulation,error,pass,"simulation validation metrics include core=['correlation', 'dtw_r2', 'field_check', 'kl_divergence', 'llm_draft_consistency_review', 'manual_review', 'peak_shift', 'route_reachability', 'sarima_consistency', 'ssim', 'state_behavior_consistency']",60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json
+IMPL-985,simulation,error,pass,simulation object pool counts initial=46 final=46,40_quality_evidence/simulation_object_pool_api_validation_20260604.json
+IMPL-986,simulation,error,pass,"simulation object type_counts={'choice_probability': 36, 'simulation_validation_target': 10}",40_quality_evidence/simulation_object_pool_api_validation_20260604.json
+IMPL-987,simulation,error,pass,"simulation object API statuses={'list_status': 200, 'create_status': 200, 'update_status': 200, 'use_status': 200, 'lock_status': 200, 'unlock_status': 200, 'delete_status': 200}",40_quality_evidence/simulation_object_pool_api_validation_20260604.json
+IMPL-988,simulation,error,pass,simulation object locked delete=409 final delete=200,40_quality_evidence/simulation_object_pool_api_validation_20260604.json
+IMPL-989,simulation,error,pass,simulation object browser failures=[] textIssues=[] console=[],40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
+IMPL-990,simulation,error,pass,simulation object browser actions=9,40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
+IMPL-991,simulation,error,pass,"simulation object primary button style={'backgroundColor': 'rgb(15, 143, 134)', 'borderRadius': '6px', 'color': 'rgb(255, 255, 255)', 'fontWeight': '700', 'minHeight': '34px'}",40_quality_evidence/simulation_object_pool_browser_validation_20260604.json
+IMPL-992,simulation,error,pass,persona/behavior object pool status=pass failures=0,40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
+IMPL-993,simulation,error,pass,"persona/behavior object pool type_counts={'choice_probability': 36, 'simulation_validation_target': 10, 'persona_state': 6, 'behavior_program': 12}",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
+IMPL-994,simulation,error,pass,"persona/behavior object pool basis=['10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md', '40_quality_evidence/method_model_landing_coverage_20260605.md', '70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv', '70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv']",40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json
+IMPL-995,ux_rebaseline,error,pass,global overview browser title=AI 仿真决策系统,40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
+IMPL-996,ux_rebaseline,error,pass,global overview failures=[] textIssues=[] console=[],40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
+IMPL-997,ux_rebaseline,error,pass,"global overview checks_ok=True, statusCount=7",40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json
+IMPL-998,ux_rebaseline,error,pass,global rebaseline browser failures=[] textIssues=[] console=[],40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json
+IMPL-999,ux_rebaseline,error,pass,global rebaseline browser statusCount=7,40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json
+IMPL-1000,ux_rebaseline,error,pass,old visible UI terms still present=[],90_p6_expert_dashboard/static
+IMPL-1001,handoff,error,pass,mainline insert rule=Codex 自身强化只能作为主线防偏航层插入，不得替代仿真主线。,40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1002,handoff,error,pass,mainline purpose=Codex 主线防偏航上下文包：锁定全局 AI 仿真决策系统重基线，避免旧文件和旧 P6 口径误导后续判断。,40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1003,handoff,error,pass,next mainline step=按全局 AI 仿真决策系统重基线，继续重构 AI 工作台、资料池/方法对象池、仿真任务入口，并建立旧文件信任地图，避免历史产物被误判为新方向成果。,40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1004,handoff,error,pass,mainline context missing_files=[],40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1005,handoff,error,pass,mainline context stale_top_phrase_findings=[],40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1006,handoff,error,pass,"mainline startup commands=['powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1', 'powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1 -FullGate']",40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1007,handoff,error,pass,mainline context preserves DeepSeek boundary,40_quality_evidence/codex_mainline_context_20260604.json
+IMPL-1008,llm,error,pass,DeepSeek smoke test status=ok,60_model/llm_runs/deepseek_smoke_test_latest.json
+IMPL-1009,llm,error,pass,DeepSeek smoke test model=deepseek-v4-pro,60_model/llm_runs/deepseek_smoke_test_latest.json
+IMPL-1010,external_api,error,pass,Amap smoke test status=ok,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
+IMPL-1011,external_api,error,pass,Amap smoke test result_count=1,50_external_gis/amap_smoke_tests/amap_smoke_test_latest.json
+IMPL-1012,llm,error,pass,DeepSeek table classification classified_rows=329,60_model/llm_runs/deepseek_table_classification_progress.json
+IMPL-1013,llm,error,pass,DeepSeek table classification remaining_rows=0,60_model/llm_runs/deepseek_table_classification_progress.json
+IMPL-1014,llm,error,pass,DeepSeek table classification raw chunks=44,60_model/llm_runs/deepseek_table_classification_raw.jsonl
+IMPL-1015,llm,error,pass,DeepSeek evidence candidates completed_tables=63,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-1016,llm,error,pass,DeepSeek evidence candidates remaining_tables=0,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-1017,llm,error,pass,DeepSeek evidence candidates rows=592,60_model/llm_runs/deepseek_evidence_candidates_progress.json
+IMPL-1018,llm,error,pass,DeepSeek evidence candidates raw chunks=63,60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl
+IMPL-1019,llm,error,pass,DeepSeek entrance node semantic classified_rows=45,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-1020,llm,error,pass,DeepSeek entrance node semantic remaining_rows=0,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-1021,llm,error,pass,DeepSeek entrance node semantic raw_chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_progress.json
+IMPL-1022,llm,error,pass,DeepSeek entrance node semantic raw chunks=6,60_model/llm_runs/deepseek_entrance_node_semantic_raw.jsonl
+IMPL-1023,llm,error,pass,DeepSeek P0 package work_items=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-1024,llm,error,pass,DeepSeek P0 package rows=7,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-1025,llm,error,pass,DeepSeek P0 package remaining_rows=0,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-1026,llm,error,pass,DeepSeek P0 package raw_chunks=1,60_model/llm_runs/deepseek_p0_verification_package_progress.json
+IMPL-1027,llm,error,pass,DeepSeek P0 package raw chunks=1,60_model/llm_runs/deepseek_p0_verification_package_raw.jsonl
+IMPL-1028,llm,error,pass,DeepSeek context sync text files=8,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-1029,llm,error,pass,DeepSeek context sync csv files=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-1030,llm,error,pass,DeepSeek context sync task queue rows=6,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-1031,llm,error,pass,DeepSeek context sync raw_chunks=1,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-1032,llm,error,pass,DeepSeek context sync output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_progress.json
+IMPL-1033,llm,error,pass,DeepSeek context sync raw chunks=1,60_model/llm_runs/deepseek_project_context_sync_raw.jsonl
+IMPL-1034,llm,error,pass,DeepSeek context sync latest output_status=needs_review,60_model/llm_runs/deepseek_project_context_sync_latest.json
+IMPL-1035,llm,error,pass,DeepSeek context sync latest task_queue rows=6,60_model/llm_runs/deepseek_project_context_sync_latest.json
+IMPL-1036,llm,error,pass,DeepSeek P0 detail plan work_items=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-1037,llm,error,pass,DeepSeek P0 detail plan rows=7,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-1038,llm,error,pass,DeepSeek P0 detail plan remaining_rows=0,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-1039,llm,error,pass,DeepSeek P0 detail plan raw_chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-1040,llm,error,pass,DeepSeek P0 detail plan output_status=needs_review,60_model/llm_runs/deepseek_p0_detail_query_plan_progress.json
+IMPL-1041,llm,error,pass,DeepSeek P0 detail plan raw chunks=1,60_model/llm_runs/deepseek_p0_detail_query_plan_raw.jsonl
+IMPL-1042,llm,error,pass,DeepSeek P0 field checklist work_items=7,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-1043,llm,error,pass,DeepSeek P0 field checklist node_items=27,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-1044,llm,error,pass,DeepSeek P0 field checklist rows=34,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-1045,llm,error,pass,DeepSeek P0 field checklist raw_chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-1046,llm,error,pass,DeepSeek P0 field checklist output_status=needs_review,60_model/llm_runs/deepseek_p0_field_verification_checklist_progress.json
+IMPL-1047,llm,error,pass,DeepSeek P0 field checklist raw chunks=1,60_model/llm_runs/deepseek_p0_field_verification_checklist_raw.jsonl
+IMPL-1048,llm,error,pass,DeepSeek P1 quality progress evidence_rows=260,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1049,llm,error,pass,DeepSeek P1 quality progress business_fill_rows=7,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1050,llm,error,pass,DeepSeek P1 quality progress enriched_work_rows=7,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1051,llm,error,pass,DeepSeek P1 quality progress field_checklist_rows=34,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1052,llm,error,pass,DeepSeek P1 quality progress verification_checks=338,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1053,llm,error,pass,DeepSeek P1 quality progress output_status=needs_review,60_model/llm_runs/deepseek_p1_quality_report_progress.json
+IMPL-1054,llm,error,pass,DeepSeek P1 quality raw chunks=1,60_model/llm_runs/deepseek_p1_quality_report_raw.jsonl
+IMPL-1055,llm,error,pass,DeepSeek P2 semantic docx rows=21,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
+IMPL-1056,llm,error,pass,DeepSeek P2 semantic pdf rows=22,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
+IMPL-1057,llm,error,pass,DeepSeek P2 semantic output_status=needs_review,60_model/llm_runs/deepseek_p2_real_site_semantic_progress.json
+IMPL-1058,llm,error,pass,DeepSeek P2 semantic raw chunks=1,60_model/llm_runs/deepseek_p2_real_site_semantic_raw.jsonl
+IMPL-1059,llm,error,pass,DeepSeek P2 schema node rows=6,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
+IMPL-1060,llm,error,pass,DeepSeek P2 schema assumption rows=12,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
+IMPL-1061,llm,error,pass,DeepSeek P2 schema spatial rows=22,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
+IMPL-1062,llm,error,pass,DeepSeek P2 schema gap rows=10,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
+IMPL-1063,llm,error,pass,DeepSeek P2 schema output_status=needs_review,60_model/llm_runs/deepseek_p2_input_schema_candidates_progress.json
+IMPL-1064,llm,error,pass,DeepSeek P2 schema raw chunks=1,60_model/llm_runs/deepseek_p2_input_schema_candidates_raw.jsonl
+IMPL-1065,llm,error,pass,DeepSeek P2 readiness ready_items=8,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
+IMPL-1066,llm,error,pass,DeepSeek P2 readiness blocking_gaps=8,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
+IMPL-1067,llm,error,pass,DeepSeek P2 readiness recommended_outputs=6,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
+IMPL-1068,llm,error,pass,DeepSeek P2 readiness handoff_risks=5,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
+IMPL-1069,llm,error,pass,DeepSeek P2 readiness output_status=needs_review,60_model/llm_runs/deepseek_p2_completion_readiness_audit_progress.json
+IMPL-1070,llm,error,pass,DeepSeek P2 readiness raw chunks=1,60_model/llm_runs/deepseek_p2_completion_readiness_audit_raw.jsonl
+IMPL-1071,llm,error,pass,DeepSeek P2 source coverage matrix_rows=60,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1072,llm,error,pass,DeepSeek P2 source coverage source_rows=4,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1073,llm,error,pass,DeepSeek P2 source coverage node_rows=6,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1074,llm,error,pass,DeepSeek P2 source coverage assumption_rows=12,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1075,llm,error,pass,DeepSeek P2 source coverage spatial_rows=22,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1076,llm,error,pass,DeepSeek P2 source coverage gap_rows=10,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1077,llm,error,pass,DeepSeek P2 source coverage boundary_rows=6,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1078,llm,error,pass,DeepSeek P2 source coverage output_status=needs_review,60_model/llm_runs/deepseek_p2_source_coverage_audit_progress.json
+IMPL-1079,llm,error,pass,DeepSeek P2 source coverage raw chunks=1,60_model/llm_runs/deepseek_p2_source_coverage_audit_raw.jsonl
+IMPL-1080,files,error,pass,osm boundary geojson features=2,50_external_gis/boundaries/osm_park_boundaries.geojson
+IMPL-1081,files,error,pass,"osm boundary park ids=['sample_city_green_heart', 'sample_olympic_forest']",50_external_gis/boundaries/osm_park_boundaries.geojson
+IMPL-1082,scripts,error,pass,python compile failures=[],python -m py_compile
+IMPL-1083,scripts,error,pass,"amap dry run: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/fetch_amap_poi.py --dry-run
+IMPL-1084,scripts,error,pass,poi supply review: exit=0,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_poi_supply_base.py
+IMPL-1085,scripts,error,pass,"amap spatial precheck rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_spatial_precheck.py
+IMPL-1086,scripts,error,pass,"amap boundary filter rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_amap_boundary_filter.py
+IMPL-1087,scripts,error,pass,"in-park candidate review rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 50_external_gis/scripts/build_in_park_candidate_review.py
+IMPL-1088,scripts,error,pass,"p1 quality report review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p1_quality_report.py
+IMPL-1089,scripts,error,pass,"p2 real-site input index rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/build_p2_real_site_input_index.py
+IMPL-1090,scripts,error,pass,"p2 semantic breakdown review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py
+IMPL-1091,scripts,error,pass,"p2 input schema candidate review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_input_schema_candidates.py
+IMPL-1092,scripts,error,pass,"p2 completion readiness review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_completion_readiness_audit.py
+IMPL-1093,scripts,info,pass,p2 source coverage DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p2_source_coverage_audit.py
+IMPL-1094,scripts,error,pass,"p2 source coverage review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_source_coverage_audit.py
+IMPL-1095,scripts,info,pass,p2 geometry proxy DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p2_geometry_proxy_audit.py
+IMPL-1096,scripts,error,pass,"p2 geometry proxy review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p2_geometry_proxy_audit.py
+IMPL-1097,scripts,info,pass,p3 prework DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p3_prework_package.py
+IMPL-1098,scripts,error,pass,"p3 prework package review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p3_prework_package.py
+IMPL-1099,scripts,info,pass,p3 calibration execution DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p3_calibration_execution_package.py
+IMPL-1100,scripts,error,pass,"p3 calibration execution package review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p3_calibration_execution_package.py
+IMPL-1101,scripts,info,pass,p4 premature simulation DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p4_premature_audit.py
+IMPL-1102,scripts,info,pass,p4 feedback draft DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun,C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/run_deepseek_p4_feedback_draft.py
+IMPL-1103,scripts,error,pass,"p4 feedback draft review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_deepseek_p4_feedback_draft.py
+IMPL-1104,scripts,error,pass,"p2 method prototype rebuild: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/build_p2_method_prototype.py
+IMPL-1105,scripts,error,pass,"p2 method prototype review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 60_model/scripts/review_p2_method_prototype.py
+IMPL-1106,scripts,error,pass,"p2 completion reality audit: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_p2_completion_reality.py
+IMPL-1107,scripts,error,pass,"handoff encoding health review: exit=0, expected_text_found=True",C:\Users\Yy199\AppData\Local\Programs\Python\Python312\python.exe 30_extraction/scripts/review_handoff_and_encoding_health.py
+IMPL-1108,llm,error,pass,loaded routes=26,60_model/src/llm_router.py
+IMPL-1109,llm,error,pass,LLM-001 routes to DeepSeek,60_model/configs/llm_task_routing.csv
+IMPL-1110,llm,error,pass,LLM-006 remains high-risk final conclusion,60_model/configs/llm_task_routing.csv
+IMPL-1111,llm,error,pass,LLM-009 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1112,llm,error,pass,LLM-010 remains Tier-2 needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1113,llm,error,pass,LLM-011 entrance node semantic screening remains draft,60_model/configs/llm_task_routing.csv
+IMPL-1114,llm,error,pass,LLM-012 P0 verification package remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1115,llm,error,pass,LLM-013 context sync remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1116,llm,error,pass,LLM-014 P0 Amap detail query plan remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1117,llm,error,pass,LLM-015 field verification checklist remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1118,llm,error,pass,LLM-016 P1 quality report remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1119,llm,error,pass,LLM-017 P2 real-site semantic breakdown remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1120,llm,error,pass,LLM-018 P2 input schema candidates remain needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1121,llm,error,pass,LLM-019 P2 readiness audit remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1122,llm,error,pass,LLM-020 P2 source coverage audit remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1123,llm,error,pass,LLM-021 P2 geometry proxy audit remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1124,llm,error,pass,LLM-022 P3 prework package remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1125,llm,error,pass,LLM-023 P3 calibration execution package remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1126,llm,error,pass,LLM-024 P4 premature audit remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1127,llm,error,pass,LLM-025 P4 feedback draft remains needs_review,60_model/configs/llm_task_routing.csv
+IMPL-1128,llm,error,pass,LLM-006 high-risk/non-DeepSeek guard triggered,60_model/src/llm_router.py
+IMPL-1129,llm,error,pass,DeepSeek key must come from environment,60_model/src/llm_router.py
+IMPL-1130,security,error,pass,sensitive matches=[],project text scan
+IMPL-1131,files,error,pass,mojibake placeholders=[],"rg ""???"" equivalent"
+IMPL-1132,security,error,pass,.env.example keeps empty placeholders only,.env.example
+IMPL-1133,security,error,pass,.env has local DeepSeek key configured,.env
+IMPL-1134,security,error,pass,.env has local Amap key configured,.env
+IMPL-1135,security,error,pass,.gitignore excludes .env,.gitignore
+IMPL-1136,github,error,pass,gh repo list cocyuhao: exit=0,"gh repo list cocyuhao --limit 200 --json nameWithOwner,isFork,parent,url"
+IMPL-1137,github,error,pass,fork parent verification failures=[],gh repo list cocyuhao
+IMPL-1138,github,error,pass,archive repo contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents
+IMPL-1139,github,error,pass,"archive root paths=['README.md', 'docs', 'manifests']",cocyuhao/tech-shrimp-open-source-archive
+IMPL-1140,github,error,pass,archive docs contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/docs
+IMPL-1141,github,error,pass,"archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']",cocyuhao/tech-shrimp-open-source-archive/docs
+IMPL-1142,github,error,pass,archive manifests contents: exit=0,gh api repos/cocyuhao/tech-shrimp-open-source-archive/contents/manifests
+IMPL-1143,github,error,pass,"archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']",cocyuhao/tech-shrimp-open-source-archive/manifests
+IMPL-1144,current_rebaseline,error,pass,current latest report nodes=6 method_basis=4 method_trace=8 source_assets=10 real_calibration=14,80_delivery/site_selection_gap_report_latest.json
+IMPL-1145,current_rebaseline,error,pass,historical issue surface status=review high_current=0 high_severity=0,40_quality_evidence/historical_issue_surface_audit_20260608.json
+IMPL-1146,current_rebaseline,error,pass,agent/editor influence surface status=review high_current=0 high_severity=0,40_quality_evidence/agent_editor_influence_surface_audit_20260609.json
+IMPL-1147,current_rebaseline,error,pass,post-test output restore status=pass high_current=0 high_severity=0,40_quality_evidence/post_test_current_output_restore_20260609.json
+IMPL-1148,current_rebaseline,error,pass,system influence status=review high_current=0 high_severity=0,40_quality_evidence/system_influence_audit_20260608.json
+IMPL-1149,current_rebaseline,error,pass,"TestFiles summary={'passed': 79, 'warning': 1, 'failed': 0}",TestFiles/reports/test_report.json

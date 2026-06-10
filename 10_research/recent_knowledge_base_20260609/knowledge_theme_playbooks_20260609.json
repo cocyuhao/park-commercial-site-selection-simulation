@@ -1,0 +1,1640 @@
+{
+  "空间节点与 GIS/POI/可达性": {
+    "core_count": 1686,
+    "what_it_controls": "空间节点与 GIS/POI/可达性",
+    "how_to_use_in_project": "节点候选必须同时看可达性、供给密度、竞品距离、入口关系和步行路径；不能用单一分数定案。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "Using Multi-Attribute Decision Analysis to Examine the Impact of Social Fitness of Shaded Public Space on Older Persons’ Depression",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18010539"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "Algorithmic Evaluation of Fire Evacuation Efficiency Under Dynamic Crowd and Smoke Conditions",
+        "source": "openalex",
+        "venue": "Fire",
+        "url": "https://doi.org/10.3390/fire9010032"
+      },
+      {
+        "year": 2026,
+        "title": "Assessing the impact of safety guardrails on large language models using irritability metrics",
+        "source": "crossref+openalex",
+        "venue": "npj Digital Medicine",
+        "url": "https://doi.org/10.1038/s41746-025-02333-3"
+      },
+      {
+        "year": 2026,
+        "title": "spanishoddata: A package for accessing and working with Spanish Open Mobility Big Data",
+        "source": "crossref",
+        "venue": "Environment and Planning B: Urban Analytics and City Science",
+        "url": "https://doi.org/10.1177/23998083251415040"
+      },
+      {
+        "year": 2026,
+        "title": "Socio‐demographic and geographical patterns in forest and park use: Insights from 33 European countries",
+        "source": "openalex",
+        "venue": "People and Nature",
+        "url": "https://doi.org/10.1002/pan3.70257"
+      },
+      {
+        "year": 2026,
+        "title": "From informality to insight: Measuring inclusivity gaps in neighbourhood public space design through Informal Public Space Activity Diversity (IPSAD) in dense urban contexts",
+        "source": "crossref+openalex",
+        "venue": "Habitat International",
+        "url": "https://doi.org/10.1016/j.habitatint.2026.103726"
+      },
+      {
+        "year": 2026,
+        "title": "Reimagining Urban Public Spaces through Human-Centered Spatial Design in Growing Coastal Cities",
+        "source": "openalex",
+        "venue": "Riwayat Educational Journal of History and Humanities",
+        "url": "https://doi.org/10.24815/riwayat.v9i1.377"
+      }
+    ]
+  },
+  "天气、收入、人口、合规等现实约束": {
+    "core_count": 1582,
+    "what_it_controls": "天气、收入、人口、合规等现实约束",
+    "how_to_use_in_project": "所有预测都要分晴雨冷热、季节/节假日、客群收入、消防许可、噪声和治理边界。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "Digital Twin (DT) and Extended Reality (XR) in the Construction Industry: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16030517"
+      },
+      {
+        "year": 2026,
+        "title": "Domain Knowledge-Enhanced LLMs for Fraud and Concept Drift Detection",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics15030534"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "Using Multi-Attribute Decision Analysis to Examine the Impact of Social Fitness of Shaded Public Space on Older Persons’ Depression",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18010539"
+      },
+      {
+        "year": 2026,
+        "title": "The Role of Digital Twin Technology in Enhancing Energy Efficiency in Buildings: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Energy Science & Engineering",
+        "url": "https://doi.org/10.1002/ese3.70388"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "Economic and logistical performance of refrigerated electric and hydrogen light commercial vehicles. A total cost of ownership and hybrid simulation perspective",
+        "source": "openalex",
+        "venue": "Research in Transportation Business & Management",
+        "url": "https://doi.org/10.1016/j.rtbm.2026.101595"
+      },
+      {
+        "year": 2026,
+        "title": "Algorithmic Evaluation of Fire Evacuation Efficiency Under Dynamic Crowd and Smoke Conditions",
+        "source": "openalex",
+        "venue": "Fire",
+        "url": "https://doi.org/10.3390/fire9010032"
+      }
+    ]
+  },
+  "公园游憩与公共空间": {
+    "core_count": 989,
+    "what_it_controls": "公园游憩与公共空间",
+    "how_to_use_in_project": "商业建议必须先满足公园公共性、体验连续性和游憩场景，不能套普通商场逻辑。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Using Multi-Attribute Decision Analysis to Examine the Impact of Social Fitness of Shaded Public Space on Older Persons’ Depression",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18010539"
+      },
+      {
+        "year": 2026,
+        "title": "Socio‐demographic and geographical patterns in forest and park use: Insights from 33 European countries",
+        "source": "openalex",
+        "venue": "People and Nature",
+        "url": "https://doi.org/10.1002/pan3.70257"
+      },
+      {
+        "year": 2026,
+        "title": "From informality to insight: Measuring inclusivity gaps in neighbourhood public space design through Informal Public Space Activity Diversity (IPSAD) in dense urban contexts",
+        "source": "crossref+openalex",
+        "venue": "Habitat International",
+        "url": "https://doi.org/10.1016/j.habitatint.2026.103726"
+      },
+      {
+        "year": 2026,
+        "title": "Reimagining Urban Public Spaces through Human-Centered Spatial Design in Growing Coastal Cities",
+        "source": "openalex",
+        "venue": "Riwayat Educational Journal of History and Humanities",
+        "url": "https://doi.org/10.24815/riwayat.v9i1.377"
+      },
+      {
+        "year": 2026,
+        "title": "Integrating GIS and AHP for sustainable ecotourism site suitability analysis: a case study of Bahir Dar, Ethiopia",
+        "source": "openalex",
+        "venue": "Scientific Reports",
+        "url": "https://doi.org/10.1038/s41598-026-41548-6"
+      },
+      {
+        "year": 2026,
+        "title": "Public Space Privatization: A Catalyst for Urban Spaces Gentrification",
+        "source": "openalex",
+        "venue": "ARCHive-SR",
+        "url": "https://doi.org/10.21625/archive-sr.v10i1.1252"
+      },
+      {
+        "year": 2026,
+        "title": "Elevating Informality: Street Vending, Design Politics, and the Remaking of Public Space in Bandung",
+        "source": "crossref+openalex",
+        "venue": "Urban Planning",
+        "url": "https://doi.org/10.17645/up.11073"
+      },
+      {
+        "year": 2026,
+        "title": "Origin-destination flow clustering for sustainable forest recreation planning – case study of Vienna Metropolitan Area, Austria",
+        "source": "crossref+openalex",
+        "venue": "Urban forestry & urban greening",
+        "url": "https://doi.org/10.1016/j.ufug.2026.129432"
+      },
+      {
+        "year": 2026,
+        "title": "Optimizing Urban Green Space Ecosystem Services for Climate Resilience: A Multi-Dimensional Assessment of Urban Park Cooling Effects",
+        "source": "crossref",
+        "venue": "Forests",
+        "url": "https://doi.org/10.3390/f17030383"
+      },
+      {
+        "year": 2026,
+        "title": "Governance Challenges Amid Post-Pandemic Office Market Disruption: Unpacking the Drivers of High Vacancy Rates in Commercial Office Spaces",
+        "source": "crossref",
+        "venue": "Public Governance, Regulation and Law",
+        "url": "https://doi.org/10.61093/pgrl.2(1).66-79.2026"
+      },
+      {
+        "year": 2026,
+        "title": "Research on Low-Carbon Reconstruction of Community Public Space from the Perspective of Spatial Justice: A Space Syntax Empirical Study of Beijing’s Baiwanzhuang Community",
+        "source": "crossref",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16010235"
+      },
+      {
+        "year": 2026,
+        "title": "Park morphology and urban structure for active living: a suburban case from Seongnam City",
+        "source": "crossref",
+        "venue": "Frontiers in Public Health",
+        "url": "https://doi.org/10.3389/fpubh.2026.1744227"
+      }
+    ]
+  },
+  "Agent/LLM/仿真方法": {
+    "core_count": 958,
+    "what_it_controls": "Agent/LLM/仿真方法",
+    "how_to_use_in_project": "DeepSeek 只做 Persona 候选、活动解释、异常兜底和草案；数值和排序交给规则、ABM、MC 与证据链。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Deep Learning Methods for Demand Forecasting and Inventory Optimization in Modern Supply Chains",
+        "source": "crossref",
+        "venue": "Asian Business Research Journal",
+        "url": "https://doi.org/10.55220/2576-6759.v11i3.906"
+      },
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "Digital Twin (DT) and Extended Reality (XR) in the Construction Industry: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16030517"
+      },
+      {
+        "year": 2026,
+        "title": "Domain Knowledge-Enhanced LLMs for Fraud and Concept Drift Detection",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics15030534"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "The Role of Digital Twin Technology in Enhancing Energy Efficiency in Buildings: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Energy Science & Engineering",
+        "url": "https://doi.org/10.1002/ese3.70388"
+      },
+      {
+        "year": 2026,
+        "title": "Economic and logistical performance of refrigerated electric and hydrogen light commercial vehicles. A total cost of ownership and hybrid simulation perspective",
+        "source": "openalex",
+        "venue": "Research in Transportation Business & Management",
+        "url": "https://doi.org/10.1016/j.rtbm.2026.101595"
+      },
+      {
+        "year": 2026,
+        "title": "Algorithmic Evaluation of Fire Evacuation Efficiency Under Dynamic Crowd and Smoke Conditions",
+        "source": "openalex",
+        "venue": "Fire",
+        "url": "https://doi.org/10.3390/fire9010032"
+      },
+      {
+        "year": 2026,
+        "title": "An Enterprise Agentic Architecture Framework for Agentic AI Governance and Scalable Autonomy",
+        "source": "crossref+openalex",
+        "venue": "Scientific Journal of Computer Science",
+        "url": "https://doi.org/10.64539/sjcs.v2i1.2026.368"
+      },
+      {
+        "year": 2026,
+        "title": "Assessing the impact of safety guardrails on large language models using irritability metrics",
+        "source": "crossref+openalex",
+        "venue": "npj Digital Medicine",
+        "url": "https://doi.org/10.1038/s41746-025-02333-3"
+      }
+    ]
+  },
+  "决策支持与报告表达": {
+    "core_count": 855,
+    "what_it_controls": "决策支持与报告表达",
+    "how_to_use_in_project": "报告必须以结论、证据、方案、敏感性和动作呈现，不把内部训练/补资料话术写给客户。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Digital Twin (DT) and Extended Reality (XR) in the Construction Industry: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16030517"
+      },
+      {
+        "year": 2026,
+        "title": "Domain Knowledge-Enhanced LLMs for Fraud and Concept Drift Detection",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics15030534"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "Algorithmic Evaluation of Fire Evacuation Efficiency Under Dynamic Crowd and Smoke Conditions",
+        "source": "openalex",
+        "venue": "Fire",
+        "url": "https://doi.org/10.3390/fire9010032"
+      },
+      {
+        "year": 2026,
+        "title": "A Hybrid Decision-Making Framework for Autonomous Vehicles in Urban Environments Based on Multi-Agent Reinforcement Learning with Explainable AI",
+        "source": "crossref",
+        "venue": "Vehicles",
+        "url": "https://doi.org/10.3390/vehicles8010008"
+      },
+      {
+        "year": 2026,
+        "title": "Urban color in public design: a review of spatial aesthetics and behavioral impact in Chinese and South Korean cities using structural equation modelling approaches",
+        "source": "openalex",
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2026.1692740"
+      },
+      {
+        "year": 2026,
+        "title": "Resilience-Oriented Study on Pedestrian Accessibility Between Subway Stations and Commercial Complexes in Cities",
+        "source": "crossref+openalex",
+        "venue": "Land",
+        "url": "https://doi.org/10.3390/land15020266"
+      },
+      {
+        "year": 2026,
+        "title": "On digital twins in defense: overview and applications",
+        "source": "openalex",
+        "venue": "The Journal of Defense Modeling and Simulation Applications Methodology Technology",
+        "url": "https://doi.org/10.1177/15485129261441817"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian Safety in Developing Countries: A Systematic Literature Review and Gap Analysis",
+        "source": "openalex",
+        "venue": "Future Transportation",
+        "url": "https://doi.org/10.3390/futuretransp6010029"
+      },
+      {
+        "year": 2026,
+        "title": "Simulation of Pedestrian Grouping and Avoidance Behavior Using an Enhanced Social Force Model",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020746"
+      },
+      {
+        "year": 2026,
+        "title": "The AI-Driven Hydrogen Community: A Critical Review of Design Strategies for Decentralized Integrated Energy Systems",
+        "source": "openalex",
+        "venue": "Designs",
+        "url": "https://doi.org/10.3390/designs10010012"
+      }
+    ]
+  },
+  "AI 约束评估与人工复核": {
+    "core_count": 846,
+    "what_it_controls": "AI 约束评估与人工复核",
+    "how_to_use_in_project": "LLM 输出必须走 JSON schema、证据引用、异常兜底、人工复核和日志追踪。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Domain Knowledge-Enhanced LLMs for Fraud and Concept Drift Detection",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics15030534"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "The Role of Digital Twin Technology in Enhancing Energy Efficiency in Buildings: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Energy Science & Engineering",
+        "url": "https://doi.org/10.1002/ese3.70388"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "An Enterprise Agentic Architecture Framework for Agentic AI Governance and Scalable Autonomy",
+        "source": "crossref+openalex",
+        "venue": "Scientific Journal of Computer Science",
+        "url": "https://doi.org/10.64539/sjcs.v2i1.2026.368"
+      },
+      {
+        "year": 2026,
+        "title": "Assessing the impact of safety guardrails on large language models using irritability metrics",
+        "source": "crossref+openalex",
+        "venue": "npj Digital Medicine",
+        "url": "https://doi.org/10.1038/s41746-025-02333-3"
+      },
+      {
+        "year": 2026,
+        "title": "Real-Time Digital Twin Architecture for Immersive Industrial Automation Training",
+        "source": "crossref",
+        "venue": "Sensors",
+        "url": "https://doi.org/10.3390/s26072023"
+      },
+      {
+        "year": 2026,
+        "title": "spanishoddata: A package for accessing and working with Spanish Open Mobility Big Data",
+        "source": "crossref",
+        "venue": "Environment and Planning B: Urban Analytics and City Science",
+        "url": "https://doi.org/10.1177/23998083251415040"
+      },
+      {
+        "year": 2026,
+        "title": "Urban color in public design: a review of spatial aesthetics and behavioral impact in Chinese and South Korean cities using structural equation modelling approaches",
+        "source": "openalex",
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2026.1692740"
+      },
+      {
+        "year": 2026,
+        "title": "The Surface Is Not Superficial: Utilizing Hyper-Local Thermal Photogrammetry for Pedestrian Thermal Comfort Inquiry",
+        "source": "crossref+openalex",
+        "venue": "Remote Sensing",
+        "url": "https://doi.org/10.3390/rs18020348"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian Safety in Developing Countries: A Systematic Literature Review and Gap Analysis",
+        "source": "openalex",
+        "venue": "Future Transportation",
+        "url": "https://doi.org/10.3390/futuretransp6010029"
+      },
+      {
+        "year": 2026,
+        "title": "Public Space Privatization: A Catalyst for Urban Spaces Gentrification",
+        "source": "openalex",
+        "venue": "ARCHive-SR",
+        "url": "https://doi.org/10.21625/archive-sr.v10i1.1252"
+      }
+    ]
+  },
+  "天气季节活动与微气候": {
+    "core_count": 756,
+    "what_it_controls": "天气季节活动与微气候",
+    "how_to_use_in_project": "把天气、季节、节假日和活动日作为需求乘子，而不是写成固定日客流。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "Digital Twin (DT) and Extended Reality (XR) in the Construction Industry: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16030517"
+      },
+      {
+        "year": 2026,
+        "title": "Domain Knowledge-Enhanced LLMs for Fraud and Concept Drift Detection",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics15030534"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "Economic and logistical performance of refrigerated electric and hydrogen light commercial vehicles. A total cost of ownership and hybrid simulation perspective",
+        "source": "openalex",
+        "venue": "Research in Transportation Business & Management",
+        "url": "https://doi.org/10.1016/j.rtbm.2026.101595"
+      },
+      {
+        "year": 2026,
+        "title": "A Hybrid Decision-Making Framework for Autonomous Vehicles in Urban Environments Based on Multi-Agent Reinforcement Learning with Explainable AI",
+        "source": "crossref",
+        "venue": "Vehicles",
+        "url": "https://doi.org/10.3390/vehicles8010008"
+      },
+      {
+        "year": 2026,
+        "title": "Real-Time Digital Twin Architecture for Immersive Industrial Automation Training",
+        "source": "crossref",
+        "venue": "Sensors",
+        "url": "https://doi.org/10.3390/s26072023"
+      },
+      {
+        "year": 2026,
+        "title": "From informality to insight: Measuring inclusivity gaps in neighbourhood public space design through Informal Public Space Activity Diversity (IPSAD) in dense urban contexts",
+        "source": "crossref+openalex",
+        "venue": "Habitat International",
+        "url": "https://doi.org/10.1016/j.habitatint.2026.103726"
+      },
+      {
+        "year": 2026,
+        "title": "A Multi-Criteria Evaluation of Powertrain Options for Long-Term Rental with Implications for Sustainable Transport",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020553"
+      },
+      {
+        "year": 2026,
+        "title": "Reimagining Urban Public Spaces through Human-Centered Spatial Design in Growing Coastal Cities",
+        "source": "openalex",
+        "venue": "Riwayat Educational Journal of History and Humanities",
+        "url": "https://doi.org/10.24815/riwayat.v9i1.377"
+      }
+    ]
+  },
+  "商业业态、价格与转化": {
+    "core_count": 742,
+    "what_it_controls": "商业业态、价格与转化",
+    "how_to_use_in_project": "每个业态建议必须落到价格带、转化触发、容量、人效、库存和退出条件。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Deep Learning Methods for Demand Forecasting and Inventory Optimization in Modern Supply Chains",
+        "source": "crossref",
+        "venue": "Asian Business Research Journal",
+        "url": "https://doi.org/10.55220/2576-6759.v11i3.906"
+      },
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "Economic and logistical performance of refrigerated electric and hydrogen light commercial vehicles. A total cost of ownership and hybrid simulation perspective",
+        "source": "openalex",
+        "venue": "Research in Transportation Business & Management",
+        "url": "https://doi.org/10.1016/j.rtbm.2026.101595"
+      },
+      {
+        "year": 2026,
+        "title": "spanishoddata: A package for accessing and working with Spanish Open Mobility Big Data",
+        "source": "crossref",
+        "venue": "Environment and Planning B: Urban Analytics and City Science",
+        "url": "https://doi.org/10.1177/23998083251415040"
+      },
+      {
+        "year": 2026,
+        "title": "Resilience-Oriented Study on Pedestrian Accessibility Between Subway Stations and Commercial Complexes in Cities",
+        "source": "crossref+openalex",
+        "venue": "Land",
+        "url": "https://doi.org/10.3390/land15020266"
+      },
+      {
+        "year": 2026,
+        "title": "The Surface Is Not Superficial: Utilizing Hyper-Local Thermal Photogrammetry for Pedestrian Thermal Comfort Inquiry",
+        "source": "crossref+openalex",
+        "venue": "Remote Sensing",
+        "url": "https://doi.org/10.3390/rs18020348"
+      },
+      {
+        "year": 2026,
+        "title": "Discrete-event simulation modelling of inventory turnover under supply chain financial collaboration",
+        "source": "crossref+openalex",
+        "venue": "International Journal of Simulation and Process Modelling",
+        "url": "https://doi.org/10.1504/ijspm.2026.152090"
+      },
+      {
+        "year": 2026,
+        "title": "Simulation of Pedestrian Grouping and Avoidance Behavior Using an Enhanced Social Force Model",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020746"
+      },
+      {
+        "year": 2026,
+        "title": "Video-based cattle behaviour detection for digital twin development in precision dairy systems",
+        "source": "openalex",
+        "venue": "npj Veterinary Sciences",
+        "url": "https://doi.org/10.1038/s44433-026-00004-x"
+      },
+      {
+        "year": 2026,
+        "title": "Massive Retail Location Choice as a Human‐Flow‐Covering Problem",
+        "source": "crossref",
+        "venue": "Geographical Analysis",
+        "url": "https://doi.org/10.1111/gean.70036"
+      }
+    ]
+  },
+  "客流、活动链与路线": {
+    "core_count": 607,
+    "what_it_controls": "客流、活动链与路线",
+    "how_to_use_in_project": "仿真先生成客群分时活动链，再把路线、停留和消费触发连接起来。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "A Hybrid Decision-Making Framework for Autonomous Vehicles in Urban Environments Based on Multi-Agent Reinforcement Learning with Explainable AI",
+        "source": "crossref",
+        "venue": "Vehicles",
+        "url": "https://doi.org/10.3390/vehicles8010008"
+      },
+      {
+        "year": 2026,
+        "title": "spanishoddata: A package for accessing and working with Spanish Open Mobility Big Data",
+        "source": "crossref",
+        "venue": "Environment and Planning B: Urban Analytics and City Science",
+        "url": "https://doi.org/10.1177/23998083251415040"
+      },
+      {
+        "year": 2026,
+        "title": "A Multi-Criteria Evaluation of Powertrain Options for Long-Term Rental with Implications for Sustainable Transport",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020553"
+      },
+      {
+        "year": 2026,
+        "title": "Reimagining Urban Public Spaces through Human-Centered Spatial Design in Growing Coastal Cities",
+        "source": "openalex",
+        "venue": "Riwayat Educational Journal of History and Humanities",
+        "url": "https://doi.org/10.24815/riwayat.v9i1.377"
+      },
+      {
+        "year": 2026,
+        "title": "Resilience-Oriented Study on Pedestrian Accessibility Between Subway Stations and Commercial Complexes in Cities",
+        "source": "crossref+openalex",
+        "venue": "Land",
+        "url": "https://doi.org/10.3390/land15020266"
+      },
+      {
+        "year": 2026,
+        "title": "The Surface Is Not Superficial: Utilizing Hyper-Local Thermal Photogrammetry for Pedestrian Thermal Comfort Inquiry",
+        "source": "crossref+openalex",
+        "venue": "Remote Sensing",
+        "url": "https://doi.org/10.3390/rs18020348"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian Safety in Developing Countries: A Systematic Literature Review and Gap Analysis",
+        "source": "openalex",
+        "venue": "Future Transportation",
+        "url": "https://doi.org/10.3390/futuretransp6010029"
+      },
+      {
+        "year": 2026,
+        "title": "Elevating Informality: Street Vending, Design Politics, and the Remaking of Public Space in Bandung",
+        "source": "crossref+openalex",
+        "venue": "Urban Planning",
+        "url": "https://doi.org/10.17645/up.11073"
+      },
+      {
+        "year": 2026,
+        "title": "Simulation of Pedestrian Grouping and Avoidance Behavior Using an Enhanced Social Force Model",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020746"
+      },
+      {
+        "year": 2026,
+        "title": "Origin-destination flow clustering for sustainable forest recreation planning – case study of Vienna Metropolitan Area, Austria",
+        "source": "crossref+openalex",
+        "venue": "Urban forestry & urban greening",
+        "url": "https://doi.org/10.1016/j.ufug.2026.129432"
+      },
+      {
+        "year": 2026,
+        "title": "The AI-Driven Hydrogen Community: A Critical Review of Design Strategies for Decentralized Integrated Energy Systems",
+        "source": "openalex",
+        "venue": "Designs",
+        "url": "https://doi.org/10.3390/designs10010012"
+      },
+      {
+        "year": 2026,
+        "title": "Massive Retail Location Choice as a Human‐Flow‐Covering Problem",
+        "source": "crossref",
+        "venue": "Geographical Analysis",
+        "url": "https://doi.org/10.1111/gean.70036"
+      }
+    ]
+  },
+  "合规安全治理与投诉约束": {
+    "core_count": 458,
+    "what_it_controls": "合规安全治理与投诉约束",
+    "how_to_use_in_project": "食品、消防、夜间运营、噪声和安全容量是方案约束，不是报告末尾的风险套话。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "SAP IBP vs Custom AI Planning Engines: A Comparative Performance Study",
+        "source": "openalex",
+        "venue": "Journal of data science and information technology.",
+        "url": "https://doi.org/10.55124/jdit.v3i1.278"
+      },
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "Using Multi-Attribute Decision Analysis to Examine the Impact of Social Fitness of Shaded Public Space on Older Persons’ Depression",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18010539"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "Algorithmic Evaluation of Fire Evacuation Efficiency Under Dynamic Crowd and Smoke Conditions",
+        "source": "openalex",
+        "venue": "Fire",
+        "url": "https://doi.org/10.3390/fire9010032"
+      },
+      {
+        "year": 2026,
+        "title": "An Enterprise Agentic Architecture Framework for Agentic AI Governance and Scalable Autonomy",
+        "source": "crossref+openalex",
+        "venue": "Scientific Journal of Computer Science",
+        "url": "https://doi.org/10.64539/sjcs.v2i1.2026.368"
+      },
+      {
+        "year": 2026,
+        "title": "From informality to insight: Measuring inclusivity gaps in neighbourhood public space design through Informal Public Space Activity Diversity (IPSAD) in dense urban contexts",
+        "source": "crossref+openalex",
+        "venue": "Habitat International",
+        "url": "https://doi.org/10.1016/j.habitatint.2026.103726"
+      },
+      {
+        "year": 2026,
+        "title": "A Multi-Criteria Evaluation of Powertrain Options for Long-Term Rental with Implications for Sustainable Transport",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020553"
+      },
+      {
+        "year": 2026,
+        "title": "Simulation of Pedestrian Grouping and Avoidance Behavior Using an Enhanced Social Force Model",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020746"
+      },
+      {
+        "year": 2026,
+        "title": "Observability for LLM apps: what to log, privacy-safe telemetry, KPIs",
+        "source": "openalex",
+        "venue": "Frontiers in Computer Science and Artificial Intelligence",
+        "url": "https://doi.org/10.32996/jcsts.2026.5.4.2"
+      }
+    ]
+  },
+  "CAD/GIS/数字孪生与空间转换": {
+    "core_count": 422,
+    "what_it_controls": "CAD/GIS/数字孪生与空间转换",
+    "how_to_use_in_project": "DWG/PDF/CAD 进入模型前要锁定坐标、比例尺、功能区边界、出入口、面积和转换误差。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Digital Twin (DT) and Extended Reality (XR) in the Construction Industry: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16030517"
+      },
+      {
+        "year": 2026,
+        "title": "Linking digital twin paradigm for urban heat monitoring and policy integration to building smart city climate resilience",
+        "source": "openalex",
+        "venue": "Discover Cities",
+        "url": "https://doi.org/10.1007/s44327-025-00179-8"
+      },
+      {
+        "year": 2026,
+        "title": "The Role of Digital Twin Technology in Enhancing Energy Efficiency in Buildings: A Systematic Literature Review",
+        "source": "openalex",
+        "venue": "Energy Science & Engineering",
+        "url": "https://doi.org/10.1002/ese3.70388"
+      },
+      {
+        "year": 2026,
+        "title": "Real-Time Digital Twin Architecture for Immersive Industrial Automation Training",
+        "source": "crossref",
+        "venue": "Sensors",
+        "url": "https://doi.org/10.3390/s26072023"
+      },
+      {
+        "year": 2026,
+        "title": "Urban color in public design: a review of spatial aesthetics and behavioral impact in Chinese and South Korean cities using structural equation modelling approaches",
+        "source": "openalex",
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2026.1692740"
+      },
+      {
+        "year": 2026,
+        "title": "On digital twins in defense: overview and applications",
+        "source": "openalex",
+        "venue": "The Journal of Defense Modeling and Simulation Applications Methodology Technology",
+        "url": "https://doi.org/10.1177/15485129261441817"
+      },
+      {
+        "year": 2026,
+        "title": "Video-based cattle behaviour detection for digital twin development in precision dairy systems",
+        "source": "openalex",
+        "venue": "npj Veterinary Sciences",
+        "url": "https://doi.org/10.1038/s44433-026-00004-x"
+      },
+      {
+        "year": 2026,
+        "title": "ECOSYSTEM APPROACH TO THE INTEGRATION OF UKRAINIAN RETAIL CHAINS INTO GLOBAL RETAIL",
+        "source": "crossref",
+        "venue": "Actual Problems of Economics",
+        "url": "https://doi.org/10.32752/1993-6788-2026-1-296-110-116"
+      },
+      {
+        "year": 2026,
+        "title": "Agentic AI for Commercial Decision Intelligence in Retail &amp; CPG",
+        "source": "openalex",
+        "venue": "Journal of Information Systems Engineering & Management",
+        "url": "https://doi.org/10.52783/jisem.v11i3s.14677"
+      },
+      {
+        "year": 2026,
+        "title": "Visualization of Existing Rights and Restrictions of 3D Buildings towards an Integrated Land Administration of Indonesian Urban Areas",
+        "source": "openalex",
+        "venue": "Journal of Geographic Information System",
+        "url": "https://doi.org/10.4236/jgis.2026.181004"
+      },
+      {
+        "year": 2026,
+        "title": "Application and Prospects of LiDAR in Nature-Based Solutions: A Bibliometric Analysis",
+        "source": "openalex",
+        "venue": "Landscape Architecture Frontiers",
+        "url": "https://doi.org/10.15302/j-laf-2026-0003"
+      },
+      {
+        "year": 2026,
+        "title": "Evolution of visualisation and digital twin technologies in mining",
+        "source": "openalex",
+        "venue": "International Journal of Coal Science & Technology",
+        "url": "https://doi.org/10.1007/s40789-026-00866-w"
+      }
+    ]
+  },
+  "人口收入与客群市场分层": {
+    "core_count": 321,
+    "what_it_controls": "人口收入与客群市场分层",
+    "how_to_use_in_project": "至少拆分本地居民、外区游客、流动人口，再叠加入园频次、家庭/运动/银发/通勤等任务。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Fine-grained urban land use simulation: Integrating spatial dynamic modeling with a pre-trained vision-language model",
+        "source": "openalex",
+        "venue": "Computers Environment and Urban Systems",
+        "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102416"
+      },
+      {
+        "year": 2026,
+        "title": "LocalBench: Benchmarking LLMs on County-Level Local Knowledge and Reasoning",
+        "source": "openalex",
+        "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+        "url": "https://doi.org/10.1609/aaai.v40i45.41190"
+      },
+      {
+        "year": 2026,
+        "title": "The economic impact of ESG-Driven office building Renovations: Evidence from prime Spanish commercial real estate",
+        "source": "openalex",
+        "venue": "Energy and Buildings",
+        "url": "https://doi.org/10.1016/j.enbuild.2026.117132"
+      },
+      {
+        "year": 2026,
+        "title": "Urban color in public design: a review of spatial aesthetics and behavioral impact in Chinese and South Korean cities using structural equation modelling approaches",
+        "source": "openalex",
+        "venue": "Frontiers in Psychology",
+        "url": "https://doi.org/10.3389/fpsyg.2026.1692740"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian Safety in Developing Countries: A Systematic Literature Review and Gap Analysis",
+        "source": "openalex",
+        "venue": "Future Transportation",
+        "url": "https://doi.org/10.3390/futuretransp6010029"
+      },
+      {
+        "year": 2026,
+        "title": "Public Space Privatization: A Catalyst for Urban Spaces Gentrification",
+        "source": "openalex",
+        "venue": "ARCHive-SR",
+        "url": "https://doi.org/10.21625/archive-sr.v10i1.1252"
+      },
+      {
+        "year": 2026,
+        "title": "Agent-Based Modeling of Urban Agriculture: Decision-Making, Policy Incentives, and Sustainability in Food Systems",
+        "source": "crossref+openalex",
+        "venue": "Complexities",
+        "url": "https://doi.org/10.3390/complexities2010002"
+      },
+      {
+        "year": 2026,
+        "title": "Inflation and Consumer Demand Reallocation: Evidence from Retail Equity Performance in Metropolitan Houston",
+        "source": "crossref+openalex",
+        "venue": "International Journal of Finance Economics and Management Studies",
+        "url": "https://doi.org/10.64137/31080030/ijfems-v2i2p101"
+      },
+      {
+        "year": 2026,
+        "title": "Overdose Prevention Centers and Neighborhood Commercial Activity in New York City",
+        "source": "openalex",
+        "venue": "JAMA Network Open",
+        "url": "https://doi.org/10.1001/jamanetworkopen.2025.59863"
+      },
+      {
+        "year": 2026,
+        "title": "E‑Commerce and Spatial Rebalancing of the Catering Industry in Zhuhai, China: a Pre‑ and Post‑Pandemic Comparison",
+        "source": "openalex",
+        "venue": "Applied Spatial Analysis and Policy",
+        "url": "https://doi.org/10.1007/s12061-026-09839-7"
+      },
+      {
+        "year": 2026,
+        "title": "AI-Driven Building Automation Systems for Energy Optimization and Predictive Maintenance: A Quantitative Case Study of Smart Building Performance Enhancement",
+        "source": "openalex",
+        "venue": "",
+        "url": "https://doi.org/10.63125/y92z0052"
+      },
+      {
+        "year": 2026,
+        "title": "Spatial equity-oriented accessibility assessment and optimal allocation of older adult care facilities in Beijing’s central urban area",
+        "source": "crossref",
+        "venue": "Frontiers in Public Health",
+        "url": "https://doi.org/10.3389/fpubh.2026.1779461"
+      }
+    ]
+  },
+  "Persona 与活动链建模": {
+    "core_count": 307,
+    "what_it_controls": "Persona 与活动链建模",
+    "how_to_use_in_project": "三类客群只是底座，还要叠加入园频次、任务、同行结构、时段偏好和停留活动链。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Socio‐demographic and geographical patterns in forest and park use: Insights from 33 European countries",
+        "source": "openalex",
+        "venue": "People and Nature",
+        "url": "https://doi.org/10.1002/pan3.70257"
+      },
+      {
+        "year": 2026,
+        "title": "Agentic AI in Branding: Driving Hyper-personalization and Real-time Adaptation",
+        "source": "crossref",
+        "venue": "Global Business Review",
+        "url": "https://doi.org/10.1177/09721509251414773"
+      },
+      {
+        "year": 2026,
+        "title": "Quality Assessment of Privately Managed Public Space: Āgenskalns Market Exploratory Case Study",
+        "source": "crossref+openalex",
+        "venue": "Urban Science",
+        "url": "https://doi.org/10.3390/urbansci10010033"
+      },
+      {
+        "year": 2026,
+        "title": "SAPIENT: A Multi-Agent Framework for Corporate Reputation Intelligence Through Sentinel Monitoring and LLM-Based Synthetic Population Simulation",
+        "source": "crossref+openalex",
+        "venue": "Systems",
+        "url": "https://doi.org/10.3390/systems14040425"
+      },
+      {
+        "year": 2026,
+        "title": "Consumer Movement Patterns and Their Influence on Retail Space Planning: Evidence from Organized Retail Stores",
+        "source": "crossref",
+        "venue": "International Scientific Journal of Engineering and Management",
+        "url": "https://doi.org/10.55041/isjem07665"
+      },
+      {
+        "year": 2026,
+        "title": "Dwell Time Estimation Using Periodic Image Captures and Deep Learning",
+        "source": "crossref",
+        "venue": "The International FLAIRS Conference Proceedings",
+        "url": "https://doi.org/10.32473/flairs.39.1.141550"
+      },
+      {
+        "year": 2026,
+        "title": "Human-Centered AI in Learning Design: Integrating AI to Support Learners at the Margins",
+        "source": "crossref",
+        "venue": "International Journal of Humanities Science Innovations and Management Studies",
+        "url": "https://doi.org/10.64137/30508509/ijhsims-v3i1p102"
+      },
+      {
+        "year": 2026,
+        "title": "CAMP: A Context-Aware, Multimodal, and Privacy-Preserving Pedestrian Trajectory Prediction Framework",
+        "source": "crossref",
+        "venue": "Journal of Imaging",
+        "url": "https://doi.org/10.3390/jimaging12050197"
+      },
+      {
+        "year": 2026,
+        "title": "Park and Recreation Professionals’ Perceptions of Constraints to Equitable Youth Sports Participation: A Social-Ecological Approach",
+        "source": "crossref",
+        "venue": "Journal of Park and Recreation Administration",
+        "url": "https://doi.org/10.18666/jpra-2025-12655"
+      },
+      {
+        "year": 2026,
+        "title": "EXPRESS: Governed Agentic AI for Retail Baskets: A Consumer World Model with Inventory-Aware Actions",
+        "source": "crossref",
+        "venue": "Production and Operations Management",
+        "url": "https://doi.org/10.1177/10591478261458079"
+      },
+      {
+        "year": 2026,
+        "title": "Platform Personalized Pricing: Research on Consumer Choice Preference and Consumer Behavior Response Mechanism",
+        "source": "crossref",
+        "venue": "Advances in Economics, Management and Political Sciences",
+        "url": "https://doi.org/10.54254/2754-1169/2026.bj32087"
+      },
+      {
+        "year": 2026,
+        "title": "DIGITAL MARKETING OF TOURIST DESTINATIONS BASED ON GEOSPATIAL DATA",
+        "source": "crossref",
+        "venue": "Vectors of Social Sciences",
+        "url": "https://doi.org/10.51895/vss/11/vidovic/jovanavidovic"
+      }
+    ]
+  },
+  "ABM/Mesa 与步行仿真引擎": {
+    "core_count": 149,
+    "what_it_controls": "ABM/Mesa 与步行仿真引擎",
+    "how_to_use_in_project": "Mesa 是可选实现，核心是 Agent 状态转移、路线、拥挤、热力图和校准。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "Simulation of Pedestrian Grouping and Avoidance Behavior Using an Enhanced Social Force Model",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18020746"
+      },
+      {
+        "year": 2026,
+        "title": "Agent-Based Modeling of Urban Agriculture: Decision-Making, Policy Incentives, and Sustainability in Food Systems",
+        "source": "crossref+openalex",
+        "venue": "Complexities",
+        "url": "https://doi.org/10.3390/complexities2010002"
+      },
+      {
+        "year": 2026,
+        "title": "Modeling Ultra-High-Density Exposure and Evacuation Dynamics in a High-Density Urban Plaza: An Agent-Based Simulation Study of Guangzhou Huacheng Plaza",
+        "source": "crossref+openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16101922"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian Flow Model Based on Cellular Automata Under Visual Trajectory and Multi-Scenario Evacuation Simulation Research",
+        "source": "crossref+openalex",
+        "venue": "Sensors",
+        "url": "https://doi.org/10.3390/s26051405"
+      },
+      {
+        "year": 2026,
+        "title": "Pedestrian-Oriented Microclimate Optimization for Urban Plazas: Integrating Movement Patterns with Thermal Comfort Simulation",
+        "source": "crossref",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16101874"
+      },
+      {
+        "year": 2026,
+        "title": "Agent-Based Modeling of Pedestrian Crossing Behavior in Commercial Streets: Seven Actionable Strategies for Safe and Sustainable Urban Mobility",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18084122"
+      },
+      {
+        "year": 2026,
+        "title": "Dynamic Integration in Agent-Based Modeling: Strategies for Optimizing Land-Use Change Policies in Peri-Urban Areas through Interactive Simulation",
+        "source": "crossref",
+        "venue": "Research on World Agricultural Economy",
+        "url": "https://doi.org/10.36956/rwae.v7i1.2451"
+      },
+      {
+        "year": 2026,
+        "title": "Study on safety evacuation simulation in a university teaching building integrating agent-based and fire dynamics models",
+        "source": "crossref",
+        "venue": "Building Services Engineering Research &amp; Technology",
+        "url": "https://doi.org/10.1177/01436244261439535"
+      },
+      {
+        "year": 2026,
+        "title": "&lt;b&gt;ДОСЛІДЖЕННЯ ЗАДОВОЛЕНОГО ПОПИТУ НА ПАРКУВАННЯ ВАНТАЖНИХ АВТОМОБІЛІВ ЗАЛЕЖНО ВІД МІСТКОСТІ СТОЯНОК НА АВТОМОБІЛЬНІЙ МАГІСТРАЛІ&lt;/b&gt; &lt;b&gt;Research on the satisfied demand for truck parking depending on the location and capacity of parking lots on the highway&lt;/b&gt;",
+        "source": "crossref",
+        "venue": "СУЧАСНІ ТЕХНОЛОГІЇ В МАШИНОБУДУВАННІ ТА ТРАНСПОРТІ",
+        "url": "https://doi.org/10.36910/2dwhv698"
+      },
+      {
+        "year": 2026,
+        "title": "Optimizing Traditional Public Space Through Agent-Based Simulation: \"A Case of Lagan Chowk\"",
+        "source": "crossref+openalex",
+        "venue": "Journal of Engineering Issues and Solutions",
+        "url": "https://doi.org/10.3126/joeis.v5i1.93502"
+      },
+      {
+        "year": 2026,
+        "title": "A Comprehensive Review of Space Syntax Applications for Sustainable Urban Development in Commercial Areas",
+        "source": "crossref",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18105145"
+      }
+    ]
+  },
+  "运营收益容量与试运营指标": {
+    "core_count": 145,
+    "what_it_controls": "运营收益容量与试运营指标",
+    "how_to_use_in_project": "建议需要能被试运营验证：日收入区间、排队长度、服务能力、库存、人效和复盘阈值。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Deep Learning Methods for Demand Forecasting and Inventory Optimization in Modern Supply Chains",
+        "source": "crossref",
+        "venue": "Asian Business Research Journal",
+        "url": "https://doi.org/10.55220/2576-6759.v11i3.906"
+      },
+      {
+        "year": 2026,
+        "title": "Discrete-event simulation modelling of inventory turnover under supply chain financial collaboration",
+        "source": "crossref+openalex",
+        "venue": "International Journal of Simulation and Process Modelling",
+        "url": "https://doi.org/10.1504/ijspm.2026.152090"
+      },
+      {
+        "year": 2026,
+        "title": "ECOSYSTEM APPROACH TO THE INTEGRATION OF UKRAINIAN RETAIL CHAINS INTO GLOBAL RETAIL",
+        "source": "crossref",
+        "venue": "Actual Problems of Economics",
+        "url": "https://doi.org/10.32752/1993-6788-2026-1-296-110-116"
+      },
+      {
+        "year": 2026,
+        "title": "Mining Customer Journeys to Uncover Empirical Retail Agglomerations",
+        "source": "openalex",
+        "venue": "Proceedings of the ... Annual Hawaii International Conference on System Sciences/Proceedings of the Annual Hawaii International Conference on System Sciences",
+        "url": "https://doi.org/10.24251/hicss.2026.190"
+      },
+      {
+        "year": 2026,
+        "title": "TikTok queues in tourism",
+        "source": "openalex",
+        "venue": "Current Issues in Tourism",
+        "url": "https://doi.org/10.1080/13683500.2026.2653701"
+      },
+      {
+        "year": 2026,
+        "title": "Consumer Movement Patterns and Their Influence on Retail Space Planning: Evidence from Organized Retail Stores",
+        "source": "crossref",
+        "venue": "International Scientific Journal of Engineering and Management",
+        "url": "https://doi.org/10.55041/isjem07665"
+      },
+      {
+        "year": 2026,
+        "title": "Enhancing Inventory Planning in Retail SMES through Data‑Driven Demand Forecasting",
+        "source": "crossref",
+        "venue": "International Journal of innovative inventions in Social Science and Humanities",
+        "url": "https://doi.org/10.58806/ijiissh.2026.v3i3n01"
+      },
+      {
+        "year": 2026,
+        "title": "Dwell Time Estimation Using Periodic Image Captures and Deep Learning",
+        "source": "crossref",
+        "venue": "The International FLAIRS Conference Proceedings",
+        "url": "https://doi.org/10.32473/flairs.39.1.141550"
+      },
+      {
+        "year": 2026,
+        "title": "IoT-Driven Pull Scheduling to Avoid Congestion in Human Emergency Evacuation",
+        "source": "crossref+openalex",
+        "venue": "Sensors",
+        "url": "https://doi.org/10.3390/s26030837"
+      },
+      {
+        "year": 2026,
+        "title": "Revenue Management With Nonparametric Demand Learning and Product Returns",
+        "source": "crossref",
+        "venue": "Production and Operations Management",
+        "url": "https://doi.org/10.1177/10591478261424032"
+      },
+      {
+        "year": 2026,
+        "title": "EXPRESS: Governed Agentic AI for Retail Baskets: A Consumer World Model with Inventory-Aware Actions",
+        "source": "crossref",
+        "venue": "Production and Operations Management",
+        "url": "https://doi.org/10.1177/10591478261458079"
+      },
+      {
+        "year": 2026,
+        "title": "Developing a novel pricing model for super fresh products considering uncertainty: a case study from the fruit retail sector",
+        "source": "crossref",
+        "venue": "Kybernetes",
+        "url": "https://doi.org/10.1108/k-12-2024-3324"
+      }
+    ]
+  },
+  "Monte Carlo 与敏感性分析": {
+    "core_count": 127,
+    "what_it_controls": "Monte Carlo 与敏感性分析",
+    "how_to_use_in_project": "P5/P50/P95 要扰动多个变量，至少包括日客流、天气、转化率、客单价、客群比例和容量。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Balancing food safety and sustainability: trade-off risk assessments and predictive modeling",
+        "source": "openalex",
+        "venue": "Frontiers in Science",
+        "url": "https://doi.org/10.3389/fsci.2026.1720772"
+      },
+      {
+        "year": 2026,
+        "title": "Observability for LLM apps: what to log, privacy-safe telemetry, KPIs",
+        "source": "openalex",
+        "venue": "Frontiers in Computer Science and Artificial Intelligence",
+        "url": "https://doi.org/10.32996/jcsts.2026.5.4.2"
+      },
+      {
+        "year": 2026,
+        "title": "Reliable Emergency Facility Location Planning Under Complex Polygonal Barriers and Facility Failure Risks",
+        "source": "crossref",
+        "venue": "Mathematical and Computational Applications",
+        "url": "https://doi.org/10.3390/mca31020050"
+      },
+      {
+        "year": 2026,
+        "title": "Sustainable Port Site Selection in Mountainous Areas Within Continuous Dam Zones: A Multi-Criteria Decision-Making Framework",
+        "source": "crossref",
+        "venue": "Applied Sciences",
+        "url": "https://doi.org/10.3390/app16021117"
+      },
+      {
+        "year": 2026,
+        "title": "Integration of GIS and MCDM for temporary shelter site selection in earthquake-risk zone: a case study with sensitivity analysis",
+        "source": "crossref",
+        "venue": "Natural Hazards",
+        "url": "https://doi.org/10.1007/s11069-026-08246-y"
+      },
+      {
+        "year": 2026,
+        "title": "Enhancing Digital Marketing Through Optimized CRM Selection: A Fuzzy AHP-TOPSIS Perspective",
+        "source": "crossref",
+        "venue": "Management",
+        "url": "https://doi.org/10.58691/man/216708"
+      },
+      {
+        "year": 2026,
+        "title": "Data-driven vertiport location optimization for urban air mobility",
+        "source": "crossref",
+        "venue": "ENGINEERING Management",
+        "url": "https://doi.org/10.1007/s42524-026-5302-4"
+      },
+      {
+        "year": 2026,
+        "title": "Parameterization of Sports Playground Experiments Applying a Hybrid Method to Analyze Microclimate and Outdoor Thermal Comfort",
+        "source": "crossref",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18042104"
+      },
+      {
+        "year": 2026,
+        "title": "Developing a novel pricing model for super fresh products considering uncertainty: a case study from the fruit retail sector",
+        "source": "crossref",
+        "venue": "Kybernetes",
+        "url": "https://doi.org/10.1108/k-12-2024-3324"
+      },
+      {
+        "year": 2026,
+        "title": "Revisiting Challenger: A Probabilistic Decision-Support Framework Using Bayesian Inference",
+        "source": "crossref",
+        "venue": "Exploring Science Academic Conference Series",
+        "url": "https://doi.org/10.70267/ic-aimees.20260232242"
+      },
+      {
+        "year": 2026,
+        "title": "Compliance Digital Twins for Autonomous Financial Agents: Reliability-Aware Scenario Assurance via Calibrated LLM Evaluation",
+        "source": "crossref",
+        "venue": "Journal of International Crisis and Risk Communication Research",
+        "url": "https://doi.org/10.63278/jicrcr.vi.3783"
+      },
+      {
+        "year": 2026,
+        "title": "Enhancing Fire Safety of Buildings’ Occupants: An Integrated Fire Risk Concept into Reliability-Based Evacuation Design Optimization Method Focused on At-Risk Groups",
+        "source": "crossref",
+        "venue": "Fire Technology",
+        "url": "https://doi.org/10.1007/s10694-025-01853-4"
+      }
+    ]
+  },
+  "数据质量证据链与可追溯": {
+    "core_count": 74,
+    "what_it_controls": "数据质量证据链与可追溯",
+    "how_to_use_in_project": "模型输入必须保留文件、页码/图层、抽取方法、置信度和校验状态。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "Deep Learning Methods for Demand Forecasting and Inventory Optimization in Modern Supply Chains",
+        "source": "crossref",
+        "venue": "Asian Business Research Journal",
+        "url": "https://doi.org/10.55220/2576-6759.v11i3.906"
+      },
+      {
+        "year": 2026,
+        "title": "Application and Prospects of LiDAR in Nature-Based Solutions: A Bibliometric Analysis",
+        "source": "openalex",
+        "venue": "Landscape Architecture Frontiers",
+        "url": "https://doi.org/10.15302/j-laf-2026-0003"
+      },
+      {
+        "year": 2026,
+        "title": "Enterprise Spatial Data Provenance Knowledge Infrastructure",
+        "source": "openalex",
+        "venue": "ISPRS International Journal of Geo-Information",
+        "url": "https://doi.org/10.3390/ijgi15050182"
+      },
+      {
+        "year": 2026,
+        "title": "Multi-agent Reinforcement Learning Optimization for Urban Earthquake Emergency Evacuation with GIS-based Real-time Decision Support",
+        "source": "crossref",
+        "venue": "Journal of Earthquake and Tsunami",
+        "url": "https://doi.org/10.1142/s1793431125400020"
+      },
+      {
+        "year": 2026,
+        "title": "Building Trust in Agentic AI: TRACE Framework for Policy-Driven Multi-Agent System Design",
+        "source": "crossref",
+        "venue": "International Journal of Current Science Research and Review",
+        "url": "https://doi.org/10.47191/ijcsrr/v9-i2-46"
+      },
+      {
+        "year": 2025,
+        "title": "Integrating Artificial Intelligence Agents with the Internet of Things for Enhanced Environmental Monitoring: Applications in Water Quality and Climate Data",
+        "source": "openalex",
+        "venue": "Electronics",
+        "url": "https://doi.org/10.3390/electronics14040696"
+      },
+      {
+        "year": 2025,
+        "title": "MCDFN: supply chain demand forecasting via an explainable multi-channel data fusion network model",
+        "source": "openalex",
+        "venue": "Evolutionary Intelligence",
+        "url": "https://doi.org/10.1007/s12065-025-01053-7"
+      },
+      {
+        "year": 2025,
+        "title": "Knowledge graph exploitation to enhance the usability of risk assessment in construction safety planning",
+        "source": "crossref+openalex",
+        "venue": "Advanced Engineering Informatics",
+        "url": "https://doi.org/10.1016/j.aei.2025.103305"
+      },
+      {
+        "year": 2026,
+        "title": "LLM-PDM: An LLM Persona-Driven Method for replicating personal mobility preferences at scale",
+        "source": "crossref+openalex",
+        "venue": "Communications in Transportation Research",
+        "url": "https://doi.org/10.26599/commtr.2026.9640004"
+      },
+      {
+        "year": 2025,
+        "title": "Internet of Things and Artificial Intelligence for Secure and Sustainable Green Mobility: A Multimodal Data Fusion Approach to Enhance Efficiency and Security",
+        "source": "openalex",
+        "venue": "Multimodal Technologies and Interaction",
+        "url": "https://doi.org/10.3390/mti9050039"
+      },
+      {
+        "year": 2025,
+        "title": "Data-driven insights into (E-)bike-sharing: mining a large-scale dataset on usage and urban characteristics: descriptive analysis and performance modeling",
+        "source": "openalex",
+        "venue": "Transportation",
+        "url": "https://doi.org/10.1007/s11116-025-10661-2"
+      },
+      {
+        "year": 2025,
+        "title": "AI-Enabled Digital Twin Framework for Safe and Sustainable Intelligent Transportation",
+        "source": "openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su17104391"
+      }
+    ]
+  },
+  "离散选择与消费/目的地选择": {
+    "core_count": 50,
+    "what_it_controls": "离散选择与消费/目的地选择",
+    "how_to_use_in_project": "目的地、活动和消费触发要表达为选择/效用逻辑，避免固定模板决定行为。",
+    "top_evidence": [
+      {
+        "year": 2026,
+        "title": "User Behavior and Preferences in Metro-Led Urban Underground Public Spaces: The Role of Environmental Factors",
+        "source": "openalex",
+        "venue": "Buildings",
+        "url": "https://doi.org/10.3390/buildings16091689"
+      },
+      {
+        "year": 2026,
+        "title": "Measuring Vitality and Spatial Efficiency of Public Spaces in Commercial Complexes: A Multi-Source Data-Driven Analysis in Guangzhou, China",
+        "source": "openalex",
+        "venue": "Land",
+        "url": "https://doi.org/10.3390/land15030501"
+      },
+      {
+        "year": 2026,
+        "title": "CAMP: A Context-Aware, Multimodal, and Privacy-Preserving Pedestrian Trajectory Prediction Framework",
+        "source": "crossref",
+        "venue": "Journal of Imaging",
+        "url": "https://doi.org/10.3390/jimaging12050197"
+      },
+      {
+        "year": 2026,
+        "title": "A Comprehensive Review of Space Syntax Applications for Sustainable Urban Development in Commercial Areas",
+        "source": "crossref",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18105145"
+      },
+      {
+        "year": 2025,
+        "title": "Influencers and the choice of a travel destination: a customer journey and information processing perspective",
+        "source": "crossref+openalex",
+        "venue": "Information Technology &amp; Tourism",
+        "url": "https://doi.org/10.1007/s40558-025-00330-6"
+      },
+      {
+        "year": 2025,
+        "title": "Access to cultural ecosystem services and how urban green spaces marginalize underprivileged groups",
+        "source": "openalex",
+        "venue": "npj Urban Sustainability",
+        "url": "https://doi.org/10.1038/s42949-025-00221-z"
+      },
+      {
+        "year": 2025,
+        "title": "Literature Review on Public Transport and Land Use: Based on CiteSpace Statistical Analysis",
+        "source": "openalex",
+        "venue": "Land",
+        "url": "https://doi.org/10.3390/land14051096"
+      },
+      {
+        "year": 2025,
+        "title": "SIAT: Pedestrian trajectory prediction via social interaction-aware transformer",
+        "source": "crossref+openalex",
+        "venue": "Complex & Intelligent Systems",
+        "url": "https://doi.org/10.1007/s40747-025-01944-3"
+      },
+      {
+        "year": 2025,
+        "title": "A model for predicting consumer choice to shop in a new grocery store using the Theory of Planned Behaviour",
+        "source": "crossref+openalex",
+        "venue": "International Journal of Retail & Distribution Management",
+        "url": "https://doi.org/10.1108/ijrdm-11-2023-0670"
+      },
+      {
+        "year": 2025,
+        "title": "Analyzing the Mismatch Between Urban Park Supply and Community Needs in Busan: A Public Health Perspective",
+        "source": "crossref+openalex",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su17094049"
+      },
+      {
+        "year": 2026,
+        "title": "Digital Information Cascades and Sustainable Visitor Flow Management: Evidence from GPS Trajectories and Social Media During an Urban Festival",
+        "source": "crossref",
+        "venue": "Sustainability",
+        "url": "https://doi.org/10.3390/su18104952"
+      },
+      {
+        "year": 2026,
+        "title": "Modeling digitally augmented Huff model: Evidence from Otaku culture–driven spatial interactions",
+        "source": "crossref",
+        "venue": "Environment and Planning B: Urban Analytics and City Science",
+        "url": "https://doi.org/10.1177/23998083261430815"
+      }
+    ]
+  }
+}

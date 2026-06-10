@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-06-09T22:08:00+08:00",
+  "status": "pass_with_known_warnings",
+  "answer_to_user_question": {
+    "simulation_stack_general_mega": "ran_and_merged_but_not_closed",
+    "computation_model_mega": "completed_one_round_and_callable_pack_built_but_not_closed",
+    "reason": "both Mega reports still record needs_action; simulation stack classic reference is 0, computation model Mega had OpenAlex source unavailable/budget-limited in this run."
+  },
+  "facts": {
+    "simulation_stack_mega": {
+      "status": "needs_action",
+      "query_count": 3264,
+      "recent_query_count": 3240,
+      "classic_query_count": 24,
+      "raw_total": 54580,
+      "screened_total": 5821,
+      "classic_reference_total": 0,
+      "merged_screened_total": 21852
+    },
+    "computation_model_mega": {
+      "status": "needs_action",
+      "query_count": 5440,
+      "recent_query_count": 5200,
+      "classic_query_count": 240,
+      "raw_total": 54333,
+      "screened_total": 3096,
+      "classic_reference_total": 936,
+      "merged_screened_total": 23091,
+      "error_count": 5445,
+      "source_counts": {
+        "crossref": 54333
+      }
+    },
+    "recent_knowledge_base": {
+      "status": "pass",
+      "query_count": 9084
+    },
+    "recent_knowledge_core": {
+      "status": "pass",
+      "input_screened_total": 23091,
+      "core_deployment_total": 3085,
+      "method_reference_total": 17306,
+      "reject_misfit_total": 2700
+    },
+    "model_computation_pack": {
+      "status": "pass",
+      "pack_total": 4405,
+      "layer_count": 13,
+      "source_counts": {
+        "openalex": 1454,
+        "crossref": 2394,
+        "crossref+openalex": 482,
+        "crossref+semantic_scholar": 3,
+        "openalex+semantic_scholar": 4,
+        "crossref+openalex+semantic_scholar": 6,
+        "arxiv": 56,
+        "semantic_scholar": 6
+      },
+      "source_tier_counts": {
+        "core": 3170,
+        "screened": 1204,
+        "classic": 31
+      }
+    },
+    "query_examples": {
+      "status": "pass",
+      "query_count": 3
+    }
+  },
+  "implementation_gate": {
+    "csv": "40_quality_evidence/verification/implementation_verification_20260526.csv",
+    "knowledge_rows": [
+      {
+        "check_id": "IMPL-844",
+        "group": "knowledge",
+        "severity": "error",
+        "status": "pass",
+        "finding": "current knowledge entry terms found=['23,091', '3,085', '4,405', '仿真栈通用 Mega', '计算与模型 Mega', 'needs_action', 'query_model_computation_knowledge_20260609.py']",
+        "evidence": "00_control/current_knowledge_base.md"
+      },
+      {
+        "check_id": "IMPL-845",
+        "group": "knowledge",
+        "severity": "error",
+        "status": "pass",
+        "finding": "recent knowledge base status=pass query_count=9084",
+        "evidence": "40_quality_evidence/recent_knowledge_base_verification_20260609.json"
+      },
+      {
+        "check_id": "IMPL-846",
+        "group": "knowledge",
+        "severity": "error",
+        "status": "pass",
+        "finding": "recent knowledge core status=pass input=23091 core=3085 method=17306",
+        "evidence": "40_quality_evidence/recent_knowledge_core_verification_20260609.json"
+      },
+      {
+        "check_id": "IMPL-847",
+        "group": "knowledge",
+        "severity": "error",
+        "status": "pass",
+        "finding": "model computation pack status=pass pack=4405 layers=13",
+        "evidence": "40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json"
+      },
+      {
+        "check_id": "IMPL-848",
+        "group": "knowledge",
+        "severity": "error",
+        "status": "pass",
+        "finding": "model computation query examples status=pass records=3",
+        "evidence": "40_quality_evidence/model_computation_query_examples_20260609.json"
+      },
+      {
+        "check_id": "IMPL-849",
+        "group": "knowledge",
+        "severity": "warn",
+        "status": "warn",
+        "finding": "simulation stack Mega status=needs_action query=3264 screened=5821 classic=0",
+        "evidence": "40_quality_evidence/simulation_stack_mega_supplement_verification_20260609.json"
+      },
+      {
+        "check_id": "IMPL-850",
+        "group": "knowledge",
+        "severity": "warn",
+        "status": "warn",
+        "finding": "computation model Mega status=needs_action query=5440 screened=3096 classic=936 merged=23091",
+        "evidence": "40_quality_evidence/computation_model_mega_supplement_verification_20260609.json"
+      }
+    ],
+    "expected_warning_count": 2
+  },
+  "durable_files_updated": [
+    "00_control/current_knowledge_base.md",
+    "progress.md",
+    "handoff_next_chat.md",
+    "next_chat_prompt.md",
+    "findings.md",
+    "30_extraction/scripts/verify_project_implementation.py"
+  ],
+  "next_action": "When OpenAlex/source budget recovers, rerun the two Mega builders and convert the current warning gates to pass if sources and classic references close properly."
+}

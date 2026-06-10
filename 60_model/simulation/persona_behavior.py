@@ -42,11 +42,11 @@ def preferred_rows(deepseek_path: Path, static_path: Path) -> tuple[list[dict[st
 def visible_status(value: str) -> str:
     text = (value or "").strip()
     if not text:
-        return "待补资料"
+        return "资料待复核"
     if "blocked" in text or "not_provided" in text:
         return "阻塞正式仿真"
     if "pending" in text:
-        return "等待补充"
+        return "等待复核"
     if "needs" in text:
         return "待复核"
     if text in {"yes", "true"}:

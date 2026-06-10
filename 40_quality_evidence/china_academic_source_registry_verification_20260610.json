@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-10T09:41:58",
+  "status": "pass",
+  "source_count": 15,
+  "query_count": 40,
+  "theme_count": 8,
+  "high_priority_sources": [
+    "万方数据开放平台",
+    "AMiner 开放平台",
+    "北京市统计局 / 国家统计局公开数据",
+    "高德地图开放平台"
+  ],
+  "access_modes": [
+    "institutional_license_or_manual_export",
+    "manual_search_lead_only",
+    "manual_search_or_authorized_export",
+    "official_api",
+    "official_api_or_authorized_export",
+    "official_api_or_web_export",
+    "official_open_data_or_manual_export"
+  ],
+  "files": {
+    "registry_json": "10_research\\china_academic_sources_20260610\\china_academic_source_registry_20260610.json",
+    "registry_csv": "10_research\\china_academic_sources_20260610\\china_academic_source_registry_20260610.csv",
+    "query_matrix_json": "10_research\\china_academic_sources_20260610\\china_simulation_query_matrix_20260610.json",
+    "query_matrix_csv": "10_research\\china_academic_sources_20260610\\china_simulation_query_matrix_20260610.csv",
+    "import_schema": "10_research\\china_academic_sources_20260610\\china_academic_import_schema_20260610.json",
+    "readme": "10_research\\china_academic_sources_20260610\\README.md"
+  },
+  "rule": "国内源优先接入，OpenAlex 降级为国际补源；未授权平台只接导出，不做绕登录抓取。"
+}

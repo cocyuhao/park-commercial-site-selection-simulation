@@ -261,7 +261,7 @@ def make_messages(context: dict[str, Any]) -> list[dict[str, str]]:
                 f"- 证据台账总条数：{evidence_total}\n"
                 f"- 已 checked 证据：{checked_total}\n"
                 f"- presentation_assumption：{assumption_total}\n"
-                f"- P0 经营字段补齐记录：{business_total}\n"
+                f"- P0 经营字段复核记录：{business_total}\n"
                 f"- enriched P0 工作项：{enriched_total}\n"
                 f"- 现场核验检查表：{checklist_total}\n"
                 f"- 最新落实性验证：{verification_total} 项通过，失败 {verification_failures}，警告 {verification_warnings}\n\n"
@@ -269,7 +269,7 @@ def make_messages(context: dict[str, Any]) -> list[dict[str, str]]:
                 "1. 开头必须明确写出：当前仍在 P1，尚未进入 P2，本稿状态为 needs_review。\n"
                 "2. 必须明确写出：缺失经营字段在本稿中按空值/待核验处理，不再为本段反复追补。\n"
                 "3. 必须同时覆盖证据链、P0 经营字段、入口/节点、运营授权、路径代理和验证门禁。\n"
-                "4. `## 明确不做的结论` 里必须写明不把代理路径、未核验入口、未核验授权和空值补齐假设当成最终事实。\n"
+                "4. `## 明确不做的结论` 里必须写明不把代理路径、未核验入口、未核验授权和空值复核假设当成最终事实。\n"
                 "5. 不要输出表格。使用简洁段落和项目符号。\n\n"
                 "上下文 JSON：\n"
                 + json.dumps(context, ensure_ascii=False)
@@ -341,7 +341,7 @@ def run() -> None:
                 "",
                 "- 输出状态：needs_review。",
                 f"- 证据台账总条数：{context['evidence_summary']['total_rows']}。",
-                f"- P0 经营字段补齐记录：{context['business_fill_summary']['total_rows']} 条。",
+                f"- P0 经营字段复核记录：{context['business_fill_summary']['total_rows']} 条。",
                 f"- enriched P0 工作项：{context['enriched_worklist_summary']['total_rows']} 条。",
                 f"- 现场核验检查表：{context['field_checklist_summary']['total_rows']} 条。",
                 f"- 最新落实性验证：{context['verification_summary'].get('total_checks')} 项通过，失败 {context['verification_summary'].get('failures')}，警告 {context['verification_summary'].get('warnings')}。",

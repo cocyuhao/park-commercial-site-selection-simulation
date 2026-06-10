@@ -182,7 +182,7 @@ def fallback_result(row: dict[str, str]) -> dict[str, str]:
         "work_item_id": row.get("work_item_id", ""),
         "missing_business_fields_draft": missing,
         "p0_verification_summary_draft": "DeepSeek 未返回该项；按保守口径保留为人工核验。",
-        "business_field_followup_draft": f"补齐缺失经营字段：{missing or '无明确缺失字段'}。",
+        "business_field_followup_draft": f"复核缺失经营字段：{missing or '无明确缺失字段'}。",
         "entrance_node_followup_draft": "入口/节点路径仅为代理结果，需现场或官方确认。",
         "operation_authorization_followup_draft": "确认是否属于园方可运营或可授权资产。",
         "fieldwork_questions_draft": "现场核验营业状态、入口可达、授权关系和经营字段。",

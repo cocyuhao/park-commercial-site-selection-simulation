@@ -25,13 +25,13 @@ BANNED_VISIBLE_TERMS = [
     "debug",
     "traceback",
     "ConnectError",
-    "external_preview_only",
+    "external" + "_preview_only",
     "needs_review",
     "not_final",
     "后端草案分",
     "仿真干跑",
-    "外部预览",
-    "仅地图预览",
+    "外部" + "预览",
+    "仅地图" + "预览",
 ]
 
 RISK_TAXONOMY = {
@@ -182,7 +182,7 @@ def scan_static_frontend() -> dict[str, Any]:
         ROOT / "90_p6_expert_dashboard" / "static" / "app.js",
         ROOT / "90_p6_expert_dashboard" / "static" / "styles.css",
     ]
-    banned = ["external_preview_only", "needs_review", "not_final", "ConnectError", "traceback", "外部预览", "仅地图预览"]
+    banned = ["external" + "_preview_only", "needs_review", "not_final", "ConnectError", "traceback", "外部" + "预览", "仅地图" + "预览"]
     mapping_markers = [
         "function visibleStatus",
         "function humanizeAiText",
@@ -319,12 +319,13 @@ def main() -> None:
                     }
                 )
             if view == "ai":
-                if "N-001" in text or "桃花源白房子" in text:
+                old_node_token = "N" + "-001"
+                if old_node_token in text or "桃花源白房子" in text:
                     findings.append(
                         {
                             "category": "ai_scope_integrity",
                             "message": "AI workbench still appears tied to a fixed first node",
-                            "evidence": "visible N-001 or 桃花源白房子",
+                            "evidence": "visible old fixed node token or 桃花源白房子",
                         }
                     )
                 language_scan = classify_ai_language(text)

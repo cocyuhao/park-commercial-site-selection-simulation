@@ -1,0 +1,69 @@
+{
+  "generated_at": "2026-06-09T21:29:46",
+  "status": "pass",
+  "pack_total": 4405,
+  "layer_count": 13,
+  "layer_counts": {
+    "real_world_modulators": 420,
+    "optimization_scenario_decision": 320,
+    "evidence_data_foundation": 320,
+    "revenue_conversion_unit_economics": 320,
+    "spatial_geometry_accessibility": 420,
+    "synthetic_population_persona": 320,
+    "abm_pedestrian_crowd_engine": 320,
+    "queue_capacity_discrete_event": 320,
+    "sensitivity_calibration_validation": 320,
+    "llm_agent_guardrails": 420,
+    "discrete_choice_spatial_interaction": 320,
+    "monte_carlo_uncertainty": 320,
+    "activity_chain_time_geography": 265
+  },
+  "source_tier_counts": {
+    "core": 3170,
+    "screened": 1204,
+    "classic": 31
+  },
+  "source_counts": {
+    "openalex": 1454,
+    "crossref": 2394,
+    "crossref+openalex": 482,
+    "crossref+semantic_scholar": 3,
+    "openalex+semantic_scholar": 4,
+    "crossref+openalex+semantic_scholar": 6,
+    "arxiv": 56,
+    "semantic_scholar": 6
+  },
+  "year_counts": {
+    "2026": 2764,
+    "2025": 1610,
+    "2001": 4,
+    "2003": 1,
+    "1996": 1,
+    "1998": 3,
+    "2017": 1,
+    "1992": 1,
+    "2011": 3,
+    "2010": 2,
+    "2009": 2,
+    "2008": 1,
+    "1994": 1,
+    "2015": 1,
+    "2005": 2,
+    "2022": 1,
+    "2019": 2,
+    "0": 2,
+    "2023": 1,
+    "2021": 1,
+    "2020": 1
+  },
+  "files": {
+    "pack_jsonl": "10_research\\recent_knowledge_base_20260609\\model_computation_knowledge_pack_20260609.jsonl",
+    "pack_csv": "10_research\\recent_knowledge_base_20260609\\model_computation_knowledge_pack_20260609.csv",
+    "playbook": "10_research\\recent_knowledge_base_20260609\\model_computation_stack_playbook_20260609.md"
+  },
+  "rules": [
+    "模型知识包用于仿真/计算/DeepSeek 约束的可调用入口，不等于客户报告证据。",
+    "所有客户结论仍必须落回本地数据、证据台账和可复跑计算。",
+    "老板三层示例被吸收进更大的计算栈，不作为架构上限。"
+  ]
+}

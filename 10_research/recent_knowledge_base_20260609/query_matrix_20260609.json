@@ -1,0 +1,1306 @@
+{
+  "themes": {
+    "spatial_site_selection": {
+      "landing": "空间选址、节点比较、可达性与竞品供给解释",
+      "queries": [
+        "commercial site selection GIS multi criteria decision making",
+        "retail location choice spatial interaction Huff model",
+        "location allocation urban retail accessibility POI",
+        "urban commercial land use location choice machine learning",
+        "point of interest retail site selection urban analytics",
+        "gravity model retail location consumer choice",
+        "MCDM AHP TOPSIS retail site selection GIS",
+        "catchment area accessibility retail location modeling",
+        "commercial facility location allocation pedestrian accessibility",
+        "urban amenity location optimization POI big data"
+      ]
+    },
+    "human_mobility_behavior": {
+      "landing": "客流、活动链、停留、路线、分时段行为约束",
+      "queries": [
+        "human mobility modeling activity chain urban simulation",
+        "pedestrian flow visitor behavior urban park simulation",
+        "mobile phone data human mobility urban consumption behavior",
+        "footfall prediction point of interest urban analytics",
+        "time geography activity based travel demand model",
+        "urban mobility digital twin pedestrian simulation",
+        "visitor flow forecasting tourism recreation park",
+        "agent based pedestrian behavior public space",
+        "large scale human mobility prediction urban data",
+        "origin destination mobility POI visit prediction"
+      ]
+    },
+    "agent_llm_simulation": {
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界",
+      "queries": [
+        "large language model agent based simulation urban mobility",
+        "generative agents social simulation human behavior",
+        "LLM agent simulation decision making environment",
+        "agent based model reinforcement learning urban planning",
+        "digital twin city simulation LLM agents",
+        "multi agent simulation human behavior large language models",
+        "LLM for activity based travel demand modeling",
+        "agentic AI urban simulation GIS",
+        "foundation model human mobility simulation",
+        "synthetic population agent based urban simulation"
+      ]
+    },
+    "park_recreation_tourism": {
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界",
+      "queries": [
+        "urban park visitor behavior commercial services",
+        "park recreation demand visitor satisfaction concession",
+        "public park commercial facility planning",
+        "green space tourism visitor consumption behavior",
+        "urban park recreation service demand forecasting",
+        "park amenity planning visitor experience",
+        "public space retail recreation behavior",
+        "cultural tourism park commercial development",
+        "urban green space accessibility visitor behavior",
+        "park concession management visitor services"
+      ]
+    },
+    "retail_operations_revenue": {
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购",
+      "queries": [
+        "retail demand forecasting consumer behavior location analytics",
+        "retail revenue management pricing foot traffic",
+        "store choice model consumer behavior urban retail",
+        "consumer spending prediction POI mobility data",
+        "experience economy retail service design public space",
+        "pop up retail location strategy urban",
+        "food beverage retail location demand forecasting",
+        "sports retail wellness service consumer demand",
+        "cultural creative retail tourism consumer behavior",
+        "retail conversion rate footfall dwell time"
+      ]
+    },
+    "real_world_constraints": {
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束",
+      "queries": [
+        "weather seasonality outdoor recreation visitor behavior",
+        "income demographics leisure consumption urban services",
+        "urban park safety fire regulation commercial operation",
+        "public space governance commercial activity regulation",
+        "food service licensing public park concession",
+        "noise complaints night economy urban park",
+        "climate weather effects pedestrian retail demand",
+        "demographic segmentation leisure service demand",
+        "community acceptance public space commercial development",
+        "risk assessment urban commercial facility planning"
+      ]
+    },
+    "decision_reporting_methods": {
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达",
+      "queries": [
+        "explainable decision support system site selection",
+        "evidence based decision support urban planning AI",
+        "multi criteria decision support commercial planning",
+        "human centered AI decision support business reporting",
+        "uncertainty communication decision support systems",
+        "recommendation explanation decision support urban planning",
+        "simulation based decision support retail planning",
+        "business intelligence geospatial decision support",
+        "AI assisted planning decision support evidence",
+        "scenario planning urban commercial development"
+      ]
+    },
+    "cad_bim_gis_digital_twin": {
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换",
+      "queries": [
+        "BIM GIS integration urban digital twin facility planning",
+        "CAD GIS conversion building footprint spatial analysis",
+        "urban digital twin public space facility simulation",
+        "BIM to GIS semantic interoperability urban planning",
+        "digital twin for urban park planning simulation",
+        "geospatial data quality building footprint extraction planning",
+        "scan to BIM GIS urban facility management",
+        "computer aided design GIS spatial decision support",
+        "building information modelling public space operations",
+        "3D city model urban facility location analysis"
+      ]
+    },
+    "weather_season_event_demand": {
+      "landing": "天气、季节、活动事件、微气候与分时需求波动",
+      "queries": [
+        "weather effects retail foot traffic demand forecasting",
+        "seasonality outdoor recreation visitor demand modeling",
+        "microclimate thermal comfort pedestrian activity public space",
+        "event driven crowd flow urban park visitor behavior",
+        "rain temperature effects consumer mobility retail visits",
+        "seasonal demand forecasting leisure service operations",
+        "urban heat comfort park visitor behavior simulation",
+        "weather aware pedestrian flow prediction",
+        "festival event tourism visitor flow forecasting",
+        "climate adaptation outdoor commercial public space"
+      ]
+    },
+    "demographics_income_market_segmentation": {
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束",
+      "queries": [
+        "income demographics leisure consumption behavior urban",
+        "socioeconomic segmentation retail location analytics",
+        "household income consumer spending urban amenities",
+        "age group park recreation demand segmentation",
+        "family leisure consumption public space services",
+        "older adults urban park accessibility service demand",
+        "youth sports wellness consumption urban services",
+        "consumer expenditure mobility data urban retail demand",
+        "residential demographics commercial site selection",
+        "market segmentation geospatial retail planning"
+      ]
+    },
+    "safety_regulation_public_governance": {
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束",
+      "queries": [
+        "public space commercial activity regulation governance",
+        "food service licensing public park concession management",
+        "fire safety risk assessment commercial facility planning",
+        "crowd safety regulation public event urban park",
+        "noise complaint night economy urban public space",
+        "public park concession policy governance",
+        "urban commercial facility safety accessibility regulation",
+        "risk governance outdoor food beverage operations",
+        "public acceptance commercial development urban green space",
+        "emergency evacuation public space retail facility"
+      ]
+    },
+    "operations_revenue_unit_economics": {
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件",
+      "queries": [
+        "retail unit economics footfall conversion rate",
+        "food beverage revenue management demand forecasting",
+        "pop up retail operations trial metrics",
+        "retail inventory planning demand forecasting small business",
+        "pricing strategy consumer choice urban retail",
+        "service operations capacity planning queue retail",
+        "retail store performance foot traffic dwell time",
+        "tourism concession revenue management park",
+        "commercial tenant mix optimization revenue",
+        "business model validation public space retail"
+      ]
+    },
+    "queue_crowd_capacity_operations": {
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试",
+      "queries": [
+        "queue simulation service capacity retail operations",
+        "crowd density pedestrian simulation public space safety",
+        "agent based crowd simulation evacuation retail",
+        "capacity planning visitor attraction queue management",
+        "pedestrian congestion simulation urban plaza",
+        "service time queue model food beverage operations",
+        "crowd flow bottleneck detection urban public space",
+        "real time crowd management digital twin",
+        "visitor capacity management recreation area",
+        "pedestrian comfort crowd density public space"
+      ]
+    },
+    "transport_accessibility_last_mile": {
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性",
+      "queries": [
+        "last mile accessibility retail location urban mobility",
+        "metro station pedestrian accessibility commercial complex",
+        "parking availability retail demand urban location",
+        "bike pedestrian accessibility urban park visitors",
+        "transit oriented retail location choice",
+        "walkability public space commercial activity",
+        "origin destination travel demand park accessibility",
+        "multimodal accessibility urban amenity planning",
+        "entrance gate accessibility visitor flow park",
+        "pedestrian route choice retail location analysis"
+      ]
+    },
+    "multi_criteria_optimization_uncertainty": {
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演",
+      "queries": [
+        "multi objective optimization facility location uncertainty",
+        "robust site selection multi criteria decision making GIS",
+        "scenario analysis urban planning decision support",
+        "uncertainty analysis retail location model",
+        "sensitivity analysis commercial site selection",
+        "Pareto optimization urban facility location",
+        "Bayesian decision support site selection",
+        "multi criteria decision analysis public facility planning",
+        "explainable optimization urban planning decision support",
+        "simulation optimization retail location planning"
+      ]
+    },
+    "ai_evaluation_observability_guardrails": {
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核",
+      "queries": [
+        "LLM agent evaluation benchmark tool use reliability",
+        "AI agent observability trace evaluation 2026",
+        "large language model guardrails structured output validation",
+        "LLM hallucination detection evidence grounded generation",
+        "human in the loop AI decision support governance",
+        "agentic AI workflow evaluation business process",
+        "retrieval augmented generation citation faithfulness evaluation",
+        "LLM simulation calibration validation human behavior",
+        "AI generated report quality evaluation decision support",
+        "model risk management generative AI applications"
+      ]
+    },
+    "service_design_ai_workbench_ux": {
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面",
+      "queries": [
+        "human centered AI interface decision support workbench",
+        "conversational user interface business report generation",
+        "AI workbench user experience design decision making",
+        "human AI collaboration workflow interface design",
+        "explainable AI dashboard user experience decision support",
+        "agentic user interface design principles",
+        "business intelligence dashboard UX decision support",
+        "AI report generation interface human centered design",
+        "trust calibration AI decision support interface",
+        "professional services AI copilot workflow design"
+      ]
+    },
+    "park_publicness_experience_equity": {
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界",
+      "queries": [
+        "urban park publicness commercial services visitor experience",
+        "equitable urban green space planning older adults accessibility",
+        "family friendly park recreation service demand",
+        "sports recreation park visitor behavior services",
+        "public space commercialization social equity",
+        "urban green space service quality visitor satisfaction",
+        "park amenity demand children families older adults",
+        "inclusive public space commercial activity planning",
+        "recreation experience economy urban park",
+        "visitor typology urban park micro zoning"
+      ]
+    },
+    "data_quality_evidence_chain": {
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理",
+      "queries": [
+        "data quality assessment geospatial decision support",
+        "evidence based urban planning data provenance",
+        "PDF table extraction quality evaluation",
+        "geospatial data provenance urban analytics",
+        "data lineage decision support system urban planning",
+        "information extraction validation business reports",
+        "data fusion POI mobility survey urban analytics",
+        "knowledge graph evidence chain decision support",
+        "auditability AI decision support system",
+        "traceable analytics urban planning evidence"
+      ]
+    },
+    "official_statistics_open_data_context": {
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入",
+      "queries": [
+        "official statistics consumer spending urban retail analysis",
+        "open data urban planning commercial site selection",
+        "census demographics retail demand forecasting",
+        "tourism statistics visitor consumption urban park",
+        "open government data mobility urban analytics",
+        "income distribution consumer expenditure spatial analysis",
+        "urban big data open data decision support planning",
+        "public data integration retail location analytics",
+        "small area statistics commercial planning",
+        "administrative data urban service demand forecasting"
+      ]
+    }
+  },
+  "queries": [
+    {
+      "theme": "spatial_site_selection",
+      "query": "commercial site selection GIS multi criteria decision making",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "retail location choice spatial interaction Huff model",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "location allocation urban retail accessibility POI",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "urban commercial land use location choice machine learning",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "point of interest retail site selection urban analytics",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "gravity model retail location consumer choice",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "MCDM AHP TOPSIS retail site selection GIS",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "catchment area accessibility retail location modeling",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "commercial facility location allocation pedestrian accessibility",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "spatial_site_selection",
+      "query": "urban amenity location optimization POI big data",
+      "landing": "空间选址、节点比较、可达性与竞品供给解释"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "human mobility modeling activity chain urban simulation",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "pedestrian flow visitor behavior urban park simulation",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "mobile phone data human mobility urban consumption behavior",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "footfall prediction point of interest urban analytics",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "time geography activity based travel demand model",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "urban mobility digital twin pedestrian simulation",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "visitor flow forecasting tourism recreation park",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "agent based pedestrian behavior public space",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "large scale human mobility prediction urban data",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "human_mobility_behavior",
+      "query": "origin destination mobility POI visit prediction",
+      "landing": "客流、活动链、停留、路线、分时段行为约束"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "large language model agent based simulation urban mobility",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "generative agents social simulation human behavior",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "LLM agent simulation decision making environment",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "agent based model reinforcement learning urban planning",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "digital twin city simulation LLM agents",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "multi agent simulation human behavior large language models",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "LLM for activity based travel demand modeling",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "agentic AI urban simulation GIS",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "foundation model human mobility simulation",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "agent_llm_simulation",
+      "query": "synthetic population agent based urban simulation",
+      "landing": "Agent Bank、人群状态、行为程序、LLM 约束、低成本模型边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "urban park visitor behavior commercial services",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "park recreation demand visitor satisfaction concession",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "public park commercial facility planning",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "green space tourism visitor consumption behavior",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "urban park recreation service demand forecasting",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "park amenity planning visitor experience",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "public space retail recreation behavior",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "cultural tourism park commercial development",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "urban green space accessibility visitor behavior",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "park_recreation_tourism",
+      "query": "park concession management visitor services",
+      "landing": "公园商业、公园游憩、公共空间、游客体验与经营边界"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "retail demand forecasting consumer behavior location analytics",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "retail revenue management pricing foot traffic",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "store choice model consumer behavior urban retail",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "consumer spending prediction POI mobility data",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "experience economy retail service design public space",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "pop up retail location strategy urban",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "food beverage retail location demand forecasting",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "sports retail wellness service consumer demand",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "cultural creative retail tourism consumer behavior",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "retail_operations_revenue",
+      "query": "retail conversion rate footfall dwell time",
+      "landing": "业态组合、价格带、收益/成本、试运营、转化率与复购"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "weather seasonality outdoor recreation visitor behavior",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "income demographics leisure consumption urban services",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "urban park safety fire regulation commercial operation",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "public space governance commercial activity regulation",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "food service licensing public park concession",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "noise complaints night economy urban park",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "climate weather effects pedestrian retail demand",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "demographic segmentation leisure service demand",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "community acceptance public space commercial development",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "real_world_constraints",
+      "query": "risk assessment urban commercial facility planning",
+      "landing": "天气、季节、收入、人口、合规、安全、舆情和真实落地约束"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "explainable decision support system site selection",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "evidence based decision support urban planning AI",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "multi criteria decision support commercial planning",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "human centered AI decision support business reporting",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "uncertainty communication decision support systems",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "recommendation explanation decision support urban planning",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "simulation based decision support retail planning",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "business intelligence geospatial decision support",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "AI assisted planning decision support evidence",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "decision_reporting_methods",
+      "query": "scenario planning urban commercial development",
+      "landing": "证据链、商业报告、解释型推荐、多方案评审与不确定性表达"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "BIM GIS integration urban digital twin facility planning",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "CAD GIS conversion building footprint spatial analysis",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "urban digital twin public space facility simulation",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "BIM to GIS semantic interoperability urban planning",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "digital twin for urban park planning simulation",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "geospatial data quality building footprint extraction planning",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "scan to BIM GIS urban facility management",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "computer aided design GIS spatial decision support",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "building information modelling public space operations",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "cad_bim_gis_digital_twin",
+      "query": "3D city model urban facility location analysis",
+      "landing": "CAD/DWG、BIM、GIS、数字孪生和可量测空间转换"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "weather effects retail foot traffic demand forecasting",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "seasonality outdoor recreation visitor demand modeling",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "microclimate thermal comfort pedestrian activity public space",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "event driven crowd flow urban park visitor behavior",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "rain temperature effects consumer mobility retail visits",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "seasonal demand forecasting leisure service operations",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "urban heat comfort park visitor behavior simulation",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "weather aware pedestrian flow prediction",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "festival event tourism visitor flow forecasting",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "weather_season_event_demand",
+      "query": "climate adaptation outdoor commercial public space",
+      "landing": "天气、季节、活动事件、微气候与分时需求波动"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "income demographics leisure consumption behavior urban",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "socioeconomic segmentation retail location analytics",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "household income consumer spending urban amenities",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "age group park recreation demand segmentation",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "family leisure consumption public space services",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "older adults urban park accessibility service demand",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "youth sports wellness consumption urban services",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "consumer expenditure mobility data urban retail demand",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "residential demographics commercial site selection",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "demographics_income_market_segmentation",
+      "query": "market segmentation geospatial retail planning",
+      "landing": "人口、收入、家庭结构、客群画像和消费能力约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "public space commercial activity regulation governance",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "food service licensing public park concession management",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "fire safety risk assessment commercial facility planning",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "crowd safety regulation public event urban park",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "noise complaint night economy urban public space",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "public park concession policy governance",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "urban commercial facility safety accessibility regulation",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "risk governance outdoor food beverage operations",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "public acceptance commercial development urban green space",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "safety_regulation_public_governance",
+      "query": "emergency evacuation public space retail facility",
+      "landing": "消防、食品许可、公共空间治理、安全和投诉约束"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "retail unit economics footfall conversion rate",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "food beverage revenue management demand forecasting",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "pop up retail operations trial metrics",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "retail inventory planning demand forecasting small business",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "pricing strategy consumer choice urban retail",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "service operations capacity planning queue retail",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "retail store performance foot traffic dwell time",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "tourism concession revenue management park",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "commercial tenant mix optimization revenue",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "operations_revenue_unit_economics",
+      "query": "business model validation public space retail",
+      "landing": "价格带、转化率、坪效、人效、库存、试运营和退出条件"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "queue simulation service capacity retail operations",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "crowd density pedestrian simulation public space safety",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "agent based crowd simulation evacuation retail",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "capacity planning visitor attraction queue management",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "pedestrian congestion simulation urban plaza",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "service time queue model food beverage operations",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "crowd flow bottleneck detection urban public space",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "real time crowd management digital twin",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "visitor capacity management recreation area",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "queue_crowd_capacity_operations",
+      "query": "pedestrian comfort crowd density public space",
+      "landing": "排队、拥挤、容量、动线、安全阈值和运营压力测试"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "last mile accessibility retail location urban mobility",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "metro station pedestrian accessibility commercial complex",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "parking availability retail demand urban location",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "bike pedestrian accessibility urban park visitors",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "transit oriented retail location choice",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "walkability public space commercial activity",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "origin destination travel demand park accessibility",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "multimodal accessibility urban amenity planning",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "entrance gate accessibility visitor flow park",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "transport_accessibility_last_mile",
+      "query": "pedestrian route choice retail location analysis",
+      "landing": "地铁、停车、步行、自行车、最后一公里和出入口可达性"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "multi objective optimization facility location uncertainty",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "robust site selection multi criteria decision making GIS",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "scenario analysis urban planning decision support",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "uncertainty analysis retail location model",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "sensitivity analysis commercial site selection",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "Pareto optimization urban facility location",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "Bayesian decision support site selection",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "multi criteria decision analysis public facility planning",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "explainable optimization urban planning decision support",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "multi_criteria_optimization_uncertainty",
+      "query": "simulation optimization retail location planning",
+      "landing": "多目标优化、MCDM、鲁棒性、不确定性和情景推演"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "LLM agent evaluation benchmark tool use reliability",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "AI agent observability trace evaluation 2026",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "large language model guardrails structured output validation",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "LLM hallucination detection evidence grounded generation",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "human in the loop AI decision support governance",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "agentic AI workflow evaluation business process",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "retrieval augmented generation citation faithfulness evaluation",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "LLM simulation calibration validation human behavior",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "AI generated report quality evaluation decision support",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "ai_evaluation_observability_guardrails",
+      "query": "model risk management generative AI applications",
+      "landing": "LLM/Agent 评估、可观测性、提示约束、风险检查和人工复核"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "human centered AI interface decision support workbench",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "conversational user interface business report generation",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "AI workbench user experience design decision making",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "human AI collaboration workflow interface design",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "explainable AI dashboard user experience decision support",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "agentic user interface design principles",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "business intelligence dashboard UX decision support",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "AI report generation interface human centered design",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "trust calibration AI decision support interface",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "service_design_ai_workbench_ux",
+      "query": "professional services AI copilot workflow design",
+      "landing": "AI 工作台、客服端可用性、报告交互和人机协作界面"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "urban park publicness commercial services visitor experience",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "equitable urban green space planning older adults accessibility",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "family friendly park recreation service demand",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "sports recreation park visitor behavior services",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "public space commercialization social equity",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "urban green space service quality visitor satisfaction",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "park amenity demand children families older adults",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "inclusive public space commercial activity planning",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "recreation experience economy urban park",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "park_publicness_experience_equity",
+      "query": "visitor typology urban park micro zoning",
+      "landing": "公园公共性、体验、公平性、亲子/银发/运动客群和非商业边界"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "data quality assessment geospatial decision support",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "evidence based urban planning data provenance",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "PDF table extraction quality evaluation",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "geospatial data provenance urban analytics",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "data lineage decision support system urban planning",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "information extraction validation business reports",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "data fusion POI mobility survey urban analytics",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "knowledge graph evidence chain decision support",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "auditability AI decision support system",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "data_quality_evidence_chain",
+      "query": "traceable analytics urban planning evidence",
+      "landing": "数据质量、证据链、可追溯、表格抽取、PDF/CAD/POI 数据治理"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "official statistics consumer spending urban retail analysis",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "open data urban planning commercial site selection",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "census demographics retail demand forecasting",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "tourism statistics visitor consumption urban park",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "open government data mobility urban analytics",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "income distribution consumer expenditure spatial analysis",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "urban big data open data decision support planning",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "public data integration retail location analytics",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "small area statistics commercial planning",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    },
+    {
+      "theme": "official_statistics_open_data_context",
+      "query": "administrative data urban service demand forecasting",
+      "landing": "官方统计、开放数据、人口收入、消费、旅游和城市治理资料接入"
+    }
+  ]
+}

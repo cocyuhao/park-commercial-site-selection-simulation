@@ -110,7 +110,7 @@ def build_choice_items(
                 ]
             )
             persona_need = persona.get("primary_consumption_needs", "").strip() or persona.get("visit_purpose", "").strip()
-            action_summary = first_sentence(program.get("actions", ""), "先补齐行为程序再判断消费选择。")
+            action_summary = first_sentence(program.get("actions", ""), "先复核行为程序再判断消费选择。")
             node_advice = split_parts(node.get("specific_advice", ""))
             offer_id = f"OFFER-{node_id}-{persona.get('persona_id', persona_idx)}"
             choice_id = f"CHOICE-{persona_idx:02d}-{node_idx:02d}"
@@ -130,7 +130,7 @@ def build_choice_items(
                     ],
                     "probability_status": "needs_review",
                     "probability_value": None,
-                    "priority_label": "补资料后判断",
+                    "priority_label": "复核后判断",
                     "factor_inputs": {
                         "segment_weight": None,
                         "time_weight": None,
@@ -144,14 +144,14 @@ def build_choice_items(
                     "plain_language_explanation": [
                         f"{persona_name or '该人群'}在{node_name}的消费选择目前只能做候选判断，不能给真实概率。",
                         f"已有行为草稿提示：{action_summary}",
-                        f"当前可讨论的需求方向是：{persona_need or '待补充消费需求'}。",
+                        f"当前可讨论的需求方向是：{persona_need or '消费需求待复核'}。",
                         "缺少真实客流、路径、排队、转化率和授权信息，因此不能把该候选写成最终推荐。",
                     ],
                     "specific_advice": unique_list(
                         [
-                            f"先围绕{persona_name or '该人群'}补齐触发时段、路线、停留和放弃条件。",
+                            f"先围绕{persona_name or '该人群'}复核触发时段、路线、停留和放弃条件。",
                             f"把{node_name}的业态假设拆成可验证的小服务项，再决定是否采用。",
-                            "补齐真实客流和转化率后，再允许从候选优先级进入概率估计。",
+                            "真实客流和转化率完成复核后，再允许从候选优先级进入概率估计。",
                         ]
                         + node_advice[:2]
                     ),
@@ -216,7 +216,7 @@ def build_validation_items(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
         current = row.get("current_status", "")
         blocks = (row.get("blocks_full_simulation", "") or "").lower() == "yes"
         plain_rule = (
-            f"只有补齐「{row.get('needed_data', '必要资料')}」并完成业务复核后，"
+            f"只有复核「{row.get('needed_data', '必要资料')}」并完成业务复核后，"
             f"才能把「{row.get('what_to_validate', target_id)}」从草稿升级。"
         )
         if acceptable:
@@ -231,7 +231,7 @@ def build_validation_items(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                 "reference_data": {
                     "data_status": reference_status(current),
                     "description": row.get("acceptable_evidence", "") or row.get("needed_data", ""),
-                    "required_fields": needed or [row.get("needed_data", "待补充资料")],
+                    "required_fields": needed or [row.get("needed_data", "资料待复核")],
                 },
                 "candidate_output": {
                     "output_status": candidate_status(current),
@@ -251,9 +251,9 @@ def build_validation_items(rows: list[dict[str, str]]) -> list[dict[str, Any]]:
                     "10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
                     "10_research/boss_method_materials_20260604/simulation_accuracy_plan_20260604.md",
                 ],
-                "missing_inputs": needed or [row.get("needed_data", "待补充资料")],
+                "missing_inputs": needed or [row.get("needed_data", "资料待复核")],
                 "review_notes": [
-                    row.get("method_source", "方法来源待补充"),
+                    row.get("method_source", "方法来源待复核"),
                     "该目标用于阻止旧 dry-run 或 DeepSeek 草稿被误写成完整仿真。",
                 ],
                 "user_locked": False,
@@ -443,7 +443,7 @@ def write_reports(choice_items: list[dict[str, Any]], validation_items: list[dic
                 "## 下一步",
                 "",
                 "- 接入 P6 对象池，允许用户采用、放弃、编辑、锁定这些候选。",
-                "- 补齐真实客流和转化率后，再用 SALib/Optuna 做敏感性和校准，不直接让 DeepSeek 给概率。",
+                "- 真实客流和转化率完成复核后，再用 SALib/Optuna 做敏感性和校准，不直接让 DeepSeek 给概率。",
                 "",
             ]
         ),

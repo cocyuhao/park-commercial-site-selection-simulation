@@ -48,7 +48,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「按入口与小时粒度的客流或现场计数」并完成业务复核后，才能把「入口/节点/时段客流曲线是否能复现真实峰谷」从草稿升级。 可接受证据包括：闸机数据、客流传感器、连续现场观察记录。",
+        "plain_language_rule": "只有复核「按入口与小时粒度的客流或现场计数」并完成业务复核后，才能把「入口/节点/时段客流曲线是否能复现真实峰谷」从草稿升级。 可接受证据包括：闸机数据、客流传感器、连续现场观察记录。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -94,7 +94,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「路径观察、热力图、GPS/蓝牙/WiFi探针或人工路线记录」并完成业务复核后，才能把「不同人群从入口到节点的路径选择是否合理」从草稿升级。 可接受证据包括：匿名化轨迹、观察表、地图标注。",
+        "plain_language_rule": "只有复核「路径观察、热力图、GPS/蓝牙/WiFi探针或人工路线记录」并完成业务复核后，才能把「不同人群从入口到节点的路径选择是否合理」从草稿升级。 可接受证据包括：匿名化轨迹、观察表、地图标注。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -139,7 +139,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「按人群/节点/时段的停留观察或访谈」并完成业务复核后，才能把「各类节点的停留时长是否落在可信范围」从草稿升级。 可接受证据包括：现场计时、摄像统计、问卷或运营记录。",
+        "plain_language_rule": "只有复核「按人群/节点/时段的停留观察或访谈」并完成业务复核后，才能把「各类节点的停留时长是否落在可信范围」从草稿升级。 可接受证据包括：现场计时、摄像统计、问卷或运营记录。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -185,7 +185,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「业态转化率、交易记录、快闪测试、同类项目基准」并完成业务复核后，才能把「到访转化为消费的概率是否可信」从草稿升级。 可接受证据包括：POS记录、运营方表格、试运营数据。",
+        "plain_language_rule": "只有复核「业态转化率、交易记录、快闪测试、同类项目基准」并完成业务复核后，才能把「到访转化为消费的概率是否可信」从草稿升级。 可接受证据包括：POS记录、运营方表格、试运营数据。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -233,7 +233,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「客单价、支付结构、价格带接受度」并完成业务复核后，才能把「不同人群的客单价区间是否可信」从草稿升级。 可接受证据包括：POS表、问卷、第三方商业基准。",
+        "plain_language_rule": "只有复核「客单价、支付结构、价格带接受度」并完成业务复核后，才能把「不同人群的客单价区间是否可信」从草稿升级。 可接受证据包括：POS表、问卷、第三方商业基准。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -278,7 +278,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「高德POI抓取 + 现场复核 + 经营字段」并完成业务复核后，才能把「园内与周边供给是否完整且分类正确」从草稿升级。 可接受证据包括：POI清单、照片、营业状态、距离。",
+        "plain_language_rule": "只有复核「高德POI抓取 + 现场复核 + 经营字段」并完成业务复核后，才能把「园内与周边供给是否完整且分类正确」从草稿升级。 可接受证据包括：POI清单、照片、营业状态、距离。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -321,7 +321,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「DWG/DXF/GeoJSON或可验证图纸」并完成业务复核后，才能把「空间边界、面积和可达性是否可靠」从草稿升级。 可接受证据包括：转换后的图层、坐标系说明、人工复核记录。",
+        "plain_language_rule": "只有复核「DWG/DXF/GeoJSON或可验证图纸」并完成业务复核后，才能把「空间边界、面积和可达性是否可靠」从草稿升级。 可接受证据包括：转换后的图层、坐标系说明、人工复核记录。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -365,7 +365,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「运营授权、消防/结构/业态限制文件」并完成业务复核后，才能把「商业经营和改造是否被允许」从草稿升级。 可接受证据包括：批复、合同、管理方确认函。",
+        "plain_language_rule": "只有复核「运营授权、消防/结构/业态限制文件」并完成业务复核后，才能把「商业经营和改造是否被允许」从草稿升级。 可接受证据包括：批复、合同、管理方确认函。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -413,7 +413,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「多组参数、敏感性范围、缺口上下界」并完成业务复核后，才能把「关键假设变动时结论是否稳定」从草稿升级。 可接受证据包括：本地Monte Carlo结果、参数日志、差异表。",
+        "plain_language_rule": "只有复核「多组参数、敏感性范围、缺口上下界」并完成业务复核后，才能把「关键假设变动时结论是否稳定」从草稿升级。 可接受证据包括：本地Monte Carlo结果、参数日志、差异表。",
         "thresholds": {
           "blocks_full_simulation": "yes",
           "numeric_threshold_pending": null
@@ -460,7 +460,7 @@
       },
       "acceptance_rule": {
         "rule_status": "needs_review",
-        "plain_language_rule": "只有补齐「专家反馈、客服端可用性测试、可读报告」并完成业务复核后，才能把「AI输出是否被业务人员理解并能执行」从草稿升级。 可接受证据包括：AI工作台记录、Selenium记录、人工视觉备注。",
+        "plain_language_rule": "只有复核「专家反馈、客服端可用性测试、可读报告」并完成业务复核后，才能把「AI输出是否被业务人员理解并能执行」从草稿升级。 可接受证据包括：AI工作台记录、Selenium记录、人工视觉备注。",
         "thresholds": {
           "blocks_full_simulation": "no",
           "numeric_threshold_pending": null

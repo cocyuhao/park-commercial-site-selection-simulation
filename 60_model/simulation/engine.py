@@ -79,13 +79,13 @@ def next_data_needed(
 ) -> list[str]:
     needs: list[str] = []
     if blocked_gate_count:
-        needs.append("补齐 P3 gate: geometry / visitor_flow / conversion_rate / revenue_cost / operation_authorization / model_gate")
+        needs.append("复核 P3 gate: geometry / visitor_flow / conversion_rate / revenue_cost / operation_authorization / model_gate")
     if inside_count < total_count:
         needs.append("用可信边界或现场资料确认候选是否在园内")
     for field in sorted(missing_fields):
-        needs.append(f"补齐经营字段: {BUSINESS_FIELD_LABELS.get(field, field)}")
+        needs.append(f"复核经营字段: {BUSINESS_FIELD_LABELS.get(field, field)}")
     if scene_pressure and scene_pressure.get("matched_scene_count"):
-        needs.append("补齐采用人物场景对应的客群占比、分时段客流、价格敏感度、真实成交转化和竞品价格")
+        needs.append("复核采用人物场景对应的客群占比、分时段客流、价格敏感度、真实成交转化和竞品价格")
         if scene_pressure.get("operation_rules"):
             needs.append("复核场景动作对应的营业关闭、补货、排队和天气应对规则")
     if not needs:

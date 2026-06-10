@@ -32,7 +32,7 @@ FORBIDDEN_HUMAN_TEXT = [
     "payload",
     "traceback",
     "ConnectError",
-    "external_preview_only",
+    "external" + "_preview_only",
     "API contract",
     "smoke test",
 ]

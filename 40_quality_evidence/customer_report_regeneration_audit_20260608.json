@@ -1,0 +1,57 @@
+{
+  "status": "pass",
+  "rule": "DOCX/Markdown/client-readable report text must have zero old customer-facing terms; internal JSON may retain schema status fields required by project truth rules.",
+  "items": [
+    {
+      "path": "80_delivery\\site_selection_gap_report_latest.md",
+      "bytes": 42374,
+      "chars": 16330,
+      "hits": {},
+      "surface": "client_readable_report",
+      "client_text_hits": {},
+      "schema_status_hits": {}
+    },
+    {
+      "path": "80_delivery\\site_selection_gap_report_latest.json",
+      "bytes": 83624,
+      "chars": 49156,
+      "hits": {
+        "needs_review": 9,
+        "not_final": 7
+      },
+      "surface": "internal_evidence_json",
+      "client_text_hits": {},
+      "schema_status_hits": {
+        "needs_review": 9,
+        "not_final": 7
+      }
+    },
+    {
+      "path": "80_delivery\\osen_business_decision_report_20260607.docx",
+      "bytes": 45822,
+      "chars": 5173,
+      "hits": {},
+      "surface": "client_readable_report",
+      "client_text_hits": {},
+      "schema_status_hits": {}
+    },
+    {
+      "path": "90_p6_expert_dashboard\\static\\osen_business_decision_report_20260607.docx",
+      "bytes": 45822,
+      "chars": 5173,
+      "hits": {},
+      "surface": "client_readable_report",
+      "client_text_hits": {},
+      "schema_status_hits": {}
+    },
+    {
+      "path": "40_quality_evidence\\current_site_selection_report_download_audit_20260608.docx",
+      "bytes": 45822,
+      "chars": 5173,
+      "hits": {},
+      "surface": "client_readable_report",
+      "client_text_hits": {},
+      "schema_status_hits": {}
+    }
+  ]
+}

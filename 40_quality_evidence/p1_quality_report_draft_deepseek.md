@@ -7,17 +7,17 @@
 - 证据台账总条数：260
 - 已 checked 证据：245
 - presentation_assumption：15
-- P0 经营字段补齐记录：7
+- P0 经营字段复核记录：7
 - enriched P0 工作项：7
 - 现场核验检查表：34
 - 最新落实性验证：338 项通过，失败 0，警告 0
 
 ## 证据完整度
-台账主体来自两份腾讯位置大数据 PDF 的原生表格抽取，245 条已通过字段一致性和范围核验，2 条冲突待人工裁定，13 条待复核。15 条 PPT 假设行明确标记为 presentation_assumption，不作为事实基准。P0 经营字段补齐已通过高德详情 API 获得部分字段，7 条 enriched 工作项中 5 条为 detail_api_called_fields_confirmed，2 条为 no_new_data，所有字段采集均记录真实 API 返回值。入口/节点代理路径和现场核验检查表已产出，但尚未执行现场确认，因此入口、授权和缺失经营字段的置信度仍为部分核验状态。
+台账主体来自两份腾讯位置大数据 PDF 的原生表格抽取，245 条已通过字段一致性和范围核验，2 条冲突待人工裁定，13 条待复核。15 条 PPT 假设行明确标记为 presentation_assumption，不作为事实基准。P0 经营字段复核已通过高德详情 API 获得部分字段，7 条 enriched 工作项中 5 条为 detail_api_called_fields_confirmed，2 条为 no_new_data，所有字段采集均记录真实 API 返回值。入口/节点代理路径和现场核验检查表已产出，但尚未执行现场确认，因此入口、授权和缺失经营字段的置信度仍为部分核验状态。
 
 ## 已完成事项
 - DS-FIRST-001：DeepSeek 生成 P0 高德详情查询计划草稿并本地复核。
-- DS-FIRST-002：本地 Python 执行高德详情 API 并生成 P0 经营字段补齐草稿，5 条 partially_verified，2 条 needs_field_verification。
+- DS-FIRST-002：本地 Python 执行高德详情 API 并生成 P0 经营字段复核草稿，5 条 partially_verified，2 条 needs_field_verification。
 - DS-FIRST-003：DeepSeek 生成入口/节点现场核验标准化检查表，共 34 条，已通过 11 项本地复核。
 - 证据台账已完成第二批 PDF 原生表格入账，增至 260 条。
 - enriched 工作单中 7 条 can_enter_p2_supply 统一修正为 no，与入口/节点和运营授权未闭合的状态一致。

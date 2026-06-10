@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-06-09T09:42:25",
+  "status": "pass",
+  "purpose": "测试后恢复当前活动输出：先清活动缓存，再重生客户可见报告，防止 QA 节点或旧口径留在交付文件里。",
+  "regenerated_report": {
+    "status_code": 200,
+    "report_id": "RPT-20260609094225",
+    "outputs": [
+      {
+        "path": "80_delivery\\site_selection_gap_report_latest.md",
+        "bytes": 42374,
+        "risk_counts": {}
+      },
+      {
+        "path": "80_delivery\\site_selection_gap_report_latest.json",
+        "bytes": 83621,
+        "risk_counts": {}
+      }
+    ]
+  }
+}

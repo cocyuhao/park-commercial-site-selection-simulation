@@ -1,0 +1,169 @@
+{
+  "sources": [
+    {
+      "source_id": "CN-SRC-001",
+      "name": "万方数据开放平台",
+      "homepage": "https://apps.wanfangdata.com.cn/open",
+      "api_docs": "https://apps.wanfangdata.com.cn/open/market/apis",
+      "access_mode": "official_api_or_authorized_export",
+      "automation_priority": "high",
+      "secret_env": "WANFANG_API_KEY",
+      "project_use": "中文期刊、学位、会议、科技报告等来源；优先补中国城市、公园、商业、交通、消费、仿真与规划语境。",
+      "boundary": "需要按万方开放平台授权使用；未授权前只接导出文件，不做绕登录抓取。"
+    },
+    {
+      "source_id": "CN-SRC-002",
+      "name": "AMiner 开放平台",
+      "homepage": "https://open.aminer.cn/",
+      "api_docs": "https://open.aminer.cn/",
+      "access_mode": "official_api_or_web_export",
+      "automation_priority": "high",
+      "secret_env": "AMINER_API_KEY",
+      "project_use": "学者、论文、机构和学术图谱；用于补充 AI/Agent/仿真、城市计算、行为建模的中文与国际混合线索。",
+      "boundary": "以官方开放平台能力为准；不能把网页检索结果当已复核事实。"
+    },
+    {
+      "source_id": "CN-SRC-003",
+      "name": "中国知网 CNKI",
+      "homepage": "https://www.cnki.net/",
+      "api_docs": "https://www.cnki.net/",
+      "access_mode": "institutional_license_or_manual_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "中文核心文献和政策/规划类文章强源；用于人工导出后导入知识库，补中国语境和行业表达。",
+      "boundary": "通常依赖机构授权或商业接口；不做未授权爬取，不在脚本中模拟登录。"
+    },
+    {
+      "source_id": "CN-SRC-004",
+      "name": "维普中文期刊服务平台",
+      "homepage": "https://www.cqvip.com/",
+      "api_docs": "https://www.cqvip.com/",
+      "access_mode": "institutional_license_or_manual_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "中文期刊补充源；用于复核国内公园商业、公共空间、消费、城市治理相关研究。",
+      "boundary": "按平台授权和导出规则接入；不做未授权爬取。"
+    },
+    {
+      "source_id": "CN-SRC-005",
+      "name": "百度学术",
+      "homepage": "https://xueshu.baidu.com/",
+      "api_docs": "https://xueshu.baidu.com/",
+      "access_mode": "manual_search_lead_only",
+      "automation_priority": "low",
+      "secret_env": "",
+      "project_use": "中文线索发现和题名补查；只作为发现入口，不作为结构化证据主源。",
+      "boundary": "不作为自动批量抓取源；命中后回到万方/CNKI/维普/DOI/出版方复核。"
+    },
+    {
+      "source_id": "CN-SRC-006",
+      "name": "国家哲学社会科学文献中心",
+      "homepage": "https://www.ncpssd.org/",
+      "api_docs": "https://www.ncpssd.org/",
+      "access_mode": "manual_search_or_authorized_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "社科、城市治理、公共空间、消费和政策研究补充源；适合中国语境方法和语言表达。",
+      "boundary": "以平台授权和导出为准，不做绕登录抓取。"
+    },
+    {
+      "source_id": "CN-SRC-007",
+      "name": "国家科技图书文献中心 NSTL",
+      "homepage": "https://www.nstl.gov.cn/",
+      "api_docs": "https://www.nstl.gov.cn/",
+      "access_mode": "manual_search_or_authorized_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "科技文献、工程、仿真、GIS、城市计算和标准线索补充。",
+      "boundary": "按 NSTL 服务条款和授权导出接入。"
+    },
+    {
+      "source_id": "CN-SRC-008",
+      "name": "中国科技论文在线",
+      "homepage": "http://www.paper.edu.cn/",
+      "api_docs": "http://www.paper.edu.cn/",
+      "access_mode": "manual_search_or_authorized_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "高校科技论文线索，补充仿真、规划、GIS、客流预测等中文材料。",
+      "boundary": "只用公开页面线索和授权导出，不做批量绕限制抓取。"
+    },
+    {
+      "source_id": "CN-SRC-009",
+      "name": "中国社会科学网",
+      "homepage": "https://www.cssn.cn/",
+      "api_docs": "https://www.cssn.cn/",
+      "access_mode": "manual_search_lead_only",
+      "automation_priority": "low",
+      "secret_env": "",
+      "project_use": "城市治理、公共性、消费社会、文旅政策的中文语境线索。",
+      "boundary": "作为政策和观点线索，不作为结构化论文主源。"
+    },
+    {
+      "source_id": "CN-SRC-010",
+      "name": "国家标准全文公开系统",
+      "homepage": "https://openstd.samr.gov.cn/",
+      "api_docs": "https://openstd.samr.gov.cn/",
+      "access_mode": "manual_search_or_authorized_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "规范、标准、术语和合规边界；补消防、食品、公共设施、无障碍等真实世界约束。",
+      "boundary": "标准文本按官方公开与授权范围使用，不能替代法律意见。"
+    },
+    {
+      "source_id": "CN-SRC-011",
+      "name": "北京市统计局 / 国家统计局公开数据",
+      "homepage": "https://tjj.beijing.gov.cn/",
+      "api_docs": "https://tjj.beijing.gov.cn/",
+      "access_mode": "official_open_data_or_manual_export",
+      "automation_priority": "high",
+      "secret_env": "",
+      "project_use": "北京人口、收入、消费、旅游、服务业等宏观边界，支撑奥森本地化校准。",
+      "boundary": "只能作为宏观或区域边界，不能直接替代奥森周边街道级真实交易数据。"
+    },
+    {
+      "source_id": "CN-SRC-012",
+      "name": "北京市文化和旅游局 / 文旅公开数据",
+      "homepage": "https://whlyj.beijing.gov.cn/",
+      "api_docs": "https://whlyj.beijing.gov.cn/",
+      "access_mode": "official_open_data_or_manual_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "景区、旅游、文旅消费、假日客流和政策语境补充。",
+      "boundary": "公开数据需标明年份和统计口径；不能混成项目实时客流。"
+    },
+    {
+      "source_id": "CN-SRC-013",
+      "name": "北京市园林绿化局公开信息",
+      "homepage": "https://yllhj.beijing.gov.cn/",
+      "api_docs": "https://yllhj.beijing.gov.cn/",
+      "access_mode": "official_open_data_or_manual_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "公园管理、绿地、活动、政策、运营边界与公共性要求。",
+      "boundary": "只作为政策与运营边界，不自动推出商业收益。"
+    },
+    {
+      "source_id": "CN-SRC-014",
+      "name": "北京市市场监督管理局公开信息",
+      "homepage": "https://scjgj.beijing.gov.cn/",
+      "api_docs": "https://scjgj.beijing.gov.cn/",
+      "access_mode": "official_open_data_or_manual_export",
+      "automation_priority": "medium",
+      "secret_env": "",
+      "project_use": "食品经营许可、市场监管、商户合规和经营主体信息线索。",
+      "boundary": "合规判断需复核现行法规和具体经营主体，不作为法律意见。"
+    },
+    {
+      "source_id": "CN-SRC-015",
+      "name": "高德地图开放平台",
+      "homepage": "https://lbs.amap.com/",
+      "api_docs": "https://lbs.amap.com/api/webservice/summary",
+      "access_mode": "official_api",
+      "automation_priority": "high",
+      "secret_env": "AMAP_WEB_SERVICE_KEY",
+      "project_use": "POI、路径、周边供给、可达性和空间校准；这是项目已有强相关中文/中国空间数据源。",
+      "boundary": "Key 只放 `.env`；API 结果必须记录时间、参数和坐标系。"
+    }
+  ]
+}

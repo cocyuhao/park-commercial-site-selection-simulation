@@ -35,7 +35,7 @@ def main() -> None:
             "linked_id": "QA-CHOICE-OBJECT",
             "summary": "用于验证对象池新增、编辑、采用、锁定、删除链路，不进入业务结论。",
             "missing_inputs": ["真实客流", "转化率"],
-            "specific_advice": ["补齐样本后再进入仿真参数。"],
+            "specific_advice": ["样本口径复核后再进入仿真参数。"],
         },
     )
     report["create_status"] = created.status_code

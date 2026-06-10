@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-06-10T09:54:26",
+  "status": "pass",
+  "git_status_count": 240,
+  "env_ignored": true,
+  "lfs": {
+    "exists": true,
+    "required_present": [
+      "*.dwg",
+      "*.dxf",
+      "10_research/recent_knowledge_base_20260609/*.jsonl",
+      "*.pptx",
+      "*.docx",
+      "*.pdf"
+    ],
+    "missing": []
+  },
+  "large_file_count": 10,
+  "large_files": [
+    {
+      "path": "30_extraction/cad/oda_output_south/osen_south_t5.dxf",
+      "bytes": 1104931125,
+      "git_attr_filter": "30_extraction/cad/oda_output_south/osen_south_t5.dxf: filter: lfs"
+    },
+    {
+      "path": "10_research/recent_knowledge_base_20260609/raw_simulation_stack_mega_20260609.jsonl",
+      "bytes": 205338416,
+      "git_attr_filter": "10_research/recent_knowledge_base_20260609/raw_simulation_stack_mega_20260609.jsonl: filter: lfs"
+    },
+    {
+      "path": "10_research/recent_knowledge_base_20260609/raw_openalex_20260609.jsonl",
+      "bytes": 167606605,
+      "git_attr_filter": "10_research/recent_knowledge_base_20260609/raw_openalex_20260609.jsonl: filter: lfs"
+    },
+    {
+      "path": "CAD图及其计划/奥森南园（字体放大）-改造建筑示意_t5.dwg",
+      "bytes": 153603928,
+      "git_attr_filter": "\"CAD\\345\\233\\276\\345\\217\\212\\345\\205\\266\\350\\256\\241\\345\\210\\222/\\345\\245\\245\\346\\243\\256\\345\\215\\227\\345\\233\\255\\357\\274\\210\\345\\255\\227\\344\\275\\223\\346\\224\\276\\345\\244\\247\\357\\274\\211-\\346\\224\\271\\351\\200\\240\\345\\273\\272\\347\\255\\221\\347\\244\\272\\346\\204\\217_t5.dwg\": filter: lfs"
+    },
+    {
+      "path": "30_extraction/cad/oda_input_south/osen_south_t5.dwg",
+      "bytes": 153603928,
+      "git_attr_filter": "30_extraction/cad/oda_input_south/osen_south_t5.dwg: filter: lfs"
+    },
+    {
+      "path": "10_research/recent_knowledge_base_20260609/raw_simulation_stack_supplement_20260609.jsonl",
+      "bytes": 151321974,
+      "git_attr_filter": "10_research/recent_knowledge_base_20260609/raw_simulation_stack_supplement_20260609.jsonl: filter: lfs"
+    },
+    {
+      "path": "30_extraction/cad/oda_output_north/osen_north_t5.dxf",
+      "bytes": 112827472,
+      "git_attr_filter": "30_extraction/cad/oda_output_north/osen_north_t5.dxf: filter: lfs"
+    },
+    {
+      "path": "30_extraction/cad/osen_north_t5_libredwg_r2004.dxf",
+      "bytes": 100389249,
+      "git_attr_filter": "30_extraction/cad/osen_north_t5_libredwg_r2004.dxf: filter: lfs"
+    },
+    {
+      "path": "10_research/recent_knowledge_base_20260609/raw_computation_model_mega_20260609.jsonl",
+      "bytes": 73227316,
+      "git_attr_filter": "10_research/recent_knowledge_base_20260609/raw_computation_model_mega_20260609.jsonl: filter: lfs"
+    },
+    {
+      "path": "10_research/recent_knowledge_base_20260609/screened_knowledge_base_20260609.jsonl",
+      "bytes": 64959182,
+      "git_attr_filter": "10_research/recent_knowledge_base_20260609/screened_knowledge_base_20260609.jsonl: filter: lfs"
+    }
+  ],
+  "large_without_lfs": [],
+  "secret_hit_count": 1,
+  "blocking_secret_count": 0,
+  "blocking_secrets": [],
+  "rule": "允许上传除 .env/API Key 外的项目文件；超过 GitHub 普通限制的大文件必须走 Git LFS。"
+}

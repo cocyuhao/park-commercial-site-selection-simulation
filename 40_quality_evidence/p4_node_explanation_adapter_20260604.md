@@ -13,5 +13,5 @@
 ## 下一步
 
 - 前端节点详情和报告生成优先读取 `specific_advice`、`evidence_gaps`、`review_actions`。
-- 补齐 persona_state 和 behavior_program 后，再把节点解释升级为 `state -> behavior -> demand -> advice` 完整链条。
+- 复核 persona_state 和 behavior_program 后，再把节点解释升级为 `state -> behavior -> demand -> advice` 完整链条。
 - 不得把旧讨论分当最终排序或收益预测。

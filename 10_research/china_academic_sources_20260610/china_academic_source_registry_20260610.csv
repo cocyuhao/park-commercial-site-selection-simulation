@@ -1,0 +1,16 @@
+﻿source_id,name,homepage,api_docs,access_mode,automation_priority,secret_env,project_use,boundary
+CN-SRC-001,万方数据开放平台,https://apps.wanfangdata.com.cn/open,https://apps.wanfangdata.com.cn/open/market/apis,official_api_or_authorized_export,high,WANFANG_API_KEY,中文期刊、学位、会议、科技报告等来源；优先补中国城市、公园、商业、交通、消费、仿真与规划语境。,需要按万方开放平台授权使用；未授权前只接导出文件，不做绕登录抓取。
+CN-SRC-002,AMiner 开放平台,https://open.aminer.cn/,https://open.aminer.cn/,official_api_or_web_export,high,AMINER_API_KEY,学者、论文、机构和学术图谱；用于补充 AI/Agent/仿真、城市计算、行为建模的中文与国际混合线索。,以官方开放平台能力为准；不能把网页检索结果当已复核事实。
+CN-SRC-003,中国知网 CNKI,https://www.cnki.net/,https://www.cnki.net/,institutional_license_or_manual_export,medium,,中文核心文献和政策/规划类文章强源；用于人工导出后导入知识库，补中国语境和行业表达。,通常依赖机构授权或商业接口；不做未授权爬取，不在脚本中模拟登录。
+CN-SRC-004,维普中文期刊服务平台,https://www.cqvip.com/,https://www.cqvip.com/,institutional_license_or_manual_export,medium,,中文期刊补充源；用于复核国内公园商业、公共空间、消费、城市治理相关研究。,按平台授权和导出规则接入；不做未授权爬取。
+CN-SRC-005,百度学术,https://xueshu.baidu.com/,https://xueshu.baidu.com/,manual_search_lead_only,low,,中文线索发现和题名补查；只作为发现入口，不作为结构化证据主源。,不作为自动批量抓取源；命中后回到万方/CNKI/维普/DOI/出版方复核。
+CN-SRC-006,国家哲学社会科学文献中心,https://www.ncpssd.org/,https://www.ncpssd.org/,manual_search_or_authorized_export,medium,,社科、城市治理、公共空间、消费和政策研究补充源；适合中国语境方法和语言表达。,以平台授权和导出为准，不做绕登录抓取。
+CN-SRC-007,国家科技图书文献中心 NSTL,https://www.nstl.gov.cn/,https://www.nstl.gov.cn/,manual_search_or_authorized_export,medium,,科技文献、工程、仿真、GIS、城市计算和标准线索补充。,按 NSTL 服务条款和授权导出接入。
+CN-SRC-008,中国科技论文在线,http://www.paper.edu.cn/,http://www.paper.edu.cn/,manual_search_or_authorized_export,medium,,高校科技论文线索，补充仿真、规划、GIS、客流预测等中文材料。,只用公开页面线索和授权导出，不做批量绕限制抓取。
+CN-SRC-009,中国社会科学网,https://www.cssn.cn/,https://www.cssn.cn/,manual_search_lead_only,low,,城市治理、公共性、消费社会、文旅政策的中文语境线索。,作为政策和观点线索，不作为结构化论文主源。
+CN-SRC-010,国家标准全文公开系统,https://openstd.samr.gov.cn/,https://openstd.samr.gov.cn/,manual_search_or_authorized_export,medium,,规范、标准、术语和合规边界；补消防、食品、公共设施、无障碍等真实世界约束。,标准文本按官方公开与授权范围使用，不能替代法律意见。
+CN-SRC-011,北京市统计局 / 国家统计局公开数据,https://tjj.beijing.gov.cn/,https://tjj.beijing.gov.cn/,official_open_data_or_manual_export,high,,北京人口、收入、消费、旅游、服务业等宏观边界，支撑奥森本地化校准。,只能作为宏观或区域边界，不能直接替代奥森周边街道级真实交易数据。
+CN-SRC-012,北京市文化和旅游局 / 文旅公开数据,https://whlyj.beijing.gov.cn/,https://whlyj.beijing.gov.cn/,official_open_data_or_manual_export,medium,,景区、旅游、文旅消费、假日客流和政策语境补充。,公开数据需标明年份和统计口径；不能混成项目实时客流。
+CN-SRC-013,北京市园林绿化局公开信息,https://yllhj.beijing.gov.cn/,https://yllhj.beijing.gov.cn/,official_open_data_or_manual_export,medium,,公园管理、绿地、活动、政策、运营边界与公共性要求。,只作为政策与运营边界，不自动推出商业收益。
+CN-SRC-014,北京市市场监督管理局公开信息,https://scjgj.beijing.gov.cn/,https://scjgj.beijing.gov.cn/,official_open_data_or_manual_export,medium,,食品经营许可、市场监管、商户合规和经营主体信息线索。,合规判断需复核现行法规和具体经营主体，不作为法律意见。
+CN-SRC-015,高德地图开放平台,https://lbs.amap.com/,https://lbs.amap.com/api/webservice/summary,official_api,high,AMAP_WEB_SERVICE_KEY,POI、路径、周边供给、可达性和空间校准；这是项目已有强相关中文/中国空间数据源。,Key 只放 `.env`；API 结果必须记录时间、参数和坐标系。

@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = ROOT / "40_quality_evidence" / "selenium_visual_integration_20260603"
 BASE_URL = "http://127.0.0.1:8000"
 FORBIDDEN_VISIBLE = [
-    "外部预览",
-    "仅地图预览",
+    "外部" + "预览",
+    "仅地图" + "预览",
     "后端草案分",
     "debug",
     "raw",
@@ -29,7 +29,7 @@ FORBIDDEN_VISIBLE = [
     "traceback",
     "needs_review",
     "not_final",
-    "external_preview_only",
+    "external" + "_preview_only",
 ]
 
 

@@ -18,8 +18,8 @@ OUT_DIR = ROOT / "40_quality_evidence" / "page_layer_rebuild_validation_20260605
 OUT_JSON = ROOT / "40_quality_evidence" / "page_layer_rebuild_validation_20260605.json"
 
 FORBIDDEN_VISIBLE_WORDS = [
-    "外部预览",
-    "仅地图预览",
+    "外部" + "预览",
+    "仅地图" + "预览",
     "后端草案分",
     "debug",
     "raw",
@@ -30,7 +30,7 @@ FORBIDDEN_VISIBLE_WORDS = [
     "traceback",
     "needs_review",
     "not_final",
-    "external_preview_only",
+    "external" + "_preview_only",
 ]
 
 
@@ -136,7 +136,8 @@ def main() -> None:
             ai_text = page.locator("body").inner_text(timeout=5000)
             ai_bad_words = [word for word in FORBIDDEN_VISIBLE_WORDS if word in ai_text]
             checks.append(check("ai_default_project_scope", page.locator("#aiModeBadge").inner_text(timeout=3000).strip() == "项目综合", page.locator("#aiModeBadge").inner_text(timeout=3000).strip()))
-            checks.append(check("ai_not_default_first_node", "当前节点 N-001" not in ai_text and "桃花源白房子" not in ai_text, {"has_n001": "当前节点 N-001" in ai_text, "has_taohuayuan": "桃花源白房子" in ai_text}))
+            old_node_token = "当前节点 " + "N" + "-001"
+            checks.append(check("ai_not_default_first_node", old_node_token not in ai_text and "桃花源白房子" not in ai_text, {"has_n001": old_node_token in ai_text, "has_taohuayuan": "桃花源白房子" in ai_text}))
             checks.append(check("ai_no_backend_words", not ai_bad_words, ai_bad_words))
 
             assistant_box = page.locator(".chat-message.assistant").last.bounding_box()

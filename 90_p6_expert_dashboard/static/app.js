@@ -57,7 +57,7 @@ window.__appState = state;
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-function valueText(value, fallback = "待补") {
+function valueText(value, fallback = "待复核") {
   if (value === undefined || value === null || String(value).trim() === "") return fallback;
   return String(value);
 }
@@ -145,7 +145,7 @@ function priorityTitle(node) {
   const explicit = valueText(node?.priority_label || node?.priority_stage, "");
   if (explicit) return humanizeAiText(explicit);
   if (node?.score_status === "node_draft_review_required") return "待复核草案";
-  if (label === "暂缓讨论") return "暂缓推荐，先补资料";
+  if (label === "暂缓讨论") return "暂缓推荐，先复核条件";
   return label;
 }
 
@@ -167,7 +167,7 @@ function priorityCaption(node) {
   if (gateCount !== undefined && gateCount !== null) parts.push(`${gateCount} 项前置资料`);
   if (missing) parts.push(`${missing} 类缺口`);
   if (inputs.poi_context_count !== undefined && inputs.poi_context_count !== null) parts.push(`${inputs.poi_context_count} 条 POI 语境`);
-  return parts.length ? `${parts.join(" · ")}，待复核` : "待补证后比较";
+  return parts.length ? `${parts.join(" · ")}，待复核` : "复核后比较";
 }
 
 function firstRecommendation(node) {
@@ -175,7 +175,7 @@ function firstRecommendation(node) {
   if (direct) return direct;
   const next = listItems(node?.next_data_needed)[0];
   if (next) return next;
-  return "先补齐图纸、客流、收益成本和运营授权，再进入推荐判断。";
+  return "先完成图纸、客流、收益成本和运营授权复核，再进入推荐判断。";
 }
 
 function renderScoreAnalysis(node) {
@@ -202,13 +202,13 @@ function renderScoreAnalysis(node) {
       ` : ""}
       <div class="score-breakdown-list">
         ${(items.length ? items : [
-          { label: "资料门禁", value: `${scoreInputs.blocked_gate_count ?? "待确认"} 项待补`, impact: "图纸、客流、转化率、收益成本、运营授权会影响优先级可信度。", status: "需复核" },
+          { label: "资料门禁", value: `${scoreInputs.blocked_gate_count ?? "待确认"} 项待复核`, impact: "图纸、客流、转化率、收益成本、运营授权会影响优先级可信度。", status: "需复核" },
           { label: "周边 POI", value: `${scoreInputs.poi_context_count ?? "待确认"} 条`, impact: "用于判断周边供给和竞品语境。", status: "待复核" },
         ]).map((item) => `
           <div class="score-breakdown-item">
             <div>
               <b>${esc(item.label || "判断项")}</b>
-              <span>${esc(item.impact || "待补充解释")}</span>
+              <span>${esc(item.impact || "说明待复核")}</span>
             </div>
             <em>${esc(item.value || "待确认")}</em>
             <small>${esc(humanizeAiText(item.status || "待复核"))}</small>
@@ -407,8 +407,8 @@ function priorityLabel(node) {
   if (isPositionReferenceOnly(node?.score_status)) return ["仅看位置关系", "preview"];
   const score = scoreOf(node);
   if (score >= 70) return ["优先讨论", "good"];
-  if (score >= 55) return ["需补证再议", "warn"];
-  return ["暂缓推荐，先补资料", "fail"];
+  if (score >= 55) return ["复核后再议", "warn"];
+  return ["暂缓推荐，先复核条件", "fail"];
 }
 
 function evidenceRefLabel(ref) {
@@ -573,7 +573,7 @@ function renderObjectChainMatrix() {
     const meta = [
       adopted ? `${adopted} 个已采用` : "",
       locked ? `${locked} 个已锁定` : "",
-      blocked ? `${blocked} 项待补` : "",
+      blocked ? `${blocked} 项待复核` : "",
     ].filter(Boolean).join(" · ");
     return `
       <article
@@ -592,7 +592,7 @@ function renderObjectChainMatrix() {
           <em>${esc(meta || "来源和状态已记录，展开对应工作区复核。")}</em>
           <details class="object-chain-evidence">
             <summary>证据依据</summary>
-            <div>${(item.evidence_refs || []).map((ref) => `<span>${esc(evidenceRefLabel(ref))}</span>`).join("") || "<span>待补资料记录</span>"}</div>
+            <div>${(item.evidence_refs || []).map((ref) => `<span>${esc(evidenceRefLabel(ref))}</span>`).join("") || "<span>资料记录待复核</span>"}</div>
           </details>
         </div>
         <button class="secondary-btn" type="button" data-view="${esc(item.view || "overview")}">${esc(item.action_label || "查看")}</button>
@@ -756,7 +756,7 @@ function renderSourceFoundation() {
     {
       label: "预检阻塞",
       value: blockingCount ? `${blockingCount} 项` : "无硬阻塞",
-      note: blockingCount ? "先补齐关键输入，再进入仿真预检。" : "可以进入组合预检，但仍不等于最终仿真完成。",
+      note: blockingCount ? "先完成关键输入复核，再进入仿真预检。" : "可以进入组合预检，但仍不等于最终仿真完成。",
       tone: blockingCount ? "warn" : "good",
     },
   ];
@@ -941,7 +941,7 @@ function renderNodes() {
         <span class="node-code">${esc(shortId(node.node_id))}</span>
         <span class="node-main">
           <b>${esc(node.node_name)}</b>
-          <em>${esc(node.primary_positioning || "待补场景描述")}</em>
+          <em>${esc(node.primary_positioning || "场景描述待复核")}</em>
           <small>${esc(firstRecommendation(node))}</small>
         </span>
         <span class="node-priority ${cls}">
@@ -1018,11 +1018,11 @@ function renderDetail() {
     </details>
     <details class="detail-section collapsible-section">
       <summary>业态方向</summary>
-      <div class="chip-row">${directions.map((item) => `<span>${esc(item)}</span>`).join("") || "<span>待补</span>"}</div>
+      <div class="chip-row">${directions.map((item) => `<span>${esc(item)}</span>`).join("") || "<span>待复核</span>"}</div>
     </details>
     <details class="detail-section collapsible-section">
       <summary>场景假设</summary>
-      <p>${esc(node.scene_assumptions || node.primary_positioning || "待合作方补充真实场景资料")}</p>
+      <p>${esc(node.scene_assumptions || node.primary_positioning || "真实场景资料待复核")}</p>
       ${assumptions.map((item) => `<p class="soft-box">${esc(item.scene_description || item.assumption_text || JSON.stringify(item))}</p>`).join("")}
     </details>
     <details class="detail-section collapsible-section">
@@ -1041,9 +1041,9 @@ function renderDetail() {
       </div>
     </details>
     <details class="detail-section collapsible-section">
-      <summary>待补数据</summary>
+      <summary>复核数据</summary>
       <div class="request-tags">
-        ${requests.map((item) => `<span>${esc(item.missing_input || item.calibration_domain || "待补数据")} · ${esc(humanizeAiText(item.priority || "待确认"))}</span>`).join("") || `<span>${esc(node.must_collect_before_final || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物")}</span>`}
+        ${requests.map((item) => `<span>${esc(item.missing_input || item.calibration_domain || "复核数据")} · ${esc(humanizeAiText(item.priority || "待确认"))}</span>`).join("") || `<span>${esc(node.must_collect_before_final || "真实客流、转化率、收益成本、运营授权、可信 DWG 转换产物")}</span>`}
       </div>
     </details>
     <details class="detail-section collapsible-section">
@@ -1491,7 +1491,7 @@ function renderMapSide() {
   $("#mapSideDetail").innerHTML = `
     <h3>${esc(shortId(node.node_id))} ${esc(node.node_name)}</h3>
     <div class="map-score ${cls}">${esc(scoreLine)}</div>
-    <p>${esc(node.primary_positioning || node.scene_assumptions || "待补场景")}</p>
+    <p>${esc(node.primary_positioning || node.scene_assumptions || "场景待复核")}</p>
     <div class="mini-kv"><span>面积</span><b>${esc(node.area_sqm === "待测" ? "待测" : `${node.area_sqm} m²`)}</b></div>
     <div class="mini-kv"><span>状态</span><b>${esc(humanizeAiText(node.status_label || "待人工确认"))}</b></div>
     <div class="mini-kv"><span>推进说明</span><b>${esc(scoreMeaning(node))}</b></div>
@@ -1624,11 +1624,11 @@ function renderDataPage() {
           <b>${esc(gateTitle(gate.calibration_domain))}</b>
           <span>${esc(gate.calibration_domain)} · ${uploadCount ? `已关联 ${uploadCount} 份资料` : "尚未关联资料"}</span>
         </div>
-        <p>${esc(actionMap[gate.calibration_domain] || gate.blocking_reason || "需要补充来源数据后复核")}</p>
+        <p>${esc(actionMap[gate.calibration_domain] || gate.blocking_reason || "需要先复核来源数据")}</p>
         <div class="gate-actions">
           <button class="secondary-btn" data-view="upload" data-gate="${esc(gate.calibration_domain)}" aria-label="上传${esc(gateTitle(gate.calibration_domain))}资料">上传资料</button>
           <button class="secondary-btn gate-note-btn" data-gate="${esc(gate.calibration_domain)}" aria-label="填写${esc(gateTitle(gate.calibration_domain))}说明">填写说明</button>
-          <button class="secondary-btn" data-view="ai" data-gate="${esc(gate.calibration_domain)}" aria-label="询问 AI 如何补齐${esc(gateTitle(gate.calibration_domain))}">问 AI 怎么补</button>
+          <button class="secondary-btn" data-view="ai" data-gate="${esc(gate.calibration_domain)}" aria-label="询问 AI 如何复核${esc(gateTitle(gate.calibration_domain))}">问 AI 怎么复核</button>
         </div>
       </div>
     `;
@@ -1637,7 +1637,7 @@ function renderDataPage() {
   const rows = state.data.p4_feedback?.data_requests || [];
   $("#dataNeeds").innerHTML = `
     <table>
-      <thead><tr><th>节点</th><th>要补什么</th><th>用途</th><th>状态</th></tr></thead>
+      <thead><tr><th>节点</th><th>复核什么</th><th>用途</th><th>状态</th></tr></thead>
       <tbody>
         ${rows.map((row) => `
           <tr>
@@ -1813,9 +1813,9 @@ function renderReport() {
         <div class="report-feature-scene-grid">
           ${calibrationItems.map((item) => `
             <span>
-              <b>${esc(item.calibration_id || "校准输入")} · ${esc(item.indicator_name || "指标待补")}</b>
-              <em>${esc(calibrationLayerLabel(item.source_strength))} · ${esc(item.segment || "范围待补")} · ${esc(item.period || "时期待补")}</em>
-              <em>数值：${esc(`${item.value || ""}${item.unit || ""}` || "待补")}</em>
+              <b>${esc(item.calibration_id || "校准输入")} · ${esc(item.indicator_name || "指标待复核")}</b>
+              <em>${esc(calibrationLayerLabel(item.source_strength))} · ${esc(item.segment || "范围待复核")} · ${esc(item.period || "时期待复核")}</em>
+              <em>数值：${esc(`${item.value || ""}${item.unit || ""}` || "待复核")}</em>
               <em>用法：${esc(item.simulation_use || "用于校准讨论，待人工复核。")}</em>
               <strong>${esc(item.cannot_claim || "不能直接写成最终结论。")}</strong>
             </span>
@@ -1836,10 +1836,10 @@ function renderReport() {
           ${featureItems.map((item) => `
             <span>
               <b>${esc(item.title || item.derivative_id || "人物场景")}</b>
-              <em>收入/价格带：${esc(item.income_segment_name || "收入段待补")} · ${esc(item.income_price_band || "价格带待补")}</em>
-              <em>时段/天气/空间：${esc(item.time_band_name || "时段待补")} · ${esc(item.weather_name || "天气待补")} · ${esc(item.node_context_name || "空间待补")}</em>
-              <em>需求触发：${esc(item.demand_trigger_name || "需求触发待补")}</em>
-              <em>建议动作：${esc(item.candidate_supply_action_name || "动作待补")}</em>
+              <em>收入/价格带：${esc(item.income_segment_name || "收入段待复核")} · ${esc(item.income_price_band || "价格带待复核")}</em>
+              <em>时段/天气/空间：${esc(item.time_band_name || "时段待复核")} · ${esc(item.weather_name || "天气待复核")} · ${esc(item.node_context_name || "空间待复核")}</em>
+              <em>需求触发：${esc(item.demand_trigger_name || "需求触发待复核")}</em>
+              <em>建议动作：${esc(item.candidate_supply_action_name || "动作待复核")}</em>
               <strong>${esc(item.status_label || "待讨论")}</strong>
             </span>
           `).join("")}
@@ -1875,14 +1875,14 @@ function renderReport() {
             </tr>
           `).join("")}</tbody>
         </table>
-      ` : `<p>还不能做供需缺口排序。请优先补齐目标公园客流、消费画像/TGI、周边商业 POI、可经营空间和收益成本口径。</p>`}
+      ` : `<p>还不能做供需缺口排序。请优先完成目标公园客流、消费画像/TGI、周边商业 POI、可经营空间和收益成本口径复核。</p>`}
     </details>
     <section class="report-section">
       <h3>当前推进事项</h3>
       <ol class="report-next-list">
         ${(nextActions.length ? nextActions : [
           "确认当前地图目标与资料目标是否一致，避免把奥森资料误用于其他公园结论。",
-          "补齐客流、TGI、POI、图纸和经营授权后，再进入节点比较和报告定稿。",
+          "完成客流、TGI、POI、图纸和经营授权复核后，再进入节点比较和报告定稿。",
           "把本报告作为项目综合会话底稿，继续追问并生成下一版报告。",
         ]).map((item) => `<li>${esc(item)}</li>`).join("")}
       </ol>
@@ -1993,13 +1993,13 @@ function renderSimulationObjectPool() {
         </div>
         <p>${esc(humanizeAiText(item.summary || "该对象还缺少业务说明。"))}</p>
         <div class="sim-object-tags">
-          <span>${esc(item.priority_label || "补资料后判断")}</span>
+          <span>${esc(item.priority_label || "复核后判断")}</span>
           <span>${esc(item.linked_id || "未关联")}</span>
           <span>待复核</span>
         </div>
         ${missing.length ? `
           <div class="sim-object-section">
-            <b>还缺什么</b>
+            <b>复核要点</b>
             <ul>${missing.map((text) => `<li>${esc(text)}</li>`).join("")}</ul>
           </div>
         ` : ""}
@@ -2037,7 +2037,7 @@ function preflightTone(status) {
 function preflightStatusLabel(status) {
   if (status === "pass") return "已满足";
   if (status === "block") return "阻止完整仿真";
-  return "待补或待确认";
+  return "待复核或待确认";
 }
 
 function simulationParkLabel(value) {
@@ -2064,7 +2064,7 @@ function simulationCategoryLabel(value) {
   return labels[text] || humanizeAiText(text || "待确认业态");
 }
 
-function simulationListText(value, fallback = "待补资料", limit = 2) {
+function simulationListText(value, fallback = "待复核资料", limit = 2) {
   const items = listItems(value)
     .map((item) => humanizeAiText(item))
     .filter(Boolean)
@@ -2093,7 +2093,7 @@ function simulationTaskObjectOptions(type, selectedIds) {
             />
             <span>
               <b>${esc(item.title || item.object_id)}</b>
-              <em>${esc(item.adoption_status || "暂未采用")} · ${esc(item.priority_label || "补资料后判断")}</em>
+              <em>${esc(item.adoption_status || "暂未采用")} · ${esc(item.priority_label || "复核后判断")}</em>
             </span>
           </label>
         `;
@@ -2155,13 +2155,13 @@ function renderFeatureDerivativePool(pool = {}) {
                 <b>${esc(item.title)}</b>
                 <em>${esc(item.adoption_status || "暂未采用")}${locked ? " · 已锁定" : ""}</em>
               </div>
-              <p>${esc(item.why_it_matters || "等待补充场景说明。")}</p>
+              <p>${esc(item.why_it_matters || "等待复核场景说明。")}</p>
               <div class="feature-scenario-meta">
                 <span>${esc(item.income_segment_name || "收入待复核")}</span>
-                <span>${esc(item.income_price_band || "价格带待补")}</span>
-                <span>${esc(item.weather_name || "天气待补")}</span>
-                <span>${esc(item.node_context_name || "空间待补")}</span>
-                <span>${esc(item.candidate_supply_action_name || "动作待补")}</span>
+                <span>${esc(item.income_price_band || "价格带待复核")}</span>
+                <span>${esc(item.weather_name || "天气待复核")}</span>
+                <span>${esc(item.node_context_name || "空间待复核")}</span>
+                <span>${esc(item.candidate_supply_action_name || "动作待复核")}</span>
               </div>
               <details>
                 <summary>收入与价格怎么影响判断</summary>
@@ -2351,9 +2351,9 @@ function collectSimulationObjectForm() {
     ? "校准前置条件"
     : type === "persona_state"
       ? "先确认状态"
-      : type === "behavior_program"
+    : type === "behavior_program"
         ? "先复核行为链"
-        : "补资料后判断";
+        : "复核后判断";
   return {
     object_type: type,
     title: $("#simObjectTitle").value.trim(),
@@ -2464,7 +2464,7 @@ function renderSimulationPanel() {
       <td>${esc(simulationListText(row.scenario_pressure?.operation_rules, "暂无命中动作", 2))}</td>
       <td>${esc(row.accuracy_context?.readiness_label || "待校准")}</td>
       <td>${esc(simulationListText(row.why_blocked, "待人工复核", 2))}</td>
-      <td>${esc(simulationListText(row.next_data_needed, "待补资料", 2))}</td>
+      <td>${esc(simulationListText(row.next_data_needed, "待复核资料", 2))}</td>
     </tr>
   `).join("");
   const pressureRows = resultItems
@@ -2477,10 +2477,10 @@ function renderSimulationPanel() {
       return `
         <span>
           <b>${esc(simulationCategoryLabel(row.category))}</b>
-          <em>收入/价格带：${esc(simulationListText(pressure.income_segments, "待补收入段", 2))} · ${esc(simulationListText(pressure.price_bands, "待补价格带", 2))}</em>
-          <em>时段/天气：${esc(simulationListText(pressure.time_bands, "待补时段", 2))} · ${esc(simulationListText(pressure.weathers, "待补天气", 2))}</em>
-          <em>场景动作：${esc(simulationListText(pressure.operation_rules, "待补动作", 3))}</em>
-          <em>准确性约束：${esc(accuracy.readiness_label || "待校准")} · ${esc(simulationListText((constraints || []).map((item) => item.name), "待补校准约束", 3))}</em>
+          <em>收入/价格带：${esc(simulationListText(pressure.income_segments, "收入段待复核", 2))} · ${esc(simulationListText(pressure.price_bands, "价格带待复核", 2))}</em>
+          <em>时段/天气：${esc(simulationListText(pressure.time_bands, "时段待复核", 2))} · ${esc(simulationListText(pressure.weathers, "天气待复核", 2))}</em>
+          <em>场景动作：${esc(simulationListText(pressure.operation_rules, "动作待复核", 3))}</em>
+          <em>准确性约束：${esc(accuracy.readiness_label || "待校准")} · ${esc(simulationListText((constraints || []).map((item) => item.name), "校准约束待复核", 3))}</em>
         </span>
       `;
     })
@@ -3039,11 +3039,11 @@ function renderAiContext() {
     <details class="ai-context-details">
       <summary>
         <span>${esc(shortId(node.node_id))} ${esc(node.node_name)}</span>
-        <em>${esc(node.primary_positioning || "待补场景")}</em>
+        <em>${esc(node.primary_positioning || "场景待复核")}</em>
       </summary>
       <div>
         <b>当前范围</b>
-        <span>只围绕这个节点整理问题、依据和待补资料；不输出最终推荐。</span>
+        <span>只围绕这个节点整理问题、依据和复核变量；不输出最终推荐。</span>
       </div>
     </details>
     <button class="secondary-btn" type="button" id="aiUseProjectBtn">回到项目综合</button>
@@ -3082,7 +3082,7 @@ function humanizeAiText(text) {
     .replace(/\bconnected\b/gi, "已接入")
     .replace(/\bconfigured\b/gi, "已配置")
     .replace(/\bmissing_key\b/gi, "缺少配置")
-    .replace(/\bblocked\b/gi, "等待补齐")
+    .replace(/\bblocked\b/gi, "等待复核")
     .replace(/\blocal_data\b/gi, "本地资料")
     .replace(/\bmap_data\b/gi, "地图资料")
     .replace(/\bmap_service\b/gi, "地图服务")

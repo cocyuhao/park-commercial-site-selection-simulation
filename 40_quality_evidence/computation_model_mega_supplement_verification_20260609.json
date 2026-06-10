@@ -1,0 +1,594 @@
+{
+  "generated_at": "2026-06-09T21:22:20",
+  "status": "needs_action",
+  "query_count": 5440,
+  "recent_query_count": 5200,
+  "classic_query_count": 240,
+  "blocks": {
+    "stochastic_uncertainty_sensitivity": 520,
+    "bayesian_calibration_validation": 520,
+    "discrete_choice_spatial_interaction": 520,
+    "abm_microsimulation_pedestrian": 520,
+    "discrete_event_queue_capacity": 520,
+    "facility_location_optimization": 520,
+    "synthetic_population_activity_travel": 520,
+    "demand_revenue_forecasting": 520,
+    "gis_network_geometry_model": 520,
+    "llm_agent_model_control": 520,
+    "classic_computation_theory": 240
+  },
+  "raw_total": 54333,
+  "screened_total": 3096,
+  "classic_reference_total": 936,
+  "merged_screened_total": 23091,
+  "merged_category_counts": {
+    "spatial_gis": 7715,
+    "retail_business": 4070,
+    "real_world_context": 9553,
+    "ai_guardrails": 5399,
+    "agent_simulation": 6376,
+    "socioeconomic_market": 1911,
+    "weather_event": 5057,
+    "decision_support": 5362,
+    "safety_regulation": 2176,
+    "persona_activity_model": 1471,
+    "operations_capacity": 955,
+    "data_evidence_quality": 503,
+    "monte_carlo_uncertainty": 1661,
+    "abm_pedestrian_engine": 962,
+    "cad_bim_data": 1183,
+    "mobility_flow": 2445,
+    "park_recreation": 3580,
+    "choice_model": 424
+  },
+  "merged_theme_counts": {
+    "simulation_stack_mega:persona_synthetic_population": 1764,
+    "simulation_stack_persona_abm_mc:tools_official_and_practical": 1275,
+    "decision_reporting_methods": 682,
+    "operations_revenue_unit_economics": 884,
+    "ai_evaluation_observability_guardrails": 641,
+    "simulation_stack_persona_abm_mc:monte_carlo_uncertainty_sensitivity": 1383,
+    "simulation_stack_persona_abm_mc:calibration_validation_evidence": 1517,
+    "real_world_constraints": 918,
+    "safety_regulation_public_governance": 917,
+    "simulation_stack_persona_abm_mc:abm_pedestrian_crowd_engine": 1324,
+    "spatial_site_selection": 809,
+    "retail_operations_revenue": 814,
+    "simulation_stack_mega:activity_chain_time_geography": 1273,
+    "simulation_stack_persona_abm_mc:persona_synthetic_population": 1421,
+    "demographics_income_market_segmentation": 860,
+    "park_recreation_tourism": 772,
+    "simulation_stack_persona_abm_mc:queue_capacity_discrete_event": 1226,
+    "cad_bim_gis_digital_twin": 776,
+    "computation_model_mega:synthetic_population_activity_travel": 277,
+    "multi_criteria_optimization_uncertainty": 634,
+    "transport_accessibility_last_mile": 748,
+    "human_mobility_behavior": 857,
+    "agent_llm_simulation": 1030,
+    "simulation_stack_persona_abm_mc:activity_chain_time_geography": 1532,
+    "weather_season_event_demand": 891,
+    "queue_crowd_capacity_operations": 864,
+    "data_quality_evidence_chain": 638,
+    "official_statistics_open_data_context": 798,
+    "park_publicness_experience_equity": 764,
+    "computation_model_mega:facility_location_optimization": 425,
+    "simulation_stack_persona_abm_mc:discrete_choice_spatial_interaction": 1441,
+    "simulation_stack_mega:abm_pedestrian_crowd_engine": 660,
+    "simulation_stack_persona_abm_mc:classic_theory_reference": 1461,
+    "computation_model_mega:discrete_event_queue_capacity": 307,
+    "simulation_stack_mega:queue_capacity_discrete_event": 318,
+    "computation_model_mega:bayesian_calibration_validation": 309,
+    "simulation_stack_mega:calibration_validation_evidence": 714,
+    "simulation_stack_mega:real_world_modulators": 462,
+    "service_design_ai_workbench_ux": 511,
+    "simulation_stack_mega:discrete_choice_spatial_interaction": 328,
+    "computation_model_mega:gis_network_geometry_model": 446,
+    "computation_model_mega:abm_microsimulation_pedestrian": 399,
+    "computation_model_mega:llm_agent_model_control": 299,
+    "simulation_stack_mega:cad_gis_spatial_data_foundation": 656,
+    "computation_model_mega:demand_revenue_forecasting": 378,
+    "simulation_stack_mega:monte_carlo_uncertainty_sensitivity": 357,
+    "computation_model_mega:stochastic_uncertainty_sensitivity": 450,
+    "computation_model_mega:discrete_choice_spatial_interaction": 190,
+    "simulation_stack_persona_abm_mc:arxiv_recent": 131
+  },
+  "source_counts": {
+    "crossref": 54333
+  },
+  "error_count": 5445,
+  "files": {
+    "query_matrix": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_query_matrix_20260609.json",
+    "query_matrix_csv": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_query_matrix_20260609.csv",
+    "raw": "10_research\\recent_knowledge_base_20260609\\raw_computation_model_mega_20260609.jsonl",
+    "screened": "10_research\\recent_knowledge_base_20260609\\screened_computation_model_mega_20260609.jsonl",
+    "classic": "10_research\\recent_knowledge_base_20260609\\classic_computation_model_reference_mega_20260609.jsonl",
+    "errors": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_fetch_errors_20260609.jsonl",
+    "query_progress": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_query_progress_20260609.jsonl",
+    "run_state": "40_quality_evidence\\computation_model_mega_run_state_20260609.json",
+    "merged_screened": "10_research\\recent_knowledge_base_20260609\\screened_knowledge_base_20260609.jsonl",
+    "merged_verify": "40_quality_evidence\\recent_knowledge_base_verification_20260609.json"
+  },
+  "rule": "这是计算/模型专项增量：只追加合并，不替代已有知识库；经典理论为模型骨架，近年资料为当前方法与落地变量约束。",
+  "errors": [
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation park visitor demand decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "park visitor demand Monte Carlo simulation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation retail revenue forecast confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "retail revenue forecast Monte Carlo simulation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation food beverage conversion model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "food beverage conversion Monte Carlo simulation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation tourism visitor flow model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "tourism visitor flow Monte Carlo simulation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation calibration uncertainty",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation robust scenario comparison",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation parameter ranking",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation P5 P50 P95 interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation decision support",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation model validation",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "outdoor concession operation Monte Carlo simulation confidence interval",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation outdoor concession operation revenue risk band",
+      "block": "stochastic_uncertainty_sensitivity",
+      "error": "RuntimeError('None')"
+    }
+  ]
+}

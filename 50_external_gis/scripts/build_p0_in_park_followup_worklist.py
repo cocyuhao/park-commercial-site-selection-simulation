@@ -173,7 +173,7 @@ def blocking_gaps(row: dict[str, str], missing: list[str]) -> list[str]:
 def next_action(row: dict[str, str], missing: list[str]) -> str:
     actions = []
     if missing:
-        actions.append("补齐高德 detail 或现场经营字段：" + ",".join(missing))
+        actions.append("复核高德 detail 或现场经营字段：" + ",".join(missing))
     if row.get("pdf_seed_match_status") == "matched_pdf_seed":
         actions.append("回查 PDF 种子名称并确认是否同一商户")
     actions.append("补入口/节点步行路线或现场可达性")
@@ -235,7 +235,7 @@ def build_rows(review_rows: list[dict[str, str]]) -> list[dict[str, str]]:
                 "blocking_gaps": ";".join(gaps),
                 "next_action": next_action(row, missing),
                 "can_enter_p2_supply": "no",
-                "notes": "P0 园内候选复核工作单；补齐阻塞缺口前不得进入 P2 供给数量。",
+                "notes": "P0 园内候选复核工作单；阻塞缺口复核前不得进入 P2 供给数量。",
             }
         )
     return output_rows

@@ -22,7 +22,7 @@ MODEL_COVERAGE = [
             ("00_control/decisions.md", ["裸分数", "推进优先级"]),
             ("90_p6_expert_dashboard/static/app.js", ["discussion_score_draft", "推进优先级"]),
         ],
-        "required_next": "继续清理用户可见分数字段，把分数默认折叠，主视觉只保留建议、依据和补证动作。",
+        "required_next": "继续清理用户可见分数字段，把分数默认折叠，主视觉只保留建议、依据和复核动作。",
     },
     {
         "id": "ROTE_BEHAVIOR_PROGRAM",

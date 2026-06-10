@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-06-09T15:08:47",
+  "status": "pass",
+  "query_count": 30,
+  "raw_total": 200,
+  "usable_total": 149,
+  "deduped_total": 149,
+  "layer_counts": {
+    "sensitivity_analysis": 17,
+    "uncertainty_monte_carlo": 16,
+    "discrete_choice_destination": 19,
+    "agent_based_modeling": 14,
+    "pedestrian_crowd_simulation": 15,
+    "activity_based_travel_demand": 14,
+    "calibration_validation": 8,
+    "spatial_interaction_retail_location": 20,
+    "microsimulation_synthetic_population": 5,
+    "optimization_decision_support": 10,
+    "discrete_event_queue_capacity": 4,
+    "digital_twin_gis": 7
+  },
+  "source_counts": {
+    "crossref": 149
+  },
+  "files": {
+    "classic_jsonl": "10_research\\recent_knowledge_base_20260609\\classic_model_reference_20260609.jsonl",
+    "classic_csv": "10_research\\recent_knowledge_base_20260609\\classic_model_reference_20260609.csv"
+  },
+  "errors": [
+    {
+      "source": "openalex",
+      "query": "Train discrete choice methods with simulation",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Schelling dynamic models segregation agent based",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Ben-Akiva Lerman discrete choice analysis",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Reilly law retail gravitation",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Epstein Axtell growing artificial societies agent based model",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Huff probabilistic analysis shopping center trade areas",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Wilson entropy maximizing spatial interaction model",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "McFadden conditional logit qualitative choice behavior",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Helbing Molnar social force model pedestrian dynamics",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "pedestrian simulation validation crowd dynamics",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "queueing theory service capacity operations",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Tesfatsion agent based computational economics",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "crossref",
+      "query": "Tesfatsion agent based computational economics",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Bonabeau agent based modeling methods and techniques",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "crossref",
+      "query": "Bonabeau agent based modeling methods and techniques",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Burstedde simulation pedestrian dynamics cellular automata",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "crossref",
+      "query": "Burstedde simulation pedestrian dynamics cellular automata",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Law simulation modeling and analysis discrete event",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "crossref",
+      "query": "Law simulation modeling and analysis discrete event",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Sargent verification validation simulation models",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "crossref",
+      "query": "Sargent verification validation simulation models",
+      "error": "RuntimeError(\"ConnectError('[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Kennedy O'Hagan Bayesian calibration computer models",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Monte Carlo simulation uncertainty analysis",
+      "error": "RuntimeError(\"ConnectError('[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "McKay Latin hypercube sampling analysis computer experiments",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "Sobol sensitivity estimates nonlinear mathematical models",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "activity based travel demand model Bowman Ben Akiva",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "model calibration validation computer simulation uncertainty",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Saltelli global sensitivity analysis",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "Morris elementary effects sensitivity analysis",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "microsimulation synthetic population travel demand",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "time geography activity pattern Hägerstrand",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "facility location allocation model optimization",
+      "error": "RuntimeError(\"ConnectError('')\")"
+    },
+    {
+      "source": "openalex",
+      "query": "geographic information systems spatial analysis network accessibility",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "multi criteria decision making site selection retail",
+      "error": "RuntimeError('None')"
+    },
+    {
+      "source": "openalex",
+      "query": "digital twin urban mobility simulation calibration",
+      "error": "RuntimeError('None')"
+    }
+  ],
+  "rule": "经典理论只作为模型骨架和方法边界参考；客户结论仍以本地证据、近年核心库和可复核计算为准。"
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChinaAcademicRecord",
+  "type": "object",
+  "required": [
+    "source_id",
+    "title",
+    "year",
+    "source_name",
+    "query",
+    "ingest_method"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "description": "CN-SRC-001 等来源 ID"
+    },
+    "title": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "year": {
+      "type": [
+        "integer",
+        "string"
+      ]
+    },
+    "source_name": {
+      "type": "string",
+      "description": "期刊/会议/数据库名"
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "doi": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "citation_count": {
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "query": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string"
+    },
+    "ingest_method": {
+      "enum": [
+        "official_api",
+        "authorized_export",
+        "manual_export"
+      ]
+    },
+    "license_note": {
+      "type": "string"
+    },
+    "project_use_note": {
+      "type": "string"
+    }
+  }
+}

@@ -53,7 +53,7 @@ def make_review_actions(node_id: str, request_rows: list[dict[str, str]], fallba
         if not missing or missing in seen:
             continue
         seen.add(missing)
-        detail = f"补齐「{missing}」"
+        detail = f"复核「{missing}」"
         if why:
             detail += f"：{why}"
         if acceptable:
@@ -61,7 +61,7 @@ def make_review_actions(node_id: str, request_rows: list[dict[str, str]], fallba
         actions.append(detail)
     for gap in fallback_gaps:
         if gap and gap not in seen:
-            actions.append(f"补齐「{gap}」后再更新节点优先级。")
+            actions.append(f"复核「{gap}」后再更新节点优先级。")
     actions.append(f"把 {node_id} 的旧讨论分折叠展示，主界面只展示推进动作、证据缺口和待复核状态。")
     return actions
 
@@ -88,13 +88,13 @@ def build_item(row: dict[str, str], request_rows: list[dict[str, str]]) -> dict[
     why_now = [
         f"{node_name or node_id} 已有旧 P4 反馈草案和候选业态方向，可转成待复核的节点解释。",
         "旧讨论分只表示当时资料条件下的讨论顺序，不能作为最终排序、收益判断或运营决策。",
-        "老板方法重基线后，该节点必须先补齐人群状态、行为程序、空间可达和运营授权，再进入仿真判断。",
+        "老板方法重基线后，该节点必须先复核人群状态、行为程序、空间可达和运营授权，再进入仿真判断。",
     ]
     if business_short:
         why_now.append(f"当前可先围绕「{business_short}」组织假设，但必须保持 needs_review。")
 
     specific_advice = [
-        "先把该节点标为「补资料后判断」，不要进入最终推荐或收益测算。",
+        "先把该节点标为「复核后判断」，不要进入最终推荐或收益测算。",
         f"围绕「{business_short}」拆出服务人群、触发时段、消费/放弃条件和运营约束。",
         "把真实客流、转化率、收益成本、运营授权和 DWG/GIS 几何作为升级前置门禁。",
         "在用户界面中提供采用、放弃、编辑和锁定动作，把是否采用交还给用户。",
@@ -117,7 +117,7 @@ def build_item(row: dict[str, str], request_rows: list[dict[str, str]]) -> dict[
     return {
         "node_id": node_id,
         "mode": "node",
-        "priority_label": "补资料后判断",
+        "priority_label": "复核后判断",
         "why_now": why_now,
         "specific_advice": specific_advice,
         "evidence_support": evidence_support,
@@ -227,7 +227,7 @@ def write_outputs(items: list[dict[str, Any]], envelope: dict[str, Any]) -> None
         "## 下一步",
         "",
         "- 前端节点详情和报告生成优先读取 `specific_advice`、`evidence_gaps`、`review_actions`。",
-        "- 补齐 persona_state 和 behavior_program 后，再把节点解释升级为 `state -> behavior -> demand -> advice` 完整链条。",
+        "- 复核 persona_state 和 behavior_program 后，再把节点解释升级为 `state -> behavior -> demand -> advice` 完整链条。",
         "- 不得把旧讨论分当最终排序或收益预测。",
         "",
     ]

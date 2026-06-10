@@ -1,0 +1,724 @@
+{
+  "status": "needs_action",
+  "query_count": 3264,
+  "recent_query_count": 3240,
+  "classic_query_count": 24,
+  "blocks": {
+    "persona_synthetic_population": 360,
+    "activity_chain_time_geography": 360,
+    "abm_pedestrian_crowd_engine": 360,
+    "discrete_choice_spatial_interaction": 360,
+    "queue_capacity_discrete_event": 360,
+    "monte_carlo_uncertainty_sensitivity": 360,
+    "calibration_validation_evidence": 360,
+    "cad_gis_spatial_data_foundation": 360,
+    "real_world_modulators": 360,
+    "classic_theory_reference": 24
+  },
+  "raw_total": 54580,
+  "screened_total": 5821,
+  "classic_reference_total": 0,
+  "merged_screened_total": 21852,
+  "merged_category_counts": {
+    "spatial_gis": 7308,
+    "retail_business": 3869,
+    "real_world_context": 9126,
+    "ai_guardrails": 5156,
+    "agent_simulation": 6125,
+    "socioeconomic_market": 1850,
+    "weather_event": 4812,
+    "decision_support": 5062,
+    "safety_regulation": 2103,
+    "persona_activity_model": 1444,
+    "operations_capacity": 900,
+    "data_evidence_quality": 495,
+    "monte_carlo_uncertainty": 1518,
+    "abm_pedestrian_engine": 932,
+    "cad_bim_data": 1163,
+    "mobility_flow": 2390,
+    "park_recreation": 3493,
+    "choice_model": 413
+  },
+  "merged_theme_counts": {
+    "simulation_stack_mega:persona_synthetic_population": 1764,
+    "simulation_stack_persona_abm_mc:tools_official_and_practical": 1275,
+    "decision_reporting_methods": 682,
+    "operations_revenue_unit_economics": 884,
+    "ai_evaluation_observability_guardrails": 641,
+    "simulation_stack_persona_abm_mc:monte_carlo_uncertainty_sensitivity": 1383,
+    "simulation_stack_persona_abm_mc:calibration_validation_evidence": 1517,
+    "real_world_constraints": 918,
+    "safety_regulation_public_governance": 917,
+    "simulation_stack_persona_abm_mc:abm_pedestrian_crowd_engine": 1324,
+    "spatial_site_selection": 809,
+    "retail_operations_revenue": 814,
+    "simulation_stack_mega:activity_chain_time_geography": 1273,
+    "simulation_stack_persona_abm_mc:persona_synthetic_population": 1421,
+    "demographics_income_market_segmentation": 861,
+    "park_recreation_tourism": 772,
+    "simulation_stack_persona_abm_mc:queue_capacity_discrete_event": 1226,
+    "cad_bim_gis_digital_twin": 776,
+    "multi_criteria_optimization_uncertainty": 634,
+    "transport_accessibility_last_mile": 748,
+    "human_mobility_behavior": 857,
+    "agent_llm_simulation": 1030,
+    "simulation_stack_persona_abm_mc:activity_chain_time_geography": 1532,
+    "weather_season_event_demand": 891,
+    "queue_crowd_capacity_operations": 864,
+    "data_quality_evidence_chain": 638,
+    "official_statistics_open_data_context": 798,
+    "park_publicness_experience_equity": 764,
+    "simulation_stack_persona_abm_mc:discrete_choice_spatial_interaction": 1441,
+    "simulation_stack_mega:abm_pedestrian_crowd_engine": 660,
+    "simulation_stack_persona_abm_mc:classic_theory_reference": 1462,
+    "simulation_stack_mega:queue_capacity_discrete_event": 318,
+    "simulation_stack_mega:calibration_validation_evidence": 714,
+    "simulation_stack_mega:real_world_modulators": 462,
+    "service_design_ai_workbench_ux": 511,
+    "simulation_stack_mega:discrete_choice_spatial_interaction": 328,
+    "simulation_stack_mega:cad_gis_spatial_data_foundation": 657,
+    "simulation_stack_mega:monte_carlo_uncertainty_sensitivity": 357,
+    "simulation_stack_persona_abm_mc:arxiv_recent": 131
+  },
+  "source_counts": {
+    "openalex": 9560,
+    "crossref": 45020
+  },
+  "official_sources": [
+    {
+      "name": "Mesa",
+      "url": "https://mesa.readthedocs.io/en/stable/",
+      "project_use": "ABM 轨迹层候选实现；用于 Agent 状态、空间、数据收集和可视化。",
+      "source_type": "official_documentation"
+    },
+    {
+      "name": "SimPy",
+      "url": "https://simpy.readthedocs.io/",
+      "project_use": "离散事件和队列容量层候选实现；用于咖啡亭、餐饮、入口服务压力。",
+      "source_type": "official_documentation"
+    },
+    {
+      "name": "SALib",
+      "url": "https://salib.readthedocs.io/",
+      "project_use": "敏感性分析候选工具；用于 Monte Carlo 后的参数影响排序。",
+      "source_type": "official_documentation"
+    },
+    {
+      "name": "OpenAlex Works API",
+      "url": "https://docs.openalex.org/api-entities/works",
+      "project_use": "近年论文知识库抓取来源；用于批量检索和去重前的元数据输入。",
+      "source_type": "official_documentation"
+    }
+  ],
+  "files": {
+    "query_matrix": "10_research\\recent_knowledge_base_20260609\\simulation_stack_mega_query_matrix_20260609.json",
+    "raw": "10_research\\recent_knowledge_base_20260609\\raw_simulation_stack_mega_20260609.jsonl",
+    "screened": "10_research\\recent_knowledge_base_20260609\\screened_simulation_stack_mega_20260609.jsonl",
+    "classic": "10_research\\recent_knowledge_base_20260609\\classic_theory_reference_mega_20260609.jsonl",
+    "official_sources": "10_research\\recent_knowledge_base_20260609\\official_simulation_tool_sources_20260609.json",
+    "merged_screened": "10_research\\recent_knowledge_base_20260609\\screened_knowledge_base_20260609.jsonl",
+    "merged_verify": "40_quality_evidence\\recent_knowledge_base_verification_20260609.json"
+  },
+  "errors": [
+    {
+      "source": "crossref",
+      "query": "urban park synthetic population demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=urban+park+synthetic+population+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population public space dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+public+space+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourism attraction synthetic population dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourism+attraction+synthetic+population+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population tourism attraction route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+tourism+attraction+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "commercial street synthetic population activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=commercial+street+synthetic+population+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population retail service willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+retail+service+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "retail service synthetic population dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=retail+service+synthetic+population+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population food beverage kiosk spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+food+beverage+kiosk+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population food beverage kiosk route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+food+beverage+kiosk+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "food beverage kiosk synthetic population willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=food+beverage+kiosk+synthetic+population+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population food beverage kiosk scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+food+beverage+kiosk+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population family recreation spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+family+recreation+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "family recreation synthetic population frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=family+recreation+synthetic+population+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "family recreation synthetic population willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=family+recreation+synthetic+population+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population older adults park dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+older+adults+park+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park synthetic population dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+synthetic+population+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population older adults park route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+older+adults+park+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population older adults park frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+older+adults+park+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park synthetic population frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+synthetic+population+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "openalex",
+      "query": "older adults park synthetic population demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "ConnectError('')"
+    },
+    {
+      "source": "crossref",
+      "query": "transit adjacent park synthetic population spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=transit+adjacent+park+synthetic+population+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population transit adjacent park frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+transit+adjacent+park+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "transit adjacent park synthetic population frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=transit+adjacent+park+synthetic+population+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population visitor flow activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+visitor+flow+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population visitor flow spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+visitor+flow+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "visitor flow synthetic population willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=visitor+flow+synthetic+population+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "leisure consumption synthetic population spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=leisure+consumption+synthetic+population+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "synthetic population leisure consumption scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=synthetic+population+leisure+consumption+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "leisure consumption synthetic population frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=leisure+consumption+synthetic+population+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "leisure consumption synthetic population scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=leisure+consumption+synthetic+population+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "urban park persona based agent simulation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=urban+park+persona+based+agent+simulation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation urban park dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+urban+park+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation urban park route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+urban+park+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "urban park persona based agent simulation scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=urban+park+persona+based+agent+simulation+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation public space demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+public+space+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation public space frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+public+space+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourism attraction persona based agent simulation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourism+attraction+persona+based+agent+simulation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourism attraction persona based agent simulation activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourism+attraction+persona+based+agent+simulation+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation public space scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+public+space+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation tourism attraction activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Server error '500 Server Error' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+tourism+attraction+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourism attraction persona based agent simulation dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourism+attraction+persona+based+agent+simulation+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation tourism attraction spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+tourism+attraction+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourism attraction persona based agent simulation route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourism+attraction+persona+based+agent+simulation+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation tourism attraction willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+tourism+attraction+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation tourism attraction frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+tourism+attraction+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation commercial street demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+commercial+street+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation commercial street spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+commercial+street+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation commercial street route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+commercial+street+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "commercial street persona based agent simulation dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=commercial+street+persona+based+agent+simulation+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation commercial street frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+commercial+street+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "commercial street persona based agent simulation willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=commercial+street+persona+based+agent+simulation+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation commercial street scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+commercial+street+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "retail service persona based agent simulation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=retail+service+persona+based+agent+simulation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation retail service demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+retail+service+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "retail service persona based agent simulation activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=retail+service+persona+based+agent+simulation+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation retail service activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+retail+service+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation retail service dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+retail+service+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation retail service willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+retail+service+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation retail service frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+retail+service+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation food beverage kiosk demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+food+beverage+kiosk+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation food beverage kiosk activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+food+beverage+kiosk+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "food beverage kiosk persona based agent simulation activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=food+beverage+kiosk+persona+based+agent+simulation+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "sports wellness park persona based agent simulation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=sports+wellness+park+persona+based+agent+simulation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "sports wellness park persona based agent simulation dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=sports+wellness+park+persona+based+agent+simulation+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "sports wellness park persona based agent simulation frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=sports+wellness+park+persona+based+agent+simulation+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation family recreation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+family+recreation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation family recreation activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+family+recreation+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "family recreation persona based agent simulation spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=family+recreation+persona+based+agent+simulation+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation family recreation route choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+family+recreation+route+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "family recreation persona based agent simulation frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=family+recreation+persona+based+agent+simulation+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "family recreation persona based agent simulation willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=family+recreation+persona+based+agent+simulation+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+persona+based+agent+simulation+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation older adults park activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+older+adults+park+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+persona+based+agent+simulation+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation dwell time",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+persona+based+agent+simulation+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation older adults park willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+older+adults+park+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+persona+based+agent+simulation+frequency+segmentation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation older adults park scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+older+adults+park+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=older+adults+park+persona+based+agent+simulation+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "older adults park persona based agent simulation route choice",
+      "block": "persona_synthetic_population",
+      "error": "ConnectError('')"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation transit adjacent park activity choice",
+      "block": "persona_synthetic_population",
+      "error": "ConnectError('[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)')"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation older adults park frequency segmentation",
+      "block": "persona_synthetic_population",
+      "error": "ConnectError('[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)')"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation transit adjacent park demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "ConnectError('[SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error (_ssl.c:1000)')"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation transit adjacent park willingness to pay",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+transit+adjacent+park+willingness+to+pay&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "transit adjacent park persona based agent simulation scenario simulation",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=transit+adjacent+park+persona+based+agent+simulation+scenario+simulation&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation visitor flow demand forecasting",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+visitor+flow+demand+forecasting&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "persona based agent simulation visitor flow activity choice",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=persona+based+agent+simulation+visitor+flow+activity+choice&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "visitor flow persona based agent simulation spending behavior",
+      "block": "persona_synthetic_population",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=visitor+flow+persona+based+agent+simulation+spending+behavior&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model park visitor visitor flow",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+park+visitor+visitor+flow&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "park visitor activity chain model consumption trigger",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=park+visitor+activity+chain+model+consumption+trigger&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model park visitor route sequence",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+park+visitor+route+sequence&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "park visitor activity chain model peak hour demand",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=park+visitor+activity+chain+model+peak+hour+demand&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model park visitor simulation calibration",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+park+visitor+simulation+calibration&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "urban recreation activity chain model consumption trigger",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=urban+recreation+activity+chain+model+consumption+trigger&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model urban recreation simulation calibration",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+urban+recreation+simulation+calibration&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "tourist itinerary activity chain model consumption trigger",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=tourist+itinerary+activity+chain+model+consumption+trigger&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model tourist itinerary origin destination",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+tourist+itinerary+origin+destination&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model tourist itinerary route sequence",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+tourist+itinerary+route+sequence&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model retail visitor consumption trigger",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+retail+visitor+consumption+trigger&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    },
+    {
+      "source": "crossref",
+      "query": "activity chain model retail visitor dwell time",
+      "block": "activity_chain_time_geography",
+      "error": "HTTPStatusError(\"Client error '429 Too Many Requests' for url 'https://api.crossref.org/works?query.bibliographic=activity+chain+model+retail+visitor+dwell+time&filter=from-pub-date%3A2025-01-01%2Ctype%3Ajournal-article&rows=20&select=DOI%2Ctitle%2Cpublished-print%2Cpublished-online%2Cpublished%2Ccontainer-title%2Cis-referenced-by-count%2Csubject%2Cabstract%2CURL%2Ctype'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429\")"
+    }
+  ]
+}

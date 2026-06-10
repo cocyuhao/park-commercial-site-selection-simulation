@@ -1,0 +1,905 @@
+{
+  "theme": "simulation_stack_persona_abm_mc",
+  "queries": [
+    {
+      "block": "persona_synthetic_population",
+      "query": "synthetic population agent based model urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "synthetic population activity based travel demand model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "synthetic population visitor behavior urban park",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "persona based agent simulation consumer behavior",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "LLM persona simulation human mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "generative agents persona behavior simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "visitor typology recreation site simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "tourist typology agent based simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "population synthesis small area travel demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "activity travel demand synthesis agent based modelling",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "mobile phone data synthetic population urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "GPS data synthetic population activity pattern",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "heterogeneous agents visitor flow simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "resident tourist worker persona park simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "consumer persona demand forecasting retail location",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "socioeconomic synthetic population leisure demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "age group persona urban park activity behavior",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "family visitor persona recreation demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "older adults persona park accessibility demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "persona_synthetic_population",
+      "query": "sports wellness visitor persona park behavior",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity chain model visitor flow urban park",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity based travel demand park visitor",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "time geography leisure activity simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "tourist itinerary activity chain simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "dwell time activity sequence retail visitor",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "spatio temporal visitor behavior activity chain",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "origin destination activity chain pedestrian simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity based model leisure consumption",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "daily activity schedule agent based simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "urban recreation activity pattern modeling",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "park visit activity sequence dwell time",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "visitor route activity chain public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "shopping activity chain consumer movement",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "tourism activity chain destination choice",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity based microsimulation urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "multi purpose trip activity chain retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity chain calibration mobile phone data",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "activity sequence prediction human mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "agent based itinerary simulation tourism",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "activity_chain_time_geography",
+      "query": "time use survey activity based travel demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based model park visitor flow simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based simulation pedestrian public space design",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "Mesa agent based modeling urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "Mesa Python agent based pedestrian simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based model commercial street pedestrian behavior",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "multi agent pedestrian simulation urban plaza",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "social force model pedestrian grouping avoidance simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "cellular automata pedestrian flow simulation public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "crowd simulation urban park visitor flow",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "pedestrian microsimulation route choice public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based pedestrian route choice attraction",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based simulation crowd density comfort",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "evacuation pedestrian simulation public park",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "multi agent simulation crowd bottleneck public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "pedestrian simulation calibration validation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based digital twin pedestrian simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "data driven agent based pedestrian behavior modeling",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "ABM visitor flow park service facility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "agent based simulation commercial complex pedestrian",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "abm_pedestrian_crowd_engine",
+      "query": "public space design optimization agent based simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "discrete choice model park recreation demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "multinomial logit visitor destination choice",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "nested logit tourist destination choice",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "store choice model visitor spending retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "destination choice model urban park visitor",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "Huff model retail location visitor flow",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "gravity model retail store choice consumer movement",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "spatial interaction model retail site selection",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "random utility model recreation demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "choice experiment willingness to pay urban recreation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "visitor willingness to pay urban park services",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "consumer choice model leisure service demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "destination choice mobility POI visits",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "activity destination choice travel demand model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "joint destination activity choice model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "price sensitivity discrete choice retail food beverage",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "mixed logit recreational site choice",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "latent class model visitor typology park",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "choice modeling urban green space visits",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "discrete_choice_spatial_interaction",
+      "query": "retail attraction model footfall destination choice",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "queue simulation cafe service throughput",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "discrete event simulation food beverage service capacity",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "SimPy queue simulation service capacity",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "service time queue model retail food beverage",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "capacity planning visitor attraction queue management",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "queue length wait time retail service simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "food court queue simulation demand capacity",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "kiosk service capacity queue simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "retail checkout queue simulation discrete event",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "visitor facility capacity queue model park",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "crowd bottleneck queue simulation public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "staffing optimization queue simulation service operations",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "inventory capacity demand simulation retail kiosk",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "service throughput optimization cafe simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "discrete event simulation small retail operations",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "queueing model visitor service public attraction",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "capacity constrained demand simulation food retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "peak hour queue simulation public space services",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "agent based queue behavior service facility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "queue_capacity_discrete_event",
+      "query": "operational digital twin queue service simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Monte Carlo simulation visitor flow revenue forecast",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Monte Carlo retail demand uncertainty simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Monte Carlo scenario analysis commercial site selection",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "P5 P50 P95 demand forecast Monte Carlo retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "uncertainty quantification agent based simulation urban",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "stochastic simulation park visitor demand forecasting",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "probabilistic decision support retail site selection",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Bayesian calibration Monte Carlo demand simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "sensitivity analysis visitor flow simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "global sensitivity analysis agent based model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "SALib sensitivity analysis simulation model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Latin hypercube sampling demand simulation retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "scenario based simulation visitor flow public space",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "baseline pilot full scenario Monte Carlo simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "coffee kiosk demand simulation foot traffic uncertainty",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "revenue forecast uncertainty food beverage visitor flow",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Monte Carlo conversion rate footfall dwell time",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "stochastic demand service capacity simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "Bayesian structural time series retail demand forecast",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "monte_carlo_uncertainty_sensitivity",
+      "query": "probabilistic forecast park visitor demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "agent based model calibration validation urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "ABM calibration validation visitor behavior",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "pedestrian model calibration validation mobile data",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "simulation model validation public space pedestrian",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "data assimilation agent based simulation urban mobility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "Bayesian calibration agent based model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "inverse calibration pedestrian simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "cross validation visitor flow forecasting",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "model validation Monte Carlo simulation demand",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "calibrating activity based travel demand model",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "calibrating queue simulation service operations",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "evidence grounded simulation decision support",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "simulation auditability evidence traceability",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "uncertainty communication simulation based decision support",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "human in the loop validation LLM agent simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "LLM agent simulation calibration validation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "RAG evidence grounded generation simulation report",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "structured output validation JSON schema LLM agent",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "agent trace execution provenance simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "calibration_validation_evidence",
+      "query": "observability trace evaluation AI agent workflow",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "Mesa Python agent based modeling framework",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "Mesa ABM Python documentation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "SimPy discrete event simulation Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "SimPy queue resource capacity simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "OR-Tools optimization facility location Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "SALib sensitivity analysis Python Monte Carlo",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "PyMC Bayesian calibration simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "NumPy Monte Carlo simulation demand forecasting",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "SciPy stochastic simulation Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "Mesa agent based modeling geospatial",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "mesa geo agent based model GIS Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "networkx pedestrian route choice simulation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "shapely geospatial Python pedestrian accessibility",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "geopandas urban mobility simulation Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "osmnx walkability route choice Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "simpy service operations queue retail",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "agentpy agent based model Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "cadquery shapely CAD geometry Python",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "ezdxf parse DWG DXF Python geospatial",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "tools_official_and_practical",
+      "query": "pydantic JSON schema LLM structured output validation",
+      "reference_class": "recent_priority"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Huff model retail location classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "gravity model spatial interaction retail classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "random utility discrete choice McFadden",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "activity based travel demand Bowman Ben Akiva",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "time geography Hagerstrand activity space",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "agent based modeling Epstein Axtell Sugarscape",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "social force model Helbing pedestrian dynamics",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "cellular automata pedestrian dynamics floor field model",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Monte Carlo simulation uncertainty analysis classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "queueing theory service capacity operations classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Law Kelton simulation modeling analysis validation",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Saltelli sensitivity analysis global methods",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Bayesian calibration computer models Kennedy O'Hagan",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "Holland genetic algorithms optimization classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "discrete event simulation queueing systems classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "space syntax pedestrian movement retail location",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "central place theory retail location classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "location allocation model facility location classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "agent based computational economics Tesfatsion classic",
+      "reference_class": "classic_theory"
+    },
+    {
+      "block": "classic_theory_reference",
+      "query": "microsimulation travel demand classic",
+      "reference_class": "classic_theory"
+    }
+  ]
+}

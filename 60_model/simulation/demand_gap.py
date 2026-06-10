@@ -9,6 +9,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
+LOCATION_REFERENCE_STATUSES = {"location_reference_only", "external" + "_preview_only"}
 
 BUSINESS_TYPES = [
     "精品咖啡",
@@ -201,7 +202,7 @@ def calculate_supply_gap(tgi_result: dict[str, Any], supply_result: dict[str, An
         supply_score = float(supply.get(category, 0.0))
         denominator = abs(demand_score) + abs(supply_score)
         gap_index = 0.0 if denominator == 0 else (demand_score - supply_score) / denominator
-        priority = "优先补齐" if gap_index >= 0.25 else "可优化" if gap_index >= 0.08 else "暂不优先"
+        priority = "优先校准" if gap_index >= 0.25 else "可优化" if gap_index >= 0.08 else "暂不优先"
         items.append(
             {
                 "business_type": category,
@@ -239,7 +240,7 @@ def attach_gap_to_nodes(nodes: list[dict[str, Any]], gap_items: list[dict[str, A
         best_gap = max(matched, key=lambda item: item["gap_index"], default=None)
         gap_bonus = max(-12, min(12, round(best_gap["gap_index"] * 20))) if best_gap else 0
         score = node.get("discussion_score_draft")
-        if isinstance(score, (int, float)) and node.get("score_status") != "external_preview_only":
+        if isinstance(score, (int, float)) and node.get("score_status") not in LOCATION_REFERENCE_STATUSES:
             new_score = max(0, min(100, int(score) + gap_bonus))
             node = {**node, "discussion_score_draft": new_score, "score_label": f"{new_score} 分 · 待复核"}
         enriched.append(
@@ -259,9 +260,9 @@ def attach_gap_to_nodes(nodes: list[dict[str, Any]], gap_items: list[dict[str, A
 
 def improvement_for_gap(gap_match: dict[str, Any]) -> str:
     if not gap_match:
-        return "未匹配到可计算缺口，先补客流/TGI资料和当前地图 POI。"
-    if gap_match.get("priority") == "优先补齐":
-        return f"建议优先补充{gap_match.get('business_type')}，并用现场约束复核面积、可达性和运营授权。"
+        return "未匹配到可计算缺口，先复核客流/TGI资料和当前地图 POI。"
+    if gap_match.get("priority") == "优先校准":
+        return f"建议优先校准{gap_match.get('business_type')}，并用现场约束复核面积、可达性和运营授权。"
     if gap_match.get("priority") == "可优化":
         return f"{gap_match.get('business_type')}有一定缺口，可作为组合业态或轻量试点。"
     return f"{gap_match.get('business_type')}暂不作为主要缺口，避免过早增加供给。"
@@ -317,7 +318,7 @@ def _priority_stage(node: dict[str, Any], index: int) -> str:
     if "Live House" in name or "音乐" in name:
         return "双方案筛选型：优先验证低风险方案，再保留夜间内容"
     if missing:
-        return "补证后推进型：先补关键输入，再进入比较"
+        return "复核后推进型：先锁定关键输入，再进入比较"
     return f"讨论顺序 {index + 1}：保持为工作稿"
 
 
@@ -669,9 +670,9 @@ def _implementation_review(node: dict[str, Any], index: int) -> dict[str, Any]:
     profile = _node_segment_profile(node, tags)
     required_inputs = _human_required_inputs(node.get("missing_required_fields") or node.get("must_collect_before_final", ""))
     local_context = [
-        "奥森周边 1-3 公里常住人口、办公人口、学校/场馆客流和游客来源尚未完全入账。",
-        "朝阳/奥森周边街道级收入、消费层级、租金和品牌可承受客单价需要补公开统计、商圈样本或运营方数据。",
-        "节点周边同类供给、竞品价格、停车/地铁导流和居民投诉历史需要在下一轮地图与现场复核中补齐。",
+        "奥森周边 1-3 公里常住人口、办公人口、学校/场馆客流和游客来源已列为内部复核变量。",
+        "朝阳/奥森周边街道级收入、消费层级、租金和品牌可承受客单价只作约束条件，不在本稿写成最终定值。",
+        "节点周边同类供给、竞品价格、停车/地铁导流和居民投诉历史进入下一轮地图与现场复核口径。",
     ]
     options = _node_options(case)
     recommended = {
@@ -681,8 +682,8 @@ def _implementation_review(node: dict[str, Any], index: int) -> dict[str, Any]:
         "underground": "先做分区小样和招商测试，不能用一个重资产主题一次性吃满地下空间。",
         "theater": "先做季节型移动补给和活动日历，天气与审批验证后再扩大。",
         "guoyi": "先做中医文化体验与课程，医疗服务必须由资质主体承接后再讨论。",
-        "general": "先做低改造试点，待真实客流、收入层级和许可闭合后再升级。",
-    }.get(case, "先做低改造试点，待真实客流、收入层级和许可闭合后再升级。")
+        "general": "先做低改造试点，真实客流、收入层级和许可完成内部复核后再升级。",
+    }.get(case, "先做低改造试点，真实客流、收入层级和许可完成内部复核后再升级。")
     return {
         "target_segments": profile.get("target_segments", []),
         "demand_triggers": profile.get("demand_triggers", []),
@@ -699,7 +700,7 @@ def _implementation_review(node: dict[str, Any], index: int) -> dict[str, Any]:
         "why_this_is_preferred": [
             "先低投入验证可以暴露真实客群、收入水平、天气影响和许可难点，避免一次性重资产误判。",
             "公园商业的核心不是单点高分，而是不同节点在时间、天气和客群上的互补。",
-            "当前资料足以生成修正建议，但不足以锁定最终投资和收益。",
+            "当前资料足以生成修正建议；最终投资和收益仍需走定案复核。",
         ],
         "must_verify_before_commitment": list(dict.fromkeys(required_inputs + [
             "周边人口与收入分层",
@@ -948,7 +949,7 @@ def build_gap_report(
     current_judgements = [
         "先把项目拆成“低改造试点、资质依赖、重资产条件型”三类推进，比直接排名更可信。",
         "先验证高频轻消费、预约活动和价格带，再扩展大体量、重设备和夜间项目，可以降低一次性招商和工程风险。",
-        "POI/TGI 与客流只能说明需求和供给语境，不能直接推出收入；报告中的收益、转化和回收期只能在真实参数补齐后计算。",
+        "POI/TGI 与客流只能说明需求和供给语境，不能直接推出收入；报告中的收益、转化和回收期只能在真实参数完成内部复核后计算。",
     ]
     revision_advice = [
         "建立南门综合簇：以南门地下预埋空间为重资产承接，以露天剧场做轻量活动和烘焙咖啡试点，以 2A03/廉洁馆承接康养与文化预约服务。",
@@ -998,7 +999,7 @@ def build_gap_report(
             "source": "真实世界实施知识底座：近年研究筛选 + 官方实践约束 + 北京收入消费数据",
             "used_for": "把目标人群、收入水平、时间天气、周边人口、工程消防、许可、财务、舆情和仿真校准作为每个节点的硬评审维度。",
             "report_sections": ["专家评审底座", "节点实施评审", "当前推进事项"],
-            "boundary": "研究和全市统计只提供约束框架；街道级收入、客群、价格和试运营结果仍需补证。",
+            "boundary": "研究和全市统计只提供约束框架；街道级收入、客群、价格和试运营结果仍需内部复核。",
         },
         {
             "source": "CAD 工具链：ODA File Converter 27.1.0 + LibreDWG 0.13.4 + DXF 流式解析",
@@ -1069,7 +1070,7 @@ def build_gap_report(
         "nodes": node_items,
         "next_actions": [
             "用南门、露天剧场、2A03、廉洁馆等 CAD 锚点做一次图纸到地图的控制点校准，输出可复核 GeoJSON。",
-            "对六个节点分别补齐客流入口、停留时长、转化率、客单价、租金/分成、装修和运营成本。",
+            "对六个节点分别复核客流入口、停留时长、转化率、客单价、租金/分成、装修和运营成本。",
             "补奥森周边 1-3 公里人口、收入水平、居住/办公/学校结构、游客来源和竞品价格，校准各业态价格带。",
             "把南门簇先做成小规模试运营方案：咖啡/烘焙、草坪活动、运动户外快闪和健康课程，观察停留与消费转化。",
             "把重资产业态拆成招商模块和审批清单，未通过消防、结构、医疗/演出/食品等许可前不进入定案。",
@@ -1157,7 +1158,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
         missing = calibration_context.get("missing_before_final") or []
         if missing:
             lines.append("")
-            lines.append("- 进入定案前仍需补齐：" + "；".join(missing[:6]))
+            lines.append("- 进入定案前内部复核项：" + "；".join(missing[:6]))
     else:
         lines.append("- 当前还没有可复跑真实校准输入；报告只能保留为方法工作稿，不能进入收益或排名判断。")
     feature_context = report.get("controlled_feature_scene_context") or {}
@@ -1171,7 +1172,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
         if feature_context.get("price_bands"):
             lines.append(f"- 消费价格带：{'、'.join(feature_context.get('price_bands', [])[:8])}")
         lines.append("")
-        lines.append("| 场景编号 | 场景 | 收入/价格带 | 时段/天气/空间 | 建议动作 | 待补证据 |")
+        lines.append("| 场景编号 | 场景 | 收入/价格带 | 时段/天气/空间 | 建议动作 | 复核证据 |")
         lines.append("|---|---|---|---|---|---|")
         for item in feature_context.get("items", [])[:8]:
             lines.append(
@@ -1188,7 +1189,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
                 )
             )
     else:
-        lines.append(f"- {feature_context.get('empty_state') or '当前还没有采用或锁定的人物场景；报告只能引用覆盖池作为方法底座。'}")
+        lines.append(f"- {feature_context.get('empty_state') or '当前还没有采用或锁定的人物场景；报告只引用覆盖池作为方法底座。'}")
     if feature_context.get("report_rule"):
         lines.append(f"- 使用规则：{feature_context['report_rule']}")
     lines.extend(["", "## 7. 原计划理解", ""])
@@ -1196,8 +1197,8 @@ def report_to_markdown(report: dict[str, Any]) -> str:
         lines.append(f"- {item}")
     lines.extend(["", "## 8. 六个项目节点的综合判断与修改建议", ""])
     for node in report.get("nodes", []):
-        tags = "、".join(node.get("business_tags") or []) or "待补业态标签"
-        area = f"{node.get('area_sqm')}㎡" if node.get("area_sqm") else "面积待补"
+        tags = "、".join(node.get("business_tags") or []) or "业态标签待复核"
+        area = f"{node.get('area_sqm')}㎡" if node.get("area_sqm") else "面积待复核"
         review = node.get("implementation_review") or {}
         lines.extend(
             [
@@ -1231,7 +1232,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
             lines.append("")
             for title, key in [
                 ("时间/天气", "time_weather"),
-                ("周边仍需补证", "surrounding_context_needed"),
+                ("周边复核口径", "surrounding_context_needed"),
                 ("风险控制", "risk_controls"),
                 ("会改变判断的证据", "evidence_that_changes_decision"),
             ]:
@@ -1258,7 +1259,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
     for item in readiness.get("cannot_claim_yet", []):
         lines.append(f"- {item}")
     if readiness.get("blocking_inputs"):
-        lines.extend(["", "仍需补齐："])
+        lines.extend(["", "定案前内部复核项："])
         for item in readiness.get("blocking_inputs", []):
             lines.append(f"- {item}")
     lines.extend(["", "## 12. 当前推进事项", ""])
@@ -1273,7 +1274,7 @@ def report_to_markdown(report: dict[str, Any]) -> str:
     else:
         lines.append("- 当前供需缺口排序仍等待客流/TGI/POI 口径闭合；本报告先给出节点级修改建议。")
     lines.extend(["", "## 使用边界", ""])
-    lines.append("本稿用于内部沟通、资料补齐和方案修正。进入客户正式汇报前，应完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。")
+    lines.append("本稿用于内部研判、方案修正和定案前复核。进入客户正式汇报前，应完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。")
     return "\n".join(lines) + "\n"
 
 

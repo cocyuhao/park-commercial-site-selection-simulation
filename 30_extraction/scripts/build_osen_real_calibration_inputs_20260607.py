@@ -65,7 +65,7 @@ def normalize_supplement(row: dict[str, Any], index: int) -> dict[str, str]:
         "source_strength": str(row.get("source_strength") or "local_user_supplement"),
         "simulation_use": str(row.get("simulation_use") or "作为用户补充校准输入进入预检和报告，待人工复核后用于仿真参数。"),
         "cannot_claim": str(row.get("cannot_claim") or "不能直接写成最终收益、最终排名、真实转化或投资定案。"),
-        "next_data_needed": str(row.get("next_data_needed") or "补来源文件、采集口径、时段、样本量、复核人和可追溯证据。"),
+        "next_data_needed": str(row.get("next_data_needed") or "复核来源文件、采集口径、时段、样本量、复核人和可追溯证据。"),
         "raw_text_snippet": str(row.get("raw_text_snippet") or row.get("note") or "用户补充校准输入，等待来源复核。"),
         "output_status": "needs_review",
     }

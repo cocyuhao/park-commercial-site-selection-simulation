@@ -49,6 +49,7 @@ python 30_extraction/scripts/verify_pdf_tables.py
 | `findings.md` | 关键发现和结论 |
 | `00_control/decisions.md` | 架构决策记录 |
 | `00_control/plugin_routing.md` | 插件路由规则 |
+| `00_control/current_knowledge_base.md` | 当前近年核心知识库入口、调用方法和融合架构 |
 | `40_quality_evidence/evidence_ledger.csv` | 证据台账（52 条）|
 | `30_extraction/tables/pdf_native_tables.jsonl` | 329 张 PDF 表格 |
 
@@ -86,6 +87,7 @@ python 30_extraction/scripts/verify_pdf_tables.py
 4. `findings.md`
 5. `00_control/decisions.md`
 6. `00_control/plugin_routing.md`
+7. `00_control/current_knowledge_base.md`
 
 ---
 

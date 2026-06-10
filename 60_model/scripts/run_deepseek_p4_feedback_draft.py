@@ -174,7 +174,7 @@ def normalize(payload: dict[str, Any], nodes: list[dict[str, str]]) -> dict[str,
 def main() -> None:
     nodes = read_csv(ROOT / "70_outputs" / "processed_tables" / "p2_project_node_candidates.csv")
     context = {
-        "user_correction": "用户确认客流以最开始资料为准，缺失数据保留缺失；允许先用假设做P4反馈草案，用于向别人反馈并启动补数据。",
+        "user_correction": "用户确认客流以最开始资料为准，缺失数据保留缺失；允许先用假设做P4反馈草案，用于向别人反馈并启动数据复核。",
         "plan_excerpt": read_text(ROOT / "30_extraction" / "p2_real_site" / "osen_project_plan_text.txt"),
         "nodes": nodes,
         "scenes": read_csv(ROOT / "70_outputs" / "processed_tables" / "p2_business_scene_assumption_pool.csv"),
@@ -186,7 +186,7 @@ def main() -> None:
             "role": "user",
             "content": (
                 "请输出严格JSON：summary, node_priority_draft[6], scenario_matrix_draft[12], data_request_to_partner[12], output_status。"
-                "这是一版给合作方反馈、推动补数据的P4 draft，可以使用占位转化率/客单价区间，但必须明确not_final、needs_review、缺什么补什么。"
+                "这是一版给合作方反馈、推动数据复核的P4 draft，可以使用占位转化率/客单价区间，但必须明确not_final、needs_review、缺失项如何复核。"
                 "不要输出最终推荐、最终收益预测或checked结论。上下文："
                 + json.dumps(context, ensure_ascii=False)
             ),

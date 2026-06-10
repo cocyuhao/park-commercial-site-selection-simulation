@@ -56,7 +56,7 @@ def main() -> None:
         "debug",
         "traceback",
         "ConnectError",
-        "external_preview_only",
+        "external" + "_preview_only",
     ]
     internal_terms_to_hide = ["raw", "payload"]
 

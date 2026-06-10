@@ -149,8 +149,8 @@
             </section>
             <section class="panel">
               <div class="panel-head">
-                <h2>待补资料与决策动作</h2>
-                <button class="text-btn" data-view="data">看补数清单</button>
+                <h2>当前推进事项与决策动作</h2>
+                <button class="text-btn" data-view="data">看复核清单</button>
               </div>
               <div id="overviewNextSteps" class="next-step-list"></div>
             </section>
@@ -248,7 +248,7 @@
               <div class="panel-head">
                 <div>
                   <h2 id="detailTitle">节点详情</h2>
-                  <p id="detailSubtitle">面积、业态、场景假设、合作模式、待补数据</p>
+                  <p id="detailSubtitle">面积、业态、场景假设、合作模式、复核数据</p>
                 </div>
                 <span id="statusTag" class="status-pill danger">待人工确认</span>
               </div>
@@ -437,7 +437,7 @@
               <div class="panel-head">
                 <div>
                   <h2>奥森商业改造预测与调整方案报告</h2>
-                  <p>报告基于已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型生成，主文用于预测与调整，不再让补资料成为主线。</p>
+                  <p>报告基于已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型生成，主文聚焦预测、调整和可执行动作。</p>
                 </div>
                 <div class="report-actions">
                   <a id="downloadReportDraftBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=docx" data-action="download-report-draft" aria-label="下载 DOCX 预测调整报告">下载 DOCX 报告</a>
@@ -492,7 +492,7 @@
                   <div class="composer-tools">
                     <button id="attachBtn" class="composer-icon-btn" type="button" aria-label="上传资料">+</button>
                     <button type="button" data-ai-prompt="请综合当前上传资料、地图 POI 和节点缺口，先给出三条最应该处理的问题。">快速分析</button>
-                    <button type="button" data-ai-prompt="请把我上传的资料拆成节点、证据、待补数据三类，并说明哪些能直接用于本项目。">资料解析</button>
+                    <button type="button" data-ai-prompt="请把我上传的资料拆成节点、证据、复核变量三类，并说明哪些能直接用于本项目。">资料解析</button>
                     <button type="button" data-ai-prompt="请按给客户看的语气，重写当前报告摘要：先判断，再依据，最后下一步。">报告润色</button>
                     <button type="button" id="composerReportBtn">生成报告</button>
                     <button type="button" data-ai-prompt="请核对当前地图目标、POI 和节点之间的关系，指出不该强行套用的地方。">地图核对</button>

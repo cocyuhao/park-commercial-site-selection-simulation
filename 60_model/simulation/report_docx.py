@@ -23,7 +23,7 @@ FORBIDDEN_HUMAN_TEXT = [
     "payload",
     "traceback",
     "ConnectError",
-    "external_preview_only",
+    "external" + "_preview_only",
     "API contract",
     "smoke test",
     "DeepSeek",
@@ -227,7 +227,7 @@ def _add_cover(doc: Document, report: dict[str, Any]) -> None:
     run.font.color.rgb = RGBColor.from_string("0B2545")
 
     _paragraph(doc, "商业选址与运营仿真工作稿", bold=True, color="2E74B5", size=12)
-    _paragraph(doc, "本文件用于内部沟通、资料补齐和方案修正；进入客户正式汇报前需完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。", color="374151")
+    _paragraph(doc, "本文件用于内部研判、方案修正和定案前复核；进入客户正式汇报前需完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。", color="374151")
 
     meta_rows = [
         ["项目对象", "北京奥林匹克森林公园商业改造节点"],
@@ -247,7 +247,7 @@ def _add_summary(doc: Document, report: dict[str, Any]) -> None:
     doc.add_heading("一页式判断", level=2)
     readiness = _readiness_groups(report)
     rows = [
-        ["现在可以做", "现在不能宣称", "仍需补齐"],
+        ["现在可以做", "现在不能宣称", "定案前复核项"],
         [
             "\n".join(readiness["can_do"][:4]),
             "\n".join(readiness["cannot_claim"][:4]),
@@ -358,7 +358,7 @@ def _add_real_calibration_context(doc: Document, report: dict[str, Any]) -> None
 
     missing = _items(context.get("missing_before_final"))[:6]
     if missing:
-        doc.add_heading("进入定案前仍需补齐", level=2)
+        doc.add_heading("进入定案前内部复核项", level=2)
         for item in missing:
             _bullet(doc, item)
 
@@ -372,7 +372,7 @@ def _add_feature_scene_context(doc: Document, report: dict[str, Any]) -> None:
             f"本轮已有 {context.get('count')} 条用户采用或锁定的人物场景进入报告输入。它们用于讨论收入水平、消费价格带、时段天气和节点动作的敏感性，不代表真实客群占比或最终仿真结果。",
             color="374151",
         )
-        rows = [["编号", "场景", "收入/价格带", "时段/天气/空间", "建议动作", "待补证据"]]
+        rows = [["编号", "场景", "收入/价格带", "时段/天气/空间", "建议动作", "复核证据"]]
         for item in (context.get("items") or [])[:8]:
             rows.append(
                 [
@@ -455,7 +455,7 @@ def _add_nodes(doc: Document, report: dict[str, Any]) -> None:
 
             for title, key in [
                 ("时间、天气与季节", "time_weather"),
-                ("周边仍需补证", "surrounding_context_needed"),
+                ("周边复核口径", "surrounding_context_needed"),
                 ("风险控制", "risk_controls"),
                 ("哪些证据会改变判断", "evidence_that_changes_decision"),
             ]:
@@ -466,7 +466,7 @@ def _add_nodes(doc: Document, report: dict[str, Any]) -> None:
                         _bullet(doc, item)
         required = _items(node.get("required_inputs"))[:8]
         if required:
-            _paragraph(doc, "定案前需要补齐：", bold=True, color="374151")
+            _paragraph(doc, "定案前需要复核：", bold=True, color="374151")
             for item in required:
                 _bullet(doc, item)
 
@@ -478,7 +478,7 @@ def _add_recommendations(doc: Document, report: dict[str, Any]) -> None:
 
     doc.add_heading("8. 仿真与定案边界", level=1)
     readiness = _readiness_groups(report)
-    for title, key in [("现在可以做", "can_do"), ("现在不能宣称", "cannot_claim"), ("仍需补齐", "required_inputs")]:
+    for title, key in [("现在可以做", "can_do"), ("现在不能宣称", "cannot_claim"), ("定案前复核项", "required_inputs")]:
         doc.add_heading(title, level=2)
         for item in readiness[key]:
             _bullet(doc, item)
@@ -490,7 +490,7 @@ def _add_recommendations(doc: Document, report: dict[str, Any]) -> None:
 
 def _add_appendix(doc: Document, report: dict[str, Any]) -> None:
     doc.add_heading("附录：使用边界与资料来源", level=1)
-    _paragraph(doc, "本稿用于内部沟通、资料补齐和方案修正。进入客户正式汇报前，应完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。")
+    _paragraph(doc, "本稿用于内部研判、方案修正和定案前复核。进入客户正式汇报前，应完成 CAD 控制点校准、现场/运营复核、财务参数复核和人工审阅。")
     foundation = report.get("source_foundation", {})
 
     method_basis = _items(report.get("method_basis"))

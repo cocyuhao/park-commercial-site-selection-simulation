@@ -1,0 +1,30 @@
+{
+  "base": "http://127.0.0.1:8081",
+  "rows": [
+    {
+      "endpoint": "/",
+      "status_code": 200,
+      "bytes": 26992,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "endpoint": "/api/dashboard",
+      "status_code": 200,
+      "bytes": 423959,
+      "content_type": "application/json"
+    },
+    {
+      "endpoint": "/api/reports/site-selection",
+      "status_code": 200,
+      "bytes": 66926,
+      "content_type": "application/json"
+    },
+    {
+      "endpoint": "/api/reports/site-selection/download?format=docx",
+      "status_code": 200,
+      "bytes": 45822,
+      "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    }
+  ],
+  "status": "pass"
+}

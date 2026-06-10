@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-06-09T21:13:49",
+  "status": "fetched",
+  "query_count": 5440,
+  "completed_query_count": 5440,
+  "remaining_query_count": 0,
+  "last_batch_raw_count": 1600,
+  "last_batch_error_count": 160,
+  "raw_file": "10_research\\recent_knowledge_base_20260609\\raw_computation_model_mega_20260609.jsonl",
+  "error_file": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_fetch_errors_20260609.jsonl",
+  "progress_file": "10_research\\recent_knowledge_base_20260609\\computation_model_mega_query_progress_20260609.jsonl"
+}

@@ -1,0 +1,1342 @@
+{
+  "status": "review",
+  "generated_at": "2026-06-09T09:55:44",
+  "rule": "全仓文本遍历；归档和 durable 历史记录不等于当前客户可见问题，但会标注风险。",
+  "scanned_file_count": 1192,
+  "skipped_large_text_count": 16,
+  "skipped_large_text_files": [
+    {
+      "path": "90_archive/after_0100_quarantine_20260607_074257/10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json",
+      "bytes": 19625511
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json",
+      "bytes": 19625511
+    },
+    {
+      "path": "90_archive/after_0100_quarantine_20260607_074257/10_research/expert_implementation_knowledge_20260607/checkpoint.json",
+      "bytes": 10095977
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/10_research/expert_implementation_knowledge_20260607/checkpoint.json",
+      "bytes": 10095977
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/third-party-web/dist/domain-map.csv",
+      "bytes": 6205312
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/web-features/data.json",
+      "bytes": 4631496
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/chromium-bidi/lib/iife/mapperTab.js.map",
+      "bytes": 4406538
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3206963
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/playwright-core/lib/utilsBundle.js",
+      "bytes": 3093405
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/playwright/lib/transform/babelBundle.js",
+      "bytes": 2789601
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/@paulirish/trace_engine/test/invalid-animation-events.json.gz",
+      "bytes": 2374270
+    },
+    {
+      "path": "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+      "bytes": 2275733
+    },
+    {
+      "path": "90_archive/after_0100_quarantine_20260607_074257/70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+      "bytes": 2275733
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
+      "bytes": 2275733
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/chromium-bidi/lib/cjs/protocol-parser/generated/webdriver-bidi.d.ts",
+      "bytes": 2271192
+    },
+    {
+      "path": "90_p6_expert_dashboard/qa/node_modules/chromium-bidi/lib/esm/protocol-parser/generated/webdriver-bidi.d.ts",
+      "bytes": 2271192
+    }
+  ],
+  "finding_count": 21338,
+  "severity_counts": {
+    "context": 7290,
+    "low": 3175,
+    "medium": 2473,
+    "archive": 8400
+  },
+  "surface_counts": {
+    "durable_context": 7290,
+    "other": 3175,
+    "active_code": 2387,
+    "delivery_internal": 735,
+    "customer_visible": 86,
+    "archive": 7170,
+    "model_run_archive": 495
+  },
+  "group_counts": {
+    "ai_boundary": 7782,
+    "personal_path": 514,
+    "old_gate_language": 1879,
+    "internal_token": 9162,
+    "client_boundary": 568,
+    "old_node_default": 1433
+  },
+  "top_files": [
+    {
+      "path": "40_quality_evidence/agent_editor_influence_surface_audit_20260609.json",
+      "counts": {
+        "context": 2110
+      }
+    },
+    {
+      "path": "30_extraction/tables/pdf_table_evidence_candidates_deepseek.csv",
+      "counts": {
+        "low": 1184
+      }
+    },
+    {
+      "path": "30_extraction/scripts/verify_project_implementation.py",
+      "counts": {
+        "medium": 734
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/30_extraction/scripts/verify_project_implementation.py",
+      "counts": {
+        "archive": 722
+      }
+    },
+    {
+      "path": "30_extraction/tables/pdf_evidence_candidate_review_queue.csv",
+      "counts": {
+        "low": 592
+      }
+    },
+    {
+      "path": "40_quality_evidence/verification/implementation_verification_20260526.csv",
+      "counts": {
+        "context": 431
+      }
+    },
+    {
+      "path": "40_quality_evidence/verification/implementation_verification_20260526.md",
+      "counts": {
+        "context": 416
+      }
+    },
+    {
+      "path": "progress.md",
+      "counts": {
+        "context": 366
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/progress.md",
+      "counts": {
+        "archive": 358
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/40_quality_evidence/verification/implementation_verification_20260526.csv",
+      "counts": {
+        "archive": 357
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/40_quality_evidence/verification/implementation_verification_20260526.md",
+      "counts": {
+        "archive": 342
+      }
+    },
+    {
+      "path": "30_extraction/tables/pdf_table_topic_draft_deepseek.csv",
+      "counts": {
+        "low": 329
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_173537/ai_sessions.json",
+      "counts": {
+        "archive": 311
+      }
+    },
+    {
+      "path": "handoff_next_chat.md",
+      "counts": {
+        "context": 292
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/handoff_next_chat.md",
+      "counts": {
+        "archive": 286
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_173537/simulation_objects.json",
+      "counts": {
+        "archive": 284
+      }
+    },
+    {
+      "path": "90_archive/codex_rollback_snapshot_20260607_072523/90_p6_expert_dashboard__app.py",
+      "counts": {
+        "archive": 253
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/90_archive/codex_rollback_snapshot_20260607_072523/90_p6_expert_dashboard__app.py",
+      "counts": {
+        "archive": 253
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/90_p6_expert_dashboard/app.py",
+      "counts": {
+        "archive": 253
+      }
+    },
+    {
+      "path": "findings.md",
+      "counts": {
+        "context": 250
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/findings.md",
+      "counts": {
+        "archive": 245
+      }
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "counts": {
+        "medium": 234
+      }
+    },
+    {
+      "path": "40_quality_evidence/deepseek_p3_calibration_execution_package.json",
+      "counts": {
+        "context": 219
+      }
+    },
+    {
+      "path": "00_control/decisions.md",
+      "counts": {
+        "context": 206
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/00_control/decisions.md",
+      "counts": {
+        "archive": 206
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_173623/simulation_objects.json",
+      "counts": {
+        "archive": 192
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_173703/simulation_objects.json",
+      "counts": {
+        "archive": 192
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_180038/simulation_objects.json",
+      "counts": {
+        "archive": 192
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260609_093845/simulation_objects.json",
+      "counts": {
+        "archive": 192
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260609_094223/simulation_objects.json",
+      "counts": {
+        "archive": 192
+      }
+    },
+    {
+      "path": "90_p6_expert_dashboard/cache/simulation_objects.json",
+      "counts": {
+        "medium": 192
+      }
+    },
+    {
+      "path": "40_quality_evidence/verification/implementation_verification_20260524.md",
+      "counts": {
+        "context": 159
+      }
+    },
+    {
+      "path": "40_quality_evidence/verification/implementation_verification_20260524.csv",
+      "counts": {
+        "context": 151
+      }
+    },
+    {
+      "path": "90_archive/after_0100_quarantine_20260607_074257/10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json",
+      "counts": {
+        "archive": 150
+      }
+    },
+    {
+      "path": "90_archive/pre_rollback_after_0100_snapshot_20260607_074108/10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json",
+      "counts": {
+        "archive": 150
+      }
+    },
+    {
+      "path": "40_quality_evidence/project_context_legacy_risk_audit_20260605.json",
+      "counts": {
+        "context": 137
+      }
+    },
+    {
+      "path": "60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl",
+      "counts": {
+        "archive": 126
+      }
+    },
+    {
+      "path": "40_quality_evidence/historical_issue_surface_audit_20260608.json",
+      "counts": {
+        "context": 121
+      }
+    },
+    {
+      "path": "40_quality_evidence/evidence_ledger.csv",
+      "counts": {
+        "context": 120
+      }
+    },
+    {
+      "path": "90_archive/runtime_cache_before_cleanup_20260608/20260608_173537/expert_feedback.json",
+      "counts": {
+        "archive": 106
+      }
+    }
+  ],
+  "active_high_findings": [],
+  "active_medium_sample": [
+    {
+      "path": "60_model/README.md",
+      "surface": "active_code",
+      "line": 26,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "- DeepSeek 只辅助整理个性化需求、场景草稿和解释文本，不直接决定概率、收益或候选点排序。",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/osen_prediction_adjustment_report_20260607.html",
+      "surface": "customer_visible",
+      "line": 154,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "<li>方法落地：ROTE: 运动家庭-购物-儿童托管-离开；RL+LLM: 动作空间复杂，先用规则和小样本反馈约束。</li>",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/osen_prediction_adjustment_report_20260607.html",
+      "surface": "customer_visible",
+      "line": 208,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "<li>方法来源：HumanLM、ROTE、RL+LLM 双重奖励、SSR/FLR、Agent Bank、Huff/Logit/Gravity 的本地工程化约束。</li>",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/osen_prediction_adjustment_report_20260607.md",
+      "surface": "customer_visible",
+      "line": 125,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "- 方法落地：ROTE: 运动家庭-购物-儿童托管-离开；RL+LLM: 动作空间复杂，先用规则和小样本反馈约束。",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/osen_prediction_adjustment_report_20260607.md",
+      "surface": "customer_visible",
+      "line": 184,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "- 方法来源：HumanLM、ROTE、RL+LLM 双重奖励、SSR/FLR、Agent Bank、Huff/Logit/Gravity 的本地工程化约束。",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 5,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 6,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 52,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "\"source\": \"老板资料 / 高清社区仿真：GIS/BIM + RL + LLM + 双重奖励\",",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 61,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "\"source\": \"现代论文：MobiVerse / CAMS / CitySim 等 LLM 城市移动仿真\",",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 554,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 555,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 716,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 717,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 881,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 882,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1047,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1048,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1211,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1212,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1374,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "80_delivery/site_selection_gap_report_latest.json",
+      "surface": "customer_visible",
+      "line": 1375,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": true",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 200,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "status: str = \"needs_review\"",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 305,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 306,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 400,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"status\": str(row.get(\"status\") or row.get(\"probability_status\") or \"needs_review\"),",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 411,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 412,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 617,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 618,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 691,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 692,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 916,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1431,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "f\"同时接入 {real_calibration['count']} 条分层真实校准输入；完整仿真仍被街道级数据和 P3 门禁阻止。\"",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1434,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "else f\"对象组合可以进入结构化预检，并接入 {real_calibration['count']} 条真实校准输入；但完整仿真仍被街道级数据和 P3 门禁阻止。\"",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1436,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "else \"完整仿真被阻止且未放行：请先选择人群状态、行为程序、选择概率和验证目标；即使选齐，也要通过真实校准数据和 P3 门禁后才能宣称完整仿真。\"",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1438,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "\"deepseek_role\": \"DeepSeek 仅负责候选整理、解释和工作稿；不逐游客实时仿真，不输出最终概率、排名或收益。\",",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1449,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1450,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1465,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "for gate in gates",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1466,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "if gate.get(\"required_before_p4_conclusion\") == \"yes\"",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1467,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "and gate.get(\"current_gate_status\") not in {\"closed\", \"passed\"}",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1477,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "for gate in gates:",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1478,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "if gate.get(\"required_before_p4_conclusion\") == \"yes\" and gate.get(\"current_gate_status\") not in {\"closed\", \"passed\"}:",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1479,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "domain = str(gate.get(\"calibration_domain\") or \"\")",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1629,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "\"label\": \"资料门禁\",",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1709,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "evidence_hint=\"TGI and POI gap are needs_review / not_final\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1918,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 1981,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": priority.get(\"output_status\") or row.get(\"output_status\") or \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2010,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "\"复核 P3 gate 真实来源\",",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2150,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2188,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "payload = response.json()",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2189,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "for poi in payload.get(\"pois\") or []:",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2207,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2244,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2259,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2272,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2280,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2312,
+      "group": "old_node_default",
+      "name": "youth_lake_scope",
+      "severity": "medium",
+      "text": "\"keyword\": \"青年湖公园\",",
+      "note": "青年湖曾与奥森资料混用；当前奥森链路中出现需复核上下文。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2313,
+      "group": "old_node_default",
+      "name": "youth_lake_scope",
+      "severity": "medium",
+      "text": "\"matched_name\": \"青年湖公园\",",
+      "note": "青年湖曾与奥森资料混用；当前奥森链路中出现需复核上下文。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2319,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2320,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2462,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2463,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2570,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2571,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2637,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "headers = {\"User-Agent\": \"p6-expert-dashboard/0.1 needs_review boundary lookup\"}",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2773,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "def current_project_from_payload(payload: dict[str, Any]) -> dict[str, str]:",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2774,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "context = payload.get(\"amap\", {}).get(\"map_context\", {})",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2795,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2796,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2808,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "payload: dict[str, Any],",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2815,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "project = current_project_from_payload(payload)",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2827,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2828,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2853,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"needs_review / not_final\": \"待人工确认\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2854,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"needs_review\": \"待人工确认\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2855,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": \"非最终结论\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2859,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "\"debug\": \"诊断信息\",",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2860,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "\"raw payload\": \"原始资料\",",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2861,
+      "group": "ai_boundary",
+      "name": "ai_provider_leak",
+      "severity": "medium",
+      "text": "\"DeepSeek\": \"AI 助手\",",
+      "note": "AI 供应商/内部链路不应进入客户可见面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2946,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2947,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2966,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "raw = str(value or \"\").strip()",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2979,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "raw = legacy_map.get(raw, raw)",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2981,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "if raw in valid:",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 2982,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "return raw",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3158,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"output_status\": \"needs_review\",",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3159,
+      "group": "internal_token",
+      "name": "draft_state",
+      "severity": "medium",
+      "text": "\"not_final\": True,",
+      "note": "内部状态应映射成人话；客户材料不应出现。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3297,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "raw = zf.read(name).decode(\"utf-8\", errors=\"ignore\")",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3298,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "text = re.sub(r\"<[^>]+>\", \" \", raw)",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3319,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "for gate, keywords in gate_keywords.items():",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3321,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "related_gates.append(gate)",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3418,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "def summarize_gap_context(payload: dict[str, Any]) -> dict[str, Any]:",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3419,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "gates = payload.get(\"p3_gates\", [])",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3420,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "gaps = payload.get(\"p2_gaps\", [])",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3422,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "gate.get(\"calibration_domain\") or gate.get(\"gate_name\") or gate.get(\"gate_id\")",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3423,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "for gate in gates",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3424,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "if \"pass\" not in str(gate.get(\"gate_status\") or gate.get(\"status\") or \"\").lower()",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3434,
+      "group": "old_gate_language",
+      "name": "gate_jargon",
+      "severity": "medium",
+      "text": "\"business_language_rule\": \"对用户回答时不要使用 P2/P3/GATE 编号；改说图纸、客流、转化、收益成本、运营授权等业务缺口。\",",
+      "note": "门禁/测试术语只能留在工程证据，不应进入客户面。"
+    },
+    {
+      "path": "90_p6_expert_dashboard/app.py",
+      "surface": "active_code",
+      "line": 3443,
+      "group": "internal_token",
+      "name": "raw_debug_payload",
+      "severity": "medium",
+      "text": "def node_context(payload: dict[str, Any], node_id: str | None) -> dict[str, Any]:",
+      "note": "测试诊断允许，产品文案和客户报告不允许。"
+    }
+  ]
+}

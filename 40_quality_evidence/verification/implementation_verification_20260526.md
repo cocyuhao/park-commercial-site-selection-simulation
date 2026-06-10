@@ -2,10 +2,10 @@
 
 ## 结论
 
-- 总检查项：1168
-- 状态统计：{'pass': 1168}
+- 总检查项：1149
+- 状态统计：{'pass': 1067, 'warn': 82}
 - 失败项：0
-- 警告项：0
+- 警告项：82
 
 ## 覆盖范围
 
@@ -62,8 +62,8 @@
 - `IMPL-028` `pass` `files` 60_model/scripts/review_deepseek_p0_detail_query_plan.py exists=True, bytes=5125
 - `IMPL-029` `pass` `files` 60_model/scripts/run_deepseek_p0_field_verification_checklist.py exists=True, bytes=14265
 - `IMPL-030` `pass` `files` 60_model/scripts/review_deepseek_p0_field_verification_checklist.py exists=True, bytes=6031
-- `IMPL-031` `pass` `files` 60_model/scripts/run_deepseek_p1_quality_report.py exists=True, bytes=17000
-- `IMPL-032` `pass` `files` 60_model/scripts/review_deepseek_p1_quality_report.py exists=True, bytes=7841
+- `IMPL-031` `pass` `files` 60_model/scripts/run_deepseek_p1_quality_report.py exists=True, bytes=16998
+- `IMPL-032` `pass` `files` 60_model/scripts/review_deepseek_p1_quality_report.py exists=True, bytes=7840
 - `IMPL-033` `pass` `files` 60_model/scripts/run_deepseek_p2_real_site_semantic_breakdown.py exists=True, bytes=12842
 - `IMPL-034` `pass` `files` 60_model/scripts/review_deepseek_p2_real_site_semantic_breakdown.py exists=True, bytes=6108
 - `IMPL-035` `pass` `files` 60_model/scripts/run_deepseek_p2_input_schema_candidates.py exists=True, bytes=21282
@@ -79,23 +79,23 @@
 - `IMPL-045` `pass` `files` 60_model/scripts/run_deepseek_p3_calibration_execution_package.py exists=True, bytes=15282
 - `IMPL-046` `pass` `files` 60_model/scripts/review_deepseek_p3_calibration_execution_package.py exists=True, bytes=6637
 - `IMPL-047` `pass` `files` 60_model/scripts/run_deepseek_p4_premature_audit.py exists=True, bytes=3891
-- `IMPL-048` `pass` `files` 60_model/scripts/run_deepseek_p4_feedback_draft.py exists=True, bytes=9780
+- `IMPL-048` `pass` `files` 60_model/scripts/run_deepseek_p4_feedback_draft.py exists=True, bytes=9789
 - `IMPL-049` `pass` `files` 60_model/scripts/review_deepseek_p4_feedback_draft.py exists=True, bytes=3730
 - `IMPL-050` `pass` `files` 60_model/scripts/validate_deepseek_contract_output.py exists=True, bytes=9183
 - `IMPL-051` `pass` `files` 60_model/scripts/verify_modern_sim_stack.py exists=True, bytes=7567
-- `IMPL-052` `pass` `files` 60_model/scripts/adapt_choice_probability_and_validation_targets.py exists=True, bytes=24753
+- `IMPL-052` `pass` `files` 60_model/scripts/adapt_choice_probability_and_validation_targets.py exists=True, bytes=24762
 - `IMPL-053` `pass` `files` 30_extraction/scripts/build_codex_mainline_context.py exists=True, bytes=9849
-- `IMPL-054` `pass` `files` 60_model/scripts/audit_rebaseline_artifacts.py exists=True, bytes=10136
+- `IMPL-054` `pass` `files` 60_model/scripts/audit_rebaseline_artifacts.py exists=True, bytes=10139
 - `IMPL-055` `pass` `files` 60_model/scripts/adapt_deepseek_legacy_outputs.py exists=True, bytes=7750
-- `IMPL-056` `pass` `files` 60_model/scripts/adapt_p4_node_explanations.py exists=True, bytes=10964
+- `IMPL-056` `pass` `files` 60_model/scripts/adapt_p4_node_explanations.py exists=True, bytes=10958
 - `IMPL-057` `pass` `files` 60_model/scripts/build_p2_method_prototype.py exists=True, bytes=13628
 - `IMPL-058` `pass` `files` 60_model/scripts/review_p2_method_prototype.py exists=True, bytes=4838
 - `IMPL-059` `pass` `files` 60_model/schemas/persona_state.schema.json exists=True, bytes=2117
 - `IMPL-060` `pass` `files` 60_model/schemas/behavior_program.schema.json exists=True, bytes=2834
-- `IMPL-061` `pass` `files` 60_model/schemas/node_recommendation_explanation.schema.json exists=True, bytes=1834
+- `IMPL-061` `pass` `files` 60_model/schemas/node_recommendation_explanation.schema.json exists=True, bytes=1831
 - `IMPL-062` `pass` `files` 60_model/schemas/deepseek_task_contract.schema.json exists=True, bytes=2221
 - `IMPL-063` `pass` `files` 60_model/schemas/person_simulation_control.schema.json exists=True, bytes=2094
-- `IMPL-064` `pass` `files` 60_model/schemas/choice_probability.schema.json exists=True, bytes=3927
+- `IMPL-064` `pass` `files` 60_model/schemas/choice_probability.schema.json exists=True, bytes=3924
 - `IMPL-065` `pass` `files` 60_model/schemas/simulation_validation_target.schema.json exists=True, bytes=3763
 - `IMPL-066` `pass` `files` 10_research/boss_method_materials_20260604/full_system_rebaseline_20260604.md exists=True, bytes=13080
 - `IMPL-067` `pass` `files` 10_research/boss_method_materials_20260604/boss_model_inventory_20260604.md exists=True, bytes=11173
@@ -123,21 +123,21 @@
 - `IMPL-089` `pass` `files` 10_research/ui_skill_design_system_audit_20260605.md exists=True, bytes=4065
 - `IMPL-090` `pass` `files` 10_research/web_design_guidelines_audit_20260605.md exists=True, bytes=2219
 - `IMPL-091` `pass` `files` 00_control/page_layer_rebuild_blueprint_20260605.md exists=True, bytes=4917
-- `IMPL-092` `pass` `files` 30_extraction/scripts/audit_page_rebuild_strategy_20260605.py exists=True, bytes=12239
+- `IMPL-092` `pass` `files` 30_extraction/scripts/audit_page_rebuild_strategy_20260605.py exists=True, bytes=12244
 - `IMPL-093` `pass` `files` 30_extraction/scripts/verify_workflow_navigation_20260605.py exists=True, bytes=5225
-- `IMPL-094` `pass` `files` 30_extraction/scripts/verify_source_space_foundation_20260605.py exists=True, bytes=7505
+- `IMPL-094` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_source_space_foundation_20260605.py exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.
 - `IMPL-095` `pass` `files` 40_quality_evidence/page_rebuild_strategy_audit_20260605.json exists=True, bytes=6447
 - `IMPL-096` `pass` `files` 40_quality_evidence/page_rebuild_strategy_audit_20260605.md exists=True, bytes=4981
 - `IMPL-097` `pass` `files` 40_quality_evidence/workflow_navigation_validation_20260605.json exists=True, bytes=2549
 - `IMPL-098` `pass` `files` 40_quality_evidence/workflow_navigation_validation_20260605.md exists=True, bytes=517
-- `IMPL-099` `pass` `files` 40_quality_evidence/source_space_foundation_validation_20260605.json exists=True, bytes=3167
-- `IMPL-100` `pass` `files` 40_quality_evidence/source_space_foundation_validation_20260605.md exists=True, bytes=745
+- `IMPL-099` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/source_space_foundation_validation_20260605.json exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.
+- `IMPL-100` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/source_space_foundation_validation_20260605.md exists=False, bytes=0. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.
 - `IMPL-101` `pass` `files` 40_quality_evidence/source_space_foundation_browser_runtime_20260605.json exists=True, bytes=250
 - `IMPL-102` `pass` `files` 40_quality_evidence/source_space_foundation_upload_lazy_map_20260605.png exists=True, bytes=735080
 - `IMPL-103` `pass` `files` 30_extraction/scripts/analyze_cad_dxf_20260605.py exists=True, bytes=11465
 - `IMPL-104` `pass` `files` 30_extraction/scripts/analyze_cad_pdf_proxy_20260605.py exists=True, bytes=3647
 - `IMPL-105` `pass` `files` 30_extraction/scripts/verify_session_recovery_20260606.py exists=True, bytes=5084
-- `IMPL-106` `pass` `files` 30_extraction/scripts/verify_osen_integrated_report_20260606.py exists=True, bytes=6227
+- `IMPL-106` `pass` `files` 30_extraction/scripts/verify_osen_integrated_report_20260606.py exists=True, bytes=6232
 - `IMPL-107` `pass` `files` 40_quality_evidence/session_recovery_20260606.json exists=True, bytes=2920
 - `IMPL-108` `pass` `files` 40_quality_evidence/session_recovery_20260606.md exists=True, bytes=1750
 - `IMPL-109` `pass` `files` 40_quality_evidence/cad_dxf_analysis_20260605.json exists=True, bytes=34221
@@ -145,78 +145,78 @@
 - `IMPL-111` `pass` `files` 40_quality_evidence/cad_dxf_keyword_hits_20260605.csv exists=True, bytes=635
 - `IMPL-112` `pass` `files` 40_quality_evidence/cad_pdf_proxy_analysis_20260605.json exists=True, bytes=849
 - `IMPL-113` `pass` `files` 40_quality_evidence/cad_pdf_proxy_analysis_20260605.md exists=True, bytes=648
-- `IMPL-114` `pass` `files` 40_quality_evidence/osen_integrated_report_validation_20260606.json exists=True, bytes=4991
-- `IMPL-115` `pass` `files` 40_quality_evidence/osen_integrated_report_validation_20260606.md exists=True, bytes=3073
-- `IMPL-116` `pass` `files` 90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py exists=True, bytes=6980
-- `IMPL-117` `pass` `files` 40_quality_evidence/osen_report_browser_validation_20260606.json exists=True, bytes=5797
-- `IMPL-118` `pass` `files` 40_quality_evidence/osen_report_browser_validation_20260606/report_view.png exists=True, bytes=554987
-- `IMPL-119` `pass` `files` 10_research/recommendation_review_framework_20260607.md exists=True, bytes=6782
-- `IMPL-120` `pass` `files` 10_research/recommendation_review_openalex_20260607.json exists=True, bytes=55120
-- `IMPL-121` `pass` `files` 10_research/expert_implementation_review_framework_20260607.md exists=True, bytes=30987
-- `IMPL-122` `pass` `files` 10_research/osen_real_world_context_sources_20260607.md exists=True, bytes=2515
-- `IMPL-123` `pass` `files` 10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json exists=True, bytes=306850
-- `IMPL-124` `pass` `files` 10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json exists=True, bytes=19625511
-- `IMPL-125` `pass` `files` 30_extraction/scripts/build_recommendation_review_research_20260607.py exists=True, bytes=9231
-- `IMPL-126` `pass` `files` 30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py exists=True, bytes=24076
-- `IMPL-127` `pass` `files` 30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py exists=True, bytes=21608
+- `IMPL-114` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_integrated_report_validation_20260606.json exists=False, bytes=0. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.
+- `IMPL-115` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_integrated_report_validation_20260606.md exists=False, bytes=0. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.
+- `IMPL-116` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/osen_report_browser_validation_20260606.py exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.
+- `IMPL-117` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_browser_validation_20260606.json exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.
+- `IMPL-118` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_browser_validation_20260606/report_view.png exists=False, bytes=0. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.
+- `IMPL-119` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/recommendation_review_framework_20260607.md exists=False, bytes=0. Reason: 0607 recommendation research package was folded into current method_basis/method_trace and report basis files.
+- `IMPL-120` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/recommendation_review_openalex_20260607.json exists=False, bytes=0. Reason: 0607 OpenAlex package was folded into current method_basis/method_trace and report basis files.
+- `IMPL-121` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_review_framework_20260607.md exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.
+- `IMPL-122` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/osen_real_world_context_sources_20260607.md exists=False, bytes=0. Reason: 0607 real-world context note is superseded by current real_calibration_context and report basis.
+- `IMPL-123` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_knowledge_20260607/expert_implementation_summary.json exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.
+- `IMPL-124` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 10_research/expert_implementation_knowledge_20260607/expert_implementation_openalex_raw.json exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.
+- `IMPL-125` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_recommendation_review_research_20260607.py exists=False, bytes=0. Reason: superseded research builder; current report basis is generated through the dashboard report chain.
+- `IMPL-126` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_expert_implementation_knowledge_base_20260607.py exists=False, bytes=0. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.
+- `IMPL-127` `pass` `files` 30_extraction/scripts/build_osen_real_calibration_inputs_20260607.py exists=True, bytes=5364
 - `IMPL-128` `pass` `files` 70_outputs/processed_tables/osen_real_calibration_inputs_20260607.csv exists=True, bytes=12884
-- `IMPL-129` `pass` `files` 40_quality_evidence/osen_real_calibration_inputs_20260607.json exists=True, bytes=19773
-- `IMPL-130` `pass` `files` 40_quality_evidence/osen_real_calibration_inputs_20260607.md exists=True, bytes=4871
-- `IMPL-131` `pass` `files` 30_extraction/scripts/render_docx_with_isolated_libreoffice.py exists=True, bytes=6334
-- `IMPL-132` `pass` `files` 30_extraction/scripts/verify_osen_docx_delivery_20260606.py exists=True, bytes=6085
-- `IMPL-133` `pass` `files` 80_delivery/osen_integrated_site_selection_report_20260606.docx exists=True, bytes=57500
-- `IMPL-134` `pass` `files` 40_quality_evidence/osen_integrated_report_docx_audit_20260606.json exists=True, bytes=990
-- `IMPL-135` `pass` `files` 40_quality_evidence/osen_report_docx_render_20260606.json exists=True, bytes=5166
-- `IMPL-136` `pass` `files` 40_quality_evidence/osen_report_docx_render_20260606.md exists=True, bytes=3052
-- `IMPL-137` `pass` `files` 40_quality_evidence/osen_report_docx_render_20260606/page_01.png exists=True, bytes=298152
-- `IMPL-138` `pass` `files` 40_quality_evidence/osen_report_docx_render_20260606/page_06.png exists=True, bytes=267075
-- `IMPL-139` `pass` `files` 40_quality_evidence/osen_report_docx_render_20260606/page_18.png exists=True, bytes=247054
-- `IMPL-140` `pass` `files` 40_quality_evidence/osen_docx_delivery_validation_20260606.json exists=True, bytes=2998
-- `IMPL-141` `pass` `files` 40_quality_evidence/osen_docx_delivery_validation_20260606.md exists=True, bytes=1585
-- `IMPL-142` `pass` `files` 80_delivery/site_selection_gap_report_latest.json exists=True, bytes=90436
-- `IMPL-143` `pass` `files` 80_delivery/site_selection_gap_report_latest.md exists=True, bytes=43854
+- `IMPL-129` `pass` `files` 40_quality_evidence/osen_real_calibration_inputs_20260607.json exists=True, bytes=629
+- `IMPL-130` `pass` `files` 40_quality_evidence/osen_real_calibration_inputs_20260607.md exists=True, bytes=375
+- `IMPL-131` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/render_docx_with_isolated_libreoffice.py exists=False, bytes=0. Reason: 0606 isolated LibreOffice helper superseded by repaired LibreOffice profile and current DOCX validation artifacts.
+- `IMPL-132` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_osen_docx_delivery_20260606.py exists=False, bytes=0. Reason: 0606 DOCX delivery gate superseded by current 0607 platform download and post-test report restore audit.
+- `IMPL-133` `pass` `files` 80_delivery/osen_integrated_site_selection_report_20260606.docx exists=True, bytes=55845
+- `IMPL-134` `pass` `files` 40_quality_evidence/osen_integrated_report_docx_audit_20260606.json exists=True, bytes=991
+- `IMPL-135` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606.json exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-136` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606.md exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-137` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_01.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-138` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_06.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-139` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_report_docx_render_20260606/page_18.png exists=False, bytes=0. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-140` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_docx_delivery_validation_20260606.json exists=False, bytes=0. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.
+- `IMPL-141` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/osen_docx_delivery_validation_20260606.md exists=False, bytes=0. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.
+- `IMPL-142` `pass` `files` 80_delivery/site_selection_gap_report_latest.json exists=True, bytes=83621
+- `IMPL-143` `pass` `files` 80_delivery/site_selection_gap_report_latest.md exists=True, bytes=42374
 - `IMPL-144` `pass` `files` 40_quality_evidence/deepseek_orchestration_validation_20260605.json exists=True, bytes=1720
 - `IMPL-145` `pass` `files` 40_quality_evidence/deepseek_orchestration_validation_20260605.md exists=True, bytes=1454
 - `IMPL-146` `pass` `files` 10_research/ai_design_2026_openalex_raw_20260604.json exists=True, bytes=144852
 - `IMPL-147` `pass` `files` 10_research/ai_design_2026_semantic_scholar_raw_20260604.json exists=True, bytes=24393
 - `IMPL-148` `pass` `files` 10_research/ai_design_2026_arxiv_raw_20260604.json exists=True, bytes=873
-- `IMPL-149` `pass` `files` 30_extraction/scripts/audit_project_context_and_legacy_risks.py exists=True, bytes=13477
+- `IMPL-149` `pass` `files` 30_extraction/scripts/audit_project_context_and_legacy_risks.py exists=True, bytes=13482
 - `IMPL-150` `pass` `files` 30_extraction/scripts/audit_method_model_landing_coverage.py exists=True, bytes=14257
 - `IMPL-151` `pass` `files` 40_quality_evidence/project_context_legacy_risk_audit_20260605.json exists=True, bytes=59218
 - `IMPL-152` `pass` `files` 40_quality_evidence/project_context_legacy_risk_audit_20260605.md exists=True, bytes=18791
 - `IMPL-153` `pass` `files` 40_quality_evidence/method_model_landing_coverage_20260605.json exists=True, bytes=17035
 - `IMPL-154` `pass` `files` 40_quality_evidence/method_model_landing_coverage_20260605.md exists=True, bytes=9506
-- `IMPL-155` `pass` `files` 30_extraction/scripts/build_person_simulation_accuracy_requirements.py exists=True, bytes=21919
-- `IMPL-156` `pass` `files` 30_extraction/scripts/build_person_simulation_feature_derivatives.py exists=True, bytes=15954
-- `IMPL-157` `pass` `files` 30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py exists=True, bytes=6984
-- `IMPL-158` `pass` `files` 40_quality_evidence/person_simulation_accuracy_requirements_20260605.json exists=True, bytes=17616
-- `IMPL-159` `pass` `files` 40_quality_evidence/person_simulation_accuracy_requirements_20260605.md exists=True, bytes=13812
-- `IMPL-160` `pass` `files` 70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv exists=True, bytes=7798
+- `IMPL-155` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_person_simulation_accuracy_requirements.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-156` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/build_person_simulation_feature_derivatives.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-157` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 30_extraction/scripts/verify_person_simulation_feature_derivatives_20260607.py exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-158` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_accuracy_requirements_20260605.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-159` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_accuracy_requirements_20260605.md exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-160` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 70_outputs/processed_tables/person_simulation_accuracy_requirements_20260605.csv exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
 - `IMPL-161` `pass` `files` 70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv exists=True, bytes=2275733
-- `IMPL-162` `pass` `files` 40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json exists=True, bytes=585
-- `IMPL-163` `pass` `files` 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json exists=True, bytes=2994
-- `IMPL-164` `pass` `files` 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md exists=True, bytes=2074
-- `IMPL-165` `pass` `files` 40_quality_evidence/person_feature_pool_browser_visible_20260607.json exists=True, bytes=399
-- `IMPL-166` `pass` `files` 40_quality_evidence/person_feature_pool_upload_visible_20260607.png exists=True, bytes=222938
-- `IMPL-167` `pass` `files` 40_quality_evidence/person_feature_pool_preflight_visible_20260607.png exists=True, bytes=149853
-- `IMPL-168` `pass` `files` 40_quality_evidence/feature_derivative_user_control_browser_20260607.json exists=True, bytes=443
-- `IMPL-169` `pass` `files` 40_quality_evidence/feature_derivative_user_control_browser_20260607.png exists=True, bytes=149937
-- `IMPL-170` `pass` `files` 40_quality_evidence/feature_derivative_income_control_browser_20260607.json exists=True, bytes=5229
-- `IMPL-171` `pass` `files` 40_quality_evidence/feature_derivative_income_control_browser_20260607.png exists=True, bytes=146342
-- `IMPL-172` `pass` `files` 90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py exists=True, bytes=12200
-- `IMPL-173` `pass` `files` 40_quality_evidence/report_feature_scene_context_validation_20260607.json exists=True, bytes=12801
-- `IMPL-174` `pass` `files` 40_quality_evidence/report_feature_scene_context_validation_20260607.md exists=True, bytes=9010
-- `IMPL-175` `pass` `files` 90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py exists=True, bytes=13472
-- `IMPL-176` `pass` `files` 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json exists=True, bytes=12365
-- `IMPL-177` `pass` `files` 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md exists=True, bytes=1583
-- `IMPL-178` `pass` `files` 40_quality_evidence/report_feature_scene_context_browser_20260607.json exists=True, bytes=2745
-- `IMPL-179` `pass` `files` 40_quality_evidence/report_feature_scene_context_browser_20260607.png exists=True, bytes=337441
-- `IMPL-180` `pass` `files` 90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py exists=True, bytes=12396
-- `IMPL-181` `pass` `files` 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json exists=True, bytes=11249
-- `IMPL-182` `pass` `files` 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md exists=True, bytes=7140
-- `IMPL-183` `pass` `files` 90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py exists=True, bytes=11099
-- `IMPL-184` `pass` `files` 40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json exists=True, bytes=13124
-- `IMPL-185` `pass` `files` 40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png exists=True, bytes=1094958
+- `IMPL-162` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_generation_20260607.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-163` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.json exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-164` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_simulation_feature_derivatives_validation_20260607.md exists=False, bytes=0. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-165` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_browser_visible_20260607.json exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-166` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_upload_visible_20260607.png exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-167` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/person_feature_pool_preflight_visible_20260607.png exists=False, bytes=0. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-168` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_user_control_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-169` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_user_control_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-170` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_income_control_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-171` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/feature_derivative_income_control_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-172` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/report_feature_scene_context_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-173` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-174` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_validation_20260607.md exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-175` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/real_calibration_supplement_loop_validation_20260607.py exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.
+- `IMPL-176` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.json exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.
+- `IMPL-177` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/real_calibration_supplement_loop_validation_20260607.md exists=False, bytes=0. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.
+- `IMPL-178` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_browser_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-179` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/report_feature_scene_context_browser_20260607.png exists=False, bytes=0. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-180` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_feature_scene_dry_run_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-181` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-182` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_dry_run_validation_20260607.md exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-183` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_feature_scene_browser_validation_20260607.py exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-184` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_browser_validation_20260607.json exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-185` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_feature_scene_browser_validation_20260607/simulation_feature_scene.png exists=False, bytes=0. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
 - `IMPL-186` `pass` `files` 40_quality_evidence/modern_sim_stack_verification_20260604.json exists=True, bytes=4946
 - `IMPL-187` `pass` `files` 40_quality_evidence/modern_sim_stack_verification_20260604.md exists=True, bytes=2420
 - `IMPL-188` `pass` `files` 40_quality_evidence/flowus_ai_design_probe_20260604/flowus_probe_report.json exists=True, bytes=11897
@@ -232,18 +232,18 @@
 - `IMPL-198` `pass` `files` 90_p6_expert_dashboard/qa/simulation_object_pool_persona_behavior_validation_20260605.py exists=True, bytes=4966
 - `IMPL-199` `pass` `files` 40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.json exists=True, bytes=1938
 - `IMPL-200` `pass` `files` 40_quality_evidence/simulation_object_pool_persona_behavior_validation_20260605.md exists=True, bytes=1126
-- `IMPL-201` `pass` `files` 90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py exists=True, bytes=4655
-- `IMPL-202` `pass` `files` 40_quality_evidence/object_chain_rebaseline_validation_20260605.json exists=True, bytes=2986
-- `IMPL-203` `pass` `files` 40_quality_evidence/object_chain_rebaseline_validation_20260605.md exists=True, bytes=1573
+- `IMPL-201` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/object_chain_rebaseline_validation_20260605.py exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.
+- `IMPL-202` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/object_chain_rebaseline_validation_20260605.json exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.
+- `IMPL-203` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/object_chain_rebaseline_validation_20260605.md exists=False, bytes=0. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.
 - `IMPL-204` `pass` `files` 40_quality_evidence/object_chain_browser_validation_20260605.json exists=True, bytes=1552
 - `IMPL-205` `pass` `files` 40_quality_evidence/object_chain_browser_validation_20260605/object_chain_overview.png exists=True, bytes=515775
-- `IMPL-206` `pass` `files` 90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py exists=True, bytes=20198
-- `IMPL-207` `pass` `files` 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json exists=True, bytes=15399
-- `IMPL-208` `pass` `files` 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md exists=True, bytes=10748
+- `IMPL-206` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 90_p6_expert_dashboard/qa/simulation_task_entry_preflight_validation_20260605.py exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.
+- `IMPL-207` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.json exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.
+- `IMPL-208` `warn` `files` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: 40_quality_evidence/simulation_task_entry_preflight_validation_20260605.md exists=False, bytes=0. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.
 - `IMPL-209` `pass` `files` 40_quality_evidence/global_ai_design_rebaseline_browser_validation_20260604.json exists=True, bytes=1616
 - `IMPL-210` `pass` `files` 40_quality_evidence/global_ai_design_rebaseline_overview_validation_20260604.json exists=True, bytes=590
 - `IMPL-211` `pass` `files` 40_quality_evidence/global_ai_design_rebaseline_overview_final_20260604.png exists=True, bytes=103918
-- `IMPL-212` `pass` `files` 90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py exists=True, bytes=23787
+- `IMPL-212` `pass` `files` 90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py exists=True, bytes=23885
 - `IMPL-213` `pass` `files` 40_quality_evidence/advanced_agentic_workflow_validation_20260604.json exists=True, bytes=21729
 - `IMPL-214` `pass` `files` 40_quality_evidence/advanced_agentic_workflow_validation_20260604.md exists=True, bytes=3668
 - `IMPL-215` `pass` `files` 40_quality_evidence/advanced_agentic_workflow_trace_20260604.zip exists=True, bytes=2915416
@@ -257,7 +257,7 @@
 - `IMPL-223` `pass` `files` 40_quality_evidence/advanced_agentic_workflow_report_20260604.png exists=True, bytes=180347
 - `IMPL-224` `pass` `files` 90_p6_expert_dashboard/qa/package.json exists=True, bytes=337
 - `IMPL-225` `pass` `files` 90_p6_expert_dashboard/qa/package-lock.json exists=True, bytes=97508
-- `IMPL-226` `pass` `files` 90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py exists=True, bytes=8803
+- `IMPL-226` `pass` `files` 90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py exists=True, bytes=8866
 - `IMPL-227` `pass` `files` 40_quality_evidence/page_layer_rebuild_validation_20260605.json exists=True, bytes=2949
 - `IMPL-228` `pass` `files` 40_quality_evidence/page_layer_rebuild_validation_20260605/overview_chain_command.png exists=True, bytes=514414
 - `IMPL-229` `pass` `files` 40_quality_evidence/page_layer_rebuild_validation_20260605/ai_workspace_reading_width.png exists=True, bytes=119969
@@ -274,10 +274,10 @@
 - `IMPL-240` `pass` `files` 30_extraction/scripts/audit_advanced_capability_and_legacy_methods_20260605.py exists=True, bytes=16913
 - `IMPL-241` `pass` `files` 40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.json exists=True, bytes=9804
 - `IMPL-242` `pass` `files` 40_quality_evidence/advanced_capability_and_legacy_method_audit_20260605.md exists=True, bytes=7094
-- `IMPL-243` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=220187
-- `IMPL-244` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=26974
-- `IMPL-245` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=75972
-- `IMPL-246` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=160114
+- `IMPL-243` `pass` `files` 90_p6_expert_dashboard/app.py exists=True, bytes=220700
+- `IMPL-244` `pass` `files` 90_p6_expert_dashboard/static/index.html exists=True, bytes=26992
+- `IMPL-245` `pass` `files` 90_p6_expert_dashboard/static/styles.css exists=True, bytes=76250
+- `IMPL-246` `pass` `files` 90_p6_expert_dashboard/static/app.js exists=True, bytes=161910
 - `IMPL-247` `pass` `files` 60_model/llm_runs/deepseek_table_classification_raw.jsonl exists=True, bytes=142104
 - `IMPL-248` `pass` `files` 60_model/llm_runs/deepseek_table_classification_progress.json exists=True, bytes=172
 - `IMPL-249` `pass` `files` 60_model/llm_runs/deepseek_evidence_candidates_raw.jsonl exists=True, bytes=300288
@@ -352,7 +352,7 @@
 - `IMPL-318` `pass` `files` 40_quality_evidence/p0_field_verification_checklist_local_review.md exists=True, bytes=1566
 - `IMPL-319` `pass` `files` 40_quality_evidence/handoff_encoding_health_review.csv exists=True, bytes=4238
 - `IMPL-320` `pass` `files` 40_quality_evidence/handoff_encoding_health_review.md exists=True, bytes=550
-- `IMPL-321` `pass` `files` 40_quality_evidence/p1_quality_report_draft_deepseek.md exists=True, bytes=4722
+- `IMPL-321` `pass` `files` 40_quality_evidence/p1_quality_report_draft_deepseek.md exists=True, bytes=4719
 - `IMPL-322` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_generation_report.md exists=True, bytes=528
 - `IMPL-323` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_review.csv exists=True, bytes=1292
 - `IMPL-324` `pass` `files` 40_quality_evidence/deepseek_p1_quality_report_review.md exists=True, bytes=436
@@ -437,8 +437,8 @@
 - `IMPL-403` `pass` `files` 40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.csv exists=True, bytes=7727
 - `IMPL-404` `pass` `files` 40_quality_evidence/deepseek_legacy_envelope_adapter_20260604.md exists=True, bytes=810
 - `IMPL-405` `pass` `files` 40_quality_evidence/deepseek_legacy_envelope_validation_20260604.json exists=True, bytes=7478
-- `IMPL-406` `pass` `files` 60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json exists=True, bytes=17930
-- `IMPL-407` `pass` `files` 70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv exists=True, bytes=10208
+- `IMPL-406` `pass` `files` 60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json exists=True, bytes=17894
+- `IMPL-407` `pass` `files` 70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv exists=True, bytes=10172
 - `IMPL-408` `pass` `files` 40_quality_evidence/p4_node_explanation_adapter_20260604.json exists=True, bytes=449
 - `IMPL-409` `pass` `files` 40_quality_evidence/p4_node_explanation_adapter_20260604.md exists=True, bytes=876
 - `IMPL-410` `pass` `files` 40_quality_evidence/p4_node_explanation_contract_validation_20260604.json exists=True, bytes=308
@@ -447,7 +447,7 @@
 - `IMPL-413` `pass` `files` 70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv exists=True, bytes=42969
 - `IMPL-414` `pass` `files` 70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv exists=True, bytes=4676
 - `IMPL-415` `pass` `files` 40_quality_evidence/choice_probability_adapter_20260604.json exists=True, bytes=947
-- `IMPL-416` `pass` `files` 40_quality_evidence/choice_probability_adapter_20260604.md exists=True, bytes=793
+- `IMPL-416` `pass` `files` 40_quality_evidence/choice_probability_adapter_20260604.md exists=True, bytes=799
 - `IMPL-417` `pass` `files` 40_quality_evidence/simulation_validation_target_adapter_20260604.json exists=True, bytes=971
 - `IMPL-418` `pass` `files` 40_quality_evidence/simulation_validation_target_adapter_20260604.md exists=True, bytes=790
 - `IMPL-419` `pass` `files` 40_quality_evidence/choice_probability_contract_validation_20260604.json exists=True, bytes=306
@@ -741,7 +741,7 @@
 - `IMPL-707` `pass` `p4` P4 feedback requests ask for core missing data
 - `IMPL-708` `pass` `p4` P4 feedback draft review statuses={'pass': 17}
 - `IMPL-709` `pass` `p4` P4 node explanation score_hidden={'true': 6}
-- `IMPL-710` `pass` `p4` P4 node explanation priority_label={'补资料后判断': 6}
+- `IMPL-710` `pass` `p4` P4 node explanation priority_label={'复核后判断': 6}
 - `IMPL-711` `pass` `data` poi_supply_base pending verification rows=20/20
 - `IMPL-712` `pass` `data` grid coffee name keeps English space
 - `IMPL-713` `pass` `data` amap query categories=10
@@ -873,30 +873,30 @@
 - `IMPL-839` `pass` `schema` modern sim stack modules include required=['SALib', 'duckdb', 'geopandas', 'jsonschema', 'mesa', 'mesa_geo', 'movingpandas', 'networkx', 'optuna', 'osmnx', 'polars', 'pydantic', 'shapely', 'simpy']
 - `IMPL-840` `pass` `recovery` session recovery checks=8, summary={'pass': 8}
 - `IMPL-841` `pass` `recovery` session recovery names=['amap_smoke_pass', 'deepseek_api_pass', 'mainline_context_pass', 'pdf_table_gate_pass', 'plugins_enabled', 'qa_node_stack_available', 'skill_inventory_available', 'ui_ux_pro_max_available']
-- `IMPL-842` `pass` `delivery` Osen report checks=14, summary={'pass': 14}
-- `IMPL-843` `pass` `delivery` Osen report passed names=['all_nodes_named', 'amap_runtime_ok', 'business_advice_present', 'cad_anchor_terms', 'cad_converted_two_drawings', 'deepseek_runtime_ok', 'evidence_highlights', 'human_text_clean', 'json_method_trace_internal_only', 'node_count', 'north_pdf_proxy_hit', 'pdf_table_runtime_ok', 'report_files_written', 'report_length']
-- `IMPL-844` `pass` `delivery` expert implementation research volume query=80 completed=80 raw=11282 screened=6448 groups=8
-- `IMPL-845` `pass` `delivery` expert implementation dimensions found=['目标人群', '周边人口与收入', '时间节律', '天气与季节', '地理与可达', '空间与工程', '消防与安全', '许可与合规', '财务与招商', '新闻舆情与社区接受', '仿真与数据校准']
-- `IMPL-846` `pass` `delivery` expert implementation topic_counts={'AI 与人群仿真': 1223, '空间地理与周边': 895, '维护可持续与风险': 569, '目标人群与消费': 1117, '时间天气与季节': 723, '工程消防安全与许可': 857, '服务运营与财务': 382, '公园商业与运营': 682}
-- `IMPL-847` `pass` `delivery` expert implementation official/business-case sources are recorded
-- `IMPL-848` `pass` `delivery` Osen real-world income/consumption context terms found=['居民人均可支配收入', '居民人均消费支出', '服务性消费', '不能替代奥森周边', '周边街道级或商圈级收入水平', '收入与价格带必须']
-- `IMPL-849` `pass` `delivery` Osen real calibration rows=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}
-- `IMPL-850` `pass` `delivery` Osen real calibration rows remain needs_review
-- `IMPL-851` `pass` `delivery` latest report expert basis query=80 screened=6448
-- `IMPL-852` `pass` `delivery` latest report node option_counts=[3, 3, 3, 3, 3, 3]
-- `IMPL-853` `pass` `delivery` latest report real calibration count=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}
-- `IMPL-854` `pass` `delivery` latest report nodes preserve income, weather, decision-changing evidence and simulation inputs
-- `IMPL-855` `pass` `delivery` Osen DOCX delivery checks=['docx_audit_pass', 'docx_exists_and_size', 'each_node_has_decision_changing_evidence', 'each_node_has_three_options', 'expert_research_volume', 'income_dimension_in_report', 'no_forbidden_docx_terms', 'real_world_sources_recorded', 'render_pass', 'required_docx_terms', 'web_docx_download'] summary={'pass': 11}
-- `IMPL-856` `pass` `delivery` Osen DOCX delivery required checks all pass
-- `IMPL-857` `pass` `delivery` Osen DOCX render status=pass page_count=18 pdf_bytes=1088566
-- `IMPL-858` `pass` `delivery` Osen DOCX rendered png_count=18 first_sizes=[298152, 231456, 262718]
-- `IMPL-859` `pass` `cad` converted CAD drawings=['osen_north_t5', 'osen_south_t5']
-- `IMPL-860` `pass` `cad` CAD anchors found=['南入口', '2A03', '露天剧场', '廉洁馆', '公园南门']
-- `IMPL-861` `pass` `delivery` latest report bytes=43548
-- `IMPL-862` `pass` `delivery` latest report required terms found=['奥森商业改造综合评估', '桃花源白房子', '南门地下预埋空间', '当前推进事项', '控制点校准', '真实校准输入与使用边界', '官方宏观边界', '设备价格代理']
-- `IMPL-863` `pass` `delivery` latest report forbidden terms=[]
-- `IMPL-864` `pass` `browser` Osen report browser status=pass, failures=0
-- `IMPL-865` `pass` `browser` Osen report browser passed names=['console_clean', 'docx_download_link', 'hero_readable_width', 'no_backend_words_visible', 'node_options_visible', 'old_report_title_removed', 'real_calibration_visible', 'report_sections_present', 'required_terms_visible', 'screenshot_written']
+- `IMPL-842` `warn` `delivery` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen integrated report gate invalid: FileNotFoundError. Reason: 0606 integrated report gate was replaced by current site_selection report and 0607 business decision report evidence.
+- `IMPL-843` `warn` `delivery` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: expert implementation knowledge invalid: FileNotFoundError. Reason: large 0607 expert-implementation research package is superseded by current report basis and method_trace evidence.
+- `IMPL-844` `pass` `knowledge` current knowledge entry terms found=['23,091', '3,085', '4,405', '仿真栈通用 Mega', '计算与模型 Mega', 'needs_action', 'query_model_computation_knowledge_20260609.py']
+- `IMPL-845` `pass` `knowledge` recent knowledge base status=pass query_count=9084
+- `IMPL-846` `pass` `knowledge` recent knowledge core status=pass input=23091 core=3085 method=17306
+- `IMPL-847` `pass` `knowledge` model computation pack status=pass pack=4405 layers=13
+- `IMPL-848` `pass` `knowledge` model computation query examples status=pass records=3
+- `IMPL-849` `warn` `knowledge` simulation stack Mega status=needs_action query=3264 screened=5821 classic=0
+- `IMPL-850` `warn` `knowledge` computation model Mega status=needs_action query=5440 screened=3096 classic=936 merged=23091
+- `IMPL-851` `warn` `delivery` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen real-world context note invalid: FileNotFoundError. Reason: 0607 real-world context note is superseded by current real_calibration_context and report basis.
+- `IMPL-852` `pass` `delivery` Osen real calibration rows=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}
+- `IMPL-853` `pass` `delivery` Osen real calibration rows remain needs_review
+- `IMPL-854` `pass` `delivery` latest report expert basis query=0 screened=0 method_basis=4 method_trace=8
+- `IMPL-855` `pass` `delivery` latest report node option_counts=[3, 3, 3, 3, 3, 3]
+- `IMPL-856` `pass` `delivery` latest report real calibration count=14 strengths={'official_macro_boundary': 3, 'local_bigdata_profile': 3, 'local_device_price_proxy': 2, 'local_poi_price_signal': 2, 'local_poi_demand_signal': 1, 'plan_assumption_needs_review': 3}
+- `IMPL-857` `pass` `delivery` latest report nodes preserve income, weather, decision-changing evidence and simulation inputs
+- `IMPL-858` `warn` `delivery` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen DOCX delivery validation invalid: FileNotFoundError. Reason: 0606 DOCX delivery validation superseded by current 0607 client download audit.
+- `IMPL-859` `warn` `delivery` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen DOCX render validation invalid: FileNotFoundError. Reason: 0606 render outputs superseded by current 0607 render/contact-sheet evidence.
+- `IMPL-860` `pass` `cad` converted CAD drawings=['osen_north_t5', 'osen_south_t5']
+- `IMPL-861` `pass` `cad` CAD anchors found=['南入口', '2A03', '露天剧场', '廉洁馆', '公园南门']
+- `IMPL-862` `pass` `delivery` latest report bytes=42079
+- `IMPL-863` `pass` `delivery` latest report required terms found=['奥森商业改造综合评估', '桃花源白房子', '南门地下预埋空间', '当前推进事项', '控制点校准', '真实校准输入与使用边界', '官方宏观边界', '设备价格代理']
+- `IMPL-864` `pass` `delivery` latest report forbidden terms=[]
+- `IMPL-865` `warn` `browser` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: Osen report browser gate invalid: FileNotFoundError. Reason: 0606 browser evidence was replaced by current TestFiles suite and post-test output restore audit.
 - `IMPL-866` `pass` `ux_rebaseline` global AI simulation design rebaseline preserves scope/method/UX constraints
 - `IMPL-867` `pass` `ux_rebaseline` global rebaseline explicitly rejects narrow P6-only framing
 - `IMPL-868` `pass` `ux_rebaseline` advanced AI learning register preserves agentic/UI/simulation/legacy trust constraints
@@ -918,285 +918,266 @@
 - `IMPL-884` `pass` `advanced_gate` method model coverage ids=['AGENTIC_UI_HUMAN_OVERSIGHT', 'CHOICE_GAP_MODEL', 'DEEPSEEK_CONSTRAINED_WORKER', 'HUMANLM_LATENT_STATE', 'MACRO_VALIDATION_METRICS', 'RL_LLM_SOCIAL_SIM', 'ROTE_BEHAVIOR_PROGRAM', 'SPATIAL_ACTIVITY_CHAIN', 'SSR_DLR_FLR']
 - `IMPL-885` `pass` `advanced_gate` method model covered ids=['AGENTIC_UI_HUMAN_OVERSIGHT', 'CHOICE_GAP_MODEL', 'DEEPSEEK_CONSTRAINED_WORKER', 'HUMANLM_LATENT_STATE', 'RL_LLM_SOCIAL_SIM', 'ROTE_BEHAVIOR_PROGRAM', 'SPATIAL_ACTIVITY_CHAIN', 'SSR_DLR_FLR']
 - `IMPL-886` `pass` `advanced_gate` method model partial gaps=['MACRO_VALIDATION_METRICS']
-- `IMPL-887` `pass` `advanced_gate` accuracy requirements status=needs_review
-- `IMPL-888` `pass` `advanced_gate` accuracy requirements count=9
-- `IMPL-889` `pass` `advanced_gate` accuracy requirement sources=['BOSS-HUMANLM', 'BOSS-RL-LLM', 'BOSS-ROTE', 'CTRL-CODEX-PRIMARY', 'MOD-AGENTSOCIETY', 'MOD-CAMS', 'MOD-GATSIM', 'MOD-MOBIVERSE', 'RISK-LLM-ABM']
-- `IMPL-890` `pass` `advanced_gate` accuracy requirement layers=['DeepSeek 调用', '人群状态', '供需与运营动作', '宏观校准', '活动链与路线', '用户监督', '行为程序', '选择概率', '高能力主控']
-- `IMPL-891` `pass` `advanced_gate` accuracy feature derivatives=1200
-- `IMPL-892` `pass` `advanced_gate` feature derivative validation status=pass failures=0
-- `IMPL-893` `pass` `advanced_gate` feature derivative rows=1200
-- `IMPL-894` `pass` `advanced_gate` feature derivative checks=['business_terms_covered', 'coverage_candidate_supply_action_id', 'coverage_demand_trigger_id', 'coverage_income_segment_id', 'coverage_node_context_id', 'coverage_persona_id', 'coverage_time_band_id', 'coverage_weather_id', 'deepseek_boundary_every_row', 'no_mojibake_markers', 'required_cells_non_empty', 'required_columns_present', 'row_count_at_least_1000', 'specific_recommendation_not_raw_score', 'user_control_every_row']
-- `IMPL-895` `pass` `advanced_gate` feature derivative coverage={'persona_id': 8, 'income_segment_id': 5, 'time_band_id': 6, 'weather_id': 5, 'node_context_id': 6, 'demand_trigger_id': 10, 'candidate_supply_action_id': 21}
-- `IMPL-896` `pass` `advanced_gate` feature pool browser status=pass upload=True preflight=True console=0
-- `IMPL-897` `pass` `advanced_gate` feature pool screenshots=[('40_quality_evidence/person_feature_pool_upload_visible_20260607.png', 222938), ('40_quality_evidence/person_feature_pool_preflight_visible_20260607.png', 149853)]
-- `IMPL-898` `pass` `advanced_gate` feature derivative user control status=pass id=PSD-0001 console=0
-- `IMPL-899` `pass` `advanced_gate` feature derivative user control screenshot bytes=149937
-- `IMPL-900` `pass` `advanced_gate` feature derivative income browser status=pass id=None console=0
-- `IMPL-901` `pass` `advanced_gate` feature derivative income screenshot bytes=146342
-- `IMPL-902` `pass` `advanced_gate` report feature context status=pass failures=0
-- `IMPL-903` `pass` `advanced_gate` report feature context checks=['API-FEATURE-CONTROL', 'API-FEATURE-ID', 'API-FEATURE-INCOME-FIELDS', 'API-FEATURE-POOL', 'API-REPORT-CALIBRATION-NEXT-ACTION', 'API-REPORT-CALIBRATION-READINESS', 'API-REPORT-CONTEXT', 'API-REPORT-INCOME-PRICE', 'API-REPORT-NEXT-ACTION-IMPACT', 'API-REPORT-READINESS-IMPACT', 'API-REPORT-REAL-CALIBRATION', 'API-SITE-REPORT', 'API-SITE-REPORT-CONTEXT', 'API-SITE-REPORT-REAL-CALIBRATION', 'DOCX-FEATURE-ITEM', 'DOCX-FEATURE-SECTION', 'DOCX-INCOME-PRICE', 'DOCX-REAL-CALIBRATION-SECTION', 'DOCX-WRITTEN', 'MD-FEATURE-ID', 'MD-FEATURE-SECTION', 'MD-REAL-CALIBRATION-SECTION', 'PROMPT-FEATURE-CONTEXT', 'PROMPT-FEATURE-ID', 'PROMPT-INCOME-PRICE-RULE', 'UI-REPORT-FEATURE-CONTEXT', 'UI-REPORT-FEATURE-STYLE', 'UI-REPORT-REAL-CALIBRATION']
-- `IMPL-904` `pass` `advanced_gate` report DOCX bytes=57500
-- `IMPL-905` `pass` `advanced_gate` real calibration supplement loop status=pass failures=0
-- `IMPL-906` `pass` `advanced_gate` real calibration supplement loop checks=['API-SUPPLEMENT-CREATE', 'API-SUPPLEMENT-ID', 'API-SUPPLEMENT-PATCH', 'BROWSER-CONSOLE-CLEAN', 'BROWSER-PATCHED-VALUE-VISIBLE', 'BROWSER-SCREENSHOT-WRITTEN', 'BROWSER-SUPPLEMENT-VISIBLE', 'JOB-CREATED', 'JOB-REQUEST-COUNT-CHANGED', 'PREFLIGHT-COUNT-CHANGED', 'PREFLIGHT-PATCH-VISIBLE', 'PREFLIGHT-SUPPLEMENT-COUNT', 'PREFLIGHT-SUPPLEMENT-ITEM', 'REPORT-DOCX-SUPPLEMENT', 'REPORT-GENERATED', 'REPORT-JSON-SUPPLEMENT', 'REPORT-MD-SUPPLEMENT']
-- `IMPL-907` `pass` `advanced_gate` real calibration supplement loop screenshot bytes=568627
-- `IMPL-908` `pass` `advanced_gate` report feature browser status=pass derivative=PSD-0001
-- `IMPL-909` `pass` `advanced_gate` report feature browser checks=['adopted_scene_visible', 'console_clean', 'feature_section_open', 'feature_section_visible', 'hero_readable_width', 'income_visible', 'no_forbidden_words', 'price_band_visible', 'report_visible', 'screenshot_written']
-- `IMPL-910` `pass` `advanced_gate` report feature browser screenshot bytes=337441
-- `IMPL-911` `pass` `advanced_gate` simulation feature dry run status=pass failures=0 matches=7
-- `IMPL-912` `pass` `advanced_gate` simulation feature dry run checks=['API-FEATURE-CONTROL', 'API-FEATURE-ID', 'API-FEATURE-INCOME-PRICE', 'API-FEATURE-POOL', 'API-SIM-JOB-CREATE', 'API-SIM-JOB-ID', 'API-SIM-RESULTS', 'EXPORT-CSV', 'EXPORT-CSV-ACCURACY-FIELDS', 'EXPORT-CSV-FEATURE-FIELDS', 'JOB-REQUEST-FEATURE-COUNT', 'JOB-REQUEST-FEATURE-ID', 'JOB-REQUEST-REAL-CALIBRATION-COUNT', 'JOB-REQUEST-REAL-CALIBRATION-LAYERS', 'RESULT-ACCURACY-CONTEXT', 'RESULT-ACCURACY-LEVERS', 'RESULT-CALIBRATION-EVIDENCE', 'RESULT-DEEPSEEK-BOUNDARY', 'RESULT-FEATURE-CONTEXT', 'RESULT-FEATURE-MATCH', 'RESULT-INCOME-PRICE-PRESSURE', 'RESULT-NEXT-DATA-SCENE', 'RESULT-NO-ROI', 'RESULT-NOT-FINAL-WARNING', 'RESULT-OPERATION-RULES', 'RESULT-ROW-COUNT', 'RESULT-TIME-WEATHER-PRESSURE', 'UI-SIM-ACCURACY-FIELDS', 'UI-SIM-FEATURE-FIELDS', 'UI-SIM-PRESSURE-STYLE']
-- `IMPL-913` `pass` `advanced_gate` simulation feature matched rows=7
-- `IMPL-914` `pass` `advanced_gate` simulation feature browser status=pass failures=0 job=SIM-20260607064914-60601
-- `IMPL-915` `pass` `advanced_gate` simulation feature browser checks=['accuracy_visible', 'adopted_scene_metric', 'console_clean', 'feature_scene_visible', 'income_price_visible', 'job_id_visible', 'no_forbidden_words', 'operation_visible', 'pressure_card_count', 'real_calibration_metric', 'screenshot_written', 'table_scene_columns']
-- `IMPL-916` `pass` `advanced_gate` simulation feature browser screenshot bytes=1094958
-- `IMPL-917` `pass` `advanced_gate` production AI must be DeepSeek-only; codex prod hits=[]
-- `IMPL-918` `pass` `advanced_gate` object chain status=pass failures=0
-- `IMPL-919` `pass` `advanced_gate` object chain keys=['ai_session', 'behavior_program', 'choice_probability', 'feature_derivative_scene', 'node_progress', 'persona_state', 'project_scope', 'report_draft', 'source_material', 'spatial_context', 'validation_target']
-- `IMPL-920` `pass` `advanced_gate` object chain summary={'total_items': 11, 'usable_count': 4, 'draft_count': 6, 'needs_input_count': 0, 'blocked_count': 1}
-- `IMPL-921` `pass` `advanced_gate` object chain browser status=pass failures=0
-- `IMPL-922` `pass` `advanced_gate` object chain browser checks=['console_no_errors', 'no_backend_words', 'visible_AI 沟通记录', 'visible_人群状态画像', 'visible_仿真验证目标', 'visible_对象链路矩阵', 'visible_报告工作稿', 'visible_节点推进对象', 'visible_行为程序', 'visible_选择概率候选']
-- `IMPL-923` `pass` `advanced_gate` object chain screenshot bytes=515775
-- `IMPL-924` `pass` `advanced_gate` simulation task preflight status=pass failures=0
-- `IMPL-925` `pass` `advanced_gate` simulation task preflight checks=['API-ASSET-CAD-PLAN', 'API-ASSET-FEATURE-DERIVATIVES', 'API-ASSET-REAL-CALIBRATION', 'API-CHECK-CAD-PLAN', 'API-CHECK-CONTROLLED-FEATURE-SCENES', 'API-CHECK-DEEPSEEK-ONLY', 'API-CHECK-FEATURE-DERIVATIVES', 'API-CHECK-REAL-CALIBRATION', 'API-DASHBOARD', 'API-DASHBOARD-PREFLIGHT', 'API-DRY-RUN-READY', 'API-FEATURE-CHECK-PASS-AFTER-CONTROL', 'API-FEATURE-FIRST-ID', 'API-FEATURE-INCOME-COVERAGE', 'API-FEATURE-INCOME-FIELDS', 'API-FEATURE-INPUT-IMPACT', 'API-FEATURE-LOCK', 'API-FEATURE-POOL-IN-PREFLIGHT', 'API-FEATURE-RESTORE', 'API-FEATURE-USE', 'API-FULL-SIM-BLOCKED', 'API-GET-FEATURE-DERIVATIVES', 'API-GET-PREFLIGHT', 'API-OBJECTS-FIRST', 'API-POST-FULL-STILL-BLOCKED', 'API-POST-PREFLIGHT', 'API-REAL-CALIBRATION-LAYERED', 'API-SELECT-ALL-TYPES', 'DATA-AMAP-POI', 'DATA-BOSS-MATERIALS', 'DATA-CAD-PLAN', 'DATA-EVIDENCE-LEDGER', 'DATA-FEATURE-DERIVATIVES', 'DATA-OSEN-REAL-CALIBRATION', 'DATA-PDF-TABLES', 'OBJECT-CHOICE-VALIDATION', 'OBJECT-PERSONA-BEHAVIOR', 'TEXT-AI-BOUNDARY-HUMANIZED', 'TEXT-NO-FINAL-CLAIM', 'UI-FEATURE-INCOME-FIELDS', 'UI-FEATURE-POOL-ACTIONS', 'UI-FEATURE-POOL-LAYOUT', 'UI-PREFLIGHT-ACTIONS', 'UI-PREFLIGHT-LAYOUT', 'UI-PREFLIGHT-SECTION']
-- `IMPL-926` `pass` `advanced_gate` simulation task local counts={'evidence_ledger': 260, 'pdf_native_tables': 329, 'amap_poi_candidates': 227, 'in_park_followup': 7, 'persona_state': 6, 'behavior_program': 12, 'choice_probability': 36, 'validation_target': 10, 'feature_derivatives': 1200, 'real_calibration_inputs': 14, 'boss_sources': 6, 'cad_plan_files': 4, 'boss_folder_files': 6}
-- `IMPL-927` `pass` `advanced_gate` advanced QA status=pass findings=0
-- `IMPL-928` `pass` `advanced_gate` advanced QA taxonomy=['accessibility_semantics', 'agent_readability', 'ai_output_risk', 'ai_scope_integrity', 'evidence_traceability', 'human_visual', 'legacy_leakage', 'observability', 'oversight_checkpoint', 'state_coupling']
-- `IMPL-929` `pass` `advanced_gate` advanced QA methods=['Playwright trace with screenshots/snapshots/sources', 'ARIA snapshot for agent-readable structure', 'visible text internal-term scan', 'stable hook scan for agentic validation', 'human visual layout bounds for AI workbench', 'oversight checkpoint text checks', 'hidden-risk taxonomy: scope integrity, legacy leakage, state coupling, evidence traceability, AI output risk']
-- `IMPL-930` `pass` `advanced_gate` advanced QA views=7 screenshots=7
-- `IMPL-931` `pass` `advanced_gate` advanced QA missing_hook_count=0
-- `IMPL-932` `pass` `advanced_gate` advanced QA data view text_len=4364
-- `IMPL-933` `pass` `advanced_gate` advanced QA trace bytes=2915416
-- `IMPL-934` `pass` `advanced_gate` advanced QA ARIA bytes=7062
-- `IMPL-935` `pass` `advanced_gate` advanced QA tool_versions={'playwright': '1.60.0', 'chrome_executable': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'selenium_retained': '4.44.0', 'opentelemetry_sdk': '1.42.1'}
-- `IMPL-936` `pass` `advanced_gate` page layer rebuild blueprint preserves global object-chain and modern validation requirements
-- `IMPL-937` `pass` `advanced_gate` mainline execution map prevents legacy-shell loop and names next valuable slices
-- `IMPL-938` `pass` `advanced_gate` ui skill design system audit is persisted and mapped to the next page rebuild
-- `IMPL-939` `pass` `advanced_gate` web design guidelines audit is persisted and mapped to the page rebuild decision
-- `IMPL-940` `pass` `advanced_gate` page rebuild strategy status=requires_page_level_rebuild
-- `IMPL-941` `pass` `advanced_gate` page rebuild answer={'full_website_redone': False, 'current_page_state': '旧 P6 壳上的过渡重基线，已接入对象链和预检，但不是最终页面级重做。', 'engineering_decision': '继续修旧壳会和新主线冲突；下一步应页面级重构，迁移已验证底座，废弃旧叙事。'}
-- `IMPL-942` `pass` `advanced_gate` page rebuild checks=['BLUEPRINT-SAYS-NOT-PATCHING', 'BOSS-REBASELINE-REQUIRES-SYSTEM-LAYER', 'CSS-STILL-LEGACY-PANEL-DOMINANT', 'NEW-CHAIN-LANDED', 'NO_FORBIDDEN_VISIBLE_LEAK_IN_STATIC_SURFACE', 'OBJECT-CHAIN-PASS', 'OLD-SHELL-STILL-PRESENT', 'PAGE-VALIDATION-PASS', 'PREFLIGHT-PASS-BUT-NOT-FINAL-SIMULATION', 'RECENT-SIMULATION-LEARNING-BOUNDARY', 'UI_UX_PRO_MAX_DESIGN_SYSTEM_USED']
-- `IMPL-943` `pass` `advanced_gate` page rebuild migration keys=['keep_as_verified_backend_or_data_base', 'refactor_into_new_workflow_surface', 'retire_or_hide_from_user_surface']
-- `IMPL-944` `pass` `advanced_gate` workflow navigation status=pass failures=0
-- `IMPL-945` `pass` `advanced_gate` workflow navigation checks=['ACTIVE_STAGE_LOGIC_PRESENT', 'DEEP_LINK_AND_SCROLL_LOGIC_PRESENT', 'DESIGN_SKILL_EVIDENCE_EXISTS', 'DRILLDOWN_TARGETS_PRESENT', 'FIVE_STAGE_IA_PRESENT', 'NODE_DETAIL_DOES_NOT_DUPLICATE_CREATE_FORM', 'VISUAL_SYSTEM_PRESENT', 'WORKFLOW_NAV_REPLACES_FLAT_SIDE_NAV']
-- `IMPL-946` `pass` `advanced_gate` source/space foundation status=pass failures=0 assets=9 pois=32
-- `IMPL-947` `pass` `advanced_gate` source/space foundation checks=['CACHE_BUSTER_UPDATED_FOR_FOUNDATION_SLICE', 'LOCAL_ASSETS_BACKEND_PRESENT', 'MAP_ENGINE_LAZY_ON_NON_MAP_VIEWS', 'NO_INTERNAL_TOKENS_IN_VISIBLE_FOUNDATION_SURFACE', 'SOURCE_FOUNDATION_RENDERER_EXISTS', 'SOURCE_FOUNDATION_UI_EXISTS', 'SOURCE_FOUNDATION_VISUAL_SYSTEM_EXISTS', 'SPACE_CONTEXT_PRESENT_BUT_REVIEW_BOUNDARY_VISIBLE', 'UPLOAD_POOL_STILL_AVAILABLE']
-- `IMPL-948` `pass` `advanced_gate` source foundation browser runtime active={'uploadView'} cards=8 lazy_map=True forbidden=[]
-- `IMPL-949` `pass` `advanced_gate` source foundation screenshot bytes=735080
-- `IMPL-950` `pass` `advanced_gate` page layer validation status=pass failures=0
-- `IMPL-951` `pass` `advanced_gate` page layer checks=['ai_default_project_scope', 'ai_no_backend_words', 'ai_not_default_first_node', 'ai_rail_toggle_changes_state', 'assistant_message_width_desktop', 'composer_width_desktop', 'new_chat_visible', 'object_chain_cards_present', 'object_chain_evidence_folded', 'overview_no_backend_words', 'overview_not_default_taohuayuan', 'overview_visible_全局仿真链路台', 'overview_visible_全局对象链', 'overview_visible_对象链路矩阵', 'overview_visible_当前推进事项', 'overview_visible_系统链路状态', 'primary_actions_present', 'report_button_stateful']
-- `IMPL-952` `pass` `advanced_gate` page layer screenshot sizes={'overview': 514414, 'ai_workspace': 119969}
-- `IMPL-953` `pass` `advanced_gate` axe status=pass failures=0
-- `IMPL-954` `pass` `advanced_gate` axe violation_counts={'overview': 0, 'ai': 0, 'data': 0}
-- `IMPL-955` `pass` `advanced_gate` Lighthouse user flow status=pass failures=0
-- `IMPL-956` `pass` `advanced_gate` Lighthouse checks=['accessibility_minimum_090', 'accessibility_scores_present', 'best_practices_scores_present', 'flow_has_three_steps', 'flow_html_written', 'navigation_timespan_performance_minimum_080', 'performance_scores_recorded']
-- `IMPL-957` `pass` `advanced_gate` Lighthouse step_names=['打开全局推进台', '切换 AI、资料池、节点与报告', '报告页与资料池状态快照']
-- `IMPL-958` `pass` `advanced_gate` Lighthouse flow html bytes=1328370
-- `IMPL-959` `pass` `advanced_gate` OTel trace status=pass failures=0
-- `IMPL-960` `pass` `advanced_gate` OTel span_count=9 responses={'/api/dashboard': 200, '/api/object-chain': 200, '/api/ai/sessions': 200}
-- `IMPL-961` `pass` `advanced_gate` advanced capability audit status=pass failures=0
-- `IMPL-962` `pass` `advanced_gate` advanced capability checks=9
-- `IMPL-963` `pass` `advanced_gate` legacy_matrix=6 official_refs=5
-- `IMPL-964` `pass` `ux_rebaseline` Flowus probe records=3
-- `IMPL-965` `pass` `ux_rebaseline` Flowus extracted text lengths=[2728, 12077, 2798]
-- `IMPL-966` `pass` `ux_rebaseline` Flowus titles=['零代码开发，给你的 App 注入灵魂！（下）', '让你的网站告别AI味，充满高级感', '零代码开发，给你的 App 注入灵魂！（上）']
-- `IMPL-967` `pass` `ux_rebaseline` Flowus screenshots exist for real browser evidence
-- `IMPL-968` `pass` `ux_rebaseline` OpenAlex 2026 AI design candidates=47
-- `IMPL-969` `pass` `ux_rebaseline` OpenAlex evidence includes 2026 agentic UI, oversight, and simulation references
-- `IMPL-970` `pass` `ux_rebaseline` Semantic Scholar records=14, errors=6
-- `IMPL-971` `pass` `ux_rebaseline` Semantic Scholar useful titles=['', '', '', 'Ask, Clarify, Optimize: Human-LLM Agent Collaboration for Smarter Inventory Control', 'Dark Patterns Meet GUI Agents: LLM Agent Susceptibility to Manipulative Interfaces and the Role of Human Oversight']
-- `IMPL-972` `pass` `ux_rebaseline` arXiv 2026 search attempts=5, blocked_or_timeout=5
-- `IMPL-973` `pass` `rebaseline` legacy adapter status=metadata_wrapped_only
-- `IMPL-974` `pass` `rebaseline` legacy adapter file_count=35
-- `IMPL-975` `pass` `rebaseline` legacy envelope validation status=pass
-- `IMPL-976` `pass` `rebaseline` legacy envelope validation file_count=35
-- `IMPL-977` `pass` `rebaseline` legacy envelope validation failure_count=0
-- `IMPL-978` `pass` `p4` P4 node explanation adapter status=needs_review
-- `IMPL-979` `pass` `p4` P4 node explanation item_count=6
-- `IMPL-980` `pass` `p4` P4 node explanation contract status=pass
-- `IMPL-981` `pass` `p4` P4 node explanation contract file_count=1
-- `IMPL-982` `pass` `p4` P4 node explanation contract failure_count=0
-- `IMPL-983` `pass` `p4` P4 node envelope task_type=node_explanation
-- `IMPL-984` `pass` `p4` P4 node envelope items=6
-- `IMPL-985` `pass` `p4` P4 node old scores are hidden_by_default
-- `IMPL-986` `pass` `p4` P4 node priorities downgraded to 补资料后判断
-- `IMPL-987` `pass` `simulation` choice probability adapter status=needs_review
-- `IMPL-988` `pass` `simulation` choice probability item_count=36
-- `IMPL-989` `pass` `simulation` choice probability duckdb_csv_count=36
-- `IMPL-990` `pass` `simulation` choice probability schema_failure_count=0
-- `IMPL-991` `pass` `simulation` choice probability contract status=pass
-- `IMPL-992` `pass` `simulation` choice probability contract file_count=1
-- `IMPL-993` `pass` `simulation` choice probability contract failure_count=0
-- `IMPL-994` `pass` `simulation` choice probability envelope task_type=choice_probability
-- `IMPL-995` `pass` `simulation` choice probability envelope items=36
-- `IMPL-996` `pass` `simulation` choice probability items remain needs_review
-- `IMPL-997` `pass` `simulation` choice probability does not invent numeric probability_value
-- `IMPL-998` `pass` `simulation` choice probability priorities downgraded to 补资料后判断
-- `IMPL-999` `pass` `simulation` simulation validation adapter status=needs_review
-- `IMPL-1000` `pass` `simulation` simulation validation item_count=10
-- `IMPL-1001` `pass` `simulation` simulation validation duckdb_csv_count=10
-- `IMPL-1002` `pass` `simulation` simulation validation schema_failure_count=0
-- `IMPL-1003` `pass` `simulation` simulation validation contract status=pass
-- `IMPL-1004` `pass` `simulation` simulation validation contract file_count=1
-- `IMPL-1005` `pass` `simulation` simulation validation contract failure_count=0
-- `IMPL-1006` `pass` `simulation` simulation validation envelope task_type=simulation_validation_target
-- `IMPL-1007` `pass` `simulation` simulation validation envelope items=10
-- `IMPL-1008` `pass` `simulation` simulation validation levels=['business_decision', 'choice_probability', 'macro_distribution', 'route_access', 'state_behavior_chain', 'time_series']
-- `IMPL-1009` `pass` `simulation` simulation validation metrics include core=['correlation', 'dtw_r2', 'field_check', 'kl_divergence', 'llm_draft_consistency_review', 'manual_review', 'peak_shift', 'route_reachability', 'sarima_consistency', 'ssim', 'state_behavior_consistency']
-- `IMPL-1010` `pass` `simulation` simulation object pool counts initial=46 final=46
-- `IMPL-1011` `pass` `simulation` simulation object type_counts={'choice_probability': 36, 'simulation_validation_target': 10}
-- `IMPL-1012` `pass` `simulation` simulation object API statuses={'list_status': 200, 'create_status': 200, 'update_status': 200, 'use_status': 200, 'lock_status': 200, 'unlock_status': 200, 'delete_status': 200}
-- `IMPL-1013` `pass` `simulation` simulation object locked delete=409 final delete=200
-- `IMPL-1014` `pass` `simulation` simulation object browser failures=[] textIssues=[] console=[]
-- `IMPL-1015` `pass` `simulation` simulation object browser actions=9
-- `IMPL-1016` `pass` `simulation` simulation object primary button style={'backgroundColor': 'rgb(15, 143, 134)', 'borderRadius': '6px', 'color': 'rgb(255, 255, 255)', 'fontWeight': '700', 'minHeight': '34px'}
-- `IMPL-1017` `pass` `simulation` persona/behavior object pool status=pass failures=0
-- `IMPL-1018` `pass` `simulation` persona/behavior object pool type_counts={'choice_probability': 36, 'simulation_validation_target': 10, 'persona_state': 6, 'behavior_program': 12}
-- `IMPL-1019` `pass` `simulation` persona/behavior object pool basis=['10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md', '40_quality_evidence/method_model_landing_coverage_20260605.md', '70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv', '70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv']
-- `IMPL-1020` `pass` `ux_rebaseline` global overview browser title=AI 仿真决策系统
-- `IMPL-1021` `pass` `ux_rebaseline` global overview failures=[] textIssues=[] console=[]
-- `IMPL-1022` `pass` `ux_rebaseline` global overview checks_ok=True, statusCount=7
-- `IMPL-1023` `pass` `ux_rebaseline` global rebaseline browser failures=[] textIssues=[] console=[]
-- `IMPL-1024` `pass` `ux_rebaseline` global rebaseline browser statusCount=7
-- `IMPL-1025` `pass` `ux_rebaseline` old visible UI terms still present=[]
-- `IMPL-1026` `pass` `handoff` mainline insert rule=Codex 自身强化只能作为主线防偏航层插入，不得替代仿真主线。
-- `IMPL-1027` `pass` `handoff` mainline purpose=Codex 主线防偏航上下文包：锁定全局 AI 仿真决策系统重基线，避免旧文件和旧 P6 口径误导后续判断。
-- `IMPL-1028` `pass` `handoff` next mainline step=按全局 AI 仿真决策系统重基线，继续重构 AI 工作台、资料池/方法对象池、仿真任务入口，并建立旧文件信任地图，避免历史产物被误判为新方向成果。
-- `IMPL-1029` `pass` `handoff` mainline context missing_files=[]
-- `IMPL-1030` `pass` `handoff` mainline context stale_top_phrase_findings=[]
-- `IMPL-1031` `pass` `handoff` mainline startup commands=['powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1', 'powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1 -FullGate']
-- `IMPL-1032` `pass` `handoff` mainline context preserves DeepSeek boundary
-- `IMPL-1033` `pass` `llm` DeepSeek smoke test status=ok
-- `IMPL-1034` `pass` `llm` DeepSeek smoke test model=deepseek-v4-pro
-- `IMPL-1035` `pass` `external_api` Amap smoke test status=ok
-- `IMPL-1036` `pass` `external_api` Amap smoke test result_count=1
-- `IMPL-1037` `pass` `llm` DeepSeek table classification classified_rows=329
-- `IMPL-1038` `pass` `llm` DeepSeek table classification remaining_rows=0
-- `IMPL-1039` `pass` `llm` DeepSeek table classification raw chunks=44
-- `IMPL-1040` `pass` `llm` DeepSeek evidence candidates completed_tables=63
-- `IMPL-1041` `pass` `llm` DeepSeek evidence candidates remaining_tables=0
-- `IMPL-1042` `pass` `llm` DeepSeek evidence candidates rows=592
-- `IMPL-1043` `pass` `llm` DeepSeek evidence candidates raw chunks=63
-- `IMPL-1044` `pass` `llm` DeepSeek entrance node semantic classified_rows=45
-- `IMPL-1045` `pass` `llm` DeepSeek entrance node semantic remaining_rows=0
-- `IMPL-1046` `pass` `llm` DeepSeek entrance node semantic raw_chunks=6
-- `IMPL-1047` `pass` `llm` DeepSeek entrance node semantic raw chunks=6
-- `IMPL-1048` `pass` `llm` DeepSeek P0 package work_items=7
-- `IMPL-1049` `pass` `llm` DeepSeek P0 package rows=7
-- `IMPL-1050` `pass` `llm` DeepSeek P0 package remaining_rows=0
-- `IMPL-1051` `pass` `llm` DeepSeek P0 package raw_chunks=1
-- `IMPL-1052` `pass` `llm` DeepSeek P0 package raw chunks=1
-- `IMPL-1053` `pass` `llm` DeepSeek context sync text files=8
-- `IMPL-1054` `pass` `llm` DeepSeek context sync csv files=6
-- `IMPL-1055` `pass` `llm` DeepSeek context sync task queue rows=6
-- `IMPL-1056` `pass` `llm` DeepSeek context sync raw_chunks=1
-- `IMPL-1057` `pass` `llm` DeepSeek context sync output_status=needs_review
-- `IMPL-1058` `pass` `llm` DeepSeek context sync raw chunks=1
-- `IMPL-1059` `pass` `llm` DeepSeek context sync latest output_status=needs_review
-- `IMPL-1060` `pass` `llm` DeepSeek context sync latest task_queue rows=6
-- `IMPL-1061` `pass` `llm` DeepSeek P0 detail plan work_items=7
-- `IMPL-1062` `pass` `llm` DeepSeek P0 detail plan rows=7
-- `IMPL-1063` `pass` `llm` DeepSeek P0 detail plan remaining_rows=0
-- `IMPL-1064` `pass` `llm` DeepSeek P0 detail plan raw_chunks=1
-- `IMPL-1065` `pass` `llm` DeepSeek P0 detail plan output_status=needs_review
-- `IMPL-1066` `pass` `llm` DeepSeek P0 detail plan raw chunks=1
-- `IMPL-1067` `pass` `llm` DeepSeek P0 field checklist work_items=7
-- `IMPL-1068` `pass` `llm` DeepSeek P0 field checklist node_items=27
-- `IMPL-1069` `pass` `llm` DeepSeek P0 field checklist rows=34
-- `IMPL-1070` `pass` `llm` DeepSeek P0 field checklist raw_chunks=1
-- `IMPL-1071` `pass` `llm` DeepSeek P0 field checklist output_status=needs_review
-- `IMPL-1072` `pass` `llm` DeepSeek P0 field checklist raw chunks=1
-- `IMPL-1073` `pass` `llm` DeepSeek P1 quality progress evidence_rows=260
-- `IMPL-1074` `pass` `llm` DeepSeek P1 quality progress business_fill_rows=7
-- `IMPL-1075` `pass` `llm` DeepSeek P1 quality progress enriched_work_rows=7
-- `IMPL-1076` `pass` `llm` DeepSeek P1 quality progress field_checklist_rows=34
-- `IMPL-1077` `pass` `llm` DeepSeek P1 quality progress verification_checks=338
-- `IMPL-1078` `pass` `llm` DeepSeek P1 quality progress output_status=needs_review
-- `IMPL-1079` `pass` `llm` DeepSeek P1 quality raw chunks=1
-- `IMPL-1080` `pass` `llm` DeepSeek P2 semantic docx rows=21
-- `IMPL-1081` `pass` `llm` DeepSeek P2 semantic pdf rows=22
-- `IMPL-1082` `pass` `llm` DeepSeek P2 semantic output_status=needs_review
-- `IMPL-1083` `pass` `llm` DeepSeek P2 semantic raw chunks=1
-- `IMPL-1084` `pass` `llm` DeepSeek P2 schema node rows=6
-- `IMPL-1085` `pass` `llm` DeepSeek P2 schema assumption rows=12
-- `IMPL-1086` `pass` `llm` DeepSeek P2 schema spatial rows=22
-- `IMPL-1087` `pass` `llm` DeepSeek P2 schema gap rows=10
-- `IMPL-1088` `pass` `llm` DeepSeek P2 schema output_status=needs_review
-- `IMPL-1089` `pass` `llm` DeepSeek P2 schema raw chunks=1
-- `IMPL-1090` `pass` `llm` DeepSeek P2 readiness ready_items=8
-- `IMPL-1091` `pass` `llm` DeepSeek P2 readiness blocking_gaps=8
-- `IMPL-1092` `pass` `llm` DeepSeek P2 readiness recommended_outputs=6
-- `IMPL-1093` `pass` `llm` DeepSeek P2 readiness handoff_risks=5
-- `IMPL-1094` `pass` `llm` DeepSeek P2 readiness output_status=needs_review
-- `IMPL-1095` `pass` `llm` DeepSeek P2 readiness raw chunks=1
-- `IMPL-1096` `pass` `llm` DeepSeek P2 source coverage matrix_rows=60
-- `IMPL-1097` `pass` `llm` DeepSeek P2 source coverage source_rows=4
-- `IMPL-1098` `pass` `llm` DeepSeek P2 source coverage node_rows=6
-- `IMPL-1099` `pass` `llm` DeepSeek P2 source coverage assumption_rows=12
-- `IMPL-1100` `pass` `llm` DeepSeek P2 source coverage spatial_rows=22
-- `IMPL-1101` `pass` `llm` DeepSeek P2 source coverage gap_rows=10
-- `IMPL-1102` `pass` `llm` DeepSeek P2 source coverage boundary_rows=6
-- `IMPL-1103` `pass` `llm` DeepSeek P2 source coverage output_status=needs_review
-- `IMPL-1104` `pass` `llm` DeepSeek P2 source coverage raw chunks=1
-- `IMPL-1105` `pass` `files` osm boundary geojson features=2
-- `IMPL-1106` `pass` `files` osm boundary park ids=['sample_city_green_heart', 'sample_olympic_forest']
-- `IMPL-1107` `pass` `scripts` python compile failures=[]
-- `IMPL-1108` `pass` `scripts` amap dry run: exit=0, expected_text_found=True
-- `IMPL-1109` `pass` `scripts` poi supply review: exit=0
-- `IMPL-1110` `pass` `scripts` amap spatial precheck rebuild: exit=0, expected_text_found=True
-- `IMPL-1111` `pass` `scripts` amap boundary filter rebuild: exit=0, expected_text_found=True
-- `IMPL-1112` `pass` `scripts` in-park candidate review rebuild: exit=0, expected_text_found=True
-- `IMPL-1113` `pass` `scripts` p1 quality report review: exit=0, expected_text_found=True
-- `IMPL-1114` `pass` `scripts` p2 real-site input index rebuild: exit=0, expected_text_found=True
-- `IMPL-1115` `pass` `scripts` p2 semantic breakdown review: exit=0, expected_text_found=True
-- `IMPL-1116` `pass` `scripts` p2 input schema candidate review: exit=0, expected_text_found=True
-- `IMPL-1117` `pass` `scripts` p2 completion readiness review: exit=0, expected_text_found=True
-- `IMPL-1118` `pass` `scripts` p2 source coverage DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1119` `pass` `scripts` p2 source coverage review: exit=0, expected_text_found=True
-- `IMPL-1120` `pass` `scripts` p2 geometry proxy DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1121` `pass` `scripts` p2 geometry proxy review: exit=0, expected_text_found=True
-- `IMPL-1122` `pass` `scripts` p3 prework DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1123` `pass` `scripts` p3 prework package review: exit=0, expected_text_found=True
-- `IMPL-1124` `pass` `scripts` p3 calibration execution DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1125` `pass` `scripts` p3 calibration execution package review: exit=0, expected_text_found=True
-- `IMPL-1126` `pass` `scripts` p4 premature simulation DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1127` `pass` `scripts` p4 feedback draft DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
-- `IMPL-1128` `pass` `scripts` p4 feedback draft review: exit=0, expected_text_found=True
-- `IMPL-1129` `pass` `scripts` p2 method prototype rebuild: exit=0, expected_text_found=True
-- `IMPL-1130` `pass` `scripts` p2 method prototype review: exit=0, expected_text_found=True
-- `IMPL-1131` `pass` `scripts` p2 completion reality audit: exit=0, expected_text_found=True
-- `IMPL-1132` `pass` `scripts` handoff encoding health review: exit=0, expected_text_found=True
-- `IMPL-1133` `pass` `llm` loaded routes=26
-- `IMPL-1134` `pass` `llm` LLM-001 routes to DeepSeek
-- `IMPL-1135` `pass` `llm` LLM-006 remains high-risk final conclusion
-- `IMPL-1136` `pass` `llm` LLM-009 remains Tier-2 needs_review
-- `IMPL-1137` `pass` `llm` LLM-010 remains Tier-2 needs_review
-- `IMPL-1138` `pass` `llm` LLM-011 entrance node semantic screening remains draft
-- `IMPL-1139` `pass` `llm` LLM-012 P0 verification package remains needs_review
-- `IMPL-1140` `pass` `llm` LLM-013 context sync remains needs_review
-- `IMPL-1141` `pass` `llm` LLM-014 P0 Amap detail query plan remains needs_review
-- `IMPL-1142` `pass` `llm` LLM-015 field verification checklist remains needs_review
-- `IMPL-1143` `pass` `llm` LLM-016 P1 quality report remains needs_review
-- `IMPL-1144` `pass` `llm` LLM-017 P2 real-site semantic breakdown remains needs_review
-- `IMPL-1145` `pass` `llm` LLM-018 P2 input schema candidates remain needs_review
-- `IMPL-1146` `pass` `llm` LLM-019 P2 readiness audit remains needs_review
-- `IMPL-1147` `pass` `llm` LLM-020 P2 source coverage audit remains needs_review
-- `IMPL-1148` `pass` `llm` LLM-021 P2 geometry proxy audit remains needs_review
-- `IMPL-1149` `pass` `llm` LLM-022 P3 prework package remains needs_review
-- `IMPL-1150` `pass` `llm` LLM-023 P3 calibration execution package remains needs_review
-- `IMPL-1151` `pass` `llm` LLM-024 P4 premature audit remains needs_review
-- `IMPL-1152` `pass` `llm` LLM-025 P4 feedback draft remains needs_review
-- `IMPL-1153` `pass` `llm` LLM-006 high-risk/non-DeepSeek guard triggered
-- `IMPL-1154` `pass` `llm` DeepSeek key must come from environment
-- `IMPL-1155` `pass` `security` sensitive matches=[]
-- `IMPL-1156` `pass` `files` mojibake placeholders=[]
-- `IMPL-1157` `pass` `security` .env.example keeps empty placeholders only
-- `IMPL-1158` `pass` `security` .env has local DeepSeek key configured
-- `IMPL-1159` `pass` `security` .env has local Amap key configured
-- `IMPL-1160` `pass` `security` .gitignore excludes .env
-- `IMPL-1161` `pass` `github` gh repo list cocyuhao: exit=0
-- `IMPL-1162` `pass` `github` fork parent verification failures=[]
-- `IMPL-1163` `pass` `github` archive repo contents: exit=0
-- `IMPL-1164` `pass` `github` archive root paths=['README.md', 'docs', 'manifests']
-- `IMPL-1165` `pass` `github` archive docs contents: exit=0
-- `IMPL-1166` `pass` `github` archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']
-- `IMPL-1167` `pass` `github` archive manifests contents: exit=0
-- `IMPL-1168` `pass` `github` archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']
+- `IMPL-887` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation accuracy requirements invalid: FileNotFoundError. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-888` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative validation invalid: FileNotFoundError. Reason: 0605/0607 feature derivative package is superseded by current controlled_feature_scene_context and real_calibration_context checks.
+- `IMPL-889` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature pool browser evidence invalid: FileNotFoundError. Reason: 0607 feature-pool browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-890` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative user-control evidence invalid: FileNotFoundError. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-891` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: person simulation feature derivative income browser evidence invalid: FileNotFoundError. Reason: 0607 feature-derivative browser evidence is superseded by current TestFiles and post-test output restore audit.
+- `IMPL-892` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: report feature scene context validation invalid: FileNotFoundError. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-893` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: real calibration supplement loop validation invalid: FileNotFoundError. Reason: 0607 supplement-loop evidence is superseded by current real_calibration_context and post-test output restore audit.
+- `IMPL-894` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: report feature scene browser validation invalid: FileNotFoundError. Reason: 0607 feature-scene report evidence is superseded by current site_selection report structure checks.
+- `IMPL-895` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation feature scene dry-run validation invalid: FileNotFoundError. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-896` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation feature scene browser validation invalid: FileNotFoundError. Reason: 0607 feature-scene simulation evidence is superseded by current structural report/context checks.
+- `IMPL-897` `pass` `advanced_gate` production AI must be DeepSeek-only; codex prod hits=[]
+- `IMPL-898` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: object chain rebaseline validation invalid: FileNotFoundError. Reason: 0605 object-chain gate is superseded by current simulation object pool tests and cache cleanup audit.
+- `IMPL-899` `pass` `advanced_gate` object chain browser status=pass failures=0
+- `IMPL-900` `pass` `advanced_gate` object chain browser checks=['console_no_errors', 'no_backend_words', 'visible_AI 沟通记录', 'visible_人群状态画像', 'visible_仿真验证目标', 'visible_对象链路矩阵', 'visible_报告工作稿', 'visible_节点推进对象', 'visible_行为程序', 'visible_选择概率候选']
+- `IMPL-901` `pass` `advanced_gate` object chain screenshot bytes=515775
+- `IMPL-902` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: simulation task preflight validation invalid: FileNotFoundError. Reason: 0605 task-entry preflight gate is superseded by current TestFiles suite and post-test output restore audit.
+- `IMPL-903` `pass` `advanced_gate` advanced QA status=pass findings=0
+- `IMPL-904` `pass` `advanced_gate` advanced QA taxonomy=['accessibility_semantics', 'agent_readability', 'ai_output_risk', 'ai_scope_integrity', 'evidence_traceability', 'human_visual', 'legacy_leakage', 'observability', 'oversight_checkpoint', 'state_coupling']
+- `IMPL-905` `pass` `advanced_gate` advanced QA methods=['Playwright trace with screenshots/snapshots/sources', 'ARIA snapshot for agent-readable structure', 'visible text internal-term scan', 'stable hook scan for agentic validation', 'human visual layout bounds for AI workbench', 'oversight checkpoint text checks', 'hidden-risk taxonomy: scope integrity, legacy leakage, state coupling, evidence traceability, AI output risk']
+- `IMPL-906` `pass` `advanced_gate` advanced QA views=7 screenshots=7
+- `IMPL-907` `pass` `advanced_gate` advanced QA missing_hook_count=0
+- `IMPL-908` `pass` `advanced_gate` advanced QA data view text_len=4364
+- `IMPL-909` `pass` `advanced_gate` advanced QA trace bytes=2915416
+- `IMPL-910` `pass` `advanced_gate` advanced QA ARIA bytes=7062
+- `IMPL-911` `pass` `advanced_gate` advanced QA tool_versions={'playwright': '1.60.0', 'chrome_executable': 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', 'selenium_retained': '4.44.0', 'opentelemetry_sdk': '1.42.1'}
+- `IMPL-912` `pass` `advanced_gate` page layer rebuild blueprint preserves global object-chain and modern validation requirements
+- `IMPL-913` `pass` `advanced_gate` mainline execution map prevents legacy-shell loop and names next valuable slices
+- `IMPL-914` `pass` `advanced_gate` ui skill design system audit is persisted and mapped to the next page rebuild
+- `IMPL-915` `pass` `advanced_gate` web design guidelines audit is persisted and mapped to the page rebuild decision
+- `IMPL-916` `pass` `advanced_gate` page rebuild strategy status=requires_page_level_rebuild
+- `IMPL-917` `pass` `advanced_gate` page rebuild answer={'full_website_redone': False, 'current_page_state': '旧 P6 壳上的过渡重基线，已接入对象链和预检，但不是最终页面级重做。', 'engineering_decision': '继续修旧壳会和新主线冲突；下一步应页面级重构，迁移已验证底座，废弃旧叙事。'}
+- `IMPL-918` `pass` `advanced_gate` page rebuild checks=['BLUEPRINT-SAYS-NOT-PATCHING', 'BOSS-REBASELINE-REQUIRES-SYSTEM-LAYER', 'CSS-STILL-LEGACY-PANEL-DOMINANT', 'NEW-CHAIN-LANDED', 'NO_FORBIDDEN_VISIBLE_LEAK_IN_STATIC_SURFACE', 'OBJECT-CHAIN-PASS', 'OLD-SHELL-STILL-PRESENT', 'PAGE-VALIDATION-PASS', 'PREFLIGHT-PASS-BUT-NOT-FINAL-SIMULATION', 'RECENT-SIMULATION-LEARNING-BOUNDARY', 'UI_UX_PRO_MAX_DESIGN_SYSTEM_USED']
+- `IMPL-919` `pass` `advanced_gate` page rebuild migration keys=['keep_as_verified_backend_or_data_base', 'refactor_into_new_workflow_surface', 'retire_or_hide_from_user_surface']
+- `IMPL-920` `pass` `advanced_gate` workflow navigation status=pass failures=0
+- `IMPL-921` `pass` `advanced_gate` workflow navigation checks=['ACTIVE_STAGE_LOGIC_PRESENT', 'DEEP_LINK_AND_SCROLL_LOGIC_PRESENT', 'DESIGN_SKILL_EVIDENCE_EXISTS', 'DRILLDOWN_TARGETS_PRESENT', 'FIVE_STAGE_IA_PRESENT', 'NODE_DETAIL_DOES_NOT_DUPLICATE_CREATE_FORM', 'VISUAL_SYSTEM_PRESENT', 'WORKFLOW_NAV_REPLACES_FLAT_SIDE_NAV']
+- `IMPL-922` `warn` `advanced_gate` superseded baseline artifact; current gate uses 2026-06-09 evidence. Original: source/space foundation validation invalid: FileNotFoundError. Reason: source/space foundation 0605 gate was replaced by current dashboard source_foundation plus historical/agent influence audits.
+- `IMPL-923` `pass` `advanced_gate` source foundation browser runtime active={'uploadView'} cards=8 lazy_map=True forbidden=[]
+- `IMPL-924` `pass` `advanced_gate` source foundation screenshot bytes=735080
+- `IMPL-925` `pass` `advanced_gate` page layer validation status=pass failures=0
+- `IMPL-926` `pass` `advanced_gate` page layer checks=['ai_default_project_scope', 'ai_no_backend_words', 'ai_not_default_first_node', 'ai_rail_toggle_changes_state', 'assistant_message_width_desktop', 'composer_width_desktop', 'new_chat_visible', 'object_chain_cards_present', 'object_chain_evidence_folded', 'overview_no_backend_words', 'overview_not_default_taohuayuan', 'overview_visible_全局仿真链路台', 'overview_visible_全局对象链', 'overview_visible_对象链路矩阵', 'overview_visible_当前推进事项', 'overview_visible_系统链路状态', 'primary_actions_present', 'report_button_stateful']
+- `IMPL-927` `pass` `advanced_gate` page layer screenshot sizes={'overview': 514414, 'ai_workspace': 119969}
+- `IMPL-928` `pass` `advanced_gate` axe status=pass failures=0
+- `IMPL-929` `pass` `advanced_gate` axe violation_counts={'overview': 0, 'ai': 0, 'data': 0}
+- `IMPL-930` `pass` `advanced_gate` Lighthouse user flow status=pass failures=0
+- `IMPL-931` `pass` `advanced_gate` Lighthouse checks=['accessibility_minimum_090', 'accessibility_scores_present', 'best_practices_scores_present', 'flow_has_three_steps', 'flow_html_written', 'navigation_timespan_performance_minimum_080', 'performance_scores_recorded']
+- `IMPL-932` `pass` `advanced_gate` Lighthouse step_names=['打开全局推进台', '切换 AI、资料池、节点与报告', '报告页与资料池状态快照']
+- `IMPL-933` `pass` `advanced_gate` Lighthouse flow html bytes=1328370
+- `IMPL-934` `pass` `advanced_gate` OTel trace status=pass failures=0
+- `IMPL-935` `pass` `advanced_gate` OTel span_count=9 responses={'/api/dashboard': 200, '/api/object-chain': 200, '/api/ai/sessions': 200}
+- `IMPL-936` `pass` `advanced_gate` advanced capability audit status=pass failures=0
+- `IMPL-937` `pass` `advanced_gate` advanced capability checks=9
+- `IMPL-938` `pass` `advanced_gate` legacy_matrix=6 official_refs=5
+- `IMPL-939` `pass` `ux_rebaseline` Flowus probe records=3
+- `IMPL-940` `pass` `ux_rebaseline` Flowus extracted text lengths=[2728, 12077, 2798]
+- `IMPL-941` `pass` `ux_rebaseline` Flowus titles=['零代码开发，给你的 App 注入灵魂！（下）', '让你的网站告别AI味，充满高级感', '零代码开发，给你的 App 注入灵魂！（上）']
+- `IMPL-942` `pass` `ux_rebaseline` Flowus screenshots exist for real browser evidence
+- `IMPL-943` `pass` `ux_rebaseline` OpenAlex 2026 AI design candidates=47
+- `IMPL-944` `pass` `ux_rebaseline` OpenAlex evidence includes 2026 agentic UI, oversight, and simulation references
+- `IMPL-945` `pass` `ux_rebaseline` Semantic Scholar records=14, errors=6
+- `IMPL-946` `pass` `ux_rebaseline` Semantic Scholar useful titles=['', '', '', 'Ask, Clarify, Optimize: Human-LLM Agent Collaboration for Smarter Inventory Control', 'Dark Patterns Meet GUI Agents: LLM Agent Susceptibility to Manipulative Interfaces and the Role of Human Oversight']
+- `IMPL-947` `pass` `ux_rebaseline` arXiv 2026 search attempts=5, blocked_or_timeout=5
+- `IMPL-948` `pass` `rebaseline` legacy adapter status=metadata_wrapped_only
+- `IMPL-949` `pass` `rebaseline` legacy adapter file_count=35
+- `IMPL-950` `pass` `rebaseline` legacy envelope validation status=pass
+- `IMPL-951` `pass` `rebaseline` legacy envelope validation file_count=35
+- `IMPL-952` `pass` `rebaseline` legacy envelope validation failure_count=0
+- `IMPL-953` `pass` `p4` P4 node explanation adapter status=needs_review
+- `IMPL-954` `pass` `p4` P4 node explanation item_count=6
+- `IMPL-955` `pass` `p4` P4 node explanation contract status=pass
+- `IMPL-956` `pass` `p4` P4 node explanation contract file_count=1
+- `IMPL-957` `pass` `p4` P4 node explanation contract failure_count=0
+- `IMPL-958` `pass` `p4` P4 node envelope task_type=node_explanation
+- `IMPL-959` `pass` `p4` P4 node envelope items=6
+- `IMPL-960` `pass` `p4` P4 node old scores are hidden_by_default
+- `IMPL-961` `pass` `p4` P4 node priorities downgraded to 复核后判断
+- `IMPL-962` `pass` `simulation` choice probability adapter status=needs_review
+- `IMPL-963` `pass` `simulation` choice probability item_count=36
+- `IMPL-964` `pass` `simulation` choice probability duckdb_csv_count=36
+- `IMPL-965` `pass` `simulation` choice probability schema_failure_count=0
+- `IMPL-966` `pass` `simulation` choice probability contract status=pass
+- `IMPL-967` `pass` `simulation` choice probability contract file_count=1
+- `IMPL-968` `pass` `simulation` choice probability contract failure_count=0
+- `IMPL-969` `pass` `simulation` choice probability envelope task_type=choice_probability
+- `IMPL-970` `pass` `simulation` choice probability envelope items=36
+- `IMPL-971` `pass` `simulation` choice probability items remain needs_review
+- `IMPL-972` `pass` `simulation` choice probability does not invent numeric probability_value
+- `IMPL-973` `pass` `simulation` choice probability priorities downgraded to 复核后判断
+- `IMPL-974` `pass` `simulation` simulation validation adapter status=needs_review
+- `IMPL-975` `pass` `simulation` simulation validation item_count=10
+- `IMPL-976` `pass` `simulation` simulation validation duckdb_csv_count=10
+- `IMPL-977` `pass` `simulation` simulation validation schema_failure_count=0
+- `IMPL-978` `pass` `simulation` simulation validation contract status=pass
+- `IMPL-979` `pass` `simulation` simulation validation contract file_count=1
+- `IMPL-980` `pass` `simulation` simulation validation contract failure_count=0
+- `IMPL-981` `pass` `simulation` simulation validation envelope task_type=simulation_validation_target
+- `IMPL-982` `pass` `simulation` simulation validation envelope items=10
+- `IMPL-983` `pass` `simulation` simulation validation levels=['business_decision', 'choice_probability', 'macro_distribution', 'route_access', 'state_behavior_chain', 'time_series']
+- `IMPL-984` `pass` `simulation` simulation validation metrics include core=['correlation', 'dtw_r2', 'field_check', 'kl_divergence', 'llm_draft_consistency_review', 'manual_review', 'peak_shift', 'route_reachability', 'sarima_consistency', 'ssim', 'state_behavior_consistency']
+- `IMPL-985` `pass` `simulation` simulation object pool counts initial=46 final=46
+- `IMPL-986` `pass` `simulation` simulation object type_counts={'choice_probability': 36, 'simulation_validation_target': 10}
+- `IMPL-987` `pass` `simulation` simulation object API statuses={'list_status': 200, 'create_status': 200, 'update_status': 200, 'use_status': 200, 'lock_status': 200, 'unlock_status': 200, 'delete_status': 200}
+- `IMPL-988` `pass` `simulation` simulation object locked delete=409 final delete=200
+- `IMPL-989` `pass` `simulation` simulation object browser failures=[] textIssues=[] console=[]
+- `IMPL-990` `pass` `simulation` simulation object browser actions=9
+- `IMPL-991` `pass` `simulation` simulation object primary button style={'backgroundColor': 'rgb(15, 143, 134)', 'borderRadius': '6px', 'color': 'rgb(255, 255, 255)', 'fontWeight': '700', 'minHeight': '34px'}
+- `IMPL-992` `pass` `simulation` persona/behavior object pool status=pass failures=0
+- `IMPL-993` `pass` `simulation` persona/behavior object pool type_counts={'choice_probability': 36, 'simulation_validation_target': 10, 'persona_state': 6, 'behavior_program': 12}
+- `IMPL-994` `pass` `simulation` persona/behavior object pool basis=['10_research/boss_method_materials_20260604/deepseek_constrained_simulation_design_20260604.md', '40_quality_evidence/method_model_landing_coverage_20260605.md', '70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv', '70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv']
+- `IMPL-995` `pass` `ux_rebaseline` global overview browser title=AI 仿真决策系统
+- `IMPL-996` `pass` `ux_rebaseline` global overview failures=[] textIssues=[] console=[]
+- `IMPL-997` `pass` `ux_rebaseline` global overview checks_ok=True, statusCount=7
+- `IMPL-998` `pass` `ux_rebaseline` global rebaseline browser failures=[] textIssues=[] console=[]
+- `IMPL-999` `pass` `ux_rebaseline` global rebaseline browser statusCount=7
+- `IMPL-1000` `pass` `ux_rebaseline` old visible UI terms still present=[]
+- `IMPL-1001` `pass` `handoff` mainline insert rule=Codex 自身强化只能作为主线防偏航层插入，不得替代仿真主线。
+- `IMPL-1002` `pass` `handoff` mainline purpose=Codex 主线防偏航上下文包：锁定全局 AI 仿真决策系统重基线，避免旧文件和旧 P6 口径误导后续判断。
+- `IMPL-1003` `pass` `handoff` next mainline step=按全局 AI 仿真决策系统重基线，继续重构 AI 工作台、资料池/方法对象池、仿真任务入口，并建立旧文件信任地图，避免历史产物被误判为新方向成果。
+- `IMPL-1004` `pass` `handoff` mainline context missing_files=[]
+- `IMPL-1005` `pass` `handoff` mainline context stale_top_phrase_findings=[]
+- `IMPL-1006` `pass` `handoff` mainline startup commands=['powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1', 'powershell -NoProfile -ExecutionPolicy Bypass -File .\\00_control\\start_codex_mainline.ps1 -FullGate']
+- `IMPL-1007` `pass` `handoff` mainline context preserves DeepSeek boundary
+- `IMPL-1008` `pass` `llm` DeepSeek smoke test status=ok
+- `IMPL-1009` `pass` `llm` DeepSeek smoke test model=deepseek-v4-pro
+- `IMPL-1010` `pass` `external_api` Amap smoke test status=ok
+- `IMPL-1011` `pass` `external_api` Amap smoke test result_count=1
+- `IMPL-1012` `pass` `llm` DeepSeek table classification classified_rows=329
+- `IMPL-1013` `pass` `llm` DeepSeek table classification remaining_rows=0
+- `IMPL-1014` `pass` `llm` DeepSeek table classification raw chunks=44
+- `IMPL-1015` `pass` `llm` DeepSeek evidence candidates completed_tables=63
+- `IMPL-1016` `pass` `llm` DeepSeek evidence candidates remaining_tables=0
+- `IMPL-1017` `pass` `llm` DeepSeek evidence candidates rows=592
+- `IMPL-1018` `pass` `llm` DeepSeek evidence candidates raw chunks=63
+- `IMPL-1019` `pass` `llm` DeepSeek entrance node semantic classified_rows=45
+- `IMPL-1020` `pass` `llm` DeepSeek entrance node semantic remaining_rows=0
+- `IMPL-1021` `pass` `llm` DeepSeek entrance node semantic raw_chunks=6
+- `IMPL-1022` `pass` `llm` DeepSeek entrance node semantic raw chunks=6
+- `IMPL-1023` `pass` `llm` DeepSeek P0 package work_items=7
+- `IMPL-1024` `pass` `llm` DeepSeek P0 package rows=7
+- `IMPL-1025` `pass` `llm` DeepSeek P0 package remaining_rows=0
+- `IMPL-1026` `pass` `llm` DeepSeek P0 package raw_chunks=1
+- `IMPL-1027` `pass` `llm` DeepSeek P0 package raw chunks=1
+- `IMPL-1028` `pass` `llm` DeepSeek context sync text files=8
+- `IMPL-1029` `pass` `llm` DeepSeek context sync csv files=6
+- `IMPL-1030` `pass` `llm` DeepSeek context sync task queue rows=6
+- `IMPL-1031` `pass` `llm` DeepSeek context sync raw_chunks=1
+- `IMPL-1032` `pass` `llm` DeepSeek context sync output_status=needs_review
+- `IMPL-1033` `pass` `llm` DeepSeek context sync raw chunks=1
+- `IMPL-1034` `pass` `llm` DeepSeek context sync latest output_status=needs_review
+- `IMPL-1035` `pass` `llm` DeepSeek context sync latest task_queue rows=6
+- `IMPL-1036` `pass` `llm` DeepSeek P0 detail plan work_items=7
+- `IMPL-1037` `pass` `llm` DeepSeek P0 detail plan rows=7
+- `IMPL-1038` `pass` `llm` DeepSeek P0 detail plan remaining_rows=0
+- `IMPL-1039` `pass` `llm` DeepSeek P0 detail plan raw_chunks=1
+- `IMPL-1040` `pass` `llm` DeepSeek P0 detail plan output_status=needs_review
+- `IMPL-1041` `pass` `llm` DeepSeek P0 detail plan raw chunks=1
+- `IMPL-1042` `pass` `llm` DeepSeek P0 field checklist work_items=7
+- `IMPL-1043` `pass` `llm` DeepSeek P0 field checklist node_items=27
+- `IMPL-1044` `pass` `llm` DeepSeek P0 field checklist rows=34
+- `IMPL-1045` `pass` `llm` DeepSeek P0 field checklist raw_chunks=1
+- `IMPL-1046` `pass` `llm` DeepSeek P0 field checklist output_status=needs_review
+- `IMPL-1047` `pass` `llm` DeepSeek P0 field checklist raw chunks=1
+- `IMPL-1048` `pass` `llm` DeepSeek P1 quality progress evidence_rows=260
+- `IMPL-1049` `pass` `llm` DeepSeek P1 quality progress business_fill_rows=7
+- `IMPL-1050` `pass` `llm` DeepSeek P1 quality progress enriched_work_rows=7
+- `IMPL-1051` `pass` `llm` DeepSeek P1 quality progress field_checklist_rows=34
+- `IMPL-1052` `pass` `llm` DeepSeek P1 quality progress verification_checks=338
+- `IMPL-1053` `pass` `llm` DeepSeek P1 quality progress output_status=needs_review
+- `IMPL-1054` `pass` `llm` DeepSeek P1 quality raw chunks=1
+- `IMPL-1055` `pass` `llm` DeepSeek P2 semantic docx rows=21
+- `IMPL-1056` `pass` `llm` DeepSeek P2 semantic pdf rows=22
+- `IMPL-1057` `pass` `llm` DeepSeek P2 semantic output_status=needs_review
+- `IMPL-1058` `pass` `llm` DeepSeek P2 semantic raw chunks=1
+- `IMPL-1059` `pass` `llm` DeepSeek P2 schema node rows=6
+- `IMPL-1060` `pass` `llm` DeepSeek P2 schema assumption rows=12
+- `IMPL-1061` `pass` `llm` DeepSeek P2 schema spatial rows=22
+- `IMPL-1062` `pass` `llm` DeepSeek P2 schema gap rows=10
+- `IMPL-1063` `pass` `llm` DeepSeek P2 schema output_status=needs_review
+- `IMPL-1064` `pass` `llm` DeepSeek P2 schema raw chunks=1
+- `IMPL-1065` `pass` `llm` DeepSeek P2 readiness ready_items=8
+- `IMPL-1066` `pass` `llm` DeepSeek P2 readiness blocking_gaps=8
+- `IMPL-1067` `pass` `llm` DeepSeek P2 readiness recommended_outputs=6
+- `IMPL-1068` `pass` `llm` DeepSeek P2 readiness handoff_risks=5
+- `IMPL-1069` `pass` `llm` DeepSeek P2 readiness output_status=needs_review
+- `IMPL-1070` `pass` `llm` DeepSeek P2 readiness raw chunks=1
+- `IMPL-1071` `pass` `llm` DeepSeek P2 source coverage matrix_rows=60
+- `IMPL-1072` `pass` `llm` DeepSeek P2 source coverage source_rows=4
+- `IMPL-1073` `pass` `llm` DeepSeek P2 source coverage node_rows=6
+- `IMPL-1074` `pass` `llm` DeepSeek P2 source coverage assumption_rows=12
+- `IMPL-1075` `pass` `llm` DeepSeek P2 source coverage spatial_rows=22
+- `IMPL-1076` `pass` `llm` DeepSeek P2 source coverage gap_rows=10
+- `IMPL-1077` `pass` `llm` DeepSeek P2 source coverage boundary_rows=6
+- `IMPL-1078` `pass` `llm` DeepSeek P2 source coverage output_status=needs_review
+- `IMPL-1079` `pass` `llm` DeepSeek P2 source coverage raw chunks=1
+- `IMPL-1080` `pass` `files` osm boundary geojson features=2
+- `IMPL-1081` `pass` `files` osm boundary park ids=['sample_city_green_heart', 'sample_olympic_forest']
+- `IMPL-1082` `pass` `scripts` python compile failures=[]
+- `IMPL-1083` `pass` `scripts` amap dry run: exit=0, expected_text_found=True
+- `IMPL-1084` `pass` `scripts` poi supply review: exit=0
+- `IMPL-1085` `pass` `scripts` amap spatial precheck rebuild: exit=0, expected_text_found=True
+- `IMPL-1086` `pass` `scripts` amap boundary filter rebuild: exit=0, expected_text_found=True
+- `IMPL-1087` `pass` `scripts` in-park candidate review rebuild: exit=0, expected_text_found=True
+- `IMPL-1088` `pass` `scripts` p1 quality report review: exit=0, expected_text_found=True
+- `IMPL-1089` `pass` `scripts` p2 real-site input index rebuild: exit=0, expected_text_found=True
+- `IMPL-1090` `pass` `scripts` p2 semantic breakdown review: exit=0, expected_text_found=True
+- `IMPL-1091` `pass` `scripts` p2 input schema candidate review: exit=0, expected_text_found=True
+- `IMPL-1092` `pass` `scripts` p2 completion readiness review: exit=0, expected_text_found=True
+- `IMPL-1093` `pass` `scripts` p2 source coverage DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1094` `pass` `scripts` p2 source coverage review: exit=0, expected_text_found=True
+- `IMPL-1095` `pass` `scripts` p2 geometry proxy DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1096` `pass` `scripts` p2 geometry proxy review: exit=0, expected_text_found=True
+- `IMPL-1097` `pass` `scripts` p3 prework DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1098` `pass` `scripts` p3 prework package review: exit=0, expected_text_found=True
+- `IMPL-1099` `pass` `scripts` p3 calibration execution DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1100` `pass` `scripts` p3 calibration execution package review: exit=0, expected_text_found=True
+- `IMPL-1101` `pass` `scripts` p4 premature simulation DeepSeek audit: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1102` `pass` `scripts` p4 feedback draft DeepSeek package: skipped DeepSeek regeneration; set VERIFY_RERUN_DEEPSEEK=1 to rerun
+- `IMPL-1103` `pass` `scripts` p4 feedback draft review: exit=0, expected_text_found=True
+- `IMPL-1104` `pass` `scripts` p2 method prototype rebuild: exit=0, expected_text_found=True
+- `IMPL-1105` `pass` `scripts` p2 method prototype review: exit=0, expected_text_found=True
+- `IMPL-1106` `pass` `scripts` p2 completion reality audit: exit=0, expected_text_found=True
+- `IMPL-1107` `pass` `scripts` handoff encoding health review: exit=0, expected_text_found=True
+- `IMPL-1108` `pass` `llm` loaded routes=26
+- `IMPL-1109` `pass` `llm` LLM-001 routes to DeepSeek
+- `IMPL-1110` `pass` `llm` LLM-006 remains high-risk final conclusion
+- `IMPL-1111` `pass` `llm` LLM-009 remains Tier-2 needs_review
+- `IMPL-1112` `pass` `llm` LLM-010 remains Tier-2 needs_review
+- `IMPL-1113` `pass` `llm` LLM-011 entrance node semantic screening remains draft
+- `IMPL-1114` `pass` `llm` LLM-012 P0 verification package remains needs_review
+- `IMPL-1115` `pass` `llm` LLM-013 context sync remains needs_review
+- `IMPL-1116` `pass` `llm` LLM-014 P0 Amap detail query plan remains needs_review
+- `IMPL-1117` `pass` `llm` LLM-015 field verification checklist remains needs_review
+- `IMPL-1118` `pass` `llm` LLM-016 P1 quality report remains needs_review
+- `IMPL-1119` `pass` `llm` LLM-017 P2 real-site semantic breakdown remains needs_review
+- `IMPL-1120` `pass` `llm` LLM-018 P2 input schema candidates remain needs_review
+- `IMPL-1121` `pass` `llm` LLM-019 P2 readiness audit remains needs_review
+- `IMPL-1122` `pass` `llm` LLM-020 P2 source coverage audit remains needs_review
+- `IMPL-1123` `pass` `llm` LLM-021 P2 geometry proxy audit remains needs_review
+- `IMPL-1124` `pass` `llm` LLM-022 P3 prework package remains needs_review
+- `IMPL-1125` `pass` `llm` LLM-023 P3 calibration execution package remains needs_review
+- `IMPL-1126` `pass` `llm` LLM-024 P4 premature audit remains needs_review
+- `IMPL-1127` `pass` `llm` LLM-025 P4 feedback draft remains needs_review
+- `IMPL-1128` `pass` `llm` LLM-006 high-risk/non-DeepSeek guard triggered
+- `IMPL-1129` `pass` `llm` DeepSeek key must come from environment
+- `IMPL-1130` `pass` `security` sensitive matches=[]
+- `IMPL-1131` `pass` `files` mojibake placeholders=[]
+- `IMPL-1132` `pass` `security` .env.example keeps empty placeholders only
+- `IMPL-1133` `pass` `security` .env has local DeepSeek key configured
+- `IMPL-1134` `pass` `security` .env has local Amap key configured
+- `IMPL-1135` `pass` `security` .gitignore excludes .env
+- `IMPL-1136` `pass` `github` gh repo list cocyuhao: exit=0
+- `IMPL-1137` `pass` `github` fork parent verification failures=[]
+- `IMPL-1138` `pass` `github` archive repo contents: exit=0
+- `IMPL-1139` `pass` `github` archive root paths=['README.md', 'docs', 'manifests']
+- `IMPL-1140` `pass` `github` archive docs contents: exit=0
+- `IMPL-1141` `pass` `github` archive docs paths=['docs/github_import_plan.md', 'docs/tech_shrimp_assessment.md']
+- `IMPL-1142` `pass` `github` archive manifests contents: exit=0
+- `IMPL-1143` `pass` `github` archive manifests paths=['manifests/fork_results_20260523.csv', 'manifests/tech_shrimp_repos_gh_api_20260523.csv']
+- `IMPL-1144` `pass` `current_rebaseline` current latest report nodes=6 method_basis=4 method_trace=8 source_assets=10 real_calibration=14
+- `IMPL-1145` `pass` `current_rebaseline` historical issue surface status=review high_current=0 high_severity=0
+- `IMPL-1146` `pass` `current_rebaseline` agent/editor influence surface status=review high_current=0 high_severity=0
+- `IMPL-1147` `pass` `current_rebaseline` post-test output restore status=pass high_current=0 high_severity=0
+- `IMPL-1148` `pass` `current_rebaseline` system influence status=review high_current=0 high_severity=0
+- `IMPL-1149` `pass` `current_rebaseline` TestFiles summary={'passed': 79, 'warning': 1, 'failed': 0}

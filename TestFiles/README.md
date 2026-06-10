@@ -5,7 +5,7 @@
 ## 一键运行
 
 ```powershell
-cd "G:\wxjwWorks\works\park_commercial_site_selection_simulation"
+cd "<your-local-checkout>"
 py TestFiles\run_all_tests.py
 ```
 
@@ -22,5 +22,5 @@ py TestFiles\run_all_tests.py
 
 ## 环境
 
-沿用本机 `py` 指向的 Python 环境，不切换 Python 版本。
-前端测试优先使用本机 Chrome：`C:\Program Files\Google\Chrome\Application\chrome.exe`。
+沿用当前机器 `py` 指向的 Python 环境，不切换 Python 版本。
+前端测试优先使用系统 Chrome；未检测到 Chrome 时，回退到 Playwright Chromium。

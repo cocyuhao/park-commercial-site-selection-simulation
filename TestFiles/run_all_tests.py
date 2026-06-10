@@ -543,7 +543,7 @@ def run_api_tests(recorder: Recorder) -> dict[str, Any]:
             for action in ["update", "use", "lock", "unlock", "restore"]:
                 body: dict[str, Any] = {"action": action, "note": f"QA {action}"}
                 if action == "update":
-                    body.update({"summary": "QA 已编辑仿真对象", "specific_advice": ["继续补资料"]})
+                    body.update({"summary": "QA 已编辑仿真对象", "specific_advice": ["继续复核资料口径"]})
                 call_json(
                     recorder,
                     client,

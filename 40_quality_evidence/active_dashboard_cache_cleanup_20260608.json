@@ -1,0 +1,54 @@
+{
+  "status": "pass",
+  "archive_dir": "90_archive\\runtime_cache_before_cleanup_20260608\\20260609_094223",
+  "policy": {
+    "ai_sessions": "reset active history after archive because old sessions are wrong-context customer-visible history",
+    "expert_feedback": "reset after archive because old QA and fixed-node feedback pollutes dashboard summaries",
+    "deepseek_ai_reviews": "reset after archive because reviews are stale and fixed to old P2 nodes",
+    "simulation_objects": "sanitize in place to preserve object pool structure while removing old wording"
+  },
+  "before": {
+    "ai_sessions.json": {
+      "bytes": 330,
+      "risk_counts": {}
+    },
+    "ai_sessions_before_prune_20260603.json": {
+      "bytes": 352,
+      "risk_counts": {}
+    },
+    "deepseek_ai_reviews.json": {
+      "bytes": 280,
+      "risk_counts": {}
+    },
+    "expert_feedback.json": {
+      "bytes": 2,
+      "risk_counts": {}
+    },
+    "simulation_objects.json": {
+      "bytes": 110327,
+      "risk_counts": {}
+    }
+  },
+  "after": {
+    "ai_sessions.json": {
+      "bytes": 330,
+      "risk_counts": {}
+    },
+    "ai_sessions_before_prune_20260603.json": {
+      "bytes": 352,
+      "risk_counts": {}
+    },
+    "deepseek_ai_reviews.json": {
+      "bytes": 280,
+      "risk_counts": {}
+    },
+    "expert_feedback.json": {
+      "bytes": 2,
+      "risk_counts": {}
+    },
+    "simulation_objects.json": {
+      "bytes": 110327,
+      "risk_counts": {}
+    }
+  }
+}

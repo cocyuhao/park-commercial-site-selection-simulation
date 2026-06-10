@@ -1,6 +1,117 @@
+# 2026-06-10 GitHub 同步准备：本地 commit 已完成，Git HTTPS push 被网络阻断
+
+当前本地同步 commit：
+
+- Commit：`9baf3be Sync simulation platform knowledge base and handoff`
+- 分支：`main`
+- 远端：`https://github.com/cocyuhao/park-commercial-site-selection-simulation.git`
+
+已完成上传前验证：
+
+- `py -3.12 30_extraction\scripts\preflight_github_sync_20260610.py` -> `status=pass`
+- `py -3.12 30_extraction\scripts\verify_project_implementation.py` -> `checks=1149 failures=0`
+- `py -3.12 TestFiles\run_all_tests.py` -> `passed=79 warning=1 failed=0`
+- `.env` 被 `.gitignore` 排除；阻断级密钥 `0`
+- Git LFS 已启用：`*.dwg`、`*.dxf`、`*.pptx`、`*.docx`、`*.pdf`、`10_research/recent_knowledge_base_20260609/*.jsonl/csv`
+
+当前阻断：
+
+- `git push origin main` 三次失败，错误分别为 GitHub HTTPS 连接超时或 reset。
+- `gh auth status` 正常，GitHub API 可读仓库，用户权限为 `ADMIN`。
+- SSH 不可用，本机没有可用 `id_ed25519.pub` 或 `id_rsa.pub`。
+
+同事分工文件：
+
+- `00_control/team_codex_division_20260610.md`
+
+国内知识源接入层：
+
+- `10_research/china_academic_sources_20260610/`
+- `40_quality_evidence/china_academic_source_registry_verification_20260610.json`
+
+下一步：
+
+1. 网络允许时直接执行 `git push origin main`。
+2. 如果 Git HTTPS 仍失败，考虑配置 SSH key 后改 `origin` 为 SSH，再推 LFS。
+3. 不建议用 GitHub Contents API 强推这次提交，因为本次包含大量 LFS 对象，API commit 不会正确上传 LFS blobs。
+
+# 2026-06-09 最高优先级覆盖：Mega 知识库当前真实状态
+
+新对话启动后先读本段，再读 `00_control/current_knowledge_base.md`。本段覆盖下方旧的 `180/3021` 状态。
+
+用户最新纠偏：压缩上下文可能中断了“仿真栈通用 Mega”和“计算与模型 Mega”；不能只凭对话记忆说完成，必须按验证 JSON 判断。
+
+当前硬事实：
+
+- 仿真栈通用 Mega 不算完全闭合：
+  - 验证：`40_quality_evidence/simulation_stack_mega_supplement_verification_20260609.json`
+  - `status=needs_action`
+  - `query_count=3264`
+  - `raw_total=54580`
+  - `screened_total=5821`
+  - `classic_reference_total=0`
+  - `merged_screened_total=21852`
+- 计算与模型 Mega 已完成一轮抓取/筛选/合并，但也不算最高标准闭合：
+  - 验证：`40_quality_evidence/computation_model_mega_supplement_verification_20260609.json`
+  - `status=needs_action`
+  - `query_count=5440`
+  - `raw_total=54333`
+  - `screened_total=3096`
+  - `classic_reference_total=936`
+  - `merged_screened_total=23091`
+  - 未闭合原因：OpenAlex 当前预算/限流，本轮主要由 Crossref 贡献。
+- 主知识库已经合并并通过：
+  - `40_quality_evidence/recent_knowledge_base_verification_20260609.json` -> `status=pass`, `query_count=9084`
+  - `40_quality_evidence/recent_knowledge_core_verification_20260609.json` -> `status=pass`, `core_deployment_total=3085`, `method_reference_total=17306`
+  - `40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json` -> `status=pass`, `pack_total=4405`, `layer_count=13`
+- 查询样例已落证据：
+  - `40_quality_evidence/model_computation_query_examples_20260609.json` -> `status=pass`
+  - ABM 查询强相关；Monte Carlo/离散选择查询有方法参考价值，但部分外部行业案例不能直接写成客户结论。
+
+必须保留的判断：
+
+- “捏合”是正确方向，但必须分层：全量筛选库作背景，部署级核心库作实现依据，模型计算知识包作修改前查询入口，经典理论作方法骨架。
+- 不能把 23,091 条筛选库全部当客户结论，也不能把 OpenAlex 没贡献的 Mega 说成多源闭合。
+- 下一步若继续做，要补查询样例证据、把新知识库纳入 `verify_project_implementation.py` 门禁，并在 OpenAlex 恢复后补跑多源。
+
+# 2026-06-09 当前最高优先级覆盖：近年知识库与仿真栈专项已并入核心库
+
+新对话启动后先读本段，并优先读 `00_control/current_knowledge_base.md`。用户最新纠偏是：不能再空想，不能把老板“三层示例”照搬；它只是方向种子。必须用近年论文/官方资料/经典理论和本地证据共同扩展成更复杂、更严谨的仿真系统。
+
+当前已完成：
+
+- `00_control/current_knowledge_base.md` 已创建，并加入 `AGENTS.md` 启动顺序。
+- 近年知识库已真实抓取并筛选：
+  - 原始候选 `23542`
+  - 筛选入库 `11243`
+  - 二次筛选前来源包含 OpenAlex、Crossref、Semantic Scholar、arXiv
+- 已追加“仿真栈专项”：
+  - 查询矩阵：`10_research/recent_knowledge_base_20260609/simulation_stack_query_matrix_20260609.json`
+  - 专项查询 `180`（160 条近年优先 + 20 条经典理论）
+  - 专项原始候选 `20271`
+  - 专项筛选入库 `9972`
+  - 专项验证：`40_quality_evidence/simulation_stack_supplement_verification_20260609.json`
+- 合并并二次筛选后：
+  - 主筛选库：`18513`
+  - 部署级核心库：`3021`
+  - 方法参考库：`13101`
+  - 剔除/暂不使用：`2391`
+  - 核心验证：`40_quality_evidence/recent_knowledge_core_verification_20260609.json`
+- 老板三层示例已融合进正式架构蓝图，不再单独“评估/批判”：
+  - `10_research/recent_knowledge_base_20260609/integrated_simulation_architecture_blueprint_20260609.md`
+  - 架构为 11 层：证据输入、空间数字底座、客群与任务、活动链、受约束 LLM、ABM 轨迹、运营容量、收益业态、Monte Carlo/敏感性、校准审计、报告表达。
+
+重要边界：
+
+- DeepSeek 是低成本语义工人，不是总设计师；只能做候选、解释、JSON 草案和异常兜底。
+- 客户报告不能写训练资料、内部路径、API、调试日志或让客户补材料。
+- 后续任何仿真架构、报告提示词、收益预测、节点解释、DeepSeek 约束修改前，必须先查询核心库：
+  `py -3.12 30_extraction\scripts\query_recent_knowledge_base_20260609.py --query "<你的问题>" --limit 8`
+- 用户指出“180 条专项查询仍保守”，这个判断要保留。下一轮若继续强化，应做 1000+ 查询级的仿真栈增量矩阵，而不是满足于当前 180 条高产查询。
+
 # 2026-06-07 最高优先级覆盖：客户版奥森商业决策 DOCX 已接入网页下载链路
 
-这一段必须覆盖下方旧交接。用户刚刚明确纠偏：客户报告必须基于本文件夹已经给出的全部数据、策划案、图纸和方法资料做判断、预测和调整；不得把内部数据缺口、训练资料、补资料请求、API/网页链路、证据链文件路径或模型调试语言写给客户。缺口只能作为内部建模校准与实施复核口径，不得写成“请客户补充资料”。
+这一段必须覆盖下方旧交接。用户刚刚明确纠偏：客户报告必须基于本文件夹已经给出的全部数据、策划案、图纸和方法资料做判断、预测和调整；不得把内部数据缺口、训练语料请求、材料缺口请求、API/网页链路、证据链文件路径或模型调试语言写给客户。缺口只能作为内部建模校准与实施复核口径，不得写成对客户索要材料的主文。
 
 当前权威交付：
 
@@ -25,7 +136,7 @@
 
 客户版 DOCX 硬规则：
 
-- 不写“请补/补充/补齐/训练资料/用户/客户/老板/DeepSeek/API/网页平台/生成链路/本地路径/证据链/debug/payload/traceback/needs_review”等内部或不合适措辞。
+- 不写内部索要材料、训练语料、用户/客户/老板称呼、DeepSeek/API/网页平台/生成链路、本地路径、证据链、debug/payload/traceback/needs_review 等内部或不合适措辞。
 - 不把内部方法、模型风险、资料缺口、证据文件路径暴露给客户。
 - 主文只写：基于现有材料可以判断什么、预测什么、怎么调整、怎么落地、哪些动作先后推进。
 - 现场复核、试运营监测、消防许可、租约边界等可以出现，但必须作为实施校准和落地管控，而不是要求客户再提供资料。
@@ -33,7 +144,7 @@
 
 # 2026-06-07 最高优先级覆盖：奥森预测调整 DOCX 与网页已交付，继续工作先从此处恢复
 
-用户最新要求已经落实为可打开网页和可下载 `.docx`，不要再把注意力拉回旧“同事同步”或旧“补资料主线”。当前权威交付如下：
+用户最新要求已经落实为可打开网页和可下载 `.docx`，不要再把注意力拉回旧“同事同步”或旧“材料缺口请求主线”。当前权威交付如下：
 
 - DOCX：`80_delivery/osen_prediction_adjustment_report_20260607.docx`
 - Markdown：`80_delivery/osen_prediction_adjustment_report_20260607.md`
@@ -2261,3 +2372,11 @@ py -3.12 -m uvicorn 90_p6_expert_dashboard.app:app --host 127.0.0.1 --port 8765
 - 已仅修改 `TestFiles/run_all_tests.py`：本地 `httpx` 请求使用 `trust_env=False`，服务就绪要求首页 HTTP 200。
 - 根因是测试请求未进入本地 Uvicorn，不是报告下载业务接口错误。
 - 最新全量报告：`TestFiles/reports/test_report_20260608_163052.md`，结果 `passed=79 warning=1 failed=0`。
+
+# 2026-06-08 远端最新改动选择性吸收交接
+- 已吸收远端 `96690980aabfa922e43fb9acf510b32a8e63a229` 的最新两次提交；吸收前本地备份分支为 `backup/local-before-selective-sync-20260608-165111`。
+- 吸收内容：`TestFiles` 自动化测试体系、`60_model/db/store.py` SQLite 并发保护、真实校准输入脚本、`httpx trust_env=False` 测试修复。
+- 本轮本地额外修正：`TestFiles/README.md` 去除个人路径；`app.py` 和校准脚本把“补来源文件”改为“复核来源文件”；`app.py` 子进程输出显式 UTF-8 捕获并容错。
+- 最新验证：`py -3.12 TestFiles\run_all_tests.py` -> `passed=79 warning=1 failed=0`；`py -3.12 TestFiles\check_db_health.py` -> `integrity=ok`。
+- 注意：`verify_project_implementation.py` 当前仍失败 84 项，但这些缺失项吸收前也不存在，属于既有历史门禁债。不要为了过门禁直接恢复 `90_archive` 里的旧产物，应单独做门禁重基线。
+- 记录文件：`40_quality_evidence/selective_remote_absorption_20260608.md`。

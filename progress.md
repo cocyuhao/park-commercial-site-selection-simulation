@@ -1,8 +1,73 @@
+# 2026-06-09 计算与模型 Mega：已完成一轮抓取/筛选/合并，但仍非最高标准闭合
+
+- 用户纠偏：`1000+` 是旧目标，`3264` 条通用仿真栈 Mega 也不是上限；计算、模型、校准、优化、离散选择、队列、ABM、UQ/敏感性等部分必须继续扩展，并与此前大库分层捏合。
+- 当前硬事实：
+  - 通用仿真栈 Mega：`query_count=3264`、`raw_total=54580`、`screened_total=5821`、`merged_screened_total=21852`，但自身验证仍为 `needs_action`，因为 `classic_reference_total=0` 且部分 Crossref 429。
+  - 计算与模型 Mega：`query_count=5440`、`raw_total=54333`、`screened_total=3096`、`classic_reference_total=936`、`merged_screened_total=23091`，但自身验证仍为 `needs_action`，因为 OpenAlex 当前预算/限流导致本轮主要由 Crossref 贡献。
+  - 主知识库验证：`40_quality_evidence/recent_knowledge_base_verification_20260609.json` 为 `status=pass`，总查询数已到 `9084`。
+  - 核心库验证：`40_quality_evidence/recent_knowledge_core_verification_20260609.json` 为 `status=pass`，部署级核心库 `3085`、方法参考库 `17306`、剔除/暂不使用 `2700`。
+  - 模型计算知识包：`40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json` 为 `status=pass`，`pack_total=4405`、`layer_count=13`。
+- 当前结论：计算与模型 Mega 不是没跑；它已经完成一轮并进入模型包。但它也不能叫最高标准闭合，因为 OpenAlex 多源补跑还没完成。仿真栈通用 Mega 更明确是未闭合，需要补经典理论部分。
+- 已更新入口：`00_control/current_knowledge_base.md`，新会话必须以该文件覆盖旧的 `180/3021` 状态。
+- 下一步：补查询样例证据、把新知识库纳入 `verify_project_implementation.py` 门禁，再视 OpenAlex 恢复情况补跑多源。
+
+# 2026-06-09 近年知识库与仿真栈专项：已并入核心库，主线先暂停
+
+- 用户指出搜索矩阵太小、老板三层示例过粗，要求真正扩宽学习并放入每轮可读的显眼位置；本轮已落实为近年知识库 + 仿真栈专项。
+- 当前知识库入口：`00_control/current_knowledge_base.md`，已写入 `AGENTS.md` 启动顺序。
+- 第一轮近年知识库：
+  - `query_count=200`
+  - 原始候选 `23542`
+  - 去重 `15278`
+  - 筛选入库 `11243`
+  - 来源：OpenAlex、Crossref、Semantic Scholar、arXiv
+- 仿真栈专项：
+  - 查询矩阵 `10_research/recent_knowledge_base_20260609/simulation_stack_query_matrix_20260609.json`
+  - 专项查询 `180`，其中近年优先 `160`、经典理论 `20`
+  - 专项原始候选 `20271`
+  - 专项筛选入库 `9972`
+  - 关键覆盖：Persona/合成人口、活动链、ABM/Mesa、步行/人群引擎、离散选择、排队容量、Monte Carlo、校准验证、官方/实用工具、经典理论
+- 合并后主库：
+  - 主筛选库 `18513`
+  - 部署级核心库 `3021`
+  - 方法参考库 `13101`
+  - 剔除/暂不使用 `2391`
+- 权威验证：
+  - `40_quality_evidence/recent_knowledge_base_verification_20260609.json`
+  - `40_quality_evidence/simulation_stack_supplement_verification_20260609.json`
+  - `40_quality_evidence/recent_knowledge_core_verification_20260609.json`
+- 正式架构蓝图：`10_research/recent_knowledge_base_20260609/integrated_simulation_architecture_blueprint_20260609.md`。老板三层只作为方向种子，已融合为 11 层架构：证据输入、空间数字底座、客群与任务、活动链、受约束 LLM、ABM 轨迹、运营容量、收益业态、Monte Carlo/敏感性、校准审计、报告表达。
+- 当前边界：这轮专项已经大量并入核心库，但用户认为“几百条查询仍保守”的判断是合理的。下一轮若继续强化，应把仿真栈专项升级到 1000+ 查询矩阵并做增量抓取；但今天先按用户要求在此暂停，避免继续发散跑偏。
+
+# 2026-06-09 当前恢复与新旧冲突处理：活动链路已清理，服务已启动，总门禁 0 失败
+
+- 当前处理目标：不是简单删除旧历史，而是辨别“三轮大更新后仍会影响当前网页、报告、测试、门禁和 Agent 接续”的冲突面；无害历史保留，当前有害路径修正或降权。
+- 新增并验证：
+  - `30_extraction/scripts/audit_agent_editor_influence_surface_20260609.py`：扫描项目、Codex/Agent/Claude/Cursor/VS Code 相关影响面，只定位会影响当前项目的风险，不蛮力删除历史。
+  - `30_extraction/scripts/restore_current_outputs_after_tests_20260609.py`：测试后先清活动缓存，再重新生成客户可见报告，防止 QA 节点或旧口径留在交付文件中。
+  - `40_quality_evidence/agent_editor_influence_surface_audit_20260609.json`：`status=review`，`high_current_count=0`。
+  - `40_quality_evidence/post_test_current_output_restore_20260609.json`：`status=pass`，`80_delivery/site_selection_gap_report_latest.md/json` 风险词命中为空。
+  - `40_quality_evidence/live_8081_recovery_validation_20260609.json`：`/`、`/api/dashboard`、`/api/reports/site-selection`、DOCX 下载均 HTTP 200。
+  - `40_quality_evidence/live_8081_recovery_browser_20260609_selenium.json`：Selenium 打开 8081 通过，标题 `AI 仿真决策系统`，截图 `40_quality_evidence/live_8081_recovery_browser_20260609.png`。
+- 已修复的真实回流点：
+  - `TestFiles/run_all_tests.py` 跑完后会把 QA 节点写回 `deepseek_ai_reviews.json`；现在通过 post-test restore 脚本清缓存并重生报告，避免 QA 节点进入 `80_delivery/site_selection_gap_report_latest.*`。
+  - `60_model/schemas/choice_probability.schema.json` 和 `60_model/schemas/node_recommendation_explanation.schema.json` 已接受新口径 `复核后判断`，不再被旧枚举挡住。
+  - `40_quality_evidence/p1_quality_report_draft_deepseek.md` 已把 P0 经营字段关键数字口径修成“复核记录”，`review_deepseek_p1_quality_report.py` 现为 `failures=0`。
+  - `30_extraction/scripts/verify_project_implementation.py` 已加入当前重定基线检查；旧 0605/0606/0607 缺失产物改为 superseded warning，并用当前审计、测试和报告链路替代校验。
+- 当前验证：
+  - `py -3.12 TestFiles\run_all_tests.py` -> `passed=79 warning=1 failed=0`，报告 `TestFiles/reports/test_report_20260609_093441.md`。
+  - `py -3.12 TestFiles\check_db_health.py` -> `simulation.sqlite3 integrity=ok`。
+  - `py -3.12 30_extraction\scripts\verify_project_implementation.py` -> `checks=1142 failures=0`。
+  - `py -3.12 30_extraction\scripts\audit_historical_issue_surface_20260608.py` -> `status=review`，无 high。
+  - `py -3.12 30_extraction\scripts\audit_system_influence_20260608.py` -> `status=review`，仅剩中风险：`90_archive` 有大量历史产物，所有全仓脚本必须显式排除或标记 archive。
+- 当前服务：`http://127.0.0.1:8081/` 已启动，端口进程 `py.exe 27552 -> python.exe 27476`。
+- 下一步若继续处理历史冲突：优先减少 `90_archive` 对全仓脚本的误导、清理/标注 TestFiles 历史报告的影响面、再审视哪些旧研究/门禁文件应进入 archive manifest，而不是继续改网页 UI。
+
 # 2026-06-07 最终覆盖：客户版奥森商业决策 DOCX 已通过网页下载和渲染验证
 
 - 当前权威 DOCX：`80_delivery/osen_business_decision_report_20260607.docx`
 - 当前网页下载：`http://127.0.0.1:8081/api/reports/site-selection/download?format=docx`
-- 本轮用户纠偏已落实：报告必须基于本文件夹已给出的全部资料做判断、预测和调整，不得把“请补资料、训练资料、内部证据链、API/平台、本地路径、模型调试”等内容写进客户版正文。
+- 本轮用户纠偏已落实：报告必须基于本文件夹已给出的全部资料做判断、预测和调整；不得把材料缺口请求、训练语料请求、内部证据链、API/平台、本地路径、模型调试等内容写进客户版正文。
 - 真实 8081 下载审计通过：`40_quality_evidence/actual_8081_client_report_audit_20260607.json`
   - HTTP 200
   - DOCX 大小 45,822 字节
@@ -15,7 +80,7 @@
 
 # 2026-06-07 奥森预测调整报告交付：DOCX、网页报告、下载入口和 LibreOffice 修复已验证
 
-- 当前主线已回到用户要求的“已给材料驱动的奥森商业改造预测与调整报告”，不再把“补资料”作为主文方向。
+- 当前主线已回到用户要求的“已给材料驱动的奥森商业改造预测与调整报告”，不再把材料补充请求作为主文方向。
 - 已重新生成并同步：
   - `80_delivery/osen_prediction_adjustment_report_20260607.docx`
   - `80_delivery/osen_prediction_adjustment_report_20260607.md`
@@ -1869,3 +1934,11 @@
 - 已仅修改 `TestFiles/run_all_tests.py` 的本地请求和服务就绪判断。
 - UI 测试：通过 16、警告 1、失败 0。
 - 全量测试：通过 79、警告 1、失败 0；报告为 `TestFiles/reports/test_report_20260608_163052.md`。
+
+# 2026-06-08 远端最新改动选择性吸收
+- 已从远端 `96690980aabfa922e43fb9acf510b32a8e63a229` 只读比较后吸收最新两次提交；本地备份分支为 `backup/local-before-selective-sync-20260608-165111`。
+- 已保留 `TestFiles` 自动化测试体系、SQLite 并发保护、真实校准输入脚本；未做整仓镜像覆盖。
+- 已修正同事 README 中个人路径、默认“补来源文件”措辞，以及 `rebuild_real_calibration_outputs()` 的 Windows 子进程输出 `None.strip()` 问题。
+- 最新本地验证：`py -3.12 TestFiles\run_all_tests.py` -> `passed=79 warning=1 failed=0`；`py -3.12 TestFiles\check_db_health.py` -> `integrity=ok`。
+- 历史门禁复核：`verify_project_implementation.py` 仍失败 84 项，但抽样确认这些缺失项在吸收前备份分支也不存在，属于既有历史门禁口径失配，不是本次吸收引入。
+- 选择性吸收记录：`40_quality_evidence/selective_remote_absorption_20260608.md`。

@@ -1,0 +1,244 @@
+{
+  "status": "review",
+  "generated_at": "2026-06-09T09:55:29",
+  "root": "C:\\Users\\Yy199\\Desktop\\仿真设计",
+  "python": {
+    "sys_executable": "C:\\Users\\Yy199\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "sys_version": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+    "py_launcher": {
+      "args": [
+        "py",
+        "-3.12",
+        "-c",
+        "import sys; print(sys.executable); print(sys.version)"
+      ],
+      "returncode": 0,
+      "stdout": "C:\\Users\\Yy199\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\n3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+      "stderr": ""
+    }
+  },
+  "node": {
+    "args": [
+      "node",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "v24.14.0",
+    "stderr": ""
+  },
+  "npm": {
+    "args": [
+      "npm",
+      "--version"
+    ],
+    "error": "FileNotFoundError: [WinError 2] 系统找不到指定的文件。"
+  },
+  "git": {
+    "status": {
+      "args": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "returncode": 0,
+      "stdout": ".md\n M 50_external_gis/scripts/build_p0_in_park_followup_worklist.py\n M 60_model/db/simulation.sqlite3\n M 60_model/llm_runs/contract_envelopes/choice_probability_from_p2_p4_20260604.json\n M 60_model/llm_runs/contract_envelopes/p4_node_explanation_from_legacy_20260604.json\n M 60_model/llm_runs/contract_envelopes/simulation_validation_target_from_p2_20260604.json\n M 60_model/schemas/choice_probability.schema.json\n M 60_model/schemas/node_recommendation_explanation.schema.json\n M 60_model/scripts/adapt_choice_probability_and_validation_targets.py\n M 60_model/scripts/adapt_p4_node_explanations.py\n M 60_model/scripts/audit_rebaseline_artifacts.py\n M 60_model/scripts/review_deepseek_p1_quality_report.py\n M 60_model/scripts/run_deepseek_p0_verification_package.py\n M 60_model/scripts/run_deepseek_p1_quality_report.py\n M 60_model/scripts/run_deepseek_p4_feedback_draft.py\n M 60_model/simulation/demand_gap.py\n M 60_model/simulation/engine.py\n M 60_model/simulation/persona_behavior.py\n M 60_model/simulation/report_docx.py\n M 70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv\n M 70_outputs/processed_tables/p4_node_explanation_from_legacy_20260604.csv\n M 70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv\n M 80_delivery/osen_business_decision_report_20260607.docx\n M 80_delivery/site_selection_gap_report_latest.json\n M 80_delivery/site_selection_gap_report_latest.md\n M 90_p6_expert_dashboard/app.py\n M 90_p6_expert_dashboard/cache/ai_sessions.json\n M 90_p6_expert_dashboard/cache/ai_sessions_before_prune_20260603.json\n D 90_p6_expert_dashboard/cache/amap_static_map.png\n M 90_p6_expert_dashboard/cache/deepseek_ai_reviews.json\n M 90_p6_expert_dashboard/cache/expert_feedback.json\n M 90_p6_expert_dashboard/cache/simulation_objects.json\n M 90_p6_expert_dashboard/qa/advanced_agentic_workflow_validation_20260604.py\n M 90_p6_expert_dashboard/qa/lighthouse_user_flow_probe.mjs\n M 90_p6_expert_dashboard/qa/page_layer_rebuild_validation_20260605.py\n M 90_p6_expert_dashboard/qa/selenium_visual_integration_20260603.py\n M 90_p6_expert_dashboard/qa/simulation_object_pool_api_validation_20260604.py\n M 90_p6_expert_dashboard/static/app.js\n M 90_p6_expert_dashboard/static/index.html\n M 90_p6_expert_dashboard/static/osen_business_decision_report_20260607.docx\n M 90_p6_expert_dashboard/static/osen_business_decision_report_basis_20260607.json\n M TestFiles/README.md\n M TestFiles/run_all_tests.py\n M findings.md\n M handoff_next_chat.md\n M next_chat_prompt.md\n M progress.md\n?? 30_extraction/scripts/audit_agent_editor_influence_surface_20260609.py\n?? 30_extraction/scripts/audit_historical_issue_surface_20260608.py\n?? 30_extraction/scripts/audit_system_influence_20260608.py\n?? 30_extraction/scripts/cleanup_active_dashboard_caches_20260608.py\n?? 30_extraction/scripts/restore_current_outputs_after_tests_20260609.py\n?? 40_quality_evidence/active_dashboard_cache_cleanup_20260608.json\n?? 40_quality_evidence/agent_editor_influence_surface_audit_20260609.json\n?? 40_quality_evidence/agent_editor_influence_surface_audit_20260609.md\n?? 40_quality_evidence/current_site_selection_report_download_audit_20260608.docx\n?? 40_quality_evidence/customer_report_regeneration_audit_20260608.json\n?? 40_quality_evidence/historical_issue_surface_audit_20260608.json\n?? 40_quality_evidence/historical_issue_surface_audit_20260608.md\n?? 40_quality_evidence/osen_real_calibration_inputs_20260607.json\n?? 40_quality_evidence/osen_real_calibration_inputs_20260607.md\n?? 40_quality_evidence/otel_traces/\n?? 40_quality_evidence/post_test_current_output_restore_20260609.json\n?? 40_quality_evidence/selective_remote_absorption_20260608.md\n?? 40_quality_evidence/system_influence_audit_20260608.json\n?? 40_quality_evidence/system_influence_audit_20260608.md\n?? 60_model/llm_runs/deepseek_orchestration/\n?? 80_delivery/ai_chat_reports/CHAT-20260608175709-0001.md\n?? 80_delivery/ai_chat_reports/CHAT-20260609093610-0001.md\n?? 90_archive/runtime_cache_before_cleanup_20260608/",
+      "stderr": ""
+    },
+    "branch": {
+      "args": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "returncode": 0,
+      "stdout": "main",
+      "stderr": ""
+    },
+    "lfs": {
+      "args": [
+        "git",
+        "lfs",
+        "env"
+      ],
+      "returncode": 0,
+      "stdout": "git-lfs/3.7.1 (GitHub; windows amd64; go 1.25.1; git b84b3384)\ngit version 2.54.0.windows.1\n\nEndpoint=https://github.com/cocyuhao/park-commercial-site-selection-simulation.git/info/lfs (auth=basic)\nLocalWorkingDir=C:\\Users\\Yy199\\Desktop\\仿真设计\nLocalGitDir=C:\\Users\\Yy199\\Desktop\\仿真设计\\.git\nLocalGitStorageDir=C:\\Users\\Yy199\\Desktop\\仿真设计\\.git\nLocalMediaDir=C:\\Users\\Yy199\\Desktop\\仿真设计\\.git\\lfs\\objects\nLocalReferenceDirs=\nTempDir=C:\\Users\\Yy199\\Desktop\\仿真设计\\.git\\lfs\\tmp\nConcurrentTransfers=8\nTusTransfers=false\nBasicTransfersOnly=false\nSkipDownloadErrors=false\nFetchRecentAlways=false\nFetchRecentRefsDays=7\nFetchRecentCommitsDays=0\nFetchRecentRefsIncludeRemotes=true\nPruneOffsetDays=3\nPruneVerifyRemoteAlways=false\nPruneVerifyUnreachableAlways=false\nPruneRemoteName=origin\nLfsStorageDir=C:\\Users\\Yy199\\Desktop\\仿真设计\\.git\\lfs\nAccessDownload=basic\nAccessUpload=basic\nDownloadTransfers=basic,lfs-standalone-file,ssh\nUploadTransfers=basic,lfs-standalone-file,ssh\nGIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core\ngit config filter.lfs.process = \"git-lfs filter-process\"\ngit config filter.lfs.smudge = \"git-lfs smudge -- %f\"\ngit config filter.lfs.clean = \"git-lfs clean -- %f\"",
+      "stderr": ""
+    },
+    "remote": {
+      "args": [
+        "git",
+        "remote",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "origin\thttps://github.com/cocyuhao/park-commercial-site-selection-simulation.git (fetch)\norigin\thttps://github.com/cocyuhao/park-commercial-site-selection-simulation.git (push)",
+      "stderr": ""
+    },
+    "config_origins": {
+      "args": [
+        "git",
+        "config",
+        "--show-origin",
+        "--list"
+      ],
+      "returncode": 0,
+      "stdout": "file:C:/Program Files/Git/etc/gitconfig\tdiff.astextplain.textconv=astextplain\nfile:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.clean=git-lfs clean -- %f\nfile:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f\nfile:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.process=git-lfs filter-process\nfile:C:/Program Files/Git/etc/gitconfig\tfilter.lfs.required=true\nfile:C:/Program Files/Git/etc/gitconfig\thttp.sslbackend=schannel\nfile:C:/Program Files/Git/etc/gitconfig\tcore.autocrlf=true\nfile:C:/Program Files/Git/etc/gitconfig\tcore.fscache=true\nfile:C:/Program Files/Git/etc/gitconfig\tcore.symlinks=true\nfile:C:/Program Files/Git/etc/gitconfig\tpull.rebase=false\nfile:C:/Program Files/Git/etc/gitconfig\tcredential.helper=manager\nfile:C:/Program Files/Git/etc/gitconfig\tcredential.https://dev.azure.com.usehttppath=true\nfile:C:/Program Files/Git/etc/gitconfig\tinit.defaultbranch=master\nfile:C:/Users/Yy199/.gitconfig\tcredential.https://codeup.aliyun.com.provider=generic\nfile:C:/Users/Yy199/.gitconfig\tuser.name=cocyuhao\nfile:C:/Users/Yy199/.gitconfig\tuser.email=cocyuhao@users.noreply.github.com\nfile:C:/Users/Yy199/.gitconfig\tsafe.directory=*\nfile:C:/Users/Yy199/.gitconfig\tinit.templatedir=C:/Users/Yy199/.git-templates\nfile:C:/Users/Yy199/.gitconfig\tcredential.https://github.com.helper=\nfile:C:/Users/Yy199/.gitconfig\tcredential.https://github.com.helper=!'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential\nfile:C:/Users/Yy199/.gitconfig\tcredential.https://gist.github.com.helper=\nfile:C:/Users/Yy199/.gitconfig\tcredential.https://gist.github.com.helper=!'C:\\Program Files\\GitHub CLI\\gh.exe' auth git-credential\nfile:C:/Users/Yy199/.gitconfig\tfilter.lfs.process=git-lfs filter-process\nfile:C:/Users/Yy199/.gitconfig\tfilter.lfs.required=true\nfile:C:/Users/Yy199/.gitconfig\tfilter.lfs.clean=git-lfs clean -- %f\nfile:C:/Users/Yy199/.gitconfig\tfilter.lfs.smudge=git-lfs smudge -- %f\nfile:.git/config\tcore.repositoryformatversion=0\nfile:.git/config\tcore.filemode=false\nfile:.git/config\tcore.bare=false\nfile:.git/config\tcore.logallrefupdates=true\nfile:.git/config\tcore.ignorecase=true\nfile:.git/config\tlfs.repositoryformatversion=0\nfile:.git/config\tremote.origin.url=https://github.com/cocyuhao/park-commercial-site-selection-simulation.git\nfile:.git/config\tremote.origin.fetch=+refs/heads/*:refs/remotes/origin/*\nfile:.git/config\tlfs.https://github.com/cocyuhao/park-commercial-site-selection-simulation.git/info/lfs.locksverify=false\nfile:.git/config\tlfs.https://github.com/cocyuhao/park-commercial-site-selection-simulation.git/info/lfs.access=basic\nfile:.git/config\tbranch.main.remote=origin\nfile:.git/config\tbranch.main.merge=refs/heads/main\nfile:.git/config\tbranch.main.vscode-merge-base=origin/main",
+      "stderr": ""
+    }
+  },
+  "gh": {
+    "args": [
+      "gh",
+      "auth",
+      "status"
+    ],
+    "returncode": 0,
+    "stdout": "github.com\n  ✓ Logged in to github.com account cocyuhao (keyring)\n  - Active account: true\n  - Git operations protocol: https\n  - Token: gho_************************************\n  - Token scopes: 'gist', 'read:org', 'read:user', 'repo', 'workflow'\n\n  ✓ Logged in to github.com account arlemo (keyring)\n  - Active account: false\n  - Git operations protocol: https\n  - Token: ghp_************************************\n  - Token scopes: 'gist', 'read:org', 'read:user', 'repo', 'workflow'",
+    "stderr": ""
+  },
+  "env": {
+    "HTTP_PROXY": {
+      "present": false
+    },
+    "HTTPS_PROXY": {
+      "present": false
+    },
+    "ALL_PROXY": {
+      "present": false
+    },
+    "NO_PROXY": {
+      "present": false
+    },
+    "PYTHONIOENCODING": {
+      "present": false
+    },
+    "PYTHONPATH": {
+      "present": false
+    },
+    "PATH": {
+      "present": true,
+      "entry_count": 42,
+      "first_entries": [
+        "C:\\Users\\Yy199\\.codex\\tmp\\arg0\\codex-arg0XlbGdS",
+        "C:\\Users\\Yy199\\anaconda3",
+        "C:\\Users\\Yy199\\anaconda3\\Library\\mingw-w64\\bin",
+        "C:\\Users\\Yy199\\anaconda3\\Library\\usr\\bin",
+        "C:\\Users\\Yy199\\anaconda3\\Library\\bin",
+        "C:\\Users\\Yy199\\anaconda3\\Scripts",
+        "C:\\Users\\Yy199\\anaconda3\\bin",
+        "C:\\Users\\Yy199\\anaconda3\\condabin"
+      ]
+    },
+    "DEEPSEEK_API_KEY": {
+      "present": true,
+      "masked": "sk-5...5486",
+      "length": 35
+    },
+    "AMAP_WEB_SERVICE_KEY": {
+      "present": false
+    },
+    "OPENAI_API_KEY": {
+      "present": false
+    }
+  },
+  "powershell_profile": {
+    "path": "C:\\Users\\Yy199\\Documents\\WindowsPowerShell\\profile.ps1",
+    "exists": true,
+    "bytes": 1091,
+    "has_utf8_defaults": true,
+    "has_conda_init": true,
+    "old_path_hits": []
+  },
+  "browser": {
+    "chrome_path": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chrome_exists": true,
+    "chrome_version": {
+      "args": [
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+        "--version"
+      ],
+      "error": "TimeoutExpired: Command '['C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe', '--version']' timed out after 20 seconds"
+    }
+  },
+  "ports": [
+    {
+      "port": 8000,
+      "open": false
+    },
+    {
+      "port": 8081,
+      "open": false
+    },
+    {
+      "port": 8765,
+      "open": false
+    },
+    {
+      "port": 8766,
+      "open": false
+    },
+    {
+      "port": 8794,
+      "open": false
+    }
+  ],
+  "workspace_sizes": {
+    "archive": {
+      "path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\90_archive",
+      "exists": true,
+      "file_count": 550,
+      "bytes": 97507542
+    },
+    "cache": {
+      "path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\90_p6_expert_dashboard\\cache",
+      "exists": true,
+      "file_count": 38,
+      "bytes": 2953339
+    },
+    "test_reports": {
+      "path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\TestFiles\\reports",
+      "exists": true,
+      "file_count": 86,
+      "bytes": 15445417
+    },
+    "llm_runs": {
+      "path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\60_model\\llm_runs",
+      "exists": true,
+      "file_count": 75,
+      "bytes": 794892
+    },
+    "quality_evidence": {
+      "path": "C:\\Users\\Yy199\\Desktop\\仿真设计\\40_quality_evidence",
+      "exists": true,
+      "file_count": 454,
+      "bytes": 38905776
+    }
+  },
+  "agent_capability_dirs": {
+    "codex_skills": {
+      "path": "C:\\Users\\Yy199\\.codex\\skills",
+      "exists": true,
+      "file_count": 1382,
+      "bytes": 7735772
+    },
+    "agents_skills": {
+      "path": "C:\\Users\\Yy199\\.agents\\skills",
+      "exists": true,
+      "file_count": 1035,
+      "bytes": 12824417
+    },
+    "codex_plugins_cache": {
+      "path": "C:\\Users\\Yy199\\.codex\\plugins\\cache",
+      "exists": true,
+      "file_count": 4865,
+      "bytes": 45377688
+    }
+  },
+  "risks": [
+    {
+      "severity": "medium",
+      "area": "workspace",
+      "message": "90_archive 存在大量历史产物；全仓脚本必须显式排除或标记 archive，避免旧口径回流。"
+    }
+  ]
+}

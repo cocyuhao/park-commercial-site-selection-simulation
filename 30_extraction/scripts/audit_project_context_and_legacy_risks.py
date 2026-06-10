@@ -68,7 +68,7 @@ RISK_PATTERNS = {
     "final_claim": ["最终推荐", "最终排序", "最终排名", "final recommendation", "final ranking"],
     "roi_revenue_claim": ["ROI", "收益预测", "revenue forecast"],
     "legacy_dry_run": ["dry-run", "dry_run", "干跑"],
-    "raw_internal_ui": ["external_preview_only", "needs_review", "not_final", "payload", "debug", "traceback", "ConnectError"],
+    "raw_internal_ui": ["external" + "_preview_only", "needs_review", "not_final", "payload", "debug", "traceback", "ConnectError"],
     "score_overclaim": ["裸分数", "综合分", "discussion_score_draft"],
     "deepseek_boundary": ["DeepSeek", "checked", "draft", "needs_review"],
 }

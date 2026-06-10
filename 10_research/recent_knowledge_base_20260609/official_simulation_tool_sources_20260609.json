@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Mesa",
+    "url": "https://mesa.readthedocs.io/en/stable/",
+    "project_use": "ABM 轨迹层候选实现；用于 Agent 状态、空间、数据收集和可视化。",
+    "source_type": "official_documentation"
+  },
+  {
+    "name": "SimPy",
+    "url": "https://simpy.readthedocs.io/",
+    "project_use": "离散事件和队列容量层候选实现；用于咖啡亭、餐饮、入口服务压力。",
+    "source_type": "official_documentation"
+  },
+  {
+    "name": "SALib",
+    "url": "https://salib.readthedocs.io/",
+    "project_use": "敏感性分析候选工具；用于 Monte Carlo 后的参数影响排序。",
+    "source_type": "official_documentation"
+  },
+  {
+    "name": "OpenAlex Works API",
+    "url": "https://docs.openalex.org/api-entities/works",
+    "project_use": "近年论文知识库抓取来源；用于批量检索和去重前的元数据输入。",
+    "source_type": "official_documentation"
+  }
+]

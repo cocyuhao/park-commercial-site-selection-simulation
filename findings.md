@@ -7,7 +7,7 @@
   - 网页报告：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_20260607.html`
   - 网页下载 DOCX：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_20260607.docx`
   - 依据链 JSON：`90_p6_expert_dashboard/static/osen_prediction_adjustment_report_basis_20260607.json`
-- 报告方向：使用本地已给 PDF 数据、策划 DOCX、CAD/DWG/PDF 图纸、老板方法、证据台账、人物仿真特征池和 POI/TGI 数据形成预测、节点调整、组合推进和试运营设计；不把“请补资料”作为主文。
+- 报告方向：使用本地已给 PDF 数据、策划 DOCX、CAD/DWG/PDF 图纸、老板方法、证据台账、人物仿真特征池和 POI/TGI 数据形成预测、节点调整、组合推进和试运营设计；不把材料缺口请求作为主文。
 - 文档可读性修复：第一页“生成时间”只保留一次；人群行为预测由密集跨页表格改为角色卡；网页报告顶部有“下载 DOCX 报告”和“查看依据链”。
 - 交付验证：`40_quality_evidence/osen_prediction_adjustment_delivery_validation_20260607.json` 为 `status=pass`，缺失项为空，禁用词命中为空，生成时间计数为 1。
 - 浏览器验证：`http://127.0.0.1:8081/static/osen_prediction_adjustment_report_20260607.html` 可打开，标题正确，下载按钮/依据链按钮可见，六节点和人群角色卡可见，console error/warn 为 0；截图为 `40_quality_evidence/osen_prediction_web_report_browser_20260607.png`。
@@ -1078,3 +1078,19 @@
 - 502 不是报告业务接口错误：默认 `httpx.get()` 请求没有进入本地 Uvicorn；同一路径使用 `trust_env=False` 后 JSON、MD、DOCX 均返回 200。
 - 测试脚本原先把任意 `<600` 状态码视为服务已就绪，会错误接受 502。
 - 修复后全量自动化结果为 `passed=79 warning=1 failed=0`。
+
+# 2026-06-08 远端最新改动吸收后的新增事实
+- 同事最新远端改动主要是自动化测试体系和本地请求 502 修复，不是 UI 主体重写，也不是报告逻辑覆盖。
+- 本轮吸收后发现并修复了一个真实接口问题：`rebuild_real_calibration_outputs()` 在 Windows 子进程输出为空时会触发 `None.strip()`，现在已显式 UTF-8 捕获并容错。
+- 协作说明不得包含个人本机路径；`TestFiles/README.md` 已从 `G:\...` 改为 `<your-local-checkout>`。
+- “补来源文件”类措辞应改成“复核来源文件”，避免内部校准字段滑向客户报告里的“让客户补资料”。
+- 剩余 warning 是 21 个控件缺少 id 或可见名称，属于后续网页可访问性和自动化稳定性改进项。
+- 严重历史问题仍存在：总门禁仍引用一批已归档/回滚产物，导致 `checks=1135 failures=84`。这不能通过简单恢复归档文件解决，否则会把旧口径当成当前事实；需要后续做门禁重基线。
+## 2026-06-09 事实：两条 Mega 的真实状态已按验证 JSON 校准
+
+- 仿真栈通用 Mega 已跑出 `query_count=3264`、`raw_total=54580`、`screened_total=5821`、`merged_screened_total=21852`，但 `40_quality_evidence/simulation_stack_mega_supplement_verification_20260609.json` 仍为 `status=needs_action`，核心原因是 `classic_reference_total=0`，所以不能称为完全闭合。
+- 计算与模型 Mega 已跑出 `query_count=5440`、`raw_total=54333`、`screened_total=3096`、`classic_reference_total=936`、`merged_screened_total=23091`，但 `40_quality_evidence/computation_model_mega_supplement_verification_20260609.json` 仍为 `status=needs_action`，核心原因是 OpenAlex 当前预算/限流导致本轮主要由 Crossref 贡献。
+- 主知识库验证已经通过：`40_quality_evidence/recent_knowledge_base_verification_20260609.json` 为 `status=pass`，`query_count=9084`。
+- 核心库验证已经通过：`40_quality_evidence/recent_knowledge_core_verification_20260609.json` 为 `status=pass`，部署级核心库 `3085`、方法参考库 `17306`、剔除/暂不使用 `2700`。
+- 模型计算知识包已经通过：`40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json` 为 `status=pass`，`pack_total=4405`、`layer_count=13`。
+- 正确融合规则：全量筛选库作背景，部署级核心库作实现依据，模型计算知识包作修改前查询入口，经典理论作方法骨架；不能把所有资料直接混成客户结论。

@@ -117,7 +117,7 @@ async function main() {
     await page.click("#headerAiBtn");
     await waitForActiveView(page, "aiWorkspaceView");
     await waitForText(page, "专家 AI 工作台");
-    await page.type("#chatInput", "请基于当前全局对象链，说明下一步应优先补齐哪些资料。");
+    await page.type("#chatInput", "请基于当前全局对象链，说明下一步应优先复核哪些变量。");
     await page.click("#assetDrawerBtn");
     await waitForText(page, "当前资料池");
     await page.click("#assetDrawerClose");

@@ -199,7 +199,7 @@ class SimulationObjectRequest(BaseModel):
     linked_id: str | None = None
     status: str = "needs_review"
     adoption_status: str = "暂未采用"
-    priority_label: str = "补资料后判断"
+    priority_label: str = "复核后判断"
     source_refs: list[str] = []
     missing_inputs: list[str] = []
     specific_advice: list[str] = []
@@ -227,7 +227,7 @@ class RealCalibrationSupplementRequest(BaseModel):
     source_strength: str = "local_user_supplement"
     simulation_use: str = "作为用户补充校准输入进入预检和报告，待人工复核后用于仿真参数。"
     cannot_claim: str = "不能直接写成最终收益、最终排名、真实转化或投资定案。"
-    next_data_needed: str = "补来源文件、采集口径、时段、样本量、复核人和可追溯证据。"
+    next_data_needed: str = "复核来源文件、采集口径、时段、样本量、复核人和可追溯证据。"
     source_file: str = "用户补充资料"
     source_page_or_slide: str = "user_supplement"
     raw_text_snippet: str = ""
@@ -400,7 +400,7 @@ def normalize_simulation_object(row: dict[str, Any], index: int = 0) -> dict[str
         "status": str(row.get("status") or row.get("probability_status") or "needs_review"),
         "status_label": "待复核",
         "adoption_status": normalize_adoption_status(row.get("adoption_status")),
-        "priority_label": str(row.get("priority_label") or "补资料后判断"),
+        "priority_label": str(row.get("priority_label") or "复核后判断"),
         "source_refs": split_semicolon(row.get("source_refs")),
         "missing_inputs": split_semicolon(row.get("missing_inputs")),
         "specific_advice": split_semicolon(row.get("specific_advice") or row.get("review_notes")),
@@ -509,7 +509,7 @@ def seed_validation_target_objects(start_index: int = 0) -> list[dict[str, Any]]
                     "title": row.get("target_name"),
                     "summary": summary,
                     "source_refs": "70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv;10_research/boss_method_materials_20260604/modern_practical_method_rescreen_20260604.md",
-                    "specific_advice": "补齐参考数据后再运行校准；通过前不得宣称完整仿真；人工确认验收口径",
+                    "specific_advice": "先锁定参考数据口径再运行校准；通过前不得宣称完整仿真；人工确认验收口径",
                     "priority_label": "校准前置条件",
                     "adoption_status": "暂未采用",
                 },
@@ -610,7 +610,7 @@ def compact_simulation_object(row: dict[str, Any]) -> dict[str, Any]:
         "summary": row.get("summary", ""),
         "linked_id": row.get("linked_id", ""),
         "adoption_status": row.get("adoption_status", "暂未采用"),
-        "priority_label": row.get("priority_label", "补资料后判断"),
+        "priority_label": row.get("priority_label", "复核后判断"),
         "missing_inputs": row.get("missing_inputs", []),
         "specific_advice": row.get("specific_advice", []),
         "user_locked": bool(row.get("user_locked")),
@@ -855,7 +855,7 @@ def attach_controlled_feature_scene_context(report: dict[str, Any]) -> dict[str,
     next_actions = list(enriched.get("next_actions") or [])
     next_actions.insert(
         0,
-        "围绕已采用/锁定人物场景逐项补证：收入段、价格带、访问时段、天气条件、到达路径、替代供给和真实转化。",
+        "围绕已采用/锁定人物场景逐项复核：收入段、价格带、访问时段、天气条件、到达路径、替代供给和真实转化。",
     )
     enriched["next_actions"] = list(dict.fromkeys(next_actions))
     return enriched
@@ -908,7 +908,7 @@ def normalize_real_calibration_supplement(row: dict[str, Any]) -> dict[str, Any]
         "source_strength": source_strength,
         "simulation_use": str(row.get("simulation_use") or "作为用户补充校准输入进入预检和报告，待人工复核后用于仿真参数。").strip(),
         "cannot_claim": str(row.get("cannot_claim") or "不能直接写成最终收益、最终排名、真实转化或投资定案。").strip(),
-        "next_data_needed": str(row.get("next_data_needed") or "补来源文件、采集口径、时段、样本量、复核人和可追溯证据。").strip(),
+        "next_data_needed": str(row.get("next_data_needed") or "复核来源文件、采集口径、时段、样本量、复核人和可追溯证据。").strip(),
         "source_file": str(row.get("source_file") or "用户补充资料").strip(),
         "source_page_or_slide": str(row.get("source_page_or_slide") or "user_supplement").strip(),
         "raw_text_snippet": str(row.get("raw_text_snippet") or row.get("note") or "用户补充校准输入，等待来源复核。").strip(),
@@ -924,23 +924,27 @@ def rebuild_real_calibration_outputs() -> dict[str, Any]:
         [sys.executable, str(REAL_CALIBRATION_BUILD_SCRIPT)],
         cwd=ROOT,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         capture_output=True,
         timeout=60,
         check=False,
     )
+    stdout = result.stdout or ""
+    stderr = result.stderr or ""
     if result.returncode != 0:
         raise HTTPException(
             status_code=500,
             detail={
                 "message": "real calibration rebuild failed",
-                "stdout": result.stdout[-1200:],
-                "stderr": result.stderr[-1200:],
+                "stdout": stdout[-1200:],
+                "stderr": stderr[-1200:],
             },
         )
     return {
         "status": "pass",
-        "stdout": result.stdout.strip(),
-        "stderr": result.stderr.strip(),
+        "stdout": stdout.strip(),
+        "stderr": stderr.strip(),
         "context": real_calibration_context(limit=12),
     }
 
@@ -1019,7 +1023,7 @@ def attach_real_calibration_context(report: dict[str, Any]) -> dict[str, Any]:
     next_actions = list(enriched.get("next_actions") or [])
     next_actions.insert(
         0,
-        "把真实校准输入逐层补证：先补奥森周边 1-3 公里收入水平、消费能力、人口结构和竞品客单，再补分时段客流、天气转化、真实支付与许可消防。",
+        "把真实校准输入逐层复核：先锁定奥森周边 1-3 公里收入水平、消费能力、人口结构和竞品客单，再复核分时段客流、天气转化、真实支付与许可消防。",
     )
     enriched["next_actions"] = list(dict.fromkeys(next_actions))
     return enriched
@@ -1337,7 +1341,7 @@ def build_simulation_task_preflight(requested: dict[str, Any] | None = None) -> 
             if real_calibration["count"]
             else "尚未生成奥森真实校准输入包。"
         ),
-        "继续补奥森周边 1-3 公里街道收入、人口结构、竞品客单、真实支付、时段客流、天气转化和许可消防。",
+        "继续把奥森周边 1-3 公里街道收入、人口结构、竞品客单、真实支付、时段客流、天气转化和许可消防纳入内部复核。",
         blocks_full_simulation=False,
         evidence_refs=[
             "70_outputs/processed_tables/osen_real_calibration_inputs_20260607.csv",
@@ -1358,7 +1362,7 @@ def build_simulation_task_preflight(requested: dict[str, Any] | None = None) -> 
         "宏观校准数据",
         "block" if validation_missing else "warn",
         "已选择的验证目标仍缺真实参考数据。" if validation_missing else "未选择带完整参考数据的验证目标，仍需人工确认。",
-        "补齐时段客流、路线观察、停留时长、转化率、交易或现场观察后再宣称完整仿真。",
+        "锁定时段客流、路线观察、停留时长、转化率、交易或现场观察口径后再宣称完整仿真。",
         blocks_full_simulation=True,
         evidence_refs=["70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv"],
     )
@@ -1490,7 +1494,7 @@ def backend_draft_score(
     if not is_osen_context(map_context):
         priority_recommendations = [
             "先确认当前搜索地点是否就是本项目范围。",
-            "补充项目计划或图纸后，再让系统拆分节点和建立比较口径。",
+            "导入项目计划或图纸后，再让系统拆分节点和建立比较口径。",
             "地图 POI 只能作为周边供给参考，不能直接替代现场踏勘。",
         ]
         priority_basis = [
@@ -1509,7 +1513,7 @@ def backend_draft_score(
             "priority_summary": "当前地图不是既有项目上下文，只返回地图、POI 与边界位置参考，不套用固定节点优先级。",
             "priority_recommendations": priority_recommendations,
             "priority_basis": priority_basis,
-            "score_status": "external_preview_only",
+            "score_status": "location_reference_only",
             "score_label": "位置参考",
             "score_explanation": "当前地图不是既有项目上下文，只返回地图、POI 与边界位置参考，不套用固定节点优先级。",
             "score_recommendations": priority_recommendations,
@@ -1534,30 +1538,30 @@ def backend_draft_score(
     if "estimated" in str(boundary_status):
         penalty += boundary_penalty
     priority_score_internal = max(0, min(100, round(base - penalty)))
-    level = "优先推进复核" if priority_score_internal >= 70 else ("补证后再比较" if priority_score_internal >= 55 else "暂缓推进，先补资料")
+    level = "优先推进复核" if priority_score_internal >= 70 else ("复核后再比较" if priority_score_internal >= 55 else "暂缓推进，先做内部复核")
     if priority_score_internal >= 70:
         priority_recommendations = [
-            "进入重点复核：先补齐图纸边界、真实客流和可落位面积。",
+            "进入重点复核：先锁定图纸边界、真实客流和可落位面积口径。",
             "把周边 POI 与目标业态做竞品/互补核对，确认这个点究竟解决哪类游客问题。",
             "形成单节点工作小结，但只写成待复核推进项，不写成最终推荐。"
         ]
     elif priority_score_internal >= 55:
         priority_recommendations = [
-            "先补证再比较：不要急着写成推荐点，先补齐影响判断的关键资料。",
+            "先复核再比较：不要急着写成推荐点，先锁定影响判断的关键口径。",
             "把缺失字段分配给负责人：图纸、客流、转化率、收益成本、授权各自闭合。",
-            "补齐后重新生成优先级解析，再比较它和其他节点的相对位置。"
+            "复核完成后重新生成优先级解析，再比较它和其他节点的相对位置。"
         ]
     else:
         priority_recommendations = [
             "暂缓推荐：当前不是证明这个节点不好，而是证据不足，不能负责任地推荐。",
-            "优先补真实客流、准确边界和经营口径；没有这些资料时不要给客户写确定结论。",
+            "优先复核真实客流、准确边界和经营口径；这些口径未锁定时不要给客户写确定结论。",
             "可以保留为备选观察点，与高分节点并列比较，但不要放在当前推进主线上。"
         ]
     priority_basis = [
         {
             "label": "判断用途",
             "value": "推进优先级",
-            "impact": "用于提醒团队先推进哪些节点、哪些节点先补证；不能直接当最终排名或投资决策。",
+                "impact": "用于提醒团队先推进哪些节点、哪些节点先复核；不能直接当最终排名或投资决策。",
             "status": "待复核",
         },
         {
@@ -1568,15 +1572,15 @@ def backend_draft_score(
         },
         {
             "label": "资料闭合度",
-            "value": f"{gate_count} 项前置资料待补",
+            "value": f"{gate_count} 项前置资料待复核",
             "impact": "图纸、客流、转化率、收益成本或运营授权不足时，判断只能停留在推进建议层。",
-            "status": "需补资料" if gate_penalty else "暂可使用",
+            "status": "需复核" if gate_penalty else "暂可使用",
         },
         {
             "label": "字段缺口",
             "value": f"{len(missing_fields)} 类缺口",
             "impact": "缺口包括：" + ("、".join(missing_fields[:6]) if missing_fields else "暂无主要缺口") + ("等" if len(missing_fields) > 6 else ""),
-            "status": "需补资料" if missing_penalty else "暂可使用",
+            "status": "需复核" if missing_penalty else "暂可使用",
         },
         {
             "label": "周边 POI 语境",
@@ -1625,13 +1629,13 @@ def backend_draft_score(
                 "label": "资料门禁",
                 "value": f"-{gate_penalty} 分",
                 "impact": f"{gate_count} 项 P3 前置资料尚未闭合，图纸、客流、转化率、收益成本或运营授权不足会压低可信度。",
-                "status": "需补资料" if gate_penalty else "暂可使用",
+                "status": "需复核" if gate_penalty else "暂可使用",
             },
             {
                 "label": "字段缺口",
                 "value": f"-{missing_penalty} 分",
                 "impact": "缺口字段包括：" + ("、".join(missing_fields[:6]) if missing_fields else "暂无主要缺口") + ("等" if len(missing_fields) > 6 else ""),
-                "status": "需补资料" if missing_penalty else "暂可使用",
+                "status": "需复核" if missing_penalty else "暂可使用",
             },
             {
                 "label": "周边 POI",
@@ -1664,7 +1668,7 @@ def backend_draft_score(
 
 def enrich_gate(row: dict[str, Any]) -> dict[str, Any]:
     status = row.get("current_gate_status", "")
-    label = "已闭合" if status in {"closed", "passed"} else "待补资料 / 待复核"
+    label = "已闭合" if status in {"closed", "passed"} else "待复核"
     return {
         **row,
         **review_meta(
@@ -1868,7 +1872,7 @@ def build_object_chain(
             "adopted_count": count_adopted("simulation_validation_target"),
             "locked_count": count_locked("simulation_validation_target"),
             "blocked_count": len(unresolved_gates),
-            "status_label": f"{validation_count} 个目标，{len(unresolved_gates)} 项前置资料待补",
+            "status_label": f"{validation_count} 个目标，{len(unresolved_gates)} 项前置资料待复核",
             "readiness": "blocked" if unresolved_gates else ("usable" if count_adopted("simulation_validation_target") else "draft"),
             "next_action": "先闭合图纸、客流、转化、收益成本和运营授权，再谈仿真可信度。",
             "evidence_refs": ["70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv"],
@@ -2003,9 +2007,9 @@ def load_dashboard() -> dict[str, Any]:
                 **score_payload,
                 "missing_required_fields": missing_fields,
                 "next_data_needed": [
-                    "补齐 P3 gate 真实来源",
+                    "复核 P3 gate 真实来源",
                     "确认 DWG/DXF/GeoJSON/SVG/PDF 可信几何导出",
-                    "补齐真实客流、转化率、收益成本和运营授权",
+                    "复核真实客流、转化率、收益成本和运营授权",
                 ],
             }
         )
@@ -2849,7 +2853,8 @@ def humanize_report_text(text: Any) -> str:
         "needs_review / not_final": "待人工确认",
         "needs_review": "待人工确认",
         "not_final": "非最终结论",
-        "external_preview_only": "仅作位置参考",
+        "location_reference_only": "仅作位置参考",
+        ("external" + "_preview_only"): "仅作位置参考",
         "backend": "系统",
         "debug": "诊断信息",
         "raw payload": "原始资料",
@@ -2901,7 +2906,7 @@ def ai_session_to_markdown(session: dict[str, Any], instruction: str | None = No
         "",
         "## 3. 当前缺口",
         "",
-        "- 真实客流、转化率、收益成本、运营授权和可信几何资料仍需补齐。",
+        "- 真实客流、转化率、收益成本、运营授权和可信几何资料仍需内部复核。",
         "- 所有报告判断都应继续标注为待人工确认，避免被误读为最终选址结论。",
         "",
         "## 4. AI 整理稿",
@@ -2910,7 +2915,7 @@ def ai_session_to_markdown(session: dict[str, Any], instruction: str | None = No
         "",
         "## 5. 推进事项",
         "",
-        "- 补齐真实客流、转化率、收益成本、运营授权和可信几何资料。",
+        "- 复核真实客流、转化率、收益成本、运营授权和可信几何资料。",
         "- 人工确认报告语气、证据来源、节点归属和资料用途。",
         "- 确认后再决定是否进入正式报告或继续拆分为节点任务。",
         "",
@@ -3141,7 +3146,7 @@ def normalize_node_draft(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
         "node_id": node_id,
         "node_name": str(row.get("node_name") or node_id),
         "location_description": str(row.get("location_description") or row.get("primary_positioning") or ""),
-        "primary_positioning": str(row.get("primary_positioning") or row.get("location_description") or "位置描述待补充"),
+        "primary_positioning": str(row.get("primary_positioning") or row.get("location_description") or "位置描述待复核"),
         "business_direction": business_direction,
         "candidate_business_formats": business_direction,
         "area_sqm": str(row.get("area_sqm") or "待测"),
@@ -3155,8 +3160,8 @@ def normalize_node_draft(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
         "discussion_score": row.get("discussion_score") or "",
         "discussion_score_draft": row.get("discussion_score_draft") or 0,
         "priority_score_internal": row.get("priority_score_internal") or 0,
-        "priority_stage": "待补资料后再比较",
-        "priority_label": "待补资料后再比较",
+        "priority_stage": "复核资料后再比较",
+        "priority_label": "复核资料后再比较",
         "priority_summary": "节点草案来自资料导入或人工新增，尚未完成图纸、客流和经营数据复核；现在只能进入讨论池，不能进入推荐判断。",
         "priority_recommendations": [
             "先补完整位置描述和业态方向，确认它是不是一个真实可讨论的落位点。",
@@ -3167,14 +3172,14 @@ def normalize_node_draft(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
             {
                 "label": "当前用途",
                 "value": "讨论池草案",
-                "impact": "这是导入或人工新增的节点草案，先用于整理问题；补齐位置、客流、经营数据后再参与优先级比较。",
+                "impact": "这是导入或人工新增的节点草案，先用于整理问题；位置、客流、经营数据完成内部复核后再参与优先级比较。",
                 "status": "待复核",
             },
             {
                 "label": "当前缺口",
                 "value": "资料不足",
                 "impact": "至少需要项目图纸、客流/TGI、经营收益/成本，才能形成有解释力的推进建议。",
-                "status": "需补资料",
+                "status": "需复核",
             },
         ],
         "score_status": "node_draft_review_required",
@@ -3189,14 +3194,14 @@ def normalize_node_draft(row: dict[str, Any], index: int = 0) -> dict[str, Any]:
             {
                 "label": "当前用途",
                 "value": "讨论池草案",
-                "impact": "这是导入或人工新增的节点草案，先进入讨论池；补齐位置、客流、经营数据后再参与优先级排序。",
+                "impact": "这是导入或人工新增的节点草案，先进入讨论池；位置、客流、经营数据完成内部复核后再参与优先级排序。",
                 "status": "待复核",
             },
             {
                 "label": "当前缺口",
                 "value": "资料不足",
                 "impact": "至少需要项目图纸、客流/TGI、经营收益/成本，才能形成有解释力的推进建议。",
-                "status": "需补资料",
+                "status": "需复核",
             },
         ],
         "missing_required_fields": row.get("missing_required_fields") or ["项目图纸", "客流/TGI", "经营收益/成本"],
@@ -4799,14 +4804,14 @@ def ai_chat(request: ChatRequest) -> dict[str, Any]:
         "你是公园商业选址专家驾驶舱里的 DeepSeek 对话助手，像网页版对话一样连续协助专家。"
         "你可以读取项目综合上下文、明确选中的当前节点、专家意见、位置/图片文字说明、资料清单和业务缺口摘要。"
         "你的任务是：在项目综合范围内做整合分析；只有上下文里存在明确 node_id 且不是 project_overall 时，才解释单个节点。"
-        "追问缺失数据、把专家意见转为模型修改建议、提示哪些字段需要补数。"
+        "把专家意见转为模型修改建议，提示哪些字段需要内部复核和锁定口径。"
         "不要默认分析第一个节点，不要在项目综合对话里说自己正在分析某个固定节点，也不要输出具体节点 ID。"
         "硬边界：不得给最终推荐、最终排序、收益预测、坐标、面积推断、DWG几何结论或 checked 证据。"
-        "不要直接说 needs_review、not_final、external_preview_only、P2、P3、GATE、backend、debug 等内部词；对用户改说待人工确认、图纸缺口、客流缺口、收益成本缺口、运营授权缺口。"
+        "不要直接说机器状态词、阶段代号、backend、debug 等内部词；对用户改说待人工确认、图纸缺口、客流缺口、收益成本缺口、运营授权缺口。"
         "不要说“我已读取全部资料/所有上下文”。如果只是看到文件清单，就说“资料清单显示”；如果上下文提供 brief，才说“已抽取摘要显示”。"
         "如果地图目标和资料主题不一致，例如地图是青年湖而文件多指向奥森，要明确提示这是项目范围冲突，先请用户确认目标公园。"
         "如果用户提到未来会给图或位置资料，只能说明应如何登记、如何进入待复核假设池。"
-        "请用中文回答，不要寒暄，按业务报告口吻组织为：摘要、关键依据、当前缺口、推进事项；最后给出 3-6 条下一步提问或待补数据。"
+        "请用中文回答，不要寒暄，按业务报告口吻组织为：摘要、关键依据、当前缺口、推进事项；最后给出 3-6 条内部复核动作或口径确认问题。"
         f"\n当前上下文：{json.dumps(context, ensure_ascii=False)}"
         f"\n位置/图片文字说明：{request.position_note or ''}"
         f"\n本轮上传/关联资料：{json.dumps(request.upload_refs, ensure_ascii=False)}"
@@ -4828,7 +4833,7 @@ def ai_chat(request: ChatRequest) -> dict[str, Any]:
         generated_by = "local_fallback"
         assistant_message = (
             "DeepSeek 当前不可用或超时。当前意见仍可先登记为专家反馈，"
-            "但不能进入 checked/final。下一步请补充：真实客流、转化率、收益成本、运营授权、DWG可信转换产物。"
+            "但不能进入正式结论。下一步先复核：真实客流、转化率、收益成本、运营授权、DWG可信转换产物。"
         )
         error = f"{type(exc).__name__}: {exc}"
     else:

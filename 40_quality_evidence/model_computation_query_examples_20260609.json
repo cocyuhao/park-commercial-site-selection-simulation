@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-06-09T22:00:00+08:00",
+  "status": "pass",
+  "query_count": 3,
+  "records": [
+    {
+      "query": "ABM pedestrian queue capacity visitor heatmap",
+      "command": "py -3.12 30_extraction/scripts/query_model_computation_knowledge_20260609.py --query ABM pedestrian queue capacity visitor heatmap --limit 5",
+      "returncode": 0,
+      "stdout": "模型知识包命中：5\n\n1. real_world_modulators | 2026 | core | 85.0\nModeling Ultra-High-Density Exposure and Evacuation Dynamics in a High-Density Urban Plaza: An Agent-Based Simulation Study of Guangzhou Huacheng Plaza\n来源：crossref+openalex / Buildings\n控制：天气、季节、节假日、活动日、收入、人口、合规、投诉和真实运营边界。\n链接：https://doi.org/10.3390/buildings16101922\n\n2. real_world_modulators | 2026 | core | 85.0\nPedestrian Flow Model Based on Cellular Automata Under Visual Trajectory and Multi-Scenario Evacuation Simulation Research\n来源：crossref+openalex / Sensors\n控制：天气、季节、节假日、活动日、收入、人口、合规、投诉和真实运营边界。\n链接：https://doi.org/10.3390/s26051405\n\n3. queue_capacity_discrete_event | 2026 | core | 85.0\nModeling Ultra-High-Density Exposure and Evacuation Dynamics in a High-Density Urban Plaza: An Agent-Based Simulation Study of Guangzhou Huacheng Plaza\n来源：crossref+openalex / Buildings\n控制：咖啡亭、餐饮、入口服务、库存、人效和高峰服务压力。\n链接：https://doi.org/10.3390/buildings16101922\n\n4. evidence_data_foundation | 2026 | core | 85.0\nModeling Ultra-High-Density Exposure and Evacuation Dynamics in a High-Density Urban Plaza: An Agent-Based Simulation Study of Guangzhou Huacheng Plaza\n来源：crossref+openalex / Buildings\n控制：证据输入、字段来源、数据体检、单位一致性和客户结论的可追溯边界。\n链接：https://doi.org/10.3390/buildings16101922\n\n5. abm_pedestrian_crowd_engine | 2026 | core | 85.0\nModeling Ultra-High-Density Exposure and Evacuation Dynamics in a High-Density Urban Plaza: An Agent-Based Simulation Study of Guangzhou Huacheng Plaza\n来源：crossref+openalex / Buildings\n控制：Agent 状态转移、位置序列、功能区转移、拥挤瓶颈和热力图。\n链接：https://doi.org/10.3390/buildings16101922\n",
+      "stderr": "",
+      "hit_count_marker_present": true,
+      "human_quality_note": "ABM命中与公园/广场人群仿真强相关，可作为实现依据。"
+    },
+    {
+      "query": "Monte Carlo 收益 P95 天气 转化率",
+      "command": "py -3.12 30_extraction/scripts/query_model_computation_knowledge_20260609.py --query Monte Carlo 收益 P95 天气 转化率 --limit 5",
+      "returncode": 0,
+      "stdout": "模型知识包命中：5\n\n1. monte_carlo_uncertainty | 2026 | screened | 57.0\nLoad-Memory and Weather-Calendar Feature-Driven Short-Term Load Probabilistic Forecasting with Split Conformal Calibration\n来源：crossref / Applied and Computational Engineering\n控制：日客流、天气、客群比例、客单价、转化率、容量和活动日的置信水位。\n链接：https://doi.org/10.54254/2755-2721/2026.33612\n\n2. revenue_conversion_unit_economics | 2025 | core | 78.358\nMachine Learning for Master Production Scheduling: Combining probabilistic forecasting with stochastic optimisation\n来源：openalex / Expert Systems with Applications\n控制：客单价、转化率、价格带、复购频次、业态组合和收益区间。\n链接：https://doi.org/10.1016/j.eswa.2025.126586\n\n3. real_world_modulators | 2025 | core | 78.358\nMachine Learning for Master Production Scheduling: Combining probabilistic forecasting with stochastic optimisation\n来源：openalex / Expert Systems with Applications\n控制：天气、季节、节假日、活动日、收入、人口、合规、投诉和真实运营边界。\n链接：https://doi.org/10.1016/j.eswa.2025.126586\n\n4. sensitivity_calibration_validation | 2025 | core | 77.966\nSimulation-Based Robustness Evaluation of Coordination under Stochastic Demand\n来源：crossref+openalex / International Journal of Simulation Modelling\n控制：参数影响排序、模型校准、可复跑验证、异常兜底和复核状态。\n链接：https://doi.org/10.2507/ijsimm24-4-co20\n\n5. evidence_data_foundation | 2025 | core | 77.966\nSimulation-Based Robustness Evaluation of Coordination under Stochastic Demand\n来源：crossref+openalex / International Journal of Simulation Modelling\n控制：证据输入、字段来源、数据体检、单位一致性和客户结论的可追溯边界。\n链接：https://doi.org/10.2507/ijsimm24-4-co20\n",
+      "stderr": "",
+      "hit_count_marker_present": true,
+      "human_quality_note": "命中更偏概率预测/鲁棒性/收益方法，可作为方法约束，不能直接替代本项目数据。"
+    },
+    {
+      "query": "离散选择 目的地 消费 价格敏感",
+      "command": "py -3.12 30_extraction/scripts/query_model_computation_knowledge_20260609.py --query 离散选择 目的地 消费 价格敏感 --limit 5",
+      "returncode": 0,
+      "stdout": "模型知识包命中：5\n\n1. revenue_conversion_unit_economics | 2025 | core | 77.002\nEvaluation of Consumer Preferences for Poultry Products in Ghana Using Utility Space and Willingness to Pay Space Models\n来源：openalex / Current Research in Nutrition and Food Science Journal\n控制：客单价、转化率、价格带、复购频次、业态组合和收益区间。\n链接：https://doi.org/10.12944/crnfsj.13.1.26\n\n2. discrete_choice_spatial_interaction | 2025 | core | 61.002\nEvaluation of Consumer Preferences for Poultry Products in Ghana Using Utility Space and Willingness to Pay Space Models\n来源：openalex / Current Research in Nutrition and Food Science Journal\n控制：destination/activity/spend 的选择概率和吸引力逻辑，防止 LLM 自由编结果。\n链接：https://doi.org/10.12944/crnfsj.13.1.26\n\n3. synthetic_population_persona | 2025 | core | 76.483\nSustainability Awareness, Price Sensitivity, and Willingness to Pay for Eco-Friendly Packaging: A Discrete Choice and Valuation Study in the Saudi Retail Sector\n来源：crossref+openalex / Sustainability\n控制：本地居民/外区游客/流动人口之外的频次、同行结构、收入、任务和价格敏感度。\n链接：https://doi.org/10.3390/su17167287\n\n4. revenue_conversion_unit_economics | 2025 | core | 76.483\nSustainability Awareness, Price Sensitivity, and Willingness to Pay for Eco-Friendly Packaging: A Discrete Choice and Valuation Study in the Saudi Retail Sector\n来源：crossref+openalex / Sustainability\n控制：客单价、转化率、价格带、复购频次、业态组合和收益区间。\n链接：https://doi.org/10.3390/su17167287\n\n5. discrete_choice_spatial_interaction | 2025 | core | 76.483\nSustainability Awareness, Price Sensitivity, and Willingness to Pay for Eco-Friendly Packaging: A Discrete Choice and Valuation Study in the Saudi Retail Sector\n来源：crossref+openalex / Sustainability\n控制：destination/activity/spend 的选择概率和吸引力逻辑，防止 LLM 自由编结果。\n链接：https://doi.org/10.3390/su17167287\n",
+      "stderr": "",
+      "hit_count_marker_present": true,
+      "human_quality_note": "命中离散选择/价格敏感方法，但含食品/零售外部案例，只能作为方法参考，不能直接写成奥森结论。"
+    }
+  ]
+}

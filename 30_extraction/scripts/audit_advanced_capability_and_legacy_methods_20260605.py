@@ -143,7 +143,7 @@ def build_legacy_method_matrix() -> list[dict[str, str]]:
         {
             "old_item": "裸节点分数 / 旧 discussion_score",
             "risk": "伪精确，用户无法理解分数来源，容易把草案当排名。",
-            "new_role": "降级为内部排序痕迹；用户界面只看推进优先级、依据、建议和待补动作。",
+            "new_role": "降级为内部排序痕迹；用户界面只看推进优先级、依据、建议和复核动作。",
             "replacement_basis": "老板资料 DLR/FLR/SSR；HumanLM；用户关于分数意义不详的纠正。",
         },
         {

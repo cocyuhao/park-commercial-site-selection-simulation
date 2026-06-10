@@ -1,6 +1,69 @@
+# 当前最高优先级启动提示（2026-06-09 晚）：先按验证 JSON 判断 Mega 状态
+
+新对话启动后先读：
+
+1. `00_control/current_knowledge_base.md`
+2. `40_quality_evidence/simulation_stack_mega_supplement_verification_20260609.json`
+3. `40_quality_evidence/computation_model_mega_supplement_verification_20260609.json`
+4. `40_quality_evidence/recent_knowledge_core_verification_20260609.json`
+5. `40_quality_evidence/model_computation_knowledge_pack_verification_20260609.json`
+6. `10_research/recent_knowledge_base_20260609/model_computation_stack_playbook_20260609.md`
+
+当前硬事实：
+
+- 仿真栈通用 Mega：跑出了 `3264` 条查询、`54580` 条原始候选、`5821` 条筛选入库，但验证仍是 `needs_action`，因为经典理论入库为 `0`。
+- 计算与模型 Mega：跑出了 `5440` 条查询、`54333` 条原始候选、`3096` 条筛选入库、`936` 条经典理论参考，并把主筛选库推到 `23091`，但验证仍是 `needs_action`，因为 OpenAlex 当前预算/限流导致本轮主要由 Crossref 贡献。
+- 主知识库：`query_count=9084`，核心验证 `status=pass`，部署级核心库 `3085`，方法参考库 `17306`。
+- 模型计算知识包：`pack_total=4405`，`layer_count=13`，验证 `status=pass`。
+
+后续修改前必须查询：
+
+```powershell
+py -3.12 30_extraction\scripts\query_model_computation_knowledge_20260609.py --query "ABM pedestrian queue capacity visitor heatmap" --limit 5
+py -3.12 30_extraction\scripts\query_model_computation_knowledge_20260609.py --query "Monte Carlo 收益 P95 天气 转化率" --limit 5
+py -3.12 30_extraction\scripts\query_model_computation_knowledge_20260609.py --query "离散选择 目的地 消费 价格敏感" --limit 5
+```
+
+不要再说“已经最高标准完成”。准确说法是：计算与模型 Mega 已完成一轮并进入可调用模型包；仿真栈通用 Mega 和计算与模型 Mega 都还需要补多源/经典闭环。
+
+# 当前最高优先级启动提示（2026-06-09）：先读核心知识库，不要再照搬老板三层示例
+
+新对话启动后先读：
+
+1. `00_control/current_knowledge_base.md`
+2. `10_research/recent_knowledge_base_20260609/integrated_simulation_architecture_blueprint_20260609.md`
+3. `40_quality_evidence/recent_knowledge_core_verification_20260609.json`
+4. `40_quality_evidence/simulation_stack_supplement_verification_20260609.json`
+5. `10_research/recent_knowledge_base_20260609/knowledge_theme_playbooks_20260609.json`
+
+用户最新纠偏：
+
+- 老板给出的 Persona + Mesa/ABM + Monte Carlo 三层只是方向种子，太简单，不能框死系统。
+- 必须把它和本项目已有证据、CAD/PDF/POI/TGI、DeepSeek 约束、ABM/活动链/容量/收益/不确定性/校准审计捏合成更复杂、更严谨的系统。
+- 不能空想。后续每次非小修改前，必须先查核心知识库和本地证据。
+
+当前知识库硬事实：
+
+- 主筛选库：`18513`
+- 部署级核心库：`3021`
+- 方法参考库：`13101`
+- 仿真栈专项：`20271` 原始候选、`9972` 筛选入库
+- 专项覆盖：Persona/合成人口、活动链、ABM/Mesa、步行/人群引擎、离散选择、排队容量、Monte Carlo、校准验证、官方/实用工具、经典理论
+
+查询核心库示例：
+
+```powershell
+py -3.12 30_extraction\scripts\query_recent_knowledge_base_20260609.py --query "ABM visitor flow Monte Carlo revenue calibration" --limit 8
+```
+
+下一步若继续强化：
+
+- 用户认为 180 条专项查询仍保守，应继续做 1000+ 查询级仿真栈增量矩阵。
+- 但不要先大改网页；先把知识库、架构和仿真代码依据链稳定，再进入实现。
+
 # 当前最高优先级启动提示（2026-06-07）：客户版奥森 DOCX 已接入网页下载链路
 
-新对话启动后先读本段，并以本段覆盖下方旧提示。当前用户最关心的不是继续同步同事、不是继续扩网页逻辑，而是：基于本文件夹已经给出的全部数据、策划案、图纸和方法资料，输出一份可给客户看的奥森商业决策 `.docx`。不要再让报告出现“请补资料/训练资料/内部证据链/API/网页平台/本地路径”等内容。
+新对话启动后先读本段，并以本段覆盖下方旧提示。当前用户最关心的不是继续同步同事、不是继续扩网页逻辑，而是：基于本文件夹已经给出的全部数据、策划案、图纸和方法资料，输出一份可给客户看的奥森商业决策 `.docx`。不要再让报告出现材料缺口请求、训练语料请求、内部证据链、API/网页平台、本地路径等内容。
 
 当前权威交付：
 
@@ -24,7 +87,7 @@
 继续工作硬规则：
 
 - 客户报告只写“基于现有资料的判断、预测、调整、落地顺序和执行边界”。
-- 不写“让客户补充资料/训练资料/内部方法/模型调试/文件路径/API 链路”。
+- 不写对客户索要材料、训练语料请求、内部方法、模型调试、文件路径、API 链路。
 - 若确有不确定性，只能表达为“实施校准、现场复核、试运营监测、许可边界”，并给出可执行动作。
 - 网站 UI 和逻辑问题周一再系统改；本段只锁定 DOCX 生成、网页下载和客户版内容口径。
 
