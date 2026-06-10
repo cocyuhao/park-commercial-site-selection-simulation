@@ -1,0 +1,16 @@
+{
+  "mobileOpen": {
+    "active": "assetDrawerClose",
+    "docWidth": 375,
+    "expanded": "true",
+    "hidden": "false",
+    "viewport": 375
+  },
+  "mobileClose": {
+    "active": "assetDrawerBtn",
+    "expanded": "false",
+    "hidden": "true",
+    "open": false
+  },
+  "consoleErrors": []
+}

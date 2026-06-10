@@ -1,0 +1,21 @@
+{
+  "toggleCount": 1,
+  "before": {
+    "active": "",
+    "expanded": "false",
+    "hidden": "true"
+  },
+  "afterOpen": {
+    "active": "assetDrawerClose",
+    "expanded": "true",
+    "hidden": "false",
+    "open": true
+  },
+  "afterEscape": {
+    "active": "assetDrawerBtn",
+    "expanded": "false",
+    "hidden": "true",
+    "open": false
+  },
+  "consoleErrors": []
+}

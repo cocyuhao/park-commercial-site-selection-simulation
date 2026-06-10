@@ -867,6 +867,8 @@ function renderAssetDrawer() {
   const list = $("#assetDrawerList");
   if (!drawer || !list) return;
   drawer.classList.toggle("open", state.assetDrawerOpen);
+  drawer.setAttribute("aria-hidden", String(!state.assetDrawerOpen));
+  $("#assetDrawerBtn")?.setAttribute("aria-expanded", String(state.assetDrawerOpen));
   const uploads = state.data?.uploads || [];
   if (!uploads.length) {
     list.innerHTML = `<div class="empty-state">还没有上传资料。可以从“资料导入”或 AI 工作台的 + 上传。</div>`;
@@ -3514,10 +3516,18 @@ document.body.addEventListener("click", (event) => {
   $("#assetDrawerBtn").addEventListener("click", () => {
     state.assetDrawerOpen = !state.assetDrawerOpen;
     renderAssetDrawer();
+    if (state.assetDrawerOpen) $("#assetDrawerClose").focus();
   });
   $("#assetDrawerClose").addEventListener("click", () => {
     state.assetDrawerOpen = false;
     renderAssetDrawer();
+    $("#assetDrawerBtn").focus();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !state.assetDrawerOpen) return;
+    state.assetDrawerOpen = false;
+    renderAssetDrawer();
+    $("#assetDrawerBtn").focus();
   });
   $("#headerAiBtn").addEventListener("click", () => {
     state.aiScope = "project";

@@ -82,12 +82,12 @@
           </div>
           <div class="header-actions">
             <span id="dataVersion" class="status-pill">loading</span>
-            <button id="assetDrawerBtn" class="secondary-btn" type="button">资料池</button>
+            <button id="assetDrawerBtn" class="secondary-btn" type="button" aria-controls="assetDrawer" aria-expanded="false" data-testid="asset-drawer-toggle">资料池</button>
             <button id="headerDataBtn" class="secondary-btn">查看推进事项</button>
             <button id="headerAiBtn" class="primary-btn">打开 AI 工作台</button>
           </div>
         </header>
-        <aside id="assetDrawer" class="asset-drawer" aria-label="资料池">
+        <aside id="assetDrawer" class="asset-drawer" role="dialog" aria-label="资料池" aria-hidden="true">
           <div class="asset-drawer-head">
             <div>
               <b>当前资料池</b>
@@ -505,6 +505,6 @@
         </section>
       </main>
     </div>
-    <script src="/static/app.js?v=20260605-foundation"></script>
+    <script src="/static/app.js?v=20260610-asset-drawer-keyboard"></script>
   </body>
 </html>
