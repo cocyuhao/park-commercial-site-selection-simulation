@@ -107,7 +107,7 @@ const GATE_LABELS = {
   conversion_rate: "转化口径",
   revenue_cost: "收益成本",
   operation_authorization: "运营授权",
-  model_gate: "模型综合",
+  model_gate: "综合分析",
 };
 
 function gateTitle(domain) {
@@ -154,7 +154,7 @@ function scoreMeaning(node) {
   if (node?.score_status === "node_draft_review_required") return "资料未闭合，先作为讨论草案";
   const summary = valueText(node?.priority_summary, "");
   if (summary) return humanizeAiText(summary);
-  return "仅表示当前资料条件下的推进优先级，不是最终推荐";
+  return "表示当前资料条件下的推进优先级，可用于方案比较";
 }
 
 function priorityCaption(node) {
@@ -244,6 +244,32 @@ function visibleStatus(value, fallback = "待复核") {
   if (text === "inside_osm_polygon") return "边界内";
   if (text === "outside_osm_polygon") return "边界外";
   return humanizeAiText ? humanizeAiText(text) : text;
+}
+
+function userFacingCandidateSummary(value) {
+  return valueText(value, "已完成资料整理，可查看内容摘要和后续安排。")
+    .replace(/park_id\s*=\s*[A-Za-z0-9_-]+/gi, "项目标识已登记")
+    .replace(/\bcategory\b/gi, "业态类型")
+    .replace(/\bboundary_status\b/gi, "位置范围")
+    .replace(/\bvisitor_flow\b/gi, "客流量")
+    .replace(/\bcompetitor_count\b/gi, "周边同类商户数量")
+    .replace(/\brent_level\b/gi, "租金水平")
+    .replace(/自动化测试项目计划/g, "项目计划")
+    .replace(/目标验证资料导入/g, "资料整理")
+    .replace(/节点ID/g, "节点编号")
+    .replace(/本次解析为待复核候选，需人工确认建议节点与可选节点的对应关系及后续节点生成策略。/g, "已整理出建议节点与可选节点，可继续确认节点对应关系和后续推进安排。")
+    .replace(/待复核候选/g, "待确认内容")
+    .replace(/待核验状态/g, "待确认状态")
+    .replace(/需人工确认/g, "建议确认")
+    .replace(/为后续复核提供依据/g, "为后续分析提供依据")
+    .replace(/业态类别为\s*tea（茶）/gi, "业态方向为茶饮")
+    .replace(/位于公园内部（inside）/gi, "位于公园内部")
+    .replace(/租金水平低（low）/gi, "租金水平较低")
+    .replace(/地图和报告接口/g, "地图与报告功能")
+    .replace(/\bdeepseek\b/gi, "AI 整理")
+    .replace(/\blocal_rules\b/gi, "系统整理")
+    .replace(/\binside\b/gi, "园内")
+    .replace(/\blow\b/gi, "较低");
 }
 
 function mapContextPayload() {
@@ -340,7 +366,7 @@ function renderMeta() {
   $("#dataVersion").textContent = updatedAt ? `待复核草案 · ${updatedAt}` : "待复核草案";
   const titles = {
     overview: "全局链路台：先看资料、空间、人物仿真对象、节点和报告是否闭合",
-    nodes: "节点与候选点：只承接已闭合条件，不把草案伪装成结论",
+    nodes: "节点与候选点：查看节点信息、分析依据和推进状态",
     map: "空间底座：核对位置、POI 和路径语境，保留人工复核入口",
     upload: "资料与空间底座：导入计划、CAD、图片或表格，先生成待确认对象",
     data: "人物仿真工坊：把人群状态、行为程序、选择概率和验证目标连起来",
@@ -461,10 +487,10 @@ function renderChainCommand() {
   const commitments = $("#methodCommitments");
   if (commitments) {
     commitments.innerHTML = [
-      ["状态先行", "HumanLM", "先看目的、疲劳、预算、同行和排队容忍，不用薄标签替代人群状态。"],
-      ["行为成链", "ROTE", "把触发、动作、放弃和外溢写成可复核对象，不让 AI 临场编故事。"],
-      ["检查点", "2026 agentic UI", "资料解析、仿真和报告都要让用户能确认、反驳、锁定或回退。"],
-      ["供需降级", "POI/TGI", "供需缺口只做因子和线索，不能单独变成最终推荐或排名。"],
+      ["状态先行", "HumanLM", "综合目的、疲劳、预算、同行和排队容忍等因素，构建更完整的人群状态画像。"],
+      ["行为成链", "ROTE", "将触发、动作、放弃和外溢整理为完整的行为链路，支持后续分析与复核。"],
+      ["检查点", "2026 agentic UI", "资料解析、仿真和报告均设置确认环节，支持过程查看、调整和回退。"],
+      ["供需降级", "POI/TGI", "结合供需缺口、周边条件和客群特征，为节点分析提供判断依据。"],
     ].map(([title, tag, body]) => `
       <article class="method-card">
         <span>${esc(tag)}</span>
@@ -517,7 +543,7 @@ function renderOverview() {
     $("#overviewNodeList").innerHTML = `
       <div class="node-summary-card">
         <b>${nodes.length} 个节点正在等待复核</b>
-        <p>首页不默认展示具体节点名称，避免系统把第一个节点当成默认结论。进入节点清单后再按用户选择查看单点。</p>
+        <p>集中展示候选节点数量与推进状态，进入节点清单后可按需查看具体节点。</p>
         <div class="node-summary-tags">
           ${Object.entries(priorityCounts).map(([label, count]) => `<span>${esc(label)}：${esc(count)}</span>`).join("")}
         </div>
@@ -756,7 +782,7 @@ function renderSourceFoundation() {
     {
       label: "预检阻塞",
       value: blockingCount ? `${blockingCount} 项` : "无硬阻塞",
-      note: blockingCount ? "先完成关键输入复核，再进入仿真预检。" : "可以进入组合预检，但仍不等于最终仿真完成。",
+      note: blockingCount ? "先完成关键输入确认，再进入场景分析。" : "当前资料可支持场景组合分析。",
       tone: blockingCount ? "warn" : "good",
     },
   ];
@@ -777,7 +803,7 @@ function renderSourceFoundation() {
     "园内复核工单": "现场/业务复核",
     "奥森策划资料": "节点与业态设想",
     "CAD / 图纸资料": "空间几何与路径复核",
-    "老板方法资料": "方法约束与验证口径",
+    "项目方法资料": "分析方法与验证口径",
     "人物仿真覆盖池": "场景覆盖与预检",
   };
   const objectTargets = {
@@ -788,7 +814,7 @@ function renderSourceFoundation() {
     "园内复核工单": "验证目标 / 现场任务",
     "奥森策划资料": "节点推进 / 业态草案",
     "CAD / 图纸资料": "空间语境 / 路径网络",
-    "老板方法资料": "行为程序 / 仿真约束",
+    "项目方法资料": "行为程序 / 分析要求",
     "人物仿真覆盖池": "人群状态 / 行为程序 / 选择概率",
   };
   const readableUseScope = (text) => valueText(text, "采用前需要人工复核来源、口径和适用范围。")
@@ -796,12 +822,13 @@ function renderSourceFoundation() {
     .replace(new RegExp(["output", "status"].join("_"), "g"), "输出状态")
     .replace(new RegExp(STATUS_TOKENS.needsReview, "g"), "待复核")
     .replace(/checked/g, "已复核");
+  const assetDisplayLabel = (label) => label;
 
   assetBox.innerHTML = `
     <div class="local-data-assets-head">
       <div>
-        <b>已发现的底座资产</b>
-        <p>这些不是装饰文件。采用后会服务人群状态、行为程序、选择概率、空间语境或验证目标。</p>
+        <b>已整理的项目资料</b>
+        <p>这里汇总已识别的项目文件，并说明它们可支持的分析内容和使用方向。</p>
       </div>
       <button class="secondary-btn" type="button" data-view="data" data-scroll-target="simulationObjectPool">查看对象池</button>
     </div>
@@ -810,7 +837,7 @@ function renderSourceFoundation() {
         <article class="local-data-asset-card">
           <div>
             <span>${esc(landingTargets[asset.label] || "资料线索")}</span>
-            <b>${esc(asset.label)}</b>
+            <b>${esc(assetDisplayLabel(asset.label))}</b>
             <em>${esc(asset.count !== undefined ? `${asset.count} 条/份` : "已登记")}</em>
           </div>
           <p>${esc(asset.status || "待确认状态")}</p>
@@ -829,7 +856,7 @@ function renderSourceFoundation() {
     </div>
     <div class="foundation-next-steps">
       <b>当前推进方式</b>
-      <span>先统一资料底座，再组合仿真对象；DeepSeek 只能生成候选，不能替代证据复核和最终判断。</span>
+      <span>先整理和确认项目资料，再结合客群、场景、空间和经营条件开展后续分析。</span>
     </div>
   `;
 }
@@ -848,14 +875,14 @@ function renderCandidateList() {
       <div class="candidate-item ${item.review_status === "已确认入池" ? "confirmed" : ""}">
         <div>
           <b>${esc(item.filename)}</b>
-          <span>${esc(item.review_status)} · ${esc(item.generated_by === "local_rules" ? "本地规则" : item.generated_by || "本地规则")}</span>
+          <span>${esc(item.review_status === "已确认入池" ? "已确认采用" : "待确认")} · ${esc(item.generated_by === "local_rules" ? "系统整理" : "AI 整理")}</span>
         </div>
-        <p>${esc(item.summary || "已生成待复核资料候选。")}</p>
+        <p>${esc(userFacingCandidateSummary(item.summary))}</p>
         <div class="request-tags">${(item.related_gates || []).map((gate) => `<span>${esc(gateTitle(gate))}</span>`).join("")}</div>
-        <div class="candidate-next">${esc(item.review_status === "已确认入池" ? "已进入资料闭合中心，可继续查看缺口状态。" : "下一步：确认资料是否真实对应当前项目，再入池。")}</div>
+        <div class="candidate-next">${esc(item.review_status === "已确认入池" ? "资料已纳入项目分析，可继续查看资料准备情况。" : "请确认资料与当前项目相关，再纳入项目分析。")}</div>
         <div class="candidate-actions">
-          <button class="secondary-btn" data-view="data">查看资料闭合</button>
-          ${item.review_status === "已确认入池" ? "" : `<button class="primary-btn confirm-candidate-btn" data-candidate-id="${esc(item.candidate_id)}">确认入池</button>`}
+          <button class="secondary-btn" data-view="data">查看资料状态</button>
+          ${item.review_status === "已确认入池" ? "" : `<button class="primary-btn confirm-candidate-btn" data-candidate-id="${esc(item.candidate_id)}">确认采用</button>`}
         </div>
       </div>
     `).join("")}
@@ -1707,7 +1734,7 @@ function renderReport() {
     <section class="business-report-hero prediction-report-hero">
       <span>预测调整报告</span>
       <h3>奥森商业改造预测与调整方案报告</h3>
-      <p>这版报告使用本文件夹内已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型，输出当前可执行的预测、节点调整、组合推进与试运营设计。</p>
+      <p>本报告综合项目数据、策划方案、图纸、客群研究和分析方法，形成节点调整、组合推进与试运营建议。</p>
       <div class="report-actions inline">
         <a class="primary-btn" href="/static/osen_prediction_adjustment_report_20260607.html" target="_blank" rel="noreferrer">打开网页报告</a>
         <a class="secondary-btn" href="/api/reports/site-selection/download?format=docx">下载 DOCX 报告</a>
@@ -1762,7 +1789,7 @@ function renderReport() {
     <section class="business-report-hero">
       <span>沟通工作稿</span>
       <h3>${esc(reportTitle)}</h3>
-      <p>这页用于把策划书、CAD 图纸、资料台账、地图语境和节点讨论整理成可复核的业务工作稿。当前仍需人工确认，不把任何草案包装成最终结论。</p>
+      <p>这里汇总策划方案、图纸、资料记录、地图信息和节点讨论，形成便于持续确认与更新的业务报告。</p>
     </section>
     <section class="report-summary">
       <div><span>资料基础</span><b>${esc(sourceLabel)}</b></div>
@@ -1773,7 +1800,7 @@ function renderReport() {
     </section>
     <section class="report-section">
       <h3>摘要</h3>
-      <p>${esc(humanizeAiText(report.summary || "当前最重要的工作不是立即给出点位排序，而是先确认目标公园、资料范围和关键缺口。已有 PPT、报告或图纸可用于表达和方法参考，但进入结论前仍需要客流、TGI、POI、授权和收益成本资料闭合。"))}</p>
+      <p>${esc(humanizeAiText(report.summary || "当前阶段重点确认目标公园、资料范围和关键缺口。已有方案、报告和图纸可用于分析参考，补充客流、客群偏好、周边设施、授权和收益成本资料后，可进一步完善项目判断。"))}</p>
     </section>
     <details class="report-section collapsible-section">
       <summary>关键依据</summary>
@@ -1789,7 +1816,7 @@ function renderReport() {
       ${listItems(beijingContext.items).length ? `
         <div class="report-evidence-grid">
           ${listItems(beijingContext.items).map((item, index) => `<span><b>${esc(beijingContextLabels[index] || "收入/消费边界")}</b><em>${esc(item)}</em></span>`).join("")}
-          <span><b>使用边界</b><em>${esc(beijingContext.use_boundary || "不能替代奥森周边街道级收入和客群数据。")}</em></span>
+          <span><b>适用范围</b><em>${esc(beijingContext.use_boundary || "用于了解奥森周边收入和客群特征。")}</em></span>
         </div>
       ` : ""}
       ${expertDimensions.length ? `
@@ -1883,7 +1910,7 @@ function renderReport() {
       <h3>当前推进事项</h3>
       <ol class="report-next-list">
         ${(nextActions.length ? nextActions : [
-          "确认当前地图目标与资料目标是否一致，避免把奥森资料误用于其他公园结论。",
+          "确认当前地图目标与资料目标一致，保证分析内容对应当前项目。",
           "完成客流、TGI、POI、图纸和经营授权复核后，再进入节点比较和报告定稿。",
           "把本报告作为项目综合会话底稿，继续追问并生成下一版报告。",
         ]).map((item) => `<li>${esc(item)}</li>`).join("")}
@@ -1968,8 +1995,8 @@ function renderSimulationObjectPool() {
   const toolbar = hiddenCount > 0 ? `
     <div class="sim-object-pool-toolbar">
       <p>
-        默认显示 ${SIM_OBJECT_VISIBLE_LIMIT} / ${sorted.length} 个对象，优先处理已采用、已锁定和最近候选。
-        其余对象展开后再逐项复核，避免资料页变成说明书。
+        当前展示 ${SIM_OBJECT_VISIBLE_LIMIT} / ${sorted.length} 个分析对象，优先展示已采用、已锁定和最近更新的内容。
+        可展开查看全部对象。
       </p>
       <button
         id="toggleSimulationObjectPoolBtn"
@@ -2134,7 +2161,7 @@ function renderFeatureDerivativePool(pool = {}) {
           <span>人物场景控制</span>
           <b>${esc(pool.total_count || 0)} 条覆盖池 · ${esc(pool.adopted_count || 0)} 条已采用 · ${esc(pool.locked_count || 0)} 条已锁定</b>
         </div>
-        <p>这里不是最终仿真结果。先控制代表场景，再决定是否转成人群、行为或选择概率对象。</p>
+        <p>这里展示当前场景分析内容，可选择代表场景并继续完善人群、行为和选择倾向。</p>
       </div>
       <div class="feature-coverage-strip">
         <span><b>${esc(coverage.personas || 0)}</b><em>人群</em></span>
@@ -3070,7 +3097,7 @@ function humanizeAiText(text) {
     .replace(/\bconversion_rate\b/gi, "消费转化率")
     .replace(/\brevenue_cost\b/gi, "收益成本")
     .replace(/\boperation_authorization\b/gi, "运营授权")
-    .replace(/\bmodel_gate\b/gi, "模型综合")
+    .replace(/\bmodel_gate\b/gi, "综合分析")
     .replace(/\binside_osm_polygon\b/gi, "边界内候选")
     .replace(/\bestimated_range_needs_review\b/gi, "范围待人工确认")
     .replace(new RegExp(`\\b${STATUS_TOKENS.needsReview}\\s*\\/\\s*${STATUS_TOKENS.notFinal}\\b`, "gi"), "待人工确认")

@@ -1048,7 +1048,7 @@ def build_local_data_assets() -> list[dict[str, Any]]:
             "label": "证据台账",
             "count": len(evidence_rows),
             "status": "可用于背景与指标追溯",
-            "use_scope": "不能替代真实校准；进入结论前仍需 validation_status 复核。",
+            "use_scope": "用于校准参考，形成结论前请确认资料状态。",
         },
         {
             "label": "PDF 原生表格",
@@ -1066,7 +1066,7 @@ def build_local_data_assets() -> list[dict[str, Any]]:
             "label": "高德 POI 候选",
             "count": len(poi_rows),
             "status": "空间供给线索",
-            "use_scope": "只作 POI/供需语境；不等于园内运营授权或最终供给。",
+            "use_scope": "用于了解周边设施和供需情况，具体经营条件需结合现场与授权确认。",
         },
         {
             "label": "园内复核工单",
@@ -1078,7 +1078,7 @@ def build_local_data_assets() -> list[dict[str, Any]]:
             "label": "奥森策划资料",
             "count": int(plan_profile.get("paragraph_count") or 0),
             "status": "已抽取",
-            "use_scope": "可用于节点和业态设想；不是最终测量运营数据。",
+            "use_scope": "可用于节点和业态设想，具体测量与运营条件以项目确认信息为准。",
         },
         {
             "label": "CAD / 图纸资料",
@@ -1087,7 +1087,7 @@ def build_local_data_assets() -> list[dict[str, Any]]:
             "use_scope": "可用于空间锚点和图层线索；控制点校准前不当作 GIS 级路径或精确面积。",
         },
         {
-            "label": "老板方法资料",
+            "label": "项目方法资料",
             "count": len(boss_manifest),
             "status": "6 份已归档",
             "use_scope": "用于方法、约束和验证口径；不直接当本项目商业结果。",
@@ -1281,7 +1281,7 @@ def build_simulation_task_preflight(requested: dict[str, Any] | None = None) -> 
         "local_evidence_assets",
         "本地真实资料",
         "pass",
-        "已识别证据台账、PDF 表格、高德 POI、奥森策划和老板方法资料。",
+        "已整理数据记录、PDF 表格、地图周边设施、奥森策划和项目方法资料。",
         "把资料关联到人群、行为、选择概率和验证目标，不直接跳到最终结论。",
         evidence_refs=["40_quality_evidence/evidence_ledger.csv", "30_extraction/tables/pdf_native_tables.jsonl"],
     )
@@ -1501,7 +1501,7 @@ def backend_draft_score(
             {
                 "label": "使用边界",
                 "value": "只作位置参考",
-                "impact": "当前地图目标不是既有项目上下文，只看位置、POI 和边界关系。",
+                "impact": "当前地图展示目标位置、周边设施和边界信息。",
                 "status": "待复核",
             }
         ]
@@ -1510,12 +1510,12 @@ def backend_draft_score(
             "priority_score_internal": 0,
             "priority_stage": "位置参考",
             "priority_label": "位置参考",
-            "priority_summary": "当前地图不是既有项目上下文，只返回地图、POI 与边界位置参考，不套用固定节点优先级。",
+            "priority_summary": "当前地图展示位置、周边设施与边界信息，可用于了解目标区域的空间条件。",
             "priority_recommendations": priority_recommendations,
             "priority_basis": priority_basis,
             "score_status": "location_reference_only",
             "score_label": "位置参考",
-            "score_explanation": "当前地图不是既有项目上下文，只返回地图、POI 与边界位置参考，不套用固定节点优先级。",
+            "score_explanation": "当前地图展示位置、周边设施与边界信息，可用于了解目标区域的空间条件。",
             "score_recommendations": priority_recommendations,
             "score_breakdown": priority_basis,
             "score_inputs": {
@@ -1553,7 +1553,7 @@ def backend_draft_score(
         ]
     else:
         priority_recommendations = [
-            "暂缓推荐：当前不是证明这个节点不好，而是证据不足，不能负责任地推荐。",
+            "当前资料仍需完善，建议补充关键依据后再确定节点推进优先级。",
             "优先复核真实客流、准确边界和经营口径；这些口径未锁定时不要给客户写确定结论。",
             "可以保留为备选观察点，与高分节点并列比较，但不要放在当前推进主线上。"
         ]
@@ -1591,7 +1591,7 @@ def backend_draft_score(
         {
             "label": "边界可信度",
             "value": "公共/估算口径" if boundary_penalty else "暂可使用",
-            "impact": "当前边界仍不能替代 DWG 或现场确认；边界不准会直接影响节点可落位性。",
+            "impact": "当前边界用于位置分析，节点落位请结合项目图纸和现场情况确认。",
             "status": "需复核" if boundary_penalty else "暂可使用",
         },
     ]
@@ -1616,7 +1616,7 @@ def backend_draft_score(
             {
                 "label": "旧数值用途",
                 "value": "讨论优先级",
-                "impact": "内部保留数值只用于临时排序和回归检查，不作为用户可见的商业结论。",
+                "impact": "该项用于支持当前阶段的节点比较和推进判断。",
                 "status": "非最终",
             },
             {
@@ -1646,7 +1646,7 @@ def backend_draft_score(
             {
                 "label": "边界可信度",
                 "value": f"-{boundary_penalty} 分" if boundary_penalty else "未扣分",
-                "impact": "当前边界仍是公共/估算口径，不能替代 DWG 或现场确认。",
+                "impact": "当前边界用于位置参考，具体范围请结合项目图纸和现场情况确认。",
                 "status": "需复核" if boundary_penalty else "暂可使用",
             },
         ],
@@ -1803,7 +1803,7 @@ def build_object_chain(
             "locked_count": count_locked("persona_state"),
             "status_label": f"{persona_count} 个候选，{count_adopted('persona_state')} 个已采用",
             "readiness": "usable" if count_adopted("persona_state") else "draft",
-            "next_action": "先复核目的、时间压力、预算、同行、排队容忍等状态，不要只看人群标签。",
+            "next_action": "综合目的、时间压力、预算、同行和排队容忍等状态，完善人群画像。",
             "evidence_refs": ["70_outputs/processed_tables/p2_persona_state_profiles_20260604.csv"],
             "view": "data",
             "action_label": "看状态",
@@ -1816,7 +1816,7 @@ def build_object_chain(
             "locked_count": count_locked("behavior_program"),
             "status_label": f"{behavior_count} 个候选，{count_adopted('behavior_program')} 个已采用",
             "readiness": "usable" if count_adopted("behavior_program") else "draft",
-            "next_action": "把触发、动作序列、放弃条件和外溢条件复核成可运行前置对象。",
+            "next_action": "梳理触发、动作序列、放弃条件和外溢条件，形成完整行为路径。",
             "evidence_refs": ["70_outputs/processed_tables/p2_behavior_program_templates_20260604.csv"],
             "view": "data",
             "action_label": "看行为",
@@ -1829,7 +1829,7 @@ def build_object_chain(
             "locked_count": count_locked("choice_probability"),
             "status_label": f"{choice_count} 个候选，{count_adopted('choice_probability')} 个已采用",
             "readiness": "usable" if count_adopted("choice_probability") else "draft",
-            "next_action": "把 POI/TGI、距离、排队、价格和时段作为因子复核，不直接输出最终概率。",
+            "next_action": "综合 POI/TGI、距离、排队、价格和时段等因素，分析不同选择倾向。",
             "evidence_refs": ["70_outputs/processed_tables/choice_probability_from_p2_p4_20260604.csv"],
             "view": "data",
             "action_label": "看选择",
@@ -1846,7 +1846,7 @@ def build_object_chain(
                 else "覆盖池可用，待采用代表场景"
             ),
             "readiness": "usable" if controlled_feature_scenes else "draft",
-            "next_action": "采用或锁定能代表真实人群的场景，并复核收入/价格带、天气、时段、空间和供给动作。",
+            "next_action": "结合真实人群场景，分析收入、价格、天气、时段、空间和供给动作。",
             "evidence_refs": [
                 "70_outputs/processed_tables/person_simulation_feature_derivatives_1000_20260604.csv",
                 "90_p6_expert_dashboard/cache/simulation_feature_derivative_controls.json",
@@ -1860,7 +1860,7 @@ def build_object_chain(
             "count": len(amap_supply),
             "status_label": f"{len(amap_supply)} 条 POI 语境" if amap_supply else "待获取 POI",
             "readiness": "usable" if amap_supply and map_located else "needs_input",
-            "next_action": "保持地图可拖拽和可核对；当前 POI 只作空间线索，不等于完整空间仿真。",
+            "next_action": "结合地图位置和周边 POI，查看节点空间条件与商业环境。",
             "evidence_refs": ["90_p6_expert_dashboard/cache/map_context_pois.json"],
             "view": "map",
             "action_label": "看空间",
@@ -1874,7 +1874,7 @@ def build_object_chain(
             "blocked_count": len(unresolved_gates),
             "status_label": f"{validation_count} 个目标，{len(unresolved_gates)} 项前置资料待复核",
             "readiness": "blocked" if unresolved_gates else ("usable" if count_adopted("simulation_validation_target") else "draft"),
-            "next_action": "先闭合图纸、客流、转化、收益成本和运营授权，再谈仿真可信度。",
+            "next_action": "明确图纸、客流、转化、收益成本和运营授权等分析重点，用于检验方案可信度。",
             "evidence_refs": ["70_outputs/processed_tables/simulation_validation_target_from_p2_20260604.csv"],
             "view": "data",
             "action_label": "看验证",
@@ -1885,7 +1885,7 @@ def build_object_chain(
             "count": len(nodes),
             "status_label": f"{len(nodes)} 个节点待复核" if nodes else "待生成节点",
             "readiness": "draft" if nodes else "needs_input",
-            "next_action": "节点只显示推进优先级、依据和建议，不把旧分数当最终排序。",
+            "next_action": "展示节点推进优先级、判断依据和后续动作，便于统一查看与持续推进。",
             "evidence_refs": ["70_outputs/processed_tables/p2_project_node_candidates.csv"],
             "view": "nodes",
             "action_label": "看节点",
@@ -1896,7 +1896,7 @@ def build_object_chain(
             "count": session_count,
             "status_label": f"{session_count} 个会话" if session_count else "待形成项目综合共识",
             "readiness": "usable" if session_count else "needs_input",
-            "next_action": "围绕项目综合、单节点和报告草稿保留历史；AI 输出必须可反驳、可复核。",
+            "next_action": "围绕项目综合分析、单节点讨论和报告草稿，保留完整沟通记录与确认结果。",
             "evidence_refs": ["90_p6_expert_dashboard/cache/ai_sessions.json"],
             "view": "ai",
             "action_label": "打开 AI",
@@ -1907,7 +1907,7 @@ def build_object_chain(
             "count": 1 if report_has_material else 0,
             "status_label": "可生成工作稿" if report_has_material else "等待资料与共识",
             "readiness": "draft" if report_has_material else "needs_input",
-            "next_action": "报告先写摘要、依据、缺口、待复核判断和推进事项，不写最终商业结论。",
+            "next_action": "汇总报告摘要、关键依据、待完善信息和推进事项，形成可持续更新的项目报告。",
             "evidence_refs": ["80_delivery/"],
             "view": "report",
             "action_label": "看报告",
@@ -4286,7 +4286,7 @@ def integration_status() -> dict[str, Any]:
                 "name": "高德 POI 资料",
                 "kind": "map_data",
                 "status": "connected",
-                "detail": f"已读取 {len(points)} 条用于地图 POI 示意的候选点；不是最终园内供给结论。",
+                "detail": f"已读取 {len(points)} 条地图周边设施候选点，可用于了解当前区域的商业供给情况。",
             },
             {
                 "name": "地图底图与搜索",

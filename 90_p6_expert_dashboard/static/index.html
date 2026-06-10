@@ -52,7 +52,7 @@
             <button class="workflow-main" type="button" data-view="nodes">
               <span>04</span>
               <b>节点与候选点</b>
-              <em>只承接已闭合条件</em>
+              <em>查看节点信息与推进状态</em>
             </button>
           </section>
           <section class="workflow-stage" data-workflow-stage data-workflow-views="ai,report">
@@ -70,7 +70,7 @@
 
         <div class="side-tip">
           <b>当前边界</b>
-          <span>所有 AI、仿真判断和报告只用于待复核工作稿，不是最终推荐。</span>
+          <span>AI 分析、场景判断和报告内容可用于方案讨论与后续确认。</span>
         </div>
       </aside>
 
@@ -103,7 +103,7 @@
             <div class="chain-command-copy">
               <span class="section-eyebrow">全局对象链</span>
               <h2>全局仿真链路台</h2>
-              <p>先判断资料、人群状态、行为程序、选择概率、空间语境和验证目标是否能支撑下一步，再进入地图、节点、AI 或报告工作区。这里不是旧项目说明页，而是整个仿真系统的调度入口。</p>
+              <p>整合资料、人群状态、行为程序、选择概率、空间语境和验证目标，形成从项目判断到地图、节点、AI 分析与报告输出的完整工作路径。</p>
               <div id="chainSummaryBar" class="chain-summary-bar"></div>
             </div>
             <div id="methodCommitments" class="method-commitments"></div>
@@ -113,7 +113,7 @@
             <div class="panel-head compact">
               <div>
                 <h2>当前推进事项</h2>
-                <p>每个动作都对应一个对象和一个人工检查点，避免 AI 一键替用户做完判断。</p>
+                <p>每个动作均关联具体对象和人工确认环节，清晰展示项目推进路径与待办事项。</p>
               </div>
             </div>
             <div id="overviewPrimaryActions" class="primary-action-grid"></div>
@@ -123,7 +123,7 @@
             <div class="panel-head">
               <div>
                 <h2>系统链路状态</h2>
-                <p>状态会随资料采用、对象锁定、节点推进、地图上下文、AI 对话和报告生成变化；不再使用固定死文案。</p>
+                <p>集中展示资料采用、对象锁定、节点推进、地图分析、AI 对话和报告生成的最新状态。</p>
               </div>
             </div>
             <div id="overviewStatusCards" class="overview-status-grid"></div>
@@ -163,7 +163,7 @@
               <div>
                 <span class="section-eyebrow">资料与空间底座</span>
                 <h2>先把真实资料放到同一张工作台</h2>
-                <p>这里承接老板方法资料、策划文案、CAD/图纸、PDF 表格、高德 POI 和网页上传资料；它们先进入对象链，再服务人群状态、行为程序、选择概率和验证目标。</p>
+                <p>集中整理项目方案、图纸、数据表、地图信息和网页上传资料，为客群分析、行为研究、节点判断和方案验证提供依据。</p>
               </div>
               <button class="secondary-btn" type="button" data-view="data" data-scroll-target="simulationTaskPreflight">查看预检</button>
             </div>
@@ -437,7 +437,7 @@
               <div class="panel-head">
                 <div>
                   <h2>奥森商业改造预测与调整方案报告</h2>
-                  <p>报告基于已给 PDF 数据、策划 DOCX、CAD 图纸、人物仿真特征池和老板方法模型生成，主文聚焦预测、调整和可执行动作。</p>
+                  <p>报告综合项目数据、策划方案、图纸、客群研究和分析方法生成，重点展示预测判断、调整建议和执行动作。</p>
                 </div>
                 <div class="report-actions">
                   <a id="downloadReportDraftBtn" class="secondary-btn" href="/api/reports/site-selection/download?format=docx" data-action="download-report-draft" data-testid="download-report-docx" aria-label="下载 DOCX 预测调整报告">下载 DOCX 报告</a>
